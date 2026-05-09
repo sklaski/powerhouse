@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-09 8:24:00 (woof-wolf)>
+ * Time-stamp: <2026-05-09 9:42:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1054,6 +1054,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Never St
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Recharge', 'Recharge', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Thunderstrike', 'UPVD: Ultimate Thunderstrike', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Electrocute', '<img src="img/power-icons/electricity/Electricity_Electrocute.png" />&nbsp;Electrocute', 1, 1, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -1110,6 +1111,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Blindside', 'Blindside', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Lightning Bolter', 'PVD: Lightning Bolter', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Gigabolt', '<img src="img/power-icons/electricity/Electricity_Gigabolt.png" />&nbsp;Gigabolt', 1, 1, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -1275,6 +1277,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Illumina
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Explosive', 'Explosive', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Flaming Pumpkin', 'PVD: Flaming Pumpkin', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Fireball', 'UPVD: Ultimate Fireball', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Heat Wave', '<img src="img/power-icons/fire/Fire_HeatWave.png" />&nbsp;Heat Wave', 1, 2, pow++, 1, null); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -1425,6 +1429,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Fan the 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Cauldron Fire', 'PVD: Cauldron Fire', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Fire Snake', '<img src="img/power-icons/fire/Fire_FireSnake.png" />&nbsp;Fire Snake', 1, 2, pow++, 3, null); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -1688,6 +1693,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Focus Po
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Field Inversion', 'Field Inversion', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Denial of Service', 'PVD: Denial of Service', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Force Cascade', 'UPVD: Ultimate Force Cascade', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Force Detonation', '<img src="img/power-icons/force/Force_ForceDetonation.png" />&nbsp;Force Detonation', 1, 3, pow++, 3, null); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2135,6 +2142,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Serrated
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold Embrace', 'Cold Embrace', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Cryoclysm', 'PVD: Cryoclysm', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Arctic Beast', '<img src="img/power-icons/ice/Ice_ArcticBeast.png" />&nbsp;Arctic Beast', 1, 5, pow++, 3, null); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2311,6 +2319,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Frail Ar
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Stormpiercer', 'PVD: Stormpiercer', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Evasive Maneuvers', '<img src="img/power-icons/archery/Archery_EvasiveManeuvers.png" />&nbsp;Evasive Maneuvers', 2, 6, pow++, 1, null); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2583,6 +2592,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Armor Pi
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Laser Shotgun', 'PVD: Laser Shotgun', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Virulent Shot', 'PVD: Virulent Shot', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Flamethrower', '<img src="img/power-icons/munitions/Munitions_Flamethrower.png" />&nbsp;Flamethrower', 2, 7, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2618,6 +2629,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Boogeyma
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: U-MD Ghosthunter Phase Rifle', 'PVD: U-MD Ghosthunter Phase Rifle', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Composure', '<img src="img/power-icons/munitions/Munitions_Composure.png" />&nbsp;Composure', 2, 7, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2660,6 +2672,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Remember
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ray Tracer', 'PVD: Ray Tracer', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Mini Mines', '<img src="img/power-icons/munitions/Munitions_MiniMines.png" />&nbsp;Mini Mines', 2, 7, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2688,6 +2701,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Sheer Fo
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Single Minded', 'Single Minded', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'Qularr Toxic Barrage', 'Qularr Toxic Barrage', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Concussion Grenade', '<img src="img/power-icons/munitions/Munitions_ConcussionGrenade.png" />&nbsp;Concussion Grenade', 2, 7, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2759,6 +2773,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Tungsten Rounds', 'Tungsten Rounds', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Pulp Fiction Rifle', 'PVD: Pulp Fiction Rifle', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Two-Gun Mojo', '<img src="img/power-icons/munitions/Munitions_TwoGunMojo.png" />&nbsp;Two-Gun Mojo', 2, 7, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2769,6 +2784,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Single M
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Mow \'Em Down', 'Mow \'Em Down', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Pulp Fiction Ray Gun', 'PVD: Pulp Fiction Ray Gun', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Assault Rifle', '<img src="img/power-icons/munitions/Munitions_AssaultRifle.png" />&nbsp;Assault Rifle', 2, 7, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2778,6 +2794,9 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mow \'Em
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Uncompromising', 'Uncompromising', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Frost Ice Rifle', 'PVD: Frost Ice Rifle', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Qularr Toxic Rifle', 'PVD: Qularr Toxic Rifle', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Pulp Fiction Rifle', 'PVD: Pulp Fiction Rifle', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Lead Tempest', '<img src="img/power-icons/munitions/Munitions_LeadTempest.png" />&nbsp;Lead Tempest', 2, 7, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -2987,6 +3006,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Point Blank Blast', 'Point Blank Blast', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ultimate Chest Beam', 'UPVD: Ultimate Chest Beam', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Chest Laser', '<img src="img/power-icons/power-armor/PowerArmor_ChestLaser.png" />&nbsp;Chest Laser', 2, 8, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -3181,6 +3201,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Slicer',
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Blade Bomb', 'PVD: Blade Bomb', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Particle Blaster', '<img src="img/power-icons/gadgeteering/Gadgeteering_ParticleBlaster.png" />&nbsp;Particle Blaster', 2, 9, pow++, 0, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -3338,6 +3359,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Sonic Su
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Disruption Module', 'Disruption Module', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'UPVD: Sonic Boom Generator', 'UPVD: Sonic Boom Generator', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Throwing Blades', '<img src="img/power-icons/gadgeteering/Gadgeteering_ThrowingBlades.png" />&nbsp;Throwing Blades', 2, 9, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -3347,6 +3369,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Aggressi
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'What Do I Have in My Utility Belt?', 'What Do I Have in My Utility Belt?', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Blade Barrage', 'PVD: Blade Barrage', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Tractor Beam', '<img src="img/power-icons/gadgeteering/Gadgeteering_TractorBeam.png" />&nbsp;Tractor Beam', 2, 9, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -3454,6 +3477,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Anvil of Dawn', 'Anvil of Dawn', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Nuclear Fallout', 'Nuclear Fallout', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ultimate Orbital Cannon', 'UPVD: Ultimate Orbital Cannon', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Strafing Run', '<img src="img/power-icons/gadgeteering/Gadgeteering_StrafingRun.png" />&nbsp;Strafing Run', 2, 9, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -3674,6 +3698,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Null Val
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Data Leak', 'Data Leak', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Particle Smash', 'UPVD: Ultimate Particle Smash', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Particle Wave', '<img src="img/power-icons/laser-sword/LaserSword_ParticleWave.png" />&nbsp;Particle Wave', 2, 10, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -3869,6 +3894,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Crashing
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Burning Blades', 'PVD: Burning Blades', 0, null, null));
 
 //------------------------------------------------------------------------------
 // Dual Blades: Tier 1
@@ -4059,6 +4085,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Blade Be
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cut to Shreds', 'Cut to Shreds', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Haunted Blades', 'PVD: Haunted Blades', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Sweep'].name, dataPowerAlias['Shuriken Sweep'].desc, 3, 11, pow++, 2, dataPowerAlias['Shuriken Sweep'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -4111,6 +4138,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Blender'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Chaotic Movements', 'Chaotic Movements', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Heat Vortex', 'PVD: Heat Vortex', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Sword Cyclone', 'UPVD: Ultimate Sword Cyclone', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 11, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -4206,6 +4235,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Deadly F
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Shocking Strikes', 'PVD: Shocking Strikes', 0, null, null));
 
 //------------------------------------------------------------------------------
 // Fighting Claws: Tier 1
@@ -4394,6 +4424,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Furious 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Dragon Rush', 'Dragon Rush', 3, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Thundering Claws', 'PVD: Thundering Claws', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Scarlet Arc', '<img src="img/power-icons/fighting-claws/FightingClaws_ScarletArc.png" />&nbsp;Scarlet Arc', 3, 12, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -4486,6 +4517,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mouth of Madness', 'Mouth of Madness', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Bolting Fervor', 'PVD: Bolting Fervor', 0, null, null));
 
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 12, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
@@ -4859,6 +4891,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'No Mercy', 'No Mercy', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Electric Vengeance', 'PVD: Electric Vengeance', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Relentless Pursuit', '<img src="img/power-icons/single-blade/SingleBlade_RelentlessPursuit.png" />&nbsp;Relentless Pursuit', 3, 13, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -4868,6 +4901,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Single M
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Open Wound', 'Open Wound', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Power Cycle', 'PVD: Power Cycle', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 13, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -5253,6 +5287,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Ghostly 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Open Palm Strike', 'UPVD: Ultimate Open Palm Strike', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 14, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -5385,6 +5420,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Siphonin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Toxic Blades', 'PVD: Toxic Blades', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Strike', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticStrike.png" />&nbsp;Telekinetic Strike', 4, 15, pow++, 0, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -5504,6 +5540,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Domineer
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Stressful', 'Stressful', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Venom Shock', 'PVD: Venom Shock', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Eruption', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticEruption.png" />&nbsp;Telekinetic Eruption', 4, 15, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -5575,6 +5612,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mental Acuity', 'Mental Acuity', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Blight Touch', 'PVD: Blight Touch', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Maelstrom', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticMaelstrom.png" />&nbsp;Telekinetic Maelstrom', 4, 15, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -5591,6 +5629,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Blight Touch', 'PVD: Blight Touch', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Assault', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticAssault.png" />&nbsp;Telekinetic Assault', 4, 15, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -5959,6 +5998,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Fiery Sp
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Brilliant Cleave', 'PVD: Brilliant Cleave', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Callous Cleaver', 'PVD: Callous Cleaver', 0, null, null));
 
 //------------------------------------------------------------------------------
 // Heavy Weapon: Tier 1
@@ -5983,6 +6024,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Thunderb
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Glacial Rend', 'PVD: Glacial Rend', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Decimate', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Decimate.png" />&nbsp;Decimate', 5, 17, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -6053,6 +6095,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Unhinged
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Falling Hammer', 'Falling Hammer', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ice Breaker', 'PVD: Ice Breaker', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Earth Splitter', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_EarthSplitter.png" />&nbsp;Earth Splitter', 5, 17, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -6110,6 +6153,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Scorchin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'To the Heavens', 'To the Heavens', 1, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Hellrend', 'PVD: Hellrend', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Brimstone', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Brimstone.png" />&nbsp;Brimstone', 5, 17, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -6121,6 +6165,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Lightnin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Burning Sun', 'Burning Sun', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Bitter Storm', 'PVD: Bitter Storm', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Brimstone', 'UPVD: Ultimate Brimstone', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Skewer', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skewer.png" />&nbsp;Skewer', 5, 17, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -6134,6 +6180,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'Impaler'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'Sharpened Blade', 'Sharpened Blade', 1, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(11, 'PVD: Frozen Lance', 'PVD: Frozen Lance', 0, null, null));
 
 //------------------------------------------------------------------------------
 // Heavy Weapon: Ultimates
@@ -6331,6 +6378,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Cave In', 'UPVD: Ultimate Cave In', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Seismic Smash', '<img src="img/power-icons/earth/Earth_SeismicSmash.png" />&nbsp;Seismic Smash', 5, 18, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -6381,6 +6429,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Compound Fracture', 'Compound Fracture', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Icefall', 'PVD: Icefall', 0, null, null));
 
 //------------------------------------------------------------------------------
 // Earth: Ultimates
@@ -6702,6 +6751,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Reckless Strike', 'Reckless Strike', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Havoc Hammer', 'PVD: Havoc Hammer', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Havoc Stomp', '<img src="img/power-icons/might/Might_HavocStomp.png" />&nbsp;Havoc Stomp', 5, 19, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -6712,6 +6762,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Major Im
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Reckless Endangerment', 'Reckless Endangerment', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Havoc Stomp', 'UPVD: Ultimate Havoc Stomp', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shockwave', '<img src="img/power-icons/might/Might_Shockwave.png" />&nbsp;Shockwave', 5, 19, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -7083,6 +7134,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Draining
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Shadow Shred', 'PVD: Shadow Shred', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Void Shift', '<img src="img/power-icons/darkness/Darkness_VoidShift.png" />&nbsp;Void Shift', 6, 21, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -7398,6 +7450,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Dilemma'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Mystical', 'Mystical', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Pillar of Poz', 'UPVD: Ultimate Pillar of Poz', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Radiant Sanctuary', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfRadiantSanctuary.png" />&nbsp;Sigils of Radiant Sanctuary', 6, 22, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -7697,6 +7750,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Scent of
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Scorching Claw', 'PVD: Scorching Claw', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Barbed Chain', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_BarbedChain.png" />&nbsp;Barbed Chain', 6, 23, pow++, 0, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -7740,6 +7794,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Vicious'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Open Wound', 'Open Wound', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fire Fangs', 'PVD: Fire Fangs', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Frenzy', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Frenzy.png" />&nbsp;Frenzy', 6, 23, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -7751,6 +7806,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Blood in
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Flaming Frenzy', 'PVD: Flaming Frenzy', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Venomous Breath'].name, dataPowerAlias['Venomous Breath'].desc, 6, 23, pow++, 1, dataPowerAlias['Venomous Breath'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -7909,6 +7965,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Intimida
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Wild Strikes', 'Wild Strikes', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fiery Spirit', 'PVD: Fiery Spirit', 0, null, null));
 
 //------------------------------------------------------------------------------
 // Bestial Supernatural: Tier 3
@@ -7922,6 +7979,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Bloody M
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Open Wound', 'Open Wound', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Searing Carnage', 'PVD: Searing Carnage', 0, null, null));
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Eviscerate', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Eviscerate.png" />&nbsp;Eviscerate', 6, 23, pow++, 3, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -8035,6 +8093,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Virulent
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Tendrils of Anguish', 'PVD: Tendrils of Anguish', 0, null, null));
 
 //------------------------------------------------------------------------------
 // Infernal Supernatural: Tier 1
