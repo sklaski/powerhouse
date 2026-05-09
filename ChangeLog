@@ -1,3 +1,29 @@
+2026-05-09  woof-wolf
+
+		* Build version starting back at v1.
+		
+		* Default analytics preference changed to Off.
+		
+		* Some minor typos fixed
+		
+		* Innate talents updated.
+		
+		* Talent description stats reordered to match in game ordering.
+		
+		* Laser Sword framework added. Old Sorcery frameworks removed.
+		
+		* Concentration fix removed at the moment even though it is still 
+			bugged since it will hopefully be fixed soon. 
+			(DATAREPLACEPOWER_CONCENTRATION thing)
+		
+		* Power Set offset bug fixed.
+		
+		* Powers and their advantages updated and power icons added.
+		
+		* Images organized into their own folders.
+		
+		* Specializations updated and icons added.
+
 2016-02-17  Kyle W T Sherman  <kylewsherman@gmail.com>
 
 		* Updated version number to 0.9.33.

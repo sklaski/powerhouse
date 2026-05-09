@@ -5,37 +5,37 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2016-02-17 22:55:12 (kyle)>
+ * Time-stamp: <2026-05-09 8:24:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '0.9.33';
-var releaseDate = '2016-02-17';
-var buildVersion = 13;
+var version = '1.0.0';
+var releaseDate = '2026-05-09';
+var buildVersion = 1;
 
 var siteName = 'PowerHouse';
-var siteUrl = 'http://powerhouse.nullware.com/';
-var buildUrl = siteUrl + 'powerhouse.html';
+var siteUrl = 'https://woof-wolf.github.io/powerhouse/';
+var buildUrl = siteUrl + 'index.html';
 var mouseX = 0;
 var mouseY = 0;
 var clickableClasses = [];
 clickableClasses[0] = 'selection';
 clickableClasses[1] = 'link';
 
-var analyticsPrefCatagory = 'Preference';
-var analyticsSetCatagory = 'Set';
-var analyticsBuildCatagory = 'Build';
+var analyticsPrefCategory = 'Preference';
+var analyticsSetCategory = 'Set';
+var analyticsBuildCategory = 'Build';
 
 // cookie variables with default values
 var cookieExpireDays = 365;
 var forumExportType = 'co';
-var prefFontFamilyList = ['Andale Mono', 'Arial', 'Comic Sans MS', 'Courier New', 'Garuda', 'Georgia', 'Helvetica', 'Lexia', 'Lucida Sans', 'Times New Roman', 'Trebuchet MS', 'Verdana', 'sans-serif'];
-var prefFontFamily = 'Lexia';
+var prefFontFamilyList = ['Andale Mono', 'Arial', 'Comic Sans MS', 'Courier New', 'Garuda', 'Georgia', 'Helvetica', 'Lucida Sans', 'Times New Roman', 'Trebuchet MS', 'Verdana', 'sans-serif'];
+var prefFontFamily = 'Trebuchet MS';
 var prefFontSize = 100;
 var prefPopupTipsList = ['Off', 'When Selecting', 'On'];
 var prefPopupTips = parseInt(2);
 var prefConfirmSelections = false;
-var prefAnalytics = true;
+var prefAnalytics = false;
 
 // escape quotes
 function escapeQuotes(str) {
@@ -118,38 +118,38 @@ function urlCodeToNum4(code) {
 window['urlCodeToNum4'] = urlCodeToNum4;
 
 // submit google analytics
-function submitAnalytics(catagory, action, label, value) {
-    if (prefAnalytics) {
-        if (debug) {
-            console.log(['_trackEvent', catagory, action, label, value]);
-        } else {
-            _gaq.push(['_trackEvent', catagory, action, label, value]);
-        }
-    }
+function submitAnalytics(Category, action, label, value) {
+    // if (prefAnalytics) {
+    //     if (debug) {
+    //         console.log(['_trackEvent', Category, action, label, value]);
+    //     } else {
+    //         _gaq.push(['_trackEvent', Category, action, label, value]);
+    //     }
+    // }
 }
 window['submitAnalytics'] = submitAnalytics;
 // queue google analytics for background submission
 var analyticsTimeout = 2000;
 var analyticsQueue = [];
 var analyticsQueueServiceRunning = false;
-function queueAnalytics(catagory, action, label, value) {
-    if (prefAnalytics) {
-        analyticsQueue.push([catagory, action, label, value]);
-        // start google analytics queue submission service
-        if (!analyticsQueueServiceRunning) analyticsQueueService();
-    }
+function queueAnalytics(Category, action, label, value) {
+    // if (prefAnalytics) {
+    //     analyticsQueue.push([Category, action, label, value]);
+    //     // start google analytics queue submission service
+    //     if (!analyticsQueueServiceRunning) analyticsQueueService();
+    // }
 }
 window['queueAnalytics'] = queueAnalytics;
 // pop submissions off of queue and submit them
 function analyticsQueueService() {
-    if (analyticsQueue.length > 0) {
-        analyticsQueueServiceRunning = true;
-        var event = analyticsQueue.shift();
-        submitAnalytics(event[0], event[1], event[2], event[3]);
-        setTimeout(analyticsQueueService, analyticsTimeout);
-    } else {
-        analyticsQueueServiceRunning = false;
-    }
+    // if (analyticsQueue.length > 0) {
+    //     analyticsQueueServiceRunning = true;
+    //     var event = analyticsQueue.shift();
+    //     submitAnalytics(event[0], event[1], event[2], event[3]);
+    //     setTimeout(analyticsQueueService, analyticsTimeout);
+    // } else {
+    //     analyticsQueueServiceRunning = false;
+    // }
 }
 window['analyticsQueueService'] = analyticsQueueService;
 
@@ -252,7 +252,7 @@ var statEnergyUnlock = 0;
 var statTier4 = 0;
 var statAdvantagePoints = 0;
 var maxAdvantagePointsTotal = 36;
-var maxAdvantagePointsPerPower = 5;
+var maxAdvantagePointsPerPower = 5; 
 var selectedNum = 0;
 var selectedFieldId = null;
 var selectedFieldClass = null;
@@ -475,7 +475,7 @@ function changeName(evnt) {
     document.getElementById('fieldName').firstChild.data = phName;
     showSection('sectionDisplayName');
     changeUpdate();
-    //submitAnalytics(analyticsSetCatagory, 'Name', phName);
+    //submitAnalytics(analyticsSetCategory, 'Name', phName);
 }
 window['changeName'] = changeName;
 // enter key also changes name
@@ -679,7 +679,7 @@ function setSuperStat(id) {
         } else if (oldId != 0) {
             oldSelectField.setAttribute('class', 'button');
         }
-        //submitAnalytics(analyticsSetCatagory, 'SuperStat', phSuperStat[num].name);
+        //submitAnalytics(analyticsSetCategory, 'SuperStat', phSuperStat[num].name);
     }
     setupInnateTalents();
     setupTalents();
@@ -754,7 +754,7 @@ function setupInnateTalents() {
             var a = document.createElement('a');
             a.setAttribute('id', 'selectInnateTalent' + i);
             a.setAttribute('onclick', 'selectConfirmation(\'setInnateTalent(' + i + ')\', \'' + escapeQuotes(dataInnateTalent[i].desc) + '\', \'' + dataInnateTalent[i].tip + '\')');
-            a.innerHTML = '<img src="img/Innate_Talent.png" />&nbsp;' +
+            a.innerHTML = '<img src="img/stat-icons/Innate_Talent.png" />&nbsp;' +
                 dataInnateTalent[i].desc +
                 ((dataInnateTalent[i].extra != null) ?
                  ' <span class="selectSpec">(' + highlightSuperStats(dataInnateTalent[i].extra) + ')</span>' : '');
@@ -800,7 +800,7 @@ function setInnateTalent(id) {
         if (oldId != 0) {
             oldSelectField.setAttribute('class', 'selectButton');
         }
-        //submitAnalytics(analyticsSetCatagory, 'InnateTalent', phInnateTalent[num].name);
+        //submitAnalytics(analyticsSetCategory, 'InnateTalent', phInnateTalent[num].name);
     }
     selectClear();
 }
@@ -810,7 +810,7 @@ function getInnateTalentDefault(num) {
 }
 window['getInnateTalentDefault'] = getInnateTalentDefault;
 function getInnateTalentDesc(id, num) {
-    return '<img src="img/Innate_Talent.png" />&nbsp;' + dataInnateTalent[id].desc +
+    return '<img src="img/stat-icons/Innate_Talent.png" />&nbsp;' + dataInnateTalent[id].desc +
         ((dataInnateTalent[id].extra != null) ? ' <span class="spec">(' + dataInnateTalent[id].extra + ')</span>' : '');
 }
 window['getInnateTalentDesc'] = getInnateTalentDesc;
@@ -860,7 +860,7 @@ function setupTalents() {
             var a = document.createElement('a');
             a.setAttribute('id', 'selectTalent' + i);
             a.setAttribute('onclick', 'selectConfirmation(\'setTalent(' + i + ')\', \'' + escapeQuotes(dataTalent[i].desc) + '\', \'\')');
-            a.innerHTML = '<img src="img/Talent.png" />&nbsp;' + dataTalent[i].desc +
+            a.innerHTML = '<img src="img/stat-icons/Talent.png" />&nbsp;' + dataTalent[i].desc +
                 ((dataTalent[i].extra != null) ?
                  ' <span class="selectSpec">(' + highlightSuperStats(dataTalent[i].extra) + ')</span>' : '');
             setOnmouseoverPopupL2(a, dataTalent[i].tip);
@@ -924,7 +924,7 @@ function setTalent(id) {
         } else if (oldId != 0) {
             oldSelectField.setAttribute('class', 'button');
         }
-        //submitAnalytics(analyticsSetCatagory, 'Talent', phTalent[num].name);
+        //submitAnalytics(analyticsSetCategory, 'Talent', phTalent[num].name);
     }
     selectClear();
 }
@@ -934,7 +934,7 @@ function getTalentDefault(num) {
 }
 window['getTalentDefault'] = getTalentDefault;
 function getTalentDesc(id) {
-    return '<img src="img/Talent.png" />&nbsp;' + dataTalent[id].desc +
+    return '<img src="img/stat-icons/Talent.png" />&nbsp;' + dataTalent[id].desc +
         ((dataTalent[id].extra != null) ? ' <span class="spec">(' + dataTalent[id].extra + ')</span>' : '');
 }
 window['getTalentDesc'] = getTalentDesc;
@@ -1073,7 +1073,7 @@ function setTravelPower(id) {
                 oldSelectField.setAttribute('class', 'button');
             }
         }
-        //submitAnalytics(analyticsSetCatagory, 'TravelPower', phTravelPower[num].name);
+        //submitAnalytics(analyticsSetCategory, 'TravelPower', phTravelPower[num].name);
     }
     selectClear();
 }
@@ -1166,7 +1166,7 @@ function selectFramework(framework) {
     var a = document.createElement('a');
     a.setAttribute('id', 'selectPowerInsert');
     a.setAttribute('onclick', 'selectPowerInsert(' + selectedNum + ')');
-    a.innerHTML = 'Insert';
+    a.innerHTML = 'Push down';
     spanLeft.appendChild(a);
     var span = document.createElement('span');
     span.innerHTML = ' &nbsp; ';
@@ -1286,7 +1286,7 @@ function setPower(id) {
                 advantageField.style.display = '';
             }
         }
-        //submitAnalytics(analyticsSetCatagory, 'Power', phPower[num].name);
+        //submitAnalytics(analyticsSetCategory, 'Power', phPower[num].name);
     }
     selectClear();
     validatePowers();
@@ -1482,7 +1482,7 @@ function setArchetypePower(id) {
         advantageField.innerHTML = advantageTextSpan(1, num, 0);
         setOnmouseoverPopupL2(advantageField, advantageTip(1, num, 0));
         advantageField.style.display = '';
-        //submitAnalytics(analyticsSetCatagory, 'ArchetypePower', phPower[num].name);
+        //submitAnalytics(analyticsSetCategory, 'ArchetypePower', phPower[num].name);
     }
     selectClear();
 }
@@ -1723,7 +1723,7 @@ function selectAdvantageToggle(type, num, id) {
             mask = power.addAdvantage(mask, id);
             field.checked = true;
             setAdvantage(type, num, mask);
-            //submitAnalytics(analyticsSetCatagory, 'Advantage', power.name + ': ' + advantage.name);
+            //submitAnalytics(analyticsSetCategory, 'Advantage', power.name + ': ' + advantage.name);
         }
     }
     selectAdvantageUpdate(type, num);
@@ -2218,7 +2218,7 @@ function selectSpecializationIncrement(num, id) {
         var newMask = specializationTree.incrSpecialization(mask, id);
         setSpecialization(num, newMask);
         selectSpecializationUpdate(num);
-        //submitAnalytics(analyticsSetCatagory, 'Specialization', specializationTree.name + ': ' + specialization.name, specializationPointList[id]);
+        //submitAnalytics(analyticsSetCategory, 'Specialization', specializationTree.name + ': ' + specialization.name, specializationPointList[id]);
     }
 }
 window['selectSpecializationIncrement'] = selectSpecializationIncrement;
@@ -2233,7 +2233,7 @@ function selectSpecializationDecrement(num, id) {
         var newMask = specializationTree.decrSpecialization(mask, id);
         setSpecialization(num, newMask);
         selectSpecializationUpdate(num);
-        //submitAnalytics(analyticsSetCatagory, 'Specialization', specializationTree.name + ': ' + specialization.name, specializationPointList[id]);
+        //submitAnalytics(analyticsSetCategory, 'Specialization', specializationTree.name + ': ' + specialization.name, specializationPointList[id]);
     }
 }
 window['selectSpecializationDecrement'] = selectSpecializationDecrement;
@@ -2263,7 +2263,7 @@ function setSpecializationTree(num, id) {
         }
         selectSpecializationRefresh(num);
         setupSpecializations();
-        //submitAnalytics(analyticsSetCatagory, 'SpecializationTree', phSpecializationTree[num].name);
+        //submitAnalytics(analyticsSetCategory, 'SpecializationTree', phSpecializationTree[num].name);
     }
 }
 window['setSpecializationTree'] = setSpecializationTree;
@@ -2272,7 +2272,7 @@ function setSpecializationMastery(id) {
     else phSpecializationTree[4] = phSpecializationTree[id];
     setupSpecializations();
     selectClear();
-    //if (id > 0) submitAnalytics(analyticsSetCatagory, 'SpecializationMastery', phSpecializationTree[4].name);
+    //if (id > 0) submitAnalytics(analyticsSetCategory, 'SpecializationMastery', phSpecializationTree[4].name);
 }
 window['setSpecializationMastery'] = setSpecializationMastery;
 function getSpecializationMasteryId(id) {
@@ -2451,7 +2451,7 @@ function setArchetype(id) {
     phArchetype = archetype;
     document.getElementById('fieldArchetype').innerHTML = archetype.desc;
     selectClear();
-    //submitAnalytics(analyticsSetCatagory, 'Archetype', archetype.name);
+    //submitAnalytics(analyticsSetCategory, 'Archetype', archetype.name);
 }
 window['setArchetype'] = setArchetype;
 
@@ -2476,6 +2476,7 @@ function parseUrlParams(url) {
     var version = buildVersion;
     var data = [];
     var parts = url.split('?');
+    // Get the parts of the link, v = version, n = name, d = data
     if (parts[1] != undefined) {
         var params = parts[1].split('&');
         for (var i = 0; i < params.length; i++) {
@@ -2515,6 +2516,7 @@ function parseUrlParams(url) {
             pos = applyVersionUpdate(version, 'pos', {'type': 'start', 'pos': pos, 'i': i, 'inc': inc, 'archetype': archetype});
             i = applyVersionUpdate(version, 'i', {'type': 'start', 'pos': pos, 'i': i, 'inc': inc, 'archetype': archetype});
             //codeNum = applyVersionUpdate(version, 'codeNum', {'type': 'start', 'pos': pos, 'i': i, 'inc': inc, 'codeNum': codeNum, 'archetype': archetype});
+            // Data is the big thing we use to save our builds
             switch (pos) {
             case 0:
                 // archetype
@@ -2545,15 +2547,18 @@ function parseUrlParams(url) {
                 break;
             case 4:
                 // innate talent
-                var code1 = applyVersionUpdate(version, 'code1', {'type': 'innateTalent', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'archetype': archetype});
-                var innateTalent = urlCodeToNum(code1);
+                var code1 = applyVersionUpdate(version, 'code1', {'type': 'innateTalent', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'archetype': archetype});
+                var code2 = applyVersionUpdate(version, 'code2', {'type': 'innateTalent', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'archetype': archetype});
+                var innateTalent = urlCodeToNum2(code1 + code2);
                 innateTalent = applyVersionUpdate(version, 'innateTalent', {'type': 'innateTalent', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'archetype': archetype, 'innateTalent': innateTalent});
-                data[i] = numToUrlCode(innateTalent);
+
+                data[i] = numToUrlCode2(innateTalent).at(0);
+                data[i + 1] = numToUrlCode2(innateTalent).at(1);
                 if (finalVersion) {
                     selectInnateTalent(pos - 3);
                     setInnateTalent(innateTalent);
                 }
-                inc = 1;
+                inc = 2;
                 inc = applyVersionUpdate(version, 'inc', {'type': 'innateTalent', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'archetype': archetype, 'innateTalent': innateTalent});
                 break;
             case 5:
@@ -2718,31 +2723,31 @@ function buildLink(submit) {
     var base = window.location.href.replace(/\?.*$/, '');
     //var link = '?v=' + phVersion + '&n=' + encodeURIComponent(phName) + '&a=' + phArchetype.id + '&d=';
     var link = '?v=' + phVersion + '&n=' + encodeURIComponent(phName) + '&d=';
-    if (submit) queueAnalytics(analyticsBuildCatagory, 'Version', phVersion);
-    if (submit && phName != '') queueAnalytics(analyticsBuildCatagory, 'Name', phName);
+    if (submit) queueAnalytics(analyticsBuildCategory, 'Version', phVersion);
+    if (submit && phName != '') queueAnalytics(analyticsBuildCategory, 'Name', phName);
     var params = [];
     params.push(phArchetype.code());
-    if (submit && phArchetype.id > 0) queueAnalytics(analyticsBuildCatagory, 'Archtype', phArchetype.name);
+    if (submit && phArchetype.id > 0) queueAnalytics(analyticsBuildCategory, 'Archtype', phArchetype.name);
     for (var i = 1; i < phSuperStat.length; i++) {
         params.push(phSuperStat[i].code());
-        if (submit && phSuperStat[i].id > 0) queueAnalytics(analyticsBuildCatagory, 'SuperStat', phSuperStat[i].name);
+        if (submit && phSuperStat[i].id > 0) queueAnalytics(analyticsBuildCategory, 'SuperStat', phSuperStat[i].name);
     }
     for (var i = 1; i < phInnateTalent.length; i++) {
         params.push(phInnateTalent[i].code());
-        if (submit && phInnateTalent[i].id > 0) queueAnalytics(analyticsBuildCatagory, 'InnateTalent', phInnateTalent[i].name);
+        if (submit && phInnateTalent[i].id > 0) queueAnalytics(analyticsBuildCategory, 'InnateTalent', phInnateTalent[i].name);
     }
     for (var i = 1; i < phTalent.length; i++) {
         params.push(phTalent[i].code());
-        if (submit && phTalent[i].id > 0) queueAnalytics(analyticsBuildCatagory, 'Talent', phTalent[i].name);
+        if (submit && phTalent[i].id > 0) queueAnalytics(analyticsBuildCategory, 'Talent', phTalent[i].name);
     }
     for (var i = 1; i < phTravelPower.length; i++) {
         params.push(phTravelPower[i].code());
         params.push(numToUrlCode(phTravelPowerAdvantage[i] >> 1));
         if (submit && phTravelPower[i].id > 0) {
-            queueAnalytics(analyticsBuildCatagory, 'TravelPower', phTravelPower[i].name);
+            queueAnalytics(analyticsBuildCategory, 'TravelPower', phTravelPower[i].name);
             var advantageList = phTravelPower[i].getAdvantageList(phTravelPowerAdvantage[i]);
             for (var j = 0; j < advantageList.length; j++) {
-                queueAnalytics(analyticsBuildCatagory, 'TravelPowerAdvantage', phTravelPower[i].name + ': ' + advantageList[j].name);
+                queueAnalytics(analyticsBuildCategory, 'TravelPowerAdvantage', phTravelPower[i].name + ': ' + advantageList[j].name);
             }
         }
     }
@@ -2750,10 +2755,10 @@ function buildLink(submit) {
         params.push(phPower[i].code());
         params.push(numToUrlCode2(phPowerAdvantage[i] >> 1));
         if (submit && phPower[i].id > 0) {
-            queueAnalytics(analyticsBuildCatagory, 'Power', phPower[i].name);
+            queueAnalytics(analyticsBuildCategory, 'Power', phPower[i].name);
             var advantageList = phPower[i].getAdvantageList(phPowerAdvantage[i]);
             for (var j = 0; j < advantageList.length; j++) {
-                queueAnalytics(analyticsBuildCatagory, 'PowerAdvantage', phPower[i].name + ': ' + advantageList[j].name);
+                queueAnalytics(analyticsBuildCategory, 'PowerAdvantage', phPower[i].name + ': ' + advantageList[j].name);
             }
         }
     }
@@ -2762,7 +2767,7 @@ function buildLink(submit) {
             var specializationMasteryId = getSpecializationMasteryId(phSpecializationTree[4].id);
             params.push(numToUrlCode4(specializationMasteryId | (phSpecialization[1] << 4)));
             if (submit && specializationMasteryId> 0 && phSpecializationTree[specializationMasteryId].id > 0)
-                queueAnalytics(analyticsBuildCatagory, 'SpecializationMastery', phSpecializationTree[specializationMasteryId].name);
+                queueAnalytics(analyticsBuildCategory, 'SpecializationMastery', phSpecializationTree[specializationMasteryId].name);
         } else {
             params.push(numToUrlCode4(((phSpecializationTree[i].id == 0) ? 0 : phSpecializationTree[i].id - 8) | (phSpecialization[i] << 4)));
         }
@@ -2771,12 +2776,12 @@ function buildLink(submit) {
             var specializationPointList = phSpecializationTree[i].getSpecializationList(phSpecialization[i]);
             for (var j = 0; j < specializationList.length; j++) {
                 if (specializationPointList[j] > 0)
-                    queueAnalytics(analyticsBuildCatagory, 'Specialization', phSpecializationTree[i].name + ': ' + specializationList[j].name, specializationPointList[j]);
+                    queueAnalytics(analyticsBuildCategory, 'Specialization', phSpecializationTree[i].name + ': ' + specializationList[j].name, specializationPointList[j]);
             }
         }
     }
     var data = params.join('');
-    if (submit) submitAnalytics(analyticsBuildCatagory, 'Data', data);
+    if (submit) submitAnalytics(analyticsBuildCategory, 'Data', data);
     link += data;
     phBuildLink = buildUrl + link;
     //var name = phName;
@@ -3093,7 +3098,7 @@ function setPrefFontFamily(fontFamily) {
     document.getElementById('body').style.fontFamily = fontFamily + ', sans-serif';
     document.getElementById('prefFontFamilyName').innerHTML = fontFamily;
     hideSection('selectionPref');
-    submitAnalytics(analyticsPrefCatagory, 'PrefFontFamily', fontFamily);
+    submitAnalytics(analyticsPrefCategory, 'PrefFontFamily', fontFamily);
 }
 window['setPrefFontFamily'] = setPrefFontFamily;
 function selectPrefFontFamily() {
@@ -3130,7 +3135,7 @@ function setPrefFontSize(fontSize) {
     setCookie('prefFontSize', fontSize, cookieExpireDays);
     document.getElementById('body').style.fontSize = fontSize + '%';
     document.getElementById('prefFontSize').innerHTML = fontSize + '%';
-    submitAnalytics(analyticsPrefCatagory, 'PrefFontSize', fontSize);
+    submitAnalytics(analyticsPrefCategory, 'PrefFontSize', fontSize);
 }
 window['setPrefFontSize'] = setPrefFontSize;
 function selectPrefFontSize(change) {
@@ -3157,7 +3162,7 @@ function setPrefPopupTips(popupTips) {
     prefPopupTips = popupTips;
     setCookie('prefPopupTips', popupTips, cookieExpireDays);
     document.getElementById('prefPopupTipsValue').innerHTML = prefPopupTipsList[popupTips];
-    submitAnalytics(analyticsPrefCatagory, 'PrefPopupTips', prefPopupTipsList[popupTips]);
+    submitAnalytics(analyticsPrefCategory, 'PrefPopupTips', prefPopupTipsList[popupTips]);
 }
 window['setPrefPopupTips'] = setPrefPopupTips;
 function selectPrefPopupTips() {
@@ -3168,7 +3173,7 @@ function setPrefConfirmSelections(confirmSelections) {
     prefConfirmSelections = confirmSelections;
     setCookie('prefConfirmSelections', confirmSelections, cookieExpireDays);
     document.getElementById('prefConfirmSelectionsValue').innerHTML = (confirmSelections ? 'On' : 'Off');
-    submitAnalytics(analyticsPrefCatagory, 'PrefConfirmSelections', (confirmSelections ? 'On' : 'Off'));
+    submitAnalytics(analyticsPrefCategory, 'PrefConfirmSelections', (confirmSelections ? 'On' : 'Off'));
 }
 window['setPrefConfirmSelections'] = setPrefConfirmSelections;
 function selectPrefConfirmSelections() {
@@ -3176,12 +3181,12 @@ function selectPrefConfirmSelections() {
 }
 window['selectPrefConfirmSelections'] = selectPrefConfirmSelections;
 function setPrefAnalytics(analytics) {
-    if (prefAnalytics && !analytics) submitAnalytics(analyticsPrefCatagory, 'PrefAnalytics', 'Off');
+    if (prefAnalytics && !analytics) submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', 'Off');
     prefAnalytics = analytics;
     setCookie('prefAnalytics', analytics, cookieExpireDays);
     document.getElementById('prefAnalyticsValue').innerHTML = (analytics ? 'On' : 'Off');
-    submitAnalytics(analyticsPrefCatagory, 'PrefAnalytics', (analytics ? 'On' : 'Off'));
-    if (prefAnalytics && analytics) submitAnalytics(analyticsPrefCatagory, 'PrefAnalytics', 'On');
+    submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', (analytics ? 'On' : 'Off'));
+    if (prefAnalytics && analytics) submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', 'On');
 }
 window['setPrefAnalytics'] = setPrefAnalytics;
 function selectPrefAnalytics() {

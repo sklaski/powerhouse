@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2016-01-30 20:06:47 (kyle)>
+ * Time-stamp: <2026-05-09 8:24:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -40,6 +40,7 @@ VersionUpdate = function(id, version, funct) {
 var dataVersionUpdate = [];
 dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(dataVersionUpdate.length, 0, null);
 
+/*
 // version 1 => 2
 dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
     dataVersionUpdate.length, 1,
@@ -766,6 +767,7 @@ dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
         case 'specialization': return value['specialization'];
         }
     });
+*/
 
 //==============================================================================
 // Get Methods

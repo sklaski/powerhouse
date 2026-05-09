@@ -5,13 +5,8 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2016-01-30 11:47:59 (kyle)>
+ * Time-stamp: <2026-05-09 8:24:00 (woof-wolf)>
  */
-
-@font-face {
-    font-family: Lexia;
-    src: url('lexia.ttf');
-}
 
 html {
     margin: 0;
@@ -20,11 +15,11 @@ html {
 }
 
 body {
-    background-color: #0D3E5F;          /* dark blue */
-    /* background-color: #0D3E7F;          /\* dark blue *\/ */
+    background-color: #121314;          /* black */
+    /* background-color: #222222;          /\* midnight blue *\/ */
     /* background-color: #0E162B;          /\* dark blue *\/ */
-    color: #FEC530;                     /* yellow */
-    font-family: Lexia, Verdana, Arial, sans-serif;
+    color: #CCCCCC;                     /* light gray */
+    font-family: Verdana, Arial, sans-serif;
     /* font-size: 1.1em; */
     font-size: 100%;
     /* margin: 0 1em 0 1em; */
@@ -33,6 +28,10 @@ body {
     max-width: 1280px;
     min-height: 100%;
     padding: 0 2em;
+}
+
+div#header {
+    margin: 0.4em 0.4em 2em 0.4em;
 }
 
 div#viewHelp {
@@ -44,9 +43,11 @@ div#viewAbout {
 }
 
 .main {
+    margin: 1em 0 0 0;
 }
 
 .title {
+    color: #ff9e30;
     font-size: xx-large;
     margin: 0.5em 0 0 0;
 }
@@ -56,13 +57,13 @@ div#viewAbout {
 }
 
 a, a:link, a:visited {
-    color: #CE6C10;                     /* dark orange */
+    color: #88AAFF;                     /* light sky blue */
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
 }
 a:hover, a:active {
-    color: #F78132;                     /* light orange */
+    color: #88FF88;                     /* light green */
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
@@ -138,20 +139,22 @@ img {
 .footer {
     margin: 0;
     padding: 1em 0 0 0;
+    line-height: 1.5;
     text-align: left;
     width: 98%;
 }
 
 .section {
     margin: 1em 0 0 0;
-    padding: 0.2em;
+    padding: 0.4em;
 }
 
 .selection {
-    background-color: #0D3E7F;          /* dark blue */
+    background-color: #222222;          /* midnight blue */
     border: 1px solid #000000;
     margin: 1em 0 0 0;
-    padding: 0.2em;
+    padding: 0.4em;
+    line-height: 1.5;
     position: absolute;
     /* width: -moz-max-content; */
     -moz-box-shadow: 3px 3px 4px #000;
@@ -169,11 +172,11 @@ img {
 }
 
 .selectionNormal {
-    border: 2px solid #0D3E7F;          /* dark blue (background color) */
+    border: 2px solid #222222;          /* midnight blue (background color) */
 }
 
 .selectionHighlighted {
-    border: 2px solid #CE6C10;          /* dark orange */
+    border: 2px solid #88AAFF;          /* light sky blue */
 }
 
 #selectFramework img {
@@ -247,19 +250,19 @@ td {
 }
 
 .button {
-    color: #CE6C10;                     /* dark orange */
+    color: #88AAFF;                     /* light sky blue */
     font-weight: bold;
     text-decoration: none;
 }
 .selectedButton, a.selectedButton, a.selectedButton:link,
 a.selectedButton:visited, a.selectedButton:hover, a.selectedButton:active {
-    color: #F78132;                     /* light orange */
+    color: #88FF88;                     /* light green */
     font-weight: bold;
     text-decoration: none;
 }
 
 .takenButton {
-    color: #AE4C00;                   /* darker orange */
+    color: #456AC6;                   /* royal blue */
     /* color: #6CCE10;                   /\* dark green *\/ */
     font-weight: bold;
     text-decoration: none;
@@ -282,55 +285,55 @@ a.disabledButton:visited, a.disabledButton:hover, a.disabledButton:active {
 
 .lockedButton, a.lockedButton, a.lockedButton:link,
 a.lockedButton:visited, a.lockedButton:hover, a.lockedButton:active {
-    color: #AE4C00;                     /* darker orange */
-    /* color: #FEC530;                     /\* yellow *\/ */
+    color: #456AC6;                     /* royal blue */
+    /* color: #CCCCCC;                     /\* light gray *\/ */
     font-weight: bold;
     text-decoration: none;
 }
 
 .buttonNote {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light gray */
     font-size: smaller;
 }
 a.buttonNote, a.buttonNote:link, a.buttonNote:visited {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light gray */
     font-size: smaller;
     font-weight: bold;
     text-decoration: none;
 }
 a.buttonNote:hover, a.buttonNote:active {
-    color: #FEF550;                     /* light yellow */
+    color: #AAFFAA;                     /* pale green */
     font-size: smaller;
     font-weight: bold;
     text-decoration: none;
 }
 .selectedButtonNote, a.selectedButtonNote, a.selectedButtonNote:link,
 a.selectedButtonNote:visited, a.selectedButtonNote:hover, a.selectedButtonNote:active {
-    color: #FEF550;                     /* light yellow */
+    color: #AAFFAA;                     /* pale green */
     font-size: smaller;
     font-weight: bold;
     text-decoration: none;
 }
 
 .buttonText {
-    color: #FEC530;                     /* yellow */
+    color: #88AAFF;                     /* light sky blue */
 }
 .disabledButtonText {
     color: #5C5C5C;                     /* dark gray */
 }
 a.buttonText, a.buttonText:link, a.buttonText:visited {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light slate gray */
     font-weight: bold;
     text-decoration: none;
 }
 a.buttonText:hover, a.buttonText:active {
-    color: #FEF550;                     /* light yellow */
+    color: #AAFFAA;                     /* pale green */
     font-weight: bold;
     text-decoration: none;
 }
 .selectedButtonText, a.selectedButtonText, a.selectedButtonText:link,
 a.selectedButtonText:visited, a.selectedButtonText:hover, a.selectedButtonText:active {
-    color: #FEF550;                     /* light yellow */
+    color: #AAFFAA;                     /* pale green */
     font-weight: bold;
     text-decoration: none;
 }
@@ -342,7 +345,7 @@ a.disabledButtonText:visited, a.disabledButtonText:hover, a.disabledButtonText:a
 }
 
 .note {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light gray */
     font-size: smaller;
     font-weight: normal;
 }
@@ -353,7 +356,7 @@ a.disabledButtonText:visited, a.disabledButtonText:hover, a.disabledButtonText:a
 }
 
 .spec {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light gray */
     font-size: x-small;
     font-weight: normal;
 }
@@ -364,17 +367,18 @@ a.disabledButtonText:visited, a.disabledButtonText:hover, a.disabledButtonText:a
 }
 
 .selectSpec {
-    color: #FEC530;                     /* yellow */
+    color: #7f7f7f;                     /* light gray */
     font-size: small;
     font-weight: normal;
 }
 
 .specHighlight {
-    color: #FEF550;                     /* light yellow */
+    color: #eeffec;           /* white green */
     font-weight: bold;
 }
 
 .advantage {
+    color: #8888BB;
     font-size: smaller;
 }
 
@@ -383,8 +387,8 @@ a.disabledButtonText:visited, a.disabledButtonText:hover, a.disabledButtonText:a
 }
 
 .specialization img {
-    height: 20px;
-    width: auto;
+    height: auto;
+    width: 20px;
 }
 
 .specializationPoints td {
@@ -392,12 +396,12 @@ a.disabledButtonText:visited, a.disabledButtonText:hover, a.disabledButtonText:a
 }
 
 .link {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light gray */
     /* font-size: small; */
 }
 
 .linkRef {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light gray */
     font-size: xx-small;
 }
 
@@ -425,12 +429,12 @@ textarea {
 }
 
 .invisible a {
-    color: #0D3E5F;                     /* dark blue */
+    color: #121314;                     /* black */
     font-size: small;
 }
 
 .forumHeader {
-    color: #F78112;                     /* lighter dark orange */
+    color: #CCCCCC;                     /* light gray */
 }
 
 .forumLink {
@@ -438,15 +442,15 @@ textarea {
 }
 
 .forumFirst {
-    color: #F78112;                     /* lighter dark orange */
+    color: #CCCCCC;                     /* light gray */
 }
 
 .forumSecond {
-    color: #FEC530;                     /* yellow */
+    color: #CCCCCC;                     /* light gray */
 }
 
 .forumThird {
-    color: #CE6C10;                     /* dark orange */
+    color: #88AAFF;                     /* light sky blue */
     font-size: small;
 }
 
