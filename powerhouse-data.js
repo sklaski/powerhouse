@@ -4023,6 +4023,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
+// Night Warrior tooltip showing as T2 in game, but is actually T1.
+// When it is updated in game, remove this comment.
+dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 11, pow++, 2, dataPowerAlias['Night Warrior'].tip);
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
+dataRequireGroupPower[dataPower.length-1] = 'martial arts';
+
 dataPower[dataPower.length] = new Power(dataPower.length, 'Form of the Tempest', '<img src="img/power-icons/dual-blades/DualBlades_FormOfTheTempest.png" />&nbsp;Form of the Tempest', 3, 11, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
@@ -4116,13 +4125,6 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Spikes', 'Spikes', 2, null, null));
-dataRequireGroupPower[dataPower.length-1] = 'martial arts';
-
-dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 11, pow++, 2, dataPowerAlias['Night Warrior'].tip);
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 //------------------------------------------------------------------------------
@@ -4377,6 +4379,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
+// Night Warrior tooltip showing as T2 in game, but is actually T1.
+// When it is updated in game, remove this comment.
+dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 12, pow++, 2, dataPowerAlias['Night Warrior'].tip);
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
+dataRequireGroupPower[dataPower.length-1] = 'martial arts';
+
 dataPower[dataPower.length] = new Power(dataPower.length, 'Form of the Tiger', '<img src="img/power-icons/fighting-claws/FightingClaws_FormOfTheTiger.png" />&nbsp;Form of the Tiger', 3, 12, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
@@ -4497,13 +4508,6 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Spikes', 'Spikes', 2, null, null));
-dataRequireGroupPower[dataPower.length-1] = 'martial arts';
-
-dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 12, pow++, 2, dataPowerAlias['Night Warrior'].tip);
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 //------------------------------------------------------------------------------
@@ -4763,6 +4767,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
+// Night Warrior tooltip showing as T2 in game, but is actually T1.
+// When it is updated in game, remove this comment.
+dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 13, pow++, 2, dataPowerAlias['Night Warrior'].tip);
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
+dataRequireGroupPower[dataPower.length-1] = 'martial arts';
+
 dataPower[dataPower.length] = new Power(dataPower.length, 'Form of the Swordsman', '<img src="img/power-icons/single-blade/SingleBlade_FormOfTheSwordsman.png" />&nbsp;Form of the Swordsman', 3, 13, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
@@ -4871,13 +4884,6 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Spikes', 'Spikes', 2, null, null));
-dataRequireGroupPower[dataPower.length-1] = 'martial arts';
-
-dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 13, pow++, 2, dataPowerAlias['Night Warrior'].tip);
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 //------------------------------------------------------------------------------
@@ -5144,6 +5150,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
+// Night Warrior tooltip showing as T2 in game, but is actually T1.
+// When it is updated in game, remove this comment.
+dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 14, pow++, 2, dataPowerAlias['Night Warrior'].tip);
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
+dataRequireGroupPower[dataPower.length-1] = 'martial arts';
+
 dataPower[dataPower.length] = new Power(dataPower.length, 'Form of the Master', '<img src="img/power-icons/unarmed/Unarmed_FormOfTheMaster.png" />&nbsp;Form of the Master', 3, 14, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
@@ -5243,13 +5258,6 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Spikes', 'Spikes', 2, null, null));
-dataRequireGroupPower[dataPower.length-1] = 'martial arts';
-
-dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Night Warrior'].name, dataPowerAlias['Night Warrior'].desc, 3, 14, pow++, 2, dataPowerAlias['Night Warrior'].tip);
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Silent Running', 'Silent Running', 1, null, null));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 //------------------------------------------------------------------------------

@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-09 8:24:00 (woof-wolf)>
+ * Time-stamp: <2026-05-09 11:50:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -768,6 +768,61 @@ dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
         }
     });
 */
+
+// Version 1 => 2
+// Minor update to change Night Warrior from T2 to T1.
+dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
+    dataVersionUpdate.length, 2,
+    function(thing, value) {
+        var codeNum1 = (value['code1'] == undefined) ? 0 : urlCodeToNum(value['code1']); // framework
+        var codeNum2 = (value['code2'] == undefined) ? 0 : urlCodeToNum(value['code2']); // power
+        // var codeNum3 = (value['code3'] == undefined) ? 0 : urlCodeToNum(value['code3']);
+        // var codeNum4 = (value['code4'] == undefined) ? 0 : urlCodeToNum(value['code4']);
+        switch (thing) {
+        case 'data': return value['data'];
+        case 'pos': return value['pos'];
+        case 'i': return value['i'];
+        case 'inc': return value['inc'];
+        case 'code1': return value['code1'];
+        case 'code2': return value['code2'];
+        case 'code3': return value['code3'];
+        case 'code4': return value['code4'];
+        case 'archetype': return value['archetype'];
+        case 'superStat': return value['superStat'];
+        case 'innateTalent': return value['innateTalent'];
+        case 'talent': return value['talent'];
+        case 'travelPower': return value['travelPower'];
+        case 'framework': return value['framework'];
+        case 'power':
+            var power = value['power'];
+            // Logic: Night Warrior swapped places from high power number to low power number.
+            // If the power before was between those numbers, then it should be incremented by 1.
+            // If the power was Night Warriors old power number, then it should be changed to Night Warriors new power number.
+
+            // Dual Blade NW ✓
+            if (codeNum1 == 11 && codeNum2 == 27) power = 15;
+            // Fighting Claws NW ✓
+            if (codeNum1 == 12 && codeNum2 == 31) power = 16;
+            // Single Blade NW ✓
+            if (codeNum1 == 13 && codeNum2 == 31) power = 17;
+            // Unarmed NW ✓
+            if (codeNum1 == 14 && codeNum2 == 30) power = 17;
+
+            // Dual Blade Increment ✓
+            if ((codeNum1 == 11 && codeNum2 >= 15 && codeNum2 <= 26)
+            // Fighting Claws Increment ✓
+             || (codeNum1 == 12 && codeNum2 >= 16 && codeNum2 <= 30)
+            // Single Blade Increment ✓
+             || (codeNum1 == 13 && codeNum2 >= 17 && codeNum2 <= 30)
+            // Unarmed Increment ✓
+             || (codeNum1 == 14 && codeNum2 >= 17 && codeNum2 <= 29)) ++power;
+
+            return power;
+        case 'mask': return value['mask'];
+        case 'specializationTree': return value['specializationTree'];
+        case 'specialization': return value['specialization'];
+        }
+});
 
 //==============================================================================
 // Get Methods
