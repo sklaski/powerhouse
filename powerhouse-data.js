@@ -903,11 +903,73 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 
 // Energy Projector Ultimates
 
-dataPowerAlias['Energy Storm'] = new PowerAlias('Energy Storm', 'Energy Storm', '<img src="img/power-icons/energy-projector/EnergyProjector_EnergyStorm.png" />&nbsp;Energy Storm', null);
+const energyStormHtml = 'ENERGY STORM<br>\
+Energy Projector<br><br>\
+CONE DEBUFF - SINGLE TARGET<br><br>\
+CONSUME ENERGY<br>\
+<div style="display:flex; justify-content:space-between;">\
+  <div>Every 0.5 sec<br>0.5 sec activate time (1.5 max)</div>\
+  <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 45 degree Cone</div>\
+</div><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>All enemies in a forward arc are slowed.</li>\
+  <li>For each enemy slowed, you gain a stack of the Infused Energy buff, which increases all damage you deal for a short duration.</li>\
+  <li>While affected by Infused Energy, this power becomes Unleashed Tempest.</li>\
+  <li>If an affected enemy is under the effect of Clinging Flames, Negative Ions, or Chill, that effect is consumed and grants an appropriate type of Energy Charge.</li>\
+  <li>If an affected enemy is protected by a force field type effect, such as Containment Field, that effect is significantly degraded and you are granted Energy Charge - Force.</li>\
+  <li>This power has a 30 second cooldown that begins when the Infused Energy buffs expire.</li>\
+</ul><br>\
+UNLEASHED TEMPEST<br>\
+<div style="display:flex; justify-content:space-between;">\
+  <div>1 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Extremely powerful single target Particle attack.</li>\
+  <li>If enhanced by Energy Charge - Fire, this attack detonates in an area of effect on contact with the target.</li>\
+  <li>If enhanced by Energy Charge - Ice, this attack gains a significant bonus to critical severity.</li>\
+  <li>If enhanced by Energy Charge - Electricity, this attack will chain to a second target.</li>\
+  <li>If enhanced by Energy Charge - Force, this attack significantly reduces the target\\\'s damage for a short duration.</li>\
+  <li>Each type of Energy Charge increases the damage done by Unleashed Tempest and reduces its energy cost.</li>\
+  <li>Activating Unleashed Tempest consumes all instances of the Infused Energy buff and triggers the cooldown on Consume Energy.</li>\
+</ul>';
 
-dataPowerAlias['Gravity Driver'] = new PowerAlias('Gravity Driver', 'Gravity Driver', '<img src="img/power-icons/energy-projector/EnergyProjector_GravityDriver.png" />&nbsp;Gravity Driver', null);
+dataPowerAlias['Energy Storm'] = new PowerAlias('Energy Storm', 'Energy Storm', '<img src="img/power-icons/energy-projector/EnergyProjector_EnergyStorm.png" />&nbsp;Energy Storm', energyStormHtml);
 
-dataPowerAlias['Fractal Aegis'] = new PowerAlias('Fractal Aegis', 'Fractal Aegis', '<img src="img/power-icons/energy-projector/EnergyProjector_FractalAegis.png" />&nbsp;Fractal Aegis', null);
+const gravityDriverHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Energy Projector<br>2.5 sec charge (2.5 min)<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (10 max)<br>80 feet; 40 foot Sphere<br>60 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - DAMAGE RESISTANCE DEBUFF<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Deals Crushing Damage to foes within 20ft of your primary target.</li>\
+  <li>Deals reduced Crushing Damage to foes further than 20ft and within 40ft.</li>\
+  <li>Knocks Down affected targets.</li>\
+  <li>Applies Overpower to affected targets, reducing their resistance to all damage by 20% for 15 sec.</li>\
+</ul>';
+
+dataPowerAlias['Gravity Driver'] = new PowerAlias('Gravity Driver', 'Gravity Driver', '<img src="img/power-icons/energy-projector/EnergyProjector_GravityDriver.png" />&nbsp;Gravity Driver', gravityDriverHtml);
+
+const fractalAegisHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Energy Projector<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (10 max)<br>25 foot Sphere<br>60 seconds recharge</div>\
+</div><br>\
+AOE DAMAGE - KNOCK - DEFENSE BUFF<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Deals Cold Damage to nearby targets.</li>\
+  <li>Knocks Up foes 17ft.</li>\
+  <li>Applies Chill to affected targets, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
+  <li>For each target hit, increases your resistance to Damage and Knock effects for 20 sec.</li>\
+  <li>For each Henchman or Villain hit, you gain 14%.</li>\
+  <li>For each Master Villain, Super Villain or Enforcer hit, you gain 21%.</li>\
+  <li>For each Legendary or Cosmic hit, you gain 73%.</li>\
+</ul>';
+
+dataPowerAlias['Fractal Aegis'] = new PowerAlias('Fractal Aegis', 'Fractal Aegis', '<img src="img/power-icons/energy-projector/EnergyProjector_FractalAegis.png" />&nbsp;Fractal Aegis', fractalAegisHtml);
 
 dataPowerAlias['Storm Strike'] = new PowerAlias('Storm Strike', 'Storm Strike', '<img src="img/power-icons/energy-projector/EnergyProjector_StormStrike.png" />&nbsp;Storm Strike', null);
 
@@ -942,8 +1004,19 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 // Electricity: Energy Builder
 //------------------------------------------------------------------------------
+const electricBoltHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>0.35-0.55 sec</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet</div>\
+</div><br>\
+ENERGY BUILDER - RANGED DAMAGE<br><br>\
+CLICK<br>\
+<ul>\
+  <li>Single target Electrical damage.</li>\
+  <li>Generates Energy.</li>\
+  <li>Each shot has a 25% chance to apply Negative Ions to target.</li>\
+</ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Bolt', '<img src="img/power-icons/electricity/Electricity_ElectricBolt.png" />&nbsp;Electric Bolt', 1, 1, pow++, -1, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Bolt', '<img src="img/power-icons/electricity/Electricity_ElectricBolt.png" />&nbsp;Electric Bolt', 1, 1, pow++, -1, electricBoltHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -954,8 +1027,22 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 //------------------------------------------------------------------------------
 // Electricity: Tier 0
 //------------------------------------------------------------------------------
+const chainLightningHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>1.33 sec charge<br>0.67 sec activate</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - BLAST - ARC<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Deals Electrical Damage.</li>\
+  <li>44-100% chance to apply Negative Ions for 20 seconds.</li>\
+  <li>Guaranteed to apply Negative Ions if energy is above 90%.</li>\
+  <li>Charging causes the power to Arc to a target within 50 feet.</li>\
+  <li>Fully charged: Arcs to up to 2 targets.</li>\
+  <li>If this power or an Arc from it hits a target affected by Negative Ions, it doubles the amount of targets the Arc can chain to.</li>\
+</ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Chain Lightning', '<img src="img/power-icons/electricity/Electricity_ChainLightning.png" />&nbsp;Chain Lightning', 1, 1, pow++, 0, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Chain Lightning', '<img src="img/power-icons/electricity/Electricity_ChainLightning.png" />&nbsp;Chain Lightning', 1, 1, pow++, 0, chainLightningHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -968,8 +1055,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 //------------------------------------------------------------------------------
 // Electricity: Tier 1
 //------------------------------------------------------------------------------
+const sparkstormHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - ARC<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Electrical Damage every 0.5 sec to nearby targets.</li>\
+  <li>Each hit has a 10% chance to Arc a target within 25 feet, dealing Electrical Damage to that target.</li>\
+  <li>Each hit has a 10% chance to apply Negative Ions.</li>\
+  <li>Knocks Down targets affected by your Negative Ions. This completes a Circuit and consumes your Negative Ions.</li>\
+</ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sparkstorm', '<img src="img/power-icons/electricity/Electricity_Sparkstorm.png" />&nbsp;Sparkstorm', 1, 1, pow++, 1, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sparkstorm', '<img src="img/power-icons/electricity/Electricity_Sparkstorm.png" />&nbsp;Sparkstorm', 1, 1, pow++, 1, sparkstormHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -979,13 +1078,38 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Particle
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of the Storm', '<img src="img/power-icons/electricity/Electricity_SigilsOfTheStorm.png" />&nbsp;Sigils of the Storm', 1, 1, pow++, 1, null);
+const sigilsOfTheStormHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>1.33 sec charge (1.33 min)<br>30 seconds recharge<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self</div>\
+</div><br>\
+SIGILS - RANGED AOE DAMAGE<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>When fully charged, summons 5 Storm Sigils near your location.</li>\
+  <li>Foes within 15 ft of a Storm Sigil are struck by lightning, dealing Electrical Damage every 2 seconds.</li>\
+  <li>Each hit has a 10% chance to Arc to an additional target.</li>\
+  <li>Each hit has a 10% chance to apply Negative Ions to affected targets for 20 seconds.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of the Storm', '<img src="img/power-icons/electricity/Electricity_SigilsOfTheStorm.png" />&nbsp;Sigils of the Storm', 1, 1, pow++, 1, sigilsOfTheStormHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mystic Transference', 'Mystic Transference', 1, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Electrical Current', '<img src="img/power-icons/electricity/Electricity_ElectricalCurrent.png" />&nbsp;Electrical Current', 1, 1, pow++, 1, null);
+const electricalCurrentHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Every 0.5 sec<br>0.83 sec activate time (5 max)</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
+</div><br>\
+RANGED AOE DAMAGE - ARC<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Electrical Damage every 0.5 sec to all targets.</li>\
+  <li>Has a 15% chance every hit to apply Negative Ions to the target.</li>\
+  <li>When hitting a target affected by Negative Ions, has a 15% chance to Arc to a target within 25 feet, dealing Electrical Damage to that target.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Electrical Current', '<img src="img/power-icons/electricity/Electricity_ElectricalCurrent.png" />&nbsp;Electrical Current', 1, 1, pow++, 1, electricalCurrentHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -994,7 +1118,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Unlimite
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Strike', '<img src="img/power-icons/electricity/Electricity_LightningStrike.png" />&nbsp;Lightning Strike', 1, 1, pow++, 1, null);
+const lightningStrikeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>0.35 sec activate time<br>3 seconds recharge</div>\
+  <div style="text-align:right;">Targets foe<br>60 foot lunge</div>\
+</div><br>\
+LUNGE - SNARE - STUN<br><br>\
+<ul>\
+  <li>Lunges at the target, dealing Electrical Damage and Snaring them, reducing their movement speed for 13 sec.</li>\
+  <li>Stuns your target if you Lunge from more than 20ft away and they are not currently controlled.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Strike', '<img src="img/power-icons/electricity/Electricity_LightningStrike.png" />&nbsp;Lightning Strike', 1, 1, pow++, 1, lightningStrikeHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1004,37 +1138,118 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Sheath', '<img src="img/power-icons/electricity/Electricity_ElectricSheath.png" />&nbsp;Electric Sheath', 1, 1, pow++, 1, null);
+const electricSheathHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Instant<br>1 minutes 30 seconds recharge</div>\
+  <div style="text-align:right;">Targets self</div>\
+</div><br>\
+ACTIVE OFFENSE<br><br>\
+<ul>\
+  <li>Grants +42% all damage strength.</li>\
+  <li>Your Equilibrium is increased by 12%, your Energy Generation is increased by 100%, and your Energy Decay is reduced by 83% for 15 sec.</li>\
+  <li>Whenever you take damage, you gain Energy.</li>\
+  <li>Applies Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+  <li>Has a 25% chance to apply Negative Ions to targets that damage you.</li>\
+  <li>If you are affected by the Electric Surge debuff, activating this power removes it and prevents it from being applied for the duration of this power.</li>\
+  <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Sheath', '<img src="img/power-icons/electricity/Electricity_ElectricSheath.png" />&nbsp;Electric Sheath', 1, 1, pow++, 1, electricSheathHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Matter - Energy Union', 'Matter - Energy Union', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Form', '<img src="img/power-icons/electricity/Electricity_ElectricForm.png" />&nbsp;Electric Form', 1, 1, pow++, 1, null);
+const electricFormHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity</div>\
+  <div style="text-align:right;">Slotted Offensive Passive</div>\
+</div><br>\
+PASSIVE<br><br>\
+<ul>\
+  <li>You deal additional Energy Damage.</li>\
+  <li>You gain Energy Damage Resistance and an additional Electrical Damage Resistance.</li>\
+  <li>When you take Electrical Damage you gain 10% of that damage in Energy.</li>\
+  <li>Your base Energy Equilibrium is increased by 83% and your Energy Recovery is increased by 100%.</li>\
+  <li>When you strike a target that is affected by your Negative Ions, heals you for +Health Points. This can occur up to 3 times in 5 seconds.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Form', '<img src="img/power-icons/electricity/Electricity_ElectricForm.png" />&nbsp;Electric Form', 1, 1, pow++, 1, electricFormHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Power Source', '<img src="img/power-icons/electricity/Electricity_PowerSource.png" />&nbsp;Power Source', 1, 1, pow++, 1, null);
+const powerSourceHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>1 sec activate time</div>\
+  <div style="text-align:right;">Targets self</div>\
+</div><br>\
+FORM<br><br>\
+<ul>\
+  <li>Activating this power grants a stack of the Untapped Power buff, which increases Ranged damage and Melee damage to a lesser degree.</li>\
+  <li>Grants energy when gaining a stack of Untapped Power.</li>\
+  <li>Scales with ENDURANCE.</li>\
+</ul><br>\
+TRIGGER CONDITIONS<br><br>\
+<ul>\
+  <li>Chance to gain another instance of Untapped Power whenever one of your attacks Arcs to another target.</li>\
+  <li>Additional chance to gain another instance whenever you apply Negative Ions or complete a Circuit.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Power Source', '<img src="img/power-icons/electricity/Electricity_PowerSource.png" />&nbsp;Power Source', 1, 1, pow++, 1, powerSourceHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Shield', '<img src="img/power-icons/electricity/Electricity_ElectricShield.png" />&nbsp;Electric Shield', 1, 1, pow++, 1, null);
+const electricShieldHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Instant</div>\
+  <div style="text-align:right;">Affects foe<br>10 foot Sphere</div>\
+</div><br>\
+BLOCK<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Grants 250% bonus resistance to all damage while blocking.</li>\
+  <li>Your movement speed is reduced by 100% and your resistance to Hold and Knock effects is increased by 100%.</li>\
+  <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
+  <li>Deals Electrical Damage every 0.5 sec to nearby targets.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Electric Shield', '<img src="img/power-icons/electricity/Electricity_ElectricShield.png" />&nbsp;Electric Shield', 1, 1, pow++, 1, electricShieldHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Electric Vengeance', 'Electric Vengeance', 3, null, null));
 
+const ionicReverberationHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Instant</div>\
+  <div style="text-align:right;"></div>\
+</div><br>\
+INNATE PASSIVE - SECONDARY ENERGY UNLOCK<br><br>\
+<ul>\
+  <li>Does not need to be slotted in order to function.</li>\
+  <li>Generates Energy each time one of your Electrical attacks consumes Negative Ions.</li>\
+  <li>Generates Energy whenever one of your powers utilizes Negative Ions without consuming it. This Energy gain is smaller than that of consuming Negative Ions.</li>\
+  <li>This Energy gain scales with your Recovery and Endurance.</li>\
+</ul>';
+
 // Energy Unlock
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ionic Reverberation', '<img src="img/power-icons/electricity/Electricity_IonicReverberation.png" />&nbsp;Ionic Reverberation', 1, 1, pow++, 1, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ionic Reverberation', '<img src="img/power-icons/electricity/Electricity_IonicReverberation.png" />&nbsp;Ionic Reverberation', 1, 1, pow++, 1, ionicReverberationHtml);
 dataEnergyUnlockPower[dataPower.length-1] = true;
 
 //------------------------------------------------------------------------------
 // Electricity: Tier 2
 //------------------------------------------------------------------------------
+const stormSummonerHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Every 1 sec<br>1 sec activate time (3 sec max)</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Electrical Damage every 1 second to targets.</li>\
+  <li>Has a 25% chance per hit to apply Negative Ions.</li>\
+  <li>When fully maintained, foes are struck by an additional blast that deals Electrical Damage to them and Electrical Damage to other foes within 10 feet.</li>\
+  <li>If fully maintained and the target is affected by Negative Ions, applies the Superconductor debuff, reducing Electrical resistance on the target for a short time.</li>\
+</ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Storm Summoner', '<img src="img/power-icons/electricity/Electricity_StormSummoner.png" />&nbsp;Storm Summoner', 1, 1, pow++, 2, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Storm Summoner', '<img src="img/power-icons/electricity/Electricity_StormSummoner.png" />&nbsp;Storm Summoner', 1, 1, pow++, 2, stormSummonerHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1044,7 +1259,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Particle
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Thunderstrike', '<img src="img/power-icons/electricity/Electricity_Thunderstrike.png" />&nbsp;Thunderstrike', 1, 1, pow++, 2, null);
+const thunderstrikeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - ARC - CIRCUIT<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Deals Electrical Damage to your primary target and Electrical Damage to secondary targets.</li>\
+  <li>When hitting a target affected by Negative Ions, consumes Negative Ions and Arcs to a target within 25 feet, dealing Electrical Damage to that target.</li>\
+  <li>After 2 sec applies Negative Ions to the main target, and has a chance based on charge time to apply it to additional targets.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Thunderstrike', '<img src="img/power-icons/electricity/Electricity_Thunderstrike.png" />&nbsp;Thunderstrike', 1, 1, pow++, 2, thunderstrikeHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1056,7 +1283,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Thunderstrike', 'UPVD: Ultimate Thunderstrike', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Electrocute', '<img src="img/power-icons/electricity/Electricity_Electrocute.png" />&nbsp;Electrocute', 1, 1, pow++, 2, null);
+const electrocuteHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>2.33 sec charge (2.33 min)<br>0.67 sec activate</div>\
+  <div style="text-align:right;">15 seconds recharge time<br>Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere</div>\
+</div><br>\
+HOLD - ARC<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Paralyzes targets for 15 sec.</li>\
+  <li>Applies Negative Ions to your primary target.</li>\
+  <li>Has a 25% chance to apply Negative Ions to secondary targets.</li>\
+  <li>The electricity will Arc to foes within 25 feet, dealing Electrical Damage to them.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Electrocute', '<img src="img/power-icons/electricity/Electricity_Electrocute.png" />&nbsp;Electrocute', 1, 1, pow++, 2, electrocuteHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1064,19 +1304,55 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Supercon
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Blinding Light', '<img src="img/power-icons/electricity/Electricity_BlindingLight.png" />&nbsp;Blinding Light', 1, 1, pow++, 2, null);
+const blindingLightHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>1 sec activate time</div>\
+  <div style="text-align:right;">Targets foe; Affects foe that is not destructible<br>100 feet<br>45 seconds recharge</div>\
+</div><br>\
+THREAT WIPE - STEALTH<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Wipes your threat from your target.</li>\
+  <li>Places you in Stealth for 4 sec.</li>\
+  <li>Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Blinding Light', '<img src="img/power-icons/electricity/Electricity_BlindingLight.png" />&nbsp;Blinding Light', 1, 1, pow++, 2, blindingLightHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ball Lightning', '<img src="img/power-icons/electricity/Electricity_BallLightning.png" />&nbsp;Ball Lightning', 1, 1, pow++, 2, null);
+const ballLightningHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - ARC<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Summons a Ball Lightning that will hover near your target, dealing Electrical Damage every 1 sec to foes within 10ft.</li>\
+  <li>Has a 25% chance to apply Negative Ions to the target.</li>\
+  <li>When hitting a target affected by Negative Ions, Ball Lightning has a 33% chance to Arc to a target within 10ft, dealing Electrical Damage.</li>\
+  <li>After 10 sec, detonates and deals Electrical Damage to foes within 15ft.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ball Lightning', '<img src="img/power-icons/electricity/Electricity_BallLightning.png" />&nbsp;Ball Lightning', 1, 1, pow++, 2, ballLightningHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Triplicity', 'Triplicity', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Supercharged', 'Supercharged', 1, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Electrical Siphon', '<img src="img/power-icons/electricity/Electricity_ElectricalSiphon.png" />&nbsp;Electrical Siphon', 1, 1, pow++, 2, null);
+const electricalSiphonHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+TEAM HEAL - CIRCUIT<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Consumes all of your Negative Ions on the target.</li>\
+  <li>Heals +Health Points for every one of your Negative Ions consumed.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Electrical Siphon', '<img src="img/power-icons/electricity/Electricity_ElectricalSiphon.png" />&nbsp;Electrical Siphon', 1, 1, pow++, 2, electricalSiphonHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1084,7 +1360,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Charged 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Neuroelectric Pulse', '<img src="img/power-icons/electricity/Electricity_NeuroelectricPulse.png" />&nbsp;Neuroelectric Pulse', 1, 1, pow++, 2, null);
+const neuroelectricPulseHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - ENERGY GAIN - ROOT - RUNE<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Deals Electrical Damage to all targets and roots them for 20 seconds.</li>\
+  <li>After the power expires, creates a Static Field for 10 seconds.</li>\
+  <li>Standing in the Static Field grants you and up to 10 nearby players +Energy every 1 second.</li>\
+  <li>Standing in the Static Field depletes Energy from foes.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Neuroelectric Pulse', '<img src="img/power-icons/electricity/Electricity_NeuroelectricPulse.png" />&nbsp;Neuroelectric Pulse', 1, 1, pow++, 2, neuroelectricPulseHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1092,7 +1381,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Recharge
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Storm Cloud', '<img src="img/power-icons/electricity/Electricity_StormCloud.png" />&nbsp;Storm Cloud', 1, 1, pow++, 2, null);
+const stormCloudHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 25 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - NEGATIVE IONS - ARC<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Deals Electrical Damage and applies Stormy Weather to targets for 16 seconds.</li>\
+  <li>When dealing direct Electrical damage to targets affected by Stormy Weather, has a 50% chance to Arc to a target within 25 ft. This effect can occur once every 0.25 sec.</li>\
+  <li>Has a 15% chance to apply Negative Ions to affected targets. This effect can occur once every 0.25 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Storm Cloud', '<img src="img/power-icons/electricity/Electricity_StormCloud.png" />&nbsp;Storm Cloud', 1, 1, pow++, 2, stormCloudHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1104,7 +1405,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 // Electricity: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Arc', '<img src="img/power-icons/electricity/Electricity_LightningArc.png" />&nbsp;Lightning Arc', 1, 1, pow++, 3, null);
+const lightningArcHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - ARC<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Electrical Damage every 0.5 sec to the target.</li>\
+  <li>Has a 10% chance each hit to Arc to a target within 25 ft.</li>\
+  <li>If your target is affected by Negative Ions, has a 20% chance each hit to Arc to a target.</li>\
+  <li>Deals an additional 20% damage to targets affected by Negative Ions.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Arc', '<img src="img/power-icons/electricity/Electricity_LightningArc.png" />&nbsp;Lightning Arc', 1, 1, pow++, 3, lightningArcHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1113,7 +1427,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Lightning Bolter', 'PVD: Lightning Bolter', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Gigabolt', '<img src="img/power-icons/electricity/Electricity_Gigabolt.png" />&nbsp;Gigabolt', 1, 1, pow++, 3, null);
+const gigaboltHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>2.33 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
+</div><br>\
+RANGED AOE DAMAGE - ARC - CIRCUIT<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Has a chance to apply Negative Ions to affected targets for 20 sec.</li>\
+  <li>Has a 50% chance to Arc to a target within 25 feet. Hitting a target affected by Negative Ions increases the chance to Arc.</li>\
+  <li>Charging this power will cause you to be affected by an Electric Surge, preventing you from charging this power again for 8 sec.</li>\
+  <li>When fully charged, hitting a target affected by Negative Ions will consume Negative Ions and will cause it to Arc to additional nearby targets.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Gigabolt', '<img src="img/power-icons/electricity/Electricity_Gigabolt.png" />&nbsp;Gigabolt', 1, 1, pow++, 3, gigaboltHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1121,7 +1448,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Death Ar
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Storm', '<img src="img/power-icons/electricity/Electricity_LightningStorm.png" />&nbsp;Lightning Storm', 1, 1, pow++, 3, null); 
+const lightningStormHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - ARC<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Electrical Damage every 0.5 sec to all targets.</li>\
+  <li>Has a 15% chance to apply Negative Ions to the target.</li>\
+  <li>When hitting a target affected by Negative Ions, has a 25% chance to Arc a target within 25 ft.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Storm', '<img src="img/power-icons/electricity/Electricity_LightningStorm.png" />&nbsp;Lightning Storm', 1, 1, pow++, 3, lightningStormHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1131,7 +1470,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sundering Breath', '<img src="img/power-icons/electricity/Electricity_SunderingBreath.png" />&nbsp;Sundering Breath', 1, 1, pow++, 3, null); 
+const sunderingBreathHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>Every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
+</div><br>\
+RANGED AOE DAMAGE<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Electrical Damage every 0.5 sec to all targets.</li>\
+  <li>Deals additional Electrical Damage to targets affected by your Negative Ions. This completes a Circuit and consumes your Negative Ions.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sundering Breath', '<img src="img/power-icons/electricity/Electricity_SunderingBreath.png" />&nbsp;Sundering Breath', 1, 1, pow++, 3, sunderingBreathHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1139,7 +1489,22 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Power Co
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Thundering Return', '<img src="img/power-icons/electricity/Electricity_ThunderingReturn.png" />&nbsp;Thundering Return', 1, 1, pow++, 3, null); 
+const thunderingReturnHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Electricity<br>2 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
+</div><br>\
+SELF RESURRECTION - HEAL - ENERGY GAIN<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Can only be used while defeated.</li>\
+  <li>Revives you and heals you for +50% Health Points.</li>\
+  <li>For 20 seconds, defeating any enemy grants +8.3% Health Points.</li>\
+  <li>For 20 seconds, foes that attack you are affected by Negative Ions.</li>\
+  <li>For 20 seconds, you gain 10% of damage taken as Energy.</li>\
+  <li>Places all resurrection powers on a 300 second cooldown.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Thundering Return', '<img src="img/power-icons/electricity/Electricity_ThunderingReturn.png" />&nbsp;Thundering Return', 1, 1, pow++, 3, thunderingReturnHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
