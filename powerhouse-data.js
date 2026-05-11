@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-09 9:42:00 (woof-wolf)>
+ * Time-stamp: <2026-05-10 18:31:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1970,15 +1970,43 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Fiery Spirit', 'Fiery Spirit', 3, null, null));
 
-// Energy Unlock
-dataPower[dataPower.length] = new Power(dataPower.length, 'Thermal Reverberation', '<img src="img/power-icons/fire/Fire_ThermalReverberation.png" />&nbsp;Thermal Reverberation', 1, 2, pow++, 1, null); 
+const thermalReverberationHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>Instant</div>\
+</div><br>\
+INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
+PASSIVE<br><br>\
+<ul>\
+  <li>This power does not need to be slotted in order to function and has no ranks.</li>\
+  <li>Generates energy from nearby enemies affected by Clinging Flames.</li>\
+  <li>Being near targets affected by your Clinging Flames grants energy every 3 sec for 6 sec.</li>\
+  <li>This effect cannot stack, but triggering the effect again will refresh the duration.</li>\
+  <li>The amount of energy gained scales primarily with your ENDURANCE statistic.</li>\
+  <li>RECOVERY scales the amount of energy you gain to a lesser degree.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Thermal Reverberation', '<img src="img/power-icons/fire/Fire_ThermalReverberation.png" />&nbsp;Thermal Reverberation', 1, 2, pow++, 1, thermalReverberationHtml); 
 dataEnergyUnlockPower[dataPower.length-1] = true;
 
 //------------------------------------------------------------------------------
 // Fire: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Pyre', '<img src="img/power-icons/fire/Fire_Pyre.png" />&nbsp;Pyre', 1, 2, pow++, 2, null); 
+const pyreHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - BURNING<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Deals Fire Damage to nearby foes.</li>\
+  <li>Has a 13-50% chance to apply Clinging Flames to the target.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+  <li>Creates a Pyre Patch at your position when fully charged.</li>\
+  <li>The Pyre Patch lasts for 10 sec and deals Fire Damage every 1 sec.</li>\
+  <li>Foes standing in the Pyre Patch have a 10% chance to be affected by Clinging Flames.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Pyre', '<img src="img/power-icons/fire/Fire_Pyre.png" />&nbsp;Pyre', 1, 2, pow++, 2, pyreHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1988,7 +2016,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Burning 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Rimefire Burst', '<img src="img/power-icons/fire/Fire_RimefireBurst.png" />&nbsp;Rimefire Burst', 1, 2, pow++, 2, null); 
+const rimefireBurstHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>35 seconds recharge</div>\
+</div><br>\
+RANGED DAMAGE - CLICK<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Deal Fire Damage and Cold Damage to target.</li>\
+  <li>If the target is not affected by Clinging Flames, this power applies Chill.</li>\
+  <li>If the target is not affected by Chill, this power applies Clinging Flames.</li>\
+  <li>If the target is affected by both Clinging Flames and Chill, consumes both, deals Fire Damage and Cold Damage to up to 4 targets within 30ft, and recharges the power instantly.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Rimefire Burst', '<img src="img/power-icons/fire/Fire_RimefireBurst.png" />&nbsp;Rimefire Burst', 1, 2, pow++, 2, rimefireBurstHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -1996,7 +2037,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Conflagration', '<img src="img/power-icons/fire/Fire_Conflagration.png" />&nbsp;Conflagration', 1, 2, pow++, 2, null); 
+const conflagrationHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>Every 0.5 sec<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - BURNING<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Fire Damage every 0.5 sec to all targets.</li>\
+  <li>Has a 10% chance to apply Clinging Flames to each target.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Conflagration', '<img src="img/power-icons/fire/Fire_Conflagration.png" />&nbsp;Conflagration', 1, 2, pow++, 2, conflagrationHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2006,7 +2059,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Scorching Impact', '<img src="img/power-icons/fire/Fire_ScorchingImpact.png" />&nbsp;Scorching Impact', 1, 2, pow++, 2, null); 
+const scorchingImpactHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 foot lunge; 15 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+LUNGE - AOE RANGED DAMAGE - KNOCK<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Lunges at the target and deals Fire Damage to targets within 15 feet.</li>\
+  <li>Knocks Back targets based on the distance of the lunge.</li>\
+  <li>Has a 50% chance to apply Clinging Flames to affected targets.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Scorching Impact', '<img src="img/power-icons/fire/Fire_ScorchingImpact.png" />&nbsp;Scorching Impact', 1, 2, pow++, 2, scorchingImpactHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2016,7 +2082,21 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Flame Prison', '<img src="img/power-icons/fire/Fire_FlamePrison.png" />&nbsp;Flame Prison', 1, 2, pow++, 2, null); 
+const flamePrisonHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>Every 1 sec<br>1 sec activate time (5 max)</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+RANGED DAMAGE - BURNING - INCAPACITATE<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Fire Damage every 1 sec to targets.</li>\
+  <li>Has a 10% chance to apply Clinging Flames to the target.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+  <li>Incapacitates the target after maintaining this power for 1 second.</li>\
+  <li>Refreshes the Incapacitate duration and durability every 1 sec while maintaining this power.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Flame Prison', '<img src="img/power-icons/fire/Fire_FlamePrison.png" />&nbsp;Flame Prison', 1, 2, pow++, 2, flamePrisonHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2025,13 +2105,35 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Work Up'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
+const pyromancersBladesHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>1 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
+</div><br>\
+UNCONTROLLED PET<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Summons Flaming Blades to attack your foes.</li>\
+  <li>The Blades deal Fire Damage to up to 3 targets in a cone in front of them.</li>\
+</ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Pyromancer\'s Blades', '<img src="img/power-icons/fire/Fire_PyromancersBlades.png" />&nbsp;Pyromancer\'s Blades', 1, 2, pow++, 2, null); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Pyromancer\'s Blades', '<img src="img/power-icons/fire/Fire_PyromancersBlades.png" />&nbsp;Pyromancer\'s Blades', 1, 2, pow++, 2, pyromancersBladesHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Absorb Heat', '<img src="img/power-icons/fire/Fire_AbsorbHeat.png" />&nbsp;Absorb Heat', 1, 2, pow++, 2, null); 
+const absorbHeatHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+TEAM HEAL<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Deals Fire Damage to all nearby targets.</li>\
+  <li>Expires all Clinging Flames on affected targets to heal up to 10 targets within 25 feet for each instance consumed.</li>\
+  <li>Heals an additional amount every 2 sec for 10 sec for every Clinging Flames consumed.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Absorb Heat', '<img src="img/power-icons/fire/Fire_AbsorbHeat.png" />&nbsp;Absorb Heat', 1, 2, pow++, 2, absorbHeatHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2039,13 +2141,37 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Chilling
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Nova Flare', '<img src="img/power-icons/fire/Fire_NovaFlare.png" />&nbsp;Nova Flare', 1, 2, pow++, 2, null); 
+const novaFlareHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets friend (5 max)<br>50 feet; 10 foot Sphere<br>3 seconds recharge</div>\
+</div><br>\
+ALLY HEAL<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Heals targets.</li>\
+  <li>Applies a stack of Fiery Escalation for 12 sec.</li>\
+  <li>Increases the healing of this power for each stack of Fiery Escalation.</li>\
+  <li>Fiery Escalation can stack up to 4 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Nova Flare', '<img src="img/power-icons/fire/Fire_NovaFlare.png" />&nbsp;Nova Flare', 1, 2, pow++, 2, novaFlareHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Thaw', 'Thaw', 1, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Rise from the Ashes', '<img src="img/power-icons/fire/Fire_RiseFromTheAshes.png" />&nbsp;Rise from the Ashes', 1, 2, pow++, 2, null); 
+const riseFromTheAshesHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
+</div><br>\
+REVIVE<br><br>\
+CHARGE<br><br>\
+<ul>\
+  <li>Revives a nearby Hero.</li>\
+  <li>Restores the target to 33% of their Health.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Rise from the Ashes', '<img src="img/power-icons/fire/Fire_RiseFromTheAshes.png" />&nbsp;Rise from the Ashes', 1, 2, pow++, 2, riseFromTheAshesHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2055,7 +2181,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Spreadin
 // Fire: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Incinerate', '<img src="img/power-icons/fire/Fire_Incinerate.png" />&nbsp;Incinerate', 1, 2, pow++, 3, null); 
+const incinerateHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet</div>\
+</div><br>\
+RANGED DAMAGE<br><br>\
+MAINTAIN<br><br>\
+<ul>\
+  <li>Deals Fire Damage every 0.5 sec to the target.</li>\
+  <li>Applies Unstable Accelerant to the target while maintaining this power.</li>\
+  <li>Lowers the target\\\'s resistance to Burning effects by 69%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Incinerate', '<img src="img/power-icons/fire/Fire_Incinerate.png" />&nbsp;Incinerate', 1, 2, pow++, 3, incinerateHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2063,7 +2201,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Burninat
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Flashfire', '<img src="img/power-icons/fire/Fire_Flashfire.png" />&nbsp;Flashfire', 1, 2, pow++, 3, null); 
+const flashfireHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - BURNING - DOT<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Applies Clinging Flames to affected targets.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+  <li>Creates a Pyre Patch on your target lasting for 16 sec.</li>\
+  <li>Foes standing in the Pyre Patch take Fire Damage and have a 10% chance to be affected by Clinging Flames every 1 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Flashfire', '<img src="img/power-icons/fire/Fire_Flashfire.png" />&nbsp;Flashfire', 1, 2, pow++, 3, flashfireHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2074,19 +2225,66 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Cauldron Fire', 'PVD: Cauldron Fire', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Fire Snake', '<img src="img/power-icons/fire/Fire_FireSnake.png" />&nbsp;Fire Snake', 1, 2, pow++, 3, null); 
+const fireSnakeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet<br>25 seconds recharge</div>\
+</div><br>\
+AOE DAMAGE - BURNING - DOT<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Sends a Fire Snake to pursue foes for 16 sec.</li>\
+  <li>The Fire Snake deals Fire Damage every 1 sec to foes within 10 feet.</li>\
+  <li>Applies Engulfing Flames which reduces Fire resistance by 8% for 15 sec.</li>\
+  <li>Engulfing Flames stacks up to 3 times.</li>\
+  <li>Has a 10% chance to apply Clinging Flames.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Fire Snake', '<img src="img/power-icons/fire/Fire_FireSnake.png" />&nbsp;Fire Snake', 1, 2, pow++, 3, fireSnakeHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Trail Blazer', 'Trail Blazer', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Fiery Path', 'Fiery Path', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Hydra', '<img src="img/power-icons/fire/Fire_Hydra.png" />&nbsp;Hydra', 1, 2, pow++, 3, null); 
+const hydraHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>1 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>30 seconds recharge</div>\
+</div><br>\
+UNCONTROLLED PET - BURNING<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Summons 2 Hydras to attack foes for 20 sec.</li>\
+  <li>The Hydras attack the nearest target within 50 feet every 1.5 sec.</li>\
+  <li>Deals Fire Damage to targets within 5 feet of the primary target.</li>\
+  <li>Creates a Lava Pit under the Hydras.</li>\
+  <li>The Lava Pit deals Fire Damage every 2 sec and has a 10% chance to apply Clinging Flames to targets.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Hydra', '<img src="img/power-icons/fire/Fire_Hydra.png" />&nbsp;Hydra', 1, 2, pow++, 3, hydraHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Fiery Embrace', '<img src="img/power-icons/fire/Fire_FieryEmbrace.png" />&nbsp;Fiery Embrace', 1, 2, pow++, 3, null); 
+const fieryEmbraceHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fire<br>2 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
+</div><br>\
+SELF RESURRECTION AND HEAL<br><br>\
+CLICK<br><br>\
+<ul>\
+  <li>Only usable while Defeated.</li>\
+  <li>Revives you and restores 50% of your Health.</li>\
+  <li>Grants Health upon defeating enemies for 20 sec.</li>\
+  <li>Applies Clinging Flames to targets for 20 sec.</li>\
+  <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to nearby foes.</li>\
+  <li>Applies Engulfing Flames to attackers for 20 sec.</li>\
+  <li>Engulfing Flames reduces Fire resistance by 8% for 15 sec and stacks up to 3 times.</li>\
+  <li>Triggers a 300 second cooldown for all Resurrection powers.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Fiery Embrace', '<img src="img/power-icons/fire/Fire_FieryEmbrace.png" />&nbsp;Fiery Embrace', 1, 2, pow++, 3, fieryEmbraceHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
