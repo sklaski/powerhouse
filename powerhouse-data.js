@@ -3125,7 +3125,7 @@ CHARGE<br>\
   <li>Paralyzes the target for 15 sec.</li>\
 </ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Twister', '<img src="img/power-icons/wind/Wind_Twister.png" />&nbsp;Twister', 1, 4, pow++, 2, null); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Twister', '<img src="img/power-icons/wind/Wind_Twister.png" />&nbsp;Twister', 1, 4, pow++, 2, twisterHtml); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -3864,7 +3864,7 @@ CHARGE<br>\
   <li>The initial strike immediately causes foes to be affected by Plasma Burn. Additional stacks of Plasma Burn apply over 5 sec.</li>\
 </ul>';
 
-dataPowerAlias['Meltdown'] = new PowerAlias('Meltdown', 'Meltdown', '<img src="img/power-icons/technology/Technology_Meltdown.png" />&nbsp;Meltdown', null);
+dataPowerAlias['Meltdown'] = new PowerAlias('Meltdown', 'Meltdown', '<img src="img/power-icons/technology/Technology_Meltdown.png" />&nbsp;Meltdown', meltdownHtml);
 
 const fireAllWeaponsHtml = '<div style="display:flex; justify-content:space-between;">\
   <div>Technology<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
@@ -4492,7 +4492,7 @@ CLICK<br>\
   <li>When fired with less than 20% Energy, the Energy cost is greatly reduced and this power now deals double Piercing Damage to your target.</li>\
 </ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Holdout Shot', '<img src="img/power-icons/munitions/Munitions_HoldoutShot.png" />&nbsp;Holdout Shot', 2, 7, pow++, 1, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Holdout Shot', '<img src="img/power-icons/munitions/Munitions_HoldoutShot.png" />&nbsp;Holdout Shot', 2, 7, pow++, 1, holdoutShotHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -4611,7 +4611,7 @@ MAINTAIN<br>\
   <li>When taking damage Furious grants you Willpower, which gives you +Health Points over 3 seconds.</li>\
 </ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Submachinegun Burst', '<img src="img/power-icons/munitions/Munitions_SubmachinegunBurst.png" />&nbsp;Submachinegun Burst', 2, 7, pow++, 1, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Submachinegun Burst', '<img src="img/power-icons/munitions/Munitions_SubmachinegunBurst.png" />&nbsp;Submachinegun Burst', 2, 7, pow++, 1, submachinegunBurstHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -5512,7 +5512,7 @@ TOGGLE<br>\
   <li>In addition, each target has a 50% chance to be Knocked Back 17ft.</li>\
 </ul>';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Hand Cannon', '<img src="img/power-icons/power-armor/PowerArmor_HandCannon.png" />&nbsp;Hand Cannon', 2, 8, pow++, 3, null);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Hand Cannon', '<img src="img/power-icons/power-armor/PowerArmor_HandCannon.png" />&nbsp;Hand Cannon', 2, 8, pow++, 3, handCannonHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
