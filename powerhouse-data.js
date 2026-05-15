@@ -11607,19 +11607,44 @@ SpecializationTree = function(id, name, desc, superStat, tip) {
         return (mask > 0 && ((mask & test1) == test1) || ((mask & test2) == test2));
     }
     this.incrSpecialization = function(mask, id) {
-        var points = this.specializationList[id].getPoints(mask);
-        if (points < this.specializationList[id].maxPoints) {
-            points++;
-            var base = mask & ~Math.pow(2, id*2) & ~Math.pow(2, id*2 + 1);
-            switch (points) {
-            case 0: return base; break;
-            case 1: return base | Math.pow(2, id*2); break;
-            case 2: return base | Math.pow(2, id*2 + 1); break;
-            case 3: return base | Math.pow(2, id*2) | Math.pow(2, id*2 + 1); break;
-            }
-        } else {
-            return mask;
-        }
+        // "mask" is in the form 88 77 66 55 44 33 22 11 00 (<- Number is the spec's id)
+        // Each pair of bits corresponds to a specialization's current points
+        // 11 = 3 points, 10 = 2 points, 01 = 1 point, 00 = 0 points
+
+        // points is the current points in the specialization we want to increment
+        // maxPoints is the maximum points we can have in that specialization
+        const points = this.specializationList[id].getPoints(mask);
+        const maxPoints = this.specializationList[id].maxPoints;
+
+        // If we are already at the maximum points, don't do anything
+        if (points >= maxPoints) return mask;
+
+        // Increment points
+        const newPoints = points + 1;
+
+        // Figure out two-bit field offset
+        const offset = id * 2;
+
+        // Clear the two bits for the specialization we want to change
+        const clearedMask = mask & ~(0b11 << offset);
+
+        // Write the new two-bit value to the place we were trying to change
+        return clearedMask | (newPoints << offset);
+
+        // Old code before refactor, left here for reference:
+        // var points = this.specializationList[id].getPoints(mask);
+        // if (points < this.specializationList[id].maxPoints) {
+        //     points++;
+        //     var base = mask & ~Math.pow(2, id*2) & ~Math.pow(2, id*2 + 1);
+        //     switch (points) {
+        //     case 0: return base; break;
+        //     case 1: return base | Math.pow(2, id*2); break;
+        //     case 2: return base | Math.pow(2, id*2 + 1); break;
+        //     case 3: return base | Math.pow(2, id*2) | Math.pow(2, id*2 + 1); break;
+        //     }
+        // } else {
+        //     return mask;
+        // }
     }
     this.decrSpecialization = function(mask, id) {
         var points = this.specializationList[id].getPoints(mask);
