@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-13 13:36:00 (woof-wolf)>
+ * Time-stamp: <2026-05-15 11:45:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.2.2';
-var releaseDate = '2026-05-13';
+var version = '1.2.3';
+var releaseDate = '2026-05-15';
 var buildVersion = 2;
 
 var siteName = 'PowerHouse';
@@ -2500,6 +2500,14 @@ function parseUrlParams(url) {
             }
         }
     }
+
+    // Balak link stuff
+    if (version == 38) {
+        version = 2;
+        data = parseBalakUrlParams(url);
+        console.log("balak data=" + data);
+    }
+
     while (version <= buildVersion) {
         var finalVersion = (version == buildVersion);
         var pos = 0;
@@ -2618,10 +2626,14 @@ function parseUrlParams(url) {
                 var code2 = applyVersionUpdate(version, 'code2', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'code3': data[i + 2], 'code4': data[i + 3], 'archetype': archetype});
                 var code3 = applyVersionUpdate(version, 'code3', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'code3': data[i + 2], 'code4': data[i + 3], 'archetype': archetype});
                 var code4 = applyVersionUpdate(version, 'code4', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'code3': data[i + 2], 'code4': data[i + 3], 'archetype': archetype});
+                // Debug
+                console.log("code1=" + code1 + ", code2=" + code2 + ", code3=" + code3 + ", code4=" + code4);
                 var framework = applyVersionUpdate(version, 'framework', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'code2': code2, 'code3': code3, 'code4': code4, 'archetype': archetype, 'framework': parseInt(urlCodeToNum(code1)), 'power': parseInt(urlCodeToNum(code2)), 'mask': urlCodeToNum2(code3 + code4) << 1});
                 var power = applyVersionUpdate(version, 'power', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'code2': code2, 'code3': code3, 'code4': code4, 'archetype': archetype, 'framework': parseInt(urlCodeToNum(code1)), 'power': parseInt(urlCodeToNum(code2)), 'mask': urlCodeToNum2(code3 + code4) << 1});
                 var mask = applyVersionUpdate(version, 'mask', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'code2': code2, 'code3': code3, 'code4': code4, 'archetype': archetype, 'framework': parseInt(urlCodeToNum(code1)), 'power': parseInt(urlCodeToNum(code2)), 'mask': urlCodeToNum2(code3 + code4) << 1});
                 var powerCode = numToUrlCode(framework) + numToUrlCode(power);
+                // Debug
+                console.log("framework=" + framework + ", power=" + power + ", powerCode=" + powerCode);
                 var powerId = dataPowerIdFromCode[powerCode];
                 var num = pos - 12;
                 data[i] = numToUrlCode(framework);
@@ -2630,6 +2642,8 @@ function parseUrlParams(url) {
                 data[i + 2] = maskCode[0];
                 data[i + 3] = maskCode[1];
                 if (finalVersion) {
+                    // Debug
+                    console.log("framework=" + framework + ", power=" + power + ", powerID=" + powerId);
                     selectFramework(framework);
                     selectPower(num);
                     setPower(powerId);
@@ -2683,6 +2697,166 @@ function parseUrlParams(url) {
     }
 }
 window['parseUrlParams'] = parseUrlParams;
+
+function parseBalakUrlParams(url) {
+    // Function written in version 2. Plan is to convert to a version 2 format then use parseUrlParams after to make sure this function works in the future
+    var version = 2;
+    var oldData = [];
+    var parts = url.split('?');
+    // Get the parts of the link, v = version, n = name, d = data
+    if (parts[1] != undefined) {
+        var params = parts[1].split('&');
+        for (var i = 0; i < params.length; i++) {
+            var pair = params[i].split('=');
+            switch (pair[0]) {
+            case 'v':
+                // Don't do anything because we already set the version
+                break;
+            case 'n':
+                phName = decodeURIComponent(pair[1]);
+                document.getElementById('fieldName').firstChild.data = phName;
+                break;
+            case 'a':
+                phArchetype = dataArchetype[parseInt(pair[1])];
+                break;
+            case 'd':
+                oldData = pair[1].split('');
+                break;
+            }
+        }
+    }
+
+    var data = [];
+    for (var j = 0, k = 0; j < 86; j++) {
+        if (j != 12 && j != 15) {
+            data[k] = oldData[j] || '0';
+            k++;
+        }
+        // Debug
+        console.log("parseBalakUrlParams: j=" + j + ", data=" + data[j]);
+    }
+
+    // It doesn't need to iterate because we are only on version 2
+    var pos = 0;
+    var i = 0;
+    var inc = 1;
+    var archetype = (phArchetype && phArchetype.id) || 1;
+    var specializationMasteryId = 0;
+
+    while (i < data.length) {
+        switch (pos) {
+        case 0: // Archetype code
+            // It's gonna be 1 because we don't use this thing
+            archetype = 1;
+            data[i] = numToUrlCode(archetype);
+            inc = 1;
+            break;
+        case 1: 
+        case 2:
+        case 3: // Superstats
+            // Superstats are the same code so we don't have to do anything
+            inc = 1;
+            break;
+        case 4:
+            // innate talent
+            var code1 = data[i];
+            var code2 = data[i + 1];
+            var innateTalent = urlCodeToNum2(code1 + code2);
+            if (innateTalent == 57) innateTalent = 36;
+            else if (innateTalent == 51) innateTalent = 50;
+            else if (innateTalent == 50) innateTalent = 51;
+            else if (innateTalent == 36) innateTalent = 57;
+
+            data[i] = numToUrlCode2(innateTalent)[0];
+            data[i + 1] = numToUrlCode2(innateTalent)[1];
+            inc = 2;
+            break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10: // Talents
+            // Talents are the same code so we don't have to do anything
+            inc = 1;
+            break;
+        case 11:
+        case 12: // Travel Powers
+            // Not planning to deal with travel powers at this time
+            var travelPower = 0;
+            var mask = 0;
+
+            data[i] = numToUrlCode(travelPower);
+            data[i + 1] = numToUrlCode(mask >> 1);
+
+            inc = 2;
+            break;
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+        case 25:
+        case 26: // Powers
+            var code1 = data[i];        var framework = parseInt(urlCodeToNum(code1));
+            var code2 = data[i + 1];    var power = parseInt(urlCodeToNum(code2));
+            var code3 = data[i + 2];
+            var code4 = data[i + 3];    var mask = urlCodeToNum2(code3 + code4) << 1;
+
+            var powerCode = numToUrlCode(framework) + numToUrlCode(power);
+            var powerId = dataPowerIdFromCode[powerCode];
+
+            console.log("parseBalakUrlParams: powerId before=" + powerId);
+
+            // Update stuff goes here
+            if (framework == 1 && power == 2) { framework = 1; power = 3; } else if (framework == 1 && power == 3) { framework = 1; power = 2; } else if (framework == 1 && power == 13) { framework = 1; power = 15; } else if (framework == 1 && power == 14) { framework = 1; power = 16; } else if (framework == 1 && power == 15) { framework = 1; power = 13; } else if (framework == 1 && power == 16) { framework = 1; power = 17; } else if (framework == 1 && power == 17) { framework = 1; power = 18; } else if (framework == 1 && power == 18) { framework = 1; power = 14; } else if (framework == 1 && power == 30) { framework = 1; power = 31; } else if (framework == 1 && power == 31) { framework = 1; power = 30; } else if (framework == 2 && power == 2) { framework = 2; power = 5; } else if (framework == 2 && power == 3) { framework = 2; power = 2; } else if (framework == 2 && power == 5) { framework = 2; power = 3; } else if (framework == 2 && power == 6) { framework = 2; power = 7; } else if (framework == 2 && power == 7) { framework = 2; power = 6; } else if (framework == 2 && power == 14) { framework = 2; power = 15; } else if (framework == 2 && power == 15) { framework = 2; power = 14; } else if (framework == 2 && power == 16) { framework = 2; power = 17; } else if (framework == 2 && power == 17) { framework = 2; power = 16; } else if (framework == 2 && power == 18) { framework = 2; power = 20; } else if (framework == 2 && power == 19) { framework = 2; power = 21; } else if (framework == 2 && power == 21) { framework = 2; power = 18; } else if (framework == 3 && power == 2) { framework = 3; power = 3; } else if (framework == 3 && power == 3) { framework = 3; power = 2; } else if (framework == 3 && power == 5) { framework = 3; power = 7; } else if (framework == 3 && power == 6) { framework = 3; power = 8; } else if (framework == 3 && power == 7) { framework = 3; power = 9; } else if (framework == 3 && power == 8) { framework = 3; power = 10; } else if (framework == 3 && power == 9) { framework = 3; power = 11; } else if (framework == 3 && power == 10) { framework = 3; power = 13; } else if (framework == 3 && power == 11) { framework = 3; power = 14; } else if (framework == 3 && power == 12) { framework = 3; power = 5; } else if (framework == 3 && power == 13) { framework = 3; power = 6; } else if (framework == 3 && power == 14) { framework = 3; power = 12; } else if (framework == 4 && power == 7) { framework = 4; power = 9; } else if (framework == 4 && power == 9) { framework = 4; power = 10; } else if (framework == 4 && power == 10) { framework = 4; power = 7; } else if (framework == 4 && power == 11) { framework = 4; power = 12; } else if (framework == 4 && power == 12) { framework = 4; power = 13; } else if (framework == 4 && power == 13) { framework = 4; power = 11; } else if (framework == 5 && power == 4) { framework = 5; power = 5; } else if (framework == 5 && power == 5) { framework = 5; power = 4; } else if (framework == 5 && power == 12) { framework = 5; power = 13; } else if (framework == 5 && power == 13) { framework = 5; power = 14; } else if (framework == 5 && power == 14) { framework = 5; power = 16; } else if (framework == 5 && power == 15) { framework = 5; power = 17; } else if (framework == 5 && power == 16) { framework = 5; power = 18; } else if (framework == 5 && power == 17) { framework = 5; power = 21; } else if (framework == 5 && power == 18) { framework = 5; power = 19; } else if (framework == 5 && power == 19) { framework = 5; power = 20; } else if (framework == 5 && power == 20) { framework = 5; power = 22; } else if (framework == 5 && power == 21) { framework = 5; power = 23; } else if (framework == 5 && power == 22) { framework = 5; power = 24; } else if (framework == 5 && power == 23) { framework = 5; power = 25; } else if (framework == 5 && power == 24) { framework = 5; power = 26; } else if (framework == 5 && power == 25) { framework = 5; power = 27; } else if (framework == 5 && power == 26) { framework = 5; power = 28; } else if (framework == 5 && power == 27) { framework = 5; power = 29; } else if (framework == 5 && power == 28) { framework = 5; power = 30; } else if (framework == 6 && power == 4) { framework = 6; power = 7; } else if (framework == 6 && power == 7) { framework = 6; power = 8; } else if (framework == 6 && power == 8) { framework = 6; power = 9; } else if (framework == 6 && power == 9) { framework = 6; power = 10; } else if (framework == 6 && power == 10) { framework = 6; power = 4; } else if (framework == 6 && power == 14) { framework = 6; power = 15; } else if (framework == 6 && power == 15) { framework = 6; power = 14; } else if (framework == 6 && power == 22) { framework = 6; power = 23; } else if (framework == 6 && power == 23) { framework = 6; power = 22; } else if (framework == 7 && power == 0) { framework = 9; power = 0; } else if (framework == 7 && power == 1) { framework = 9; power = 1; } else if (framework == 7 && power == 2) { framework = 9; power = 2; } else if (framework == 7 && power == 0) { framework = 9; power = 3; } else if (framework == 7 && power == 1) { framework = 9; power = 4; } else if (framework == 7 && power == 2) { framework = 9; power = 6; } else if (framework == 7 && power == 3) { framework = 9; power = 5; } else if (framework == 7 && power == 4) { framework = 9; power = 7; } else if (framework == 7 && power == 6) { framework = 9; power = 8; } else if (framework == 7 && power == 7) { framework = 9; power = 9; } else if (framework == 7 && power == 8) { framework = 9; power = 11; } else if (framework == 7 && power == 9) { framework = 9; power = 13; } else if (framework == 7 && power == 10) { framework = 9; power = 17; } else if (framework == 7 && power == 11) { framework = 9; power = 18; } else if (framework == 7 && power == 12) { framework = 9; power = 12; } else if (framework == 7 && power == 13) { framework = 9; power = 14; } else if (framework == 7 && power == 14) { framework = 9; power = 15; } else if (framework == 7 && power == 15) { framework = 9; power = 16; } else if (framework == 7 && power == 16) { framework = 9; power = 19; } else if (framework == 7 && power == 17) { framework = 9; power = 20; } else if (framework == 7 && power == 18) { framework = 7; power = 13; } else if (framework == 7 && power == 19) { framework = 9; power = 22; } else if (framework == 7 && power == 20) { framework = 9; power = 23; } else if (framework == 7 && power == 21) { framework = 9; power = 24; } else if (framework == 7 && power == 22) { framework = 9; power = 28; } else if (framework == 7 && power == 23) { framework = 9; power = 26; } else if (framework == 7 && power == 24) { framework = 9; power = 27; } else if (framework == 7 && power == 25) { framework = 9; power = 37; } else if (framework == 7 && power == 26) { framework = 9; power = 29; } else if (framework == 7 && power == 27) { framework = 9; power = 30; } else if (framework == 7 && power == 28) { framework = 9; power = 31; } else if (framework == 7 && power == 29) { framework = 9; power = 32; } else if (framework == 7 && power == 30) { framework = 9; power = 38; } else if (framework == 7 && power == 31) { framework = 9; power = 33; } else if (framework == 7 && power == 32) { framework = 9; power = 34; } else if (framework == 7 && power == 34) { framework = 9; power = 36; } else if (framework == 7 && power == 35) { framework = 9; power = 39; } else if (framework == 7 && power == 36) { framework = 9; power = 40; } else if (framework == 7 && power == 37) { framework = 9; power = 41; } else if (framework == 7 && power == 38) { framework = 9; power = 42; } else if (framework == 7 && power == 39) { framework = 9; power = 43; } else if (framework == 7 && power == 40) { framework = 9; power = 44; } else if (framework == 7 && power == 41) { framework = 9; power = 10; } else if (framework == 7 && power == 42) { framework = 9; power = 45; } else if (framework == 7 && power == 43) { framework = 7; power = 31; } else if (framework == 7 && power == 44) { framework = 7; power = 32; } else if (framework == 7 && power == 45) { framework = 7; power = 34; } else if (framework == 7 && power == 46) { framework = 7; power = 33; } else if (framework == 7 && power == 47) { framework = 7; power = 35; } else if (framework == 7 && power == 48) { framework = 7; power = 36; } else if (framework == 7 && power == 49) { framework = 7; power = 37; } else if (framework == 8 && power == 0) { framework = 7; power = 0; } else if (framework == 8 && power == 1) { framework = 7; power = 1; } else if (framework == 8 && power == 2) { framework = 7; power = 2; } else if (framework == 8 && power == 3) { framework = 7; power = 3; } else if (framework == 8 && power == 4) { framework = 7; power = 4; } else if (framework == 8 && power == 5) { framework = 7; power = 5; } else if (framework == 8 && power == 6) { framework = 7; power = 6; } else if (framework == 8 && power == 7) { framework = 7; power = 7; } else if (framework == 8 && power == 8) { framework = 7; power = 8; } else if (framework == 8 && power == 9) { framework = 7; power = 9; } else if (framework == 8 && power == 10) { framework = 7; power = 10; } else if (framework == 8 && power == 11) { framework = 7; power = 11; } else if (framework == 8 && power == 12) { framework = 7; power = 12; } else if (framework == 8 && power == 13) { framework = 8; power = 12; } else if (framework == 8 && power == 14) { framework = 7; power = 14; } else if (framework == 8 && power == 15) { framework = 7; power = 15; } else if (framework == 8 && power == 16) { framework = 7; power = 16; } else if (framework == 8 && power == 17) { framework = 7; power = 17; } else if (framework == 8 && power == 18) { framework = 7; power = 18; } else if (framework == 8 && power == 19) { framework = 7; power = 26; } else if (framework == 8 && power == 20) { framework = 7; power = 19; } else if (framework == 8 && power == 21) { framework = 7; power = 20; } else if (framework == 8 && power == 22) { framework = 7; power = 21; } else if (framework == 8 && power == 23) { framework = 7; power = 24; } else if (framework == 8 && power == 24) { framework = 7; power = 25; } else if (framework == 8 && power == 25) { framework = 7; power = 22; } else if (framework == 8 && power == 26) { framework = 7; power = 23; } else if (framework == 8 && power == 27) { framework = 7; power = 29; } else if (framework == 8 && power == 28) { framework = 7; power = 28; } else if (framework == 8 && power == 29) { framework = 7; power = 27; } else if (framework == 8 && power == 30) { framework = 7; power = 30; } else if (framework == 8 && power == 31) { framework = 8; power = 26; } else if (framework == 8 && power == 32) { framework = 8; power = 27; } else if (framework == 8 && power == 33) { framework = 8; power = 29; } else if (framework == 8 && power == 34) { framework = 8; power = 28; } else if (framework == 8 && power == 35) { framework = 8; power = 30; } else if (framework == 8 && power == 36) { framework = 8; power = 31; } else if (framework == 8 && power == 37) { framework = 8; power = 32; } else if (framework == 9 && power == 0) { framework = 8; power = 0; } else if (framework == 9 && power == 1) { framework = 8; power = 1; } else if (framework == 9 && power == 2) { framework = 8; power = 2; } else if (framework == 9 && power == 3) { framework = 8; power = 3; } else if (framework == 9 && power == 4) { framework = 8; power = 5; } else if (framework == 9 && power == 5) { framework = 8; power = 4; } else if (framework == 9 && power == 6) { framework = 8; power = 6; } else if (framework == 9 && power == 7) { framework = 8; power = 7; } else if (framework == 9 && power == 8) { framework = 8; power = 8; } else if (framework == 9 && power == 9) { framework = 8; power = 9; } else if (framework == 9 && power == 10) { framework = 8; power = 10; } else if (framework == 9 && power == 11) { framework = 8; power = 11; } else if (framework == 9 && power == 12) { framework = 9; power = 21; } else if (framework == 9 && power == 13) { framework = 8; power = 13; } else if (framework == 9 && power == 14) { framework = 8; power = 14; } else if (framework == 9 && power == 15) { framework = 8; power = 15; } else if (framework == 9 && power == 16) { framework = 8; power = 16; } else if (framework == 9 && power == 17) { framework = 8; power = 17; } else if (framework == 9 && power == 18) { framework = 8; power = 18; } else if (framework == 9 && power == 19) { framework = 8; power = 19; } else if (framework == 9 && power == 20) { framework = 8; power = 20; } else if (framework == 9 && power == 21) { framework = 8; power = 21; } else if (framework == 9 && power == 22) { framework = 8; power = 22; } else if (framework == 9 && power == 23) { framework = 8; power = 23; } else if (framework == 9 && power == 24) { framework = 8; power = 24; } else if (framework == 9 && power == 25) { framework = 8; power = 25; } else if (framework == 9 && power == 26) { framework = 9; power = 46; } else if (framework == 9 && power == 27) { framework = 9; power = 47; } else if (framework == 9 && power == 28) { framework = 9; power = 49; } else if (framework == 9 && power == 29) { framework = 9; power = 48; } else if (framework == 9 && power == 30) { framework = 9; power = 50; } else if (framework == 9 && power == 31) { framework = 9; power = 51; } else if (framework == 9 && power == 32) { framework = 9; power = 52; } else if (framework == 10 && power == 15) { framework = 10; power = 16; } else if (framework == 10 && power == 16) { framework = 10; power = 15; } else if (framework == 10 && power == 20) { framework = 10; power = 21; } else if (framework == 10 && power == 21) { framework = 10; power = 20; } else if (framework == 11 && power == 3) { framework = 11; power = 5; } else if (framework == 11 && power == 4) { framework = 11; power = 3; } else if (framework == 11 && power == 5) { framework = 11; power = 4; } else if (framework == 11 && power == 7) { framework = 11; power = 11; } else if (framework == 11 && power == 8) { framework = 11; power = 16; } else if (framework == 11 && power == 9) { framework = 11; power = 13; } else if (framework == 11 && power == 10) { framework = 11; power = 14; } else if (framework == 11 && power == 11) { framework = 11; power = 12; } else if (framework == 11 && power == 12) { framework = 11; power = 15; } else if (framework == 11 && power == 13) { framework = 11; power = 17; } else if (framework == 11 && power == 14) { framework = 11; power = 18; } else if (framework == 11 && power == 15) { framework = 11; power = 8; } else if (framework == 11 && power == 16) { framework = 11; power = 9; } else if (framework == 11 && power == 17) { framework = 11; power = 7; } else if (framework == 11 && power == 18) { framework = 11; power = 10; } else if (framework == 11 && power == 24) { framework = 11; power = 25; } else if (framework == 11 && power == 25) { framework = 11; power = 26; } else if (framework == 11 && power == 26) { framework = 11; power = 28; } else if (framework == 11 && power == 27) { framework = 11; power = 29; } else if (framework == 11 && power == 28) { framework = 11; power = 30; } else if (framework == 11 && power == 29) { framework = 11; power = 31; } else if (framework == 11 && power == 30) { framework = 11; power = 32; } else if (framework == 11 && power == 31) { framework = 11; power = 33; } else if (framework == 11 && power == 32) { framework = 11; power = 34; } else if (framework == 11 && power == 33) { framework = 11; power = 35; } else if (framework == 12 && power == 3) { framework = 12; power = 5; } else if (framework == 12 && power == 4) { framework = 12; power = 6; } else if (framework == 12 && power == 5) { framework = 12; power = 4; } else if (framework == 12 && power == 6) { framework = 12; power = 3; } else if (framework == 12 && power == 9) { framework = 12; power = 12; } else if (framework == 12 && power == 10) { framework = 12; power = 17; } else if (framework == 12 && power == 11) { framework = 12; power = 14; } else if (framework == 12 && power == 12) { framework = 12; power = 15; } else if (framework == 12 && power == 14) { framework = 12; power = 16; } else if (framework == 12 && power == 15) { framework = 12; power = 18; } else if (framework == 12 && power == 16) { framework = 12; power = 19; } else if (framework == 12 && power == 17) { framework = 12; power = 20; } else if (framework == 12 && power == 18) { framework = 12; power = 9; } else if (framework == 12 && power == 19) { framework = 12; power = 10; } else if (framework == 12 && power == 20) { framework = 12; power = 11; } else if (framework == 12 && power == 23) { framework = 12; power = 26; } else if (framework == 12 && power == 27) { framework = 12; power = 25; } else if (framework == 12 && power == 28) { framework = 12; power = 29; } else if (framework == 12 && power == 29) { framework = 12; power = 30; } else if (framework == 12 && power == 31) { framework = 12; power = 33; } else if (framework == 12 && power == 32) { framework = 12; power = 34; } else if (framework == 12 && power == 33) { framework = 12; power = 35; } else if (framework == 12 && power == 34) { framework = 12; power = 36; } else if (framework == 12 && power == 35) { framework = 12; power = 37; } else if (framework == 12 && power == 36) { framework = 12; power = 38; } else if (framework == 12 && power == 37) { framework = 12; power = 39; } else if (framework == 13 && power == 4) { framework = 13; power = 7; } else if (framework == 13 && power == 5) { framework = 13; power = 4; } else if (framework == 13 && power == 7) { framework = 13; power = 5; } else if (framework == 13 && power == 9) { framework = 13; power = 13; } else if (framework == 13 && power == 10) { framework = 13; power = 18; } else if (framework == 13 && power == 11) { framework = 13; power = 15; } else if (framework == 13 && power == 12) { framework = 13; power = 16; } else if (framework == 13 && power == 13) { framework = 13; power = 14; } else if (framework == 13 && power == 14) { framework = 13; power = 17; } else if (framework == 13 && power == 15) { framework = 13; power = 19; } else if (framework == 13 && power == 16) { framework = 13; power = 20; } else if (framework == 13 && power == 17) { framework = 13; power = 21; } else if (framework == 13 && power == 18) { framework = 13; power = 10; } else if (framework == 13 && power == 19) { framework = 13; power = 9; } else if (framework == 13 && power == 20) { framework = 13; power = 11; } else if (framework == 13 && power == 21) { framework = 13; power = 12; } else if (framework == 13 && power == 28) { framework = 13; power = 29; } else if (framework == 13 && power == 29) { framework = 13; power = 30; } else if (framework == 13 && power == 31) { framework = 13; power = 33; } else if (framework == 13 && power == 32) { framework = 13; power = 34; } else if (framework == 13 && power == 33) { framework = 13; power = 35; } else if (framework == 13 && power == 34) { framework = 13; power = 36; } else if (framework == 13 && power == 35) { framework = 13; power = 37; } else if (framework == 13 && power == 36) { framework = 13; power = 38; } else if (framework == 13 && power == 37) { framework = 13; power = 39; } else if (framework == 13 && power == 38) { framework = 13; power = 40; } else if (framework == 14 && power == 3) { framework = 14; power = 9; } else if (framework == 14 && power == 4) { framework = 14; power = 3; } else if (framework == 14 && power == 5) { framework = 14; power = 7; } else if (framework == 14 && power == 6) { framework = 14; power = 4; } else if (framework == 14 && power == 7) { framework = 14; power = 6; } else if (framework == 14 && power == 8) { framework = 14; power = 5; } else if (framework == 14 && power == 9) { framework = 14; power = 8; } else if (framework == 14 && power == 10) { framework = 14; power = 13; } else if (framework == 14 && power == 11) { framework = 14; power = 18; } else if (framework == 14 && power == 12) { framework = 14; power = 15; } else if (framework == 14 && power == 13) { framework = 14; power = 16; } else if (framework == 14 && power == 15) { framework = 14; power = 17; } else if (framework == 14 && power == 16) { framework = 14; power = 19; } else if (framework == 14 && power == 17) { framework = 14; power = 20; } else if (framework == 14 && power == 18) { framework = 14; power = 10; } else if (framework == 14 && power == 19) { framework = 14; power = 11; } else if (framework == 14 && power == 20) { framework = 14; power = 12; } else if (framework == 14 && power == 27) { framework = 14; power = 28; } else if (framework == 14 && power == 28) { framework = 14; power = 29; } else if (framework == 14 && power == 29) { framework = 14; power = 31; } else if (framework == 14 && power == 30) { framework = 14; power = 32; } else if (framework == 14 && power == 31) { framework = 14; power = 33; } else if (framework == 14 && power == 32) { framework = 14; power = 34; } else if (framework == 14 && power == 33) { framework = 14; power = 35; } else if (framework == 14 && power == 34) { framework = 14; power = 36; } else if (framework == 14 && power == 35) { framework = 14; power = 37; } else if (framework == 14 && power == 36) { framework = 14; power = 38; } else if (framework == 14 && power == 37) { framework = 14; power = 39; } else if (framework == 14 && power == 38) { framework = 14; power = 40; } else if (framework == 15 && power == 9) { framework = 15; power = 11; } else if (framework == 15 && power == 11) { framework = 15; power = 12; } else if (framework == 15 && power == 12) { framework = 15; power = 13; } else if (framework == 15 && power == 13) { framework = 15; power = 14; } else if (framework == 15 && power == 14) { framework = 15; power = 15; } else if (framework == 15 && power == 15) { framework = 15; power = 9; } else if (framework == 15 && power == 26) { framework = 15; power = 27; } else if (framework == 15 && power == 27) { framework = 15; power = 26; } else if (framework == 15 && power == 32) { framework = 15; power = 33; } else if (framework == 15 && power == 33) { framework = 15; power = 32; } else if (framework == 16 && power == 3) { framework = 16; power = 8; } else if (framework == 16 && power == 4) { framework = 16; power = 6; } else if (framework == 16 && power == 5) { framework = 16; power = 7; } else if (framework == 16 && power == 6) { framework = 16; power = 3; } else if (framework == 16 && power == 7) { framework = 16; power = 4; } else if (framework == 16 && power == 8) { framework = 16; power = 5; } else if (framework == 16 && power == 15) { framework = 16; power = 16; } else if (framework == 16 && power == 16) { framework = 16; power = 17; } else if (framework == 16 && power == 17) { framework = 16; power = 18; } else if (framework == 16 && power == 18) { framework = 16; power = 19; } else if (framework == 16 && power == 19) { framework = 16; power = 15; } else if (framework == 16 && power == 20) { framework = 16; power = 21; } else if (framework == 16 && power == 21) { framework = 16; power = 20; } else if (framework == 16 && power == 26) { framework = 16; power = 27; } else if (framework == 16 && power == 27) { framework = 16; power = 26; } else if (framework == 17 && power == 2) { framework = 17; power = 3; } else if (framework == 17 && power == 3) { framework = 17; power = 2; } else if (framework == 17 && power == 4) { framework = 17; power = 5; } else if (framework == 17 && power == 5) { framework = 17; power = 6; } else if (framework == 17 && power == 6) { framework = 17; power = 9; } else if (framework == 17 && power == 7) { framework = 17; power = 4; } else if (framework == 17 && power == 8) { framework = 17; power = 7; } else if (framework == 17 && power == 9) { framework = 17; power = 8; } else if (framework == 17 && power == 14) { framework = 17; power = 16; } else if (framework == 17 && power == 15) { framework = 17; power = 17; } else if (framework == 17 && power == 16) { framework = 17; power = 15; } else if (framework == 17 && power == 17) { framework = 17; power = 14; } else if (framework == 17 && power == 19) { framework = 17; power = 20; } else if (framework == 17 && power == 20) { framework = 17; power = 19; } else if (framework == 18 && power == 4) { framework = 18; power = 6; } else if (framework == 18 && power == 5) { framework = 18; power = 7; } else if (framework == 18 && power == 6) { framework = 18; power = 8; } else if (framework == 18 && power == 7) { framework = 18; power = 10; } else if (framework == 18 && power == 8) { framework = 18; power = 9; } else if (framework == 18 && power == 9) { framework = 18; power = 12; } else if (framework == 18 && power == 10) { framework = 18; power = 11; } else if (framework == 18 && power == 11) { framework = 18; power = 4; } else if (framework == 18 && power == 12) { framework = 18; power = 5; } else if (framework == 18 && power == 14) { framework = 18; power = 15; } else if (framework == 18 && power == 15) { framework = 18; power = 14; } else if (framework == 18 && power == 17) { framework = 18; power = 18; } else if (framework == 18 && power == 18) { framework = 18; power = 19; } else if (framework == 18 && power == 19) { framework = 18; power = 17; } else if (framework == 19 && power == 5) { framework = 19; power = 7; } else if (framework == 19 && power == 6) { framework = 19; power = 8; } else if (framework == 19 && power == 7) { framework = 19; power = 9; } else if (framework == 19 && power == 8) { framework = 19; power = 5; } else if (framework == 19 && power == 9) { framework = 19; power = 10; } else if (framework == 19 && power == 10) { framework = 19; power = 12; } else if (framework == 19 && power == 11) { framework = 19; power = 13; } else if (framework == 19 && power == 12) { framework = 19; power = 16; } else if (framework == 19 && power == 13) { framework = 19; power = 15; } else if (framework == 19 && power == 14) { framework = 19; power = 11; } else if (framework == 19 && power == 15) { framework = 19; power = 14; } else if (framework == 19 && power == 16) { framework = 19; power = 17; } else if (framework == 19 && power == 17) { framework = 19; power = 18; } else if (framework == 19 && power == 18) { framework = 19; power = 19; } else if (framework == 19 && power == 19) { framework = 19; power = 20; } else if (framework == 19 && power == 20) { framework = 19; power = 23; } else if (framework == 19 && power == 21) { framework = 19; power = 24; } else if (framework == 19 && power == 22) { framework = 19; power = 21; } else if (framework == 19 && power == 23) { framework = 19; power = 22; } else if (framework == 19 && power == 25) { framework = 19; power = 26; } else if (framework == 19 && power == 26) { framework = 19; power = 27; } else if (framework == 19 && power == 27) { framework = 19; power = 28; } else if (framework == 19 && power == 28) { framework = 19; power = 29; } else if (framework == 19 && power == 29) { framework = 19; power = 30; } else if (framework == 19 && power == 30) { framework = 19; power = 31; } else if (framework == 19 && power == 31) { framework = 19; power = 32; } else if (framework == 19 && power == 32) { framework = 19; power = 33; } else if (framework == 19 && power == 33) { framework = 19; power = 34; } else if (framework == 19 && power == 34) { framework = 19; power = 35; } else if (framework == 20 && power == 4) { framework = 20; power = 5; } else if (framework == 20 && power == 5) { framework = 20; power = 4; } else if (framework == 20 && power == 7) { framework = 20; power = 8; } else if (framework == 20 && power == 8) { framework = 20; power = 9; } else if (framework == 20 && power == 9) { framework = 20; power = 7; } else if (framework == 20 && power == 11) { framework = 20; power = 12; } else if (framework == 20 && power == 12) { framework = 20; power = 13; } else if (framework == 20 && power == 13) { framework = 20; power = 11; } else if (framework == 20 && power == 20) { framework = 20; power = 21; } else if (framework == 20 && power == 21) { framework = 20; power = 20; } else if (framework == 21 && power == 4) { framework = 21; power = 5; } else if (framework == 21 && power == 5) { framework = 21; power = 6; } else if (framework == 21 && power == 6) { framework = 21; power = 7; } else if (framework == 21 && power == 7) { framework = 21; power = 8; } else if (framework == 21 && power == 8) { framework = 21; power = 9; } else if (framework == 21 && power == 9) { framework = 21; power = 10; } else if (framework == 21 && power == 10) { framework = 21; power = 11; } else if (framework == 21 && power == 11) { framework = 21; power = 12; } else if (framework == 21 && power == 12) { framework = 21; power = 4; } else if (framework == 21 && power == 15) { framework = 21; power = 17; } else if (framework == 21 && power == 16) { framework = 21; power = 15; } else if (framework == 21 && power == 17) { framework = 21; power = 16; } else if (framework == 21 && power == 18) { framework = 21; power = 21; } else if (framework == 21 && power == 21) { framework = 21; power = 18; } else if (framework == 21 && power == 24) { framework = 21; power = 25; } else if (framework == 21 && power == 25) { framework = 21; power = 24; } else if (framework == 21 && power == 32) { framework = 21; power = 33; } else if (framework == 21 && power == 33) { framework = 21; power = 32; } else if (framework == 22 && power == 2) { framework = 22; power = 6; } else if (framework == 22 && power == 3) { framework = 22; power = 2; } else if (framework == 22 && power == 4) { framework = 22; power = 3; } else if (framework == 22 && power == 5) { framework = 22; power = 8; } else if (framework == 22 && power == 6) { framework = 22; power = 7; } else if (framework == 22 && power == 7) { framework = 22; power = 4; } else if (framework == 22 && power == 10) { framework = 22; power = 11; } else if (framework == 22 && power == 11) { framework = 22; power = 12; } else if (framework == 22 && power == 12) { framework = 22; power = 13; } else if (framework == 22 && power == 13) { framework = 22; power = 10; } else if (framework == 22 && power == 21) { framework = 22; power = 29; } else if (framework == 22 && power == 22) { framework = 22; power = 30; } else if (framework == 22 && power == 23) { framework = 22; power = 21; } else if (framework == 22 && power == 25) { framework = 22; power = 31; } else if (framework == 22 && power == 26) { framework = 22; power = 32; } else if (framework == 22 && power == 27) { framework = 22; power = 33; } else if (framework == 22 && power == 28) { framework = 22; power = 34; } else if (framework == 22 && power == 29) { framework = 22; power = 23; } else if (framework == 22 && power == 31) { framework = 22; power = 25; } else if (framework == 22 && power == 32) { framework = 22; power = 26; } else if (framework == 22 && power == 33) { framework = 22; power = 27; } else if (framework == 22 && power == 34) { framework = 22; power = 28; } else if (framework == 22 && power == 36) { framework = 22; power = 38; } else if (framework == 22 && power == 43) { framework = 22; power = 44; } else if (framework == 22 && power == 44) { framework = 22; power = 43; } else if (framework == 23 && power == 1) { framework = 23; power = 2; } else if (framework == 23 && power == 2) { framework = 23; power = 1; } else if (framework == 23 && power == 5) { framework = 23; power = 8; } else if (framework == 23 && power == 8) { framework = 23; power = 12; } else if (framework == 23 && power == 9) { framework = 23; power = 10; } else if (framework == 23 && power == 10) { framework = 23; power = 11; } else if (framework == 23 && power == 11) { framework = 23; power = 13; } else if (framework == 23 && power == 12) { framework = 23; power = 14; } else if (framework == 23 && power == 13) { framework = 23; power = 9; } else if (framework == 23 && power == 14) { framework = 23; power = 15; } else if (framework == 23 && power == 15) { framework = 23; power = 16; } else if (framework == 23 && power == 16) { framework = 23; power = 5; } else if (framework == 23 && power == 18) { framework = 23; power = 19; } else if (framework == 23 && power == 19) { framework = 23; power = 20; } else if (framework == 23 && power == 20) { framework = 23; power = 25; } else if (framework == 23 && power == 21) { framework = 23; power = 26; } else if (framework == 23 && power == 25) { framework = 23; power = 21; } else if (framework == 23 && power == 26) { framework = 23; power = 18; } else if (framework == 23 && power == 34) { framework = 23; power = 35; } else if (framework == 23 && power == 35) { framework = 23; power = 34; } else if (framework == 24 && power == 4) { framework = 24; power = 5; } else if (framework == 24 && power == 5) { framework = 24; power = 6; } else if (framework == 24 && power == 6) { framework = 24; power = 4; } else if (framework == 24 && power == 9) { framework = 24; power = 11; } else if (framework == 24 && power == 10) { framework = 24; power = 9; } else if (framework == 24 && power == 11) { framework = 24; power = 10; } else if (framework == 24 && power == 18) { framework = 24; power = 24; } else if (framework == 24 && power == 19) { framework = 24; power = 17; } else if (framework == 24 && power == 21) { framework = 24; power = 18; } else if (framework == 24 && power == 22) { framework = 24; power = 21; } else if (framework == 24 && power == 24) { framework = 24; power = 19; } else if (framework == 24 && power == 31) { framework = 24; power = 32; } else if (framework == 24 && power == 32) { framework = 24; power = 31; }
+            // if (framework == 7) framework = 9; else if (framework == 8) framework = 7; else if (framework == 9) framework = 8;
+            
+            powerCode = numToUrlCode(framework) + numToUrlCode(power);
+            powerId = dataPowerIdFromCode[powerCode];
+
+            console.log("parseBalakUrlParams: powerId after=" + powerId);
+
+            data[i] = numToUrlCode(framework);
+            data[i + 1] = numToUrlCode(power);
+            var maskCode = numToUrlCode2(mask >> 1);
+            data[i + 2] = maskCode[0];
+            data[i + 3] = maskCode[1];
+
+            inc = 4;
+            break;
+        case 27:
+        case 28:
+        case 29: // Specializations
+            var code1 = data[i];
+            var code2 = data[i + 1];
+            var code3 = data[i + 2];
+            var code4 = data[i + 3];
+            var codeNum = parseInt(urlCodeToNum4(code1 + code2 + code3 + code4));
+
+            var specialization = codeNum >> 4;
+            var specializationTree = codeNum & ~(specialization << 4);
+            var specializationCode = numToUrlCode4((specialization << 4) + specializationTree);
+            data[i] = specializationCode[0];
+            data[i + 1] = specializationCode[1];
+            data[i + 2] = specializationCode[2];
+            data[i + 3] = specializationCode[3];
+
+            inc = 4;
+            break;
+        }
+        i += inc;
+        pos++;
+    }
+    return data;
+}
 
 // change updates
 function changeUpdate() {
