@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-15 14:00:00 (woof-wolf)>
+ * Time-stamp: <2026-05-15 14:25:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.2.3';
+var version = '1.2.5';
 var releaseDate = '2026-05-15';
 var buildVersion = 2;
 
