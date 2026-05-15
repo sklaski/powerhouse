@@ -2626,14 +2626,10 @@ function parseUrlParams(url) {
                 var code2 = applyVersionUpdate(version, 'code2', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'code3': data[i + 2], 'code4': data[i + 3], 'archetype': archetype});
                 var code3 = applyVersionUpdate(version, 'code3', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'code3': data[i + 2], 'code4': data[i + 3], 'archetype': archetype});
                 var code4 = applyVersionUpdate(version, 'code4', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': data[i], 'code2': data[i + 1], 'code3': data[i + 2], 'code4': data[i + 3], 'archetype': archetype});
-                // Debug
-                console.log("code1=" + code1 + ", code2=" + code2 + ", code3=" + code3 + ", code4=" + code4);
                 var framework = applyVersionUpdate(version, 'framework', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'code2': code2, 'code3': code3, 'code4': code4, 'archetype': archetype, 'framework': parseInt(urlCodeToNum(code1)), 'power': parseInt(urlCodeToNum(code2)), 'mask': urlCodeToNum2(code3 + code4) << 1});
                 var power = applyVersionUpdate(version, 'power', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'code2': code2, 'code3': code3, 'code4': code4, 'archetype': archetype, 'framework': parseInt(urlCodeToNum(code1)), 'power': parseInt(urlCodeToNum(code2)), 'mask': urlCodeToNum2(code3 + code4) << 1});
                 var mask = applyVersionUpdate(version, 'mask', {'type': 'power', 'pos': pos, 'i': i, 'inc': inc, 'code1': code1, 'code2': code2, 'code3': code3, 'code4': code4, 'archetype': archetype, 'framework': parseInt(urlCodeToNum(code1)), 'power': parseInt(urlCodeToNum(code2)), 'mask': urlCodeToNum2(code3 + code4) << 1});
                 var powerCode = numToUrlCode(framework) + numToUrlCode(power);
-                // Debug
-                console.log("framework=" + framework + ", power=" + power + ", powerCode=" + powerCode);
                 var powerId = dataPowerIdFromCode[powerCode];
                 var num = pos - 12;
                 data[i] = numToUrlCode(framework);
@@ -2642,8 +2638,6 @@ function parseUrlParams(url) {
                 data[i + 2] = maskCode[0];
                 data[i + 3] = maskCode[1];
                 if (finalVersion) {
-                    // Debug
-                    console.log("framework=" + framework + ", power=" + power + ", powerID=" + powerId);
                     selectFramework(framework);
                     selectPower(num);
                     setPower(powerId);
@@ -2732,8 +2726,6 @@ function parseBalakUrlParams(url) {
             data[k] = oldData[j] || '0';
             k++;
         }
-        // Debug
-        console.log("parseBalakUrlParams: j=" + j + ", data=" + data[j]);
     }
 
     // It doesn't need to iterate because we are only on version 2
