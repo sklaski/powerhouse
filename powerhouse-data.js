@@ -211,7 +211,7 @@ dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Negotiator', 'Neg
 dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Investigator', 'Investigator', 'Int: 5, End: 5');
 
 dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Showmanship', 'Showmanship', 'Ego: 5, Pre: 5');
-dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Wordly', 'Wordly', 'Ego: 5, Rec: 5');
+dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Worldly', 'Worldly', 'Ego: 5, Rec: 5');
 dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Daredevil', 'Daredevil', 'Ego: 5, End: 5');
 
 dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Lasting Impression', 'Lasting Impression', 'Pre: 5, Rec: 5');
@@ -5075,7 +5075,7 @@ const wristBolterHtml = '<div style="display:flex; justify-content:space-between
   <div>Power Armor<br>Every 0.5 sec<br>Instant</div>\
   <div style="text-align:right;">Targets foe<br>50 feet</div>\
 </div><br>\
-Energy Builder - Ranged Damage<br><br>\
+ENERGY BUILDER - RANGED DAMAGE<br><br>\
 MAINTAIN<br>\
 <ul>\
   <li>Deals Particle Damage and generates Energy with the first shot.</li>\
