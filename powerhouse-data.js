@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-20 5:10:00 (woof-wolf)>
+ * Time-stamp: <2026-05-20 8:05:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -229,6 +229,141 @@ dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Survival Training
 dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Field Ops Training', 'Field Ops Training', 'Con: 3, End: 2, Int: 3, Ego: 3, Rec: 2');
 dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Jack of All Trades', 'Jack of All Trades', 'All: 2');
 //dataTalent[dataTalent.length] = new Talent(dataTalent.length, 'Jack of All Trades', 'Jack of All Trades', 'Con: 2, End: 2, Str: 2, Dex: 2, Int: 2, Ego: 2, Pre: 2, Rec: 2');
+
+//==============================================================================
+// CAMS
+//==============================================================================
+
+// CAMS class
+/**@constructor*/
+CAMS = function(id, name, desc, tier, tip) {
+    this.id = id;
+    this.name = name;
+    this.desc = desc;
+    this.tier = tier;
+    this.tip = tip;
+    this.code = function() {
+        return numToUrlCode(this.id);
+    }
+    this.equals = function(obj) {
+        return (typeof(this) == typeof(obj) && this.id == obj.id);
+    }
+    this.toString = function() {
+        return '[id=' + this.id + ', name=\'' + this.name + '\', desc=\'' + this.desc + '\', tier=\'' + this.tier + '\', tip=\'' + this.tip + '\', code=' + this.code() + ']';
+    }
+}
+
+var dataCAMS = [];
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, null, null, null, 0, null);
+
+// Blue CAMS
+
+const blueTier1Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Blue Tier 1<br>20 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+1 Advantage Points</li>\
+  <li>+5 Maximum Energy</li>\
+  <li>+1 Energy Regeneration every second</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 1', '<img src="img/cams-icons/CAMS_BlueT1.png" />&nbsp;Blue Tier 1', 1, blueTier1Html);
+
+const blueTier2Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Blue Tier 2<br>100 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+2 Advantage Points</li>\
+  <li>+15 Maximum Energy</li>\
+  <li>+3 Energy Regeneration every second</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 2', '<img src="img/cams-icons/CAMS_BlueT2.png" />&nbsp;Blue Tier 2', 2, blueTier2Html);
+
+const blueTier3Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Blue Tier 3<br>420 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+3 Advantage Points</li>\
+  <li>+30 Maximum Energy</li>\
+  <li>+6 Energy Regeneration every second</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 3', '<img src="img/cams-icons/CAMS_BlueT3.png" />&nbsp;Blue Tier 3', 3, blueTier3Html);
+
+const blueTier4Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Blue Tier 4<br>1700 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+4 Advantage Points</li>\
+  <li>+50 Maximum Energy</li>\
+  <li>+10 Energy Regeneration every second</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 4', '<img src="img/cams-icons/CAMS_BlueT4.png" />&nbsp;Blue Tier 4', 4, blueTier4Html);
+
+const blueTier5Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Blue Tier 5<br>6820 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+5 Advantage Points</li>\
+  <li>+75 Maximum Energy</li>\
+  <li>+15 Energy Regeneration every second</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 5', '<img src="img/cams-icons/CAMS_BlueT5.png" />&nbsp;Blue Tier 5', 5, blueTier5Html);
+
+// Green CAMS
+
+const greenTier1Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Green Tier 1<br>20 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+1 Advantage Points</li>\
+  <li>+100 Maximum Health</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 1', '<img src="img/cams-icons/CAMS_GreenT1.png" />&nbsp;Green Tier 1', 1, greenTier1Html);
+
+const greenTier2Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Green Tier 2<br>100 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+2 Advantage Points</li>\
+  <li>+300 Maximum Health</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 2', '<img src="img/cams-icons/CAMS_GreenT2.png" />&nbsp;Green Tier 2', 2, greenTier2Html);
+
+const greenTier3Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Green Tier 3<br>420 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+3 Advantage Points</li>\
+  <li>+600 Maximum Health</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 3', '<img src="img/cams-icons/CAMS_GreenT3.png" />&nbsp;Green Tier 3', 3, greenTier3Html);
+
+const greenTier4Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Green Tier 4<br>1700 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+4 Advantage Points</li>\
+  <li>+1200 Maximum Health</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 4', '<img src="img/cams-icons/CAMS_GreenT4.png" />&nbsp;Green Tier 4', 4, greenTier4Html);
+
+const greenTier5Html = '<div style="display:flex; justify-content:space-between;">\
+<div>Green Tier 5<br>6820 Magical Residue Total</div>\
+</div>\
+<ul>\
+  <li>+5 Advantage Points</li>\
+  <li>+2000 Maximum Health</li>\
+</ul>';
+
+dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 5', '<img src="img/cams-icons/CAMS_GreenT5.png" />&nbsp;Green Tier 5', 5, greenTier5Html);
 
 //==============================================================================
 // Power Aliases (set with their powers)
@@ -13082,7 +13217,7 @@ dataArchetype[dataArchetype.length] = new Archetype(dataArchetype.length, 'The N
 // The Penitent, Melee
 //------------------------------------------------------------------------------
 
-dataArchetype[dataArchetype.length] = new Archetype(dataArchetype.length, 'The Penitent', '<img src="img/archetype-icons/Archetype_Penitent.png" />&nbsp;The Penitent', 'Melee', ['Strength', 'Dexterity', 'Endurance'], 'The Penitent', ['Reaper\'s Touch', ['Slash', 'Barbed Chain'], ['Thunderbolt Lunge', 'Cut Down'], ['Unstoppable', 'Way of the Warrior'], ['Aspect of the Bestial', 'Form of the Swordsman'], ['Lacerating Cyclone', 'Throwing Blades'], 'Chainsaw Gauntlet', ['Antagonize', 'Retaliation'], 'Wild Thing', ['Barbed Lariat', 'Holdout Shot'], ['Masterful Dodge', 'Aggressor'], ['Breakaway Shot', 'Evasive Maneuvers']], ['Strength', 'Warden', 'Brawler'], '<b>The Penitent, Melee</b>');
+dataArchetype[dataArchetype.length] = new Archetype(dataArchetype.length, 'The Penitent', '<img src="img/archetype-icons/Archetype_Penitent.png" />&nbsp;The Penitent', 'Melee', ['Strength', 'Dexterity', 'Endurance'], 'The Penitent', ['Reaper\'s Touch', ['Slash', 'Barbed Chain'], ['Thunderbolt Lunge', 'Cut Down'], ['Unstoppable', 'Way of the Warrior'], ['Aspect of the Bestial', 'Form of the Swordsman'], ['Lacerating Cyclone', 'Throwing Blades'], 'Gauntlet Chainsaw', ['Antagonize', 'Retaliation'], 'Wild Thing', ['Barbed Lariat', 'Holdout Shot'], ['Masterful Dodge', 'Aggressor'], ['Breakaway Shot', 'Evasive Maneuvers']], ['Strength', 'Warden', 'Brawler'], '<b>The Penitent, Melee</b>');
 
 //------------------------------------------------------------------------------
 // The Predator, Melee
@@ -13188,6 +13323,7 @@ dataArchetype[dataArchetype.length] = new Archetype(dataArchetype.length, 'The W
 getDataSuperStat = function() { return dataSuperStat; }
 getDataInnateTalent = function() { return dataInnateTalent; }
 getDataTalent = function() { return dataTalent; }
+getDataCAMS = function() { return dataCAMS; }
 getDataTravelPower = function() { return dataTravelPower; }
 getDataPowerSet = function() { return dataPowerSet; }
 getDataFramework = function() { return dataFramework; }

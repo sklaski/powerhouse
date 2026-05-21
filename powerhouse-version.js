@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-20 5:10:00 (woof-wolf)>
+ * Time-stamp: <2026-05-20 8:05:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -772,7 +772,7 @@ dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
 // Version 1 => 2
 // Minor update to change Night Warrior from T2 to T1.
 dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
-    dataVersionUpdate.length, 2,
+    dataVersionUpdate.length, 1,
     function(thing, value) {
         var codeNum1 = (value['code1'] == undefined) ? 0 : urlCodeToNum(value['code1']); // framework
         var codeNum2 = (value['code2'] == undefined) ? 0 : urlCodeToNum(value['code2']); // power
@@ -791,6 +791,7 @@ dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
         case 'superStat': return value['superStat'];
         case 'innateTalent': return value['innateTalent'];
         case 'talent': return value['talent'];
+        case 'CAMS': return value['CAMS'];
         case 'travelPower': return value['travelPower'];
         case 'framework': return value['framework'];
         case 'power':
@@ -818,6 +819,51 @@ dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
              || (codeNum1 == 14 && codeNum2 >= 17 && codeNum2 <= 29)) ++power;
 
             return power;
+        case 'mask': return value['mask'];
+        case 'specializationTree': return value['specializationTree'];
+        case 'specialization': return value['specialization'];
+        }
+});
+
+// Version 2 => 3
+// Addition of CAMS selection
+dataVersionUpdate[dataVersionUpdate.length] = new VersionUpdate(
+    dataVersionUpdate.length, 2,
+    function(thing, value) {
+        var codeNum1 = (value['code1'] == undefined) ? 0 : urlCodeToNum(value['code1']); // framework
+        var codeNum2 = (value['code2'] == undefined) ? 0 : urlCodeToNum(value['code2']); // power
+        // var codeNum3 = (value['code3'] == undefined) ? 0 : urlCodeToNum(value['code3']);
+        // var codeNum4 = (value['code4'] == undefined) ? 0 : urlCodeToNum(value['code4']);
+        switch (thing) {
+        case 'data':
+            var oldData = value['data'];
+            var data = [];
+
+            // Explain this later
+            for (var j = 0, k = 0; j < oldData.length; j++, k++) {
+                if (j == 12) {
+                    data[k] = '0';
+                    k++;
+                }
+                data[k] = oldData[j] || '0';
+            }
+            
+            return data;
+        case 'pos': return value['pos'];
+        case 'i': return value['i'];
+        case 'inc': return value['inc'];
+        case 'code1': return value['code1'];
+        case 'code2': return value['code2'];
+        case 'code3': return value['code3'];
+        case 'code4': return value['code4'];
+        case 'archetype': return value['archetype'];
+        case 'superStat': return value['superStat'];
+        case 'innateTalent': return value['innateTalent'];
+        case 'talent': return value['talent'];
+        case 'CAMS': return value['CAMS'];
+        case 'travelPower': return value['travelPower'];
+        case 'framework': return value['framework'];
+        case 'power': return value['power'];
         case 'mask': return value['mask'];
         case 'specializationTree': return value['specializationTree'];
         case 'specialization': return value['specialization'];
