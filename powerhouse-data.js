@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-20 8:05:00 (woof-wolf)>
+ * Time-stamp: <2026-05-21 6:25:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -3233,7 +3233,6 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Vortex', 'Vortex', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-// Stopped here for now
 const twisterHtml = '<div style="display:flex; justify-content:space-between;">\
   <div>Wind<br>32 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
@@ -3438,13 +3437,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const iceBlastHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div>Ice<br>18-45 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>100 feet</div>\
 </div><br>\
-RANGED DAMAGE - CHILL - BLAST - COLD SNAP<br><br>\
+RANGED DAMAGE - CHILL - BLAST<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Cold Damage to your target.</li>\
+  <li>Deals 124-486 Cold Damage to your target.</li>\
   <li>Has a 25-100% chance to apply Chill to the target, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
   <li>Charge damage is increased if you are affected by Cold Snap.</li>\
 </ul>';
@@ -3763,13 +3762,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchaine
 //------------------------------------------------------------------------------
 
 const icicleSpearHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div>Ice<br>41-104 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>100 feet</div>\
 </div><br>\
 RANGED DAMAGE - CHILL<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Cold Damage to your target.</li>\
+  <li>Deals 254-904 Cold Damage to your target.</li>\
   <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
 </ul>';
 
@@ -3956,29 +3955,29 @@ CLICK<br>\
 dataPowerAlias['Implosion Engine'] = new PowerAlias('Implosion Engine', 'Implosion Engine', '<img src="img/power-icons/technology/Technology_ImplosionEngine.png" />&nbsp;Implosion Engine', implosionEngineHtml);
 
 const mechanicalMonstrosityHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Technology<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
+  <div>Technology<br>66 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets self<br>60 seconds recharge</div>\
 </div><br>\
 UNCONTROLLED PET<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Summons a mechanical spider to do your bidding for 30 sec. It can use the follow abilities:</li>\
-  <li>Spit: 50ft ranged attack that deals Toxic Damage. Removes travel powers and applies Debilitating Poison.</li>\
-  <li>Swipe: 10ft melee cone attack that deals Slashing Damage and has a chance to Poison foes.</li>\
-  <li>Electrocute: 15ft PBAoE attacks that deals Electrical Damage and has a chance to Knock foes.</li>\
-  <li>Lunge: Slashing Damage</li>\
+  <li>Summons a mechanical spider to do your bidding for 30 sec. It can use the following abilities:</li>\
+  <li>Spit: 50 ft ranged attack that deals 312 Toxic Damage. Removes travel powers and applies Debilitating Poison.</li>\
+  <li>Swipe: 10 ft melee cone attack that deals 438 Slashing Damage and has a chance to Poison foes.</li>\
+  <li>Electrocute: 15 ft PBAoE attack that deals 438 Electrical Damage and has a chance to Knock foes.</li>\
+  <li>Lunge: 560 Slashing Damage</li>\
 </ul>';
 
 dataPowerAlias['Mechanical Monstrosity'] = new PowerAlias('Mechanical Monstrosity', 'Mechanical Monstrosity', '<img src="img/power-icons/technology/Technology_MechanicalMonstrosity.png" />&nbsp;Mechanical Monstrosity', mechanicalMonstrosityHtml);
 
 const meltdownHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Technology<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+  <div>Technology<br>182 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Affects foe (10 max)<br>20 foot Sphere<br>60 seconds recharge</div>\
 </div><br>\
 ULTIMATE - MELEE AOE DAMAGE<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Particle Damage to all targets.</li>\
+  <li>Deals 1,169 Particle Damage to all targets.</li>\
   <li>Knocks Down all targets.</li>\
   <li>The initial strike immediately causes foes to be affected by Plasma Burn. Additional stacks of Plasma Burn apply over 5 sec.</li>\
 </ul>';
@@ -4013,14 +4012,14 @@ MAINTAIN<br>\
 dataPowerAlias['Showdown'] = new PowerAlias('Showdown', 'Showdown', '<img src="img/power-icons/technology/Technology_Showdown.png" />&nbsp;Showdown', showdownHtml);
 
 const arrowAssaultHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Technology<br>0.83 sec charge (0.83 min)<br>0.67 sec activate time</div>\
+  <div>Technology<br>125 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 25 foot Sphere<br>60 seconds recharge</div>\
 </div><br>\
 RANGED AOE DAMAGE<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage and Knocks Down all targets.</li>\
-  <li>After 1 sec, deals additional Fire Damage and Stuns all targets for 5.2 sec.</li>\
+  <li>Deals 238 Piercing Damage and Knocks Down all targets.</li>\
+  <li>After 1 sec, deals an additional 461 Fire Damage and Stuns all targets for 4.2 sec.</li>\
 </ul>';
 
 dataPowerAlias['Arrow Assault'] = new PowerAlias('Arrow Assault', 'Arrow Assault', '<img src="img/power-icons/technology/Technology_ArrowAssault.png" />&nbsp;Arrow Assault', arrowAssaultHtml);
@@ -4085,13 +4084,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const straightShotHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Archery<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  <div>Archery<br>23-50 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>100 feet</div>\
 </div><br>\
 RANGED DAMAGE - BLAST - ROOT<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage and has a 35-100% chance to Root your target for 13 sec.</li>\
+  <li>Deals 155-442 Piercing Damage and has a 35-100% chance to Root your target for 13 sec.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Straight Shot', '<img src="img/power-icons/archery/Archery_StraightShot.png" />&nbsp;Straight Shot', 2, 6, pow++, 0, straightShotHtml); 
@@ -4162,13 +4161,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Sleight 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Stim Pack', 'Stim Pack', 2, null, null));
 
 const taserArrowHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Archery<br>2 sec charge time (2 min)<br>0.5 sec activate time</div>\
+  <div>Archery<br>54 Energy cost<br>2 sec charge time (2 min)<br>0.5 sec activate time</div>\
   <div style="text-align:right;">Targets foe that is not destructible<br>100 feet</div>\
 </div><br>\
 RANGED DAMAGE - PARALYZE<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage and Electrical Damage and Paralyzes the target for 12 sec.</li>\
+  <li>Deals 129 Piercing Damage and 388 Electrical Damage and Paralyzes the target for 12 sec.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Taser Arrow', '<img src="img/power-icons/archery/Archery_TaserArrow.png" />&nbsp;Taser Arrow', 2, 6, pow++, 1, taserArrowHtml); 
@@ -4180,15 +4179,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Electric
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const sonicArrowHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Archery<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div>Archery<br>19-51 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>100 feet; 10 foot Sphere<br>10 seconds recharge</div>\
 </div><br>\
 RANGED AOE DAMAGE - STUN - PARALYZE<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage to the main target and Sonic Damage to all targets based on charge time.</li>\
+  <li>Deals 60-213 Piercing Damage to the main target and 60-213 Sonic Damage to all targets based on charge time.</li>\
   <li>If not fully charged, Stuns affected targets for 1.7 sec.</li>\
-  <li>If fully charged instead Paralyzes affected targets for 12 sec.</li>\
+  <li>If fully charged, instead Paralyzes affected targets for 12 sec.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sonic Arrow', '<img src="img/power-icons/archery/Archery_SonicArrow.png" />&nbsp;Sonic Arrow', 2, 6, pow++, 1, sonicArrowHtml); 
@@ -4294,13 +4293,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const torrentOfArrowsHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Archery<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div>Archery<br>55-134 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 30 degree Cone</div>\
 </div><br>\
 RANGED AOE DAMAGE - KNOCK<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage to affected targets.</li>\
+  <li>Deals 170-603 Piercing Damage to affected targets.</li>\
   <li>Has a 34-100% chance to Knock Down affected targets.</li>\
 </ul>';
 
@@ -4352,13 +4351,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Graceful
 //------------------------------------------------------------------------------
 
 const focusedShotHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Archery<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
+  <div>Archery<br>72 Energy cost<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>120 feet</div>\
 </div><br>\
 RANGED DAMAGE<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage.</li>\
+  <li>Deals 1,013 Piercing Damage.</li>\
   <li>Successfully using this power applies Total Focus to you, reducing this power\\\'s charge time by 15% for 10 sec. Stacks up to 3 times.</li>\
   <li>Taking any damage will interrupt charging this power and remove all stacks of Total Focus.</li>\
 </ul>';
@@ -4390,14 +4389,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const explosiveArrowHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Archery<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div>Archery<br>47-129 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
 </div><br>\
 RANGED AOE DAMAGE<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Fire Damage to all targets based on charge time.</li>\
-  <li>Has a 27-100% chance to Knock Up affected targets 17ft.</li>\
+  <li>Deals 155-552 Fire Damage to all targets based on charge time.</li>\
+  <li>Has a 27-100% chance to Knock Up affected targets 17 ft.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Explosive Arrow', '<img src="img/power-icons/archery/Archery_ExplosiveArrow.png" />&nbsp;Explosive Arrow', 2, 6, pow++, 3, explosiveArrowHtml); 
@@ -4535,13 +4534,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const burstShotHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Munitions<br>1 sec charge time<br>0.5 sec activate time</div>\
+  <div>Munitions<br>18-34 Energy<br>1 sec charge time<br>0.5 sec activate time</div>\
   <div style="text-align:right;">Targets foe (3 max)<br>50 feet; 2 foot Cylinder</div>\
 </div><br>\
 RANGED DAMAGE - BLAST - DEBUFF<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage based on charge time. This damage is reduced based on number of targets hit.</li>\
+  <li>Deals 116-341 Piercing Damage based on charge time. This damage is reduced based on the number of targets hit.</li>\
   <li>Applies Armor Piercing to affected targets, reducing their Crushing and Piercing resistance for your attacks by 15% for 15 sec.</li>\
 </ul>';
 
@@ -4622,13 +4621,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const tripWireHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Munitions<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div>Munitions<br>17-24 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
 </div><br>\
 RANGED DAMAGE - KNOCK TO<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage.</li>\
+  <li>Deals 158-376 Piercing Damage.</li>\
   <li>Your target is Knocked to you.</li>\
   <li>Has a 46-100% chance to apply Disorient to your target.</li>\
   <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
@@ -4644,14 +4643,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const shotgunBlastHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Munitions<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div>Munitions<br>26-43 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30 degree Cone</div>\
 </div><br>\
 RANGED AOE DAMAGE - KNOCK BACK - BLAST<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Crushing Damage to all targets.</li>\
-  <li>Has a 50% chance to Knock Back the main target.</li>\
+  <li>Deals 141-301 Crushing Damage to all targets.</li>\
+  <li>Has a 50% chance to Knock Back the main target 1.3-10 feet.</li>\
   <li>Has a 25% chance to Knock Back other targets.</li>\
 </ul>';
 
@@ -4845,15 +4844,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Stim Pac
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Dizzying Impact', 'Dizzying Impact', 2, null, null));
 
 const rocketHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Munitions<br>2.33 sec charge (2.33 min)<br>0.67 sec activate time</div>\
+  <div>Munitions<br>147 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 20 foot Sphere<br>15 seconds recharge</div>\
 </div><br>\
 RANGED AOE DAMAGE - KNOCK<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Crushing Damage and Fire Damage to your main target.</li>\
-  <li>Deals reduced Crushing Damage and Fire Damage to foes within 20ft of your target.</li>\
-  <li>Knocks down all targets.</li>\
+  <li>Deals 508 Crushing Damage and 508 Fire Damage to your main target.</li>\
+  <li>Deals 339 Crushing Damage and 339 Fire Damage to foes within 20 ft of your target.</li>\
+  <li>Knocks Down all targets.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Rocket', '<img src="img/power-icons/munitions/Munitions_Rocket.png" />&nbsp;Rocket', 2, 7, pow++, 2, rocketHtml);
@@ -5039,13 +5038,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 //------------------------------------------------------------------------------
 
 const sniperRifleHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Munitions<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
+  <div>Munitions<br>60 Energy cost<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>120 feet</div>\
 </div><br>\
 RANGED DAMAGE - STUN<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Piercing Damage and Stuns the target for 2.1 sec.</li>\
+  <li>Deals 1,013 Piercing Damage and Stuns the target for 1.7 sec.</li>\
   <li>Taking any damage will interrupt charging this power.</li>\
 </ul>';
 
@@ -5230,14 +5229,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'It Burns
 //------------------------------------------------------------------------------
 
 const powerGauntletHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Power Armor<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div>Power Armor<br>20-60 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>100 feet</div>\
 </div><br>\
 RANGED DAMAGE - INTERRUPT - BLAST<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Particle Damage and has a 26-100% chance to Interrupt the target.</li>\
-  <li>You cannot interrupt foes with the following ranks: Super Villain, Legendary and Cosmic.</li>\
+  <li>Deals 127-497 Particle Damage and has a 26-100% chance to Interrupt the target.</li>\
+  <li>Higher ranked targets may not be affected by the Interrupt.</li>\
   <li>If a target is Interrupted, they are immune to the effect for 8 sec.</li>\
 </ul>';
 
@@ -5251,13 +5250,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const tacticalMissilesHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Power Armor<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div>Power Armor<br>20-60 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
   <div style="text-align:right;">Targets foe<br>100 feet</div>\
 </div><br>\
 RANGED DAMAGE - KNOCKDOWN - BLAST<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Crushing Damage.</li>\
+  <li>Deals 127-497 Crushing Damage.</li>\
   <li>Has a 12-50% chance based on charge time to Knock Down your target.</li>\
 </ul>';
 
@@ -5351,13 +5350,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const rocketPunchHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Power Armor<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div>Power Armor<br>32-95 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
   <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
 </div><br>\
 RANGED AOE DAMAGE - BLAST<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Crushing Damage to targets.</li>\
+  <li>Deals 121-476 Crushing Damage to targets.</li>\
   <li>Has a 12-50% chance to Knock Back targets.</li>\
 </ul>';
 
@@ -5464,13 +5463,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const chestBeamHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Power Armor<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div>Power Armor<br>64-139 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 2 foot Cylinder</div>\
 </div><br>\
 RANGED AOE DAMAGE - KNOCK BACK - DEBUFF<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Particle Damage and the target is Knocked Back 8.7-26ft.</li>\
+  <li>Deals 247-879 Particle Damage and the target is Knocked Back 8.7-26 ft.</li>\
   <li>Applies Burn Through to affected targets, reducing their Crushing and Particle resistance for your attacks by 15% for 15 sec.</li>\
 </ul>';
 
@@ -5538,13 +5537,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const bindingShotHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Power Armor<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div>Power Armor<br>66 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
   <div style="text-align:right;">Targets foe that is not destructible<br>50 feet</div>\
 </div><br>\
 RANGED DAMAGE - PARALYZE<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Paralyzes the target for 15 sec and deals Crushing Damage.</li>\
+  <li>Paralyzes the target for 12 sec and deals 395 Crushing Damage.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Binding Shot', '<img src="img/power-icons/power-armor/PowerArmor_BindingShot.png" />&nbsp;Binding Shot', 2, 8, pow++, 2, bindingShotHtml);
@@ -5579,14 +5578,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchaine
 //------------------------------------------------------------------------------
 
 const energyWaveHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Power Armor<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div>Power Armor<br>78-131 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
   <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
 </div><br>\
 RANGED AOE DAMAGE - KNOCK BACK<br><br>\
 CHARGE<br>\
 <ul>\
-  <li>Deals Particle Damage to all targets and each target is Repelled 3.3-13ft.</li>\
-  <li>If charged at least 50%, each target is Knocked Back 8.7-29ft.</li>\
+  <li>Deals 245-585 Particle Damage to all targets and each target is Repelled 3.3-13 ft.</li>\
+  <li>If charged at least 50%, each target is Knocked Back 8.7-29 ft.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Energy Wave', '<img src="img/power-icons/power-armor/PowerArmor_EnergyWave.png" />&nbsp;Energy Wave', 2, 8, pow++, 3, energyWaveHtml);
@@ -5805,7 +5804,7 @@ CHARGE<br>\
   <li>In most cases, deals 100-491 Particle Damage to your target.</li>\
   <li>If charged for less than 1 sec, has a 35% chance to deal an additional 130-296 Particle Damage to your target.</li>\
   <li>If charged for more than 1 sec, one of the following effects can occur:</li>\
-  <li>10% chance to cause your target to be Knocked Up 17ft.</li>\
+  <li>10% chance to cause your target to be Knocked Up 17 ft.</li>\
   <li>25% chance to Stun your target for up to 1.7 sec.</li>\
   <li>50% chance to Disorient your target for 12 sec, reducing their damage by 10% and their movement speed by 50%. Chance is guaranteed when fully charged.</li>\
   <li>1% chance to turn the target into a Teddy Bear for 10 sec, preventing them from using their powers. This effect only seems to work on low-ranking targets.</li>\
@@ -5831,7 +5830,7 @@ RANGED DAMAGE - BLAST<br><br>\
 CHARGE<br>\
 <ul>\
   <li>Deals 166-472 Slashing Damage to the target. If used from stealth, this power deals 216-614 Slashing Damage.</li>\
-  <li>Can bounce up to 5 times to other nearby targets within 20ft based on charge time, dealing 5% less damage per bounce.</li>\
+  <li>Can bounce up to 5 times to other nearby targets within 20 ft based on charge time, dealing 5% less damage per bounce.</li>\
 </ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ricochet Throw', '<img src="img/power-icons/gadgeteering/Gadgeteering_RicochetThrow.png" />&nbsp;Ricochet Throw', 2, 9, pow++, 0, ricochetThrowHtml);
@@ -5918,7 +5917,7 @@ CHARGE<br>\
   <li>Deals somewhere around 127-482 Particle Damage to targets in front of you.</li>\
   <li>Has a 13-50% chance to Disorient your target for 12 sec, reducing their damage by 10% and their movement speed by 50%.</li>\
   <li>Charging this power for more than 1.5 sec will cause it to Overcharge, increasing the damage of this power by 12% for 10 sec. Stacks up to 5 times.</li>\
-  <li>However, using this power while Overcharged has a 3.7-15% chance for every stack of Overcharge on you to apply Overheat, placing this power on cooldown for ?? sec and expiring all stacks of Overcharged.</li>\
+  <li>However, using this power while Overcharged has a 3.7-15% chance for every stack of Overcharge on you to apply Overheat, placing this power on cooldown for 5 sec and expiring all stacks of Overcharged.</li>\
   <li>Overcharging the weapon may also lead to Unforeseen Consequences.</li>\
 </ul>';
 
@@ -6134,7 +6133,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Ripsaw',
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sonic Boom Generator', '<img src="img/power-icons/gadgeteering/Gadgeteering_SonicBoomGenerator.png" />&nbsp;Sonic Boom Generator', 2, 9, pow++, 2, null);
+const sonicBoomGeneratorHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Gadgeteering<br>39-87 Energy<br>1.67 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - DISORIENT<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 165-491 Sonic Damage and has a 17-50% chance to Disorient each target, reducing their damage by 10% and their movement speed by 50% for 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sonic Boom Generator', '<img src="img/power-icons/gadgeteering/Gadgeteering_SonicBoomGenerator.png" />&nbsp;Sonic Boom Generator', 2, 9, pow++, 2, sonicBoomGeneratorHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6144,7 +6153,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'UPVD: Sonic Boom Generator', 'UPVD: Sonic Boom Generator', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Throwing Blades', '<img src="img/power-icons/gadgeteering/Gadgeteering_ThrowingBlades.png" />&nbsp;Throwing Blades', 2, 9, pow++, 2, null);
+const throwingBladesHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Gadgeteering<br>78-110 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 120 degree Cone</div>\
+</div><br>\
+RANGED AOE DAMAGE - SUDDEN STRIKE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>This power deals 170-362 Slashing Damage to all affected targets and deals 339-723 Slashing Damage when used from Stealth.</li>\
+  <li>When fully charged, applies Sudden Strike for 10 sec, causing the next Critical Hit you land to deal +10% Critical Severity. Expires once you land a Critical Hit.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Throwing Blades', '<img src="img/power-icons/gadgeteering/Gadgeteering_ThrowingBlades.png" />&nbsp;Throwing Blades', 2, 9, pow++, 2, throwingBladesHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6175,7 +6195,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Download
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Tanglecoil Launcher', '<img src="img/power-icons/gadgeteering/Gadgeteering_TanglecoilLauncher.png" />&nbsp;Tanglecoil Launcher', 2, 9, pow++, 2, null);
+const tanglecoilLauncherHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Gadgeteering<br>46 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+PARALYZE - DOT<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes the target for 12 sec and deals 67 Crushing Damage every 1 sec for up to 16 sec while the target is Paralyzed.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Tanglecoil Launcher', '<img src="img/power-icons/gadgeteering/Gadgeteering_TanglecoilLauncher.png" />&nbsp;Tanglecoil Launcher', 2, 9, pow++, 2, tanglecoilLauncherHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6184,7 +6214,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Bolas', '<img src="img/power-icons/gadgeteering/Gadgeteering_Bolas.png" />&nbsp;Bolas', 2, 9, pow++, 2, null);
+const bolasHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Gadgeteering<br>66 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet</div>\
+</div><br>\
+RANGED DAMAGE - PARALYZE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes the target for 12 sec and deals 395 Crushing Damage.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Bolas', '<img src="img/power-icons/gadgeteering/Gadgeteering_Bolas.png" />&nbsp;Bolas', 2, 9, pow++, 2, bolasHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6297,7 +6337,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Finite I
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Orbital Cannon', '<img src="img/power-icons/gadgeteering/Gadgeteering_OrbitalCannon.png" />&nbsp;Orbital Cannon', 2, 9, pow++, 3, null);
+const orbitalCannonHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Gadgeteering<br>94 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet<br>20 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - PLASMA BURN - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>This power must be fully charged to activate.</li>\
+  <li>When the power is activated, the ground lights up with the Cannon\\\'s target marker. After 4.5 sec, the Orbital Cannon deals 1,085 Particle Damage to foes within 10 ft.</li>\
+  <li>Knocks Down and applies Plasma Burn to affected targets, causing 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Orbital Cannon', '<img src="img/power-icons/gadgeteering/Gadgeteering_OrbitalCannon.png" />&nbsp;Orbital Cannon', 2, 9, pow++, 3, orbitalCannonHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6318,7 +6370,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Plasma Cannon', '<img src="img/power-icons/gadgeteering/Gadgeteering_PlasmaCannon.png" />&nbsp;Plasma Cannon', 2, 9, pow++, 3, null);
+const plasmaCannonHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Gadgeteering<br>104 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 2 foot Cylinder<br>20 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - STUN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 904 Particle Damage and deals an additional 100 Particle Damage for each Radiation effect on the affected target.</li>\
+  <li>Stuns targets for 1.7 sec.</li>\
+  <li>Refreshes the durations of your Plasma Burn and Disintegrate effects.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Plasma Cannon', '<img src="img/power-icons/gadgeteering/Gadgeteering_PlasmaCannon.png" />&nbsp;Plasma Cannon', 2, 9, pow++, 3, plasmaCannonHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6326,7 +6390,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Recharge
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Resurrection Serum', '<img src="img/power-icons/gadgeteering/Gadgeteering_ResurrectionSerum.png" />&nbsp;Resurrection Serum', 2, 9, pow++, 3, null);
+const resurrectionSerumHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Gadgeteering<br>28 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects defeated friend or foe (1 max)<br>25 foot Sphere<br>3 seconds recharge</div>\
+</div><br>\
+REVIVE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Revives a nearby Hero, bringing them back from defeat with 50% of their Health.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Resurrection Serum', '<img src="img/power-icons/gadgeteering/Gadgeteering_ResurrectionSerum.png" />&nbsp;Resurrection Serum', 2, 9, pow++, 3, resurrectionSerumHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6421,7 +6495,33 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Legacy C
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Eye Lasers', '<img src="img/power-icons/laser-sword/LaserSword_EyeLasers.png" />&nbsp;Eye Lasers', 2, 10, pow++, 0, null);
+const eyeLasersHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Laser Sword<br>23-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>25 feet</div>\
+</div><br>\
+MELEE DAMAGE - PLASMA BURN - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Executed if you are within 15 ft of your target.</li>\
+  <li>Deals 155-608 Particle Damage to your target.</li>\
+  <li>Has a 25-100% chance to apply Plasma Burn, causing 24 Particle Damage every 1 sec for 16 sec.</li>\
+  <li>Refreshes the duration of your Plasma Burn if there are at least 3 stacks on the target.</li>\
+</ul>\
+<hr>\
+<div style="display:flex; justify-content:space-between;">\
+  <div>Laser Sword<br>23-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - PLASMA BURN - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Executed if you are further than 15 ft of your target.</li>\
+  <li>Deals 111-435 Particle Damage to your target.</li>\
+  <li>Has a 25-100% chance to apply Plasma Burn, causing 24 Particle Damage every 1 sec for 16 sec.</li>\
+  <li>Refreshes the duration of your Plasma Burn if there are at least 3 stacks on the target.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Eye Lasers', '<img src="img/power-icons/laser-sword/LaserSword_EyeLasers.png" />&nbsp;Eye Lasers', 2, 10, pow++, 0, eyeLasersHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6446,7 +6546,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Stop Rig
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Lightwave Slash', '<img src="img/power-icons/laser-sword/LaserSword_LightwaveSlash.png" />&nbsp;Lightwave Slash', 2, 10, pow++, 1, null);
+const lightwaveSlashHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Laser Sword<br>41-62 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+</div><br>\
+MELEE AOE DAMAGE - KNOCK DOWN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 198-422 Particle Damage to the target.</li>\
+  <li>On full charge, Knocks Down your targets.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Lightwave Slash', '<img src="img/power-icons/laser-sword/LaserSword_LightwaveSlash.png" />&nbsp;Lightwave Slash', 2, 10, pow++, 1, lightwaveSlashHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6456,7 +6567,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Download
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Cybernetic Tether', '<img src="img/power-icons/laser-sword/LaserSword_CyberneticTether.png" />&nbsp;Cybernetic Tether', 2, 10, pow++, 1, null);
+const cyberneticTetherHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Laser Sword<br>31-41 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK TO - PLASMA BURN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 221-527 Particle Damage.</li>\
+  <li>Your target is Knocked to you.</li>\
+  <li>Has a 46-100% chance to apply Plasma Burn to your target.</li>\
+  <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Cybernetic Tether', '<img src="img/power-icons/laser-sword/LaserSword_CyberneticTether.png" />&nbsp;Cybernetic Tether', 2, 10, pow++, 1, cyberneticTetherHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6552,7 +6676,20 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Laser Sword: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Plasma Cutter', '<img src="img/power-icons/laser-sword/LaserSword_PlasmaCutter.png" />&nbsp;Plasma Cutter', 2, 10, pow++, 2, null);
+const plasmaCutterHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Laser Sword<br>35-55 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet<br>6 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - PLASMA BURN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 277-591 Particle Damage.</li>\
+  <li>When not fully charged, adds 8 sec to the duration of your Plasma Burn. This cannot exceed the regular duration.</li>\
+  <li>Fully charging this power consumes all stacks of Plasma Burn on the target.</li>\
+  <li>After 6 sec, applies Overheat, which deals 408 Particle Damage in a 5 ft radius for each Plasma Burn stack consumed. During this time you cannot apply any stacks of Plasma Burn.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Plasma Cutter', '<img src="img/power-icons/laser-sword/LaserSword_PlasmaCutter.png" />&nbsp;Plasma Cutter', 2, 10, pow++, 2, plasmaCutterHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6596,7 +6733,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Analyze 
 // Laser Sword: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Luminescent Slash', '<img src="img/power-icons/laser-sword/LaserSword_LuminescentSlash.png" />&nbsp;Luminescent Slash', 2, 10, pow++, 3, null);
+const luminescentSlashHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Laser Sword<br>37-56 Energy cost<br>0.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 266-521 Particle Damage based on charge time.</li>\
+  <li>Snares your target for 3.3 sec, reducing their movement speed by 100%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Luminescent Slash', '<img src="img/power-icons/laser-sword/LaserSword_LuminescentSlash.png" />&nbsp;Luminescent Slash', 2, 10, pow++, 3, luminescentSlashHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -6694,11 +6842,44 @@ MAINTAIN<br>\
 
 dataPowerAlias['Shuriken Storm'] = new PowerAlias('Shuriken Storm', 'Shuriken Storm', '<img src="img/power-icons/martial-arts/MartialArts_ShurikenStorm.png" />&nbsp;Shuriken Storm', shurikenStormHtml);
 
-dataPowerAlias['Shuriken Throw'] = new PowerAlias('Shuriken Throw', 'Shuriken Throw', '<img src="img/power-icons/martial-arts/MartialArts_ShurikenThrow.png" />&nbsp;Shuriken Throw', null);
+const shurikenThrowHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Martial Arts<br>23-46 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - BLAST - KNOCK DOWN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 170-482 Slashing Damage and has a 46-100% chance to Knock Down the target.</li>\
+</ul>';
 
-dataPowerAlias['Chained Kunai'] = new PowerAlias('Chained Kunai', 'Chained Kunai', '<img src="img/power-icons/martial-arts/MartialArts_ChainedKunai.png" />&nbsp;Chained Kunai', null);
+dataPowerAlias['Shuriken Throw'] = new PowerAlias('Shuriken Throw', 'Shuriken Throw', '<img src="img/power-icons/martial-arts/MartialArts_ShurikenThrow.png" />&nbsp;Shuriken Throw', shurikenThrowHtml);
 
-dataPowerAlias['Shuriken Sweep'] = new PowerAlias('Shuriken Sweep', 'Shuriken Sweep', '<img src="img/power-icons/martial-arts/MartialArts_ShurikenSweep.png" />&nbsp;Shuriken Sweep', null);
+const chainedKunaiHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Martial Arts<br>27-41 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK TO - BLEED<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 133-521 Slashing Damage to target.</li>\
+  <li>Your target is Knocked to you.</li>\
+  <li>Has a 28-100% chance to apply Bleed to your target.</li>\
+  <li>Bleed causes 24 Slashing Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+</ul>';
+
+dataPowerAlias['Chained Kunai'] = new PowerAlias('Chained Kunai', 'Chained Kunai', '<img src="img/power-icons/martial-arts/MartialArts_ChainedKunai.png" />&nbsp;Chained Kunai', chainedKunaiHtml);
+
+const shurikenSweepHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Martial Arts<br>40-88 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
+</div><br>\
+RANGED AOE DAMAGE - SNARE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>This power deals 184-522 Slashing Damage and has a 45-100% chance to Snare affected targets for 13 sec, reducing their movement speed by 100%.</li>\
+</ul>';
+
+dataPowerAlias['Shuriken Sweep'] = new PowerAlias('Shuriken Sweep', 'Shuriken Sweep', '<img src="img/power-icons/martial-arts/MartialArts_ShurikenSweep.png" />&nbsp;Shuriken Sweep', shurikenSweepHtml);
 
 dataPowerAlias['Thunderbolt Lunge'] = new PowerAlias('Thunderbolt Lunge', 'Thunderbolt Lunge', '<img src="img/power-icons/martial-arts/MartialArts_ThunderboltLunge.png" />&nbsp;Thunderbolt Lunge', null);
 
@@ -6804,13 +6985,39 @@ dataPowerAlias['Fury of the Dragon'] = new PowerAlias('Fury of the Dragon', 'Fur
 
 dataPowerAlias['Vorpal Blade'] = new PowerAlias('Vorpal Blade', 'Vorpal Blade', '<img src="img/power-icons/martial-arts/MartialArts_VorpalBlade.png" />&nbsp;Vorpal Blade', null);
 
-dataPowerAlias['Devastating Strike'] = new PowerAlias('Devastating Strike', 'Devastating Strike', '<img src="img/power-icons/martial-arts/MartialArts_DevastatingStrike.png" />&nbsp;Devastating Strike', null);
+const devastatingStrikeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Martial Arts<br>141 Energy cost<br>0.83 sec charge time (0.83 min)<br>1.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet<br>60 seconds recharge</div>\
+</div><br>\
+ULTIMATE - MELEE AOE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 167 Crushing Damage to your target. Hits 7 times.</li>\
+  <li>When this power finishes activation, deals 327 Dimensional Damage and Knocks Back targets 35ft within 20ft of you.</li>\
+  <li>Applies Chi Flame to affected targets, dealing 72 Dimensional Damage every 2 sec for 12 sec.</li>\
+  <li>Chi Flame reduces resistance against your Chi Power focused attacks by 50%.</li>\
+  <li>Targets immune to Knock are instead left Disoriented.</li>\
+  <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50% for 12 sec.</li>\
+</ul>';
+
+dataPowerAlias['Devastating Strike'] = new PowerAlias('Devastating Strike', 'Devastating Strike', '<img src="img/power-icons/martial-arts/MartialArts_DevastatingStrike.png" />&nbsp;Devastating Strike', devastatingStrikeHtml);
 
 dataPowerAlias['Whirling Dragon Strike'] = new PowerAlias('Whirling Dragon Strike', 'Whirling Dragon Strike', '<img src="img/power-icons/martial-arts/MartialArts_WhirlingDragonStrike.png" />&nbsp;Whirling Dragon Strike', null);
 
 dataPowerAlias['Bladed Fury'] = new PowerAlias('Bladed Fury', 'Bladed Fury', '<img src="img/power-icons/martial-arts/MartialArts_BladedFury.png" />&nbsp;Bladed Fury', null);
 
-dataPowerAlias['Shadow Strike'] = new PowerAlias('Shadow Strike', 'Shadow Strike', '<img src="img/power-icons/martial-arts/MartialArts_ShadowStrike.png" />&nbsp;Shadow Strike', null);
+const shadowStrikeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Martial Arts<br>86 Energy cost<br>1.83 sec charge time (1.83 min)<br>1 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet<br>60 seconds recharge</div>\
+</div><br>\
+ULTIMATE - MELEE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>You must be affected by Stealth to use this power.</li>\
+  <li>Deals 2,669 Slashing Damage. If you are removed from Stealth while charging this power, deals 281 Slashing Damage instead.</li>\
+</ul>';
+
+dataPowerAlias['Shadow Strike'] = new PowerAlias('Shadow Strike', 'Shadow Strike', '<img src="img/power-icons/martial-arts/MartialArts_ShadowStrike.png" />&nbsp;Shadow Strike', shadowStrikeHtml);
 
 //------------------------------------------------------------------------------
 // Power Framework: Dual Blades
@@ -6861,7 +7068,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Bur
 // Dual Blades: Tier 1
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Storm\'s Harvest', '<img src="img/power-icons/dual-blades/DualBlades_StormsHarvest.png" />&nbsp;Storm\'s Harvest', 3, 11, pow++, 1, null);
+const stormsHarvestHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Dual Blades<br>30-47 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - ROOT - DISORIENT<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 247-527 Slashing Damage and your target is Rooted for 13 sec.</li>\
+  <li>If fully charged, Disorients your target for 12 sec.</li>\
+  <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Storm\'s Harvest', '<img src="img/power-icons/dual-blades/DualBlades_StormsHarvest.png" />&nbsp;Storm\'s Harvest', 3, 11, pow++, 1, stormsHarvestHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7042,7 +7261,18 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Dual Blades: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Wrath', '<img src="img/power-icons/dual-blades/DualBlades_DragonsWrath.png" />&nbsp;Dragon\'s Wrath', 3, 11, pow++, 2, null);
+const dragonsWrathHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Dual Blades<br>36-61 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 297-633 Slashing Damage.</li>\
+  <li>This power ignores 50% of the target\\\'s resistance.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Wrath', '<img src="img/power-icons/dual-blades/DualBlades_DragonsWrath.png" />&nbsp;Dragon\'s Wrath', 3, 11, pow++, 2, dragonsWrathHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7455,7 +7685,19 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Fighting Claws: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Claws', '<img src="img/power-icons/fighting-claws/FightingClaws_DragonsClaws.png" />&nbsp;Dragon\'s Claws', 3, 12, pow++, 2, null);
+const dragonsClawsHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fighting Claws<br>51-77 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - SNARE - SUDDEN STRIKE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 297-633 Slashing Damage and Snares your target for 6.7 sec, reducing their movement speed by 100%.</li>\
+  <li>Has a 46-100% chance to apply Sudden Strike for 10 sec, causing the next Critical Hit you land to deal +10% Critical Severity. Expires once you land a Critical Hit.</li>\
+  <li>If you are affected by Sudden Strike, when getting a Critical Hit, this power gains an additional 20% Critical Severity.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Claws', '<img src="img/power-icons/fighting-claws/FightingClaws_DragonsClaws.png" />&nbsp;Dragon\'s Claws', 3, 12, pow++, 2, dragonsClawsHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7465,7 +7707,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Thundering Claws', 'PVD: Thundering Claws', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Scarlet Arc', '<img src="img/power-icons/fighting-claws/FightingClaws_ScarletArc.png" />&nbsp;Scarlet Arc', 3, 12, pow++, 2, null);
+const scarletArcHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fighting Claws<br>39-71 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 277-591 Slashing Damage and your target is Knocked Up 1.7-17ft.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by up to 25% based on charge time.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Scarlet Arc', '<img src="img/power-icons/fighting-claws/FightingClaws_ScarletArc.png" />&nbsp;Scarlet Arc', 3, 12, pow++, 2, scarletArcHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7505,7 +7758,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Eagle\'s Grasp', '<img src="img/power-icons/fighting-claws/FightingClaws_EaglesGrasp.png" />&nbsp;Eagle\'s Grasp', 3, 12, pow++, 2, null);
+const eaglesGraspHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fighting Claws<br>54-83 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>25 foot lunge; 10 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+LUNGE - STUN - PARALYZE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Lunges and deals 178-506 Slashing Damage to affected targets.</li>\
+  <li>If not fully charged, Stuns affected targets for 1.7 sec. If fully charged, instead Paralyzes affected targets for 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Eagle\'s Grasp', '<img src="img/power-icons/fighting-claws/FightingClaws_EaglesGrasp.png" />&nbsp;Eagle\'s Grasp', 3, 12, pow++, 2, eaglesGraspHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7542,7 +7806,17 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 // Fighting Claws: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Tiger\'s Bite', '<img src="img/power-icons/fighting-claws/FightingClaws_TigersBite.png" />&nbsp;Tiger\'s Bite', 3, 12, pow++, 3, null);
+const tigersBiteHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Fighting Claws<br>49-75 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 336-717 Slashing Damage and if you are affected by Sudden Strike, deals an additional 101-215 Slashing Damage and expires Sudden Strike.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Tiger\'s Bite', '<img src="img/power-icons/fighting-claws/FightingClaws_TigersBite.png" />&nbsp;Tiger\'s Bite', 3, 12, pow++, 3, tigersBiteHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7670,7 +7944,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Scything Blade', '<img src="img/power-icons/single-blade/SingleBlade_ScythingBlade.png" />&nbsp;Scything Blade', 3, 13, pow++, 1, null);
+const scythingBladeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Single Blade<br>34-56 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+</div><br>\
+MELEE AOE DAMAGE - BLEED<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 198-422 Slashing Damage to targets.</li>\
+  <li>Has a 50-100% chance to apply Bleed to targets who are currently not affected by any of your Bleeds. This chance increases with charge time.</li>\
+  <li>Bleed causes 24 Slashing Damage every 1 sec for 16 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Scything Blade', '<img src="img/power-icons/single-blade/SingleBlade_ScythingBlade.png" />&nbsp;Scything Blade', 3, 13, pow++, 1, scythingBladeHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7874,7 +8160,18 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Single Blade: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Bite', '<img src="img/power-icons/single-blade/SingleBlade_DragonsBite.png" />&nbsp;Dragon\'s Bite', 3, 13, pow++, 2, null);
+const dragonsBiteHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Single Blade<br>37-58 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - REFRESH<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 148-316 Slashing Damage twice based on charge time.</li>\
+  <li>Adds 16 sec to the duration of your Bleeds. This cannot exceed the regular duration of the Bleed effects.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Bite', '<img src="img/power-icons/single-blade/SingleBlade_DragonsBite.png" />&nbsp;Dragon\'s Bite', 3, 13, pow++, 2, dragonsBiteHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7916,7 +8213,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Serrated
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Tornado Slash', '<img src="img/power-icons/single-blade/SingleBlade_TornadoSlash.png" />&nbsp;Tornado Slash', 3, 13, pow++, 2, null);
+const tornadoSlashHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Single Blade<br>40-53 Energy<br>0.67 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 60 degree Cone<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - STUN - BLEED<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 210-376 Slashing Damage based on charge time.</li>\
+  <li>Has a 56-100% chance to Stun your targets for 1.7 sec.</li>\
+  <li>Has a 56-100% chance to cause the targets to Bleed, suffering 24 Slashing Damage every 1 sec for 16 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Tornado Slash', '<img src="img/power-icons/single-blade/SingleBlade_TornadoSlash.png" />&nbsp;Tornado Slash', 3, 13, pow++, 2, tornadoSlashHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -7960,7 +8269,21 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 // Single Blade: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Reaper\'s Embrace', '<img src="img/power-icons/single-blade/SingleBlade_ReapersEmbrace.png" />&nbsp;Reaper\'s Embrace', 3, 13, pow++, 3, null);
+const reapersEmbraceHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Single Blade<br>66-81 Energy<br>0.67 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet<br>0.5 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - RUPTURE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 392-702 Slashing Damage to your target.</li>\
+  <li>Ruptures all Bleeds on the target, dealing 253 Slashing Damage for each Bleed.</li>\
+  <li>If this power is fully charged and your target is affected by Shredded, after 2 sec applies Open Wound to the target.</li>\
+  <li>For the next 10 sec, every 2 sec there is a 25% chance for your primary target to be affected by Bleed.</li>\
+  <li>When this effect expires, has an additional 50% chance to apply Bleed.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Reaper\'s Embrace', '<img src="img/power-icons/single-blade/SingleBlade_ReapersEmbrace.png" />&nbsp;Reaper\'s Embrace', 3, 13, pow++, 3, reapersEmbraceHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8176,7 +8499,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Elbow Slam', '<img src="img/power-icons/unarmed/Unarmed_ElbowSlam.png" />&nbsp;Elbow Slam', 3, 14, pow++, 1, null);
+const elbowSlamHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Unarmed<br>64 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>20 foot lunge<br>10 seconds recharge</div>\
+</div><br>\
+LUNGE - PARALYZE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 486 Crushing Damage.</li>\
+  <li>Paralyzes the target for up to 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Elbow Slam', '<img src="img/power-icons/unarmed/Unarmed_ElbowSlam.png" />&nbsp;Elbow Slam', 3, 14, pow++, 1, elbowSlamHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8342,7 +8676,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon Kick', '<img src="img/power-icons/unarmed/Unarmed_DragonKick.png" />&nbsp;Dragon Kick', 3, 14, pow++, 2, null);
+const dragonKickHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Unarmed<br>38-63 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+</div><br>\
+MELEE AOE DAMAGE - STUN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 237-506 Crushing Damage to all targets.</li>\
+  <li>When fully charged, Stuns all targets for 1.7 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon Kick', '<img src="img/power-icons/unarmed/Unarmed_DragonKick.png" />&nbsp;Dragon Kick', 3, 14, pow++, 2, dragonKickHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8388,7 +8733,20 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 // Unarmed: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Burning Chi Fist', '<img src="img/power-icons/unarmed/Unarmed_BurningChiFist.png" />&nbsp;Burning Chi Fist', 3, 14, pow++, 3, null);
+const burningChiFistHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Unarmed<br>39-76 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - CHI ENERGY<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 323-688 Crushing Damage.</li>\
+  <li>Refreshes the duration of your Chi Flame.</li>\
+  <li>Fully charging this power applies Chi Flame on your primary target, dealing 72 Dimensional Damage every 2 sec for 12 sec.</li>\
+  <li>Chi Flame reduces resistance against your Chi Power focused attacks by 50%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Burning Chi Fist', '<img src="img/power-icons/unarmed/Unarmed_BurningChiFist.png" />&nbsp;Burning Chi Fist', 3, 14, pow++, 3, burningChiFistHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8398,7 +8756,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Ghostly 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon Uppercut', '<img src="img/power-icons/unarmed/Unarmed_DragonUppercut.png" />&nbsp;Dragon Uppercut', 3, 14, pow++, 3, null);
+const dragonUppercutHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Unarmed<br>42-64 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 297-633 Crushing Damage and your target is Knocked Up 8.4-17ft.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by up to 25% based on charge time.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon Uppercut', '<img src="img/power-icons/unarmed/Unarmed_DragonUppercut.png" />&nbsp;Dragon Uppercut', 3, 14, pow++, 3, dragonUppercutHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8408,7 +8777,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Dragon R
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Open Palm Strike', '<img src="img/power-icons/unarmed/Unarmed_OpenPalmStrike.png" />&nbsp;Open Palm Strike', 3, 14, pow++, 3, null);
+const openPalmStrikeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Unarmed<br>24-72 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>25 feet; 4 foot Cylinder</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 177-695 Crushing Damage.</li>\
+  <li>When charged for more than 0.5 sec, your targets are Knocked back 8.7-26 feet. If your target is immune to Knock effects, increases this power\\\'s base damage by up to 30% based on charge time.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Open Palm Strike', '<img src="img/power-icons/unarmed/Unarmed_OpenPalmStrike.png" />&nbsp;Open Palm Strike', 3, 14, pow++, 3, openPalmStrikeHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8508,7 +8888,20 @@ dataPowerAlias['Manipulator'] = new PowerAlias('Manipulator', 'Manipulator', '<i
 
 dataPowerAlias['Mind Link'] = new PowerAlias('Mind Link', 'Mind Link', '<img src="img/power-icons/mentalist/Mentalist_MindLink.png" />&nbsp;Mind Link', null);
 
-dataPowerAlias['Mental Impact'] = new PowerAlias('Mental Impact', 'Mental Impact', '<img src="img/power-icons/mentalist/Mentalist_MentalImpact.png" />&nbsp;Mental Impact', null);
+const mentalImpactHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Mentalist<br>240 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 25 foot Sphere<br>60 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - DAMAGE RESISTANCE DEBUFF - KNOCK DOWN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 846 Ego Damage to foes.</li>\
+  <li>Knocks Down affected targets.</li>\
+  <li>Applies Overpower, which reduces all damage resistance by 20% for 15 sec.</li>\
+  <li>Gives you a stack of Ego Leech for every target you hit, up to 5 stacks.</li>\
+</ul>';
+
+dataPowerAlias['Mental Impact'] = new PowerAlias('Mental Impact', 'Mental Impact', '<img src="img/power-icons/mentalist/Mentalist_MentalImpact.png" />&nbsp;Mental Impact', mentalImpactHtml);
 
 dataPowerAlias['Master of the Mind'] = new PowerAlias('Master of the Mind', 'Master of the Mind', '<img src="img/power-icons/mentalist/Mentalist_MasterOfTheMind.png" />&nbsp;Master of the Mind', null);
 
@@ -8620,7 +9013,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Lariat', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticLariat.png" />&nbsp;Telekinetic Lariat', 4, 15, pow++, 1, null);
+const telekineticLariatHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>17 Energy cost<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+RANGED DAMAGE - KNOCK TO<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 150 Ego Damage. Your target is Knocked to you.</li>\
+  <li>Gives you a stack of Ego Leech.</li>\
+  <li>Ego Leech decreases the cost of your MENTALIST abilities by 5% for 15 sec. Stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Lariat', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticLariat.png" />&nbsp;Telekinetic Lariat', 4, 15, pow++, 1, telekineticLariatHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8629,14 +9034,27 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Burst', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticBurst.png" />&nbsp;Telekinetic Burst', 4, 15, pow++, 1, null);
+const telekineticBurstHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>42-84 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - DISORIENT<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 148-422 Ego Damage to targets.</li>\
+  <li>Has a 34-100% chance to Disorient each target for 12 sec.</li>\
+  <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  <li>Has a 34-100% chance to apply Ego Leech to you for each target hit.</li>\
+  <li>Ego Leech decreases the cost of your MENTALIST abilities by 5% for 15 sec. Stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Burst', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticBurst.png" />&nbsp;Telekinetic Burst', 4, 15, pow++, 1, telekineticBurstHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Sudden Impact', 'Sudden Impact', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Dash', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeDash.png" />&nbsp;Ego Blade Dash', 4, 15, pow++, 1, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -8751,7 +9169,18 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Telekinesis: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Breach', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeBreach.png" />&nbsp;Ego Blade Breach', 4, 15, pow++, 2, null);
+const egoBladeBreachHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>32-53 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - REFRESH<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 138-298 Ego Damage twice.</li>\
+  <li>Refreshes your stacks of Ego Leech.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Breach', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeBreach.png" />&nbsp;Ego Blade Breach', 4, 15, pow++, 2, egoBladeBreachHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8761,7 +9190,22 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Venom Shock', 'PVD: Venom Shock', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Eruption', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticEruption.png" />&nbsp;Telekinetic Eruption', 4, 15, pow++, 2, null);
+const telekineticEruptionHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>44-122 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 155-552 Ego Damage to nearby targets.</li>\
+  <li>If charged less than a second, Knocks Down affected targets.</li>\
+  <li>If charged more than a second, Knocks Back affected targets 0-28 feet based on charge time.</li>\
+  <li>Charging this power for at least 1 sec applies the Id Surge buff, giving you +15% Ego Damage strength and +13 Ego for 15 sec.</li>\
+  <li>Each target hit gives you a 30-100% chance to gain a stack of Ego Leech.</li>\
+  <li>Ego Leech decreases the cost of your MENTALIST abilities by 5% for 15 sec. Stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Eruption', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticEruption.png" />&nbsp;Telekinetic Eruption', 4, 15, pow++, 2, telekineticEruptionHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8770,7 +9214,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Inner Pe
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Wave', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticWave.png" />&nbsp;Telekinetic Wave', 4, 15, pow++, 2, null);
+const telekineticWaveHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>31-74 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 60 degree Cone<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 155-552 Ego Damage to all targets.</li>\
+  <li>Knocks Back affected targets 13-29 feet.</li>\
+  <li>Has a 34-100% chance to apply a stack of Ego Leech to you for each target hit.</li>\
+  <li>Ego Leech decreases the cost of your MENTALIST abilities by 5% for 15 sec. Stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Wave', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticWave.png" />&nbsp;Telekinetic Wave', 4, 15, pow++, 2, telekineticWaveHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8832,7 +9289,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Garrotin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Hold', '<img src="img/power-icons/telekinesis/Telekinesis_EgoHold.png" />&nbsp;Ego Hold', 4, 15, pow++, 2, null);
+const egoHoldHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>32 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+HOLD<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes the target for up to 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Hold', '<img src="img/power-icons/telekinesis/Telekinesis_EgoHold.png" />&nbsp;Ego Hold', 4, 15, pow++, 2, egoHoldHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8849,7 +9316,23 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Nimble M
 // Telekinesis: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Annihilation', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeAnnihilation.png" />&nbsp;Ego Blade Annihilation', 4, 15, pow++, 3, null);
+const egoBladeAnnihilationHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>57-73 Energy<br>0.67 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 363-649 Ego Damage to your target.</li>\
+  <li>When fully charged, this power consumes all stacks of Ego Leech.</li>\
+  <li>Deals an additional 54 Ego Damage to your target for each stack it consumes.</li>\
+  <li>Applies a stack of Ego Annihilation to your target for 2 sec. This duration increases by 2 sec for each stack of Ego Leech consumed.</li>\
+  <li>Ego Annihilation deals 28 Ego Damage every 2 sec.</li>\
+  <li>In addition, grants you Ego Infusion for 2 seconds for each stack consumed.</li>\
+  <li>Ego Infusion grants you a stack of Ego Leech every 2 seconds.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Annihilation', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeAnnihilation.png" />&nbsp;Ego Blade Annihilation', 4, 15, pow++, 3, egoBladeAnnihilationHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8858,7 +9341,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Blight Touch', 'PVD: Blight Touch', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Maelstrom', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticMaelstrom.png" />&nbsp;Telekinetic Maelstrom', 4, 15, pow++, 3, null);
+const telekineticMaelstromHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>59-126 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - STUN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 155-552 Ego Damage to affected targets.</li>\
+  <li>Stuns targets for 1.7 sec.</li>\
+  <li>Each target hit gives you a stack of Ego Leech.</li>\
+  <li>Ego Leech decreases the cost of your MENTALIST abilities by 5% for 15 sec. Stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Maelstrom', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticMaelstrom.png" />&nbsp;Telekinetic Maelstrom', 4, 15, pow++, 3, telekineticMaelstromHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8867,7 +9363,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Inner Pe
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Lance', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticLance.png" />&nbsp;Telekinetic Lance', 4, 15, pow++, 3, null);
+const telekineticLanceHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>49-98 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 259-618 Ego Damage to affected targets.</li>\
+  <li>When fully charged, this power consumes all stacks of Ego Leech, dealing an additional 124 Ego Damage to your target and 41 Ego Damage to other targets within 10ft for each stack it consumes.</li>\
+  <li>In addition, it grants you Ego Infusion for 2 seconds for each stack consumed.</li>\
+  <li>Ego Infusion grants you a stack of Ego Leech every 2 seconds.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Lance', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticLance.png" />&nbsp;Telekinetic Lance', 4, 15, pow++, 3, telekineticLanceHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8895,7 +9404,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Lance Rain', '<img src="img/power-icons/telekinesis/Telekinesis_LanceRain.png" />&nbsp;Lance Rain', 4, 15, pow++, 3, null);
+const lanceRainHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telekinesis<br>157 Energy cost<br>1.17 sec charge time (1.17 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (7 max)<br>100 feet; 25 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 501 Ego Damage to all targets within 25 ft of your primary target.</li>\
+  <li>This power consumes all stacks of Ego Leech, dealing an additional 100 Ego Damage for each stack it consumes.</li>\
+  <li>In addition, it grants you Ego Infusion for 2 seconds for each stack consumed. Ego Infusion grants you a stack of Ego Leech every 2 seconds.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Lance Rain', '<img src="img/power-icons/telekinesis/Telekinesis_LanceRain.png" />&nbsp;Lance Rain', 4, 15, pow++, 3, lanceRainHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8966,7 +9487,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Psychic 
 // Telepathy: Tier 0
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blast', '<img src="img/power-icons/telepathy/Telepathy_EgoBlast.png" />&nbsp;Ego Blast', 4, 16, pow++, 0, null);
+const egoBlastHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>18-50 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - DISORIENT - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 129-505 Ego Damage and has a 25-100% chance to Disorient the target for 12 sec.</li>\
+  <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blast', '<img src="img/power-icons/telepathy/Telepathy_EgoBlast.png" />&nbsp;Ego Blast', 4, 16, pow++, 0, egoBlastHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8976,7 +9508,22 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Mind Break', '<img src="img/power-icons/telepathy/Telepathy_MindBreak.png" />&nbsp;Mind Break', 4, 16, pow++, 0, null);
+const mindBreakHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>21-130 Energy<br>1.5 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - DETONATE - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 137-553 Ego Damage to your target.</li>\
+  <li>This power consumes your Regret, Dependency, and Stress debuffs for bonus damage and effects.</li>\
+  <li>This power deals 131 Ego Damage for each stack of a debuff that it purges.</li>\
+  <li>For each Stress stack that is purged, Mind Break ignores 6.5% of the target\\\'s resistance.</li>\
+  <li>For each Regret stack that is purged, Mind Break restores +14 Energy to you.</li>\
+  <li>For each Dependency stack that is purged, Mind Break heals allies near target foe for +145 Health Points.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Mind Break', '<img src="img/power-icons/telepathy/Telepathy_MindBreak.png" />&nbsp;Mind Break', 4, 16, pow++, 0, mindBreakHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -8993,7 +9540,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Svengali\'s Guile', 'Svengali\'s Guile', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Sleep', '<img src="img/power-icons/telepathy/Telepathy_EgoSleep.png" />&nbsp;Ego Sleep', 4, 16, pow++, 1, null);
+const egoSleepHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>16-40 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible (7 max)<br>50 feet; 0-15 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+AoE Sleep<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Puts your foes to Sleep for 12 sec.</li>\
+  <li>Any damage they take will awaken them, and when they awaken they are Disoriented. Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  <li>Charging this power increases the area of effect.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Sleep', '<img src="img/power-icons/telepathy/Telepathy_EgoSleep.png" />&nbsp;Ego Sleep', 4, 16, pow++, 1, egoSleepHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9082,7 +9641,17 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Telepathy: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Mind Lock', '<img src="img/power-icons/telepathy/Telepathy_MindLock.png" />&nbsp;Mind Lock', 4, 16, pow++, 2, null);
+const mindLockHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>24 Energy cost<br>1 sec charge time (1 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>100 feet<br>15 seconds recharge</div>\
+</div><br>\
+RANGED CONFUSE - DEBUFF<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>If a target is a Henchman, Villain or Enforcer, Confuses them for 10 sec, causing them to attack targets randomly.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Mind Lock', '<img src="img/power-icons/telepathy/Telepathy_MindLock.png" />&nbsp;Mind Lock', 4, 16, pow++, 2, mindLockHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9100,20 +9669,54 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Free Your Mind!', 'Free Your Mind!', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Mind Control', '<img src="img/power-icons/telepathy/Telepathy_MindControl.png" />&nbsp;Mind Control', 4, 16, pow++, 2, null);
+const mindControlHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>24 Energy cost<br>1 sec charge time (1 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>100 feet<br>25 seconds recharge</div>\
+</div><br>\
+CORRUPTION - CURSE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>If your target is a Henchman, Villain or Enforcer, Corrupts them for 10 sec, forcing them to fight for you.</li>\
+  <li>After Corrupted expires, Henchmen have their health reduced by 2%, Villains have their health reduced by ?%, and Enforcers have their health reduced by 1%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Mind Control', '<img src="img/power-icons/telepathy/Telepathy_MindControl.png" />&nbsp;Mind Control', 4, 16, pow++, 2, mindControlHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Bewilder', 'Bewilder', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Summon Nightmare', '<img src="img/power-icons/telepathy/Telepathy_SummonNightmare.png" />&nbsp;Summon Nightmare', 4, 16, pow++, 2, null);
+const summonNightmareHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>62 Energy cost<br>1 sec charge time<br>1 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet</div>\
+</div><br>\
+UNCONTROLLED PET<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Creates a Larval Horror to fight for you. It is unable to move, and will attack your target in melee range with its Mindworm Bite, dealing 88 Ego Damage (Base) to your foes.</li>\
+  <li>When fully charged, you also summon an Etherhound to attack your foes. It will use Ego Bite on them, dealing 88 Ego Damage (Base). It will also occasionally use Ego Blast, dealing 800 Ego Damage (Base) and Disorienting them for 12 sec.</li>\
+  <li>Disoriented targets have their damage reduced by 6% and their movement speed reduced by 10%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Summon Nightmare', '<img src="img/power-icons/telepathy/Telepathy_SummonNightmare.png" />&nbsp;Summon Nightmare', 4, 16, pow++, 2, summonNightmareHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Night Terror', 'Night Terror', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Psionic Healing', '<img src="img/power-icons/telepathy/Telepathy_PsionicHealing.png" />&nbsp;Psionic Healing', 4, 16, pow++, 2, null);
+const psionicHealingHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>0-86 Energy<br>3 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets friend<br>100 feet</div>\
+</div><br>\
+HEAL<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Heals the target for +43-1,013 Health Points.</li>\
+  <li>When healing a target other than yourself and not charged, you gain +10% Energy.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Psionic Healing', '<img src="img/power-icons/telepathy/Telepathy_PsionicHealing.png" />&nbsp;Psionic Healing', 4, 16, pow++, 2, psionicHealingHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9159,7 +9762,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Malevolent Manifestation', 'Malevolent Manifestation', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Mental Storm', '<img src="img/power-icons/telepathy/Telepathy_MentalStorm.png" />&nbsp;Mental Storm', 4, 16, pow++, 3, null);
+const mentalStormHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>67 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>12 seconds recharge</div>\
+</div><br>\
+DOT - RANGED AOE DAMAGE - STUN - PARALYZE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 43 Ego Damage every 1 sec for 16 sec to all targets.</li>\
+  <li>If not fully charged, Stuns affected targets for 1.7 sec.</li>\
+  <li>If fully charged, instead Paralyzes affected targets for 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Mental Storm', '<img src="img/power-icons/telepathy/Telepathy_MentalStorm.png" />&nbsp;Mental Storm', 4, 16, pow++, 3, mentalStormHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9167,7 +9782,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mental A
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Collective Will', '<img src="img/power-icons/telepathy/Telepathy_CollectiveWill.png" />&nbsp;Collective Will', 4, 16, pow++, 3, null);
+const collectiveWillHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Telepathy<br>75 Energy cost<br>1 sec charge time (1 min)<br>0.87 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet</div>\
+</div><br>\
+UNCONTROLLED PET<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Summons an entity for 21 sec that deals 284 Ego Damage whenever it attacks.</li>\
+  <li>Will summon up to 3 additional entities if nearby foes are affected by a Hold, Sleep, or Confuse.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Collective Will', '<img src="img/power-icons/telepathy/Telepathy_CollectiveWill.png" />&nbsp;Collective Will', 4, 16, pow++, 3, collectiveWillHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9303,9 +9929,36 @@ MAINTAIN<br>\
 
 dataPowerAlias['Catastrophic Pummeling'] = new PowerAlias('Catastrophic Pummeling', 'Catastrophic Pummeling', '<img src="img/power-icons/brick/Brick_CatastrophicPummeling.png" />&nbsp;Catastrophic Pummeling', catastrophicPummelingHtml);
 
-dataPowerAlias['Final Punch'] = new PowerAlias('Final Punch', 'Final Punch', '<img src="img/power-icons/brick/Brick_FinalPunch.png" />&nbsp;Final Punch', null);
+const finalPunchHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Brick<br>107 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (10 max)<br>10 feet; 5 foot Sphere<br>60 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK BACK - ULTIMATE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 776 Crushing Damage to your primary target, this amount scales based on the number of Enrage stacks on you.</li>\
+  <li>Affected targets are Knocked Back 69ft.</li>\
+  <li>Expires all Form stacks on you.</li>\
+  <li>This power\\\'s base damage is increased by 30% if the target is immune to Knock effects.</li>\
+</ul>';
 
-dataPowerAlias['Earthquake'] = new PowerAlias('Earthquake', 'Earthquake', '<img src="img/power-icons/brick/Brick_Earthquake.png" />&nbsp;Earthquake', null);
+dataPowerAlias['Final Punch'] = new PowerAlias('Final Punch', 'Final Punch', '<img src="img/power-icons/brick/Brick_FinalPunch.png" />&nbsp;Final Punch', finalPunchHtml);
+
+const earthquakeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Brick<br>119 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>60 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - ULTIMATE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Creates an Earthquake on your target for 12 sec. Has a 25ft area effect.</li>\
+  <li>Earthquake deals 193 Crushing Damage every 1 sec for 12 sec to targets within 15ft. Deals 129 Crushing Damage to targets further away than 15ft. Hits up to 10 targets.</li>\
+  <li>Knocks Up targets 5.1-17ft. This can occur once every 2 sec.</li>\
+  <li>Foes affected by Stagger have their movement speed reduced by 120%.</li>\
+  <li>Increases the resistance bonus of Stone Shroud by 10% if you are standing in the area of this power.</li>\
+</ul>';
+
+dataPowerAlias['Earthquake'] = new PowerAlias('Earthquake', 'Earthquake', '<img src="img/power-icons/brick/Brick_Earthquake.png" />&nbsp;Earthquake', earthquakeHtml);
 
 const crushingRuinHtml = '<div style="display:flex; justify-content:space-between;">\
   <div>Brick<br>46 + 18 Energy every 0.5 sec<br>1 sec activate time (4 max)</div>\
@@ -9480,7 +10133,18 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Heavy Weapon: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Arc of Ruin', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_ArcOfRuin.png" />&nbsp;Arc of Ruin', 5, 17, pow++, 2, null);
+const arcOfRuinHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Heavy Weapon<br>58-95 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere</div>\
+</div><br>\
+MELEE AOE DAMAGE - DISORIENT<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 233-556 Crushing Damage to targets.</li>\
+  <li>Has a 42-100% chance to apply Disorient to the target, reducing their damage by 10% and their movement speed by 50%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Arc of Ruin', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_ArcOfRuin.png" />&nbsp;Arc of Ruin', 5, 17, pow++, 2, arcOfRuinHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9489,7 +10153,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Wildfire
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Skullcrusher', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skullcrusher.png" />&nbsp;Skullcrusher', 5, 17, pow++, 2, null);
+const skullcrusherHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Heavy Weapon<br>31-45 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 3 foot Cylinder</div>\
+</div><br>\
+MELEE AOE DAMAGE - KNOCK DOWN - DISORIENT<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 111-237 Crushing Damage and 111-237 Fire Damage to targets.</li>\
+  <li>Affected targets are Knocked Down.</li>\
+  <li>Has a 50-100% chance to apply Disorient, reducing their damage by 10% and movement speed by 50%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Skullcrusher', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skullcrusher.png" />&nbsp;Skullcrusher', 5, 17, pow++, 2, skullcrusherHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9500,7 +10176,21 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ice Breaker', 'PVD: Ice Breaker', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Earth Splitter', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_EarthSplitter.png" />&nbsp;Earth Splitter', 5, 17, pow++, 2, null);
+const earthSplitterHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Heavy Weapon<br>43-67 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 5 foot Cylinder</div>\
+</div><br>\
+RANGED AOE DAMAGE - KNOCK UP - RECKLESS<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 101-240 Crushing Damage and 101-240 Fire Damage to targets.</li>\
+  <li>Has a 42-100% chance to Knock Up targets 8.4-25ft.</li>\
+  <li>Has a 42-100% chance to apply Reckless to you, which gives 35% resistance to all Knock effects for 15 sec. Stacks up to 3 times.</li>\
+  <li>When dealing direct damage, Reckless applies Bastion, causing 10% of your direct damage pre-damage mitigation to be applied to you as a Shield for 10 sec. Stacks up to 10 times.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by 15%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Earth Splitter', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_EarthSplitter.png" />&nbsp;Earth Splitter', 5, 17, pow++, 2, earthSplitterHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9548,7 +10238,18 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 // Heavy Weapon: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Annihilate', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Annihilate.png" />&nbsp;Annihilate', 5, 17, pow++, 3, null);
+const annihilateHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Heavy Weapon<br>41-60 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>15 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK BACK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 353-840 Crushing Damage and your target is Knocked Back 17-35ft.</li>\
+  <li>This power\\\'s base damage is increased by 30% if the target is immune to Knock effects.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Annihilate', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Annihilate.png" />&nbsp;Annihilate', 5, 17, pow++, 3, annihilateHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9558,7 +10259,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Hellrend', 'PVD: Hellrend', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Brimstone', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Brimstone.png" />&nbsp;Brimstone', 5, 17, pow++, 3, null);
+const brimstoneHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Heavy Weapon<br>44-70 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>3 seconds recharge</div>\
+</div><br>\
+MELEE AOE DAMAGE - KNOCK DOWN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 116-278 Crushing Damage and 116-278 Fire Damage to foes.</li>\
+  <li>Targets are Knocked Down.</li>\
+  <li>Partially charging this power instead Knocks Up foes 6.8-24ft.</li>\
+  <li>If your target is immune to Knock effects, Snares affected targets for 6.7 sec, reducing their movement speed by 100%. Additionally, increases this power\\\'s base damage by 15% when partially charged.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Brimstone', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Brimstone.png" />&nbsp;Brimstone', 5, 17, pow++, 3, brimstoneHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9571,7 +10285,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Bitter Storm', 'PVD: Bitter Storm', 0, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Brimstone', 'UPVD: Ultimate Brimstone', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Skewer', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skewer.png" />&nbsp;Skewer', 5, 17, pow++, 3, null);
+const skewerHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Heavy Weapon<br>27-43 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 3 foot Cylinder</div>\
+</div><br>\
+MELEE AOE DAMAGE - BLEED<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 226-452 Crushing Damage to your selected target, and 151-301 Crushing Damage to additional foes in front of you.</li>\
+  <li>Has a 22-50% chance to cause the target to Bleed, suffering 24 Slashing Damage every 1 sec for 16 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Skewer', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skewer.png" />&nbsp;Skewer', 5, 17, pow++, 3, skewerHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9662,7 +10387,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 // Earth: Tier 0
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Stone Shot', '<img src="img/power-icons/earth/Earth_StoneShot.png" />&nbsp;Stone Shot', 5, 18, pow++, 0, null);
+const stoneShotHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>27-49 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 0-10 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - STAGGER - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 194-464 Crushing Damage and has a 50-100% chance to Stagger your primary target.</li>\
+  <li>Deals 49-116 Crushing Damage to foes within 0-5ft (based on charge time) of your primary target.</li>\
+  <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Stone Shot', '<img src="img/power-icons/earth/Earth_StoneShot.png" />&nbsp;Stone Shot', 5, 18, pow++, 0, stoneShotHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9684,7 +10421,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Tremor', '<img src="img/power-icons/earth/Earth_Tremor.png" />&nbsp;Tremor', 5, 18, pow++, 1, null);
+const tremorHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>40-79 Energy cost<br>1.67 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 175-522 Crushing Damage to all targets. The main target is Knocked Up 4.2-25 feet, and other nearby targets are Knocked Back 4.2-11 feet away from the main target.</li>\
+  <li>If fully charged, secondary targets are instead Knocked Up 4.2-25 feet.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Tremor', '<img src="img/power-icons/earth/Earth_Tremor.png" />&nbsp;Tremor', 5, 18, pow++, 1, tremorHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9702,7 +10450,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Rock Formation', '<img src="img/power-icons/earth/Earth_RockFormation.png" />&nbsp;Rock Formation', 5, 18, pow++, 1, null);
+const rockFormationHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>84 Energy cost<br>2.17 sec charge time (2.17 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+RANGED AOE HOLD - STAGGER<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes all targets for 12 sec.</li>\
+  <li>Staggers affected targets, reducing their resistance to damage by 2% and their movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Rock Formation', '<img src="img/power-icons/earth/Earth_RockFormation.png" />&nbsp;Rock Formation', 5, 18, pow++, 1, rockFormationHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9781,7 +10540,19 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Earth: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Upheaval', '<img src="img/power-icons/earth/Earth_Upheaval.png" />&nbsp;Upheaval', 5, 18, pow++, 2, null);
+const upheavalHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>25-42 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK UP<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 178-506 Crushing Damage and your target is Knocked Upward 4.2-27 feet.</li>\
+  <li>Staggered targets are Knocked Back 4.4-28 feet.</li>\
+  <li>Deals an additional 5% damage for each of your stacks of Stagger on the target.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Upheaval', '<img src="img/power-icons/earth/Earth_Upheaval.png" />&nbsp;Upheaval', 5, 18, pow++, 2, upheavalHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9809,7 +10580,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Repulsin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Cave In', '<img src="img/power-icons/earth/Earth_CaveIn.png" />&nbsp;Cave In', 5, 18, pow++, 2, null);
+const caveInHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>28-76 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet</div>\
+</div><br>\
+RANGED DAMAGE - STUN - STAGGER<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 226-804 Crushing Damage and has a 13-50% chance to Stagger your target, reducing all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+  <li>If fully charged and the target is Staggered, Stuns your target for 1.7 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Cave In', '<img src="img/power-icons/earth/Earth_CaveIn.png" />&nbsp;Cave In', 5, 18, pow++, 2, caveInHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9820,6 +10602,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Cave In', 'UPVD: Ultimate Cave In', 0, null, null));
+
+const seismicSmashHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>55 Energy cost<br>0.5 sec charge time (0.5 min)<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>25 foot lunge<br>15 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - LUNGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Lunges at the target, dealing 422 Crushing Damage to the target, and to enemies within a 15ft cone behind the target.</li>\
+  <li>The main target is Knocked Back 13ft and additional targets are Knocked Down.</li>\
+  <li>Has a 25% chance to Stagger targets.</li>\
+  <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+  <li>If fully charged, applies or refreshes Enraged!. Enraged! increases your damage by 2.8%.</li>\
+</ul>';
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Seismic Smash', '<img src="img/power-icons/earth/Earth_SeismicSmash.png" />&nbsp;Seismic Smash', 5, 18, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -9855,7 +10651,19 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 // Earth: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Fissure', '<img src="img/power-icons/earth/Earth_Fissure.png" />&nbsp;Fissure', 5, 18, pow++, 3, null);
+const fissureHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>61 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>15 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - DOT - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>When fully charged, creates a Fissure for 10 sec, causing 75 Crushing Damage and 25 Fire Damage every 1 sec to targets within 15ft.</li>\
+  <li>Foes standing in the Fissure have their movement speed reduced by 32%.</li>\
+  <li>Has a 20% chance every hit to Knock Down affected targets. Every stack of Staggered on a target increases this chance by 10%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Fissure', '<img src="img/power-icons/earth/Earth_Fissure.png" />&nbsp;Fissure', 5, 18, pow++, 3, fissureHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9863,7 +10671,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Reconstr
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Fault Line', '<img src="img/power-icons/earth/Earth_FaultLine.png" />&nbsp;Fault Line', 5, 18, pow++, 3, null);
+const faultLineHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Earth<br>43-85 Energy cost<br>1.33 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 5 foot Cylinder</div>\
+</div><br>\
+RANGED AOE DAMAGE - KNOCK UP<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 155-442 Crushing Damage and your targets are Knocked Upward 8.4-21 feet.</li>\
+  <li>Deals 10% more damage per stack of Stagger on each target. This consumes the stacks of Stagger on the targets.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Fault Line', '<img src="img/power-icons/earth/Earth_FaultLine.png" />&nbsp;Fault Line', 5, 18, pow++, 3, faultLineHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9975,7 +10794,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 // Might: Tier 1
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Mighty Kick', '<img src="img/power-icons/might/Might_MightyKick.png" />&nbsp;Mighty Kick', 5, 19, pow++, 1, null);
+const mightyKickHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>16-24 Energy cost<br>0.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK BACK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 177-348 Crushing Damage and target is Repelled 4.2-12ft.</li>\
+  <li>If fully charged, target is instead Knocked Back 17ft.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by up to 30% based on charge time.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Mighty Kick', '<img src="img/power-icons/might/Might_MightyKick.png" />&nbsp;Mighty Kick', 5, 19, pow++, 1, mightyKickHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -9995,7 +10826,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Stop Rig
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Roomsweeper', '<img src="img/power-icons/might/Might_Roomsweeper.png" />&nbsp;Roomsweeper', 5, 19, pow++, 1, null);
+const roomsweeperHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>30-73 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+</div><br>\
+MELEE AOE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 163-443 Crushing Damage to all targets.</li>\
+  <li>All targets hit are Knocked Back 26-52ft.</li>\
+  <li>Targets currently affected by a Hold effect or Hold Resistance are Knocked Up 17-34ft instead.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by 30%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Roomsweeper', '<img src="img/power-icons/might/Might_Roomsweeper.png" />&nbsp;Roomsweeper', 5, 19, pow++, 1, roomsweeperHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10005,7 +10849,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Demolish
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Heel Smash', '<img src="img/power-icons/might/Might_HeelSmash.png" />&nbsp;Heel Smash', 5, 19, pow++, 1, null);
+const heelSmashHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>33-49 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+</div><br>\
+MELEE AOE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 198-422 Crushing Damage to all targets and has a 45-100% chance to Knock Down affected targets.</li>\
+  <li>If fully charged, instead Knocks Up affected targets 17ft.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Heel Smash', '<img src="img/power-icons/might/Might_HeelSmash.png" />&nbsp;Heel Smash', 5, 19, pow++, 1, heelSmashHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10037,7 +10892,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Iron Lariat', '<img src="img/power-icons/might/Might_IronLariat.png" />&nbsp;Iron Lariat', 5, 19, pow++, 1, null);
+const ironLariatHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>30-43 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK TO<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 233-556 Crushing Damage and your target is Knocked to you.</li>\
+  <li>Has a 46-100% chance based on charge time to apply Disorient to your target.</li>\
+  <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Iron Lariat', '<img src="img/power-icons/might/Might_IronLariat.png" />&nbsp;Iron Lariat', 5, 19, pow++, 1, ironLariatHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10129,7 +10996,18 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 // Might: Tier 2
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Uppercut', '<img src="img/power-icons/might/Might_Uppercut.png" />&nbsp;Uppercut', 5, 19, pow++, 2, null);
+const uppercutHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>34-52 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK UP<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 270-644 Crushing Damage and your target is Knocked Up 2.9-30ft.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by 30%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Uppercut', '<img src="img/power-icons/might/Might_Uppercut.png" />&nbsp;Uppercut', 5, 19, pow++, 2, uppercutHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10139,7 +11017,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Reckless
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Demolish', '<img src="img/power-icons/might/Might_Demolish.png" />&nbsp;Demolish', 5, 19, pow++, 2, null);
+const demolishHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>44-63 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - DEBUFF<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 277-591 Crushing Damage.</li>\
+  <li>When fully charged applies Demolish which does -18% resistance to Crushing Damage for 15 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Demolish', '<img src="img/power-icons/might/Might_Demolish.png" />&nbsp;Demolish', 5, 19, pow++, 2, demolishHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10233,7 +11122,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 // Might: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Haymaker', '<img src="img/power-icons/might/Might_Haymaker.png" />&nbsp;Haymaker', 5, 19, pow++, 3, null);
+const haymakerHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>43-119 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK BACK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 317-1,125 Crushing Damage and your target is Knocked Back 0-53ft.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by 30%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Haymaker', '<img src="img/power-icons/might/Might_Haymaker.png" />&nbsp;Haymaker', 5, 19, pow++, 3, haymakerHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10242,7 +11142,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Havoc Hammer', 'PVD: Havoc Hammer', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Havoc Stomp', '<img src="img/power-icons/might/Might_HavocStomp.png" />&nbsp;Havoc Stomp', 5, 19, pow++, 3, null);
+const havocStompHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Might<br>44-68 Energy cost<br>1 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere<br>3 seconds recharge</div>\
+</div><br>\
+MELEE AOE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 270-589 Crushing Damage to all targets.</li>\
+  <li>If charged less than 90%, each target hit is Knocked Upwards by 17ft.</li>\
+  <li>If charged at least 90%, each target is Knocked Back 17ft.</li>\
+  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by 30%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Havoc Stomp', '<img src="img/power-icons/might/Might_HavocStomp.png" />&nbsp;Havoc Stomp', 5, 19, pow++, 3, havocStompHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10378,7 +11291,17 @@ MAINTAIN<br>\
 
 dataPowerAlias['Venomous Breath'] = new PowerAlias('Venomous Breath', 'Venomous Breath', '<img src="img/power-icons/supernatural/Supernatural_VenomousBreath.png" />&nbsp;Venomous Breath', venomousBreathHtml);
 
-dataPowerAlias['Soul Mesmerism'] = new PowerAlias('Soul Mesmerism', 'Soul Mesmerism', '<img src="img/power-icons/supernatural/Supernatural_SoulMesmerism.png" />&nbsp;Soul Mesmerism', null);
+const soulMesmerismHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Supernatural<br>28 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+RANGED HOLD<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes the target for 12 sec.</li>\
+</ul>';
+
+dataPowerAlias['Soul Mesmerism'] = new PowerAlias('Soul Mesmerism', 'Soul Mesmerism', '<img src="img/power-icons/supernatural/Supernatural_SoulMesmerism.png" />&nbsp;Soul Mesmerism', soulMesmerismHtml);
 
 dataPowerAlias['Resurgence'] = new PowerAlias('Resurgence', 'Resurgence', '<img src="img/power-icons/supernatural/Supernatural_Resurgence.png" />&nbsp;Resurgence', null);
 
@@ -10401,17 +11324,69 @@ dataPowerAlias['Supernatural Power'] = new PowerAlias('Supernatural Power', 'Sup
 
 // Mystic Ultimates
 
-dataPowerAlias['Planar Fracture'] = new PowerAlias('Planar Fracture', 'Planar Fracture', '<img src="img/power-icons/mystic/Mystic_PlanarFracture.png" />&nbsp;Planar Fracture', null);
+const planarFractureHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Mystic<br>98 Energy cost<br>2 sec charge time (2 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>60 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - DOT - DEBUFF<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Creates a Planar Rift at the target\\\'s location for 16 sec, dealing 153 Dimensional Damage every 1 sec to up to 10 foes within 25ft.</li>\
+  <li>Applies Bane to affected targets, which has a 25% chance to apply additional stacks of Bane after the initial hit.</li>\
+  <li>Bane can apply the following effects: Bleeding, Chilled, Clinging Flames, Confuse, Deadly Poison, Debilitating Poison, Demolish, Dependency, Disintegrate, Disorient, Fear, Hexed, Plasma Burn, Stagger, Stress.</li>\
+</ul>';
 
-dataPowerAlias['Endbringer\'s Grasp'] = new PowerAlias('Endbringer\'s Grasp', 'Endbringer\'s Grasp', '<img src="img/power-icons/mystic/Mystic_EndbringersGrasp.png" />&nbsp;Endbringer\'s Grasp', null);
+dataPowerAlias['Planar Fracture'] = new PowerAlias('Planar Fracture', 'Planar Fracture', '<img src="img/power-icons/mystic/Mystic_PlanarFracture.png" />&nbsp;Planar Fracture', planarFractureHtml);
 
-dataPowerAlias['Crashing Incantation'] = new PowerAlias('Crashing Incantation', 'Crashing Incantation', '<img src="img/power-icons/mystic/Mystic_CrashingIncantation.png" />&nbsp;Crashing Incantation', null);
+const endbringersGraspHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Mystic<br>123 Energy cost<br>1.5 sec charge time (1.5 min)<br>Instant activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>60 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - CORRUPTION - CURSE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 123 Dimensional Damage every 1 sec for 16 sec to up to 10 foes within 25ft.</li>\
+  <li>Every 3 sec, the portal applies Fear to each target, reducing their damage by 10% for 12 sec.</li>\
+  <li>Every 3 sec, Henchmen, Villain and Enforcer ranked foes afflicted by Fear are also afflicted by Corruption for 10 sec, forcing them to fight for you temporarily.</li>\
+  <li>After Corrupt expires, Henchmen have their health reduced by 50%, Villains have their health reduced by 25%, and Enforcers have their health reduced by 15%.</li>\
+</ul>';
+
+dataPowerAlias['Endbringer\'s Grasp'] = new PowerAlias('Endbringer\'s Grasp', 'Endbringer\'s Grasp', '<img src="img/power-icons/mystic/Mystic_EndbringersGrasp.png" />&nbsp;Endbringer\'s Grasp', endbringersGraspHtml);
+
+const crashingIncantationHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Mystic<br>208 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 25 foot Sphere<br>60 seconds recharge</div>\
+</div><br>\
+ULTIMATE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 846 Magic Damage.</li>\
+  <li>Applies Overpower which reduces all damage resistance on foes by 20% for 15 sec.</li>\
+  <li>Applies Jinxed to foes, causing -10% all damage strength and -35% Run Speed for 8 sec to affected targets.</li>\
+  <li>When Jinxed expires, targets are Knocked Down.</li>\
+</ul>';
+
+dataPowerAlias['Crashing Incantation'] = new PowerAlias('Crashing Incantation', 'Crashing Incantation', '<img src="img/power-icons/mystic/Mystic_CrashingIncantation.png" />&nbsp;Crashing Incantation', crashingIncantationHtml);
 
 dataPowerAlias['Feral Rage'] = new PowerAlias('Feral Rage', 'Feral Rage', '<img src="img/power-icons/mystic/Mystic_FeralRage.png" />&nbsp;Feral Rage', null);
 
 dataPowerAlias['Corrosive Pit'] = new PowerAlias('Corrosive Pit', 'Corrosive Pit', '<img src="img/power-icons/mystic/Mystic_CorrosivePit.png" />&nbsp;Corrosive Pit', null);
 
-dataPowerAlias['Transcendence'] = new PowerAlias('Transcendence', 'Transcendence', '<img src="img/power-icons/mystic/Mystic_Transcendence.png" />&nbsp;Transcendence', null);
+const transcendenceHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Mystic<br>122 Energy cost<br>0.83 sec charge time (0.83 min)<br>1 sec activate time</div>\
+  <div style="text-align:right;">Affects foe that is not destructible (10 max)<br>30 foot Sphere<br>2 minutes 60 seconds recharge</div>\
+</div><br>\
+ULTIMATE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Repels targets if they are within 15ft of you by 20ft. After 1 sec Knocks targets upwards 17ft.</li>\
+  <li>Heals or revives up to 10 allies for +17% Health Points. If they are affected by Illumination, instead heals them for +27% Health Points.</li>\
+  <li>Creates a Transcended Rune at your location, which heals up to 10 nearby allies within 25ft for +44 Health Points every 1 sec for 10 sec. If they are affected by Illumination, instead heals for +67 Health Points.</li>\
+  <li>Fallen allies will be revived if standing in this Rune. This can occur once every 5 sec and can only revive 1 ally at a time.</li>\
+  <li>Anyone revived by this ability cannot be revived again by it for 90 sec.</li>\
+</ul>';
+
+dataPowerAlias['Transcendence'] = new PowerAlias('Transcendence', 'Transcendence', '<img src="img/power-icons/mystic/Mystic_Transcendence.png" />&nbsp;Transcendence', transcendenceHtml);
 
 //------------------------------------------------------------------------------
 // Power Framework: Celestial
@@ -10448,7 +11423,27 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 // Celestial: Tier 0
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Rebuke', '<img src="img/power-icons/celestial/Celestial_Rebuke.png" />&nbsp;Rebuke', 6, 20, pow++, 0, null);
+const rebukeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Celestial<br>18-50 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 158-563 Dimensional Damage.</li>\
+</ul>\
+<hr>\
+<div style="display:flex; justify-content:space-between;">\
+  <div>Celestial<br>18-50 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets friend<br>100 feet</div>\
+</div><br>\
+HEAL<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Heals the target +190-675 Health Points.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Rebuke', '<img src="img/power-icons/celestial/Celestial_Rebuke.png" />&nbsp;Rebuke', 6, 20, pow++, 0, rebukeHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10492,7 +11487,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Vengeance', '<img src="img/power-icons/celestial/Celestial_Vengeance.png" />&nbsp;Vengeance', 6, 20, pow++, 1, null);
+const vengeanceHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Celestial<br>31-70 Energy cost<br>1.67 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 8-15 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 172-514 Dimensional Damage to affected targets.</li>\
+  <li>Fully charging this power grants you a stack of Unforgiving, which reduces the charge time and Energy cost of this power by 10%, and stacks up to 3 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Vengeance', '<img src="img/power-icons/celestial/Celestial_Vengeance.png" />&nbsp;Vengeance', 6, 20, pow++, 1, vengeanceHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10561,7 +11567,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Impure W
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Redemption', '<img src="img/power-icons/celestial/Celestial_Redemption.png" />&nbsp;Redemption', 6, 20, pow++, 2, null);
+const redemptionHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Celestial<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
+</div><br>\
+REVIVE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Revives a nearby Hero, bringing them back from defeat with 33% of their Health.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Redemption', '<img src="img/power-icons/celestial/Celestial_Redemption.png" />&nbsp;Redemption', 6, 20, pow++, 2, redemptionHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10662,7 +11678,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 // Darkness: Tier 0
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Blast', '<img src="img/power-icons/darkness/Darkness_ShadowBlast.png" />&nbsp;Shadow Blast', 6, 21, pow++, 0, null);
+const shadowBlastHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>19-53 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - FEAR - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 134-528 Dimensional Damage to your target.</li>\
+  <li>Has a 25-100% chance to Fear your target, reducing their damage by 10% for 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Blast', '<img src="img/power-icons/darkness/Darkness_ShadowBlast.png" />&nbsp;Shadow Blast', 6, 21, pow++, 0, shadowBlastHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10677,7 +11704,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 // Darkness: Tier 1
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dark Tether', '<img src="img/power-icons/darkness/Darkness_DarkTether.png" />&nbsp;Dark Tether', 6, 21, pow++, 1, null);
+const darkTetherHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>24-32 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+RANGED DAMAGE - KNOCK TO - FEAR<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 158-376 Dimensional Damage to your target. Your target is Knocked to you.</li>\
+  <li>Has a 46-100% chance to Fear your target, reducing their damage by 10% for 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dark Tether', '<img src="img/power-icons/darkness/Darkness_DarkTether.png" />&nbsp;Dark Tether', 6, 21, pow++, 1, darkTetherHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10720,7 +11758,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Grasping Shadows', '<img src="img/power-icons/darkness/Darkness_GraspingShadows.png" />&nbsp;Grasping Shadows', 6, 21, pow++, 1, null);
+const graspingShadowsHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>79 Energy cost<br>2.17 sec charge time (2.17 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+RANGED AOE HOLD - FEAR<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes all targets for 12 sec.</li>\
+  <li>All targets are also affected by Fear, reducing their damage by 10% for 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Grasping Shadows', '<img src="img/power-icons/darkness/Darkness_GraspingShadows.png" />&nbsp;Grasping Shadows', 6, 21, pow++, 1, graspingShadowsHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10867,7 +11916,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Lingerin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Scheme', '<img src="img/power-icons/darkness/Darkness_ShadowScheme.png" />&nbsp;Shadow Scheme', 6, 21, pow++, 2, null);
+const shadowSchemeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>55 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>30 seconds recharge</div>\
+</div><br>\
+SIGILS - RANGED AOE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>When fully charged, summons a Shadow Trap within 20ft of your target. Creates an additional Shadow Trap every 2 sec until a total of 5 have been created.</li>\
+  <li>After 1 sec, the Shadow Trap will explode and deal 335 Dimensional Damage to up to 5 targets within 20ft.</li>\
+  <li>One of the following Knock effects can occur:<br>40% chance to Knock Up foes 17ft.<br>20% chance to Knock Back foes 17ft.<br>20% chance to Knock foes towards you 10ft.<br>20% chance to Knock Down foes.</li>\
+  <li>One of the following effects can also occur:<br>10% chance to Root foes for 13 sec.<br>10% chance to Stun foes for 1.7 sec.<br>10% chance to Paralyze foes for 12 sec.<br>10% chance to Confuse foes for 10 sec.<br>10% chance to apply Devoid to affected targets, reducing their resistance to Dimensional Damage by 18% for 15 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Scheme', '<img src="img/power-icons/darkness/Darkness_ShadowScheme.png" />&nbsp;Shadow Scheme', 6, 21, pow++, 2, shadowSchemeHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10894,7 +11956,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dark Pact', '<img src="img/power-icons/darkness/Darkness_DarkPact.png" />&nbsp;Dark Pact', 6, 21, pow++, 2, null);
+const darkPactHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
+</div><br>\
+REVIVE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Revives a nearby Hero, bringing them back from defeat with 33% of their Health.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dark Pact', '<img src="img/power-icons/darkness/Darkness_DarkPact.png" />&nbsp;Dark Pact', 6, 21, pow++, 2, darkPactHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10911,7 +11983,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 // Darkness: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ebon Ruin', '<img src="img/power-icons/darkness/Darkness_EbonRuin.png" />&nbsp;Ebon Ruin', 6, 21, pow++, 3, null);
+const ebonRuinHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>40-109 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - SNARE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 254-904 Dimensional Damage based on charge time.</li>\
+  <li>On full charge, Snares your target for 13 sec, reducing their movement speed by 100%.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ebon Ruin', '<img src="img/power-icons/darkness/Darkness_EbonRuin.png" />&nbsp;Ebon Ruin', 6, 21, pow++, 3, ebonRuinHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10945,7 +12028,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Endless 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Eruption', '<img src="img/power-icons/darkness/Darkness_ShadowEruption.png" />&nbsp;Shadow Eruption', 6, 21, pow++, 3, null);
+const shadowEruptionHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>58-140 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
+</div><br>\
+RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 170-603 Dimensional Damage to targets.</li>\
+  <li>Knocks Back affected targets 17ft.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Eruption', '<img src="img/power-icons/darkness/Darkness_ShadowEruption.png" />&nbsp;Shadow Eruption', 6, 21, pow++, 3, shadowEruptionHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -10985,7 +12079,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Chaos! Chaos!', 'Chaos! Chaos!', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Summon Shadows', '<img src="img/power-icons/darkness/Darkness_SummonShadows.png" />&nbsp;Summon Shadows', 6, 21, pow++, 3, null);
+const summonShadowsHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Darkness<br>41 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
+</div><br>\
+UNCONTROLLED PET<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Summons 3 Shadows to attack your foes. Each Shadow attacks for 101 Dimensional Damage (Base).</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Summon Shadows', '<img src="img/power-icons/darkness/Darkness_SummonShadows.png" />&nbsp;Summon Shadows', 6, 21, pow++, 3, summonShadowsHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11064,7 +12168,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 // Arcane Sorcery: Tier 0
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Eldritch Blast', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_EldritchBlast.png" />&nbsp;Eldritch Blast', 6, 22, pow++, 0, null);
+const eldritchBlastHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>16-47 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - BLAST<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 129-507 Magic Damage.</li>\
+  <li>Has a 12-50% chance to apply Mystified to you for 15 sec.</li>\
+  <li>Mystified reduces the cost of your Sorcery, Celestial, Darkness and Infernal powers by 3%. Can stack up to 3 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Eldritch Blast', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_EldritchBlast.png" />&nbsp;Eldritch Blast', 6, 22, pow++, 0, eldritchBlastHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11080,7 +12196,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 // Arcane Sorcery: Tier 1
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Arcane Runes', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfArcaneRunes.png" />&nbsp;Sigils of Arcane Runes', 6, 22, pow++, 1, null);
+const sigilsOfArcaneRunesHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>52 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+</div><br>\
+SIGILS - RANGED AOE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons 5 Arcane Sigils around you.</li>\
+  <li>When an enemy comes within 15 ft of an Arcane Sigil, it explodes and deals 403 Magic Damage to up to 5 targets within range.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Arcane Runes', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfArcaneRunes.png" />&nbsp;Sigils of Arcane Runes', 6, 22, pow++, 1, sigilsOfArcaneRunesHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11088,7 +12215,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Mystic Transference', 'Mystic Transference', 1, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Inner Peace', 'Inner Peace', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Destruction', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfDestruction.png" />&nbsp;Sigils of Destruction', 6, 22, pow++, 1, null);
+const sigilsOfDestructionHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>46 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+</div><br>\
+SIGILS - RANGED AOE DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons 5 Destructive Sigils around you. Foes within 15 feet of a Destructive Sigil will be struck by lightning for 201 Magic Damage every 2 sec. There is a 10% chance that the lightning will chain to an additional target for 155 Magic Damage.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Destruction', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfDestruction.png" />&nbsp;Sigils of Destruction', 6, 22, pow++, 1, sigilsOfDestructionHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11132,7 +12269,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Pillar of Poz', 'UPVD: Ultimate Pillar of Poz', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Radiant Sanctuary', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfRadiantSanctuary.png" />&nbsp;Sigils of Radiant Sanctuary', 6, 22, pow++, 1, null);
+const sigilsOfRadiantSanctuaryHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>38 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+</div><br>\
+SIGILS - AOE STEALTH BUFF - PRESENCE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons 5 Radiant Sigils around you.</li>\
+  <li>Allies within 15ft of a Radiant Sigil gain +21 Aggression Stealth and +69 Perception Stealth.</li>\
+  <li>They also gain 4.3% resistance to all damage, Holds, and Knocks.</li>\
+  <li>Heals nearby allies for +12 Health Points every 2 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Radiant Sanctuary', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfRadiantSanctuary.png" />&nbsp;Sigils of Radiant Sanctuary', 6, 22, pow++, 1, sigilsOfRadiantSanctuaryHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11140,7 +12290,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Mystic Transference', 'Mystic Transference', 1, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Inner Peace', 'Inner Peace', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Ebon Weakness', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfEbonWeakness.png" />&nbsp;Sigils of Ebon Weakness', 6, 22, pow++, 1, null);
+const sigilsOfEbonWeaknessHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>35 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+</div><br>\
+SIGILS - AOE DEBUFF - PRESENCE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons 5 Ebon Sigils around you.</li>\
+  <li>Enemies within 25ft of an Ebon Sigil have their movement speed reduced by 69% and deal 14% less damage.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Sigils of Ebon Weakness', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_SigilsOfEbonWeakness.png" />&nbsp;Sigils of Ebon Weakness', 6, 22, pow++, 1, sigilsOfEbonWeaknessHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11309,7 +12470,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Mystical
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Banish', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_Banish.png" />&nbsp;Banish', 6, 22, pow++, 2, null);
+const banishHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>27 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+PARALYZE - DIRECT SHIELD<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes the target for 12 sec.</li>\
+  <li>Places the target in a shield, reducing all incoming damage by 50%.</li>\
+  <li>If your target is immune to Hold effects, instead places them in a Power Shield for 10 sec.</li>\
+  <li>This shield does not absorb any damage, but striking it restores 2.5% energy. Can occur once every 3 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Banish', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_Banish.png" />&nbsp;Banish', 6, 22, pow++, 2, banishHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11321,13 +12495,36 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, nul
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
+const marchOfTheDeadHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>41 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
+</div><br>\
+UNCONTROLLED PET - INTELLIGENCE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Reduces your Energy Equilibrium for 20 sec.</li>\
+  <li>After 3 sec, Creates a level 40 Walking Dead 20 sec.</li>\
+  <li>After 4 sec, Creates a level 40 Walking Dead 20 sec.</li>\
+  <li>The duration of this power is increased by your INTELLIGENCE.</li>\
+</ul>';
+
 dataPower[dataPower.length] = new Power(dataPower.length, 'March of the Dead', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_MarchOfTheDead.png" />&nbsp;March of the Dead', 6, 22, pow++, 2, null);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Forced March', 'Forced March', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Warlock\'s Blades', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_WarlocksBlades.png" />&nbsp;Warlock\'s Blades', 6, 22, pow++, 2, null);
+const warlocksBladesHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>41 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
+</div><br>\
+UNCONTROLLED PET<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Summons Flaming Blades to attack your foes. The Blades hit up to 3 targets for 101 Magic Damage (Base) in a cone in front of them.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Warlock\'s Blades', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_WarlocksBlades.png" />&nbsp;Warlock\'s Blades', 6, 22, pow++, 2, warlocksBladesHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11384,31 +12581,107 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Impart Freedom', 'Impart Freedom', 2, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Mystical', 'Mystical', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Divine Renewal', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_DivineRenewal.png" />&nbsp;Divine Renewal', 6, 22, pow++, 2, null);
+const divineRenewalHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
+</div><br>\
+REVIVE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Revives a nearby Hero, bringing them back from defeat with 33% of their Health.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Divine Renewal', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_DivineRenewal.png" />&nbsp;Divine Renewal', 6, 22, pow++, 2, divineRenewalHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Radiant Renewal', 'Radiant Renewal', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Arcane Power', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfArcanePower.png" />&nbsp;Circle of Arcane Power', 6, 22, pow++, 2, null);
+const circleOfArcanePowerHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self</div>\
+</div><br>\
+CIRCLE - SELF ENERGY BUFF<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons a Circle of Arcane Power at your location.</li>\
+  <li>While standing in the Circle of Arcane Power you gain +12 Energy every 1 sec and you have -100% Energy Decay.</li>\
+  <li>Energy Unlocks will not give you any energy while standing in the Circle of Arcane Power.</li>\
+  <li>This Circle will persist for up to 2 sec while you are not standing in it.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Arcane Power', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfArcanePower.png" />&nbsp;Circle of Arcane Power', 6, 22, pow++, 2, circleOfArcanePowerHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Advanced Casting', 'Advanced Casting', 3, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Ebon Wrath', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfEbonWrath.png" />&nbsp;Circle of Ebon Wrath', 6, 22, pow++, 2, null);
+const circleOfEbonWrathHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self</div>\
+</div><br>\
+CIRCLE - SELF DAMAGE BUFF<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons a Circle of Ebon Wrath at your location.</li>\
+  <li>While standing in the Circle of Ebon Wrath you gain +20% all damage strength, have -8.3% Threat Generation and +83% Perception.</li>\
+  <li>Healing effects on you are reduced by 100%.</li>\
+  <li>Any foes that attack you or comes near the Circle of Ebon Wrath will be Feared causing them deal 10% less damage for 12 sec.</li>\
+  <li>This Circle will persist for up to 2 sec while you are not standing in it.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Ebon Wrath', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfEbonWrath.png" />&nbsp;Circle of Ebon Wrath', 6, 22, pow++, 2, circleOfEbonWrathHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Advanced Casting', 'Advanced Casting', 3, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Primal Dominion', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfPrimalDominion.png" />&nbsp;Circle of Primal Dominion', 6, 22, pow++, 2, null);
+const circleOfPrimalDominionHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self</div>\
+</div><br>\
+CIRCLE - SELF DEFENSE BUFF<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons a Circle of Primal Dominion at your location.</li>\
+  <li>While standing in the Circle of Primal Dominion you gain 83% resistance to Knock effects, +17% resistance to all damage and +50 Health Points every 1 sec.</li>\
+  <li>You gain -8.3% Threat Generation.</li>\
+  <li>If you are in the Protector role, you instead gain +8.3% Threat Generation.</li>\
+  <li>Your power costs are increased by 10% and the recharge time on your powers are increased by 20%.</li>\
+  <li>This Circle will persist for up to 2 sec while you are not standing in it.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Primal Dominion', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfPrimalDominion.png" />&nbsp;Circle of Primal Dominion', 6, 22, pow++, 2, circleOfPrimalDominionHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Advanced Casting', 'Advanced Casting', 3, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Radiant Glory', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfRadiantGlory.png" />&nbsp;Circle of Radiant Glory', 6, 22, pow++, 2, null);
+const circleOfRadiantGloryHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets self</div>\
+</div><br>\
+CIRCLE - RESURRECT SELF<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Upon a full charge, summons a Circle of Radiant Glory at your location.</li>\
+  <li>If you are defeated while standing in the Circle of Radiant Glory, you are resurrected with +70% Health Points.</li>\
+  <li>When you are resurrected, places all Resurrection powers on cooldown for 180 seconds.</li>\
+  <li>This Circle will persist for up to 10 sec while you are not standing in it.</li>\
+</ul>\
+<hr>\
+<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>35 Energy cost<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Affects friend<br>50 foot Sphere<br>6 seconds recharge</div>\
+</div><br>\
+CIRCLE - AOE HEAL<br><br>\
+CLICK<br>\
+<ul>\
+  <li>While a Circle of Radiant Glory exists, you may tap this power to move it to your current location.</li>\
+  <li>When it moves, up to 5 targets in its old location and up to 5 targets in its new location are all healed for +202 Health Points.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Circle of Radiant Glory', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_CircleOfRadiantGlory.png" />&nbsp;Circle of Radiant Glory', 6, 22, pow++, 2, circleOfRadiantGloryHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11443,7 +12716,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Ephemeral Endowment', 'Ephemeral Endowment', 2, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Vala\'s Light', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_ValasLight.png" />&nbsp;Vala\'s Light', 6, 22, pow++, 3, null);
+const valasLightHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Arcane Sorcery<br>21-83 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets friend (5 max)<br>50 feet; 25 foot Sphere<br>3 seconds recharge</div>\
+</div><br>\
+AOE HEAL<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Heals all targets for +133-362 Health Points.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Vala\'s Light', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_ValasLight.png" />&nbsp;Vala\'s Light', 6, 22, pow++, 3, valasLightHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11559,7 +12842,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 // Bestial Supernatural: Tier 1
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Bite', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Bite.png" />&nbsp;Bite', 6, 23, pow++, 1, null);
+const biteHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Bestial Supernatural<br>40-57 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - BLEED - LIFE DRAIN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 237-506 Slashing Damage and has a 20% chance to cause the target to start Bleeding, suffering 24 Slashing Damage every 1 sec for 16 sec.</li>\
+  <li>When fully charged, consumes all Bleeds and heals you for +96 Health Points every 2 sec for 10 sec for each Bleed consumed.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Bite', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Bite.png" />&nbsp;Bite', 6, 23, pow++, 1, biteHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11624,7 +12918,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Barbed Lariat', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_BarbedLariat.png" />&nbsp;Barbed Lariat', 6, 23, pow++, 1, null);
+const barbedLariatHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Bestial Supernatural<br>31-41 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK TO<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 221-527 Slashing Damage and your target is Knocked to you.</li>\
+  <li>Has a 46-100% chance to apply Bleed to your target.</li>\
+  <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Barbed Lariat', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_BarbedLariat.png" />&nbsp;Barbed Lariat', 6, 23, pow++, 1, barbedLariatHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11831,7 +13137,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fie
 // Bestial Supernatural: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Massacre', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Massacre.png" />&nbsp;Massacre', 6, 23, pow++, 3, null);
+const massacreHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Bestial Supernatural<br>47-75 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet</div>\
+</div><br>\
+MELEE DAMAGE - KNOCK DOWN<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 356-759 Slashing Damage and your target is Knocked Down.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Massacre', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Massacre.png" />&nbsp;Massacre', 6, 23, pow++, 3, massacreHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11841,7 +13157,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Searing Carnage', 'PVD: Searing Carnage', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Eviscerate', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Eviscerate.png" />&nbsp;Eviscerate', 6, 23, pow++, 3, null);
+const eviscerateHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Bestial Supernatural<br>36-58 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>10 feet<br>3 seconds recharge</div>\
+</div><br>\
+MELEE DAMAGE - RUPTURE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 277-591 Slashing Damage to your target.</li>\
+  <li>When not fully charged, adds 8 sec to the duration of your Bleeds. This cannot exceed the regular duration of the Bleed effects.</li>\
+  <li>When fully charged, consumes all Bleeds and applies Deep Wound, causing 96 Slashing Damage every 2 sec for 16 sec for each Bleed consumed. This effect ignores Dodge, Shields and half of the target\\\'s Resistance.</li>\
+  <li>While Deep Wound is active you cannot apply any other Bleeds. Deep Wound cannot be refreshed or stacked.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Eviscerate', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Eviscerate.png" />&nbsp;Eviscerate', 6, 23, pow++, 3, eviscerateHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11850,7 +13179,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Brutal Charge', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_BrutalCharge.png" />&nbsp;Brutal Charge', 6, 23, pow++, 3, null);
+const brutalChargeHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Bestial Supernatural<br>81 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>60 foot lunge; 10 foot Sphere<br>15 seconds recharge</div>\
+</div><br>\
+LUNGE - AOE MELEE DAMAGE - KNOCK<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Lunges at the target, dealing 675 Slashing Damage to targets within 10ft.</li>\
+  <li>Knocks Up targets 8.4-29ft depending on how far you lunge from. If your target is immune to Knock effects, increases this power\\\'s base damage by 30%.</li>\
+  <li>Applies Disorient to your primary target, reducing their damage by 10% and movement speed by 50% for 12 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Brutal Charge', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_BrutalCharge.png" />&nbsp;Brutal Charge', 6, 23, pow++, 3, brutalChargeHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -11991,7 +13332,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Vile Lariat', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_VileLariat.png" />&nbsp;Vile Lariat', 6, 24, pow++, 1, null);
+const vileLariatHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Infernal Supernatural<br>24-32 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+RANGED DAMAGE - KNOCK TO - POISON<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 158-376 Toxic Damage.</li>\
+  <li>Your target is Knocked to you.</li>\
+  <li>Has a 46-100% chance to apply Deadly Poison to your target.</li>\
+  <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Vile Lariat', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_VileLariat.png" />&nbsp;Vile Lariat', 6, 24, pow++, 1, vileLariatHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -12024,7 +13378,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Stand Yo
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Condemn', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_Condemn.png" />&nbsp;Condemn', 6, 24, pow++, 1, null);
+const condemnHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Infernal Supernatural<br>33-67 Energy cost<br>1.67 sec charge time<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 8-15 foot Sphere</div>\
+</div><br>\
+RANGED AOE DAMAGE - POISON<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 169-504 Toxic Damage to affected targets.</li>\
+  <li>Applies Deadly Poison to each target if they are not currently affected by it, otherwise, has a 10% chance to apply another stack of Deadly Poison.</li>\
+  <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Condemn', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_Condemn.png" />&nbsp;Condemn', 6, 24, pow++, 1, condemnHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -12181,7 +13547,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Locust Swarm', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_LocustSwarm.png" />&nbsp;Locust Swarm', 6, 24, pow++, 2, null);
+const locustSwarmHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Infernal Supernatural<br>36 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
+</div><br>\
+RANGED HOLD - RANGED DAMAGE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Paralyzes the target for 12 sec.</li>\
+  <li>While the target remains Paralyzed, they suffer 28 Toxic Damage every 1 sec.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Locust Swarm', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_LocustSwarm.png" />&nbsp;Locust Swarm', 6, 24, pow++, 2, locustSwarmHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -12214,7 +13591,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Glossolalia', 'Glossolalia', 2, null, null));
 dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Death\'s Embrace', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_DeathsEmbrace.png" />&nbsp;Death\'s Embrace', 6, 24, pow++, 2, null);
+const deathsEmbraceHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Infernal Supernatural<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
+  <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
+</div><br>\
+REVIVE<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Revives a nearby Hero, bringing them back from defeat with 33% of their Health.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Death\'s Embrace', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_DeathsEmbrace.png" />&nbsp;Death\'s Embrace', 6, 24, pow++, 2, deathsEmbraceHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -12241,7 +13628,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 // Infernal Supernatural: Tier 3
 //------------------------------------------------------------------------------
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Defile', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_Defile.png" />&nbsp;Defile', 6, 24, pow++, 3, null);
+const defileHtml = '<div style="display:flex; justify-content:space-between;">\
+  <div>Infernal Supernatural<br>40-104 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  <div style="text-align:right;">Targets foe<br>100 feet</div>\
+</div><br>\
+RANGED DAMAGE - POISON<br><br>\
+CHARGE<br>\
+<ul>\
+  <li>Deals 254-904 Toxic Damage and has a 13-50% chance based on charge time to apply Deadly Poison to your target.</li>\
+  <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+</ul>';
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Defile', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_Defile.png" />&nbsp;Defile', 6, 24, pow++, 3, defileHtml);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
