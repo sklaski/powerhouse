@@ -2006,7 +2006,7 @@ function advantageTip(type, num, mask) {
                     if (result.length == 0) {
                         result = tip;
                     } else {
-                        result += '<br /><br />' + tip;
+                        result += tip;
                     }
                 }
             }

@@ -1004,8 +1004,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const acceleratedMetabolismTooltip =
   '<div>\
-  ACCELERATED METABOLISM<br><br>\
-  ENHANCEMENT\
+  ACCELERATED METABOLISM<br>\
   <ul>\
     <li>Every time you use this ability, you have a chance to return a small amount of energy.</li>\
   </ul>\
@@ -1015,8 +1014,7 @@ dataPowerAlias['AM'] = new PowerAlias('AM', 'Accelerated Metabolism', 'Accelerat
 
 const challengeTooltip =
   '<div>\
-  CHALLENGE!<br><br>\
-  ENHANCEMENT<br><br>\
+  CHALLENGE!<br>\
   <strong>Primary Target</strong>\
   <ul>\
     <li>Applies a large threat over time debuff to your target. This effect cannot be refreshed.</li>\
@@ -1037,8 +1035,7 @@ dataPowerAlias['CHAL'] = new PowerAlias('CHAL', 'Challenge!', 'Challenge!', chal
 
 const nailedToTheGroundTooltip =
   '<div>\
-  NAILED TO THE GROUND<br><br>\
-  ENHANCEMENT\
+  NAILED TO THE GROUND<br>\
   <ul>\
     <li>Applies <strong>Nailed to the Ground</strong> to the target, preventing them from using <strong>Travel Powers</strong> for a short time.</li>\
   </ul>\
@@ -1048,8 +1045,7 @@ dataPowerAlias['NttG'] = new PowerAlias('NttG', 'Nailed to the Ground', 'Nailed 
 
 const breakThroughTooltip =
   '<div>\
-  BREAK THROUGH<br><br>\
-  ENHANCEMENT\
+  BREAK THROUGH<br>\
   <ul>\
     <li>If your Primary Target is blocking, hitting them with this attack disables it for 10 seconds.</li>\
     <li>If your Primary Target is blocking, it applies <strong>Provoked</strong> for 10 seconds, which is a damage, resistance, healing, and dodge debuff.</li>\
@@ -1064,8 +1060,7 @@ dataPowerAlias['BRK'] = new PowerAlias('BRK', 'Break Through', 'Break Through', 
 
 const commandingPresenceTooltip = 
   '<div>\
-  COMMANDING PRESENCE<br><br>\
-  ENHANCEMENT\
+  COMMANDING PRESENCE<br>\
   <ul>\
     <li>Applies a large threat over time debuff to your target.</li>\
     <li>This effect can be stacked on top of the <strong>Challenge!</strong> effect.</li>\
@@ -1143,8 +1138,7 @@ const energyStorm = {
 
   weatherTheStorm:
   '<div>\
-  WEATHER THE STORM<br><br>\
-  ENHANCEMENT\
+  WEATHER THE STORM<br>\
   <ul>\
     <li>Secondary energy effects, such as clinging flames, have a chance to not be consumed when you use Energy Storm.</li>\
   </ul>\
@@ -1170,8 +1164,7 @@ const gravityDriver = {
 
   intenseGravity:
   '<div>\
-  INTENSE GRAVITY<br><br>\
-  ENHANCEMENT\
+  INTENSE GRAVITY<br>\
   <ul>\
     <li><strong>Stuns</strong> affected targets.</li>\
   </ul>\
@@ -1200,8 +1193,7 @@ const fractalAegis = {
 
   chillingReminder:
   '<div>\
-  CHILLING REMINDER<br><br>\
-  ENHANCEMENT\
+  CHILLING REMINDER<br>\
   <ul>\
     <li>Applies a large threat over time debuff to your target.</li>\
     <li>This effect can be stacked on top of the <strong>Challenge!</strong> effect.</li>\
@@ -1289,8 +1281,7 @@ const redirectedForce = {
 
   holdTheLine:
   '<div>\
-  HOLD THE LINE<br><br>\
-  ENHANCEMENT\
+  HOLD THE LINE<br>\
   <ul>\
     <li>For a short duration, maintaining this power counts as using a <strong>Block</strong> for power interaction purposes.</li>\
     <li>This amount increases based on the rank of your <strong>Force Shield</strong> power.</li>\
@@ -1378,8 +1369,7 @@ const electricBolt = {
   
   lightningOverload:
   '<div>\
-  LIGHTNING OVERLOAD<br><br>\
-  ENHANCEMENT\
+  LIGHTNING OVERLOAD<br>\
   <ul>\
     <li>Grants Electric Bolt a chance to jump to another target on every attack.</li>\
   </ul>\
@@ -1387,8 +1377,7 @@ const electricBolt = {
 
   ionicInfusion:
   '<div>\
-  IONIC INFUSION<br><br>\
-  ENHANCEMENT\
+  IONIC INFUSION<br>\
   <ul>\
     <li>Doubles the chance to apply <strong>Negative Ions</strong> to your target on every attack.</li>\
   </ul>\
@@ -1423,8 +1412,7 @@ const chainLightning = {
 
   lightningHelix:
   '<div>\
-  LIGHTNING HELIX<br><br>\
-  ENHANCEMENT\
+  LIGHTNING HELIX<br>\
   <ul>\
     <li>Adds an additional, random <strong>Arc</strong> to your Chain Lightning.</li>\
     <li>This <strong>Arc</strong> may go to the same target that another <strong>Arc</strong> goes to, hitting that target twice, or may go to another nearby target.</li>\
@@ -1434,8 +1422,7 @@ const chainLightning = {
 
   superconductor:
   '<div>\
-  SUPERCONDUCTOR<br><br>\
-  ENHANCEMENT\
+  SUPERCONDUCTOR<br>\
   <ul>\
     <li>Applies <strong>Superconductor</strong> to targets that are affected by <strong>Negative Ions</strong>.</li>\
     <li><strong>Superconductor</strong> reduces the resistance to Electrical damage for a short time.</li>\
@@ -1474,8 +1461,7 @@ const sparkstorm = {
 
   electricPersonality:
   '<div>\
-  ELECTRIC PERSONALITY<br><br>\
-  ENHANCEMENT\
+  ELECTRIC PERSONALITY<br>\
   <ul>\
     <li>Changes Spark Storm to a toggle. The toggle has a max duration equal to the maintain limit of Spark Storm and retains the same energy costs.</li>\
     <li>This power can be used alongside other powers while toggled on.</li>\
@@ -1484,8 +1470,7 @@ const sparkstorm = {
 
   electricJolt:
   '<div>\
-  ELECTRIC JOLT<br><br>\
-  ENHANCEMENT\
+  ELECTRIC JOLT<br>\
   <ul>\
     <li>Spark Storm now <strong>Knocks Back</strong> targets that are affected by <strong>Negative Ions</strong> instead of <strong>Knocking Down</strong>.</li>\
     <li>A successful <strong>Knock Back</strong> will complete a <strong>Circuit</strong> and consume your <strong>Negative Ions</strong>.</li>\
@@ -1494,8 +1479,7 @@ const sparkstorm = {
 
   particleStorm:
   '<div>\
-  PARTICLE STORM<br><br>\
-  ENHANCEMENT\
+  PARTICLE STORM<br>\
   <ul>\
     <li>Gives this power a chance to apply <strong>Plasma Burn</strong>, dealing Particle damage over time.</li>\
     <li>This chance is increased if your target is affected by <strong>Negative Ions</strong>.</li>\
@@ -1531,8 +1515,7 @@ const sigilsOfTheStorm = {
 
   mysticTransference:
   '<div>\
-  MYSTIC TRANSFERENCE<br><br>\
-  ENHANCEMENT\
+  MYSTIC TRANSFERENCE<br>\
   <ul>\
     <li>You now only summon two of these <strong>Sigils</strong>, but they can be summoned alongside your other <strong>Sigils</strong>.</li>\
     <li>This also lowers the base recharge time for these <strong>Sigils</strong> to 10 seconds, and reduces the charge time and cost of these <strong>Sigils</strong>.</li>\
@@ -1562,8 +1545,7 @@ const electricalCurrent = {
 
   badWiring:
   '<div>\
-  BAD WIRING<br><br>\
-  ENHANCEMENT\
+  BAD WIRING<br>\
   <ul>\
     <li>Targets hit have a chance to be <strong>Stunned</strong> for a short time.</li>\
     <li>Targets that are affected by <strong>Negative Ions</strong> are guaranteed to be <strong>Stunned</strong>.</li>\
@@ -1572,8 +1554,7 @@ const electricalCurrent = {
 
   unlimitedPower:
   '<div>\
-  UNLIMITED POWER!<br><br>\
-  ENHANCEMENT\
+  UNLIMITED POWER!<br>\
   <ul>\
     <li>Applies and immediately consumes your <strong>Negative Ions</strong> every hit.</li>\
     <li>This counts as completing a <strong>Circuit</strong>.</li>\
@@ -1605,8 +1586,7 @@ const lightningStrike = {
 
   chargedUp:
   '<div>\
-  CHARGED UP<br><br>\
-  ENHANCEMENT\
+  CHARGED UP<br>\
   <ul>\
     <li>Completes a <strong>Circuit</strong> and consumes your <strong>Negative Ions</strong> on the target.</li>\
     <li>If you consume <strong>Negative Ions</strong>, it refreshes and gives you a stack of the <strong>Charged Up</strong> buff, which increases your travel speed briefly.</li>\
@@ -1644,8 +1624,7 @@ const electricSheath = {
 
   matterEnergyUnion:
   '<div>\
-  MATTER - ENERGY UNION<br><br>\
-  ENHANCEMENT\
+  MATTER - ENERGY UNION<br>\
   <ul>\
     <li>For up to the duration of your Sheath power, incoming damage will be subtracted from your energy instead of your health.</li>\
     <li>The benefit provided by this advantage can only reroute a limited amount of damage, after which damage will be dealt to you as normal.</li>\
@@ -1722,8 +1701,7 @@ const electricShield = {
 
   electricVengeance:
   '<div>\
-  ELECTRIC VENGEANCE<br><br>\
-  ENHANCEMENT\
+  ELECTRIC VENGEANCE<br>\
   <ul>\
     <li>If your energy is high enough, your Electric Shield will automatically retaliate against any aggressors that are within 100 feet.</li>\
     <li>Each retaliatory strike consumes an amount of energy.</li>\
@@ -1777,8 +1755,7 @@ const stormSummoner = {
 
   magnetic:
   '<div>\
-  MAGNETIC<br><br>\
-  ENHANCEMENT\
+  MAGNETIC<br>\
   <ul>\
     <li>Your storm now draws targets close to you.</li>\
   </ul>\
@@ -1786,8 +1763,7 @@ const stormSummoner = {
 
   squall:
   '<div>\
-  SQUALL<br><br>\
-  ENHANCEMENT\
+  SQUALL<br>\
   <ul>\
     <li>Your storm now <strong>Snares</strong> targets.</li>\
     <li>When this power is fully maintained, it completes a <strong>Circuit</strong> and consumes <strong>Negative Ions</strong> on the target and <strong>Knocks</strong> them upwards.</li>\
@@ -1796,8 +1772,7 @@ const stormSummoner = {
 
   particleStorm:
   '<div>\
-  PARTICLE STORM<br><br>\
-  ENHANCEMENT\
+  PARTICLE STORM<br>\
   <ul>\
     <li>Gives your storm a chance to apply <strong>Plasma Burn</strong>, dealing Particle damage over time.</li>\
     <li>This chance is increased if your target is affected by <strong>Negative Ions</strong>.</li>\
@@ -1832,8 +1807,7 @@ const thunderstrike = {
 
   ionicCompression:
   '<div>\
-  IONIC COMPRESSION<br><br>\
-  ENHANCEMENT\
+  IONIC COMPRESSION<br>\
   <ul>\
     <li>Causes Thunderstrike to <strong>Root</strong> the targets hit for a short time in addition to its normal damage.</li>\
     <li><strong>Rooted</strong> targets are unable to move.</li>\
@@ -1842,8 +1816,7 @@ const thunderstrike = {
 
   strikeDown:
   '<div>\
-  STRIKE DOWN<br><br>\
-  ENHANCEMENT\
+  STRIKE DOWN<br>\
   <ul>\
     <li>Causes Thunderstrike to <strong>Knock Down</strong> your primary target.</li>\
     <li>Refreshes the duration of your <strong>Superconductor</strong> debuff.</li>\
@@ -1852,8 +1825,7 @@ const thunderstrike = {
 
   neverStrikesTwice:
   '<div>\
-  NEVER STRIKES TWICE<br><br>\
-  ENHANCEMENT\
+  NEVER STRIKES TWICE<br>\
   <ul>\
     <li>Increases the damage of this power against <strong>Held</strong> targets.</li>\
   </ul>\
@@ -1861,8 +1833,7 @@ const thunderstrike = {
 
   recharge:
   '<div>\
-  RECHARGE<br><br>\
-  ENHANCEMENT\
+  RECHARGE<br>\
   <ul>\
     <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
     <li>Heals for an additional amount if your health is low.</li>\
@@ -1900,8 +1871,7 @@ const electrocute = {
 
   superconductor:
   '<div>\
-  SUPERCONDUCTOR<br><br>\
-  ENHANCEMENT\
+  SUPERCONDUCTOR<br>\
   <ul>\
     <li>Fully charging this power applies <strong>Superconductor</strong> to your target.</li>\
     <li><strong>Superconductor</strong> reduces the resistance to Electrical damage for a short time.</li>\
@@ -1954,8 +1924,7 @@ const ballLightning = {
 
   triplicity:
   '<div>\
-  TRIPLICITY<br><br>\
-  ENHANCEMENT\
+  TRIPLICITY<br>\
   <ul>\
     <li>Ball Lightning now summons 3 Ball Lightnings instead of one.</li>\
     <li>The periodic damage each one deals is reduced by 60%.</li>\
@@ -1965,8 +1934,7 @@ const ballLightning = {
 
   supercharged:
   '<div>\
-  SUPERCHARGED<br><br>\
-  ENHANCEMENT\
+  SUPERCHARGED<br>\
   <ul>\
     <li>The first hit and last hit from Ball Lightning partially refresh the duration of your <strong>Superconductor</strong> debuff.</li>\
   </ul>\
@@ -1995,8 +1963,7 @@ const electricalSiphon = {
 
   chargedUp:
   '<div>\
-  CHARGED UP<br><br>\
-  ENHANCEMENT\
+  CHARGED UP<br>\
   <ul>\
     <li>If you consume any <strong>Negative Ions</strong>, it gives you and nearby allies the <strong>Charged Up</strong> buff, which increases travel speed briefly.</li>\
   </ul>\
@@ -2028,8 +1995,7 @@ const neuroelectricPulse = {
 
   recharge:
   '<div>\
-  RECHARGE<br><br>\
-  ENHANCEMENT\
+  RECHARGE<br>\
   <ul>\
     <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
     <li>Heals for an additional amount if your health is low.</li>\
@@ -2062,8 +2028,7 @@ const stormCloud = {
 
   shockingStrike:
   '<div>\
-  SHOCKING STRIKE<br><br>\
-  ENHANCEMENT\
+  SHOCKING STRIKE<br>\
   <ul>\
     <li>When activating this power, targets within a short range are <strong>Stunned</strong> for a short time.</li>\
   </ul>\
@@ -2099,8 +2064,7 @@ const lightningArc = {
 
   blindside:
   '<div>\
-  BLINDSIDE<br><br>\
-  ENHANCEMENT\
+  BLINDSIDE<br>\
   <ul>\
     <li>Reduces the movement speed of your target for the duration the power is maintained.</li>\
   </ul>\
@@ -2133,8 +2097,7 @@ const gigabolt = {
 
   deathArc:
   '<div>\
-  DEATH ARC<br><br>\
-  ENHANCEMENT\
+  DEATH ARC<br>\
   <ul>\
     <li>Any enemies defeated by Gigabolt will unleash area effect damage to nearby targets.</li>\
   </ul>\
@@ -2165,8 +2128,7 @@ const lightningStorm = {
 
   stolenThunder:
   '<div>\
-  STOLEN THUNDER<br><br>\
-  ENHANCEMENT\
+  STOLEN THUNDER<br>\
   <ul>\
     <li>Your Lightning Storm hits with such force that your targets are <strong>Knocked Down</strong> on the initial impact.</li>\
     <li>Additional strikes have a chance to <strong>Knock Down</strong> the targets again.</li>\
@@ -2175,8 +2137,7 @@ const lightningStorm = {
 
   panicAndRun:
   '<div>\
-  PANIC AND RUN<br><br>\
-  ENHANCEMENT\
+  PANIC AND RUN<br>\
   <ul>\
     <li>Lightning Storm now has a chance to apply <strong>Stagger</strong> to your target, reducing their resistance to all damage and movement speed.</li>\
   </ul>\
@@ -2208,8 +2169,7 @@ const sunderingBreath = {
 
   powerConsumption:
   '<div>\
-  POWER CONSUMPTION<br><br>\
-  ENHANCEMENT\
+  POWER CONSUMPTION<br>\
   <ul>\
     <li>Heals you when attacking a target affected by <strong>Negative Ions</strong>.</li>\
     <li>This heal is considered a Life Drain effect.</li>\
@@ -2343,8 +2303,7 @@ const throwFire = {
 
   burningDesire:
   '<div>\
-  BURNING DESIRE<br><br>\
-  ENHANCEMENT\
+  BURNING DESIRE<br>\
   <ul>\
     <li>Gives your Throw Fire power a chance to chain into an additional target.</li>\
     <li>This second shot does not generate energy, but has a chance to apply <strong>Clinging Flames</strong>.</li>\
@@ -2353,8 +2312,7 @@ const throwFire = {
 
   fuelMyFire:
   '<div>\
-  FUEL MY FIRE<br><br>\
-  ENHANCEMENT\
+  FUEL MY FIRE<br>\
   <ul>\
     <li>Grants Throw Fire a chance to apply <strong>Clinging Flames</strong> to your target on every attack and increases the chance to apply <strong>Clinging Flames</strong> with the initial double-handed attack.</li>\
   </ul>\
@@ -2391,8 +2349,7 @@ const fireStrike = {
 
   wildfire:
   '<div>\
-  WILDFIRE<br><br>\
-  ENHANCEMENT\
+  WILDFIRE<br>\
   <ul>\
     <li>Refreshes your <strong>Clinging Flames</strong> on your primary target.</li>\
     <li>Causes this power to deal a portion of its damage in an area effect around your primary target.</li>\
@@ -2401,8 +2358,7 @@ const fireStrike = {
 
   kindling:
   '<div>\
-  KINDLING<br><br>\
-  ENHANCEMENT\
+  KINDLING<br>\
   <ul>\
     <li>Your <strong>Fiery Escalation</strong> buff now also increases the damage of your next Fire Energy Projector power by 10% per stack.</li>\
     <li>However, <strong>Fiery Escalation</strong> is now consumed by powers that trigger this effect.</li>\
@@ -2412,8 +2368,7 @@ const fireStrike = {
 
   fanTheFlames:
   '<div>\
-  FAN THE FLAMES<br><br>\
-  ENHANCEMENT\
+  FAN THE FLAMES<br>\
   <ul>\
     <li>This power now refreshes the duration of your <strong>Engulfing Flames</strong> debuff.</li>\
   </ul>\
@@ -2450,8 +2405,7 @@ const fireBreath = {
 
   chemicalFire:
   '<div>\
-  CHEMICAL FIRE<br><br>\
-  ENHANCEMENT\
+  CHEMICAL FIRE<br>\
   <ul>\
     <li>Instead of applying <strong>Clinging Flames</strong>, this power now has a chance to apply <strong>Plasma Burn</strong>.</li>\
     <li>Changes the damage type of this power to Particle.</li>\
@@ -2460,8 +2414,7 @@ const fireBreath = {
 
   spitfire:
   '<div>\
-  SPITFIRE<br><br>\
-  ENHANCEMENT\
+  SPITFIRE<br>\
   <ul>\
     <li>Increases the chance to apply <strong>Clinging Flames</strong>.</li>\
     <li>Chance is guaranteed when fully maintained.</li>\
@@ -2471,8 +2424,7 @@ const fireBreath = {
 
   fanTheFlames:
   '<div>\
-  FAN THE FLAMES<br><br>\
-  ENHANCEMENT\
+  FAN THE FLAMES<br>\
   <ul>\
     <li>Refreshes your <strong>Engulfing Flames</strong> debuff.</li>\
   </ul>\
@@ -2480,8 +2432,7 @@ const fireBreath = {
 
   char:
   '<div>\
-  CHAR<br><br>\
-  ENHANCEMENT\
+  CHAR<br>\
   <ul>\
     <li>Fully maintaining this power <strong>Paralyzes</strong> your primary target.</li>\
     <li><strong>Stuns</strong> secondary targets.</li>\
@@ -2515,8 +2466,7 @@ const livingFire = {
 
   mysticTransference:
   '<div>\
-  MYSTIC TRANSFERENCE<br><br>\
-  ENHANCEMENT\
+  MYSTIC TRANSFERENCE<br>\
   <ul>\
     <li>You now only summon two of these <strong>Sigils</strong>, but they can be summoned alongside your other <strong>Sigils</strong>.</li>\
     <li>This also lowers the base recharge time for these <strong>Sigils</strong> to 10 seconds, and reduces the charge time and cost of these <strong>Sigils</strong>.</li>\
@@ -2525,8 +2475,7 @@ const livingFire = {
 
   innerPeace:
   '<div>\
-  INNER PEACE<br><br>\
-  ENHANCEMENT\
+  INNER PEACE<br>\
   <ul>\
     <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
     <li>Heals for an additional amount if your health is low.</li>\
@@ -2557,8 +2506,7 @@ const fireball = {
 
   unstableAccelerant:
   '<div>\
-  UNSTABLE ACCELERANT<br><br>\
-  ENHANCEMENT\
+  UNSTABLE ACCELERANT<br>\
   <ul>\
     <li>Your Fireball applies <strong>Unstable Accelerant</strong> to affected targets, causing them to take increased damage from <strong>Burning</strong> effects.</li>\
   </ul>\
@@ -2566,8 +2514,7 @@ const fireball = {
 
   chargedAttack:
   '<div>\
-  CHARGED ATTACK<br><br>\
-  ENHANCEMENT\
+  CHARGED ATTACK<br>\
   <ul>\
     <li>Your Fireball now applies <strong>Negative Ions</strong> to targets.</li>\
   </ul>\
@@ -2575,8 +2522,7 @@ const fireball = {
 
   illuminate:
   '<div>\
-  ILLUMINATE<br><br>\
-  ENHANCEMENT\
+  ILLUMINATE<br>\
   <ul>\
     <li>Charging this power at least halfway applies <strong>Illuminated</strong> to your targets.</li>\
     <li>Players attacking an <strong>Illuminated</strong> target have a chance to be healed.</li>\
@@ -2586,8 +2532,7 @@ const fireball = {
 
   explosive:
   '<div>\
-  EXPLOSIVE<br><br>\
-  ENHANCEMENT\
+  EXPLOSIVE<br>\
   <ul>\
     <li>When fully charged, it refreshes your <strong>Engulfing Flames</strong> debuff.</li>\
     <li>Increases the range of the area effect of this power based on the number of <strong>Engulfing Flames</strong> on your primary target.</li>\
@@ -2624,8 +2569,7 @@ const heatWave = {
 
   engulfingFlames:
   '<div>\
-  ENGULFING FLAMES<br><br>\
-  ENHANCEMENT\
+  ENGULFING FLAMES<br>\
   <ul>\
     <li>Applies <strong>Engulfing Flames</strong> to your target, reducing their resistance to your Fire Damage.</li>\
   </ul>\
@@ -2633,8 +2577,7 @@ const heatWave = {
 
   feedTheFlames:
   '<div>\
-  FEED THE FLAMES<br><br>\
-  ENHANCEMENT\
+  FEED THE FLAMES<br>\
   <ul>\
     <li>While this power is maintained on your target, it will drain the target\'s energy and return health to you.</li>\
     <li>The energy drain portion of this advantage has no effect on targets without an energy bar.</li>\
@@ -2676,8 +2619,7 @@ const warmth = {
 
   illuminate:
   '<div>\
-  ILLUMINATE<br><br>\
-  ENHANCEMENT\
+  ILLUMINATE<br>\
   <ul>\
     <li>Applies <strong>Illumination</strong> to your target.</li>\
     <li><strong>Illuminated</strong> is a type of <strong>Enchantment</strong>.</li>\
@@ -2710,8 +2652,7 @@ const immolation = {
 
   blazingBody:
   '<div>\
-  BLAZING BODY<br><br>\
-  ENHANCEMENT\
+  BLAZING BODY<br>\
   <ul>\
     <li>Adds periodic Fire damage while active.</li>\
     <li>Chance to <strong>Stun</strong> targets affected by <strong>Clinging Flames</strong>.</li>\
@@ -2840,8 +2781,7 @@ const fireShield = {
 
   fierySpirit:
   '<div>\
-  FIERY SPIRIT<br><br>\
-  ENHANCEMENT\
+  FIERY SPIRIT<br>\
   <ul>\
     <li>When you stop blocking with Fire Shield, you will get a short-term buff that increases your resistance to <strong>Knock</strong> effects.</li>\
     <li>If you are affected by a <strong>Hold</strong>, you also get a small buff over time that applies Break Free damage to you.</li>\
@@ -2896,8 +2836,7 @@ const pyre = {
 
   backdraft:
   '<div>\
-  BACKDRAFT<br><br>\
-  ENHANCEMENT\
+  BACKDRAFT<br>\
   <ul>\
     <li>Refreshes all <strong>Clinging Flames</strong> on your targets.</li>\
     <li><strong>Knocks down</strong> all targets. This can occur once every 5 seconds.</li>\
@@ -2906,8 +2845,7 @@ const pyre = {
 
   burnUp:
   '<div>\
-  BURN UP<br><br>\
-  ENHANCEMENT\
+  BURN UP<br>\
   <ul>\
     <li>Fully charging this power now consumes all of your <strong>Chill</strong> effects on affected targets.</li>\
     <li><strong>Shatters</strong> all nearby <strong>Ice Structures</strong>.</li>\
@@ -2917,8 +2855,7 @@ const pyre = {
 
   burningSun:
   '<div>\
-  BURNING SUN<br><br>\
-  ENHANCEMENT\
+  BURNING SUN<br>\
   <ul>\
     <li>On full charge, it leaves behind a <strong>Healing Rune</strong> for a short duration, which heals nearby allies.</li>\
     <li>You cannot have more than one <strong>Rune</strong> out at a time.</li>\
@@ -2976,8 +2913,7 @@ const conflagration = {
 
   burningRain:
   '<div>\
-  BURNING RAIN<br><br>\
-  ENHANCEMENT\
+  BURNING RAIN<br>\
   <ul>\
     <li>Fully maintaining this power creates a <strong>Pyre Patch</strong> at the target\'s location for a short time, dealing Fire damage to nearby enemies.</li>\
     <li>Has a small chance to apply <strong>Clinging Flames</strong> to targets standing in the <strong>Pyre Patch</strong>, dealing additional Fire damage over time.</li>\
@@ -2988,8 +2924,7 @@ const conflagration = {
 
   itsRainingFire:
   '<div>\
-  IT\'S RAINING FIRE!<br><br>\
-  ENHANCEMENT\
+  IT\'S RAINING FIRE!<br>\
   <ul>\
     <li>This power now has a chance to apply <strong>Fear</strong> to your targets.</li>\
   </ul>\
@@ -3023,8 +2958,7 @@ const scorchingImpact = {
 
   scorchedEarth:
   '<div>\
-  SCORCHED EARTH<br><br>\
-  ENHANCEMENT\
+  SCORCHED EARTH<br>\
   <ul>\
     <li>Creates a <strong>Pyre Patch</strong> at your location for a short time, dealing Fire damage to nearby enemies.</li>\
     <li>Has a small chance to apply <strong>Clinging Flames</strong> to targets standing in the <strong>Pyre Patch</strong>, dealing additional Fire damage over time.</li>\
@@ -3035,8 +2969,7 @@ const scorchingImpact = {
 
   workUp:
   '<div>\
-  WORK UP<br><br>\
-  ENHANCEMENT\
+  WORK UP<br>\
   <ul>\
     <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
     <li>Heals for an additional amount if your health is low.</li>\
@@ -3071,8 +3004,7 @@ const flamePrison = {
 
   engulfingFlames:
   '<div>\
-  ENGULFING FLAMES<br><br>\
-  ENHANCEMENT\
+  ENGULFING FLAMES<br>\
   <ul>\
     <li>Chance to apply <strong>Engulfing Flames</strong> to your target, reducing their resistance to your Fire Damage.</li>\
   </ul>\
@@ -3080,8 +3012,7 @@ const flamePrison = {
 
   workUp:
   '<div>\
-  WORK UP<br><br>\
-  ENHANCEMENT\
+  WORK UP<br>\
   <ul>\
     <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
     <li>Heals for an additional amount if your health is low.</li>\
@@ -3133,8 +3064,7 @@ const absorbHeat = {
 
   chillingTouch:
   '<div>\
-  CHILLING TOUCH<br><br>\
-  ENHANCEMENT\
+  CHILLING TOUCH<br>\
   <ul>\
     <li>Foes that you consume <strong>Clinging Flames</strong> from are left <strong>Chilled</strong>.</li>\
   </ul>\
@@ -3166,8 +3096,7 @@ const novaFlare = {
 
   thaw:
   '<div>\
-  THAW<br><br>\
-  ENHANCEMENT\
+  THAW<br>\
   <ul>\
     <li>Helps allies break free of <strong>Control</strong> effects.</li>\
     <li>The strength of the effect scales with the rank of this power and the number of <strong>Fiery Escalation</strong> stacks on you.</li>\
@@ -3195,8 +3124,7 @@ const riseFromTheAshes = {
 
   spreadingFlames:
   '<div>\
-  SPREADING FLAMES<br><br>\
-  ENHANCEMENT\
+  SPREADING FLAMES<br>\
   <ul>\
     <li>This power can now resurrect multiple targets.</li>\
     <li>Healing received is divided amongst targets resurrected.</li>\
@@ -3229,8 +3157,7 @@ const incinerate = {
 
   burninator:
   '<div>\
-  BURNINATOR<br><br>\
-  ENHANCEMENT\
+  BURNINATOR<br>\
   <ul>\
     <li>Increases the base damage of this power against targets affected by <strong>Clinging Flames</strong>.</li>\
   </ul>\
@@ -3262,8 +3189,7 @@ const flashfire = {
 
   swelteringHeat:
   '<div>\
-  SWELTERING HEAT<br><br>\
-  ENHANCEMENT\
+  SWELTERING HEAT<br>\
   <ul>\
     <li>Enemies affected by the Pyre created by this power will have their movement speed reduced.</li>\
   </ul>\
@@ -3271,8 +3197,7 @@ const flashfire = {
 
   fanTheFlames:
   '<div>\
-  FAN THE FLAMES<br><br>\
-  ENHANCEMENT\
+  FAN THE FLAMES<br>\
   <ul>\
     <li>Flashfire will now refresh your <strong>Engulfing Flames</strong> debuff on activation and when the <strong>Pyre Patch</strong> lasts half of its duration.</li>\
     <li>This advantage also causes all other <strong>Pyre Patch</strong> effects to refresh <strong>Engulfing Flames</strong> when they last for their full duration.</li>\
@@ -3310,8 +3235,7 @@ const fireSnake = {
 
   trailBlazer:
   '<div>\
-  TRAIL BLAZER<br><br>\
-  ENHANCEMENT\
+  TRAIL BLAZER<br>\
   <ul>\
     <li>Increases the movement speed of your <strong>Fire Snake</strong>.</li>\
   </ul>\
@@ -3319,8 +3243,7 @@ const fireSnake = {
 
   fieryPath:
   '<div>\
-  FIERY PATH<br><br>\
-  ENHANCEMENT\
+  FIERY PATH<br>\
   <ul>\
     <li>Instead of moving to your target, this power now follows you.</li>\
   </ul>\
