@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-21 6:25:00 (woof-wolf)>
+ * Time-stamp: <2026-05-23 3:05:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.1';
-var releaseDate = '2026-05-21';
+var version = '1.3.2';
+var releaseDate = '2026-05-23';
 var buildVersion = 3;
 
 var siteName = 'PowerHouse';
@@ -297,13 +297,127 @@ function noEnter(evnt) {
 window['noEnter'] = noEnter;
 // document.onkeypress = noEnter;
 
+/**
+ * Calculates and updates the absolute position of the tooltip element.
+ * Keeps the tooltip fully visible within the current browser viewport bounds.
+ * Maintains a stable page scroll state by limiting the maximum height of the tooltip to the window height.
+ * Positions the tooltip relative to the current mouse cursor coordinates.
+ */
+function updatePopupPosition() {
+    // Get the tooltip element from the HTML document
+    var tip = document.getElementById("popup");
+    
+    // Proceed only if the tooltip exists and is visible
+    if (!tip || tip.style.display === "none") return;
+
+    // Define the visual offset from the mouse cursor
+    var xoffset = 20;
+    var yoffset = 10;
+    
+    // Define the safe distance from the edge of the browser window
+    var margin = 15;
+
+    // Calculate the current scroll position of the page
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+
+    // Calculate the visible width and height of the browser window
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    // Limit the tooltip height to the window height minus margins to stop scroll looping
+    tip.style.boxSizing = "border-box";
+    tip.style.maxHeight = (viewportHeight - (margin * 2)) + "px";
+    
+    // Enable vertical scrolling inside the tooltip for content exceeding the maximum height
+    tip.style.overflowY = "auto";
+
+    // Calculate the initial intended X and Y coordinates based on mouse position
+    var x = mouseX + xoffset;
+    var y = mouseY + yoffset;
+
+    // Get the actual rendered width and height of the tooltip
+    var tipWidth = tip.offsetWidth;
+    var tipHeight = tip.offsetHeight;
+
+    // Check if the tooltip goes past the right edge of the screen
+    if (x + tipWidth + margin > scrollLeft + viewportWidth) {
+        // Move the tooltip to the left side of the cursor
+        x = mouseX - xoffset - tipWidth;
+    }
+
+    // Check if the tooltip goes past the bottom edge of the screen
+    if (y + tipHeight + margin > scrollTop + viewportHeight) {
+        // Align the bottom of the tooltip with the bottom margin of the screen
+        y = (scrollTop + viewportHeight) - tipHeight - margin;
+    }
+
+    // Check if the tooltip goes past the top edge of the screen
+    if (y < scrollTop + margin) {
+        // Align the top of the tooltip with the top margin of the screen
+        y = scrollTop + margin;
+    }
+
+    // Check if the tooltip goes past the left edge of the screen
+    if (x < scrollLeft + margin) {
+        // Align the left side of the tooltip with the left margin of the screen
+        x = scrollLeft + margin;
+    }
+
+    // Apply the final calculated coordinates to the tooltip element
+    tip.style.left = x + "px";
+    tip.style.top = y + "px";
+}
+
 // set mouseX and mouseY globals
+/**
+ * Captures the current mouse coordinates and updates the tooltip location.
+ * Runs every time the user moves their mouse across the document.
+ * @param {Event} evnt The mouse movement event object.
+ */
 function setMouseXY(evnt) {
     var x, y;
-    try { x = evnt.pageX; y = evnt.pageY; } // firefox
-    catch(e) { x = event.x; y = event.y; } // internet explorer
+    
+    // Attempt to get mouse coordinates using standard modern browser properties
+    try { 
+        x = evnt.pageX; 
+        y = evnt.pageY; 
+    } 
+    // Use the older Internet Explorer coordinate properties as a fallback
+    catch(e) { 
+        x = event.x; 
+        y = event.y; 
+    } 
+    
+    // Store the captured coordinates in global variables for other functions to use
     mouseX = x;
     mouseY = y;
+
+    var target = evnt.target || evnt.srcElement;
+    var tip = document.getElementById("popup");
+
+    var isValidTarget = false;
+    var curr = target;
+    while (curr) {
+        if (curr.id === "popup") {
+            isValidTarget = true;
+            break;
+        }
+        
+        if (typeof curr.getAttribute === "function" && curr.getAttribute("onmouseover")) {
+            isValidTarget = true;
+            break;
+        }
+        
+        curr = curr.parentNode;
+    }
+
+    if (tip && tip.style.display === "block" && isValidTarget === false) {
+        popout();
+    }
+    
+    // Call the positioning function to move the tooltip to the new coordinates
+    updatePopupPosition();
 }
 window['setMouseXY'] = setMouseXY;
 
@@ -319,37 +433,26 @@ function getDocumentBounds() {
 }
 window['getDocumentBounds'] = getDocumentBounds;
 
-// popup (tool tip)
+/**
+ * Displays the tooltip and populates it with the specified content.
+ * @param {string} text The HTML or plain text to show inside the tooltip.
+ */
 function popup(text) {
-    var xoffset = 20;
-    var yoffset = 10;
-    var margin = 20;
-    var bounds = getDocumentBounds();
-    var width = bounds.width;
-    var height = bounds.height;
-    var x = mouseX;
-    var y = mouseY;
-    var tip = document.getElementById('popup');
+    // Retrieve the tooltip container element from the HTML document
+    var tip = document.getElementById("popup");
+    
+    // Insert the provided text or HTML content into the tooltip element
     tip.innerHTML = text;
-    tip.style.display = 'block';
-    x += xoffset;
-    y += yoffset;
-    if (x > width - tip.offsetWidth - margin) x = width - tip.offsetWidth - margin;
-    if (x < 0) x = 0;
-    if (y > height - tip.offsetHeight - margin) y = height - tip.offsetHeight - margin;
-    if (y < 0) y = 0;
-    if (x < mouseX) {
-        var nx = mouseX - xoffset - tip.offsetWidth;
-        if (nx < margin) nx = margin;
-        if (nx + tip.offsetWidth - mouseX < mouseX - x) x = nx;
-    }
-    if (y < mouseY) {
-        var ny = mouseY - yoffset - tip.offsetHeight;
-        if (ny < margin) ny = margin;
-        if (ny + tip.offsetHeight - mouseY < mouseY - y) y = ny;
-    }
-    tip.style.left = x + 'px';
-    tip.style.top = y + 'px';
+
+    // Reset position to top-left to prevent page stretching
+    tip.style.left = "0px";
+    tip.style.top = "0px";
+    
+    // Change the display style to make the tooltip visible on the screen
+    tip.style.display = "block";
+    
+    // Calculate and apply the correct screen coordinates for the tooltip
+    updatePopupPosition();
 }
 window['popup'] = popup;
 function popupL1(text) {
