@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-23 5:20:00 (woof-wolf)>
+ * Time-stamp: <2026-05-23 7:45:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -3383,46 +3383,94 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 // Force: Energy Builder
 //------------------------------------------------------------------------------
 
-const forceBoltsHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>0.34-0.5 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>50 feet</div>\
-</div><br>\
-ENERGY BUILDER - RANGED DAMAGE<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Crushing Damage and generates Energy.</li>\
-  <li>The first shot has a 20% chance to Knock Back the target.</li>\
-</ul>';
+const forceBolts = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>0.34-0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div><br>\
+  ENERGY BUILDER - RANGED DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Crushing Damage and generates Energy.</li>\
+    <li>The first shot has a 20% chance to Knock Back the target.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Bolts', '<img src="img/power-icons/force/Force_ForceBolts.png" />&nbsp;Force Bolts', 1, 3, pow++, -1, forceBoltsHtml); 
+  energyRefraction:
+  '<div>\
+  ENERGY REFRACTION<br>\
+  <ul>\
+    <li>This attack has a chance to create a shield around you.</li>\
+  </ul>\
+  </div>',
+
+  entropyBlast:
+  '<div>\
+  ENTROPY BLAST<br>\
+  <ul>\
+    <li>This power now has a chance to apply a <strong>Power Shield</strong> to affected targets, causing you to gain energy when you strike them.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Bolts', '<img src="img/power-icons/force/Force_ForceBolts.png" />&nbsp;Force Bolts', 1, 3, pow++, -1, forceBolts.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Energy Refraction', 'Energy Refraction', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Blast', 'Entropy Blast', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Energy Refraction', 'Energy Refraction', 2, null, forceBolts.energyRefraction));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Blast', 'Entropy Blast', 2, null, forceBolts.entropyBlast));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 //------------------------------------------------------------------------------
 // Force: Tier 0
 //------------------------------------------------------------------------------
 
-const forceBlastHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>19-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet</div>\
-</div><br>\
-RANGED DAMAGE - KNOCK BACK - BLAST<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 127-497 Crushing Damage and the target is Knocked Back 4.4-17 ft. If your target is immune to Knock effects, increases this power\\\'s base damage by up to 20% based on charge time.</li>\
-</ul>';
+const forceBlast = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>19-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  RANGED DAMAGE - KNOCK BACK - BLAST<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 127-497 Crushing Damage and the target is Knocked Back 4.4-17 ft. If your target is immune to Knock effects, increases this power\\\'s base damage by up to 20% based on charge time.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Blast', '<img src="img/power-icons/force/Force_ForceBlast.png" />&nbsp;Force Blast', 1, 3, pow++, 0, forceBlastHtml); 
+  fieldInversion:
+  '<div>\
+  FIELD INVERSION<br>\
+  <ul>\
+    <li>When this power is fully charged, and if your target is affected by a SHIELD effect, deals Crushing damage to nearby targets.</li>\
+    <li>This is a <strong>Field Inversion</strong> effect.</li>\
+  </ul>\
+  </div>',
+
+  demolishingBlast:
+  '<div>\
+  DEMOLISHING BLAST<br>\
+  <ul>\
+    <li>When this power is fully charged, applies <strong>Demolish</strong>, reducing your target\\\'s resistance to Crushing damage for a short time.</li>\
+  </ul>\
+  </div>',
+
+  shieldGenerator:
+  '<div>\
+  SHIELD GENERATOR<br>\
+  <ul>\
+    <li>Fully charging this power applies a Shield to you.</li>\
+    <li>The Shield effect scales with the rank of your Protection Field power.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Blast', '<img src="img/power-icons/force/Force_ForceBlast.png" />&nbsp;Force Blast', 1, 3, pow++, 0, forceBlast.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Field Inversion', 'Field Inversion', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Demolishing Blast', 'Demolishing Blast', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Shield Generator', 'Shield Generator', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Field Inversion', 'Field Inversion', 2, null, forceBlast.fieldInversion));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Demolishing Blast', 'Demolishing Blast', 2, null, forceBlast.demolishingBlast));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Shield Generator', 'Shield Generator', 2, null, forceBlast.shieldGenerator));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
@@ -3431,396 +3479,670 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 // Force: Tier 1
 //------------------------------------------------------------------------------
 
-const forceEruptionHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>19-36 Energy cost<br>1 sec charge time<br>0.5 sec activate time</div>\
-  <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
-</div><br>\
-RANGED AOE DAMAGE - KNOCK BACK<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 102-300 Crushing Damage to nearby foes.</li>\
-  <li>When charged at least halfway, has a 50-100% chance to Knock Back affected targets 5.2-31 ft. If your target is immune to Knock effects, increases this power\\\'s base damage by up to 25% based on charge time.</li>\
-</ul>';
+const forceEruption = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>19-36 Energy cost<br>1 sec charge time<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 102-300 Crushing Damage to nearby foes.</li>\
+    <li>When charged at least halfway, has a 50-100% chance to Knock Back affected targets 5.2-31 ft. If your target is immune to Knock effects, increases this power\\\'s base damage by up to 25% based on charge time.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Eruption', '<img src="img/power-icons/force/Force_ForceEruption.png" />&nbsp;Force Eruption', 1, 3, pow++, 1, forceEruptionHtml); 
+  gravitationalPolarity:
+  '<div>\
+  GRAVITATIONAL POLARITY<br>\
+  <ul>\
+    <li>Fully charging this power creates an <strong>Energy Field</strong> at your location that grants nearby players energy and siphons energy from foes.</li>\
+    <li>The amount of energy it grants additionally scales off of your <strong>RECOVERY</strong> by a small amount.</li>\
+    <li>You cannot have more than one <strong>Rune</strong> out at a time.</li>\
+    <li>Siphoning energy only works on Players and Nemesis targets.</li>\
+  </ul>\
+  </div>',
+
+  fieldExpulsion:
+  '<div>\
+  FIELD EXPULSION<br>\
+  <ul>\
+    <li>If you are affected by a direct <strong>Shield</strong> power, tapping or fully charging this power applies a shield to nearby allies.</li>\
+    <li>The <strong>Shield</strong> effect scales with the rank of your <strong>Protection Field</strong> power.</li>\
+    <li>This is a <strong>Field Inversion</strong> effect.</li>\
+    <li>Removes all active <strong>Shield</strong> effects on you.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Eruption', '<img src="img/power-icons/force/Force_ForceEruption.png" />&nbsp;Force Eruption', 1, 3, pow++, 1, forceEruption.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Gravitational Polarity', 'Gravitational Polarity', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Field Expulsion', 'Field Expulsion', 3, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Gravitational Polarity', 'Gravitational Polarity', 2, null, forceEruption.gravitationalPolarity));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Field Expulsion', 'Field Expulsion', 3, null, forceEruption.fieldExpulsion));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const forceSnapHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
-</div><br>\
-RANGED DAMAGE - KNOCK TO<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Crushing Damage and the target is Knocked toward you.</li>\
-</ul>';
+const forceSnap = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE - KNOCK TO<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Crushing Damage and the target is Knocked toward you.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Snap', '<img src="img/power-icons/force/Force_ForceSnap.png" />&nbsp;Force Snap', 1, 3, pow++, 1, forceSnapHtml); 
+  entropicCollapse:
+  '<div>\
+  ENTROPIC COLLAPSE<br>\
+  <ul>\
+    <li>Your Force Snap now causes a collapse of energy around your target, <strong>Knocking Down</strong> other nearby foes.</li>\
+  </ul>\
+  </div>',
+
+  recharge:
+  '<div>\
+  RECHARGE<br>\
+  <ul>\
+    <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
+    <li>Heals for an additional amount if your health is low.</li>\
+    <li>Has a short internal cooldown after use.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Snap', '<img src="img/power-icons/force/Force_ForceSnap.png" />&nbsp;Force Snap', 1, 3, pow++, 1, forceSnap.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Entropic Collapse', 'Entropic Collapse', 1, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Recharge', 'Recharge', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Entropic Collapse', 'Entropic Collapse', 1, null, forceSnap.entropicCollapse));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Recharge', 'Recharge', 2, null, forceSnap.recharge));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const crushingWaveHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>22 + 13 Energy every 0.5 sec<br>0.5 sec activate time (3 max)</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
-</div><br>\
-RANGED AOE DAMAGE - REPEL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 100 Crushing Damage per second to all targets and Repels them away from you.</li>\
-</ul>';
+const crushingWave = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>22 + 13 Energy every 0.5 sec<br>0.5 sec activate time (3 max)</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - REPEL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 100 Crushing Damage per second to all targets and Repels them away from you.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Crushing Wave', '<img src="img/power-icons/force/Force_CrushingWave.png" />&nbsp;Crushing Wave', 1, 3, pow++, 1, crushingWaveHtml); 
+  disruptiveForce:
+  '<div>\
+  DISRUPTIVE FORCE<br>\
+  <ul>\
+    <li>Adds a chance to <strong>Knock Down</strong> affected targets.</li>\
+  </ul>\
+  </div>',
+
+  entropyField:
+  '<div>\
+  ENTROPY FIELD<br>\
+  <ul>\
+    <li>This power now has a chance to apply a <strong>Power Shield</strong> to affected targets, causing you to gain energy when you strike them.</li>\
+  </ul>\
+  </div>',
+
+  barrier:
+  '<div>\
+  BARRIER<br>\
+  <ul>\
+    <li>Maintaining this power now grants you a shield that increases in strength over time.</li>\
+    <li>This shield will be removed when you stop maintaining the power.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Crushing Wave', '<img src="img/power-icons/force/Force_CrushingWave.png" />&nbsp;Crushing Wave', 1, 3, pow++, 1, crushingWave.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Disruptive Force', 'Disruptive Force', 1, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Field', 'Entropy Field', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Barrier', 'Barrier', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Disruptive Force', 'Disruptive Force', 1, null, crushingWave.disruptiveForce));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Field', 'Entropy Field', 2, null, crushingWave.entropyField));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Barrier', 'Barrier', 2, null, crushingWave.barrier));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const protectionFieldHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>0.83 sec activate time</div>\
-  <div style="text-align:right;">Targets friend<br>50 feet</div>\
-</div><br>\
-DIRECT SHIELD - ENERGY<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Shields your target for 20 sec, absorbing damage.</li>\
-  <li>Whenever the shielded target takes damage, you receive Energy.</li>\
-</ul>';
+const protectionField = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets friend<br>50 feet</div>\
+  </div><br>\
+  DIRECT SHIELD - ENERGY<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Shields your target for 20 sec, absorbing damage.</li>\
+    <li>Whenever the shielded target takes damage, you receive Energy.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Protection Field', '<img src="img/power-icons/force/Force_ProtectionField.png" />&nbsp;Protection Field', 1, 3, pow++, 1, protectionFieldHtml); 
+  expelImpurity:
+  '<div>\
+  EXPEL IMPURITY<br>\
+  <ul>\
+    <li>Allows your Protection Field to remove Damage over Time effects, such as Bleed and Poisoned, with the most duration left when applied.</li>\
+    <li>The number of effects removed scales with the rank of this power.</li>\
+  </ul>\
+  </div>',
+
+  breakout:
+  '<div>\
+  BREAKOUT<br>\
+  <ul>\
+    <li>Helps allies break free of Control effects.</li>\
+    <li>The strength of the effect scales with the rank of this power.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Protection Field', '<img src="img/power-icons/force/Force_ProtectionField.png" />&nbsp;Protection Field', 1, 3, pow++, 1, protectionField.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Expel Impurity', 'Expel Impurity', 1, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Breakout', 'Breakout', 1, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Expel Impurity', 'Expel Impurity', 1, null, protectionField.expelImpurity));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Breakout', 'Breakout', 1, null, protectionField.breakout));
 
-const shieldRestorationHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
-</div><br>\
-RANGED DAMAGE - SHIELD - RUNE - ENCHANTMENT<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Creates a Shielding Rune at your target, shielding up to 5 allies within 15 feet for up to 10 sec.</li>\
-  <li>If an ally is affected by a Direct Shield, restores that effect.</li>\
-</ul>';
+const shieldRestoration = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE - SHIELD - RUNE - ENCHANTMENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates a Shielding Rune at your target, shielding up to 5 allies within 15 feet for up to 10 sec.</li>\
+    <li>If an ally is affected by a Direct Shield, restores that effect.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Shield Restoration', '<img src="img/power-icons/force/Force_ShieldRestoration.png" />&nbsp;Shield Restoration', 1, 3, pow++, 1, shieldRestorationHtml); 
+  dizzyingImpact:
+  '<div>\
+  DIZZYING IMPACT<br>\
+  <ul>\
+    <li>Applies <strong>Disorient</strong> to your target, lowering their movement speed and damage for a short time.</li>\
+  </ul>\
+  </div>',
+
+  entropyField:
+  '<div>\
+  ENTROPY FIELD<br>\
+  <ul>\
+    <li>Applies <strong>Power Shield</strong> to your target, causing you to gain energy when you strike them.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Shield Restoration', '<img src="img/power-icons/force/Force_ShieldRestoration.png" />&nbsp;Shield Restoration', 1, 3, pow++, 1, shieldRestoration.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Dizzying Impact', 'Dizzying Impact', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Field', 'Entropy Field', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Dizzying Impact', 'Dizzying Impact', 2, null, shieldRestoration.dizzyingImpact));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Field', 'Entropy Field', 2, null, shieldRestoration.entropyField));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-const personalForceFieldHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>Every 3 sec</div>\
-  <div style="text-align:right;"></div>\
-</div><br>\
-SLOTTED DEFENSIVE PASSIVE<br><br>\
-PASSIVE<br>\
-<ul>\
-  <li>Creates a shield on yourself.</li>\
-  <li>This shield absorbs most of the incoming damage you suffer, and regenerates every 3 sec.</li>\
-  <li>This regeneration rate is reduced as your Personal Force Field takes damage.</li>\
-  <li>While out of combat, the shield regenerates at an additional rate every 1 sec.</li>\
-</ul>';
+const personalForceField = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>Every 3 sec</div>\
+    <div style="text-align:right;"></div>\
+  </div><br>\
+  SLOTTED DEFENSIVE PASSIVE<br><br>\
+  PASSIVE<br>\
+  <ul>\
+    <li>Creates a shield on yourself.</li>\
+    <li>This shield absorbs most of the incoming damage you suffer, and regenerates every 3 sec.</li>\
+    <li>This regeneration rate is reduced as your Personal Force Field takes damage.</li>\
+    <li>While out of combat, the shield regenerates at an additional rate every 1 sec.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Personal Force Field', '<img src="img/power-icons/force/Force_PersonalForceField.png" />&nbsp;Personal Force Field', 1, 3, pow++, 1, personalForceFieldHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Personal Force Field', '<img src="img/power-icons/force/Force_PersonalForceField.png" />&nbsp;Personal Force Field', 1, 3, pow++, 1, personalForceField.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const kineticManipulationHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force</div>\
-</div><br>\
-SLOTTED OFFENSIVE PASSIVE<br><br>\
-PASSIVE<br>\
-<ul>\
-  <li>Increases your Ranged Physical Damage.</li>\
-  <li>Increases your resistance to Physical Damage and Ranged Physical Damage.</li>\
-  <li>Increases your Resistance to Knock effects. This effect is doubled if you are Shielded.</li>\
-  <li>Whenever you are hit by Crushing typed damage, you gain Energy. This can occur once every 1 sec.</li>\
-</ul>';
+const kineticManipulation = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force</div>\
+  </div><br>\
+  SLOTTED OFFENSIVE PASSIVE<br><br>\
+  PASSIVE<br>\
+  <ul>\
+    <li>Increases your Ranged Physical Damage.</li>\
+    <li>Increases your resistance to Physical Damage and Ranged Physical Damage.</li>\
+    <li>Increases your Resistance to Knock effects. This effect is doubled if you are Shielded.</li>\
+    <li>Whenever you are hit by Crushing typed damage, you gain Energy. This can occur once every 1 sec.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Kinetic Manipulation', '<img src="img/power-icons/force/Force_KineticManipulation.png" />&nbsp;Kinetic Manipulation', 1, 3, pow++, 1, kineticManipulationHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Kinetic Manipulation', '<img src="img/power-icons/force/Force_KineticManipulation.png" />&nbsp;Kinetic Manipulation', 1, 3, pow++, 1, kineticManipulation.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const inertialDampeningFieldHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>Every 3 sec</div>\
-  <div style="text-align:right;">Affects any friend except destructables (20 max)<br>100 foot Team</div>\
-</div><br>\
-SLOTTED SUPPORT PASSIVE<br><br>\
-PASSIVE<br>\
-<ul>\
-  <li>Creates a shield that absorbs damage for you and affected Teammates.</li>\
-  <li>Additionally, increases Knock and Hold resistance.</li>\
-  <li>Whenever you directly Shield yourself or an ally, increases the damage absorption of this power and the effectiveness of your shields for 12 sec. Can occur once every 2 sec and stacks up to 5 times.</li>\
-</ul>';
+const inertialDampeningField = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>Every 3 sec</div>\
+    <div style="text-align:right;">Affects any friend except destructables (20 max)<br>100 foot Team</div>\
+  </div><br>\
+  SLOTTED SUPPORT PASSIVE<br><br>\
+  PASSIVE<br>\
+  <ul>\
+    <li>Creates a shield that absorbs damage for you and affected Teammates.</li>\
+    <li>Additionally, increases Knock and Hold resistance.</li>\
+    <li>Whenever you directly Shield yourself or an ally, increases the damage absorption of this power and the effectiveness of your shields for 12 sec. Can occur once every 2 sec and stacks up to 5 times.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Inertial Dampening Field', '<img src="img/power-icons/force/Force_InertialDampeningField.png" />&nbsp;Inertial Dampening Field', 1, 3, pow++, 1, inertialDampeningFieldHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Inertial Dampening Field', '<img src="img/power-icons/force/Force_InertialDampeningField.png" />&nbsp;Inertial Dampening Field', 1, 3, pow++, 1, inertialDampeningField.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const forceControlHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-BUFF - FORM - ENDURANCE<br><br>\
-TOGGLE<br>\
-<ul>\
-  <li>Grants stacks of Untapped Power for each rank of this power you have.</li>\
-  <li>You gain another instance of Untapped Power whenever you attempt to Knock a target.</li>\
-  <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
-  <li>Each stack of Untapped Power primarily increases your Ranged damage and provides a smaller increase to your Melee damage for 20 sec.</li>\
-  <li>When you gain a stack you also gain Energy.</li>\
-  <li>While this power is active, your energy costs are increased by 10%.</li>\
-  <li>Scales with your ENDURANCE.</li>\
-</ul>';
+const forceControl = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  BUFF - FORM - ENDURANCE<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Grants stacks of Untapped Power for each rank of this power you have.</li>\
+    <li>You gain another instance of Untapped Power whenever you attempt to Knock a target.</li>\
+    <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
+    <li>Each stack of Untapped Power primarily increases your Ranged damage and provides a smaller increase to your Melee damage for 20 sec.</li>\
+    <li>When you gain a stack you also gain Energy.</li>\
+    <li>While this power is active, your energy costs are increased by 10%.</li>\
+    <li>Scales with your ENDURANCE.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Control', '<img src="img/power-icons/force/Force_ForceControl.png" />&nbsp;Force Control', 1, 3, pow++, 1, forceControlHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Control', '<img src="img/power-icons/force/Force_ForceControl.png" />&nbsp;Force Control', 1, 3, pow++, 1, forceControl.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const vitalShieldingHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-BUFF - FORM - ENDURANCE<br><br>\
-TOGGLE<br>\
-<ul>\
-  <li>Grants stacks of Vitality for each rank of this power you have.</li>\
-  <li>You gain another instance of Vitality whenever you directly Shield yourself or a target. Additionally, you will gain another instance when applying a Field Inversion effect.</li>\
-  <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
-  <li>Each stack of Vitality primarily increases your Healing and Shielding effects and provides a smaller increase to your Melee and Ranged damage.</li>\
-  <li>When you gain a stack you also gain Energy.</li>\
-  <li>While this power is active, your energy costs are increased by 10%.</li>\
-  <li>Scales with your ENDURANCE.</li>\
-</ul>';
+const vitalShielding = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  BUFF - FORM - ENDURANCE<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Grants stacks of Vitality for each rank of this power you have.</li>\
+    <li>You gain another instance of Vitality whenever you directly Shield yourself or a target. Additionally, you will gain another instance when applying a Field Inversion effect.</li>\
+    <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
+    <li>Each stack of Vitality primarily increases your Healing and Shielding effects and provides a smaller increase to your Melee and Ranged damage.</li>\
+    <li>When you gain a stack you also gain Energy.</li>\
+    <li>While this power is active, your energy costs are increased by 10%.</li>\
+    <li>Scales with your ENDURANCE.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Vital Shielding', '<img src="img/power-icons/force/Force_VitalShielding.png" />&nbsp;Vital Shielding', 1, 3, pow++, 1, vitalShieldingHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Vital Shielding', '<img src="img/power-icons/force/Force_VitalShielding.png" />&nbsp;Vital Shielding', 1, 3, pow++, 1, vitalShielding.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const forceShieldHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>Instant</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-BLOCK<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Grants 250% bonus resistance to all damage while blocking.</li>\
-  <li>Reduces your movement speed by 100% and increases your resistance to Hold and Knock effects by 100%.</li>\
-  <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
-</ul>';
+const forceShield = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>Instant</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  BLOCK<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Grants 250% bonus resistance to all damage while blocking.</li>\
+    <li>Reduces your movement speed by 100% and increases your resistance to Hold and Knock effects by 100%.</li>\
+    <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Shield', '<img src="img/power-icons/force/Force_ForceShield.png" />&nbsp;Force Shield', 1, 3, pow++, 1, forceShieldHtml); 
+  forceSheathe:
+  '<div>\
+  FORCE SHEATHE<br>\
+  <ul>\
+    <li>Applies <strong>Force Sheathe</strong> for a short time after you stop blocking, and it will continue to feed you energy from all incoming attacks, as well as providing a small defensive benefit.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Shield', '<img src="img/power-icons/force/Force_ForceShield.png" />&nbsp;Force Shield', 1, 3, pow++, 1, forceShield.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Force Sheathe', 'Force Sheathe', 3, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Force Sheathe', 'Force Sheathe', 3, null, forceShield.forceSheathe));
 
-const impactForceHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>Instant</div>\
-</div><br>\
-INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
-ENHANCEMENT<br>\
-<ul>\
-  <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-  <li>Whenever you attempt to Knock a foe, you gain Energy every 3 sec for 9 sec.</li>\
-  <li>This buff can stack up to 3 times. Refreshes the duration of existing stacks by 9 sec if you have 3 stacks of this buff.</li>\
-  <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
-  <li>Your RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
-</ul>';
+const impactForce = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>Instant</div>\
+  </div><br>\
+  INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
+  ENHANCEMENT<br>\
+  <ul>\
+    <li>This power does not need to be slotted in order to function and has no ranks.</li>\
+    <li>Whenever you attempt to Knock a foe, you gain Energy every 3 sec for 9 sec.</li>\
+    <li>This buff can stack up to 3 times. Refreshes the duration of existing stacks by 9 sec if you have 3 stacks of this buff.</li>\
+    <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
+    <li>Your RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
+  </ul>'
+};
 
 // Energy Unlock
-dataPower[dataPower.length] = new Power(dataPower.length, 'Impact Force', '<img src="img/power-icons/force/Force_ImpactForce.png" />&nbsp;Impact Force', 1, 3, pow++, 1, impactForceHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Impact Force', '<img src="img/power-icons/force/Force_ImpactForce.png" />&nbsp;Impact Force', 1, 3, pow++, 1, impactForce.power); 
 dataEnergyUnlockPower[dataPower.length-1] = true;
 
-const powerBarrierHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>Instant</div>\
-</div><br>\
-INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
-ENHANCEMENT<br>\
-<ul>\
-  <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-  <li>Whenever you directly Shield yourself or any ally, or apply a Field Inversion effect, you gain Energy every 3 sec for 6 sec.</li>\
-  <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
-  <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
-  <li>Your RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
-</ul>';
+const powerBarrier = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>Instant</div>\
+  </div><br>\
+  INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
+  ENHANCEMENT<br>\
+  <ul>\
+    <li>This power does not need to be slotted in order to function and has no ranks.</li>\
+    <li>Whenever you directly Shield yourself or any ally, or apply a Field Inversion effect, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
+    <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
+    <li>Your RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
+  </ul>'
+};
 
 // Energy Unlock
-dataPower[dataPower.length] = new Power(dataPower.length, 'Power Barrier', '<img src="img/power-icons/force/Force_PowerBarrier.png" />&nbsp;Power Barrier', 1, 3, pow++, 1, powerBarrierHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Power Barrier', '<img src="img/power-icons/force/Force_PowerBarrier.png" />&nbsp;Power Barrier', 1, 3, pow++, 1, powerBarrier.power); 
 dataEnergyUnlockPower[dataPower.length-1] = true;
 
 //------------------------------------------------------------------------------
 // Force: Tier 2
 //------------------------------------------------------------------------------
 
-const forceGeyserHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet<br>3 seconds recharge</div>\
-</div><br>\
-RANGED DAMAGE - KNOCK UP<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Crushing Damage and the target is Knocked Up.</li>\
-</ul>';
+const forceGeyser = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>3 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE - KNOCK UP<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Crushing Damage and the target is Knocked Up.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Geyser', '<img src="img/power-icons/force/Force_ForceGeyser.png" />&nbsp;Force Geyser', 1, 3, pow++, 2, forceGeyserHtml); 
+  hardLanding:
+  '<div>\
+  HARD LANDING<br>\
+  <ul>\
+    <li>When your targets hit the ground, they always seem to land in the worst possible way.</li>\
+    <li><strong>Snares</strong> your target, temporarily reducing their movement speed.</li>\
+  </ul>\
+  </div>',
+
+  entropyField:
+  '<div>\
+  ENTROPY FIELD<br>\
+  <ul>\
+    <li>Applies <strong>Power Shield</strong> to nearby foes, causing you to gain energy when you strike them.</li>\
+  </ul>\
+  </div>',
+
+  bruiser:
+  '<div>\
+  BRUISER<br>\
+  <ul>\
+    <li>Refreshes the duration of <strong>Demolish</strong> on your target.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Geyser', '<img src="img/power-icons/force/Force_ForceGeyser.png" />&nbsp;Force Geyser', 1, 3, pow++, 2, forceGeyser.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Hard Landing', 'Hard Landing', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Field', 'Entropy Field', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Bruiser', 'Bruiser', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Hard Landing', 'Hard Landing', 2, null, forceGeyser.hardLanding));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Entropy Field', 'Entropy Field', 2, null, forceGeyser.entropyField));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Bruiser', 'Bruiser', 2, null, forceGeyser.bruiser));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const singularityBombHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>61-121 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 25 foot Sphere<br>15 seconds recharge</div>\
-</div><br>\
-RANGED AOE DAMAGE - KNOCK TO<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 170-482 Crushing Damage and Knocks affected targets towards your primary target.</li>\
-  <li>Has a 38-100% chance to place up to 5 targets in a Power Shield for 10 sec.</li>\
-  <li>Striking this shield restores 2.5% energy. This energy restoration can occur once every 3 sec.</li>\
-</ul>';
+const singularityBomb = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>61-121 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 25 foot Sphere<br>15 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCK TO<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 170-482 Crushing Damage and Knocks affected targets towards your primary target.</li>\
+    <li>Has a 38-100% chance to place up to 5 targets in a Power Shield for 10 sec.</li>\
+    <li>Striking this shield restores 2.5% energy. This energy restoration can occur once every 3 sec.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Singularity Bomb', '<img src="img/power-icons/force/Force_SingularityBomb.png" />&nbsp;Singularity Bomb', 1, 3, pow++, 2, singularityBombHtml); 
+  overwhelmingForce:
+  '<div>\
+  OVERWHELMING FORCE<br>\
+  <ul>\
+    <li>On a full charge, instead of <strong>Knocking</strong> targets towards you, this power now <strong>Paralyzes</strong> your primary target and <strong>Stuns</strong> secondary targets.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Singularity Bomb', '<img src="img/power-icons/force/Force_SingularityBomb.png" />&nbsp;Singularity Bomb', 1, 3, pow++, 2, singularityBomb.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Overwhelming Force', 'Overwhelming Force', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Overwhelming Force', 'Overwhelming Force', 2, null, singularityBomb.overwhelmingForce));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const containmentFieldHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>27 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
-</div><br>\
-PARALYZE - DIRECT SHIELD<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Paralyzes the target for 12 sec.</li>\
-  <li>Places the target in a shield, reducing all incoming damage by 50%.</li>\
-  <li>If your target is immune to Hold effects, instead places them in a Power Shield for 10 sec.</li>\
-  <li>This shield does not absorb any damage, but striking it restores 2.5% energy. Can occur once every 3 sec.</li>\
-</ul>';
+const containmentField = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>27 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
+  </div><br>\
+  PARALYZE - DIRECT SHIELD<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Paralyzes the target for 12 sec.</li>\
+    <li>Places the target in a shield, reducing all incoming damage by 50%.</li>\
+    <li>If your target is immune to Hold effects, instead places them in a Power Shield for 10 sec.</li>\
+    <li>This shield does not absorb any damage, but striking it restores 2.5% energy. Can occur once every 3 sec.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Containment Field', '<img src="img/power-icons/force/Force_ContainmentField.png" />&nbsp;Containment Field', 1, 3, pow++, 2, containmentFieldHtml); 
+  shieldDispersal:
+  '<div>\
+  SHIELD DISPERSAL<br>\
+  <ul>\
+    <li>Applies <strong>Power Shield</strong> to nearby foes, causing you to gain energy when you strike them.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Containment Field', '<img src="img/power-icons/force/Force_ContainmentField.png" />&nbsp;Containment Field', 1, 3, pow++, 2, containmentField.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Shield Dispersal', 'Shield Dispersal', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Shield Dispersal', 'Shield Dispersal', 2, null, containmentField.shieldDispersal));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const fieldSurgeHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>Instant</div>\
-  <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
-</div><br>\
-SHIELD - ACTIVE DEFENSE<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Provides you with a shield that absorbs damage for 15 sec.</li>\
-  <li>Heals your Personal Force Field and causes it to regenerate as if you were blocking.</li>\
-  <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
-</ul>';
+const fieldSurge = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>Instant</div>\
+    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  SHIELD - ACTIVE DEFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Provides you with a shield that absorbs damage for 15 sec.</li>\
+    <li>Heals your Personal Force Field and causes it to regenerate as if you were blocking.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Field Surge', '<img src="img/power-icons/force/Force_FieldSurge.png" />&nbsp;Field Surge', 1, 3, pow++, 2, fieldSurgeHtml); 
+  unchained:
+  '<div>\
+  UNCHAINED<br>\
+  <ul>\
+    <li>Using this power will help you break free of <strong>Holds</strong>, <strong>Roots</strong>, or <strong>Disables</strong>.</li>\
+    <li>Applies a stack of <strong>Knock</strong> and <strong>Hold</strong> resistance to you.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Field Surge', '<img src="img/power-icons/force/Force_FieldSurge.png" />&nbsp;Field Surge', 1, 3, pow++, 2, fieldSurge.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchained', 'Unchained', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchained', 'Unchained', 2, null, fieldSurge.unchained));
 
 //------------------------------------------------------------------------------
 // Force: Tier 3
 //------------------------------------------------------------------------------
 
-const graviticRippleHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>15 + 12 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
-  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>20 seconds recharge</div>\
-</div><br>\
-RANGED AOE DAMAGE - REPEL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 100 Crushing Damage every 0.5 sec and Repels targets away 8.3ft. This amount increases the longer you maintain this power.</li>\
-  <li>The damage on this power is doubled if the target is immune to Knock effects.</li>\
-</ul>';
+const graviticRipple = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>15 + 12 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>20 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - REPEL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 100 Crushing Damage every 0.5 sec and Repels targets away 8.3ft. This amount increases the longer you maintain this power.</li>\
+    <li>The damage on this power is doubled if the target is immune to Knock effects.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Gravitic Ripple', '<img src="img/power-icons/force/Force_GraviticRipple.png" />&nbsp;Gravitic Ripple', 1, 3, pow++, 3, graviticRippleHtml); 
+  inversePolarity:
+  '<div>\
+  INVERSE POLARITY<br>\
+  <ul>\
+    <li>This power now pulls foes towards you instead of away.</li>\
+  </ul>\
+  </div>',
+
+  centerOfGravity:
+  '<div>\
+  CENTER OF GRAVITY<br>\
+  <ul>\
+    <li>When maintained at least halfway, leaves behind a <strong>Shielding Rune</strong> for a short duration, which shields nearby allies.</li>\
+    <li>If a target is already affected by a direct shield, restores that shield instead.</li>\
+    <li>Summoning this <strong>Rune</strong> counts as applying an <strong>Enchantment</strong>.</li>\
+    <li>You cannot have more than one <strong>Rune</strong> out at a time.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Gravitic Ripple', '<img src="img/power-icons/force/Force_GraviticRipple.png" />&nbsp;Gravitic Ripple', 1, 3, pow++, 3, graviticRipple.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Inverse Polarity', 'Inverse Polarity', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Center of Gravity', 'Center of Gravity', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Inverse Polarity', 'Inverse Polarity', 2, null, graviticRipple.inversePolarity));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Center of Gravity', 'Center of Gravity', 2, null, graviticRipple.centerOfGravity));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-const forceCascadeHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>64-175 Energy cost<br>2.33 sec charge time<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
-</div><br>\
-RANGED AOE DAMAGE - KNOCK BACK<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 212-904 Crushing Damage to all targets and they are Knocked Back 0-41 ft.</li>\
-  <li>If your target is immune to Knock effects, increases this power\\\'s base damage by up to 20% based on charge time.</li>\
-</ul>';
+const forceCascade = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>64-175 Energy cost<br>2.33 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 212-904 Crushing Damage to all targets and they are Knocked Back 0-41 ft.</li>\
+    <li>If your target is immune to Knock effects, increases this power\\\'s base damage by up to 20% based on charge time.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Cascade', '<img src="img/power-icons/force/Force_ForceCascade.png" />&nbsp;Force Cascade', 1, 3, pow++, 3, forceCascadeHtml); 
+  focusPoint:
+  '<div>\
+  FOCUS POINT<br>\
+  <ul>\
+    <li>Increases this power\\\'s damage.</li>\
+    <li>Reduces the cost of this power.</li>\
+    <li>Removes the area effect component of this ability.</li>\
+  </ul>\
+  </div>',
+
+  fieldInversion:
+  '<div>\
+  FIELD INVERSION<br>\
+  <ul>\
+    <li>If you are affected by a direct Shield effect, consumes the shield and deals additional damage around your primary target.</li>\
+    <li>If any affected targets are affected by a Shield effect, deals Crushing damage to nearby targets.</li>\
+    <li>This is a <strong>Field Inversion</strong> effect.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Cascade', '<img src="img/power-icons/force/Force_ForceCascade.png" />&nbsp;Force Cascade', 1, 3, pow++, 3, forceCascade.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Focus Point', 'Focus Point', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Field Inversion', 'Field Inversion', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Focus Point', 'Focus Point', 2, null, forceCascade.focusPoint));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Field Inversion', 'Field Inversion', 2, null, forceCascade.fieldInversion));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Denial of Service', 'PVD: Denial of Service', 0, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Force Cascade', 'UPVD: Ultimate Force Cascade', 0, null, null));
 
-const forceDetonationHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Force<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>10 seconds recharge</div>\
-</div><br>\
-RANGED AOE DAMAGE - KNOCK BACK<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Crushing Damage and Knocks Back affected targets.</li>\
-  <li>If your target is immune to Knock effects, increases base damage by 20%.</li>\
-  <li>If your target is affected by a Shield effect, deals Crushing Damage to up to 5 targets within 15ft of the shielded target.</li>\
-</ul>';
+const forceDetonation = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Force<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Crushing Damage and Knocks Back affected targets.</li>\
+    <li>If your target is immune to Knock effects, increases base damage by 20%.</li>\
+    <li>If your target is affected by a Shield effect, deals Crushing Damage to up to 5 targets within 15ft of the shielded target.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Force Detonation', '<img src="img/power-icons/force/Force_ForceDetonation.png" />&nbsp;Force Detonation', 1, 3, pow++, 3, forceDetonationHtml); 
+  gravitationalPull:
+  '<div>\
+  GRAVITATIONAL PULL<br>\
+  <ul>\
+    <li>This power now <strong>Knocks Up</strong> targets instead of back.</li>\
+  </ul>\
+  </div>',
+
+  recharge:
+  '<div>\
+  RECHARGE<br>\
+  <ul>\
+    <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
+    <li>Heals for an additional amount if your health is low.</li>\
+    <li>Has a short internal cooldown after use.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Force Detonation', '<img src="img/power-icons/force/Force_ForceDetonation.png" />&nbsp;Force Detonation', 1, 3, pow++, 3, forceDetonation.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Gravitational Pull', 'Gravitational Pull', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Recharge', 'Recharge', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Gravitational Pull', 'Gravitational Pull', 2, null, forceDetonation.gravitationalPull));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Recharge', 'Recharge', 2, null, forceDetonation.recharge));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
@@ -3902,45 +4224,67 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 // Wind: Energy Builder
 //------------------------------------------------------------------------------
 
-const windLashHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>0.34-0.5 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>50 feet</div>\
-</div><br>\
-ENERGY BUILDER - RANGED DAMAGE<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Crushing Damage and generates Energy.</li>\
-  <li>The first shot has a 20% chance to Repel your target and Disorient them.</li>\
-  <li>Disorient reduces the target\\\'s damage by 10% and movement speed by 50%.</li>\
-</ul>';
+const windLash = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>0.34-0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div><br>\
+  ENERGY BUILDER - RANGED DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Crushing Damage and generates Energy.</li>\
+    <li>The first shot has a 20% chance to Repel your target and Disorient them.</li>\
+    <li>Disorient reduces the target\\\'s damage by 10% and movement speed by 50%.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Lash', '<img src="img/power-icons/wind/Wind_WindLash.png" />&nbsp;Wind Lash', 1, 4, pow++, -1, windLashHtml); 
+  stiffBreeze:
+  '<div>\
+  STIFF BREEZE<br>\
+  <ul>\
+    <li>Extends the chance to Disorient and Repel to every attack, instead of just the first.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Lash', '<img src="img/power-icons/wind/Wind_WindLash.png" />&nbsp;Wind Lash', 1, 4, pow++, -1, windLash.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Stiff Breeze', 'Stiff Breeze', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Stiff Breeze', 'Stiff Breeze', 2, null, windLash.stiffBreeze));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 //------------------------------------------------------------------------------
 // Wind: Tier 0
 //------------------------------------------------------------------------------
 
-const gustHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>23-38 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet</div>\
-</div><br>\
-RANGED DAMAGE - KNOCK BACK - BLAST<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 184-392 Crushing Damage and the target is Repelled 5-17 feet.</li>\
-  <li>In addition, Gust will Knock Down and deal an additional 10% damage to Disoriented targets.</li>\
-</ul>';
+const gust = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>23-38 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  RANGED DAMAGE - KNOCK BACK - BLAST<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 184-392 Crushing Damage and the target is Repelled 5-17 feet.</li>\
+    <li>In addition, Gust will Knock Down and deal an additional 10% damage to Disoriented targets.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Gust', '<img src="img/power-icons/wind/Wind_Gust.png" />&nbsp;Gust', 1, 4, pow++, 0, gustHtml); 
+  topplingWinds:
+  '<div>\
+  TOPPLING WINDS<br>\
+  <ul>\
+    <li>This power now has a chance to apply <strong>Stagger</strong> to your target, reducing their resistance to all damage and movement speed.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Gust', '<img src="img/power-icons/wind/Wind_Gust.png" />&nbsp;Gust', 1, 4, pow++, 0, gust.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Toppling Winds', 'Toppling Winds', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Toppling Winds', 'Toppling Winds', 2, null, gust.topplingWinds));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
@@ -3949,279 +4293,416 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 // Wind: Tier 1
 //------------------------------------------------------------------------------
 
-const windBreathHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>16 + 14 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
-</div><br>\
-RANGED AOE DAMAGE - REPEL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 51 Cold Damage and 51 Crushing Damage every 0.5 sec to all targets and Repels them away from you.</li>\
-  <li>Also has a 10% chance to Disorient your targets.</li>\
-  <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
-</ul>';
+const windBreath = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>16 + 14 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - REPEL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 51 Cold Damage and 51 Crushing Damage every 0.5 sec to all targets and Repels them away from you.</li>\
+    <li>Also has a 10% chance to Disorient your targets.</li>\
+    <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Breath', '<img src="img/power-icons/wind/Wind_WindBreath.png" />&nbsp;Wind Breath', 1, 4, pow++, 1, windBreathHtml); 
+  unstableFooting:
+  '<div>\
+  UNSTABLE FOOTING<br>\
+  <ul>\
+    <li>Adds a chance to <strong>Knock Down</strong> affected targets.</li>\
+    <li>Targets Knocked Down by your Wind Breath will also be <strong>Staggered</strong>.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Breath', '<img src="img/power-icons/wind/Wind_WindBreath.png" />&nbsp;Wind Breath', 1, 4, pow++, 1, windBreath.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unstable Footing', 'Unstable Footing', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unstable Footing', 'Unstable Footing', 2, null, windBreath.unstableFooting));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const stormbringerHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind</div>\
-</div><br>\
-SLOTTED OFFENSIVE PASSIVE<br><br>\
-PASSIVE<br>\
-<ul>\
-  <li>You deal additional Crushing, Cold, and Electrical Damage.</li>\
-  <li>You gain Crushing, Cold, and Electrical Damage Resistance.</li>\
-  <li>You also gain a small amount of Energy when you suffer Crushing, Cold, or Electrical Damage.</li>\
-</ul>';
+const stormbringer = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind</div>\
+  </div><br>\
+  SLOTTED OFFENSIVE PASSIVE<br><br>\
+  PASSIVE<br>\
+  <ul>\
+    <li>You deal additional Crushing, Cold, and Electrical Damage.</li>\
+    <li>You gain Crushing, Cold, and Electrical Damage Resistance.</li>\
+    <li>You also gain a small amount of Energy when you suffer Crushing, Cold, or Electrical Damage.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Stormbringer', '<img src="img/power-icons/wind/Wind_Stormbringer.png" />&nbsp;Stormbringer', 1, 4, pow++, 1, stormbringerHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Stormbringer', '<img src="img/power-icons/wind/Wind_Stormbringer.png" />&nbsp;Stormbringer', 1, 4, pow++, 1, stormbringer.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const weatherShapingHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-BUFF - FORM - ENDURANCE<br><br>\
-TOGGLE<br>\
-<ul>\
-  <li>Grants stacks of Untapped Power for each rank of this power you have.</li>\
-  <li>You gain another instance of Untapped Power whenever you attempt to Repel a target.</li>\
-  <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
-  <li>Each stack of Untapped Power primarily increases your Ranged damage and provides a smaller increase to your Melee damage for 20 sec.</li>\
-  <li>When you gain a stack you also gain Energy.</li>\
-  <li>While this power is active, your energy costs are increased by 10%.</li>\
-  <li>Scales with your ENDURANCE.</li>\
-</ul>';
+const weatherShaping = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  BUFF - FORM - ENDURANCE<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Grants stacks of Untapped Power for each rank of this power you have.</li>\
+    <li>You gain another instance of Untapped Power whenever you attempt to Repel a target.</li>\
+    <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
+    <li>Each stack of Untapped Power primarily increases your Ranged damage and provides a smaller increase to your Melee damage for 20 sec.</li>\
+    <li>When you gain a stack you also gain Energy.</li>\
+    <li>While this power is active, your energy costs are increased by 10%.</li>\
+    <li>Scales with your ENDURANCE.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Weather Shaping', '<img src="img/power-icons/wind/Wind_WeatherShaping.png" />&nbsp;Weather Shaping', 1, 4, pow++, 1, weatherShapingHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Weather Shaping', '<img src="img/power-icons/wind/Wind_WeatherShaping.png" />&nbsp;Weather Shaping', 1, 4, pow++, 1, weatherShaping.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const windBarrierHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>Every 1 sec<br>Instant</div>\
-  <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>10 feet; 180 degree Cone</div>\
-</div><br>\
-BLOCK<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Grants 250% bonus resistance to all damage while blocking.</li>\
-  <li>Your movement speed is reduced by 100% and your resistance to Hold and Knock effects is increased by 100%.</li>\
-  <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
-  <li>Nearby foes in front of you and foes that attack you are Repelled.</li>\
-</ul>';
+const windBarrier = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>Every 1 sec<br>Instant</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div><br>\
+  BLOCK<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Grants 250% bonus resistance to all damage while blocking.</li>\
+    <li>Your movement speed is reduced by 100% and your resistance to Hold and Knock effects is increased by 100%.</li>\
+    <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
+    <li>Nearby foes in front of you and foes that attack you are Repelled.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Barrier', '<img src="img/power-icons/wind/Wind_WindBarrier.png" />&nbsp;Wind Barrier', 1, 4, pow++, 1, windBarrierHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Barrier', '<img src="img/power-icons/wind/Wind_WindBarrier.png" />&nbsp;Wind Barrier', 1, 4, pow++, 1, windBarrier.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const windReverberationHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>Instant</div>\
-</div><br>\
-INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
-ENHANCEMENT<br>\
-<ul>\
-  <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-  <li>Whenever you attempt to Repel a target, you gain Energy every 3 sec for 6 sec.</li>\
-  <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
-  <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
-  <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
-</ul>';
+const windReverberation = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>Instant</div>\
+  </div><br>\
+  INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
+  ENHANCEMENT<br>\
+  <ul>\
+    <li>This power does not need to be slotted in order to function and has no ranks.</li>\
+    <li>Whenever you attempt to Repel a target, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
+    <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
+    <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
+  </ul>'
+};
 
 // Energy Unlock
-dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Reverberation', '<img src="img/power-icons/wind/Wind_WindReverberation.png" />&nbsp;Wind Reverberation', 1, 4, pow++, 1, windReverberationHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Wind Reverberation', '<img src="img/power-icons/wind/Wind_WindReverberation.png" />&nbsp;Wind Reverberation', 1, 4, pow++, 1, windReverberation.power); 
 dataEnergyUnlockPower[dataPower.length-1] = true;
 
 //------------------------------------------------------------------------------
 // Wind: Tier 2
 //------------------------------------------------------------------------------
 
-const torrentHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>34-93 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Affects foe that is not destructible<br>(5 max)<br>25 foot Sphere</div>\
-</div><br>\
-RANGED AOE DAMAGE - KNOCK - CHILL<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 170-603 Cold Damage to nearby foes.</li>\
-  <li>Has a 13-50% chance based on charge time to Knock Down targets.</li>\
-  <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-</ul>';
+const torrent = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>34-93 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible<br>(5 max)<br>25 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCK - CHILL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 170-603 Cold Damage to nearby foes.</li>\
+    <li>Has a 13-50% chance based on charge time to Knock Down targets.</li>\
+    <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Torrent', '<img src="img/power-icons/wind/Wind_Torrent.png" />&nbsp;Torrent', 1, 4, pow++, 2, torrentHtml); 
+  oasis:
+  '<div>\
+  OASIS<br>\
+  <ul>\
+    <li>On full charge, leaves behind a <strong>Healing Rune</strong> for a short duration, which heals nearby allies.</li>\
+    <li>You cannot have more than one <strong>Rune</strong> out at a time.</li>\
+    <li>Summoning this <strong>Rune</strong> counts as applying an <strong>Enchantment</strong>.</li>\
+  </ul>\
+  </div>',
+
+  scaldingWater:
+  '<div>\
+  SCALDING WATER<br>\
+  <ul>\
+    <li>Instead of applying <strong>Chill</strong>, this power now has a chance to apply <strong>Clinging Flames</strong> to foes.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Torrent', '<img src="img/power-icons/wind/Wind_Torrent.png" />&nbsp;Torrent', 1, 4, pow++, 2, torrent.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Oasis', 'Oasis', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Scalding Water', 'Scalding Water', 1, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Oasis', 'Oasis', 2, null, torrent.oasis));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Scalding Water', 'Scalding Water', 1, null, torrent.scaldingWater));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const hurricaneHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>23 + 23 Energy every 0.5 sec<br>0.83 sec activate time (4 max)</div>\
-  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
-</div><br>\
-RANGED AOE DAMAGE - REPEL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 35-70 Cold Damage (based on pulse) and 35-70 Crushing Damage (based on pulse) every 0.5 sec. Foes within 12ft are Repelled 7.5ft.</li>\
-  <li>If fully maintained, affected foes are Knocked Back 13ft.</li>\
-</ul>';
+const hurricane = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>23 + 23 Energy every 0.5 sec<br>0.83 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - REPEL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 35-70 Cold Damage (based on pulse) and 35-70 Crushing Damage (based on pulse) every 0.5 sec. Foes within 12ft are Repelled 7.5ft.</li>\
+    <li>If fully maintained, affected foes are Knocked Back 13ft.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Hurricane', '<img src="img/power-icons/wind/Wind_Hurricane.png" />&nbsp;Hurricane', 1, 4, pow++, 2, hurricaneHtml); 
+  perfectStorm:
+  '<div>\
+  PERFECT STORM<br>\
+  <ul>\
+    <li>Your Hurricane now also deals some Electrical damage and has a chance to apply <strong>Chill</strong> and <strong>Negative Ions</strong> to your targets.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Hurricane', '<img src="img/power-icons/wind/Wind_Hurricane.png" />&nbsp;Hurricane', 1, 4, pow++, 2, hurricane.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Perfect Storm', 'Perfect Storm', 3, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Perfect Storm', 'Perfect Storm', 3, null, hurricane.perfectStorm));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-const updraftHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>13-42 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>50 feet</div>\
-</div><br>\
-RANGED DAMAGE - KNOCK UP<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 139-377 Crushing Damage and the target is Knocked Up 2.9-17 feet.</li>\
-</ul>';
+const updraft = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>13-42 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div><br>\
+  RANGED DAMAGE - KNOCK UP<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 139-377 Crushing Damage and the target is Knocked Up 2.9-17 feet.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Updraft', '<img src="img/power-icons/wind/Wind_Updraft.png" />&nbsp;Updraft', 1, 4, pow++, 2, updraftHtml); 
+  dispersal:
+  '<div>\
+  DISPERSAL<br>\
+  <ul>\
+    <li>Causes your Updraft to deal 50% damage to targets within 10 feet, and they are <strong>Knocked Up</strong> and <strong>Repelled</strong> away from your target.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Updraft', '<img src="img/power-icons/wind/Wind_Updraft.png" />&nbsp;Updraft', 1, 4, pow++, 2, updraft.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Dispersal', 'Dispersal', 3, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Dispersal', 'Dispersal', 3, null, updraft.dispersal));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const whirlwindHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>24 + 13 Energy every 0.5 sec<br>0.83 sec activate time (3 max)</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
-</div><br>\
-RANGED AOE DAMAGE - DOT - SNARE<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 45 Cold Damage and 45 Crushing Damage every 0.5 sec to foes in the target area and Snares each target, reducing their movement speed for 0.67 sec.</li>\
-  <li>Has a 10% chance to Knock Down any Disoriented targets.</li>\
-  <li>The duration of this power is extended the longer you maintain the power.</li>\
-</ul>';
+const whirlwind = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>24 + 13 Energy every 0.5 sec<br>0.83 sec activate time (3 max)</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - DOT - SNARE<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 45 Cold Damage and 45 Crushing Damage every 0.5 sec to foes in the target area and Snares each target, reducing their movement speed for 0.67 sec.</li>\
+    <li>Has a 10% chance to Knock Down any Disoriented targets.</li>\
+    <li>The duration of this power is extended the longer you maintain the power.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Whirlwind', '<img src="img/power-icons/wind/Wind_Whirlwind.png" />&nbsp;Whirlwind', 1, 4, pow++, 2, whirlwindHtml); 
+  vortex:
+  '<div>\
+  VORTEX<br>\
+  <ul>\
+    <li>Causes the main target of your Whirlwind to become the focus of a vortex, pulling other nearby foes toward that target.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Whirlwind', '<img src="img/power-icons/wind/Wind_Whirlwind.png" />&nbsp;Whirlwind', 1, 4, pow++, 2, whirlwind.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Vortex', 'Vortex', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Vortex', 'Vortex', 2, null, whirlwind.vortex));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-const twisterHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>32 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
-</div><br>\
-HOLD<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Paralyzes the target for 12 sec.</li>\
-</ul>';
+const twister = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>32 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
+  </div><br>\
+  HOLD<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Paralyzes the target for 12 sec.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Twister', '<img src="img/power-icons/wind/Wind_Twister.png" />&nbsp;Twister', 1, 4, pow++, 2, twisterHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Twister', '<img src="img/power-icons/wind/Wind_Twister.png" />&nbsp;Twister', 1, 4, pow++, 2, twister.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const veilOfMistHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
-</div><br>\
-PERCEPTION DEBUFF<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Creates a Smoke Cloud for 10 sec that reduces the Perception of foes within 25ft by 500%.</li>\
-  <li>Places all Perception Debuff powers on a 15 sec cooldown.</li>\
-</ul>';
+const veilOfMist = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
+  </div><br>\
+  PERCEPTION DEBUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates a Smoke Cloud for 10 sec that reduces the Perception of foes within 25ft by 500%.</li>\
+    <li>Places all Perception Debuff powers on a 15 sec cooldown.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Veil of Mist', '<img src="img/power-icons/wind/Wind_VeilOfMist.png" />&nbsp;Veil of Mist', 1, 4, pow++, 2, veilOfMistHtml); 
+  fadeAway:
+  '<div>\
+  FADE AWAY<br>\
+  <ul>\
+    <li>Changes this power into a threat wipe ability.</li>\
+    <li>Wipes all threat from affected targets.</li>\
+    <li>Places you in stealth for a brief amount of time.</li>\
+    <li>Increases the recharge time significantly.</li>\
+  </ul>\
+  </div>',
+
+  chilledAir:
+  '<div>\
+  CHILLED AIR<br>\
+  <ul>\
+    <li>Foes in the mist have a chance to be affected by <strong>Chill</strong>, slowing the target\\\'s movement and occasionally trapping them in an <strong>Ice Cage</strong>.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Veil of Mist', '<img src="img/power-icons/wind/Wind_VeilOfMist.png" />&nbsp;Veil of Mist', 1, 4, pow++, 2, veilOfMist.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Fade Away', 'Fade Away', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Chilled Air', 'Chilled Air', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Fade Away', 'Fade Away', 2, null, veilOfMist.fadeAway));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Chilled Air', 'Chilled Air', 2, null, veilOfMist.chilledAir));
 
-const dustDevilHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>0.83 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet<br>6 seconds recharge</div>\
-</div><br>\
-RANGED AOE DAMAGE<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Summons a Dust Devil for 12 sec that will hover near your target, dealing Crushing Damage every second to foes within 10 feet.</li>\
-  <li>Has a 10% chance to Disorient your targets.</li>\
-  <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
-</ul>';
+const dustDevil = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>6 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Summons a Dust Devil for 12 sec that will hover near your target, dealing Crushing Damage every second to foes within 10 feet.</li>\
+    <li>Has a 10% chance to Disorient your targets.</li>\
+    <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Dust Devil', '<img src="img/power-icons/wind/Wind_DustDevil.png" />&nbsp;Dust Devil', 1, 4, pow++, 2, dustDevilHtml); 
+  tripleThreat:
+  '<div>\
+  TRIPLE THREAT<br>\
+  <ul>\
+    <li>Your Dust Devil becomes empowered with Cold and Electric energy, causing it to now deal 40% of normal Damage as Crushing damage, an additional 40% of normal as Cold damage, and an additional 40% of normal as Electric damage.</li>\
+    <li>The Cold damage is increased by 30% against targets affected by <strong>Chill</strong>, and the Electric damage is increased by 30% against targets affected by <strong>Negative Ions</strong>.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Dust Devil', '<img src="img/power-icons/wind/Wind_DustDevil.png" />&nbsp;Dust Devil', 1, 4, pow++, 2, dustDevil.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Triple Threat', 'Triple Threat', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Triple Threat', 'Triple Threat', 2, null, dustDevil.tripleThreat));
 
 //------------------------------------------------------------------------------
 // Wind: Tier 3
 //------------------------------------------------------------------------------
 
-const typhoonHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>2.33 sec charge time<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
-</div><br>\
-RANGED AOE DAMAGE - REPEL<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals Crushing Damage and Cold Damage to all targets and they have a 25-100% chance to be Repelled.</li>\
-  <li>Targets have a 50% chance to be Knocked Down. If they are Disoriented, they have a 100% chance to be Staggered and Knocked Back. If your target is immune to Knock effects, increases this power\\\'s base damage by up to 30% based on charge time.</li>\
-  <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
-</ul>';
+const typhoon = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>2.33 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - REPEL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals Crushing Damage and Cold Damage to all targets and they have a 25-100% chance to be Repelled.</li>\
+    <li>Targets have a 50% chance to be Knocked Down. If they are Disoriented, they have a 100% chance to be Staggered and Knocked Back. If your target is immune to Knock effects, increases this power\\\'s base damage by up to 30% based on charge time.</li>\
+    <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Typhoon', '<img src="img/power-icons/wind/Wind_Typhoon.png" />&nbsp;Typhoon', 1, 4, pow++, 3, typhoonHtml); 
+  coldFront:
+  '<div>\
+  COLD FRONT<br>\
+  <ul>\
+    <li>Adds a chance (based on Charge time) for your Typhoon to <strong>Chill</strong> your target.</li>\
+  </ul>\
+  </div>',
+
+  ionicDischarge:
+  '<div>\
+  IONIC DISCHARGE<br>\
+  <ul>\
+    <li>If your Typhoon hits a target affected by <strong>Negative Ions</strong>, it has a chance (based on Charge time) to cause an Electric Arc to a nearby target.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Typhoon', '<img src="img/power-icons/wind/Wind_Typhoon.png" />&nbsp;Typhoon', 1, 4, pow++, 3, typhoon.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Cold Front', 'Cold Front', 1, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Ionic Discharge', 'Ionic Discharge', 1, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Cold Front', 'Cold Front', 1, null, typhoon.coldFront));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Ionic Discharge', 'Ionic Discharge', 1, null, typhoon.ionicDischarge));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const airElementalHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Wind<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-CONTROLLABLE PET<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Summons an Air Elemental to fight for you. It will attack your target at range with Storm Lash, dealing Crushing Damage (Base) and Cold Damage (Base) to your foes.</li>\
-  <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
-</ul><br>\
-CUSTOM ABILITY<br>\
-<ul>\
-  <li>This pet can be instructed to activate the following ability with a button on its control bar:</li>\
-  <li>Wind Burst - Your pet unleashes a powerful burst of wind from within itself, dealing Cold and Crushing damage, and knocking away nearby foes.</li>\
-</ul><br>\
-RANK UP BENEFITS<br>\
-<ul>\
-  <li>R1: Your Air Elemental lashes your foes with powerful wind, alternately doing Crushing and Cold damage.</li>\
-  <li>R2: Your pet gains the ability to call down a Thunderstrike on your foes.</li>\
-  <li>R3: Growing in strength, your Air Elemental now has a chance to Disorient targets with Wind Lash, and can Knock Down the primary target of Thunderstrike.</li>\
-</ul>';
+const airElemental = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Wind<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons an Air Elemental to fight for you. It will attack your target at range with Storm Lash, dealing Crushing Damage (Base) and Cold Damage (Base) to your foes.</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul><br>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:</li>\
+    <li>Wind Burst - Your pet unleashes a powerful burst of wind from within itself, dealing Cold and Crushing damage, and knocking away nearby foes.</li>\
+  </ul><br>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your Air Elemental lashes your foes with powerful wind, alternately doing Crushing and Cold damage.</li>\
+    <li>R2: Your pet gains the ability to call down a Thunderstrike on your foes.</li>\
+    <li>R3: Growing in strength, your Air Elemental now has a chance to Disorient targets with Wind Lash, and can Knock Down the primary target of Thunderstrike.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Air Elemental', '<img src="img/power-icons/wind/Wind_AirElemental.png" />&nbsp;Air Elemental', 1, 4, pow++, 3, airElementalHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Air Elemental', '<img src="img/power-icons/wind/Wind_AirElemental.png" />&nbsp;Air Elemental', 1, 4, pow++, 3, airElemental.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -4304,46 +4785,76 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 // Ice: Energy Builder
 //------------------------------------------------------------------------------
 
-const iceShardsHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>0.3-0.47 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>50 feet</div>\
-</div><br>\
-ENERGY BUILDER - RANGED DAMAGE<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Cold Damage and generates Energy.</li>\
-  <li>The first shot has a 20% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-</ul>';
+const iceShards = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>0.3-0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div><br>\
+  ENERGY BUILDER - RANGED DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Cold Damage and generates Energy.</li>\
+    <li>The first shot has a 20% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Shards', '<img src="img/power-icons/ice/Ice_IceShards.png" />&nbsp;Ice Shards', 1, 5, pow++, -1, iceShardsHtml); 
+  iceImpaler:
+  '<div>\
+  ICE IMPALER<br>\
+  <ul>\
+    <li>Ice Shards has a significantly increased critical hit chance.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Shards', '<img src="img/power-icons/ice/Ice_IceShards.png" />&nbsp;Ice Shards', 1, 5, pow++, -1, iceShards.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Ice Impaler', 'Ice Impaler', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Ice Impaler', 'Ice Impaler', 2, null, iceShards.iceImpaler));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 //------------------------------------------------------------------------------
 // Ice: Tier 0
 //------------------------------------------------------------------------------
 
-const iceBlastHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>18-45 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet</div>\
-</div><br>\
-RANGED DAMAGE - CHILL - BLAST<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 124-486 Cold Damage to your target.</li>\
-  <li>Has a 25-100% chance to apply Chill to the target, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
-  <li>Charge damage is increased if you are affected by Cold Snap.</li>\
-</ul>';
+const iceBlast = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>18-45 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  RANGED DAMAGE - CHILL - BLAST<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 124-486 Cold Damage to your target.</li>\
+    <li>Has a 25-100% chance to apply Chill to the target, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
+    <li>Charge damage is increased if you are affected by Cold Snap.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Blast', '<img src="img/power-icons/ice/Ice_IceBlast.png" />&nbsp;Ice Blast', 1, 5, pow++, 0, iceBlastHtml); 
+  hardFrost:
+  '<div>\
+  HARD FROST<br>\
+  <ul>\
+    <li>Applies <strong>Hard Frost</strong> to <strong>Chilled</strong> targets, reducing their resistance to <strong>Cold</strong> damage for a short time.</li>\
+  </ul>\
+  </div>',
+
+  frostBite:
+  '<div>\
+  FROST BITE<br>\
+  <ul>\
+    <li><strong>Ice Blast</strong> now refreshes the <strong>Chilled</strong> debuff on targets.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Blast', '<img src="img/power-icons/ice/Ice_IceBlast.png" />&nbsp;Ice Blast', 1, 5, pow++, 0, iceBlast.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Hard Frost', 'Hard Frost', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Frost Bite', 'Frost Bite', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Hard Frost', 'Hard Frost', 2, null, iceBlast.hardFrost));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Frost Bite', 'Frost Bite', 2, null, iceBlast.frostBite));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
@@ -4352,392 +4863,662 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 // Ice: Tier 1
 //------------------------------------------------------------------------------
 
-const shatterHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>0.83 sec activate time</div>\
-  <div style="text-align:right;">Affects foe (5 max)<br>50 feet; 180 degree Cone</div>\
-</div><br>\
-RANGED AOE DAMAGE - SHATTER - COLD SNAP<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Cold Damage to all targets.</li>\
-  <li>Deals additional Cold Damage for each of your Chill stacks on a target, and an additional 30% total damage if you are affected by Cold Snap. Consumes any of your Chill effects on affected targets.</li>\
-  <li>In addition, if you hit at least 1 target, detonates any of your Ice Structures, dealing Cold Damage, based on the rank and type of the structure, to up to 5 foes within 15ft.</li>\
-</ul>';
+const shatter = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>50 feet; 180 degree Cone</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - SHATTER - COLD SNAP<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Cold Damage to all targets.</li>\
+    <li>Deals additional Cold Damage for each of your Chill stacks on a target, and an additional 30% total damage if you are affected by Cold Snap. Consumes any of your Chill effects on affected targets.</li>\
+    <li>In addition, if you hit at least 1 target, detonates any of your Ice Structures, dealing Cold Damage, based on the rank and type of the structure, to up to 5 foes within 15ft.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Shatter', '<img src="img/power-icons/ice/Ice_Shatter.png" />&nbsp;Shatter', 1, 5, pow++, 1, shatterHtml);
+  crushedIce:
+  '<div>\
+  CRUSHED ICE<br>\
+  <ul>\
+    <li>Halves the chance of the <strong>Chilled</strong> effect being removed from targets.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Shatter', '<img src="img/power-icons/ice/Ice_Shatter.png" />&nbsp;Shatter', 1, 5, pow++, 1, shatter.power);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Crushed Ice', 'Crushed Ice', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Crushed Ice', 'Crushed Ice', 2, null, shatter.crushedIce));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const frostBreathHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>23 + 23 Energy every 0.5 sec<br>0.83 sec activate time (5 max)</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
-</div><br>\
-RANGED AOE DAMAGE - CHILL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 57-171 Cold Damage (based on pulse) every 0.5 sec to all targets.</li>\
-  <li>Has a 25% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-</ul>';
+const frostBreath = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>23 + 23 Energy every 0.5 sec<br>0.83 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - CHILL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 57-171 Cold Damage (based on pulse) every 0.5 sec to all targets.</li>\
+    <li>Has a 25% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Frost Breath', '<img src="img/power-icons/ice/Ice_FrostBreath.png" />&nbsp;Frost Breath', 1, 5, pow++, 1, frostBreathHtml); 
+  frostBite:
+  '<div>\
+  FROST BITE<br>\
+  <ul>\
+    <li>This power is guaranteed to add the <strong>Chill</strong> effect to those it hits.</li>\
+  </ul>\
+  </div>',
+
+  chillyBarrier:
+  '<div>\
+  CHILLY BARRIER<br>\
+  <ul>\
+    <li>Maintaining this power now grants you a shield that increases in strength over time.</li>\
+    <li>This shield will be removed when you stop maintaining the power.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Frost Breath', '<img src="img/power-icons/ice/Ice_FrostBreath.png" />&nbsp;Frost Breath', 1, 5, pow++, 1, frostBreath.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Frost Bite', 'Frost Bite', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Chilly Barrier', 'Chilly Barrier', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Frost Bite', 'Frost Bite', 2, null, frostBreath.frostBite));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Chilly Barrier', 'Chilly Barrier', 2, null, frostBreath.chillyBarrier));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const iceCageHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>0.83 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>50 feet</div>\
-</div><br>\
-ROOT - RANGED DAMAGE - DOT<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Creates an Ice Cage on the target for up to 10 sec, Rooting them in place while the structure is active.</li>\
-  <li>Targets affected by your Ice Cage also suffer Cold Damage every 1 sec.</li>\
-  <li>Once the Ice Cage expires, deals Cold Damage to up to 5 targets within 10ft.</li>\
-</ul>';
+const iceCage = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div><br>\
+  ROOT - RANGED DAMAGE - DOT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates an Ice Cage on the target for up to 10 sec, Rooting them in place while the structure is active.</li>\
+    <li>Targets affected by your Ice Cage also suffer Cold Damage every 1 sec.</li>\
+    <li>Once the Ice Cage expires, deals Cold Damage to up to 5 targets within 10ft.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Cage', '<img src="img/power-icons/ice/Ice_IceCage.png" />&nbsp;Ice Cage', 1, 5, pow++, 1, iceCageHtml); 
+  subZeroCellblock:
+  '<div>\
+  SUB-ZERO CELLBLOCK<br>\
+  <ul>\
+    <li>Causes <strong>Ice Cage</strong> to <strong>Interrupt</strong> any attacks being charged or maintained when it is initially applied.</li>\
+    <li>You cannot interrupt foes with the following ranks: Super Villain, Legendary, and Cosmic.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Cage', '<img src="img/power-icons/ice/Ice_IceCage.png" />&nbsp;Ice Cage', 1, 5, pow++, 1, iceCage.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Sub-Zero Cellblock', 'Sub-Zero Cellblock', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Sub-Zero Cellblock', 'Sub-Zero Cellblock', 2, null, iceCage.subZeroCellblock));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const wallOfIceHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
-</div><br>\
-RANGED AOE DAMAGE - ROOT - DOT<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Creates a Cold Spot at your target, dealing Cold Damage every 2 sec for 16 sec to up to 5 foes within 10ft of your target.</li>\
-  <li>Traps foes in an Ice Cage, which Roots them in place, preventing them from moving for up to 10 sec.</li>\
-  <li>Has a 15% chance every 1 sec to apply Chill to your targets, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
-</ul>';
+const wallOfIce = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - ROOT - DOT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates a Cold Spot at your target, dealing Cold Damage every 2 sec for 16 sec to up to 5 foes within 10ft of your target.</li>\
+    <li>Traps foes in an Ice Cage, which Roots them in place, preventing them from moving for up to 10 sec.</li>\
+    <li>Has a 15% chance every 1 sec to apply Chill to your targets, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Wall of Ice', '<img src="img/power-icons/ice/Ice_WallOfIce.png" />&nbsp;Wall of Ice', 1, 5, pow++, 1, wallOfIceHtml); 
+  frozenFootsteps:
+  '<div>\
+  FROZEN FOOTSTEPS<br>\
+  <ul>\
+    <li>Causes the <strong>Wall of Ice</strong> to form in your path as you move.</li>\
+  </ul>\
+  </div>',
+
+  sharpEdges:
+  '<div>\
+  SHARP EDGES<br>\
+  <ul>\
+    <li>This power now has a chance to apply <strong>Bleed</strong> instead of <strong>Chilled</strong> to targets.</li>\
+    <li><strong>Bleeding</strong> is a type of <strong>Wound</strong>.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Wall of Ice', '<img src="img/power-icons/ice/Ice_WallOfIce.png" />&nbsp;Wall of Ice', 1, 5, pow++, 1, wallOfIce.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Frozen Footsteps', 'Frozen Footsteps', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Sharp Edges', 'Sharp Edges', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Frozen Footsteps', 'Frozen Footsteps', 2, null, wallOfIce.frozenFootsteps));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Sharp Edges', 'Sharp Edges', 2, null, wallOfIce.sharpEdges));
 
-const iceSheathHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>Instant</div>\
-  <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
-</div><br>\
-ACTIVE OFFENSE - COLD SNAP<br><br>\
-CLICK<br>\
-<ul>\
-  <li>This power has a duration of 15 sec.</li>\
-  <li>Grants a 42% increase to all damage.</li>\
-  <li>Increases your Critical Severity by 5.8% for every stack of Chill on your target.</li>\
-  <li>While active you have a 25% chance to apply Chill to foes that attack you, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage. Stacks up to 3 times.</li>\
-  <li>Applies Cold Snap to you for 10 sec.</li>\
-  <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
-  <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
-</ul>';
+const iceSheath = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>Instant</div>\
+    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE - COLD SNAP<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Grants a 42% increase to all damage.</li>\
+    <li>Increases your Critical Severity by 5.8% for every stack of Chill on your target.</li>\
+    <li>While active you have a 25% chance to apply Chill to foes that attack you, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Applies Cold Snap to you for 10 sec.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Sheath', '<img src="img/power-icons/ice/Ice_IceSheath.png" />&nbsp;Ice Sheath', 1, 5, pow++, 1, iceSheathHtml); 
+  supercooled:
+  '<div>\
+  SUPERCOOLED<br>\
+  <ul>\
+    <li>Foes that attack you are guaranteed to be affected by the <strong>Chill</strong> debuff.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Sheath', '<img src="img/power-icons/ice/Ice_IceSheath.png" />&nbsp;Ice Sheath', 1, 5, pow++, 1, iceSheath.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Supercooled', 'Supercooled', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Supercooled', 'Supercooled', 2, null, iceSheath.supercooled));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Form', '<img src="img/power-icons/ice/Ice_IceForm.png" />&nbsp;Ice Form', 1, 5, pow++, 1, null); 
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
+const iceForm = {
+  power: 
+  '<div>...</div>'
+};
 
-const chilledFormHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-BUFF - FORM - EGO or DEXTERITY<br><br>\
-TOGGLE<br>\
-<ul>\
-  <li>Grants stacks of Chilled Form for each rank of this power you have.</li>\
-  <li>You gain another instance of Chilled Form whenever your damaging Ranged attacks is partially maintained, partially charged, or used from more than 25ft away.</li>\
-  <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
-  <li>Each stack of Chilled Form primarily increases your Ranged damage and provides a smaller increase to your Melee damage.</li>\
-  <li>When you gain a stack you also gain Energy.</li>\
-  <li>While this power is active, your energy costs are increased by 10%.</li>\
-  <li>Scales with your EGO or DEXTERITY, whichever is higher.</li>\
-</ul>';
-
-dataPower[dataPower.length] = new Power(dataPower.length, 'Chilled Form', '<img src="img/power-icons/ice/Ice_ChilledForm.png" />&nbsp;Chilled Form', 1, 5, pow++, 1, chilledFormHtml); 
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-
-const frigidDeterminationHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-BUFF - FORM - DEXTERITY<br><br>\
-TOGGLE<br>\
-<ul>\
-  <li>Grants stacks of Focus for each rank of this power you have.</li>\
-  <li>You gain another instance of Focus whenever you apply or refresh Chill on a target, or when you Shatter an Ice Structure.</li>\
-  <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
-  <li>Each stack of Focus primarily increases your Melee damage and provides a smaller increase to your Ranged damage.</li>\
-  <li>When you gain a stack you also gain Energy.</li>\
-  <li>While this power is active, your energy costs are increased by 10%.</li>\
-  <li>Scales with your DEXTERITY.</li>\
-</ul>';
-
-dataPower[dataPower.length] = new Power(dataPower.length, 'Frigid Determination', '<img src="img/power-icons/ice/Ice_FrigidDetermination.png" />&nbsp;Frigid Determination', 1, 5, pow++, 1, frigidDeterminationHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Form', '<img src="img/power-icons/ice/Ice_IceForm.png" />&nbsp;Ice Form', 1, 5, pow++, 1, iceForm.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const iceShieldHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>Every 1 sec<br>Instant</div>\
-  <div style="text-align:right;">Targets self</div>\
-</div><br>\
-BLOCK<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Grants 250% bonus resistance to all damage while blocking.</li>\
-  <li>Your movement speed is reduced by 100% and your resistance to Hold and Knock effects is increased by 100%.</li>\
-  <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
-  <li>Has a 25% chance to apply Chill to attackers in melee range.</li>\
-  <li>Chill reduces the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-</ul>';
+const chilledForm = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  BUFF - FORM - EGO or DEXTERITY<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Grants stacks of Chilled Form for each rank of this power you have.</li>\
+    <li>You gain another instance of Chilled Form whenever your damaging Ranged attacks is partially maintained, partially charged, or used from more than 25ft away.</li>\
+    <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
+    <li>Each stack of Chilled Form primarily increases your Ranged damage and provides a smaller increase to your Melee damage.</li>\
+    <li>When you gain a stack you also gain Energy.</li>\
+    <li>While this power is active, your energy costs are increased by 10%.</li>\
+    <li>Scales with your EGO or DEXTERITY, whichever is higher.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Shield', '<img src="img/power-icons/ice/Ice_IceShield.png" />&nbsp;Ice Shield', 1, 5, pow++, 1, iceShieldHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Chilled Form', '<img src="img/power-icons/ice/Ice_ChilledForm.png" />&nbsp;Chilled Form', 1, 5, pow++, 1, chilledForm.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Frigid Air', 'Frigid Air', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold to the Touch', 'Cold to the Touch', 1, null, null));
 
-const icyEmbraceHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>Instant</div>\
-</div><br>\
-INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
-ENHANCEMENT<br>\
-<ul>\
-  <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-  <li>Whenever you apply or refresh Chill, or when you Shatter an Ice Structure, you gain Energy every 3 sec for 6 sec.</li>\
-  <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
-  <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
-  <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
-</ul>';
+const frigidDetermination = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  BUFF - FORM - DEXTERITY<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Grants stacks of Focus for each rank of this power you have.</li>\
+    <li>You gain another instance of Focus whenever you apply or refresh Chill on a target, or when you Shatter an Ice Structure.</li>\
+    <li>This can occur once every 4 sec and stacks up to 8 times.</li>\
+    <li>Each stack of Focus primarily increases your Melee damage and provides a smaller increase to your Ranged damage.</li>\
+    <li>When you gain a stack you also gain Energy.</li>\
+    <li>While this power is active, your energy costs are increased by 10%.</li>\
+    <li>Scales with your DEXTERITY.</li>\
+  </ul>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Frigid Determination', '<img src="img/power-icons/ice/Ice_FrigidDetermination.png" />&nbsp;Frigid Determination', 1, 5, pow++, 1, frigidDetermination.power); 
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
+
+const iceShield = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>Every 1 sec<br>Instant</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  BLOCK<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Grants 250% bonus resistance to all damage while blocking.</li>\
+    <li>Your movement speed is reduced by 100% and your resistance to Hold and Knock effects is increased by 100%.</li>\
+    <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
+    <li>Has a 25% chance to apply Chill to attackers in melee range.</li>\
+    <li>Chill reduces the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+  </ul>',
+
+  frigidAir:
+  '<div>\
+  FRIGID AIR<br>\
+  <ul>\
+    <li>Allows the <strong>Chill</strong> effect to apply at a greater range.</li>\
+  </ul>\
+  </div>',
+
+  coldToTheTouch:
+  '<div>\
+  COLD TO THE TOUCH<br>\
+  <ul>\
+    <li>Grants a small amount of damage resistance and applies the <strong>Cold Snap</strong> effect after blocking.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Shield', '<img src="img/power-icons/ice/Ice_IceShield.png" />&nbsp;Ice Shield', 1, 5, pow++, 1, iceShield.power); 
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Frigid Air', 'Frigid Air', 2, null, iceShield.frigidAir));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold to the Touch', 'Cold to the Touch', 1, null, iceShield.coldToTheTouch));
+
+const icyEmbrace = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>Instant</div>\
+  </div><br>\
+  INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
+  ENHANCEMENT<br>\
+  <ul>\
+    <li>This power does not need to be slotted in order to function and has no ranks.</li>\
+    <li>Whenever you apply or refresh Chill, or when you Shatter an Ice Structure, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
+    <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
+    <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
+  </ul>'
+};
 
 // Energy Unlock
-dataPower[dataPower.length] = new Power(dataPower.length, 'Icy Embrace', '<img src="img/power-icons/ice/Ice_IcyEmbrace.png" />&nbsp;Icy Embrace', 1, 5, pow++, 1, icyEmbraceHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Icy Embrace', '<img src="img/power-icons/ice/Ice_IcyEmbrace.png" />&nbsp;Icy Embrace', 1, 5, pow++, 1, icyEmbrace.power); 
 dataEnergyUnlockPower[dataPower.length-1] = true;
 
 //------------------------------------------------------------------------------
 // Ice: Tier 2
 //------------------------------------------------------------------------------
 
-const winterGaleHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>34 + 15 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
-  <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
-</div><br>\
-RANGED AOE DAMAGE - CHILL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 90 Cold Damage every 0.5 sec to foes.</li>\
-  <li>Has a 10% chance every hit to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-  <li>If fully maintained, and your target is affected by Chill, applies Hard Frost, causing -18% resistance to Cold Damage for 15 sec.</li>\
-</ul>';
+const winterGale = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>34 + 15 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - CHILL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 90 Cold Damage every 0.5 sec to foes.</li>\
+    <li>Has a 10% chance every hit to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>If fully maintained, and your target is affected by Chill, applies Hard Frost, causing -18% resistance to Cold Damage for 15 sec.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Winter Gale', '<img src="img/power-icons/ice/Ice_WinterGale.png" />&nbsp;Winter Gale', 1, 5, pow++, 2, winterGaleHtml); 
+  gatheringStorm:
+  '<div>\
+  GATHERING STORM<br>\
+  <ul>\
+    <li>This power now <strong>Repels</strong> targets towards you.</li>\
+    <li>Increases your chance to apply <strong>Chill</strong> with this power.</li>\
+  </ul>\
+  </div>',
+
+  hailstorm:
+  '<div>\
+  HAILSTORM<br>\
+  <ul>\
+    <li>This power now deals damage to enemies dealing direct damage to you for the duration of the maintain.</li>\
+    <li>This effect has a chance to apply <strong>Chill</strong> to affected targets.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Winter Gale', '<img src="img/power-icons/ice/Ice_WinterGale.png" />&nbsp;Winter Gale', 1, 5, pow++, 2, winterGale.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Gathering Storm', 'Gathering Storm', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Hailstorm', 'Hailstorm', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Gathering Storm', 'Gathering Storm', 2, null, winterGale.gatheringStorm));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Hailstorm', 'Hailstorm', 2, null, winterGale.hailstorm));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-const iceBurstHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>0.83 sec activate time</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 25 foot Sphere<br>20 seconds recharge</div>\
-</div><br>\
-RANGED AOE DAMAGE - KNOCK - CHILL<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Deals Cold Damage to all targets and they are Knocked Up 17ft.</li>\
-  <li>Creates an Ice Column under the target. After 10 sec, the Ice Column explodes, dealing Cold Damage to up to 5 targets within 10ft.</li>\
-  <li>Has a 10% chance every 1 sec to apply Chill to targets within 25ft, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
-</ul>';
+const iceBurst = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 25 foot Sphere<br>20 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCK - CHILL<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals Cold Damage to all targets and they are Knocked Up 17ft.</li>\
+    <li>Creates an Ice Column under the target. After 10 sec, the Ice Column explodes, dealing Cold Damage to up to 5 targets within 10ft.</li>\
+    <li>Has a 10% chance every 1 sec to apply Chill to targets within 25ft, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Burst', '<img src="img/power-icons/ice/Ice_IceBurst.png" />&nbsp;Ice Burst', 1, 5, pow++, 2, iceBurstHtml); 
+  freezeDirtbag:
+  '<div>\
+  FREEZE, DIRTBAG<br>\
+  <ul>\
+    <li>This power no longer <strong>Knocks Up</strong> targets.</li>\
+    <li>This power now <strong>Paralyzes</strong> the primary target.</li>\
+    <li><strong>Stuns</strong> secondary targets.</li>\
+  </ul>\
+  </div>',
+
+  coldDrift:
+  '<div>\
+  COLD DRIFT<br>\
+  <ul>\
+    <li>This power now has a chance to trap nearby targets in an <strong>Ice Cage</strong>.</li>\
+    <li>Chance to refresh the effects of your <strong>Hard Frost</strong> on targets near the <strong>Ice Column</strong>.</li>\
+    <li><strong>Ice Cage</strong> is a type of <strong>Ice Structure</strong>.</li>\
+  </ul>\
+  </div>',
+
+  frozenWonderland:
+  '<div>\
+  FROZEN WONDERLAND<br>\
+  <ul>\
+    <li>Creates a <strong>Healing Rune</strong> on your primary target for a short duration, which heals nearby allies.</li>\
+    <li>You cannot have more than one <strong>Rune</strong> out at a time.</li>\
+    <li>Summoning this <strong>Rune</strong> counts as applying an <strong>Enchantment</strong>.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Burst', '<img src="img/power-icons/ice/Ice_IceBurst.png" />&nbsp;Ice Burst', 1, 5, pow++, 2, iceBurst.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Freeze, Dirtbag', 'Freeze, Dirtbag', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold Drift', 'Cold Drift', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Frozen Wonderland', 'Frozen Wonderland', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Freeze, Dirtbag', 'Freeze, Dirtbag', 2, null, iceBurst.freezeDirtbag));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold Drift', 'Cold Drift', 2, null, iceBurst.coldDrift));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Frozen Wonderland', 'Frozen Wonderland', 2, null, iceBurst.frozenWonderland));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const snowStormHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>45 + 22 Energy every 1 sec<br>1 sec activate time (5 max)</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
-</div><br>\
-RANGED AOE DAMAGE - PERCEPTION DEBUFF - CHILL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 151 Cold Damage every 1 sec to foes in the target area.</li>\
-  <li>Has a 10% chance every 1 sec to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-  <li>After 1 sec, reduces the Perception of affected targets by 500% while this power is maintained.</li>\
-</ul>';
+const snowStorm = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>45 + 22 Energy every 1 sec<br>1 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - PERCEPTION DEBUFF - CHILL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 151 Cold Damage every 1 sec to foes in the target area.</li>\
+    <li>Has a 10% chance every 1 sec to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>After 1 sec, reduces the Perception of affected targets by 500% while this power is maintained.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Snow Storm', '<img src="img/power-icons/ice/Ice_SnowStorm.png" />&nbsp;Snow Storm', 1, 5, pow++, 2, snowStormHtml); 
+  eyeOfTheStorm:
+  '<div>\
+  EYE OF THE STORM<br>\
+  <ul>\
+    <li>Causes Snow Storm to deal additional damage to targets that attack while affected by the storm.</li>\
+  </ul>\
+  </div>',
+
+  hardFrost:
+  '<div>\
+  HARD FROST<br>\
+  <ul>\
+    <li>Fully maintaining this power applies <strong>Hard Frost</strong> to affected targets, reducing their resistance to <strong>Cold</strong> damage for a short time.</li>\
+  </ul>\
+  </div>',
+
+  freezeDry:
+  '<div>\
+  FREEZE DRY<br>\
+  <ul>\
+    <li>When fully maintained, this power now <strong>Paralyzes</strong> affected targets.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Snow Storm', '<img src="img/power-icons/ice/Ice_SnowStorm.png" />&nbsp;Snow Storm', 1, 5, pow++, 2, snowStorm.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Eye of the Storm', 'Eye of the Storm', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Hard Frost', 'Hard Frost', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Freeze Dry', 'Freeze Dry', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Eye of the Storm', 'Eye of the Storm', 2, null, snowStorm.eyeOfTheStorm));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Hard Frost', 'Hard Frost', 2, null, snowStorm.hardFrost));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Freeze Dry', 'Freeze Dry', 2, null, snowStorm.freezeDry));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
-const coldShoulderHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>1 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet<br>45 seconds recharge</div>\
-</div><br>\
-THREAT WIPE - STEALTH<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Wipes your threat from your target.</li>\
-  <li>Places you in Stealth for 4 sec.</li>\
-  <li>Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
-</ul>';
+const coldShoulder = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>45 seconds recharge</div>\
+  </div><br>\
+  THREAT WIPE - STEALTH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Wipes your threat from your target.</li>\
+    <li>Places you in Stealth for 4 sec.</li>\
+    <li>Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Cold Shoulder', '<img src="img/power-icons/ice/Ice_ColdShoulder.png" />&nbsp;Cold Shoulder', 1, 5, pow++, 2, coldShoulderHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Cold Shoulder', '<img src="img/power-icons/ice/Ice_ColdShoulder.png" />&nbsp;Cold Shoulder', 1, 5, pow++, 2, coldShoulder.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const iceBarrierHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>0.83 sec activate time</div>\
-  <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
-</div><br>\
-ACTIVE DEFENSE - COLD SNAP<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Creates 3 Ice Barriers near you for 30 sec.</li>\
-  <li>Each Ice Barrier grants you +20% resistance to all damage and 100% resistance to Knock effects. This effect is doubled if you are affected by Cold Snap.</li>\
-  <li>Creates a Healing Rune at your location, which heals nearby allies within 15ft for +Health Points every 1 sec for 30 sec.</li>\
-  <li>Once an Ice Barrier expires, deals Cold Damage to up to 5 targets within 10ft.</li>\
-  <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
-</ul>';
+const iceBarrier = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE DEFENSE - COLD SNAP<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates 3 Ice Barriers near you for 30 sec.</li>\
+    <li>Each Ice Barrier grants you +20% resistance to all damage and 100% resistance to Knock effects. This effect is doubled if you are affected by Cold Snap.</li>\
+    <li>Creates a Healing Rune at your location, which heals nearby allies within 15ft for +Health Points every 1 sec for 30 sec.</li>\
+    <li>Once an Ice Barrier expires, deals Cold Damage to up to 5 targets within 10ft.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Barrier', '<img src="img/power-icons/ice/Ice_IceBarrier.png" />&nbsp;Ice Barrier', 1, 5, pow++, 2, iceBarrierHtml); 
+  unchained:
+  '<div>\
+  UNCHAINED<br>\
+  <ul>\
+    <li>Using this power will help you break free of <strong>Holds</strong>, <strong>Roots</strong>, or <strong>Disables</strong>.</li>\
+    <li>Applies a stack of <strong>Knock</strong> and <strong>Hold</strong> resistance to you.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Barrier', '<img src="img/power-icons/ice/Ice_IceBarrier.png" />&nbsp;Ice Barrier', 1, 5, pow++, 2, iceBarrier.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchained', 'Unchained', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchained', 'Unchained', 2, null, iceBarrier.unchained));
 
 //------------------------------------------------------------------------------
 // Ice: Tier 3
 //------------------------------------------------------------------------------
 
-const icicleSpearHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>41-104 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
-  <div style="text-align:right;">Targets foe<br>100 feet</div>\
-</div><br>\
-RANGED DAMAGE - CHILL<br><br>\
-CHARGE<br>\
-<ul>\
-  <li>Deals 254-904 Cold Damage to your target.</li>\
-  <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-</ul>';
+const icicleSpear = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>41-104 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  RANGED DAMAGE - CHILL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 254-904 Cold Damage to your target.</li>\
+    <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Icicle Spear', '<img src="img/power-icons/ice/Ice_IcicleSpear.png" />&nbsp;Icicle Spear', 1, 5, pow++, 3, icicleSpearHtml); 
+  bitterCold:
+  '<div>\
+  BITTER COLD<br>\
+  <ul>\
+    <li>Boosts this power\\\'s base damage for each <strong>Chilled</strong> stack on the target.</li>\
+  </ul>\
+  </div>',
+
+  freezerBurn:
+  '<div>\
+  FREEZER BURN<br>\
+  <ul>\
+    <li>Gives <strong>Icicle Spear</strong> a chance to apply <strong>Clinging Flames</strong>.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Icicle Spear', '<img src="img/power-icons/ice/Ice_IcicleSpear.png" />&nbsp;Icicle Spear', 1, 5, pow++, 3, icicleSpear.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Bitter Cold', 'Bitter Cold', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Freezer Burn', 'Freezer Burn', 1, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Bitter Cold', 'Bitter Cold', 2, null, icicleSpear.bitterCold));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Freezer Burn', 'Freezer Burn', 1, null, icicleSpear.freezerBurn));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
-const avalancheHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>33 + 21 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
-  <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
-</div><br>\
-RANGED AOE DAMAGE - CHILL<br><br>\
-MAINTAIN<br>\
-<ul>\
-  <li>Deals 141 Cold Damage every 0.5 sec and has a 10% chance to Knock Down affected targets.</li>\
-  <li>Has a 15% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-</ul>';
+const avalanche = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>33 + 21 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - CHILL<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Deals 141 Cold Damage every 0.5 sec and has a 10% chance to Knock Down affected targets.</li>\
+    <li>Has a 15% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Avalanche', '<img src="img/power-icons/ice/Ice_Avalanche.png" />&nbsp;Avalanche', 1, 5, pow++, 3, avalancheHtml); 
+  serratedShards:
+  '<div>\
+  SERRATED SHARDS<br>\
+  <ul>\
+    <li>Increases damage against targets trapped in <strong>Ice Structures</strong>.</li>\
+  </ul>\
+  </div>',
+
+  coldEmbrace:
+  '<div>\
+  COLD EMBRACE<br>\
+  <ul>\
+    <li>Consumes any <strong>Chill</strong> stacks you have on your targets and heals you for each one consumed.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Avalanche', '<img src="img/power-icons/ice/Ice_Avalanche.png" />&nbsp;Avalanche', 1, 5, pow++, 3, avalanche.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Serrated Shards', 'Serrated Shards', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold Embrace', 'Cold Embrace', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Serrated Shards', 'Serrated Shards', 2, null, avalanche.serratedShards));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold Embrace', 'Cold Embrace', 2, null, avalanche.coldEmbrace));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Cryoclysm', 'PVD: Cryoclysm', 0, null, null));
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Arctic Beast', '<img src="img/power-icons/ice/Ice_ArcticBeast.png" />&nbsp;Arctic Beast', 1, 5, pow++, 3, null); 
+const arcticBeast = {
+  power: 
+  '<div>...</div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Arctic Beast', '<img src="img/power-icons/ice/Ice_ArcticBeast.png" />&nbsp;Arctic Beast', 1, 5, pow++, 3, arcticBeast.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const auroraHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>2 sec activate time</div>\
-  <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
-</div><br>\
-SELF RESURRECTION - HEAL - COLD SNAP<br><br>\
-CLICK<br>\
-<ul>\
-  <li>Can only be used while Defeated.</li>\
-  <li>You are brought back from defeat and healed for +50% Health Points.</li>\
-  <li>For the next 20 sec you gain +8.3% Health Points upon defeating any enemy.</li>\
-  <li>For the next 20 sec you apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-  <li>Grants you the Cold Snap buff for 10 sec.</li>\
-  <li>Places all Resurrection powers on a 300 second cooldown.</li>\
-</ul>';
+const aurora = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>2 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
+  </div><br>\
+  SELF RESURRECTION - HEAL - COLD SNAP<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Can only be used while Defeated.</li>\
+    <li>You are brought back from defeat and healed for +50% Health Points.</li>\
+    <li>For the next 20 sec you gain +8.3% Health Points upon defeating any enemy.</li>\
+    <li>For the next 20 sec you apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Grants you the Cold Snap buff for 10 sec.</li>\
+    <li>Places all Resurrection powers on a 300 second cooldown.</li>\
+  </ul>'
+};
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Aurora', '<img src="img/power-icons/ice/Ice_Aurora.png" />&nbsp;Aurora', 1, 5, pow++, 3, auroraHtml); 
+dataPower[dataPower.length] = new Power(dataPower.length, 'Aurora', '<img src="img/power-icons/ice/Ice_Aurora.png" />&nbsp;Aurora', 1, 5, pow++, 3, aurora.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
-const vaporFormHtml = '<div style="display:flex; justify-content:space-between;">\
-  <div>Ice<br>Every 1 sec<br>Instant activate time (8 max)</div>\
-  <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
-</div><br>\
-THREAT WIPE<br><br>\
-TOGGLE<br>\
-<ul>\
-  <li>When activated, wipes your threat from up to 10 targets within 50ft of you.</li>\
-  <li>Places you in Stealth for 2 sec.</li>\
-  <li>While transformed your resistance to damage is increased by 83%.</li>\
-  <li>You gain Flight and +58 Flight Speed.</li>\
-  <li>Foes that damage you are affected by Chill, reducing their movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-  <li>You cannot use any powers while transformed. Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
-</ul>';
+const vaporForm = {
+  power: 
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Ice<br>Every 1 sec<br>Instant activate time (8 max)</div>\
+    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  THREAT WIPE<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>When activated, wipes your threat from up to 10 targets within 50ft of you.</li>\
+    <li>Places you in Stealth for 2 sec.</li>\
+    <li>While transformed your resistance to damage is increased by 83%.</li>\
+    <li>You gain Flight and +58 Flight Speed.</li>\
+    <li>Foes that damage you are affected by Chill, reducing their movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>You cannot use any powers while transformed. Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
+  </ul>',
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Vapor Form', '<img src="img/power-icons/ice/Ice_VaporForm.png" />&nbsp;Vapor Form', 1, 5, pow++, 3, vaporFormHtml); 
+  invigoratingChill:
+  '<div>\
+  INVIGORATING CHILL<br>\
+  <ul>\
+    <li>When this power expires, applies <strong>Cold Snap</strong> to you, which improves the effects of various Ice abilities.</li>\
+  </ul>\
+  </div>',
+
+  chillingOut:
+  '<div>\
+  CHILLING OUT<br>\
+  <ul>\
+    <li>Applies <strong>Restoration</strong>, which gives you a heal over time.</li>\
+    <li>Heals for an additional amount if your health is low.</li>\
+    <li>Has a short internal cooldown after use.</li>\
+  </ul>\
+  </div>'
+};
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Vapor Form', '<img src="img/power-icons/ice/Ice_VaporForm.png" />&nbsp;Vapor Form', 1, 5, pow++, 3, vaporForm.power); 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Invigorating Chill', 'Invigorating Chill', 2, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Chilling Out', 'Chilling Out', 2, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Invigorating Chill', 'Invigorating Chill', 2, null, vaporForm.invigoratingChill));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Chilling Out', 'Chilling Out', 2, null, vaporForm.chillingOut));
 
 //------------------------------------------------------------------------------
 // Ice: Ultimates
