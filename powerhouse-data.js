@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-24 17:45:00 (woof-wolf)>
+ * Time-stamp: <2026-05-24 18:00:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -981,8 +981,8 @@ var dataReplacePower = [];
 //------------------------------------------------------------------------------
 
 // Generic Rank placeholder advantages for when the rank info isn't verified/customized
-dataPowerAlias['R2'] = new PowerAlias('R2', 'Rank 2', 'Rank 2', 'Increases damage done or strength of power.');
-dataPowerAlias['R3'] = new PowerAlias('R3', 'Rank 3', 'Rank 3', 'Increases damage done or strength of power.');
+dataPowerAlias['R2'] = new PowerAlias('R2', 'Rank 2', 'Rank 2', '<div>Increases damage done or strength of power.</div>');
+dataPowerAlias['R3'] = new PowerAlias('R3', 'Rank 3', 'Rank 3', '<div>Increases damage done or strength of power.</div>');
 
 /* PowerAdvantage = function(id, name, desc, points, dependency, tip)
 // id = id number of this advantage, ex: 1st advantage, 2nd advantage, 3rd advantage...

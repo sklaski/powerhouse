@@ -9,7 +9,7 @@
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.5';
+var version = '1.3.5a';
 var releaseDate = '2026-05-24';
 var buildVersion = 3;
 
