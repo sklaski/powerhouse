@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-26 7:10:00 (woof-wolf)>
+ * Time-stamp: <2026-05-26 7:30:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -15122,7 +15122,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Choke', '<img src
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Garroting Grip', 'Garroting Grip', 2, null, egoChoke.power));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Garroting Grip', 'Garroting Grip', 2, null, egoChoke.garrotingGrip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
@@ -15151,7 +15151,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Hold', '<img src=
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mass Effect', 'Mass Effect', 2, null, egoHold.power));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mass Effect', 'Mass Effect', 2, null, egoHold.massEffect));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const egoSurge = {
