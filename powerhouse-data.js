@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-26 7:45:00 (woof-wolf)>
+ * Time-stamp: <2026-05-26 8:15:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1794,15 +1794,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 const thunderstrike = {
   power: 
   '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+    <div>Electricity<br>36-81 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - ARC - CIRCUIT<br><br>\
   CHARGE<br>\
   <ul>\
-    <li>Deals Electrical Damage to your primary target and Electrical Damage to secondary targets.</li>\
-    <li>When hitting a target affected by Negative Ions, consumes Negative Ions and Arcs to a target within 25 feet, dealing Electrical Damage to that target.</li>\
-    <li>After 2 sec applies Negative Ions to the main target, and has a chance based on charge time to apply it to additional targets.</li>\
+    <li>Deals 212-603 Electrical Damage to your primary target and 141-402 Electrical Damage to secondary targets.</li>\
+    <li>When hitting a target affected by Negative Ions, consumes Negative Ions and Arcs to a target within 25 feet, dealing 48 Electrical Damage to that target.</li>\
+    <li>After 2 sec, applies Negative Ions to the main target, and has a 33-100% chance based on charge time to apply it to additional targets.</li>\
   </ul>',
 
   ionicCompression:
