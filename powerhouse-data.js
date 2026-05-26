@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-26 00:25:00 (woof-wolf)>
+ * Time-stamp: <2026-05-26 7:10:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -2696,7 +2696,7 @@ const hearth = {
     <div>Fire<br>Every 3 sec</div>\
     <div style="text-align:right;">Affects teammate (10 max)<br>100 foot Team</div>\
   </div><br>\
-  SLOTTED OFFENSIVE PASSIVE<br><br>\
+  SLOTTED SUPPORT PASSIVE<br><br>\
   PASSIVE<br>\
   <ul>\
     <li>You deal additional Elemental Damage.</li>\
@@ -21129,7 +21129,7 @@ const starBarrage = {
   </div>'
 };
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Star Barrage', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_StarBarrage.png" />&nbsp;Star Barrage', 6, 22, pow++, 2, starBarrage);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Star Barrage', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_StarBarrage.png" />&nbsp;Star Barrage', 6, 22, pow++, 2, starBarrage.power);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));

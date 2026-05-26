@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-26 00:25:00 (woof-wolf)>
+ * Time-stamp: <2026-05-26 7:10:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.6';
+var version = '1.3.6a';
 var releaseDate = '2026-05-26';
 var buildVersion = 3;
 
@@ -33,7 +33,7 @@ var prefFontFamilyList = ['Andale Mono', 'Arial', 'Comic Sans MS', 'Courier New'
 var prefFontFamily = 'Trebuchet MS';
 var prefFontSize = 100;
 var prefPopupTipsList = ['Off', 'When Selecting', 'On'];
-var prefPopupTips = parseInt(2);
+var prefPopupTips = 2;
 var prefConfirmSelections = false;
 var prefAnalytics = false;
 
