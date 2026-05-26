@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-26 7:30:00 (woof-wolf)>
+ * Time-stamp: <2026-05-26 7:45:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -2564,7 +2564,7 @@ const heatWave = {
   <ul>\
     <li>Deals 201 Fire Damage every 1 sec to your target.</li>\
     <li>Has a 10% chance to apply Clinging Flames to the target, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
-    <li>After maintaining this power for 1 sec, Incapacitates the target and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
+    <li>After maintaining this power for 1 second, it Incapacitates the target and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
   </ul>',
 
   engulfingFlames:
@@ -15105,7 +15105,7 @@ const egoChoke = {
   <ul>\
     <li>Deals 77-269 Ego Damage (based on pulse) to the target.</li>\
     <li>You have a 20% chance every hit to gain a stack of Ego Leech.</li>\
-    <li>After maintaining this power for 1 second, it Incapacitates the target for up to and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
+    <li>After maintaining this power for 1 second, it Incapacitates the target and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
   </ul>',
 
   garrotingGrip:
@@ -15896,7 +15896,7 @@ const egoStorm = {
   MAINTAIN<br>\
   <ul>\
     <li>Deals 68-237 Ego Damage (based on pulse) to nearby targets.</li>\
-    <li>After maintaining this power for 1 sec, it Incapacitates the target for up to and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
+    <li>After maintaining this power for 1 second, it Incapacitates the target and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
   </ul>',
 
   malevolentManifestation:
@@ -20667,7 +20667,7 @@ const bindingOfAratron = {
   MAINTAIN<br>\
   <ul>\
     <li>Deals 181 Magic Damage.</li>\
-    <li>After maintaining this power for 1 second, it Incapacitates the target for up to and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
+    <li>After maintaining this power for 1 second, it Incapacitates the target and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
   </ul>',
 
   tenableBonds:
@@ -23154,7 +23154,7 @@ const cripplingCoils = {
   MAINTAIN<br>\
   <ul>\
     <li>Deals 175 Toxic Damage and has a 15% chance to apply Deadly Poison to your target.</li>\
-    <li>After maintaining this power for 1 second, it Incapacitates the target for up to and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
+    <li>After maintaining this power for 1 second, it Incapacitates the target and refreshes a portion of the duration and durability of the Incapacitate every 1 sec you maintain it.</li>\
     <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
   </ul>',
 
