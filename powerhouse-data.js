@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-27 9:15:00 (woof-wolf)>
+ * Time-stamp: <2026-05-27 15:00:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -5862,8 +5862,38 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const snapShot = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>SNAP SHOT<br>Archery<br><br>RANGED DAMAGE - COMBO<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>10 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 90 Piercing Damage to your target.</li>\
+    <li>Deals an additional 23 Piercing Damage to targets below 25% Health.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>9.2 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 139 Piercing Damage to your target.</li>\
+    <li>Deals an additional 35 Piercing Damage to targets below 25% Health.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>8.2 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 203 Piercing Damage to your target.</li>\
+    <li>Deals an additional 51 Piercing Damage to targets below 25% Health.</li>\
+    <li>Disorients your target, causing their damage to be reduced by 10% and their movement speed to be reduced by 50% for 12 sec.</li>\
+  </ul>',
 
   finishHim:
   '<div>\
@@ -7168,8 +7198,45 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const bulletBallet = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>BULLET BALLET<br>Munitions<br><br>MELEE DAMAGE - COMBO<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>30 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 88 Crushing Damage twice.</li>\
+    <li>Has a 50% chance to Root the target for 13 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>27 Energy cost<br>0.7 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (3 max)<br>10 feet; 2 foot Cylinder</div>\
+  </div>\
+  <ul>\
+    <li>Deals 111 Piercing Damage three times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>24 Energy cost<br>0.8 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 108 Crushing Damage three times.</li>\
+    <li>Has a 30% chance to Stun the target for 1.7 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FOURTH ACTIVATION<br>24 Energy cost<br>0.9 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (3 max)<br>10 feet; 2 foot Cylinder</div>\
+  </div>\
+  <ul>\
+    <li>Deals 601 Piercing Damage.</li>\
+    <li>Refreshes all stacks of Furious on you.</li>\
+  </ul>',
 
   notWithoutIncident:
   '<div>\
@@ -10298,8 +10365,41 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'It Burns
 //------------------------------------------------------------------------------
 
 const lightspeedStrike = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>LIGHTSPEED STRIKE<br>Laser Sword<br><br>MELEE DAMAGE - PLASMA BURN<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If you are affected by Unity, your chance to apply Plasma Burn on each hit is doubled.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>18 Energy cost<br>0.3 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 84 Particle Damage.</li>\
+    <li>Has a 15% chance to apply Plasma Burn to your targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>16 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 129 Particle Damage.</li>\
+    <li>Has a 15% chance to apply Plasma Burn to your targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>14 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 254 Particle Damage.</li>\
+    <li>Has a 50% chance to apply Plasma Burn to your targets.</li>\
+  </ul>',
 
   particleAcceleration:
   '<div>\
@@ -11774,8 +11874,35 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const bladeTempest = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>BLADE TEMPEST<br>Dual Blades<br><br>MELEE AOE DAMAGE - COMBO - DEBUFF<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>23 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 200 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 118 Slashing Damage to all targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>21 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 200 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 136 Slashing Damage to all targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>18 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 200 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 267 Slashing Damage to targets.</li>\
+    <li>Applies Shredded, causing -18% resistance to Slashing Damage for 15 sec.</li>\
+  </ul>',
 
   crashingCrescendo:
   '<div>\
@@ -12298,8 +12425,35 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const vipersFangs = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>VIPER\\\'S FANGS<br>Fighting Claws<br><br>MELEE AOE DAMAGE - SUDDEN STRIKE - COMBO<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>20 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 118 Slashing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>18 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 136 Slashing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>16 Energy cost<br>0.7 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 279 Slashing Damage to targets.</li>\
+    <li>Applies Sudden Strike for up to 10 sec, increasing the Critical Severity of your next critical hit by 10%. Expires once you get a critical hit.</li>\
+  </ul>',
 
   cobraStrike:
   '<div>\
@@ -12770,8 +12924,34 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const rendAndTear = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>REND AND TEAR<br>Fighting Claws<br><br>MELEE AOE DAMAGE - FURIOUS - COMBO</div>\
+  </div><br>\
+  <div class="popup-header">\
+    <div>33 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 141 Slashing Damage and Knocks Down your primary target. Has a 20% chance to Knock Down other targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>30 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 60 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 162 Slashing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>26 Energy cost<br>0.7 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 332 Slashing Damage and applies Furious to you, increasing your chance to critically hit by 1.5% for 12 sec. Stacks up to 3 times.</li>\
+    <li>When taking damage, Furious grants you Willpower, which heals you for 300 health over 3 sec.</li>\
+  </ul>',
 
   noCodeOfConduct:
   '<div>\
@@ -13018,8 +13198,41 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const reapersCaress = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>REAPER\\\'S CARESS<br>Single Blade<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If you are affected by Focus, your chance to apply Bleed on each hit is doubled.</li>\
+    <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>21 Energy cost<br>0.3 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 240 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 86 Slashing Damage to targets.</li>\
+    <li>Has a 15% chance to cause your target to start Bleeding.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>19 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 240 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 131 Slashing Damage to targets.</li>\
+    <li>Has a 25% chance to cause your target to start Bleeding.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>17 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 360 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 193 Slashing Damage twice to targets.</li>\
+    <li>Has a 50% chance to cause your target to start Bleeding.</li>\
+  </ul>',
 
   cleavingStrikes:
   '<div>\
@@ -13062,8 +13275,40 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const slash = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>SLASH<br>Single Blade<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>18 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 114 Slashing Damage to targets.</li>\
+    <li>Has a 30% chance to cause your target to start Bleeding.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>16 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 131 Slashing Damage to targets.</li>\
+    <li>Has a 30% chance to cause your target to start Bleeding.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>14 Energy cost<br>0.63 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 242 Slashing Damage to targets.</li>\
+    <li>Has a 60% chance to cause your target to start Bleeding.</li>\
+  </ul>',
 
   serratedBlade:
   '<div>\
@@ -14833,8 +15078,42 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 //------------------------------------------------------------------------------
 
 const egoWeaponry = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>EGO WEAPONRY<br>Telekinesis<br><br>MELEE AOE DAMAGE - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If you are affected by Ego Infusion, your chance to gain a stack of Ego Leech on each hit is guaranteed.</li>\
+    <li>Your chance to Critically Hit with this power is increased by 5% for each stack of Ego Leech you have.</li>\
+    <li>Ego Leech decreases the cost of your MENTALIST abilities by 5% for 15 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>15 Energy cost<br>0.35 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 98 Ego Damage.</li>\
+    <li>You have a 25% chance to gain a stack of Ego Leech.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>13 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 129 Ego Damage.</li>\
+    <li>You have a 25% chance to gain a stack of Ego Leech.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>12 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 158 Ego Damage.</li>\
+    <li>You have a 50% chance to gain a stack of Ego Leech.</li>\
+  </ul>',
 
   thoughtSever:
   '<div>\
@@ -14882,8 +15161,42 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Toxic Blades', 'PVD: Toxic Blades', 0, null, null));
 
 const telekineticStrike = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>TELEKINETIC STRIKE<br>Telekinesis<br><br>RANGED DAMAGE - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If you are affected by Ego Infusion, your chance to gain a stack of Ego Leech on each hit is guaranteed.</li>\
+    <li>Your chance to critically strike with this power is increased by 5% for each stack of Ego Leech you have.</li>\
+    <li>Ego Leech decreases the cost of your MENTALIST abilities by 5% for 15 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>8 Energy cost<br>0.35 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 61 Ego Damage to your target.</li>\
+    <li>You have a 25% chance to gain a stack of Ego Leech.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>7.2 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 83 Ego Damage to your target.</li>\
+    <li>You have a 25% chance to gain a stack of Ego Leech.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>6.4 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 203 Ego Damage to your target.</li>\
+    <li>You have a 50% chance to gain a stack of Ego Leech.</li>\
+  </ul>',
 
   stressedOut:
   '<div>\
@@ -16882,8 +17195,41 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 //------------------------------------------------------------------------------
 
 const cleave = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>CLEAVE<br>Heavy Weapon<br><br>MELEE AOE DAMAGE - KNOCK DOWN - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If your primary target is Disoriented, your chance to Knock on each hit is guaranteed.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>26 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 360 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 222 Crushing Damage to targets.</li>\
+    <li>Has a 50% chance to Knock Down foes.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>24 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 360 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 255 Crushing Damage to targets.</li>\
+    <li>Has a 50% chance to Knock Down foes.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>21 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 50 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 184 Crushing Damage and deals 184 Fire Damage to targets.</li>\
+    <li>Knocks Down your primary target. Has a 50% chance to Knock Down other foes.</li>\
+    <li>If an affected target is immune to Knock effects, has a 50% chance against your primary target and a 20% chance against other targets to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. This effect can leap to other nearby foes.</li>\
+  </ul>',
 
   defensiveStance:
   '<div>\
@@ -17705,8 +18051,38 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 //------------------------------------------------------------------------------
 
 const onslaught = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>ONSLAUGHT<br>Earth<br><br>MELEE AOE DAMAGE - STAGGER - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>28 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 207 Crushing Damage and has a 25% chance to Stagger affected targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>25 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 238 Crushing Damage and has a 25% chance to Stagger affected targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>22 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 347 Crushing Damage and has a 50% chance to Stagger affected targets.</li>\
+    <li>Chance to apply Stagger is guaranteed against your primary target.</li>\
+  </ul>',
 
   excessiveForce:
   '<div>\
@@ -18231,8 +18607,36 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const beatdown = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>BEATDOWN<br>Might<br><br>MELEE DAMAGE - KNOCK - COMBO<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>21 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 155 Crushing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 178 Crushing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>16 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 280 Crushing Damage.</li>\
+    <li>Knocks Down your targets.</li>\
+    <li>Knocks Up your primary target 17 ft if they are affected by a Hold effect or Hold Resistance.</li>\
+  </ul>',
 
   blindsideBlow:
   '<div>\
@@ -18266,8 +18670,38 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const defensiveCombo = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>DEFENSIVE COMBO<br>Might<br><br>MELEE DAMAGE - SHIELD - COMBO<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>20 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 113 Crushing Damage.</li>\
+    <li>Absorbs up to 375 damage. This effect lasts for up to 3 sec and can stack.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>18 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 129 Crushing Damage.</li>\
+    <li>Absorbs up to 450 damage. This effect lasts for up to 3 sec and can stack.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>16 Energy cost<br>0.7 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 266 Crushing Damage.</li>\
+    <li>Absorbs up to 525 damage. This effect lasts for up to 3 sec and can stack.</li>\
+    <li>Has a 50% chance to Knock Down your primary target and a 25% chance against other targets. This chance is doubled if you are affected by Enraged.</li>\
+  </ul>',
 
   surgeOfStrength:
   '<div>\
@@ -18561,8 +18995,35 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
 
 const ironChain = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>IRON CHAIN<br>Might<br><br>MELEE DAMAGE - KNOCK - COMBO<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>16 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>25 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 134 Crushing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>15 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>25 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 154 Crushing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>13 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (3 max)<br>25 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 361 Crushing Damage.</li>\
+    <li>Affected targets are Knocked Up 10 ft.</li>\
+  </ul>',
 
   demolition:
   '<div>\
@@ -22610,8 +23071,41 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const shred = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>SHRED<br>Bestial Supernatural<br><br>MELEE AOE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If you are affected by Enrage, your chance to apply Bleed on each hit is doubled.</li>\
+    <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 141 Slashing Damage.</li>\
+    <li>Has a 25% chance to cause the target to Bleed.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>16 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 162 Slashing Damage.</li>\
+    <li>Has a 25% chance to cause the target to Bleed.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>15 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 240 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 254 Slashing Damage.</li>\
+    <li>Has a 50% chance to cause the target to Bleed.</li>\
+  </ul>',
 
   penetratingStrikes:
   '<div>\
@@ -22644,8 +23138,40 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Scorching Claw', 'PVD: Scorching Claw', 0, null, null));
 
 const barbedChain = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>BARBED CHAIN<br>Bestial Supernatural<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>14 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>25 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 127 Slashing Damage.</li>\
+    <li>Has a 25% chance to apply Bleed to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>13 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>25 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 146 Slashing Damage.</li>\
+    <li>Has a 25% chance to apply Bleed to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>11 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (3 max)<br>25 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 342 Slashing Damage.</li>\
+    <li>Has a 50% chance to apply Bleed to your target.</li>\
+  </ul>',
 
   sever:
   '<div>\
@@ -22826,8 +23352,41 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fire Fangs', 'PVD: Fire Fangs', 0, null, null));
 
 const frenzy = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>FRENZY<br>Bestial Supernatural<br><br>MELEE AOE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If you are affected by Enrage, your chance to apply Bleed on each hit is doubled.</li>\
+    <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>24 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 141 Slashing Damage.</li>\
+    <li>Has a 15% chance to apply Bleed.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>22 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 162 Slashing Damage.</li>\
+    <li>Has a 15% chance to apply Bleed.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>19 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 190 Slashing Damage.</li>\
+    <li>Has a 50% chance to apply Bleed.</li>\
+  </ul>',
 
   fearSense:
   '<div>\
@@ -23672,8 +24231,40 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const lash = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>LASH<br>Infernal Supernatural<br><br>RANGED DAMAGE - POISON - COMBO<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>11 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 90 Toxic Damage.</li>\
+    <li>Has a 25% chance to apply Deadly Poison to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>9.9 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 104 Toxic Damage.</li>\
+    <li>Has a 25% chance to apply Deadly Poison to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>8.8 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 244 Toxic Damage.</li>\
+    <li>Has a 50% chance to apply Deadly Poison to your target.</li>\
+  </ul>',
 
   decay:
   '<div>\
