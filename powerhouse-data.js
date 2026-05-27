@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-26 8:15:00 (woof-wolf)>
+ * Time-stamp: <2026-05-27 00:50:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -258,7 +258,7 @@ dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, null, null, null, 0, null)
 
 // Blue CAMS
 
-const blueTier1Html = '<div style="display:flex; justify-content:space-between;">\
+const blueTier1Html = '<div class="popup-header">\
 <div>Blue Tier 1<br>20 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -269,7 +269,7 @@ const blueTier1Html = '<div style="display:flex; justify-content:space-between;"
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 1', '<img src="img/cams-icons/CAMS_BlueT1.png" />&nbsp;Blue Tier 1', 1, blueTier1Html);
 
-const blueTier2Html = '<div style="display:flex; justify-content:space-between;">\
+const blueTier2Html = '<div class="popup-header">\
 <div>Blue Tier 2<br>100 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -280,7 +280,7 @@ const blueTier2Html = '<div style="display:flex; justify-content:space-between;"
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 2', '<img src="img/cams-icons/CAMS_BlueT2.png" />&nbsp;Blue Tier 2', 2, blueTier2Html);
 
-const blueTier3Html = '<div style="display:flex; justify-content:space-between;">\
+const blueTier3Html = '<div class="popup-header">\
 <div>Blue Tier 3<br>420 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -291,7 +291,7 @@ const blueTier3Html = '<div style="display:flex; justify-content:space-between;"
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 3', '<img src="img/cams-icons/CAMS_BlueT3.png" />&nbsp;Blue Tier 3', 3, blueTier3Html);
 
-const blueTier4Html = '<div style="display:flex; justify-content:space-between;">\
+const blueTier4Html = '<div class="popup-header">\
 <div>Blue Tier 4<br>1700 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -302,7 +302,7 @@ const blueTier4Html = '<div style="display:flex; justify-content:space-between;"
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 4', '<img src="img/cams-icons/CAMS_BlueT4.png" />&nbsp;Blue Tier 4', 4, blueTier4Html);
 
-const blueTier5Html = '<div style="display:flex; justify-content:space-between;">\
+const blueTier5Html = '<div class="popup-header">\
 <div>Blue Tier 5<br>6820 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -315,7 +315,7 @@ dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Blue Tier 5', '<img src="
 
 // Green CAMS
 
-const greenTier1Html = '<div style="display:flex; justify-content:space-between;">\
+const greenTier1Html = '<div class="popup-header">\
 <div>Green Tier 1<br>20 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -325,7 +325,7 @@ const greenTier1Html = '<div style="display:flex; justify-content:space-between;
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 1', '<img src="img/cams-icons/CAMS_GreenT1.png" />&nbsp;Green Tier 1', 1, greenTier1Html);
 
-const greenTier2Html = '<div style="display:flex; justify-content:space-between;">\
+const greenTier2Html = '<div class="popup-header">\
 <div>Green Tier 2<br>100 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -335,7 +335,7 @@ const greenTier2Html = '<div style="display:flex; justify-content:space-between;
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 2', '<img src="img/cams-icons/CAMS_GreenT2.png" />&nbsp;Green Tier 2', 2, greenTier2Html);
 
-const greenTier3Html = '<div style="display:flex; justify-content:space-between;">\
+const greenTier3Html = '<div class="popup-header">\
 <div>Green Tier 3<br>420 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -345,7 +345,7 @@ const greenTier3Html = '<div style="display:flex; justify-content:space-between;
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 3', '<img src="img/cams-icons/CAMS_GreenT3.png" />&nbsp;Green Tier 3', 3, greenTier3Html);
 
-const greenTier4Html = '<div style="display:flex; justify-content:space-between;">\
+const greenTier4Html = '<div class="popup-header">\
 <div>Green Tier 4<br>1700 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -355,7 +355,7 @@ const greenTier4Html = '<div style="display:flex; justify-content:space-between;
 
 dataCAMS[dataCAMS.length] = new CAMS(dataCAMS.length, 'Green Tier 4', '<img src="img/cams-icons/CAMS_GreenT4.png" />&nbsp;Green Tier 4', 4, greenTier4Html);
 
-const greenTier5Html = '<div style="display:flex; justify-content:space-between;">\
+const greenTier5Html = '<div class="popup-header">\
 <div>Green Tier 5<br>6820 Magical Residue Total</div>\
 </div>\
 <ul>\
@@ -1106,7 +1106,7 @@ const energyStorm = {
   Energy Projector<br><br>\
   CONE DEBUFF - SINGLE TARGET<br><br>\
   CONSUME ENERGY<br>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>Energy Projector<br>18 + 9 Energy every 0.5 sec<br>0.5 sec activate time (1.5 max)</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -1121,7 +1121,7 @@ const energyStorm = {
   </ul>\
   <hr>\
   UNLEASHED TEMPEST<br>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>70 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -1149,7 +1149,7 @@ dataPowerAlias['Energy Storm'] = new PowerAlias('Energy Storm', 'Energy Storm', 
 
 const gravityDriver = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Energy Projector<br>225 Energy cost<br>2.5 sec charge time (2.5 min)<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>80 feet; 40 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -1175,14 +1175,14 @@ dataPowerAlias['Gravity Driver'] = new PowerAlias('Gravity Driver', 'Gravity Dri
 
 const fractalAegis = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Energy Projector<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Energy Projector<br>76 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Affects foe (10 max)<br>25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
   AOE DAMAGE - KNOCK - DEFENSE BUFF<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Cold Damage to nearby targets.</li>\
+    <li>Deals 126 Cold Damage to nearby targets.</li>\
     <li>Knocks Up foes 17ft.</li>\
     <li>Applies Chill to affected targets, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
     <li>For each target hit, increases your resistance to Damage and Knock effects for 20 sec.</li>\
@@ -1206,7 +1206,7 @@ dataPowerAlias['Fractal Aegis'] = new PowerAlias('Fractal Aegis', 'Fractal Aegis
 
 const stormStrike = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Energy Projector<br>133 Energy cost<br>1.5 sec charge time (1.5 min)<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Affects foe (10 max)<br>25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -1224,7 +1224,7 @@ dataPowerAlias['Storm Strike'] = new PowerAlias('Storm Strike', 'Storm Strike', 
 
 const meteorBlaze = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Energy Projector<br>181 Energy cost<br>1.5 sec charge time (1.5 min)<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -1243,20 +1243,18 @@ dataPowerAlias['Meteor Blaze'] = new PowerAlias('Meteor Blaze', 'Meteor Blaze', 
 
 const whirlpool = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Energy Projector<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Energy Projector<br>93 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>60 seconds recharge</div>\
   </div><br>\
   ULTIMATE - RANGED AOE DAMAGE - CHILL<br><br>\
   CLICK<br>\
   <ul>\
     <li>Creates a Whirlpool at the target for 16 sec.</li>\
-    <li>Deals Cold Damage every 1 sec for 16 sec to targets within 25ft.</li>\
-    <li>Hits up to 10 targets.</li>\
+    <li>Whirlpool deals 123 Cold Damage every 1 sec for 16 sec to targets within 25ft. Hits up to 10 targets.</li>\
     <li>Pulls targets towards the whirlpool -8.3ft.</li>\
-    <li>Chills targets, reducing their movement speed by 42% for 16 sec.</li>\
-    <li>This effect can stack up to 3 times.</li>\
-    <li>Targets that get within 10ft of the whirlpool center are Rooted for 17 sec.</li>\
+    <li>Chills targets, reducing their movement speed by 42% for 16 sec. Can stack up to 3 times.</li>\
+    <li>Targets that get within 10ft of the whirlpool\\\'s center are Rooted for 13 sec.</li>\
   </ul>'
 };
 
@@ -1264,7 +1262,7 @@ dataPowerAlias['Whirlpool'] = new PowerAlias('Whirlpool', 'Whirlpool', '<img src
 
 const redirectedForce = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Energy Projector<br>0 + 0 Energy every 1 sec<br>1 sec activate time (10 max)</div>\
     <div style="text-align:right;">Affects friendly player (10 max)<br>40 foot Sphere<br>1 minute 30 seconds recharge</div>\
   </div><br>\
@@ -1293,7 +1291,7 @@ dataPowerAlias['Redirected Force'] = new PowerAlias('Redirected Force', 'Redirec
 
 const tornado = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Energy Projector<br>69 + 47 Energy every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
     <div style="text-align:right;">Affects foe (10 max)<br>40 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -1312,19 +1310,16 @@ dataPowerAlias['Tornado'] = new PowerAlias('Tornado', 'Tornado', '<img src="img/
 
 const prismaticDetonation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Energy Projector<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Energy Projector<br>166 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - HEAL - OVERPOWER<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals damage to targets.</li>\
-    <li>The damage type of this power changes based on the last direct damage power used.</li>\
-    <li>If no power was used within the last 10 sec, this power selects a random damage type.</li>\
-    <li>If the last ability used was a direct heal, this power heals allies within 25ft of the primary target.</li>\
-    <li>Confuses Henchmen, Villains, or Enforcers for 12 sec.</li>\
-    <li>Immune targets receive additional damage.</li>\
+    <li>Deals 402 damage to targets. The damage type of this power changes based on the last direct damage power you used. If no power was used within the last 10 sec, instead chooses a random damage type.</li>\
+    <li>If your last ability used was a direct heal, this power instead heals allies within 25ft of your primary target for 964 Health.</li>\
+    <li>If a target is a Henchman, Villain or Enforcer, Confuses them for 10 sec, causing them to attack targets randomly. If the target is immune, instead deals an additional 20% damage.</li>\
     <li>Applies Overpower to affected foes, reducing their resistance to all damage by 20% for 15 sec.</li>\
   </ul>'
 };
@@ -1355,7 +1350,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const electricBolt = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>0.35-0.55 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -1398,7 +1393,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const chainLightning = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>18-37 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -1446,7 +1441,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const sparkstorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>26 + 13 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere</div>\
   </div><br>\
@@ -1500,7 +1495,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const sigilsOfTheStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>47 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
   </div><br>\
@@ -1531,7 +1526,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mystic T
 
 const electricalCurrent = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>19 + 14 Energy every 0.5 sec<br>0.83 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -1573,15 +1568,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const lightningStrike = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>0.35 sec activate time<br>3 seconds recharge</div>\
-    <div style="text-align:right;">Targets foe<br>60 foot lunge</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>9.2 Energy cost<br>0.35 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
   </div><br>\
   LUNGE - SNARE - STUN<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Lunges at the target, dealing Electrical Damage and Snaring them, reducing their movement speed for 13 sec.</li>\
-    <li>Stuns your target if you Lunge from more than 20ft away and they are not currently controlled.</li>\
+    <li>Lunges at the target, dealing 77 Electrical Damage and Snaring them, reducing their movement speed for 13 sec.</li>\
+    <li>Stuns your target for 1.7 sec if you Lunge from more than 20ft away and they are not currently controlled.</li>\
   </ul>',
 
   chargedUp:
@@ -1606,17 +1601,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const electricSheath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>Instant<br>1 minutes 30 seconds recharge</div>\
-    <div style="text-align:right;">Targets self</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
   ACTIVE OFFENSE<br><br>\
   CLICK<br>\
   <ul>\
     <li>Grants +42% all damage strength.</li>\
     <li>Your Equilibrium is increased by 12%, your Energy Generation is increased by 100%, and your Energy Decay is reduced by 83% for 15 sec.</li>\
-    <li>Whenever you take damage, you gain Energy.</li>\
-    <li>Applies Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Whenever you take damage, you gain +0.49% Energy.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
     <li>Has a 25% chance to apply Negative Ions to targets that damage you.</li>\
     <li>If you are affected by the Electric Surge debuff, activating this power removes it and prevents it from being applied for the duration of this power.</li>\
     <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
@@ -1640,7 +1635,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Matter -
 
 const electricForm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity</div>\
   </div><br>\
   SLOTTED OFFENSIVE PASSIVE<br><br>\
@@ -1661,7 +1656,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const powerSource = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -1686,8 +1681,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 // BUG: In-game description states that it deals damage very 0.5 sec, but testing shows that it actually deals damage every 1 sec.
 const electricShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Affects foe<br>10 foot Sphere</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -1717,8 +1712,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Electric
 
 const ionicReverberation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
@@ -1740,7 +1735,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const stormSummoner = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>36 + 32 Energy every 1 sec<br>1 sec activate time (3 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -1793,7 +1788,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const thunderstrike = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>36-81 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
@@ -1856,7 +1851,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ul
 
 const electrocute = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>90 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -1889,8 +1884,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const blindingLight = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>17 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe; Affects foe that is not destructible<br>100 feet<br>45 seconds recharge</div>\
   </div><br>\
   THREAT WIPE - STEALTH<br><br>\
@@ -1909,17 +1904,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const ballLightning = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>50 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - ARC<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Summons a Ball Lightning that will hover near your target, dealing Electrical Damage every 1 sec to foes within 10ft.</li>\
+    <li>Summons a Ball Lightning that will hover near your target, dealing 37 Electrical Damage every 1 sec to foes within 10ft.</li>\
     <li>Has a 25% chance to apply Negative Ions to the target.</li>\
-    <li>When hitting a target affected by Negative Ions, Ball Lightning has a 33% chance to Arc to a target within 10ft, dealing Electrical Damage.</li>\
-    <li>After 10 sec, detonates and deals Electrical Damage to foes within 15ft.</li>\
+    <li>When hitting a target affected by Negative Ions, Ball Lightning has a 33% chance to Arc to a target within 10ft, dealing 48 Electrical Damage.</li>\
+    <li>After 10 sec, detonates and deals 253 Electrical Damage to foes within 15ft.</li>\
   </ul>',
 
   triplicity:
@@ -1950,15 +1945,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Supercha
 
 const electricalSiphon = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>66 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   TEAM HEAL - CIRCUIT<br><br>\
   CLICK<br>\
   <ul>\
     <li>Consumes all of your Negative Ions on the target.</li>\
-    <li>Heals +Health Points for every one of your Negative Ions consumed.</li>\
+    <li>Heals +565 Health Points for every one of your Negative Ions consumed.</li>\
   </ul>',
 
   chargedUp:
@@ -1980,17 +1975,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const neuroelectricPulse = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>63 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - ENERGY GAIN - ROOT - RUNE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Electrical Damage to all targets and roots them for 20 seconds.</li>\
-    <li>After the power expires, creates a Static Field for 10 seconds.</li>\
-    <li>Standing in the Static Field grants you and up to 10 nearby players +Energy every 1 second.</li>\
-    <li>Standing in the Static Field depletes Energy from foes.</li>\
+    <li>Deals 125 Electrical Damage to all targets and Roots them for 16 sec.</li>\
+    <li>After this power expires, creates a Static Field for 10 sec. Standing in the Static Field grants you and up to 10 nearby players +6.7 Energy every 1 sec, while depleting -6.7 Energy from foes.</li>\
   </ul>',
 
   recharge:
@@ -2014,16 +2007,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const stormCloud = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>51 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - NEGATIVE IONS - ARC<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Electrical Damage and applies Stormy Weather to targets for 16 seconds.</li>\
-    <li>When dealing direct Electrical damage to targets affected by Stormy Weather, has a 50% chance to Arc to a target within 25 ft. This effect can occur once every 0.25 sec.</li>\
-    <li>Has a 15% chance to apply Negative Ions to affected targets. This effect can occur once every 0.25 sec.</li>\
+    <li>Deals 100 Electrical Damage and applies Stormy Weather to targets for 16 sec.</li>\
+    <li>When dealing direct Electrical damage to targets affected by Stormy Weather, 50% chance to Arc to a target within 25 ft, dealing 48 Electrical Damage. This effect can occur once every 0.25 sec.</li>\
+    <li>Additionally, has a 15% chance to apply Negative Ions to affected targets. This effect can occur once every 0.25 sec.</li>\
   </ul>',
 
   shockingStrike:
@@ -2049,7 +2042,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const lightningArc = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>30 + 22 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -2082,7 +2075,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Lig
 
 const gigabolt = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>54-177 Energy cost<br>2.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
   </div><br>\
@@ -2114,7 +2107,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const lightningStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>29 + 21 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -2156,7 +2149,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const sunderingBreath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Electricity<br>31 + 21 Energy every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
   </div><br>\
@@ -2187,19 +2180,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const thunderingReturn = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Electricity<br>2 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Electricity<br>0 Energy cost<br>2 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
   </div><br>\
-  SELF RESURRECTION - HEAL - ENERGY GAIN<br><br>\
+  SELF RESURRECTION - HEAL<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Can only be used while defeated.</li>\
-    <li>Revives you and heals you for +50% Health Points.</li>\
-    <li>For 20 seconds, defeating any enemy grants +8.3% Health Points.</li>\
-    <li>For 20 seconds, foes that attack you are affected by Negative Ions.</li>\
-    <li>For 20 seconds, you gain 10% of damage taken as Energy.</li>\
-    <li>Places all resurrection powers on a 300 second cooldown.</li>\
+    <li>Can only be used while Defeated.</li>\
+    <li>You are brought back from defeat and healed for +50% Health Points.</li>\
+    <li>For the next 20 sec you gain +8.3% Health Points upon defeating any enemy.</li>\
+    <li>For the next 20 sec you apply Negative Ions to any foes that attack you.</li>\
+    <li>For the next 20 sec whenever you take damage you gain 10% of that damage in Energy.</li>\
+    <li>Places all Resurrection powers on a 300 second cooldown.</li>\
   </ul>'
 };
 
@@ -2288,7 +2281,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const throwFire = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>0.3-0.47 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -2333,18 +2326,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const fireStrike = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>19 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - BUFF - BLAST - BURNING<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Fire Damage.</li>\
-    <li>Grants you the Fiery Escalation buff to increase your damage with this power by 25% for 12 sec.</li>\
-    <li>This effect stacks up to 4 times and refreshes all existing stacks.</li>\
-    <li>Has a 25% chance to apply Clinging Flames to the target for each stack of Fiery Escalation on you.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+    <li>Deals 110 Fire Damage.</li>\
+    <li>Grants you the Fiery Escalation buff, which increases your damage with this power by 25% for 12 sec. This effect stacks up to 4 times. Refreshes all existing stacks.</li>\
+    <li>Has a 25% chance to apply Clinging Flames to the target for each stack of Fiery Escalation on you, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
   </ul>',
 
   wildfire:
@@ -2392,7 +2383,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const fireBreath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>21 + 14 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -2453,7 +2444,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const livingFire = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>52 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
   </div><br>\
@@ -2493,7 +2484,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Inner Pe
 
 const fireball = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>34-100 Energy cost<br>2.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere</div>\
   </div><br>\
@@ -2555,7 +2546,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: U
 
 const heatWave = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>31 + 19 Energy every 1 sec<br>1 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -2596,7 +2587,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const warmth = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>13 + 10 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -2606,7 +2597,7 @@ const warmth = {
     <li>Heals the target +145 Health Points every 0.5 sec.</li>\
   </ul>\
   <hr>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>Fire<br>13 + 10 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets friend<br>50 feet</div>\
   </div><br>\
@@ -2636,8 +2627,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Illumina
 
 const immolation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>0 Energy cost<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
   ACTIVE OFFENSE<br><br>\
@@ -2645,9 +2636,8 @@ const immolation = {
   <ul>\
     <li>Grants a 42% increase to all damage and discounts your energy costs by 33% for 15 sec.</li>\
     <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
-    <li>Provides a 25% chance to apply Clinging Flames to foes that attack you while active.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
-    <li>Activates a shared 90 second cooldown on all Active Offenses.</li>\
+    <li>While active, you have a 25% chance to apply Clinging Flames to foes that attack you, which does 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
   </ul>',
 
   blazingBody:
@@ -2668,7 +2658,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Blazing 
 
 const fieryForm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>Every 2 sec</div>\
     <div style="text-align:right;">Affects foe that is not destructible (10 max)<br>50 foot Sphere</div>\
   </div><br>\
@@ -2692,7 +2682,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const hearth = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>Every 3 sec</div>\
     <div style="text-align:right;">Affects teammate (10 max)<br>100 foot Team</div>\
   </div><br>\
@@ -2716,7 +2706,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const fieryWill = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -2740,7 +2730,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const smoldering = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -2764,8 +2754,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const fireShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -2797,8 +2787,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Fiery Sp
 
 const thermalReverberation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -2820,7 +2810,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const pyre = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>49-135 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -2876,17 +2866,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const rimefireBurst = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>103 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>35 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deal Fire Damage and Cold Damage to target.</li>\
-    <li>If the target is not affected by Clinging Flames, this power applies Chill.</li>\
-    <li>If the target is not affected by Chill, this power applies Clinging Flames.</li>\
-    <li>If the target is affected by both Clinging Flames and Chill, consumes both, deals Fire Damage and Cold Damage to up to 4 targets within 30ft, and recharges the power instantly.</li>\
+    <li>Deal 404 Fire Damage and 404 Cold Damage to target foe.</li>\
+    <li>If the foe is not affected by Clinging Flames, this power applies Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>If the target is not affected by Chill, this power applies Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. May leap to other targets.</li>\
+    <li>If the target is affected by both Clinging Flames and Chill, consumes both effects and deals 404 Fire Damage and 404 Cold Damage to up to 4 targets within 30ft. Recharges instantly.</li>\
   </ul>'
 };
 
@@ -2900,7 +2890,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const conflagration = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>34 + 21 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -2943,17 +2933,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const scorchingImpact = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>85 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 foot lunge; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
   LUNGE - AOE RANGED DAMAGE - KNOCK<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Lunges at the target and deals Fire Damage to targets within 15 feet.</li>\
-    <li>Knocks Back targets based on the distance of the lunge.</li>\
-    <li>Has a 50% chance to apply Clinging Flames to affected targets.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+    <li>Lunges at the target, dealing 200 Fire Damage to targets within 15ft.</li>\
+    <li>Knocks Back targets 1.7-37ft depending on how far you lunge from.</li>\
+    <li>Has a 50% chance to apply Clinging Flames on affected targets, causing 92 Fire Damage every 2 sec for 12 sec.</li>\
+    <li>Clinging Flames may leap to other foes near the target.</li>\
   </ul>',
 
   scorchedEarth:
@@ -2990,7 +2980,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const flamePrison = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>37 + 19 Energy every 1 sec<br>1 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -3032,7 +3022,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const pyromancersBlades = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>41 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
   </div><br>\
@@ -3050,16 +3040,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const absorbHeat = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>67 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   TEAM HEAL<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Fire Damage to all nearby targets.</li>\
-    <li>Expires all Clinging Flames on affected targets to heal up to 10 targets within 25 feet for each instance consumed.</li>\
-    <li>Heals an additional amount every 2 sec for 10 sec for every Clinging Flames consumed.</li>\
+    <li>Deals 70 Fire Damage.</li>\
+    <li>Expires all Clinging Flames on affected targets and heals up to 10 targets within 25ft for +362 Health Points for each one consumed.</li>\
+    <li>Heals an additional +72 Health Points every 2 sec over 10 sec for every Clinging Flames consumed.</li>\
   </ul>',
 
   chillingTouch:
@@ -3081,17 +3071,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const novaFlare = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>32 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets friend (5 max)<br>50 feet; 10 foot Sphere<br>3 seconds recharge</div>\
   </div><br>\
   ALLY HEAL<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Heals targets.</li>\
-    <li>Applies a stack of Fiery Escalation for 12 sec.</li>\
-    <li>Increases the healing of this power for each stack of Fiery Escalation.</li>\
-    <li>Fiery Escalation can stack up to 4 times.</li>\
+    <li>Heals targets for +145 Health Points.</li>\
+    <li>Applies a stack of Fiery Escalation for 12 sec, which causes this power to heal for an additional +36 Health Points for each stack. Fiery Escalation can stack up to 4 times.</li>\
   </ul>',
 
   thaw:
@@ -3112,7 +3100,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Thaw', '
 
 const riseFromTheAshes = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -3144,7 +3132,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Spreadin
 
 const incinerate = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fire<br>25 + 18 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -3174,17 +3162,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const flashfire = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>46 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - BURNING - DOT<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Applies Clinging Flames to affected targets.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
-    <li>Creates a Pyre Patch on your target lasting for 16 sec.</li>\
-    <li>Foes standing in the Pyre Patch take Fire Damage and have a 10% chance to be affected by Clinging Flames every 1 sec.</li>\
+    <li>Applies Clinging Flames to your targets, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Creates a Pyre Patch on the target.</li>\
+    <li>The Pyre Patch lasts for 16 sec, dealing 48 Fire Damage every 1 sec.</li>\
+    <li>Foes standing in the Pyre Patch have a 10% chance to be affected by Clinging Flames.</li>\
   </ul>',
 
   swelteringHeat:
@@ -3218,19 +3206,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Cau
 
 const fireSnake = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>52 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>25 seconds recharge</div>\
   </div><br>\
   AOE DAMAGE - BURNING - DOT<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Sends a Fire Snake to pursue foes for 16 sec.</li>\
-    <li>The Fire Snake deals Fire Damage every 1 sec to foes within 10 feet.</li>\
-    <li>Applies Engulfing Flames which reduces Fire resistance by 8% for 15 sec.</li>\
-    <li>Engulfing Flames stacks up to 3 times.</li>\
-    <li>Has a 10% chance to apply Clinging Flames.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+    <li>Sends a Fire Snake after your foes for 16 sec.</li>\
+    <li>The Fire Snake deals 35 Fire Damage every 1 sec to foes within 10ft.</li>\
+    <li>Applies Engulfing Flames, which reduces Fire resistance by 8% for 15 sec. This effect can stack up to 3 times.</li>\
+    <li>Has a 10% chance to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
   </ul>',
 
   trailBlazer:
@@ -3259,19 +3245,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Fiery Pa
 
 const hydra = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>1 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>50 feet<br>30 seconds recharge</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>67 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>30 seconds recharge</div>\
   </div><br>\
   UNCONTROLLED PET - BURNING<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Summons 2 Hydras to attack foes for 20 sec.</li>\
-    <li>The Hydras attack the nearest target within 50 feet every 1.5 sec.</li>\
-    <li>Deals Fire Damage to targets within 5 feet of the primary target.</li>\
-    <li>Creates a Lava Pit under the Hydras.</li>\
-    <li>The Lava Pit deals Fire Damage every 2 sec and has a 10% chance to apply Clinging Flames to targets.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+    <li>Summons 2 Hydras to attack your foes for 20 sec.</li>\
+    <li>Hydra Flame: The Hydras attack the nearest target every 1.5 sec, dealing 125 Fire Damage to targets within 5ft of the primary target. 50ft range.</li>\
+    <li>Lava Pit: The Hydras also create a Lava Pit under them, which does 66 Fire Damage every 2 sec and has a 10% chance to apply Clinging Flames to targets.</li>\
+    <li>Clinging Flames causes 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
   </ul>'
 };
 
@@ -3282,21 +3266,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const fieryEmbrace = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fire<br>2 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fire<br>0 Energy cost<br>2 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
   </div><br>\
   SELF RESURRECTION AND HEAL<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Only usable while Defeated.</li>\
-    <li>Revives you and restores 50% of your Health.</li>\
-    <li>Grants Health upon defeating enemies for 20 sec.</li>\
-    <li>Applies Clinging Flames to targets for 20 sec.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to nearby foes.</li>\
-    <li>Applies Engulfing Flames to attackers for 20 sec.</li>\
-    <li>Engulfing Flames reduces Fire resistance by 8% for 15 sec and stacks up to 3 times.</li>\
-    <li>Triggers a 300 second cooldown for all Resurrection powers.</li>\
+    <li>Can only be used while Defeated.</li>\
+    <li>You are brought back from defeat and healed for +50% Health Points.</li>\
+    <li>For the next 20 sec, you gain +8.3% Health Points upon defeating any enemy.</li>\
+    <li>For the next 20 sec, you apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>For the next 20 sec, you apply Engulfing Flames to any foes that attack you, causing a -8% resistance to Fire Damage debuff for 15 sec. Stacks up to 3 times.</li>\
+    <li>Places all Resurrection powers on a 300 second cooldown.</li>\
   </ul>'
 };
 
@@ -3385,7 +3367,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const forceBolts = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>0.34-0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -3427,7 +3409,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const forceBlast = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>19-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -3481,7 +3463,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const forceEruption = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>19-36 Energy cost<br>1 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -3526,14 +3508,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const forceSnap = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Force<br>16 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE - KNOCK TO<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Crushing Damage and the target is Knocked toward you.</li>\
+    <li>Deals 121 Crushing Damage and the target is Knocked toward you.</li>\
   </ul>',
 
   entropicCollapse:
@@ -3566,7 +3548,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const crushingWave = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>22 + 13 Energy every 0.5 sec<br>0.5 sec activate time (3 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -3614,15 +3596,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const protectionField = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Force<br>64 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets friend<br>50 feet</div>\
   </div><br>\
   DIRECT SHIELD - ENERGY<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Shields your target for 20 sec, absorbing damage.</li>\
-    <li>Whenever the shielded target takes damage, you receive Energy.</li>\
+    <li>Shields your target for 20 sec, absorbing up to 842 damage.</li>\
+    <li>Whenever the shielded target takes damage, you receive +15% Energy.</li>\
   </ul>',
 
   expelImpurity:
@@ -3653,15 +3635,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Breakout
 
 const shieldRestoration = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Force<br>33 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE - SHIELD - RUNE - ENCHANTMENT<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Creates a Shielding Rune at your target, shielding up to 5 allies within 15 feet for up to 10 sec.</li>\
-    <li>If an ally is affected by a Direct Shield, restores that effect.</li>\
+    <li>Creates a Shielding Rune at your target, shielding up to 5 allies within 15ft for 38 points for up to 10 sec.</li>\
+    <li>If an ally is affected by a Direct Shield, restores that effect by 43 points.</li>\
   </ul>',
 
   dizzyingImpact:
@@ -3691,7 +3673,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const personalForceField = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>Every 3 sec</div>\
     <div style="text-align:right;"></div>\
   </div><br>\
@@ -3712,7 +3694,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const kineticManipulation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force</div>\
   </div><br>\
   SLOTTED OFFENSIVE PASSIVE<br><br>\
@@ -3732,7 +3714,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const inertialDampeningField = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>Every 3 sec</div>\
     <div style="text-align:right;">Affects any friend except destructables (20 max)<br>100 foot Team</div>\
   </div><br>\
@@ -3752,7 +3734,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const forceControl = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -3776,7 +3758,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const vitalShielding = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -3800,8 +3782,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const forceShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Force<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -3829,8 +3811,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Force Sh
 
 const impactForce = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Force<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -3849,8 +3831,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const powerBarrier = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Force<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -3873,14 +3855,14 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const forceGeyser = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Force<br>32 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>3 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE - KNOCK UP<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Crushing Damage and the target is Knocked Up.</li>\
+    <li>Deals 229 Crushing Damage and the target is Knocked Up 17 feet.</li>\
   </ul>',
 
   hardLanding:
@@ -3922,7 +3904,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const singularityBomb = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>61-121 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 25 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -3953,7 +3935,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const containmentField = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>27 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -3986,15 +3968,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const fieldSurge = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>Instant</div>\
-    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  '<div class="popup-header">\
+    <div>Force<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
   SHIELD - ACTIVE DEFENSE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Provides you with a shield that absorbs damage for 15 sec.</li>\
-    <li>Heals your Personal Force Field and causes it to regenerate as if you were blocking.</li>\
+    <li>Provides you with a shield that absorbs 2,977 damage for 15 sec.</li>\
+    <li>Heals your Personal Force Field for 371 points and causes it to regenerate as if you were blocking.</li>\
     <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
   </ul>',
 
@@ -4020,7 +4002,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchaine
 
 const graviticRipple = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>15 + 12 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>20 seconds recharge</div>\
   </div><br>\
@@ -4061,7 +4043,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const forceCascade = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Force<br>64-175 Energy cost<br>2.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
   </div><br>\
@@ -4106,16 +4088,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ul
 
 const forceDetonation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Force<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Force<br>130 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK BACK<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Crushing Damage and Knocks Back affected targets.</li>\
-    <li>If your target is immune to Knock effects, increases base damage by 20%.</li>\
-    <li>If your target is affected by a Shield effect, deals Crushing Damage to up to 5 targets within 15ft of the shielded target.</li>\
+    <li>Deals 402 Crushing Damage and Knocks Back affected targets 35ft.</li>\
+    <li>If your target is immune to Knock effects, increases this power\\\'s base damage by 20%. If your target is affected by a Shield effect, deals 121 Crushing Damage to up to 5 targets within 15ft of the shielded target.</li>\
   </ul>',
 
   gravitationalPull:
@@ -4226,7 +4207,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const windLash = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>0.34-0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -4260,8 +4241,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const gust = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Wind<br>23-38 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Wind<br>23-38 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - KNOCK BACK - BLAST<br><br>\
@@ -4295,7 +4276,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const windBreath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>16 + 14 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -4328,7 +4309,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const stormbringer = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind</div>\
   </div><br>\
   SLOTTED OFFENSIVE PASSIVE<br><br>\
@@ -4347,7 +4328,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const weatherShaping = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -4371,8 +4352,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const windBarrier = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Wind<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Wind<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>10 feet; 180 degree Cone</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -4392,8 +4373,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const windReverberation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Wind<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Wind<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -4416,8 +4397,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const torrent = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Wind<br>34-93 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Wind<br>34-93 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe that is not destructible<br>(5 max)<br>25 foot Sphere</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK - CHILL<br><br>\
@@ -4458,7 +4439,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const hurricane = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>23 + 23 Energy every 0.5 sec<br>0.83 sec activate time (4 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -4487,8 +4468,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const updraft = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Wind<br>13-42 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Wind<br>13-42 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
   RANGED DAMAGE - KNOCK UP<br><br>\
@@ -4517,7 +4498,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const whirlwind = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>24 + 13 Energy every 0.5 sec<br>0.83 sec activate time (3 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -4547,7 +4528,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const twister = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>32 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -4565,8 +4546,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const veilOfMist = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Wind<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Wind<br>26 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
   </div><br>\
   PERCEPTION DEBUFF<br><br>\
@@ -4605,15 +4586,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Chilled 
 
 const dustDevil = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Wind<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Wind<br>69 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>6 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Summons a Dust Devil for 12 sec that will hover near your target, dealing Crushing Damage every second to foes within 10 feet.</li>\
-    <li>Has a 10% chance to Disorient your targets.</li>\
+    <li>Summons a Dust Devil for 12 sec that will hover near your target, dealing 50 Crushing Damage every second to foes within 10 feet. Also has a 10% chance to Disorient your targets.</li>\
     <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
   </ul>',
 
@@ -4639,7 +4619,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Triple T
 
 const typhoon = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>2.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
   </div><br>\
@@ -4679,7 +4659,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const airElemental = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Wind<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -4787,7 +4767,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const iceShards = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>0.3-0.47 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -4820,8 +4800,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const iceBlast = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>18-45 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>18-45 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - CHILL - BLAST<br><br>\
@@ -4865,16 +4845,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const shatter = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>70 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>50 feet; 180 degree Cone</div>\
   </div><br>\
-  RANGED AOE DAMAGE - SHATTER - COLD SNAP<br><br>\
+  RANGED AOE DAMAGE - SHATTER<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Cold Damage to all targets.</li>\
-    <li>Deals additional Cold Damage for each of your Chill stacks on a target, and an additional 30% total damage if you are affected by Cold Snap. Consumes any of your Chill effects on affected targets.</li>\
-    <li>In addition, if you hit at least 1 target, detonates any of your Ice Structures, dealing Cold Damage, based on the rank and type of the structure, to up to 5 foes within 15ft.</li>\
+    <li>Deals 133 Cold Damage to all targets.</li>\
+    <li>Deals an additional 133 Cold Damage for each of your Chill stacks on a target, and an additional 30% total damage if you are affected by Cold Snap. Consumes any of your Chill effects on affected targets.</li>\
+    <li>In addition, if you hit at least 1 target, detonates any of your Ice Structures, dealing 83-360 Cold Damage, based on the rank and type of the structure, to up to 5 foes within 15ft.</li>\
   </ul>',
 
   crushedIce:
@@ -4896,7 +4876,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const frostBreath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>23 + 23 Energy every 0.5 sec<br>0.83 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -4936,16 +4916,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const iceCage = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>0.83 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>31 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible<br>50 feet</div>\
   </div><br>\
   ROOT - RANGED DAMAGE - DOT<br><br>\
   CLICK<br>\
   <ul>\
     <li>Creates an Ice Cage on the target for up to 10 sec, Rooting them in place while the structure is active.</li>\
-    <li>Targets affected by your Ice Cage also suffer Cold Damage every 1 sec.</li>\
-    <li>Once the Ice Cage expires, deals Cold Damage to up to 5 targets within 10ft.</li>\
+    <li>Targets affected by your Ice Cage also suffer 48 Cold Damage every 1 sec.</li>\
+    <li>Once the Ice Cage expires, deals 83 Cold Damage to up to 5 targets within 10ft.</li>\
   </ul>',
 
   subZeroCellblock:
@@ -4970,14 +4950,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const wallOfIce = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>41 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - ROOT - DOT<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Creates a Cold Spot at your target, dealing Cold Damage every 2 sec for 16 sec to up to 5 foes within 10ft of your target.</li>\
+    <li>Creates a Cold Spot at your target, dealing 90 Cold Damage every 2 sec for 16 sec to up to 5 foes within 10ft of your target.</li>\
     <li>Traps foes in an Ice Cage, which Roots them in place, preventing them from moving for up to 10 sec.</li>\
     <li>Has a 15% chance every 1 sec to apply Chill to your targets, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
   </ul>',
@@ -5009,17 +4989,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Sharp Ed
 
 const iceSheath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>Instant</div>\
-    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
-  ACTIVE OFFENSE - COLD SNAP<br><br>\
+  ACTIVE OFFENSE<br><br>\
   CLICK<br>\
   <ul>\
     <li>This power has a duration of 15 sec.</li>\
     <li>Grants a 42% increase to all damage.</li>\
     <li>Increases your Critical Severity by 5.8% for every stack of Chill on your target.</li>\
-    <li>While active you have a 25% chance to apply Chill to foes that attack you, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>While active, you have a 25% chance to apply Chill to foes that attack you, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage. Stacks up to 3 times.</li>\
     <li>Applies Cold Snap to you for 10 sec.</li>\
     <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
     <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
@@ -5052,7 +5032,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const chilledForm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -5076,7 +5056,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const frigidDetermination = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -5100,8 +5080,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const iceShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -5140,8 +5120,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold to 
 
 const icyEmbrace = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -5164,7 +5144,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const winterGale = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>34 + 15 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -5206,15 +5186,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const iceBurst = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>81 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 25 foot Sphere<br>20 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK - CHILL<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Cold Damage to all targets and they are Knocked Up 17ft.</li>\
-    <li>Creates an Ice Column under the target. After 10 sec, the Ice Column explodes, dealing Cold Damage to up to 5 targets within 10ft.</li>\
+    <li>Deals 167 Cold Damage to all targets and they are Knocked Up 17ft.</li>\
+    <li>Creates an Ice Column under the target. After 10 sec, the Ice Column explodes, dealing 250 Cold Damage to up to 5 targets within 10ft.</li>\
     <li>Has a 10% chance every 1 sec to apply Chill to targets within 25ft, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
   </ul>',
 
@@ -5262,7 +5242,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const snowStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>45 + 22 Energy every 1 sec<br>1 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -5311,9 +5291,9 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const coldShoulder = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>1 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>100 feet<br>45 seconds recharge</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>17 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe; Affects foe that is not destructible<br>100 feet<br>45 seconds recharge</div>\
   </div><br>\
   THREAT WIPE - STEALTH<br><br>\
   CLICK<br>\
@@ -5331,17 +5311,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const iceBarrier = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>0.83 sec activate time</div>\
-    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>0 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
-  ACTIVE DEFENSE - COLD SNAP<br><br>\
+  ACTIVE DEFENSE<br><br>\
   CLICK<br>\
   <ul>\
     <li>Creates 3 Ice Barriers near you for 30 sec.</li>\
     <li>Each Ice Barrier grants you +20% resistance to all damage and 100% resistance to Knock effects. This effect is doubled if you are affected by Cold Snap.</li>\
-    <li>Creates a Healing Rune at your location, which heals nearby allies within 15ft for +Health Points every 1 sec for 30 sec.</li>\
-    <li>Once an Ice Barrier expires, deals Cold Damage to up to 5 targets within 10ft.</li>\
+    <li>Creates a Healing Rune at your location, which heals nearby allies within 15ft for +44 Health Points every 1 sec for 30 sec.</li>\
+    <li>Once an Ice Barrier expires, deals 250 Cold Damage to up to 5 targets within 10ft.</li>\
     <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
   </ul>',
 
@@ -5367,8 +5347,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchaine
 
 const icicleSpear = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>41-104 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>41-104 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - CHILL<br><br>\
@@ -5406,7 +5386,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const avalanche = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>33 + 21 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -5456,17 +5436,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const aurora = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Ice<br>2 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Ice<br>0 Energy cost<br>2 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
   </div><br>\
-  SELF RESURRECTION - HEAL - COLD SNAP<br><br>\
+  SELF RESURRECTION - HEAL<br><br>\
   CLICK<br>\
   <ul>\
     <li>Can only be used while Defeated.</li>\
     <li>You are brought back from defeat and healed for +50% Health Points.</li>\
     <li>For the next 20 sec you gain +8.3% Health Points upon defeating any enemy.</li>\
-    <li>For the next 20 sec you apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>For the next 20 sec you apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
     <li>Grants you the Cold Snap buff for 10 sec.</li>\
     <li>Places all Resurrection powers on a 300 second cooldown.</li>\
   </ul>'
@@ -5479,9 +5459,9 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const vaporForm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Ice<br>Every 1 sec<br>Instant activate time (8 max)</div>\
-    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
   THREAT WIPE<br><br>\
   TOGGLE<br>\
@@ -5593,7 +5573,7 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 
 const concentration = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Technology<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -5616,15 +5596,15 @@ dataPowerAlias['Concentration'] = new PowerAlias('Concentration', 'Concentration
 
 const implosionEngine = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Technology<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Technology<br>162 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>60 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - REVERSE REPEL - SNARE<br><br>\
   CLICK<br>\
   <ul>\
     <li>Creates an Implosion Engine that lasts for 12 sec.</li>\
-    <li>Implosion Engine deals Particle Damage every 0.5 sec to targets within 40ft. Hits up to 10 targets.</li>\
+    <li>Implosion Engine deals 79 Particle Damage every 0.5 sec to targets within 40ft. Hits up to 10 targets.</li>\
     <li>Attempts to pull affected targets toward the Implosion Engine -8.3ft and Snares them, reducing their Movement Speed by 100%.</li>\
   </ul>',
 
@@ -5641,7 +5621,7 @@ dataPowerAlias['Implosion Engine'] = new PowerAlias('Implosion Engine', 'Implosi
 
 const mechanicalMonstrosity = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Technology<br>66 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>60 seconds recharge</div>\
   </div><br>\
@@ -5660,7 +5640,7 @@ dataPowerAlias['Mechanical Monstrosity'] = new PowerAlias('Mechanical Monstrosit
 
 const meltdown = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Technology<br>182 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (10 max)<br>20 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -5677,7 +5657,7 @@ dataPowerAlias['Meltdown'] = new PowerAlias('Meltdown', 'Meltdown', '<img src="i
 
 const fireAllWeapons = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Technology<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 120 degree Cone<br>60 seconds recharge</div>\
   </div><br>\
@@ -5693,7 +5673,7 @@ dataPowerAlias['Fire All Weapons'] = new PowerAlias('Fire All Weapons', 'Fire Al
 
 const showdown = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Technology<br>67 + 48 Energy every 0.5 sec<br>2 sec charge time (2 min)<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (10 max)<br>50 feet; 180 degree Cone<br>60 seconds recharge</div>\
   </div><br>\
@@ -5720,7 +5700,7 @@ dataPowerAlias['Showdown'] = new PowerAlias('Showdown', 'Showdown', '<img src="i
 
 const arrowAssault = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Technology<br>125 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -5753,7 +5733,7 @@ dataPowerAlias['Arrow Assault'] = new PowerAlias('Arrow Assault', 'Arrow Assault
 
 const bulletBarrage = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Technology<br>57 + 38 Energy every 0.3 sec<br>0.3 sec activate time (1.2 max)</div>\
     <div style="text-align:right;">Affects foe (10 max)<br>50 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -5801,7 +5781,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const strafe = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Archery<br>0 + 0 Energy every 1 sec<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -5835,8 +5815,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const straightShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>23-50 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>23-50 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - BLAST - ROOT<br><br>\
@@ -5931,16 +5911,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const desperateShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>1.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>46 Energy cost<br>1.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Piercing Damage to your target.</li>\
+    <li>Deals 436 Piercing Damage to your target.</li>\
     <li>The Critical Severity on this power is increased by 100%.</li>\
-    <li>When fired with less than 50% Health, deals double Piercing Damage and Stuns the target for 1.7 sec.</li>\
+    <li>When fired with less than 50% Health, deals 872 Piercing Damage and Stuns the target for 1.7 sec.</li>\
   </ul>',
 
   stimPack:
@@ -5975,8 +5955,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Sto
 
 const evasiveManeuvers = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>9.7 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet; 40 foot lunge<br>18 seconds recharge</div>\
   </div><br>\
   REVERSE LUNGE - SELF BUFF<br><br>\
@@ -6017,7 +5997,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Stim Pac
 
 const taserArrow = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Archery<br>54 Energy cost<br>2 sec charge time (2 min)<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>100 feet</div>\
   </div><br>\
@@ -6057,8 +6037,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const sonicArrow = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>19-51 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>19-51 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>100 feet; 10 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - STUN - PARALYZE<br><br>\
@@ -6099,15 +6079,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const medicalArrow = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>26 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE - HEAL - RUNE - ENCHANTMENT<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Piercing Damage to target.</li>\
-    <li>Creates a Healing Rune at your target, healing up to 5 allies within 15ft for +Health Points every 1 sec for 10 sec.</li>\
+    <li>Deals 151 Piercing Damage to your target.</li>\
+    <li>Creates a Healing Rune at your target, healing up to 5 allies within 15ft for +44 Health Points every 1 sec for 10 sec.</li>\
   </ul>',
 
   dizzyingImpact:
@@ -6159,7 +6139,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const precision = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Archery<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -6189,8 +6169,8 @@ dataRequireGroupPower[dataPower.length-1] = 'technology';
 
 const huntersInstinct = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - INTELLIGENCE - RECOVERY<br><br>\
   ENHANCEMENT<br><br>\
@@ -6213,7 +6193,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const stormOfArrows = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Archery<br>37 + 27 Energy every 1 sec<br>1 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (7 max)<br>100 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -6251,8 +6231,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const torrentOfArrows = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>55-134 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>55-134 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 30 degree Cone</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK<br><br>\
@@ -6291,15 +6271,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const fairGame = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>19 Energy cost<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
   </div><br>\
   SELF HEAL OVER TIME<br><br>\
   CLICK<br>\
   <ul>\
-    <li>For the next 15 sec defeating a foe heals you for +Health Points every 2 sec over 6 sec. Stacks up to 5 times.</li>\
-    <li>This heal scales with your Intelligence and Dexterity.</li>\
+    <li>For the next 15 sec, defeating a foe heals you for +51 Health Points every 2 sec over 6 sec. Stacks up to 5 times.</li>\
     <li>Activates a shared cooldown of 15 seconds on all Self Heal Over Time powers.</li>\
   </ul>',
 
@@ -6321,14 +6300,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Graceful
 
 const caltrops = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>27 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - SNARE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>You toss out a cluster of Caltrops that deal Piercing Damage every 1 sec for 16 sec to targets within 10ft.</li>\
+    <li>You toss out a cluster of Caltrops that deal 40 Piercing Damage every 1 sec for 16 sec to targets within 10ft.</li>\
     <li>Targets in the Caltrops are Snared, reducing their movement speed by 100% for 3.3 sec.</li>\
   </ul>',
 
@@ -6354,7 +6333,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Spikes',
 
 const focusedShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Archery<br>72 Energy cost<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>120 feet</div>\
   </div><br>\
@@ -6384,7 +6363,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const rapidShots = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Archery<br>28 + 20 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -6415,8 +6394,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const explosiveArrow = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>47-129 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>47-129 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
   </div><br>\
   RANGED AOE DAMAGE<br><br>\
@@ -6466,14 +6445,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const gasArrow = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Archery<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Archery<br>49 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - DOT - PERCEPTION DEBUFF<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Creates a Gas Cloud at the targets location which deals Toxic Damage every 1 sec for 12 sec to foes within 15ft.</li>\
+    <li>Creates a Gas Cloud at the target\\\'s location which deals 72 Toxic Damage every 1 sec for 12 sec to foes within 15ft.</li>\
     <li>The Gas Cloud reduces the Perception of foes by 200%.</li>\
     <li>Places all Perception Debuff powers on a 15 sec cooldown.</li>\
   </ul>',
@@ -6565,7 +6544,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const gunslinger = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -6594,7 +6573,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const steadyShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -6627,8 +6606,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const burstShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>18-34 Energy<br>1 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>18-34 Energy cost<br>1 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (3 max)<br>50 feet; 2 foot Cylinder</div>\
   </div><br>\
   RANGED DAMAGE - BLAST - DEBUFF<br><br>\
@@ -6671,14 +6650,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const pistolWhip = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>18 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - STUN<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Crushing Damage and your target is Stunned for 1.7 sec.</li>\
+    <li>Deals 127 Crushing Damage and your target is Stunned for 1.7 sec.</li>\
   </ul>',
 
   theyNeverGoEasy:
@@ -6710,14 +6689,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const rifleButt = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>18 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - STUN<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Crushing Damage and your target is Stunned for 2.1 sec.</li>\
+    <li>Deals 127 Crushing Damage and your target is Stunned for 1.7 sec.</li>\
   </ul>',
 
   concussion:
@@ -6749,16 +6728,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const holdoutShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>1 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>25 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Piercing Damage to your target.</li>\
+    <li>Deals 281 Piercing Damage to your target.</li>\
     <li>The Critical Severity on this power is increased by 100%.</li>\
-    <li>When fired with less than 20% Energy, the Energy cost is greatly reduced and this power now deals double Piercing Damage to your target.</li>\
+    <li>When fired with less than 20% Energy, the Energy cost is greatly reduced and this power now deals 563 Piercing Damage to your target.</li>\
   </ul>',
 
   stimPack:
@@ -6802,8 +6781,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const tripWire = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>17-24 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>17-24 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE - KNOCK TO<br><br>\
@@ -6845,8 +6824,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const shotgunBlast = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>26-43 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>26-43 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30 degree Cone</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK BACK - BLAST<br><br>\
@@ -6901,7 +6880,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Vi
 
 const flamethrower = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>28 + 16 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30 degree Cone</div>\
   </div><br>\
@@ -6960,7 +6939,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const bulletHail = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>17 + 11 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -7022,7 +7001,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const submachinegunBurst = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>17 + 11 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -7095,7 +7074,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const sharpShooter = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -7125,8 +7104,8 @@ dataRequireGroupPower[dataPower.length-1] = 'technology';
 
 const killerInstinct = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br><br>\
@@ -7148,15 +7127,15 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'Killer Instinct', '<i
 
 const executionShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>1.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>46 Energy cost<br>1.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>10 feet<br>15 seconds recharge</div>\
   </div><br>\
   MELEE DAMAGE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Piercing Damage.</li>\
-    <li>If your target is below 25% health, deals double Piercing Damage.</li>\
+    <li>Deals 611 Piercing Damage.</li>\
+    <li>If your target is below 25% health, deals 1,221 Piercing Damage.</li>\
   </ul>',
 
   isItNotJustMayhem:
@@ -7223,15 +7202,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ray
 
 const miniMines = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>50 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>10 seconds recharge</div>\
   </div><br>\
   MELEE AOE DAMAGE - KNOCK DOWN<br><br>\
   CLICK<br>\
   <ul>\
-    <li>You toss out a cluster of Mini Mines that deal Crushing Damage to targets within 15ft.</li>\
-    <li>The Mini Mines persist for 12 sec before self-destructing.</li>\
+    <li>You toss out a cluster of Mini Mines that deal 377 Crushing Damage to targets within 15ft. The Mini Mines persist for 12 sec before self-destructing.</li>\
     <li>Foes caught in the blast are Knocked Down.</li>\
   </ul>',
 
@@ -7272,7 +7250,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Dizzying
 
 const rocket = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>147 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 20 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -7326,7 +7304,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const gatlingGun = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>30 + 23 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 3 foot Cylinder</div>\
   </div><br>\
@@ -7378,14 +7356,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'Qularr T
 
 const concussionGrenade = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>53 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK BACK<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Crushing Damage and Knocks Back all targets.</li>\
+    <li>Deals 175 Crushing Damage to all targets.</li>\
+    <li>All targets are Knocked Back 17ft.</li>\
   </ul>',
 
   stunGrenade:
@@ -7426,15 +7405,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const incendiaryGrenade = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>57 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - BURNING<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Fire Damage to all targets.</li>\
-    <li>Applies Clinging Flames to your primary target, which causes Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Deals 188 Fire Damage to all targets.</li>\
+    <li>Applies Clinging Flames to your primary target, which causes 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
     <li>Has a 25% chance to apply Clinging Flames to your secondary targets.</li>\
   </ul>',
 
@@ -7469,16 +7448,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const breakawayShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>58 Energy cost<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 40 foot lunge; 60 degree Cone<br>6 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - REVERSE LUNGE - BUFF<br><br>\
   CLICK<br>\
   <ul>\
-    <li>You jump away from your target, dealing Piercing Damage to targets in front of you when you land.</li>\
+    <li>You jump away from your target, dealing 268 Piercing Damage to targets in front of you when you land.</li>\
     <li>Knocks Down your primary target.</li>\
-    <li>Has a 25% chance to Knocks Down your secondary targets.</li>\
+    <li>Has a 25% chance to Knock Down your secondary targets.</li>\
   </ul>',
 
   microfilamentWire:
@@ -7512,15 +7491,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const partingShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>45 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet; 40 foot lunge<br>6 seconds recharge</div>\
   </div><br>\
   REVERSE LUNGE - RANGED DAMAGE - KNOCK BACK<br><br>\
   CLICK<br>\
   <ul>\
-    <li>You lunge away from the target and deal Piercing Damage.</li>\
-    <li>Your target is Knocked Back.</li>\
+    <li>You lunge away from the target and deal 403 Piercing Damage.</li>\
+    <li>Your target is Knocked Back 17 feet.</li>\
   </ul>',
 
   predictable:
@@ -7554,8 +7533,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const smokeGrenade = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>37 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>15 seconds recharge</div>\
   </div><br>\
   PERCEPTION DEBUFF<br><br>\
@@ -7585,9 +7564,9 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Escape A
 
 const lockNLoad = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>Instant</div>\
-    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
   ACTIVE OFFENSE<br><br>\
   CLICK<br>\
@@ -7598,8 +7577,8 @@ const lockNLoad = {
     <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
     <li>Applies 1 stack of Furious on you.</li>\
     <li>Refreshes all Furious stacks on you while this effect is active.</li>\
-    <li>Furious gives you +1.5% Critical Chance for 12 sec, this effect can stack up to 3 times.</li>\
-    <li>When taking damage Furious grants you Willpower, which gives you +Health Points over 3 seconds. Willpower can stack up to 3 times.</li>\
+    <li>Furious gives you +1.5% Critical Chance for 12 sec; this effect can stack up to 3 times.</li>\
+    <li>When taking damage, Furious grants you Willpower, which gives you +300 Health Points over 3 seconds. Willpower can stack up to 3 times.</li>\
     <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
   </ul>',
 
@@ -7622,14 +7601,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Two Smok
 
 const fragGrenade = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Munitions<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Munitions<br>56 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - DOT<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Piercing Damage every 1 sec for 12 sec to all targets.</li>\
+    <li>Deals 52 Piercing Damage every 1 sec for 12 sec to all targets.</li>\
     <li>Snares all targets for 12 sec.</li>\
   </ul>',
 
@@ -7665,7 +7644,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const sniperRifle = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>60 Energy cost<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>120 feet</div>\
   </div><br>\
@@ -7696,7 +7675,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Pul
 
 const twoGunMojo = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>23 + 17 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -7746,7 +7725,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Pul
 
 const assaultRifle = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>35 + 19 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -7789,7 +7768,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Pul
 
 const leadTempest = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Munitions<br>22 + 16 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>50 foot Sphere</div>\
   </div><br>\
@@ -7895,12 +7874,11 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 
 const wristBolter = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>0 + 0 Energy every 0.5 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>0 + 0 Energy every 0.5 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
   ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  Executed if requirements are met<br><br>\
   MAINTAIN<br>\
   <ul>\
     <li>Deals 14 Particle Damage and generates +4.1% Energy with the first shot.</li>\
@@ -7926,7 +7904,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const powerBolts = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>0.34-0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -7960,8 +7938,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'It Burns
 
 const powerGauntlet = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>20-60 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>20-60 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - INTERRUPT - BLAST<br><br>\
@@ -7992,8 +7970,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const tacticalMissiles = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>20-60 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>20-60 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - KNOCKDOWN - BLAST<br><br>\
@@ -8023,7 +8001,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const dualWristRocketBarrage = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -8053,7 +8031,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const concussorBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -8087,7 +8065,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const eyeBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
   </div><br>\
@@ -8126,7 +8104,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const miniGun = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
   </div><br>\
@@ -8166,8 +8144,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const rocketPunch = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>32-95 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>32-95 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
   </div><br>\
   RANGED AOE DAMAGE - BLAST<br><br>\
@@ -8217,7 +8195,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const aspectOfTheMachine = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -8245,8 +8223,8 @@ dataRequireGroupPower[dataPower.length-1] = 'technology';
 
 const energyShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -8283,8 +8261,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Phalanx 
 
 const overdrive = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -8307,7 +8285,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const microMunitions = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 1 sec<br>1 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -8336,8 +8314,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const chestBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>64-139 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>64-139 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 2 foot Cylinder</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK BACK - DEBUFF<br><br>\
@@ -8367,7 +8345,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ul
 
 const chestLaser = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
   </div><br>\
@@ -8397,7 +8375,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const plasmaBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
   </div><br>\
@@ -8427,7 +8405,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const chestRocketAssault = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
   </div><br>\
@@ -8456,7 +8434,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const bindingShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>66 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet</div>\
   </div><br>\
@@ -8477,9 +8455,9 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const unbreakable = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>Instant</div>\
-    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
   </div><br>\
   ACTIVE DEFENSE<br><br>\
   CLICK<br>\
@@ -8512,8 +8490,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unchaine
 
 const energyWave = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Power Armor<br>78-131 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Power Armor<br>78-131 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK BACK<br><br>\
@@ -8562,7 +8540,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const shoulderLauncher = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 1 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
   </div><br>\
@@ -8592,7 +8570,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const handCannon = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 1 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
   </div><br>\
@@ -8622,7 +8600,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const reconstructionCircuits = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Power Armor<br>Every 1 sec<br>0.5 sec activate time (8 max)</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -8708,7 +8686,7 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 
 const sonicBlaster = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -8737,7 +8715,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const particleRifle = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -8766,7 +8744,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const boomerangToss = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -8786,7 +8764,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPower
 
 const energyBlaster = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -8819,8 +8797,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const experimentalBlaster = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>13-49 Energy<br>2 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>13-49 Energy cost<br>2 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - RANDOM EFFECTS - BLAST<br><br>\
@@ -8885,8 +8863,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const ricochetThrow = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>28-63 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>28-63 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - BLAST<br><br>\
@@ -8926,8 +8904,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Bla
 
 const particleBlaster = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>24-47 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>24-47 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - PLASMA BURN - BLAST<br><br>\
@@ -8991,8 +8969,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const grappleGunPull = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>24 Energy<br>1.3 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>24 Energy cost<br>1.3 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>6 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE - KNOCK TO<br><br>\
@@ -9011,8 +8989,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const particleMine = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>56 Energy<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>56 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - TRIGGERED - KNOCK<br><br>\
@@ -9042,8 +9020,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Particle
 
 const experimentalBurstRay = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>19-54 Energy<br>2 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>19-54 Energy cost<br>2 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
   RANGED AOE DAMAGE - DISORIENT<br><br>\
@@ -9105,7 +9083,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const plasmaRadiation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>24 + 14 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30 degree Cone</div>\
   </div><br>\
@@ -9174,7 +9152,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const entanglingMesh = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>16 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible (7 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
+  </div><br>\
+  ROOT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Roots all targets for 13 sec.</li>\
+  </ul>',
 
   sappingSolution:
   '<div>\
@@ -9195,7 +9181,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const sonicDevice = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>54 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+  </div><br>\
+  ON-NEXT-HIT - RANGED DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Your next attack deals an additional 289 Sonic Damage. Deals 56 Sonic Damage when used against up to 5 targets, and 40 Sonic Damage when used against more.</li>\
+    <li>Stuns your primary target for 1.7 sec.</li>\
+  </ul>',
 
   deafeningDissolution:
   '<div>\
@@ -9223,7 +9218,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Direct H
 
 const bionicShielding = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>43 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets friend<br>100 feet<br>3 seconds recharge</div>\
+  </div><br>\
+  HEAL OVER TIME - TRIGGERED<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Places the Bionic Shielding buff on your target. The effect lasts up to 16 sec and can trigger up to 5 times before expiring.</li>\
+    <li>Whenever the target takes damage, they are healed for +265 Health Points.</li>\
+    <li>Also applies Bionic Tampering to the target, which prevents them from being affected by Bionic Shielding again for 15 sec.</li>\
+  </ul>',
 
   overloadedCircuits:
   '<div>\
@@ -9251,7 +9256,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Download
 
 const nanobotSwarm = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Increases your damage by 42%.</li>\
+    <li>When activated, all powers that are currently recharging have their recharge time reduced by 12 sec. This does not affect Ultimate or Active powers.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   rejuvenatingInjectors:
   '<div>\
@@ -9270,7 +9287,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Rejuvena
 
 const toxicNanites = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>57 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+  </div><br>\
+  ON-NEXT-HIT - RANGED DAMAGE - DEADLY POISON<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Your next attack deals an additional 289 Toxic Damage. Deals 56 Toxic Damage when used against up to 5 targets, and 40 Toxic Damage when used against more.</li>\
+    <li>Applies a stack of Deadly Poison to affected targets, dealing 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times. Refreshes any existing stacks of your Deadly Poison.</li>\
+  </ul>',
 
   gaseousEmitter:
   '<div>\
@@ -9308,7 +9334,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Precise 
 
 const radiationPoisoning = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>57 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+  </div><br>\
+  ON-NEXT-HIT - RANGED DAMAGE - PLASMA BURN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Your next attack deals an additional 289 Particle Damage. Deals 56 Particle Damage when used against up to 5 targets, and 40 Particle Damage when used against more.</li>\
+    <li>Applies a stack of Plasma Burn to affected targets, dealing 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times. Refreshes any existing stacks of your Plasma Burn.</li>\
+  </ul>',
 
   particleBlast:
   '<div>\
@@ -9366,7 +9401,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const technologicalProwess = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -9390,7 +9425,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const technologicalAdvancements = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -9420,8 +9455,8 @@ dataRequireGroupPower[dataPower.length-1] = 'technology';
 
 const radiationShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -9450,8 +9485,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Redirect
 
 const molecularSelfAssembly = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - INTELLIGENCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -9471,8 +9506,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const soundAmplification = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
@@ -9495,7 +9530,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const gauntletChainsaw = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>33 + 24 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 2.5 foot Cylinder</div>\
   </div><br>\
@@ -9525,8 +9560,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const sonicBoomGenerator = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>39-87 Energy<br>1.67 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>39-87 Energy cost<br>1.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
   </div><br>\
   RANGED AOE DAMAGE - DISORIENT<br><br>\
@@ -9566,8 +9601,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'UPVD: So
 
 const throwingBlades = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Gadgeteering<br>78-110 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>78-110 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 120 degree Cone</div>\
   </div><br>\
   RANGED AOE DAMAGE - SUDDEN STRIKE<br><br>\
@@ -9608,7 +9643,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Bla
 
 const tractorBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>13 + 4.6 Energy every 0.5 sec<br>0.67 sec activate time (3 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>6 seconds recharge</div>\
   </div><br>\
@@ -9665,7 +9700,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const tanglecoilLauncher = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>46 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -9695,7 +9730,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const bolas = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>66 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet</div>\
   </div><br>\
@@ -9716,7 +9751,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const cloakingDevice = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>37 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (20 max)<br>50 foot Sphere<br>2 minutes recharge</div>\
+  </div><br>\
+  THREAT WIPE - STEALTH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Wipes your threat from nearby targets and places you in Stealth for 4 sec.</li>\
+    <li>Sets your other Threat Wipe abilities on a 30 sec cooldown.</li>\
+  </ul>',
 
   unknownThreat:
   '<div>\
@@ -9735,7 +9779,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unknown 
 
 const electroMagnet = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>40 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - DOT - REVERSE REPEL - RUNE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates an Electro Magnet for 10 sec.</li>\
+    <li>Foes within 15ft take 20 Particle Damage every 1 sec, while foes within 20ft are pulled toward the Electro Magnet by -6.7ft.</li>\
+    <li>After this power expires, creates a Static Field for 10 sec. Standing in the Static Field grants you and up to 10 nearby players +6.7 Energy every 1 sec, while depleting -6.7 Energy from foes.</li>\
+  </ul>',
 
   sparks:
   '<div>\
@@ -9804,7 +9858,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const medicalBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>16 + 12 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets friend<br>100 feet</div>\
   </div><br>\
@@ -9842,7 +9896,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Field Me
 
 const gasPellets = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>47 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - SNARE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>You toss out a cluster of gas pellets that deal 80 Toxic Damage every 1 sec for 8 sec to targets within 10ft.</li>\
+    <li>Targets in the Gas Pellets are Snared, reducing their movement speed by 100% for 3.3 sec.</li>\
+  </ul>',
 
   oversizedPelletBag:
   '<div>\
@@ -9862,7 +9925,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Oversize
 
 const miniaturizationDrive = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>32 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
+  </div><br>\
+  ON-NEXT-HIT - DEBUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Your next attack applies Disorient to affected targets, reducing their damage by 15% and their movement speed by 50% for 12 sec. This effect is reduced when used against multiple targets.</li>\
+    <li>Places all other On-Next-Hit powers on cooldown for 15 sec.</li>\
+  </ul>',
 
   reciprocatingGizmo:
   '<div>\
@@ -9886,7 +9958,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Reciproc
 
 const sonicBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>29 + 18 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -9926,7 +9998,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const pulseBeamRifle = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>30 + 23 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -9967,7 +10039,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const orbitalCannon = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>94 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet<br>20 seconds recharge</div>\
   </div><br>\
@@ -10010,7 +10082,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ul
 
 const strafingRun = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>126 Energy cost<br>1.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet<br>20 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - BURNING<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 134 Fire Damage to up to 5 targets within 15ft for the first hit, 201 Fire Damage for the second hit and 335 Fire Damage for the last hit.</li>\
+    <li>Leaves behind a Pyre Patch on the target for 10 sec, dealing 40 Fire Damage every 1 sec to up to 5 targets within 15ft.</li>\
+    <li>Foes standing in the Pyre Patch have a 10% chance to be affected by Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec.</li>\
+  </ul>',
 
   chemicalFire:
   '<div>\
@@ -10030,7 +10112,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const detonatorSwitch = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>0 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>45 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>All of your current Gadgeteer Pets are defeated and placed on a 5 sec cooldown.</li>\
+    <li>Particle Mine: Causes this power to immediately detonate and increases the damage radius to 25ft.</li>\
+    <li>Munitions Bots: Deals 241 Particle Damage to up to 5 targets within 15ft.</li>\
+    <li>Attack Toys: Deals 241 Particle Damage to up to 5 targets within 15ft.</li>\
+    <li>Attack Toys Clones: Deals 160 Particle Damage to up to 5 targets within 15ft.</li>\
+    <li>Support Drones:<br>Support Mode: Heals up to 5 allies within 20ft for +603 Health Points.<br>Turret Mode: Deals 241 Particle Damage to up to 5 targets within 15ft.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Detonator Switch', '<img src="img/power-icons/gadgeteering/Gadgeteering_DetonatorSwitch.png" />&nbsp;Detonator Switch', 2, 9, pow++, 3, detonatorSwitch.power);
@@ -10040,7 +10135,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const plasmaCannon = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>104 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 2 foot Cylinder<br>20 seconds recharge</div>\
   </div><br>\
@@ -10073,7 +10168,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const resurrectionSerum = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Gadgeteering<br>28 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects defeated friend or foe (1 max)<br>25 foot Sphere<br>3 seconds recharge</div>\
   </div><br>\
@@ -10236,7 +10331,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const eyeLasers = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Laser Sword<br>23-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>25 feet</div>\
   </div><br>\
@@ -10249,7 +10344,7 @@ const eyeLasers = {
     <li>Refreshes the duration of your Plasma Burn if there are at least 3 stacks on the target.</li>\
   </ul>\
   <hr>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>Laser Sword<br>23-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -10315,7 +10410,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const glance = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Laser Sword<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 127 Particle Damage and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   trauma:
   '<div>\
@@ -10354,7 +10457,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const lightwaveSlash = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Laser Sword<br>41-62 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -10402,7 +10505,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const cyberneticTether = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Laser Sword<br>31-41 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -10464,7 +10567,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const lightspeedDash = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Laser Sword<br>13 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 105 Particle Damage and Snaring them for 13 sec.</li>\
+    <li>Roots your target for 13 sec if you Lunge from more than 20 feet away.</li>\
+  </ul>',
 
   download:
   '<div>\
@@ -10497,7 +10609,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const particleAccelerator = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Laser Sword<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -10528,8 +10640,8 @@ dataRequireGroupPower[dataPower.length-1] = 'technology';
 
 const laserDeflection = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Laser Sword<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Laser Sword<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -10559,8 +10671,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Data Con
 
 const unifiedTheory = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Laser Sword<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Laser Sword<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -10584,7 +10696,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const plasmaCutter = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Laser Sword<br>35-55 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet<br>6 seconds recharge</div>\
   </div><br>\
@@ -10625,7 +10737,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const particleSmash = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Laser Sword<br>101 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>25 feet; 20 foot Sphere<br>12 seconds recharge</div>\
+  </div><br>\
+  MELEE AOE DAMAGE - PLASMA BURN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>You deal 377 Particle Damage.</li>\
+    <li>Targets affected by Plasma Burn have Disintegrate applied to them, lowering their resistance to Particle Damage by 18% for 15 sec.</li>\
+    <li>Consumes your Plasma Burn stacks on the targets, dealing 277 Particle Damage for each one consumed.</li>\
+  </ul>',
 
   lightEverlasting:
   '<div>\
@@ -10668,7 +10790,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ul
 
 const particleWave = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Laser Sword<br>35 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 60 degree Cone<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCKTO - PLASMA BURN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 183 Particle Damage.</li>\
+    <li>Knocks targets towards you.</li>\
+    <li>Applies a stack of Plasma Burn to targets not already affected by it.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+  </ul>',
 
   illuminate:
   '<div>\
@@ -10701,7 +10834,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const powerConversion = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Laser Sword<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
+  </div><br>\
+  SELF ENERGY GAIN - SELF DEBUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Upon activation, you gain +35% Energy.</li>\
+    <li>Your Energy Equilibrium is set to 106.</li>\
+    <li>You gain 2.9% Energy Regeneration.</li>\
+    <li>Your base Damage and Healing output are reduced by 10%.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Power Conversion', '<img src="img/power-icons/laser-sword/LaserSword_PowerConversion.png" />&nbsp;Power Conversion', 2, 10, pow++, 2, powerConversion.power);
@@ -10711,7 +10856,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const badSector = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Laser Sword<br>11 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
+  </div><br>\
+  ROOT - PLASMA BURN - RUNE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates a Bad Sector at your location for 10 sec.</li>\
+    <li>Foes within 10ft are Rooted for 6.7 sec.</li>\
+    <li>Has a 20% chance every 1 sec to apply Plasma Burn to your target, dealing 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>',
 
   analyzeWeakness:
   '<div>\
@@ -10735,7 +10890,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Analyze 
 
 const luminescentSlash = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Laser Sword<br>37-56 Energy cost<br>0.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -10835,7 +10990,16 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 
 const risingKnee = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>13 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet<br>3 seconds recharge</div>\
+  </div><br>\
+  MELEE DAMAGE - KNOCK<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 155 Crushing Damage.</li>\
+    <li>Knocks down your target.</li>\
+  </ul>',
 
   flowingStrikes:
   '<div>\
@@ -10868,7 +11032,16 @@ dataPowerAlias['Rising Knee'] = new PowerAlias('Rising Knee', 'Rising Knee', '<i
 
 const inexorableTides = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>28 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div><br>\
+  MELEE AOE DAMAGE - KNOCK<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 141 Crushing Damage to all targets.</li>\
+    <li>Affected targets are Knocked Up 6.7 ft.</li>\
+  </ul>',
 
   instepCrush:
   '<div>\
@@ -10900,7 +11073,7 @@ dataPowerAlias['Inexorable Tides'] = new PowerAlias('Inexorable Tides', 'Inexora
 
 const bladedCyclone = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Martial Arts<br>41 + 20 Energy every 0.5 sec<br>0.5 sec activate time (2.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -10935,7 +11108,7 @@ dataPowerAlias['Bladed Cyclone'] = new PowerAlias('Bladed Cyclone', 'Bladed Cycl
 
 const shurikenStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Martial Arts<br>22 + 17 Energy every 0.5 sec<br>0.5 sec activate time (3.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>30 foot Sphere</div>\
   </div><br>\
@@ -10958,8 +11131,8 @@ dataPowerAlias['Shuriken Storm'] = new PowerAlias('Shuriken Storm', 'Shuriken St
 
 const shurikenThrow = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Martial Arts<br>23-46 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Martial Arts<br>23-46 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - BLAST - KNOCK DOWN<br><br>\
@@ -11007,8 +11180,8 @@ dataPowerAlias['Shuriken Throw'] = new PowerAlias('Shuriken Throw', 'Shuriken Th
 
 const chainedKunai = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Martial Arts<br>27-41 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Martial Arts<br>27-41 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
   </div><br>\
   MELEE DAMAGE - KNOCK TO - BLEED<br><br>\
@@ -11059,8 +11232,8 @@ dataPowerAlias['Chained Kunai'] = new PowerAlias('Chained Kunai', 'Chained Kunai
 
 const shurikenSweep = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Martial Arts<br>40-88 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Martial Arts<br>40-88 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
   RANGED AOE DAMAGE - SNARE<br><br>\
@@ -11082,7 +11255,16 @@ dataPowerAlias['Shuriken Sweep'] = new PowerAlias('Shuriken Sweep', 'Shuriken Sw
 
 const thunderboltLunge = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>13 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE - ROOT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 129 Crushing Damage and Snares them for 13 sec.</li>\
+    <li>Roots your target for 13 sec if you Lunge from more than 20 feet away.</li>\
+  </ul>',
 
   essenceAssault:
   '<div>\
@@ -11097,7 +11279,16 @@ dataPowerAlias['Thunderbolt Lunge'] = new PowerAlias('Thunderbolt Lunge', 'Thund
 
 const smokeBombLunge = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>12 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 96 Crushing Damage and Snares them for 13 sec.</li>\
+    <li>Stuns your target for 1.7 sec if you Lunge from more than 20 feet away.</li>\
+  </ul>',
 
   suddenStrike:
   '<div>\
@@ -11113,7 +11304,16 @@ dataPowerAlias['Smoke Bomb Lunge'] = new PowerAlias('Smoke Bomb Lunge', 'Smoke B
 
 const laughingZephyr = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>11 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet; 40 foot lunge<br>20 seconds recharge</div>\
+  </div><br>\
+  REVERSE LUNGE - SELF BUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>You lunge away from the target.</li>\
+    <li>Applies 2 stacks of Charged Up on you, which increases your running speed by 15%, your jump height by 3%, and your flying speed by 3% for 12 sec. Stacks up to 5 times.</li>\
+  </ul>',
 
   sleightOfMind:
   '<div>\
@@ -11141,7 +11341,16 @@ dataPowerAlias['Laughing Zephyr'] = new PowerAlias('Laughing Zephyr', 'Laughing 
 
 const smokeBomb = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>34 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (20 max)<br>50 foot Sphere<br>2 minutes recharge</div>\
+  </div><br>\
+  THREAT WIPE - STEALTH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Wipes your threat from nearby targets and places you in Stealth for 4 sec.</li>\
+    <li>Sets your other Threat Wipe abilities on a 30 sec cooldown.</li>\
+  </ul>',
 
   concussiveEscape:
   '<div>\
@@ -11156,7 +11365,17 @@ dataPowerAlias['Smoke Bomb'] = new PowerAlias('Smoke Bomb', 'Smoke Bomb', '<img 
 
 const bountifulChiResurgence = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>20 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
+  </div><br>\
+  SELF HEAL OVER TIME - CHI ENERGY<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Heals you for +107 Health Points every 2 sec over 16 sec.</li>\
+    <li>While active, your damage is reduced by 10%.</li>\
+    <li>Activates a shared cooldown of 15 seconds on all Self Heal Over Time powers.</li>\
+  </ul>',
 
   resurgentReiki:
   '<div>\
@@ -11182,7 +11401,17 @@ dataPowerAlias['Bountiful Chi Resurgence'] = new PowerAlias('Bountiful Chi Resur
 
 const intensity = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Grants +42% all damage strength and +35 Strength and Dexterity for 15 sec.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   fistsOfRighteousFlame:
   '<div>\
@@ -11206,7 +11435,18 @@ dataPowerAlias['Intensity'] = new PowerAlias('Intensity', 'Intensity', '<img src
 
 const masterfulDodge = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE DEFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Increases your Dodge chance by 50% and your Avoidance by 87%.</li>\
+    <li>Reduces the damage you take from Damage Over Time effects by 167%.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
+  </ul>',
 
   unchained:
   '<div>\
@@ -11222,7 +11462,16 @@ dataPowerAlias['Masterful Dodge'] = new PowerAlias('Masterful Dodge', 'Masterful
 
 const caltropsTashibishi = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>29 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>10 seconds recharge</div>\
+  </div><br>\
+  MELEE AOE DAMAGE - SNARE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>You toss out a cluster of Caltrops Tashibishi that deal 50 Slashing Damage every 1 sec for 16 sec to targets within 10ft.</li>\
+    <li>Targets in the Caltrops Tashibishi are Snared, reducing their movement speed by 100% for 3.3 sec.</li>\
+  </ul>',
 
   spikes:
   '<div>\
@@ -11268,8 +11517,8 @@ dataPowerAlias['Night Warrior'] = new PowerAlias('Night Warrior', 'Night Warrior
 
 const parry = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Martial Arts<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Martial Arts<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -11298,8 +11547,8 @@ dataPowerAlias['Parry'] = new PowerAlias('Parry', 'Parry', '<img src="img/power-
 
 const fluidity = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Martial Arts<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Martial Arts<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -11323,8 +11572,8 @@ dataPowerAlias['Fluidity'] = new PowerAlias('Fluidity', 'Fluidity', '<img src="i
 
 const steadfast = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Martial Arts<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Martial Arts<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - DEXTERITY - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -11341,8 +11590,8 @@ dataPowerAlias['Steadfast'] = new PowerAlias('Steadfast', 'Steadfast', '<img src
 
 const relentless = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Martial Arts<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Martial Arts<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
@@ -11362,7 +11611,7 @@ dataPowerAlias['Relentless'] = new PowerAlias('Relentless', 'Relentless', '<img 
 
 const furyOfTheDragon = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Martial Arts<br>33 + 17 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>25 feet; 60 degree Cone<br>60 seconds recharge</div>\
   </div><br>\
@@ -11391,14 +11640,24 @@ dataPowerAlias['Fury of the Dragon'] = new PowerAlias('Fury of the Dragon', 'Fur
 
 const vorpalBlade = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Martial Arts<br>106 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>15 feet; 20 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  ULTIMATE - MELEE AOE DAMAGE - BLEED<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 53 Slashing Damage to all targets. Hits 5 times.</li>\
+    <li>The initial strike immediately causes foes to Bleed, causing 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times. Each additional strike also causes Bleed, but is delayed by 1 sec.</li>\
+    <li>The damage this power deals is based on the number of stacks of Focus you have.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Vorpal Blade'] = new PowerAlias('Vorpal Blade', 'Vorpal Blade', '<img src="img/power-icons/martial-arts/MartialArts_VorpalBlade.png" />&nbsp;Vorpal Blade', vorpalBlade.power);
 
 const devastatingStrike = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Martial Arts<br>141 Energy cost<br>0.83 sec charge time (0.83 min)<br>1.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet<br>60 seconds recharge</div>\
   </div><br>\
@@ -11418,21 +11677,41 @@ dataPowerAlias['Devastating Strike'] = new PowerAlias('Devastating Strike', 'Dev
 
 const whirlingDragonStrike = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Martial Arts<br>137 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>30 foot lunge; 20 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  MELEE AOE DAMAGE - DAMAGE RESISTANCE DEBUFF - KNOCK DOWN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges to your target and deals 210 Slashing Damage to your target and all nearby targets. Hits 3 times.</li>\
+    <li>Knocks Down affected targets.</li>\
+    <li>Applies Overpower, which reduces all damage resistance by 20% for 15 sec.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Whirling Dragon Strike'] = new PowerAlias('Whirling Dragon Strike', 'Whirling Dragon Strike', '<img src="img/power-icons/martial-arts/MartialArts_WhirlingDragonStrike.png" />&nbsp;Whirling Dragon Strike', whirlingDragonStrike.power);
 
 const bladedFury = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Martial Arts<br>136 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (10 max)<br>10 feet; 20 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  ULTIMATE - MELEE DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 43 Slashing Damage to all targets. Hits 7 times. This damage increases for every stack of Focus on you.</li>\
+    <li>Knocks Down targets.</li>\
+    <li>Applies Shredded, reducing foe\\\'s resistance to Slashing damage by 18% for 15 sec.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Bladed Fury'] = new PowerAlias('Bladed Fury', 'Bladed Fury', '<img src="img/power-icons/martial-arts/MartialArts_BladedFury.png" />&nbsp;Bladed Fury', bladedFury.power);
 
 const shadowStrike = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Martial Arts<br>86 Energy cost<br>1.83 sec charge time (1.83 min)<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet<br>60 seconds recharge</div>\
   </div><br>\
@@ -11523,8 +11802,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Bur
 
 const stormsHarvest = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Dual Blades<br>30-47 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Dual Blades<br>30-47 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - ROOT - DISORIENT<br><br>\
@@ -11602,7 +11881,16 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const strikeDown = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Dual Blades<br>13 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE - KNOCK DOWN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>You lunge at your target, dealing 129 Slashing Damage and your target is Snared.</li>\
+    <li>Your target is Knocked Down if you lunged more than 20 feet and your target is not currently affected by a control power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Strike Down', '<img src="img/power-icons/dual-blades/DualBlades_StrikeDown.png" />&nbsp;Strike Down', 3, 11, pow++, 1, strikeDown.power);
@@ -11682,7 +11970,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const formOfTheTempest = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Dual Blades<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -11734,7 +12022,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const dragonsWrath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Dual Blades<br>36-61 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -11789,7 +12077,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const eyeOfTheStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Dual Blades<br>9.3 + 6.3 Energy every 0.5 sec<br>0.5 sec activate time (5.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -11866,7 +12154,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const swordCyclone = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Dual Blades<br>31 + 21 Energy every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -12067,7 +12355,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Sh
 
 const scorpionSting = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 127 Slashing Damage, and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   suddenStrike:
   '<div>\
@@ -12129,7 +12425,15 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const spittingCobra = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>17 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>3 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 121 Slashing Damage, and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   pinDown:
   '<div>\
@@ -12187,7 +12491,16 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const leopardsLeap = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>13 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE - KNOCK<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>You lunge at your target, dealing 129 Slashing Damage, and your target is Snared for 13 sec, reducing their movement speed by 100%.</li>\
+    <li>Knocks Down your target if you lunged from more than 20ft and your target is not currently affected by a control power.</li>\
+  </ul>',
 
   suddenStrike:
   '<div>\
@@ -12277,7 +12590,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const formOfTheTiger = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Fighting Claws<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -12301,8 +12614,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const counterattack = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fighting Claws<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -12360,8 +12673,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const dragonsClaws = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fighting Claws<br>51-77 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>51-77 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - SNARE - SUDDEN STRIKE<br><br>\
@@ -12405,8 +12718,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Thu
 
 const scarletArc = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fighting Claws<br>39-71 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>39-71 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - KNOCK<br><br>\
@@ -12478,7 +12791,7 @@ const rendAndTear = {
   </div>'
 };
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Rend and Tear', '<img src="img/power-icons/fighting-claws/FightingClaws_RendAndTear.png" />&nbsp;Rend and Tear', 3, 12, pow++, 2, rendAndTear);
+dataPower[dataPower.length] = new Power(dataPower.length, 'Rend and Tear', '<img src="img/power-icons/fighting-claws/FightingClaws_RendAndTear.png" />&nbsp;Rend and Tear', 3, 12, pow++, 2, rendAndTear.power);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -12499,8 +12812,8 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const eaglesGrasp = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fighting Claws<br>54-83 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>54-83 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>25 foot lunge; 10 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
   LUNGE - STUN - PARALYZE<br><br>\
@@ -12578,8 +12891,8 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const tigersBite = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Fighting Claws<br>49-75 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>49-75 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE<br><br>\
@@ -12787,7 +13100,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const swiftStrike = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Single Blade<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 127 Slashing Damage, and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   subtletyOfTheTides:
   '<div>\
@@ -12830,8 +13151,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const scythingBlade = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Single Blade<br>34-56 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Single Blade<br>34-56 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
   MELEE AOE DAMAGE - BLEED<br><br>\
@@ -12938,7 +13259,16 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const cutDown = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Single Blade<br>13 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE - ROOT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 129 Slashing Damage and Snares them for 13 sec.</li>\
+    <li>Roots your target for 13 sec if you Lunge from more than 20ft away.</li>\
+  </ul>',
 
   delayedAttack:
   '<div>\
@@ -13029,7 +13359,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const formOfTheSwordsman = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Single Blade<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -13053,8 +13383,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const deflect = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Single Blade<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Single Blade<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -13116,8 +13446,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const dragonsBite = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Single Blade<br>37-58 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Single Blade<br>37-58 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - REFRESH<br><br>\
@@ -13182,7 +13512,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const crimsonBloom = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Single Blade<br>9.3 + 6.3 Energy every 0.5 sec<br>0.5 sec activate time (5.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -13222,8 +13552,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const tornadoSlash = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Single Blade<br>40-53 Energy<br>0.67 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Single Blade<br>40-53 Energy cost<br>0.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 60 degree Cone<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - STUN - BLEED<br><br>\
@@ -13303,8 +13633,8 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const reapersEmbrace = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Single Blade<br>66-81 Energy<br>0.67 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Single Blade<br>66-81 Energy cost<br>0.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet<br>0.5 seconds recharge</div>\
   </div><br>\
   MELEE DAMAGE - RUPTURE<br><br>\
@@ -13339,7 +13669,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Ele
 
 const relentlessPursuit = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Single Blade<br>35 + 23 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>25 foot lunge</div>\
   </div><br>\
@@ -13545,7 +13875,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const crashingWaveKick = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Unarmed<br>20 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 170 Crushing Damage, and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   subtletyOfTheTides:
   '<div>\
@@ -13598,7 +13936,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const oneHundredHands = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Unarmed<br>14 + 15 Energy every 0.5 sec<br>0.5 sec activate time (2.5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
   </div><br>\
@@ -13697,7 +14035,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const elbowSlam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Unarmed<br>64 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>20 foot lunge<br>10 seconds recharge</div>\
   </div><br>\
@@ -13813,7 +14151,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const formOfTheMaster = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Unarmed<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -13852,8 +14190,8 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const chiManipulation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Unarmed<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Unarmed<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
@@ -13885,7 +14223,17 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const backhandChop = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Unarmed<br>21 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet<br>6 seconds recharge</div>\
+  </div><br>\
+  MELEE DAMAGE - INTERRUPT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 183 Crushing Damage.</li>\
+    <li>Interrupts the target. This does not affect higher ranked targets.</li>\
+    <li>If a target is Interrupted, they cannot be Interrupted again for 8 sec.</li>\
+  </ul>',
 
   chiFlame:
   '<div>\
@@ -13939,8 +14287,8 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const dragonKick = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Unarmed<br>38-63 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Unarmed<br>38-63 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
   MELEE AOE DAMAGE - STUN<br><br>\
@@ -14038,8 +14386,8 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 
 const burningChiFist = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Unarmed<br>39-76 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Unarmed<br>39-76 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - CHI ENERGY<br><br>\
@@ -14091,8 +14439,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const dragonUppercut = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Unarmed<br>42-64 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Unarmed<br>42-64 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - KNOCK<br><br>\
@@ -14145,8 +14493,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const openPalmStrike = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Unarmed<br>24-72 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Unarmed<br>24-72 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>25 feet; 4 foot Cylinder</div>\
   </div><br>\
   MELEE DAMAGE - KNOCK<br><br>\
@@ -14286,7 +14634,7 @@ dataPowerAlias['Ego Form'] = new PowerAlias('Ego Form', 'Ego Form', '<img src="i
 
 const manipulator = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Mentalist<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -14322,7 +14670,7 @@ dataPowerAlias['Mind Link'] = new PowerAlias('Mind Link', 'Mind Link', '<img src
 
 const mentalImpact = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Mentalist<br>240 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -14350,7 +14698,22 @@ dataPowerAlias['Mental Impact'] = new PowerAlias('Mental Impact', 'Mental Impact
 
 const masterOfTheMind = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Mentalist<br>0 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE ULTIMATE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Applies 7,069 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Grants you 250% resistance to Hold and Knock effects.</li>\
+    <li>Grants you +125% resistance to all damage.</li>\
+    <li>Grants you Flight and +33 Flight Speed.</li>\
+    <li>While this buff is active, every stack of Ego Leech on you increases your chance to critically strike a foe by 4.2%.</li>\
+    <li>Gives you one stack of Ego Leech every 1 sec.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses and Active Defenses.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Master of the Mind'] = new PowerAlias('Master of the Mind', 'Master of the Mind', '<img src="img/power-icons/mentalist/Mentalist_MasterOfTheMind.png" />&nbsp;Master of the Mind', masterOfTheMind.power);
@@ -14561,7 +14924,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const egoBladeAstonish = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telekinesis<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 127 Ego Damage, and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   trauma:
   '<div>\
@@ -14591,7 +14962,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const egoBladeFrenzy = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>20 + 16 Energy every 0.5 sec<br>0.5 sec activate time (3.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -14643,7 +15014,22 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const telekinesis = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Telekinesis<br>53 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible;<br>Affects foe<br>100 feet<br>3 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE - PICK UP AND THROW<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 201 Ego Damage to your target.</li>\
+    <li>If there is a destructible object within 50ft of you, deals an additional 110-773 Ego Damage based on the Mass of the object to your target.</li>\
+    <li>Also deals 60-422 Ego Damage to other targets within 15ft.</li>\
+    <li>Objects of Mass 7 outright defeat Henchman or Villain rank enemies.</li>\
+    <li>All affected targets are Disoriented, causing their damage to be reduced by 10% and their movement speed reduced by 50% for 12 sec.</li>\
+    <li>Knocks down your primary target if an object with a Mass of 2 or less is thrown at them.</li>\
+    <li>Knocks back your primary target if an object with a Mass of 3 or more is thrown at them.</li>\
+    <li>Stuns all targets for 1.7 sec if an object with a Mass of 3 or more is thrown at them.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinesis', '<img src="img/power-icons/telekinesis/Telekinesis_Telekinesis.png" />&nbsp;Telekinesis', 4, 15, pow++, 1, telekinesis.power);
@@ -14653,12 +15039,12 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const telekineticLariat = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>17 Energy cost<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
   RANGED DAMAGE - KNOCK TO<br><br>\
-  CHARGE<br>\
+  CLICK<br>\
   <ul>\
     <li>Deals 150 Ego Damage. Your target is Knocked to you.</li>\
     <li>Gives you a stack of Ego Leech.</li>\
@@ -14687,8 +15073,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const telekineticBurst = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>42-84 Energy<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>42-84 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
   RANGED AOE DAMAGE - DISORIENT<br><br>\
@@ -14720,7 +15106,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const egoBladeDash = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telekinesis<br>13 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 105 Ego Damage and Snaring them for 13 sec.</li>\
+    <li>Roots your target for 13 sec if you Lunge from more than 20 feet away.</li>\
+  </ul>',
 
   headShot:
   '<div>\
@@ -14770,7 +15165,7 @@ dataRequireGroupPower[dataPower.length-1] = 'mentalist';
 
 const mentalDiscipline = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -14805,7 +15200,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Id Blade
 
 const mentalPrecision = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -14836,8 +15231,8 @@ dataRequireGroupPower[dataPower.length-1] = 'mentalist';
 
 const telekineticShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -14865,8 +15260,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Telekine
 
 const telekineticReverberation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
@@ -14889,8 +15284,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const egoBladeBreach = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>32-53 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>32-53 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE - REFRESH<br><br>\
@@ -14930,8 +15325,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Ven
 
 const telekineticEruption = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>44-122 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>44-122 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK BACK<br><br>\
@@ -14975,8 +15370,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const telekineticWave = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>31-74 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>31-74 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 60 degree Cone<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK BACK<br><br>\
@@ -15019,7 +15414,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const telekineticShards = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telekinesis<br>54 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - REFRESH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 141 Ego Damage.</li>\
+    <li>Knocks Down your primary target.</li>\
+    <li>Refreshes all of your stacks of Ego Leech.</li>\
+  </ul>',
 
   impaled:
   '<div>\
@@ -15052,7 +15457,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const telekineticBarrage = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>29 + 23 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
   </div><br>\
@@ -15096,7 +15501,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const egoChoke = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>18 + 18 Energy every 1 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -15128,7 +15533,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const egoHold = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>32 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -15156,7 +15561,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const egoSurge = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telekinesis<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Grants +42% all damage strength and +66 Ego.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   nimbleMind:
   '<div>\
@@ -15179,8 +15594,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Nimble M
 
 const egoBladeAnnihilation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>57-73 Energy<br>0.67 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>57-73 Energy cost<br>0.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
   MELEE DAMAGE<br><br>\
@@ -15216,8 +15631,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Bli
 
 const telekineticMaelstrom = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>59-126 Energy<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>59-126 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
   RANGED AOE DAMAGE - STUN<br><br>\
@@ -15259,8 +15674,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const telekineticLance = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telekinesis<br>49-98 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telekinesis<br>49-98 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE<br><br>\
@@ -15283,7 +15698,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Bli
 
 const telekineticAssault = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>26 + 20 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -15314,7 +15729,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const lanceRain = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telekinesis<br>157 Energy cost<br>1.17 sec charge time (1.17 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (7 max)<br>100 feet; 25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
@@ -15420,8 +15835,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Psychic 
 
 const egoBlast = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telepathy<br>18-50 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telepathy<br>18-50 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - DISORIENT - BLAST<br><br>\
@@ -15460,8 +15875,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const mindBreak = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telepathy<br>21-130 Energy<br>1.5 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telepathy<br>21-130 Energy cost<br>1.5 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
   RANGED DAMAGE - DETONATE - BLAST<br><br>\
@@ -15489,7 +15904,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const egoPlacate = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>18 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div><br>\
+  PLACATE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Placates the target for 10 sec, preventing them from attacking you.</li>\
+    <li>Reduces your threat against the target by -400 threat each time you use this power.</li>\
+    <li>Disorients the target. Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  </ul>',
 
   svengalisGuile:
   '<div>\
@@ -15508,8 +15933,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Svengali
 
 const egoSleep = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telepathy<br>16-40 Energy<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telepathy<br>16-40 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible (7 max)<br>50 feet; 0-15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
   AoE Sleep<br><br>\
@@ -15538,7 +15963,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const empathicHealing = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>12 + 12 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -15565,7 +15990,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Empathic
 
 const egoSprites = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>52 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>25 foot Sphere</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - DOT - DISORIENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 40 Ego Damage every 1 sec for 10 sec to all targets.</li>\
+    <li>Has a 10% chance every hit to Disorient the target, causing their damage to be reduced by 10% and their movement speed reduced by 50% for 12 sec.</li>\
+    <li>Damage dealt by this power doesn\\\'t break Sleep effects.</li>\
+  </ul>',
 
   slaveMentality:
   '<div>\
@@ -15605,7 +16040,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const mentalLeech = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>21 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 20 foot Sphere<br>8 seconds recharge</div>\
+  </div><br>\
+  DOT - RANGED AOE DAMAGE - DEBUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 33 Ego Damage every 1 sec for 6 sec to affected targets.</li>\
+    <li>When Mental Leech expires, it applies Dependency to the target.</li>\
+    <li>Dependency heals an ally near the foe for +39 Health Points every 0.5 seconds for 20 sec and can stack up to 3 times.</li>\
+  </ul>',
 
   mentalWeakness:
   '<div>\
@@ -15626,7 +16071,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const shadowOfDoubt = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>20 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>8 seconds recharge</div>\
+  </div><br>\
+  DOT - RANGED DAMAGE - DEBUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 38 Ego Damage every 1 sec for 6 sec to all targets.</li>\
+    <li>When Shadow of Doubt expires, it applies Regret to the target.</li>\
+    <li>Regret causes -8% all damage strength for 20 sec to affected targets and can stack up to 3 times.</li>\
+  </ul>',
 
   malaise:
   '<div>\
@@ -15679,8 +16134,8 @@ dataRequireGroupPower[dataPower.length-1] = 'mentalist';
 
 const telepathicReverberation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telepathy<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Telepathy<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - PRESENCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -15703,7 +16158,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const mindLock = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>24 Energy cost<br>1 sec charge time (1 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>100 feet<br>15 seconds recharge</div>\
   </div><br>\
@@ -15730,7 +16185,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Befuddli
 
 const psychicVortex = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>25 Energy cost<br>1 sec charge time (1 min)<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet<br>15 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Creates a Vortex for 24 sec that causes up to 5 targets within 25 ft to take 80 Ego Damage if they deal damage to any target.</li>\
+    <li>If they continue to deal damage, the amount of damage dealt to them by the Vortex increases.</li>\
+  </ul>',
 
   singleMinded:
   '<div>\
@@ -15749,7 +16213,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Single M
 
 const mindWipe = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>17 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe; Affects foe that is not destructible<br>100 feet<br>45 seconds recharge</div>\
+  </div><br>\
+  THREAT WIPE - STEALTH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Wipes your threat from your target. Places you in Stealth for 4 sec.</li>\
+    <li>Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
+  </ul>',
 
   freeYourMind:
   '<div>\
@@ -15768,7 +16241,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Free You
 
 const mindControl = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>24 Energy cost<br>1 sec charge time (1 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>100 feet<br>25 seconds recharge</div>\
   </div><br>\
@@ -15796,7 +16269,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Bewilder
 
 const summonNightmare = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>62 Energy cost<br>1 sec charge time<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet</div>\
   </div><br>\
@@ -15826,8 +16299,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const psionicHealing = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Telepathy<br>0-86 Energy<br>3 sec charge time<br>0.5 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Telepathy<br>0-86 Energy cost<br>3 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets friend<br>100 feet</div>\
   </div><br>\
   HEAL<br><br>\
@@ -15854,7 +16327,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Psionic 
 
 const mindDrain = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>24 + 19 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -15888,7 +16361,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const egoStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>21 + 21 Energy every 1 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>25 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -15919,7 +16392,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const mentalStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>67 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>12 seconds recharge</div>\
   </div><br>\
@@ -15952,7 +16425,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const collectiveWill = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Telepathy<br>75 Energy cost<br>1 sec charge time (1 min)<br>0.87 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -15980,7 +16453,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Consume 
 
 const mindfulReinforcement = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>69 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets friend<br>50 feet</div>\
+  </div><br>\
+  DIRECT SHIELD - HEAL<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Shields your target, absorbing 832 damage for 8 sec.</li>\
+    <li>After 8 sec, the target is healed for twice the remaining Shield amount.</li>\
+  </ul>',
 
   revitalizingBoost:
   '<div>\
@@ -16052,7 +16534,16 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 
 const endorphinRush = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Brick<br>15 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
+  </div><br>\
+  SELF HEAL OVER TIME<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>For the next 15 sec, directly damaging a foe or being directly damaged by a foe heals you for +61 Health Points every 2 sec over 6 sec.</li>\
+    <li>Activates a shared cooldown of 15 seconds on all Self Heal Over Time powers.</li>\
+  </ul>',
 
   cantStopMe:
   '<div>\
@@ -16067,7 +16558,20 @@ dataPowerAlias['Endorphin Rush'] = new PowerAlias('Endorphin Rush', 'Endorphin R
 
 const aggressor = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Brick<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Increases your damage by 42%.</li>\
+    <li>Reduces your power costs by 25%.</li>\
+    <li>Gives you +35 STRENGTH and CONSTITUTION.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   destructiveForce:
   '<div>\
@@ -16082,7 +16586,17 @@ dataPowerAlias['Aggressor'] = new PowerAlias('Aggressor', 'Aggressor', '<img src
 
 const indestructible = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Brick<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE DEFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Increases your resistance to all damage by 125% and reduces incoming damage by a flat 83 damage.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
+  </ul>',
 
   unchained:
   '<div>\
@@ -16112,7 +16626,7 @@ dataPowerAlias['Unstoppable'] = new PowerAlias('Unstoppable', 'Unstoppable', '<i
 
 const enrage = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Brick<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -16143,8 +16657,8 @@ dataPowerAlias['Enrage'] = new PowerAlias('Enrage', 'Enrage', '<img src="img/pow
 
 const pulverizer = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Brick<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Brick<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
@@ -16163,7 +16677,17 @@ dataPowerAlias['Pulverizer'] = new PowerAlias('Pulverizer', 'Pulverizer', '<img 
 
 const unleashedRage = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Brick<br>142 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (10 max)<br>20 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  MELEE AOE DAMAGE - KNOCK DOWN - FEAR<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 306 Crushing Damage to all targets. This increases for every stack of Enrage on you.</li>\
+    <li>Knocks Down targets.</li>\
+    <li>Disorients targets for 12 sec, reducing their damage by 10% and their movement speed by 50%.</li>\
+  </ul>',
 
   deafeningVoice:
   '<div>\
@@ -16178,7 +16702,7 @@ dataPowerAlias['Unleashed Rage'] = new PowerAlias('Unleashed Rage', 'Unleashed R
 
 const powerChord = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Brick<br>22 + 23 Energy every 0.5 sec<br>0.5 sec activate time (3 max)</div>\
     <div style="text-align:right;">Affects foe that is not destructible (10 max)<br>25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -16212,7 +16736,7 @@ dataPowerAlias['Power Chord'] = new PowerAlias('Power Chord', 'Power Chord', '<i
 
 const catastrophicPummeling = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Brick<br>43 + 20 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>10 feet<br>60 seconds recharge</div>\
   </div><br>\
@@ -16233,7 +16757,7 @@ dataPowerAlias['Catastrophic Pummeling'] = new PowerAlias('Catastrophic Pummelin
 
 const finalPunch = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Brick<br>107 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>10 feet; 5 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -16251,7 +16775,7 @@ dataPowerAlias['Final Punch'] = new PowerAlias('Final Punch', 'Final Punch', '<i
 
 const earthquake = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Brick<br>119 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>60 seconds recharge</div>\
   </div><br>\
@@ -16280,7 +16804,7 @@ dataPowerAlias['Earthquake'] = new PowerAlias('Earthquake', 'Earthquake', '<img 
 
 const crushingRuin = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Brick<br>46 + 18 Energy every 0.5 sec<br>1 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>15 feet; 180 degree Cone<br>60 seconds recharge</div>\
   </div><br>\
@@ -16406,7 +16930,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Ca
 
 const bruteStrike = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 127 Crushing Damage, and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   concussion:
   '<div>\
@@ -16436,7 +16968,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const eruption = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>58 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 320 degree Cone<br>6 seconds recharge</div>\
+  </div><br>\
+  MELEE DAMAGE - KNOCK UP<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 179 Crushing Damage and 179 Fire Damage.</li>\
+    <li>Targets are Knocked Up 10ft.</li>\
+    <li>If your target is Disoriented, increases this power\\\'s base damage by 15%, and the Knock Up height is doubled.</li>\
+    <li>If your target is immune to Knock effects, increases this power\\\'s base damage by 15% and Stuns the target for 1.7 sec.</li>\
+  </ul>',
 
   magmaBurst:
   '<div>\
@@ -16481,7 +17024,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Gla
 
 const decimate = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>14 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - DISORIENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 105 Crushing Damage and Snaring them for 13 sec.</li>\
+    <li>Disorients your target for 12 sec if you Lunge from more than 20 feet away.</li>\
+  </ul>',
 
   restrainingOrder:
   '<div>\
@@ -16516,7 +17068,7 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 
 const wrathfulBlade = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Heavy Weapon<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -16559,8 +17111,8 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 
 const guard = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Heavy Weapon<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -16609,8 +17161,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const arcOfRuin = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Heavy Weapon<br>58-95 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>58-95 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere</div>\
   </div><br>\
   MELEE AOE DAMAGE - DISORIENT<br><br>\
@@ -16649,8 +17201,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const skullcrusher = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Heavy Weapon<br>31-45 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>31-45 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 3 foot Cylinder</div>\
   </div><br>\
   MELEE AOE DAMAGE - KNOCK DOWN - DISORIENT<br><br>\
@@ -16699,8 +17251,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ice
 
 const earthSplitter = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Heavy Weapon<br>43-67 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>43-67 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 5 foot Cylinder</div>\
   </div><br>\
   RANGED AOE DAMAGE - KNOCK UP - RECKLESS<br><br>\
@@ -16760,7 +17312,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const viciousDescent = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>55 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>60 foot lunge; 15 foot Sphere<br>15 seconds recharge</div>\
+  </div><br>\
+  LUNGE - MELEE AOE DAMAGE - SNARE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at your primary target. Deals 120 Crushing Damage and 120 Fire Damage to all targets and Snares them for 16 sec.</li>\
+    <li>Applies Reckless to you, which gives 35% resistance to all Knock effects for 15 sec. Stacks up to 3 times.</li>\
+    <li>When dealing direct damage, Reckless applies Bastion, causing 10% of your direct damage pre-damage mitigation to be applied to you as a Shield for 10 sec. Stacks up to 10 times.</li>\
+  </ul>',
 
   relentless:
   '<div>\
@@ -16829,8 +17391,8 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 
 const annihilate = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Heavy Weapon<br>41-60 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>41-60 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>15 feet</div>\
   </div><br>\
   MELEE DAMAGE - KNOCK BACK<br><br>\
@@ -16869,8 +17431,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Hel
 
 const brimstone = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Heavy Weapon<br>44-70 Energy<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>44-70 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>3 seconds recharge</div>\
   </div><br>\
   MELEE AOE DAMAGE - KNOCK DOWN<br><br>\
@@ -16939,8 +17501,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: U
 
 const skewer = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Heavy Weapon<br>27-43 Energy<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>27-43 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 3 foot Cylinder</div>\
   </div><br>\
   MELEE AOE DAMAGE - BLEED<br><br>\
@@ -17108,7 +17670,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const stoneShot = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>27-49 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 0-10 foot Sphere</div>\
   </div><br>\
@@ -17166,7 +17728,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const tremor = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>40-79 Energy cost<br>1.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -17196,7 +17758,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const landSlide = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Earth<br>17 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - DISORIENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 155 Crushing Damage and Snaring them for 13 sec.</li>\
+    <li>Staggers your target if you Lunge from more than 20ft away.</li>\
+    <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+  </ul>',
 
   rockSolid:
   '<div>\
@@ -17219,7 +17791,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const rockFormation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>84 Energy cost<br>2.17 sec charge time (2.17 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -17287,8 +17859,8 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 
 const stoneShroud = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Earth<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Earth<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -17310,8 +17882,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const destructive = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Earth<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Earth<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -17339,7 +17911,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const upheaval = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>25-42 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -17372,7 +17944,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const quicksand = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>14 + 14 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10-25 foot Sphere (based on pulse)</div>\
   </div><br>\
@@ -17402,7 +17974,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const caveIn = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>28-76 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -17445,7 +18017,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ul
 
 const seismicSmash = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>55 Energy cost<br>0.5 sec charge time (0.5 min)<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>25 foot lunge<br>15 seconds recharge</div>\
   </div><br>\
@@ -17504,7 +18076,7 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 
 const fissure = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>61 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>15 seconds recharge</div>\
   </div><br>\
@@ -17538,7 +18110,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const faultLine = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Earth<br>43-85 Energy cost<br>1.33 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 5 foot Cylinder</div>\
   </div><br>\
@@ -17740,7 +18312,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const mightyKick = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>16-24 Energy cost<br>0.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -17800,7 +18372,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const headButt = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Might<br>14 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 127 Crushing Damage, and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   concussion:
   '<div>\
@@ -17830,7 +18410,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const roomsweeper = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>30-73 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
   </div><br>\
@@ -17880,7 +18460,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const heelSmash = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>33-49 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -17932,7 +18512,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const hurl = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Might<br>17 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>3 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE - KNOCK<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 121 Crushing Damage, and your target is Knocked Down.</li>\
+  </ul>',
 
   rubbleTrouble:
   '<div>\
@@ -18005,7 +18593,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const ironLariat = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>30-43 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -18058,7 +18646,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const ironCyclone = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>36 + 21 Energy every 0.5 sec<br>0.5 sec activate time (2.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -18100,7 +18688,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const mightyLeap = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Might<br>19 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - SNARE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 105 Crushing Damage.</li>\
+    <li>Snares the target for 13 sec, reducing their movement speed by 100%.</li>\
+    <li>Stuns your target for 1.7 sec if you Lunge from more than 20ft away.</li>\
+  </ul>',
 
   bullRush:
   '<div>\
@@ -18166,8 +18764,8 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 
 const retaliation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Might<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Might<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -18215,7 +18813,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const uppercut = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>34-52 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -18267,7 +18865,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const demolish = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>44-63 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -18308,7 +18906,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const thunderclap = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Might<br>34 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere<br>6 seconds recharge</div>\
+  </div><br>\
+  MELEE AOE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 187 Crushing Damage and Stuns all targets for 1.7 sec.</li>\
+  </ul>',
 
   collateralDamage:
   '<div>\
@@ -18349,7 +18955,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const hyperVoice = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>17 + 15 Energy every 0.5 sec<br>0.67 sec activate time (3 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 60 degree Cone</div>\
   </div><br>\
@@ -18389,7 +18995,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const impressivePhysique = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>58 + 38 Energy every 1 sec<br>1 sec activate time (8 max)</div>\
     <div style="text-align:right;">Affects friend (5 max)<br>20 foot Sphere<br>6 seconds recharge</div>\
   </div><br>\
@@ -18457,7 +19063,18 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 
 const callToBattle = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Might<br>22 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>25 foot Sphere<br>20 seconds recharge</div>\
+  </div><br>\
+  RECKLESS - DISORIENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Disorients targets for 12 sec, reducing their damage by 15% and their movement speed by 50%.</li>\
+    <li>Applies 1 stack of Reckless to you and nearby allies, and also refreshes any existing stacks.</li>\
+    <li>Reckless gives 35% resistance to all Knock effects for 15 sec. Stacks up to 3 times.</li>\
+    <li>When dealing direct damage, Reckless applies Bastion, causing 10% of your direct damage pre-damage mitigation to be applied to you as a Shield for 10 sec. Stacks up to 10 times.</li>\
+  </ul>',
 
   intimidatingForce:
   '<div>\
@@ -18503,7 +19120,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const haymaker = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>43-119 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -18534,7 +19151,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Hav
 
 const havocStomp = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>44-68 Energy cost<br>1 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere<br>3 seconds recharge</div>\
   </div><br>\
@@ -18588,7 +19205,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ul
 
 const shockwave = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Might<br>24 + 17 Energy every 0.5 sec<br>0.5 sec activate time (3.5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 90 degree Cone</div>\
   </div><br>\
@@ -18640,7 +19257,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const nuclearShockwave = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Might<br>75 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>75 feet; 10 foot Cylinder<br>15 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - KNOCK - PLASMA BURN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Slam the ground, causing 201 Crushing and 201 Particle damage to all foes in a line in front of you.</li>\
+    <li>Knocks back targets 35ft within 15ft of you. Knocks Down targets within 50ft. Repels targets further than 50ft.</li>\
+    <li>Has a 50% chance to apply Plasma Burn to your targets.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+  </ul>',
 
   nuclearFallout:
   '<div>\
@@ -18722,7 +19350,7 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 
 const compassion = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Mystic<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -18746,7 +19374,7 @@ dataPowerAlias['Compassion'] = new PowerAlias('Compassion', 'Compassion', '<img 
 
 const venomousBreath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Supernatural<br>19 + 10 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -18788,7 +19416,7 @@ dataPowerAlias['Venomous Breath'] = new PowerAlias('Venomous Breath', 'Venomous 
 
 const soulMesmerism = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Supernatural<br>28 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -18811,7 +19439,18 @@ dataPowerAlias['Soul Mesmerism'] = new PowerAlias('Soul Mesmerism', 'Soul Mesmer
 
 const resurgence = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Supernatural<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE DEFENSE - SELF HEAL - INCREASED HEALTH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>You gain +50% Health Points and +833 Maximum Health Points.</li>\
+    <li>Increases your Regeneration by 5%.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
+  </ul>',
 
   unchained:
   '<div>\
@@ -18841,8 +19480,8 @@ dataPowerAlias['Pestilence'] = new PowerAlias('Pestilence', 'Pestilence', '<img 
 
 const supernaturalPower = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Supernatural<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Supernatural<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -18859,7 +19498,7 @@ dataPowerAlias['Supernatural Power'] = new PowerAlias('Supernatural Power', 'Sup
 
 const planarFracture = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Mystic<br>98 Energy cost<br>2 sec charge time (2 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>60 seconds recharge</div>\
   </div><br>\
@@ -18884,7 +19523,7 @@ dataPowerAlias['Planar Fracture'] = new PowerAlias('Planar Fracture', 'Planar Fr
 
 const endbringersGrasp = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Mystic<br>123 Energy cost<br>1.5 sec charge time (1.5 min)<br>Instant activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>60 seconds recharge</div>\
   </div><br>\
@@ -18902,7 +19541,7 @@ dataPowerAlias['Endbringer\'s Grasp'] = new PowerAlias('Endbringer\'s Grasp', 'E
 
 const crashingIncantation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Mystic<br>208 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 25 foot Sphere<br>60 seconds recharge</div>\
   </div><br>\
@@ -18920,7 +19559,24 @@ dataPowerAlias['Crashing Incantation'] = new PowerAlias('Crashing Incantation', 
 
 const feralRage = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Mystic<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE ULTIMATE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Applies 7,069 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Grants you 250% resistance to Hold and Knock effects.</li>\
+    <li>Increases your resistance to all damage by 21%. If you are affected by Regeneration, instead increases the amount by 83%.</li>\
+    <li>Increases your Bestial Supernatural base attack damage by 2.2% for each stack of Enraged! on you. Your current damage bonus is 0%.</li>\
+    <li>Your Bestial Supernatural attacks have an 8.5% chance to inflict Bleeding on your targets for each stack of Enraged! on you.</li>\
+    <li>Attacking targets heals you by +72 Health Points for each stack of your Bleeds on the target.</li>\
+    <li>Sets your Running Speed to 79.</li>\
+    <li>When this power ends, removes all Form stacks from you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses and Active Defenses.</li>\
+  </ul>',
 
   iNeedANap:
   '<div>\
@@ -18954,7 +19610,20 @@ dataPowerAlias['Feral Rage'] = new PowerAlias('Feral Rage', 'Feral Rage', '<img 
 
 const corrosivePit = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Mystic<br>121 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 60 degree Cone<br>60 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - POISON<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 201 Toxic Damage to all targets.</li>\
+    <li>Creates a Corrosive Pit at your primary target for 16 sec.</li>\
+    <li>Corrosive Pit deals 112 Toxic Damage every 1 sec for 16 sec to targets within 25ft. Hits up to 10 targets.</li>\
+    <li>Has a 15% chance every 1 sec to apply Deadly Poison to your targets, dealing 20 Toxic Damage every 1 sec over 16 sec. Stacks up to 5 times.</li>\
+    <li>Applies Noxious Poison to targets affected by your Deadly Poison, dealing 36 Toxic Damage every 1 sec over 16 sec to foes within 10ft.</li>\
+    <li>Targets in the Corrosive Pit are Snared, reducing their movement speed by 100% for 3.3 sec.</li>\
+  </ul>',
 
   toxicity:
   '<div>\
@@ -18970,7 +19639,7 @@ dataPowerAlias['Corrosive Pit'] = new PowerAlias('Corrosive Pit', 'Corrosive Pit
 
 const transcendence = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Mystic<br>122 Energy cost<br>0.83 sec charge time (0.83 min)<br>1 sec activate time</div>\
     <div style="text-align:right;">Affects foe that is not destructible (10 max)<br>30 foot Sphere<br>2 minutes 60 seconds recharge</div>\
   </div><br>\
@@ -19039,7 +19708,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const rebuke = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Celestial<br>18-50 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -19049,7 +19718,7 @@ const rebuke = {
     <li>Deals 158-563 Dimensional Damage.</li>\
   </ul>\
   <hr>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>Celestial<br>18-50 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets friend<br>100 feet</div>\
   </div><br>\
@@ -19083,7 +19752,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const celestialConduit = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Celestial<br>11 + 8 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -19094,7 +19763,7 @@ const celestialConduit = {
     <li>When targeting a friend, this power will Heal them.</li>\
   </ul>\
   <hr>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>Celestial<br>11 + 8 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets friend<br>50 feet</div>\
   </div><br>\
@@ -19126,7 +19795,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const vengeance = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Celestial<br>31-70 Energy cost<br>1.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 8-15 foot Sphere</div>\
   </div><br>\
@@ -19156,7 +19825,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const conviction = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>50 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>6 seconds recharge</div>\
+  </div><br>\
+  SELF HEAL<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Grants you +15% Maximum Health Points for 20 sec and heals you for +482 Health Points.</li>\
+    <li>Taking any damage will cancel the temporary health.</li>\
+  </ul>',
 
   reverence:
   '<div>\
@@ -19175,7 +19853,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Reverenc
 
 const iniquity = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>0 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets friend<br>100 feet</div>\
+  </div><br>\
+  HEAL - HEALTH TRANSFER<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Funnel your health to a friendly target, draining -450 of your Health to Heal your target for +362 Health Points.</li>\
+  </ul>',
 
   justice:
   '<div>\
@@ -19195,7 +19881,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Justice'
 
 const imbue = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE - CRITICAL BUFF - ENCHANTMENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Increases your Critical Chance and Severity by 2.5% for 15 sec. As you lose health, this amount can scale up to 13%.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   illusive:
   '<div>\
@@ -19214,7 +19910,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Illusive
 
 const illumination = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>35 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets friend (5 max)<br>50 feet; 20 foot Sphere<br>5 seconds recharge</div>\
+  </div><br>\
+  BUFF - ENCHANTMENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Heals friendly targets for +121 Health Points.</li>\
+    <li>Places Illumination on a friendly target, increasing the direct healing they receive by 3% for 20 sec.</li>\
+    <li>When targeting a foe, this power will Debuff them.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>Celestial<br>35 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 20 foot Sphere<br>5 seconds recharge</div>\
+  </div><br>\
+  DEBUFF - CURSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Places Illuminated on the target for 20 sec.</li>\
+    <li>Anyone attacking the target has a 15% chance to be affected by Mend, healing them for +78 Health Points every 2 sec for 8 sec.</li>\
+    <li>When targeting a friend, this power will Buff them.</li>\
+  </ul>',
 
   brilliance:
   '<div>\
@@ -19268,7 +19986,16 @@ dataRequireGroupPower[dataPower.length-1] = 'mystic';
 
 const expulse = {
   power: 
-  '<div>...</div>',
+  '<div style="display:flex; justify-content:space-between;">\
+    <div>Celestial<br>40 Energy cost<br>1 sec charge time (1 min)<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>3 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - HEAL - RUNE - ENCHANTMENT<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 248 Dimensional Damage to nearby foes.</li>\
+    <li>Drops a Healing Rune which heals nearby allies for +44 Health Points every 1 sec for 10 sec.</li>\
+  </ul>',
 
   impose:
   '<div>\
@@ -19310,7 +20037,27 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const holyWater = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>17 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>25 feet; 90 degree Cone<br>20 seconds recharge</div>\
+  </div><br>\
+  DOT - RANGED AOE DAMAGE - DISORIENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 34 Dimensional Damage every 1 sec for 10 sec.</li>\
+    <li>If a target is Illuminated, Disorients them for 12 sec, reducing their damage by 10% and their movement speed by 50%.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>Celestial<br>57 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets friend (5 max)<br>25 feet; 90 degree Cone<br>20 seconds recharge</div>\
+  </div><br>\
+  HOT - BREAK FREE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Heals your target for +100 Health Points every 2 sec over 10 sec.</li>\
+    <li>If the target is under a Control effect and is also affected by Illumination, applies 930 Break Free damage on the initial hit.</li>\
+  </ul>',
 
   heavenlyMana:
   '<div>\
@@ -19342,7 +20089,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const redemption = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Celestial<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -19370,7 +20117,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Salvatio
 
 const palliate = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>51 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets friend<br>100 feet<br>2 minutes recharge</div>\
+  </div><br>\
+  HEAL - BUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Heals the target for +20% Health Points and grants them Presence for 20 sec.</li>\
+  </ul>',
 
   absolve:
   '<div>\
@@ -19396,7 +20151,26 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Absolve'
 
 const celestialCleansing = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>40 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets friend<br>100 feet<br>25 seconds recharge</div>\
+  </div><br>\
+  CLEANSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Attempts to remove a Debuff from your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>Celestial<br>40 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>25 seconds recharge</div>\
+  </div><br>\
+  DAMAGE DEBUFF - TRAVEL POWER DISABLE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Debuffs your target by -10% all damage strength for 12 sec.</li>\
+    <li>Disables and prevents the use of Travel Powers for 5 sec.</li>\
+  </ul>',
 
   deliverance:
   '<div>\
@@ -19415,7 +20189,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Delivera
 
 const ascension = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Grants a 42% increase to all damage, a 50% increase to your healing, and the ability to fly for 15 sec.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   judgment:
   '<div>\
@@ -19524,7 +20308,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const shadowBlast = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>19-53 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -19582,7 +20366,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const darkTether = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>24-32 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -19626,7 +20410,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const shadowEmbrace = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>23 + 14 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -19677,7 +20461,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Sha
 
 const voidShift = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Darkness<br>19 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - MELEE DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 105 Dimensional Damage and Snaring them for 13 sec.</li>\
+    <li>Stuns your target for 1.7 sec if you Lunge from more than 20 feet away.</li>\
+  </ul>',
 
   emergingNightmares:
   '<div>\
@@ -19701,7 +20494,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const graspingShadows = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>79 Energy cost<br>2.17 sec charge time (2.17 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -19750,7 +20543,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const shadowShroud = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Darkness<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Grants a 42% increase to all damage for 15 sec.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>For 12 sec after activating this power, receiving damage will cause you to gain +0.7% Energy. This can occur once every 1 sec.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   terrifyingVisage:
   '<div>\
@@ -19802,7 +20606,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const shadowManifestation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -19827,7 +20631,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const fearConsumption = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -19858,8 +20662,8 @@ dataRequireGroupPower[dataPower.length-1] = 'mystic';
 
 const ebonVoid = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Darkness<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Darkness<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -19888,8 +20692,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Voraciou
 
 const spiritReverberation = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Darkness<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Darkness<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
@@ -19912,7 +20716,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const lifedrain = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>24 + 19 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -19943,7 +20747,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const dimensionalCollapse = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Darkness<br>40 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>12 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - DOT - KNOCK<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 45 Dimensional Damage every 1 sec for 16 sec to your targets.</li>\
+    <li>Targets are Knocked Down.</li>\
+  </ul>',
 
   envelopInDarkness:
   '<div>\
@@ -19994,7 +20807,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const shadowScheme = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>55 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>30 seconds recharge</div>\
   </div><br>\
@@ -20015,8 +20828,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const soulVortex = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Darkness<br>43 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - DOT - REVERSE REPEL - RUNE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates a Soul Vortex at your target\\\'s location for 10 sec.</li>\
+    <li>Foes within 15ft take 20 Dimensional Damage every 1 sec.</li>\
+    <li>Foes within 20ft are pulled toward the Soul Vortex by -6.7ft.</li>\
+    <li>After this power expires, creates a Healing Rune. Heals up to 5 allies within 15ft for +44 Health Points every 1 sec for 10 sec.</li>\
+  </ul>',
 
   soulDrain:
   '<div>\
@@ -20048,7 +20872,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const veilOfDarkness = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Darkness<br>26 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>15 seconds recharge</div>\
+  </div><br>\
+  PERCEPTION DEBUFF<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Creates a Smoke Cloud for 10 sec that reduces the Perception of foes within 25ft by 500%.</li>\
+    <li>Places all Perception Debuff powers on a 15 sec cooldown.</li>\
+  </ul>',
 
   fadeIntoDarkness:
   '<div>\
@@ -20090,7 +20923,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const darkPact = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -20118,7 +20951,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'More Sou
 
 const darkTransfusion = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Darkness<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
+  </div><br>\
+  SELF ENERGY GAIN - SELF DAMAGE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Upon activation you gain +35% Energy and lose -394 Health Points.</li>\
+    <li>You lose an additional -74 Health Points every 1 sec.</li>\
+    <li>Your Energy Equilibrium is set to 106.</li>\
+    <li>You gain 2.9% Energy Regeneration.</li>\
+    <li>Healing effects on you are reduced by 200%. However, Life Draining effects are not affected by this reduction.</li>\
+  </ul>',
 
   bloodSacrifice:
   '<div>\
@@ -20143,7 +20989,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const ebonRuin = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>40-109 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -20192,7 +21038,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const ebonRift = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>44 + 22 Energy every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
     <div style="text-align:right;">Targets foe; Affects foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -20256,7 +21102,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const shadowEruption = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>58-140 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere<br>10 seconds recharge</div>\
   </div><br>\
@@ -20327,7 +21173,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const shadeStorm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>27 + 19 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -20396,7 +21242,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Chaos! C
 
 const summonShadows = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Darkness<br>41 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
   </div><br>\
@@ -20510,7 +21356,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const eldritchBlast = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>16-47 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -20578,7 +21424,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const sigilsOfArcaneRunes = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>52 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
   </div><br>\
@@ -20619,7 +21465,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Inner Pe
 
 const sigilsOfDestruction = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>46 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
   </div><br>\
@@ -20659,7 +21505,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Inner Pe
 
 const bindingOfAratron = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>18 + 14 Energy every 1 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -20700,7 +21546,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const pillarOfPoz = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>32 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>10 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - HEAL - RUNE - ENCHANTMENT<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 133 Magic Damage to nearby foes.</li>\
+    <li>Creates a Healing Rune, healing up to 5 allies within 15ft for +44 Health Points every 1 sec for 10 sec.</li>\
+  </ul>',
 
   dizzyingImpact:
   '<div>\
@@ -20753,7 +21608,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ul
 
 const sigilsOfRadiantSanctuary = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>38 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
   </div><br>\
@@ -20796,7 +21651,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Inner Pe
 
 const sigilsOfEbonWeakness = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>35 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>30 seconds recharge</div>\
   </div><br>\
@@ -20887,7 +21742,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const spellcaster = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -20919,8 +21774,8 @@ dataRequireGroupPower[dataPower.length-1] = 'mystic';
 
 const eldritchShield = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Arcane Sorcery<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -20952,8 +21807,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Imbue Wi
 
 const conjuring = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Arcane Sorcery<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - INTELLIGENCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -20977,7 +21832,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const invocationOfStormCalling = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>60 + 25 Energy every 1 sec<br>1 sec activate time (4 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -21038,7 +21893,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const skarnsBane = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>22 + 16 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -21097,7 +21952,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const starBarrage = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>33 + 25 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
   </div><br>\
@@ -21140,7 +21995,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const banish = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>27 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -21171,7 +22026,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const magiciansDust = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>38 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe; Affects foe that is not destructible (10 max)<br>50 feet; 60 degree Cone<br>1 minute 30 seconds recharge</div>\
+  </div><br>\
+  THREAT WIPE - STEALTH - SNARE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Wipes your threat from affected targets and placates them for 12 sec, preventing them from attacking you.</li>\
+    <li>Applies Snare to affected targets, reducing their movement speed by 100% for 4 sec.</li>\
+    <li>Places you in Stealth for 4 sec.</li>\
+    <li>Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Magician\'s Dust', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_MagiciansDust.png" />&nbsp;Magician\'s Dust', 6, 22, pow++, 2, magiciansDust.power);
@@ -21181,7 +22047,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const marchOfTheDead = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>41 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
   </div><br>\
@@ -21211,7 +22077,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Forced M
 
 const warlocksBlades = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>41 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self<br>20 seconds recharge</div>\
   </div><br>\
@@ -21317,7 +22183,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unbound 
 
 const arcaneVitality = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>18 + 14 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -21327,12 +22193,11 @@ const arcaneVitality = {
     <li>Affected targets are healed for +127 Health Points every 0.5 sec</li>\
   </ul>\
   <hr>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>Arcane Sorcery<br>18 + 14 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets friend (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
   RANGED HEAL<br><br>\
-  Executed if your target is a friend<br><br>\
   MAINTAIN<br>\
   <ul>\
     <li>Affected targets are healed for +89-127 Health Points (based on number of targets) every 0.5 sec</li>\
@@ -21365,7 +22230,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Mystical
 
 const divineRenewal = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -21393,7 +22258,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Radiant 
 
 const circleOfArcanePower = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -21423,7 +22288,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Advanced
 
 const circleOfEbonWrath = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -21454,7 +22319,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Advanced
 
 const circleOfPrimalDominion = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -21486,7 +22351,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Advanced
 
 const circleOfRadiantGlory = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>70 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -21499,7 +22364,7 @@ const circleOfRadiantGlory = {
     <li>This Circle will persist for up to 10 sec while you are not standing in it.</li>\
   </ul>\
   <hr>\
-  <div style="display:flex; justify-content:space-between;">\
+  <div class="popup-header">\
     <div>Arcane Sorcery<br>35 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Affects friend<br>50 foot Sphere<br>6 seconds recharge</div>\
   </div><br>\
@@ -21522,7 +22387,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const soulBeam = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>25 + 19 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -21554,7 +22419,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const urthonasCharm = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>48 Energy cost<br>1 sec charge time (1 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible<br>100 feet<br>15 seconds recharge</div>\
+  </div><br>\
+  CONFUSE - DEBUFF - CONTROL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>If your target is a Henchman, Villain, or Enforcer, Confuses them for 10 sec, causing them to attack targets randomly.</li>\
+  </ul>',
 
   ephemeralEndowment:
   '<div>\
@@ -21573,7 +22446,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Ephemera
 
 const valasLight = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Arcane Sorcery<br>21-83 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets friend (5 max)<br>50 feet; 25 foot Sphere<br>3 seconds recharge</div>\
   </div><br>\
@@ -21602,7 +22475,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Light Ev
 
 const hexOfSuffering = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>56 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 10 foot Sphere<br>12 seconds recharge</div>\
+  </div><br>\
+  RANGED AOE DAMAGE - DOT - CURSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 47 Magic Damage every 1 sec for 16 sec to your targets.</li>\
+    <li>Applies Hexed, causing -18% resistance to Magic Damage for 15 sec.</li>\
+  </ul>',
 
   runeOfLethargy:
   '<div>\
@@ -21800,7 +22682,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const bite = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>40-57 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -21855,7 +22737,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const feint = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>18 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MELEE DAMAGE - STUN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 127 Slashing Damage and your target is Stunned for 1.7 sec.</li>\
+  </ul>',
 
   trauma:
   '<div>\
@@ -21885,7 +22775,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const thrash = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>19 + 13 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -21992,7 +22882,7 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const barbedLariat = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>31-41 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>25 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -22053,7 +22943,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const pounce = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>9.2 Energy cost<br>0.35 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>60 foot lunge<br>3 seconds recharge</div>\
+  </div><br>\
+  LUNGE - KNOCK DOWN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>You lunge at your target, dealing 77 Slashing Damage and your target is Snared.</li>\
+    <li>Your target is Knocked Down if you lunged more than 20 feet and your target is not currently affected by a control power.</li>\
+  </ul>',
 
   furiousRush:
   '<div>\
@@ -22090,7 +22989,7 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const aspectOfTheBestial = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -22130,8 +23029,8 @@ dataRequireGroupPower[dataPower.length-1] = 'mystic';
 
 const antagonize = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Bestial Supernatural<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -22161,8 +23060,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Quills',
 
 const wildThing = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Bestial Supernatural<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -22190,7 +23089,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const laceratingCyclone = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>34 + 18 Energy every 0.5 sec<br>0.5 sec activate time (2.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -22231,7 +23130,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const tearDown = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>60 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>25 foot lunge<br>15 seconds recharge</div>\
+  </div><br>\
+  LUNGE - BLEED - KNOCK DOWN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Lunges at the target, dealing 422 Slashing Damage to the target and to enemies within a 15ft cone behind the target.</li>\
+    <li>Targets are Knocked Down.</li>\
+    <li>Has a 50% chance to apply Bleed to affected targets, causing 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>',
 
   thrillOfTheHunt:
   '<div>\
@@ -22282,7 +23191,19 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const cower = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>44 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (20 max)<br>50 foot Sphere<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  THREAT WIPE - STEALTH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Wipes your threat from your target.</li>\
+    <li>Placates targets, preventing them from attacking you.</li>\
+    <li>Applies Fear to you, debuffing your damage.</li>\
+    <li>Places you in Stealth for 4 sec.</li>\
+    <li>Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
+  </ul>',
 
   runAway:
   '<div>\
@@ -22319,7 +23240,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const moonstruck = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>28 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>15 foot Sphere<br>10 seconds recharge</div>\
+  </div><br>\
+  HEAL - RUNE - ENCHANTMENT - KNOCK DOWN<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Knocks Down nearby targets.</li>\
+    <li>Drops a Healing Rune which heals nearby allies for +44 Health Points every 1 sec for 10 sec.</li>\
+  </ul>',
 
   moonlight:
   '<div>\
@@ -22372,7 +23302,20 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const lastStand = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
+  </div><br>\
+  ACTIVE DEFENSE - SELF RESURRECTION<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Can only be used while Defeated.</li>\
+    <li>You are brought back from defeat and gain +100% Health Points, +833 Maximum Health Points, 50% Regeneration and +150% resistance to all damage for 15 sec.</li>\
+    <li>You also become Immune to most forms of Control effects and gain 200% resistance to all Knock effects.</li>\
+    <li>After 15 sec, reduces your health by 90% and you are Immune to all healing effects for 10 sec.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Defenses.</li>\
+    <li>Activates a shared cooldown of 300 seconds on all Resurrections.</li>\
+  </ul>',
 
   eyesOnMe:
   '<div>\
@@ -22400,7 +23343,21 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Fighting
 
 const violentRoar = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>0 Energy cost<br>Instant activate time</div>\
+    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  ACTIVE OFFENSE<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This power has a duration of 15 sec.</li>\
+    <li>Increases your damage by 42%.</li>\
+    <li>Gives you +35 STRENGTH and RECOVERY.</li>\
+    <li>Increases the amount of Energy your Recovery stat gives you by 0.87.</li>\
+    <li>Applies 1,860 Break Free damage to any Holds, Roots, or Disables affecting you.</li>\
+    <li>Applies Moonlight Howl to you for 15 sec.</li>\
+    <li>Activates a shared cooldown of 90 seconds on all Active Offenses.</li>\
+  </ul>',
 
   bloodRoar:
   '<div>\
@@ -22436,7 +23393,19 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const howl = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>22 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (5 max)<br>25 foot Sphere<br>20 seconds recharge</div>\
+  </div><br>\
+  FURIOUS - FEAR<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Nearby foes become Feared, reducing their damage by 10% for 12 sec.</li>\
+    <li>Applies 1 stack of Furious to you and nearby allies.</li>\
+    <li>Furious gives you +1.5% Critical Chance. This effect can stack up to 3 times.</li>\
+    <li>When taking damage, Furious grants you Willpower, which gives you +300 Health Points over 3 sec.</li>\
+    <li>Applies Moonlight Howl to you for 30 sec.</li>\
+  </ul>',
 
   makeThemTremble:
   '<div>\
@@ -22482,7 +23451,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fie
 
 const massacre = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>47-75 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -22521,7 +23490,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Sea
 
 const eviscerate = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>36-58 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet<br>3 seconds recharge</div>\
   </div><br>\
@@ -22554,7 +23523,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const brutalCharge = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Bestial Supernatural<br>81 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>60 foot lunge; 10 foot Sphere<br>15 seconds recharge</div>\
   </div><br>\
@@ -22727,7 +23696,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const infernalBlast = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>22-46 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  RANGED DAMAGE - POISON - BLAST<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 116-455 Toxic Damage and has a 25-100% chance to apply Deadly Poison to your target.</li>\
+    <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+  </ul>',
 
   virulentPropagation:
   '<div>\
@@ -22755,7 +23733,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Ten
 
 const devourEssence = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>17 + 13 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -22817,7 +23795,7 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const vileLariat = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>24-32 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -22879,7 +23857,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 
 const viciousCyclone = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>34 + 18 Energy every 0.5 sec<br>0.5 sec activate time (2.5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -22921,7 +23899,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const condemn = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>33-67 Energy cost<br>1.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 8-15 foot Sphere</div>\
   </div><br>\
@@ -22974,7 +23952,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 
 const lifeEssence = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>15 + 19 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -23017,7 +23995,7 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const aspectOfTheInfernal = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
@@ -23047,8 +24025,8 @@ dataRequireGroupPower[dataPower.length-1] = 'mystic';
 
 const voodooDoll = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Infernal Supernatural<br>Every 1 sec<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>Every 1 sec<br>Instant activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BLOCK<br><br>\
@@ -23077,8 +24055,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Voodoo C
 
 const mephitic = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
-    <div>Infernal Supernatural<br>Instant</div>\
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>Instant activate time</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
@@ -23106,7 +24084,7 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 
 const epidemic = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>37 + 37 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -23146,7 +24124,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const cripplingCoils = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>20 + 13 Energy every 1 sec<br>1 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -23189,7 +24167,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const locustSwarm = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>36 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe that is not destructible<br>50 feet<br>10 seconds recharge</div>\
   </div><br>\
@@ -23220,7 +24198,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const entrancing = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>17 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe; Affects foe that is not destructible<br>100 feet<br>45 seconds recharge</div>\
+  </div><br>\
+  THREAT WIPE - STEALTH<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Wipes your threat from your target.</li>\
+    <li>Places you in Stealth for 4 sec.</li>\
+    <li>Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Entrancing', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_Entrancing.png" />&nbsp;Entrancing', 6, 24, pow++, 2, entrancing.power);
@@ -23230,7 +24218,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const curse = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>93 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere<br>12 seconds recharge</div>\
+  </div><br>\
+  RANGED DAMAGE - CONTROL<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 241 Toxic Damage to affected targets. The area effect of this power is increased by 10ft if you are affected by the Pestilence power.</li>\
+    <li>Stuns targets for 1.7 sec.</li>\
+    <li>If a target is affected by 5 or more Poison effects, Paralyzes them instead for 12 sec.</li>\
+  </ul>',
 
   jinx:
   '<div>\
@@ -23292,7 +24290,7 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const deathsEmbrace = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>30 Energy cost<br>2 sec charge time (2 min)<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Affects defeated friendly player (1 max)<br>25 foot Sphere</div>\
   </div><br>\
@@ -23327,7 +24325,17 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const willOTheWisp = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>57 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere<br>10 seconds recharge</div>\
+  </div><br>\
+  POISON<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 119 Toxic Damage.</li>\
+    <li>Applies Debilitating Poison to your primary target, suffering -18% resistance to Toxic Damage for 15 sec.</li>\
+    <li>Applies Deadly Poison to your secondary targets, dealing 20 Toxic Damage every 1 sec for 16 sec.</li>\
+  </ul>',
 
   guide:
   '<div>\
@@ -23377,7 +24385,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const defile = {
   power: 
-  '<div style="display:flex; justify-content:space-between;">\
+  '<div class="popup-header">\
     <div>Infernal Supernatural<br>40-104 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -23417,7 +24425,18 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const rebirth = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>0 Energy cost<br>2 sec activate time</div>\
+    <div style="text-align:right;">Targets self<br>4 minutes 59 seconds recharge</div>\
+  </div><br>\
+  SELF RESURRECTION AND HEAL<br><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Can only be used while Defeated.</li>\
+    <li>You are brought back from defeat and fully healed, and then lose 244 Health Points of your Maximum Health every 1 sec for 20 sec.</li>\
+    <li>During this time, you also gain +100% all damage strength, +100% resistance to all damage, and gain +8.3% Health Points upon defeating any enemy.</li>\
+    <li>Places all Resurrection powers on a 300 second cooldown.</li>\
+  </ul>',
 
   graveConsequences:
   '<div>\

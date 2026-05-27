@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-26 00:25:00 (woof-wolf)>
+ * Time-stamp: <2026-05-27 00:50:00 (woof-wolf)>
  */
 
 html {
@@ -112,12 +112,18 @@ img {
     font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
     font-size: 0.9em;
     margin: 1em 0 0 0;
-    max-width: 480px;
+    max-width: 525px;
     padding: 12px;
     position: absolute;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
     z-index: 10;
     pointer-events: none;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Forces spacing so text never overlaps */
 }
 
 .left {
