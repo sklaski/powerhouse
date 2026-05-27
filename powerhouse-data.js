@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-27 00:50:00 (woof-wolf)>
+ * Time-stamp: <2026-05-27 9:15:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -24967,7 +24967,7 @@ dataSpecializationTree[dataSpecializationTree.length-1].specializationList.push(
 
 dataSpecializationTree[dataSpecializationTree.length] = new SpecializationTree(dataSpecializationTree.length, 'Guardian', 'Guardian', null, 'Range / Tank');
 
-dataSpecializationTree[dataSpecializationTree.length-1].specializationList.push(new Specialization(0, 'Fortified Gear', '<img src="img/spec-icons/role/guardian/Specialization_FortifiedGear.png" />&nbsp;Fortified Gear', 1, 3, 'Increases the amount of Defense you receive from items by 10/20%.'));
+dataSpecializationTree[dataSpecializationTree.length-1].specializationList.push(new Specialization(0, 'Fortified Gear', '<img src="img/spec-icons/role/guardian/Specialization_FortifiedGear.png" />&nbsp;Fortified Gear', 1, 3, 'Increases the amount of Defense you receive from items by 10/20/30%.'));
 dataSpecializationTree[dataSpecializationTree.length-1].specializationList.push(new Specialization(1, 'Locus', '<img src="img/spec-icons/role/guardian/Specialization_Locus.png" />&nbsp;Locus', 1, 2, 'When you strike with or are struck by an AoE, you gain a stack of Locus. When you reach 30 stacks of Locus, the stack is consumed and becomes Locus Eruption, which grants you 25/49 Offense and Defense. Locus Eruption lasts for 15 seconds, and prevents you from gaining additional stacks of Locus for the duration.'));
 dataSpecializationTree[dataSpecializationTree.length-1].specializationList.push(new Specialization(2, 'Make It Count', '<img src="img/spec-icons/role/guardian/Specialization_MakeItCount.png" />&nbsp;Make It Count', 1, 3, 'Increases the Damage and decreases the Cost of your Blast attacks by 2/4/6%.'));
 dataSpecializationTree[dataSpecializationTree.length-1].specializationList.push(new Specialization(3, 'Ruthless', '<img src="img/spec-icons/role/guardian/Specialization_Ruthless.png" />&nbsp;Ruthless', 1, 2, 'Increases your Critical Severity by 5/10%.'));
