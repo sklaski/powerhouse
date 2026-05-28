@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-27 22:40:00 (woof-wolf)>
+ * Time-stamp: <2026-05-27 13:10:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1349,17 +1349,28 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const electricBolt = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Electricity<br>0.35-0.55 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+    <div>Electricity<br><br>ENERGY BUILDER - RANGED DAMAGE - NEGATIVE IONS<br><br>CLICK</div>\
+  </div>\
   <ul>\
-    <li>Deals Electrical Damage.</li>\
-    <li>Generates +15% Energy.</li>\
-    <li>Each shot has a 25% chance to apply Negative Ions to the target.</li>\
+    <li>Each shot has a 25% chance to apply Negative Ions to target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.55 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 53 Electrical Damage and generates +15% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.35 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 25 Electrical Damage and generates +7.2% Energy.</li>\
   </ul>',
   
   lightningOverload:
@@ -2280,18 +2291,29 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const throwFire = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Fire<br>0.3-0.47 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+    <div>Fire<br><br>ENERGY BUILDER - RANGED DAMAGE - BURNING<br><br>CLICK</div>\
+  </div>\
   <ul>\
-    <li>Deals Fire Damage.</li>\
-    <li>Generates +12% Energy.</li>\
-    <li>The first shot has a 20% chance to apply Clinging Flames to the target, dealing Fire Damage over 12 sec.</li>\
-    <li>Clinging Flames may leap to other foes near the target.</li>\
+    <li>Clinging Flames deals 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 47 Fire Damage and generates +14% Energy.</li>\
+    <li>Has a 20% chance to apply Clinging Flames to the target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.3 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 21 Fire Damage and generates +6.1% Energy.</li>\
   </ul>',
 
   burningDesire:
@@ -3366,16 +3388,26 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const forceBolts = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Force<br>0.34-0.5 sec activate time</div>\
+    <div>Force<br><br>ENERGY BUILDER - RANGED DAMAGE - KNOCK<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+  </div>\
   <ul>\
-    <li>Deals Crushing Damage and generates Energy.</li>\
-    <li>The first shot has a 20% chance to Knock Back the target.</li>\
+    <li>Deals 49 Crushing Damage and generates +14% Energy.</li>\
+    <li>Has a 20% chance to Knock Back your target 8.7 feet.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 24 Crushing Damage and generates +7% Energy.</li>\
   </ul>',
 
   energyRefraction:
@@ -4206,17 +4238,29 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const windLash = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Wind<br>0.34-0.5 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+    <div>Wind<br><br>ENERGY BUILDER - RANGED DAMAGE - DISORIENT - REPEL<br><br>CLICK</div>\
+  </div>\
   <ul>\
-    <li>Deals Crushing Damage and generates Energy.</li>\
-    <li>The first shot has a 20% chance to Repel your target and Disorient them.</li>\
-    <li>Disorient reduces the target\\\'s damage by 10% and movement speed by 50%.</li>\
+    <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Crushing Damage and generates +14% Energy.</li>\
+    <li>Has a 20% chance to Repel your target 8.3 feet and Disorient them.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 24 Crushing Damage and generates +7% Energy.</li>\
   </ul>',
 
   stiffBreeze:
@@ -4766,17 +4810,31 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const iceShards = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Ice<br>0.3-0.47 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+    <div>Ice<br><br>ENERGY BUILDER - RANGED DAMAGE - CHILL<br><br>CLICK</div>\
+  </div>\
   <ul>\
-    <li>Deals Cold Damage and generates Energy.</li>\
-    <li>The first shot has a 20% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
-  </ul>',
+    <li>Chill reduces the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 47 Cold Damage and generates +14% Energy.</li>\
+    <li>Has a 20% chance to apply Chill.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.3 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 21 Cold Damage and generates +6.1% Energy.</li>\
+  </ul>\
+  <hr>',
 
   iceImpaler:
   '<div>\
@@ -5780,16 +5838,25 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const strafe = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Archery<br>0 + 0 Energy every 1 sec<br>0.5 sec activate time</div>\
+    <div>Archery<br><br>ENERGY BUILDER - RANGED DAMAGE<br><br>MAINTAIN</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL HIT<br>0 + 0 Energy every 1 sec<br>0.5 sec activate time (No max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  MAINTAIN<br>\
+  </div>\
   <ul>\
-    <li>Deals 49 Piercing Damage and generates +14% Energy with the first shot.</li>\
-    <li>Deals 70 Piercing Damage and generates +20% Energy with each subsequent shot.</li>\
+    <li>Deals 49 Piercing Damage and generates +14% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT HITS<br>0 + 0 Energy every 1 sec<br>0.5 sec activate time (No max)</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 70 Piercing Damage and generates +20% Energy every 1 sec.</li>\
   </ul>',
 
   aversion:
@@ -6573,15 +6640,25 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const gunslinger = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Munitions<br>0.5 sec activate time</div>\
+    <div>Munitions<br><br>ENERGY BUILDER - RANGED DAMAGE<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+  </div>\
   <ul>\
-    <li>Deals Piercing Damage and generates Energy.</li>\
+    <li>Deals 49 Piercing Damage and generates +14% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 35 Piercing Damage and generates +10% Energy.</li>\
   </ul>',
 
   trickShot:
@@ -6603,14 +6680,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 
 const steadyShot = {
   power: 
-  '<div class="popup-header">\
+  '<div style="display:flex; justify-content:space-between;">\
     <div>Munitions<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
   ENERGY BUILDER - RANGED DAMAGE<br><br>\
   CLICK<br>\
   <ul>\
-    <li>Deals Piercing Damage and generates Energy.</li>\
+    <li>Deals 70 Piercing Damage and generates +20% Energy.</li>\
   </ul>',
 
   paintTheTarget:
@@ -7940,16 +8017,25 @@ dataPower[dataPower.length] = new Power(dataPower.length, 'PowerNameHere', '<img
 //------------------------------------------------------------------------------
 
 const wristBolter = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Power Armor<br>0 + 0 Energy every 0.5 sec<br>Instant activate time</div>\
+    <div>Power Armor<br><br>ENERGY BUILDER - RANGED DAMAGE<br><br>MAINTAIN</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL HIT<br>0 + 0 Energy every 0.5 sec<br>Instant activate time (No max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  MAINTAIN<br>\
+  </div>\
   <ul>\
-    <li>Deals 14 Particle Damage and generates +4.1% Energy with the first shot.</li>\
-    <li>Deals 35 Particle Damage and generates +10% Energy with each subsequent shot.</li>\
+    <li>Deals 14 Particle Damage and generates +4.1% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT HITS<br>0 + 0 Energy every 0.5 sec<br>Instant activate time (No max)</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 35 Particle Damage and generates +10% Energy every 0.5 sec.</li>\
   </ul>',
 
   automatedAssault:
@@ -7970,17 +8056,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Automate
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const powerBolts = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Power Armor<br>0.34-0.5 sec activate time</div>\
-    <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+    <div>Power Armor<br><br>ENERGY BUILDER - RANGED DAMAGE - PLASMA BURN<br><br>CLICK</div>\
+  </div>\
   <ul>\
-    <li>Deals Particle Damage and generates Energy.</li>\
-    <li>The first shot has a 20% chance to apply Particle Burn to your target.</li>\
-    <li>Particle Burn deals damage every 1 sec for 16 sec per stack of Particle Burn.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Particle Damage and generates +14% Energy. </li>\
+    <li>Has a 20% chance to apply Plasma Burn to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 24 Particle Damage and generates +7% Energy.</li>\
   </ul>',
 
   itBurns:
@@ -8747,16 +8845,26 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const sonicBlaster = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Gadgeteering<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div>Gadgeteering<br><br>ENERGY BUILDER - RANGED DAMAGE - KNOCK<br><br>MAINTAIN</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL HIT<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  MAINTAIN<br>\
+  </div>\
   <ul>\
-    <li>Deals 49 Sonic Damage and generates +14% Energy with the initial hit, and deals 35 Sonic Damage and generates +10% Energy with each subsequent hit.</li>\
-    <li>The initial hit has a 15% chance to Knock Back the target 8.7ft.</li>\
+    <li>Deals 49 Sonic Damage and generates +14% Energy.</li>\
+    <li>Has a 15% chance to Knock Back the target 8.7ft.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT HITS<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 35 Sonic Damage and generates +10% Energy every 0.5 sec.</li>\
   </ul>',
 
   refractionOfSound:
@@ -8776,16 +8884,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Refracti
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const particleRifle = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Gadgeteering<br>0.5 sec activate time</div>\
+    <div>Gadgeteering<br><br>ENERGY BUILDER - RANGED DAMAGE - PLASMA BURN<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+  </div>\
   <ul>\
     <li>Deals 49 Particle Damage and generates +14% Energy.</li>\
-    <li>Has a 15% chance to apply Plasma Burn on the inital hit, causing 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Has a 15% chance to apply Plasma Burn.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 35 Particle Damage and generates +10% Energy.</li>\
   </ul>',
 
   itBurns:
@@ -8805,16 +8926,26 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'It Burns
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const boomerangToss = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Gadgeteering<br>0.67 sec activate time</div>\
+    <div>Gadgeteering<br><br>ENERGY BUILDER - RANGED DAMAGE - KNOCK<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  CLICK<br>\
+  </div>\
   <ul>\
     <li>Deals 77 Slashing Damage and generates +18% Energy.</li>\
     <li>The first shot has a 20% chance to Knock Back your target 8.7 feet.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 67 Slashing Damage and generates +14% Energy.</li>\
   </ul>'
 };
 
@@ -8825,16 +8956,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const energyBlaster = {
-  power: 
+  power:
   '<div class="popup-header">\
-    <div>Gadgeteering<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div>Gadgeteering<br><br>ENERGY BUILDER - RANGED DAMAGE - PLASMA BURN<br><br>MAINTAIN</div>\
+  </div>\
+  <ul>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL HIT<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
-  </div><br>\
-  ENERGY BUILDER - RANGED DAMAGE<br><br>\
-  MAINTAIN<br>\
+  </div>\
   <ul>\
     <li>Deals 49 Particle Damage and generates +14% Energy.</li>\
-    <li>Has a 15% chance to apply Plasma Burn on the initial hit, causing 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Has a 15% chance to apply Plasma Burn.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT HITS<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Particle Damage and generates +14% Energy every 0.5 sec.</li>\
   </ul>',
 
   itBurns:
@@ -10336,8 +10480,38 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const laserEdge = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Laser Sword<br><br>ENERGY BUILDER - MELEE DAMAGE - PLASMA BURN<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 46 Particle Damage and generates +11% Energy.</li>\
+    <li>Has a 20% chance to apply Plasma Burn to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 46 Particle Damage and generates +11% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   itBurns:
   '<div>\
@@ -11845,8 +12019,53 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const rainOfSteel = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Dual Blades<br><br>ENERGY BUILDER - MELEE AOE DAMAGE<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Deals less damage when hitting multiple targets.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 27-66 Slashing Damage to all targets and generates +16% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 19-46 Slashing Damage to all targets and generates +11% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 14-33 Slashing Damage to all targets and generates +8% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 120 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 19-46 Slashing Damage to all targets and generates +11% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   grinningGhost:
   '<div>\
@@ -12396,8 +12615,42 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const hawksTalons = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Fighting Claws<br><br>ENERGY BUILDER - MELEE DAMAGE<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>0.44 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 43 Slashing Damage and generates +10% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Slashing Damage and generates +16% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION (REPEATING)<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 46 Slashing Damage and generates +11% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   peerlessPredation:
   '<div>\
@@ -13166,8 +13419,34 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const reapersTouch = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Single Blade<br><br>ENERGY BUILDER - MELEE DAMAGE<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Slashing Damage and generates +16% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 46 Slashing Damage and generates +11% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   threeEdgedBlade:
   '<div>\
@@ -14019,8 +14298,42 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const righteousFists = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Unarmed<br><br>ENERGY BUILDER - MELEE DAMAGE<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.44 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 63 Crushing Damage and generates +15% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>0.44 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 43 Crushing Damage and generates +10% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>0.47 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 46 Crushing Damage and generates +11% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   drunkenMaster:
   '<div>\
@@ -14040,8 +14353,34 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Drunken 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const viciousStrikes = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Unarmed<br><br>ENERGY BUILDER - MELEE DAMAGE<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.3 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Crushing Damage and generates +12% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.3 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 30 Crushing Damage and generates +7.1% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   drunkenMaster:
   '<div>\
@@ -14065,8 +14404,35 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 //------------------------------------------------------------------------------
 
 const thunderingKicks = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Unarmed<br><br>MELEE DAMAGE - DODGE - COMBO<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>16 Energy cost<br>0.3 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 89 Crushing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>14 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 136 Crushing Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>13 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 199 Crushing Damage.</li>\
+    <li>Applies Lithe to you, giving you +12% Dodge Chance for 12 sec.</li>\
+  </ul>',
 
   floatingLotusBlossom:
   '<div>\
@@ -15018,8 +15384,27 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const kineticDarts = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Telekinesis<br><br>ENERGY BUILDER - RANGED DAMAGE - EGO LEECH<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Ego Damage and generates +14% Energy.</li>\
+    <li>Has a 15% chance to grant you a stack of Ego Leech.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 24 Ego Damage and generates +7% Energy.</li>\
+  </ul>',
 
   incisiveWit:
   '<div>\
@@ -15048,8 +15433,35 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Leeching
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 
 const egoBlade = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Telekinesis<br><br>ENERGY BUILDER - MELEE DAMAGE - EGO LEECH<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 69 Ego Damage and generates +16% Energy.</li>\
+    <li>Has a 15% chance to grant you a stack of Ego Leech.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Ego Damage and generates +12% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   leechingStrikes:
   '<div>\
@@ -16129,8 +16541,26 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const psiLash = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Telepathy<br><br>ENERGY BUILDER - RANGED DAMAGE<br><br>MAINTAIN</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL HIT<br>0 + 0 Energy every 0.5 sec<br>Instant activate time (No max)</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 14 Ego Damage and generates +4.1% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT HITS<br>0 + 0 Energy every 0.5 sec<br>Instant activate time (No max)</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 35 Ego Damage and generates +10% Energy every 0.5 sec.</li>\
+  </ul>',
 
   psychicReverberations:
   '<div>\
@@ -17165,8 +17595,39 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const bludgeon = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br><br>ENERGY BUILDER - MELEE AOE DAMAGE - DISORIENT<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Deals less damage when hitting multiple targets.</li>\
+    <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 3 foot Cylinder</div>\
+  </div>\
+  <ul>\
+    <li>Deals 29-69 Crushing Damage and generates +16% Energy.</li>\
+    <li>Has a 15% chance to Disorient the target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 3 foot Cylinder</div>\
+  </div>\
+  <ul>\
+    <li>Deals 21-49 Crushing Damage and generates +12% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   untilMoraleImproves:
   '<div>\
@@ -17995,8 +18456,47 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const wieldEarth = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Earth<br><br>ENERGY BUILDER - MELEE DAMAGE / RANGED DAMAGE - STAGGER<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION - MELEE<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 69 Crushing Damage and generates +16% Energy.</li>\
+    <li>Has a 20% chance to Stagger your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS - MELEE<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Crushing Damage and generates +12% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION - RANGED<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Crushing Damage and generates +14% Energy.</li>\
+    <li>Has a 20% chance to Stagger your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS - RANGED<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 35 Crushing Damage and generates +10% Energy.</li>\
+  </ul>',
 
   falteringStrikes:
   '<div>\
@@ -18587,8 +19087,38 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const clobber = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Might<br><br>ENERGY BUILDER - MELEE DAMAGE - DISORIENT<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.48 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 67 Crushing Damage and generates +16% Energy.</li>\
+    <li>Has a 15% chance to Disorient the target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.36 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 35 Crushing Damage and generates +8.5% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   itsThatTime:
   '<div>\
@@ -20146,8 +20676,47 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const radiance = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Celestial<br><br>ENERGY BUILDER - RANGED DAMAGE / HEAL<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>When targeting a foe, this power will deal damage.</li>\
+    <li>When targeting a friend, this power will Heal them and generate energy if damage is healed.</li>\
+    <li>Does not generate energy if you are targeting yourself.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION - FOE<br>0.37 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 40 Dimensional Damage and generates +12% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS - FOE<br>0.24 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 17 Dimensional Damage and generates +4.9% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION - FRIEND<br>0.37 sec activate time</div>\
+    <div style="text-align:right;">Targets friend<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Heals the target for +48 Health Points and generates +12% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS - FRIEND<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets friend<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Heals the target for +29 Health Points and generates +7% Energy.</li>\
+  </ul>',
 
   convergence:
   '<div>\
@@ -20746,8 +21315,30 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const shadowBolt = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Darkness<br><br>RANGED DAMAGE - ENERGY BUILDER - FEAR<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Fear reduces the target\\\'s damage by 10% for 12 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Dimensional Damage and generates +14% Energy.</li>\
+    <li>Has a 20% chance to Fear your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.35 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 25 Dimensional Damage and generates +7.2% Energy.</li>\
+  </ul>',
 
   despondency:
   '<div>\
@@ -21810,8 +22401,27 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const eldritchBolts = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br><br>RANGED DAMAGE - ENERGY BUILDER - ROOT<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Magic Damage and generates +14% Energy.</li>\
+    <li>Has a 15% chance to Root your target for 13 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 24 Magic Damage and generates +7% Energy.</li>\
+  </ul>',
 
   wizardsDiscretion:
   '<div>\
@@ -23065,8 +23675,34 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const bestialFury = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br><br>MELEE DAMAGE - ENERGY BUILDER<br><br>CLICK</div>\
+  </div>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.48 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 67 Slashing Damage and generates +16% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.32 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 32 Slashing Damage and generates +7.5% Energy.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>RANGED TAUNT<br>0.33 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 66 Threat and generates +6.1% Energy.</li>\
+  </ul>',
 
   ripAndTear:
   '<div>\
@@ -24225,8 +24861,30 @@ dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['PowerN
 //------------------------------------------------------------------------------
 
 const infernalBolts = {
-  power: 
-  '<div>...</div>',
+  power:
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br><br>RANGED DAMAGE - ENERGY BUILDER - POISON<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>INITIAL ACTIVATION<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 49 Toxic Damage and generates +14% Energy.</li>\
+    <li>Has a 15% chance to apply Deadly Poison to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SUBSEQUENT ACTIVATIONS<br>0.34 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 24 Toxic Damage and generates +7% Energy.</li>\
+  </ul>',
 
   toxinOverload:
   '<div>\
