@@ -8602,9 +8602,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const reconstructionCircuits = {
   power: 
-  '<div class="popup-header">\
-    <div style="text-align:right;">Targets self</div>\
-  <ul>\
+  '',
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Reconstruction Circuits', '<img src="img/power-icons/power-armor/PowerArmor_ReconstructionCircuits.png" />&nbsp;Reconstruction Circuits', 2, 8, pow++, 3, reconstructionCircuits.power);
