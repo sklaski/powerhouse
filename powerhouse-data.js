@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-27 15:00:00 (woof-wolf)>
+ * Time-stamp: <2026-05-27 22:40:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -5460,14 +5460,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const vaporForm = {
   power: 
   '<div class="popup-header">\
+    <div>Ice<br>21 + 21 Energy every 1 sec<br>Instant activate time (8 max)</div>\
+    <div style="text-align:right;">Targets self<br>1 minutes 30 seconds recharge</div>\
+  </div><br>\
+  THREAT WIPE<br><br>\
+  TOGGLE<br>\
   <ul>\
     <li>When activated, wipes your threat from up to 10 targets within 50ft of you.</li>\
-    <li>When activated, wipes your threat from up to 10 targets within 50 ft of you.</li>\
     <li>Places you in Stealth for 2 sec.</li>\
-    <li>While transformed your resistance to damage is increased by 83%.</li>\
     <li>While transformed, your resistance to damage is increased by 83%.</li>\
     <li>You gain Flight and +58 Flight Speed.</li>\
-    <li>Foes that damage you are affected by Chill, reducing their movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
     <li>Foes that damage you are affected by Chill, reducing their movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
     <li>You cannot use any powers while transformed. Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
   </ul>',
@@ -5656,8 +5658,13 @@ dataPowerAlias['Meltdown'] = new PowerAlias('Meltdown', 'Meltdown', '<img src="i
 const fireAllWeapons = {
   power: 
   '<div class="popup-header">\
+    <div>Technology<br>77 + 56 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 120 degree Cone<br>60 seconds recharge</div>\
+  </div><br>\
+  CHEST SLOT - HAND SLOT - SHOULDER SLOT - ULTIMATE<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 301 Particle Damage every 0.5 sec to all targets.</li>\
     <li>Counts as Chest Slot, Hand Slot and Shoulder Slot Powers.</li>\
   </ul>'
 };
@@ -5857,7 +5864,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 const snapShot = {
   power:
   '<div class="popup-header">\
-    <div>SNAP SHOT<br>Archery<br><br>RANGED DAMAGE - COMBO<br><br>CLICK</div>\
+    <div>Archery<br><br>RANGED DAMAGE - COMBO<br><br>CLICK</div>\
   </div>\
   <hr>\
   <div class="popup-header">\
@@ -7193,7 +7200,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const bulletBallet = {
   power:
   '<div class="popup-header">\
-    <div>BULLET BALLET<br>Munitions<br><br>MELEE DAMAGE - COMBO<br><br>CLICK</div>\
+    <div>Munitions<br><br>MELEE DAMAGE - COMBO<br><br>CLICK</div>\
   </div>\
   <hr>\
   <div class="popup-header">\
@@ -7999,10 +8006,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'It Burns
 const powerGauntlet = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>20-60 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  RANGED DAMAGE - INTERRUPT - BLAST<br><br>\
+  CHARGE<br>\
   <ul>\
     <li>Deals 127-497 Particle Damage and has a 26-100% chance to Interrupt the target.</li>\
-    <li>Higher ranked targets may not be affected by the Interrupt.</li>\
+    <li>Higher-ranked targets may not be affected by the Interrupt.</li>\
     <li>If a target is Interrupted, they are immune to the effect for 8 sec.</li>\
   </ul>',
 
@@ -8058,8 +8069,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const dualWristRocketBarrage = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>19 + 8.7 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  HAND SLOT - RANGED DAMAGE - REPEL<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 100 Crushing Damage every 0.5 sec.</li>\
+    <li>Repels the target 2.5-11 ft (based on Period). This effect can only occur up to 45 ft.</li>\
   </ul>',
 
   freneticBlast:
@@ -8082,8 +8099,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const concussorBeam = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>19 + 8.7 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  HAND SLOT - RANGED DAMAGE - REPEL<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 100 Particle Damage every 0.5 sec.</li>\
+    <li>Repels the target 2.5-11 ft (based on Period). This effect can only occur up to 45 ft.</li>\
   </ul>',
 
   freneticBlast:
@@ -8110,8 +8133,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const eyeBeam = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>18 + 13 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
+  </div><br>\
+  SHOULDER SLOT - RANGED AOE DAMAGE<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 100 Particle Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   twentyTwentyFission:
@@ -8144,8 +8172,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const miniGun = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>18 + 6.5 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
+  </div><br>\
+  SHOULDER SLOT - RANGED AOE DAMAGE<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 100 Crushing Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   u238Rounds:
@@ -8375,8 +8408,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ul
 const chestLaser = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>18 + 13 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
+  </div><br>\
+  CHEST SLOT - RANGED AOE DAMAGE<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 100 Particle Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   meltaCannon:
@@ -8400,8 +8438,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const plasmaBeam = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>17 + 12 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
+  </div><br>\
+  HAND SLOT - RANGED AOE DAMAGE<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 100 Particle Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   meltaCannon:
@@ -8425,8 +8468,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const chestRocketAssault = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>18 + 13 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
+  </div><br>\
+  CHEST SLOT - RANGED AOE DAMAGE<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>Deals 100 Crushing Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   concussiveBlast:
@@ -8555,8 +8603,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 const shoulderLauncher = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>90 + 0 Energy every 1 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
+  </div><br>\
+  SHOULDER SLOT - RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>After 4 sec, deals 422 Crushing Damage and 422 Particle Damage to the target, and 211 Crushing Damage and 211 Particle Damage to foes near the target.</li>\
+    <li>In addition, each target has a 50% chance to be Knocked Back 17 ft.</li>\
   </ul>',
 
   bunkerBuster:
@@ -8579,8 +8633,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const handCannon = {
   power: 
   '<div class="popup-header">\
+    <div>Power Armor<br>70 + 0 Energy every 1 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
+  </div><br>\
+  HAND SLOT - RANGED AOE DAMAGE - KNOCK BACK<br><br>\
+  TOGGLE<br>\
   <ul>\
+    <li>After 4 sec, deals 844 Particle Damage to the target, and 422 Particle Damage to foes near the target.</li>\
+    <li>In addition, each target has a 50% chance to be Knocked Back 17 ft.</li>\
   </ul>',
 
   bunkerBuster:
@@ -8602,7 +8662,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const reconstructionCircuits = {
   power: 
-  '',
+  '<div class="popup-header">\
+    <div>Power Armor<br>8.1 + 5.4 Energy every 1 sec<br>0.5 sec activate time (8 max)</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CHEST SLOT - SELF HEAL<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Heals you for +181 Health Points every 1 sec.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Reconstruction Circuits', '<img src="img/power-icons/power-armor/PowerArmor_ReconstructionCircuits.png" />&nbsp;Reconstruction Circuits', 2, 8, pow++, 3, reconstructionCircuits.power);
@@ -12354,7 +12422,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 const vipersFangs = {
   power:
   '<div class="popup-header">\
-    <div>VIPER\\\'S FANGS<br>Fighting Claws<br><br>MELEE AOE DAMAGE - SUDDEN STRIKE - COMBO<br><br>CLICK</div>\
+    <div>Fighting Claws<br><br>MELEE AOE DAMAGE - SUDDEN STRIKE - COMBO<br><br>CLICK</div>\
   </div>\
   <hr>\
   <div class="popup-header">\
@@ -13127,7 +13195,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 const reapersCaress = {
   power:
   '<div class="popup-header">\
-    <div>REAPER\\\'S CARESS<br>Single Blade<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+    <div>Single Blade<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>If you are affected by Focus, your chance to apply Bleed on each hit is doubled.</li>\
@@ -13204,7 +13272,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPower
 const slash = {
   power:
   '<div class="popup-header">\
-    <div>SLASH<br>Single Blade<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+    <div>Single Blade<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
@@ -14892,7 +14960,16 @@ dataPowerAlias['Master of the Mind'] = new PowerAlias('Master of the Mind', 'Mas
 
 const egoBladePandemonium = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Mentalist<br>29 + 19 Energy every 1 sec<br>Instant activate time (8 max)</div>\
+    <div style="text-align:right;">Affects foe (10 max)<br>10 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  ULTIMATE - MELEE AOE DAMAGE<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Deals Ego Damage to all targets every 1 sec.</li>\
+    <li>Your chance to Critically Hit with your Telekinetic abilities is increased by 2.8% for each stack of Ego Leech you have.</li>\
+  </ul>',
 
   menacing:
   '<div>\
@@ -15007,7 +15084,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const egoWeaponry = {
   power:
   '<div class="popup-header">\
-    <div>EGO WEAPONRY<br>Telekinesis<br><br>MELEE AOE DAMAGE - COMBO<br><br>CLICK</div>\
+    <div>Telekinesis<br><br>MELEE AOE DAMAGE - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>If you are affected by Ego Infusion, your chance to gain a stack of Ego Leech on each hit is guaranteed.</li>\
@@ -15090,7 +15167,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Tox
 const telekineticStrike = {
   power:
   '<div class="popup-header">\
-    <div>TELEKINETIC STRIKE<br>Telekinesis<br><br>RANGED DAMAGE - COMBO<br><br>CLICK</div>\
+    <div>Telekinesis<br><br>RANGED DAMAGE - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>If you are affected by Ego Infusion, your chance to gain a stack of Ego Leech on each hit is guaranteed.</li>\
@@ -17124,7 +17201,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const cleave = {
   power:
   '<div class="popup-header">\
-    <div>CLEAVE<br>Heavy Weapon<br><br>MELEE AOE DAMAGE - KNOCK DOWN - COMBO<br><br>CLICK</div>\
+    <div>Heavy Weapon<br><br>MELEE AOE DAMAGE - KNOCK DOWN - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>If your primary target is Disoriented, your chance to Knock on each hit is guaranteed.</li>\
@@ -17980,7 +18057,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const onslaught = {
   power:
   '<div class="popup-header">\
-    <div>ONSLAUGHT<br>Earth<br><br>MELEE AOE DAMAGE - STAGGER - COMBO<br><br>CLICK</div>\
+    <div>Earth<br><br>MELEE AOE DAMAGE - STAGGER - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>Stagger reduces all damage resistance by 2% and movement speed by 25% for 15 sec. Stacks up to 3 times.</li>\
@@ -18536,7 +18613,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 const beatdown = {
   power:
   '<div class="popup-header">\
-    <div>BEATDOWN<br>Might<br><br>MELEE DAMAGE - KNOCK - COMBO<br><br>CLICK</div>\
+    <div>Might<br><br>MELEE DAMAGE - KNOCK - COMBO<br><br>CLICK</div>\
   </div>\
   <hr>\
   <div class="popup-header">\
@@ -18599,7 +18676,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 const defensiveCombo = {
   power:
   '<div class="popup-header">\
-    <div>DEFENSIVE COMBO<br>Might<br><br>MELEE DAMAGE - SHIELD - COMBO<br><br>CLICK</div>\
+    <div>Might<br><br>MELEE DAMAGE - SHIELD - COMBO<br><br>CLICK</div>\
   </div>\
   <hr>\
   <div class="popup-header">\
@@ -18924,7 +19001,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPower
 const ironChain = {
   power:
   '<div class="popup-header">\
-    <div>IRON CHAIN<br>Might<br><br>MELEE DAMAGE - KNOCK - COMBO<br><br>CLICK</div>\
+    <div>Might<br><br>MELEE DAMAGE - KNOCK - COMBO<br><br>CLICK</div>\
   </div>\
   <hr>\
   <div class="popup-header">\
@@ -21611,7 +21688,21 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const madnessAura = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Darkness<br>60 + 20 Energy every 1 sec<br>1 sec activate time (10 max)</div>\
+    <div style="text-align:right;">Affects foe (1 max)<br>25 foot Sphere<br>30 seconds recharge</div>\
+  </div><br>\
+  PICK UP AND THROW - FEAR<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Has a 20% chance every 1 sec to apply Fear to targets within 25 ft of you.</li>\
+    <li>Fear reduces your target\'s damage by 10% for 12 sec.</li>\
+    <li>Has an 85% chance every 1 sec to throw an object to a target within 25 ft of you.</li>\
+    <li>This object deals 161-1,125 Dimensional Damage based on the Mass of the object and hits targets within 5 ft of the primary target. Knocks down affected targets.</li>\
+    <li>Has a 15% chance every 1 sec to cause an object within 25 ft to explode. This object deals 90-633 Dimensional Damage based on the Mass of the object to enemies within 25 ft of it.</li>\
+    <li>When an object explodes like this, applies Devoid to affected targets, reducing their Dimensional resistance by 18% for 15 sec.</li>\
+    <li>Knocks down affected targets.</li>\
+  </ul>',
 
   chaosChaos:
   '<div>\
@@ -23000,7 +23091,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 const shred = {
   power:
   '<div class="popup-header">\
-    <div>SHRED<br>Bestial Supernatural<br><br>MELEE AOE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+    <div>Bestial Supernatural<br><br>MELEE AOE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>If you are affected by Enrage, your chance to apply Bleed on each hit is doubled.</li>\
@@ -23067,7 +23158,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Sco
 const barbedChain = {
   power:
   '<div class="popup-header">\
-    <div>BARBED CHAIN<br>Bestial Supernatural<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+    <div>Bestial Supernatural<br><br>MELEE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>Bleed deals 24 Slashing Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
@@ -23281,7 +23372,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fir
 const frenzy = {
   power:
   '<div class="popup-header">\
-    <div>FRENZY<br>Bestial Supernatural<br><br>MELEE AOE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
+    <div>Bestial Supernatural<br><br>MELEE AOE DAMAGE - BLEED - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>If you are affected by Enrage, your chance to apply Bleed on each hit is doubled.</li>\
@@ -24160,7 +24251,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPower
 const lash = {
   power:
   '<div class="popup-header">\
-    <div>LASH<br>Infernal Supernatural<br><br>RANGED DAMAGE - POISON - COMBO<br><br>CLICK</div>\
+    <div>Infernal Supernatural<br><br>RANGED DAMAGE - POISON - COMBO<br><br>CLICK</div>\
   </div>\
   <ul>\
     <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
