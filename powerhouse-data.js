@@ -5460,17 +5460,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const vaporForm = {
   power: 
   '<div class="popup-header">\
-    <div>Ice<br>Every 1 sec<br>Instant activate time (8 max)</div>\
-    <div style="text-align:right;">Targets self<br>1 minute 30 seconds recharge</div>\
-  </div><br>\
-  THREAT WIPE<br><br>\
-  TOGGLE<br>\
   <ul>\
     <li>When activated, wipes your threat from up to 10 targets within 50ft of you.</li>\
+    <li>When activated, wipes your threat from up to 10 targets within 50 ft of you.</li>\
     <li>Places you in Stealth for 2 sec.</li>\
     <li>While transformed your resistance to damage is increased by 83%.</li>\
+    <li>While transformed, your resistance to damage is increased by 83%.</li>\
     <li>You gain Flight and +58 Flight Speed.</li>\
     <li>Foes that damage you are affected by Chill, reducing their movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Foes that damage you are affected by Chill, reducing their movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
     <li>You cannot use any powers while transformed. Sets your other threat wipe abilities on a 30 sec cooldown.</li>\
   </ul>',
 
@@ -5658,13 +5656,8 @@ dataPowerAlias['Meltdown'] = new PowerAlias('Meltdown', 'Meltdown', '<img src="i
 const fireAllWeapons = {
   power: 
   '<div class="popup-header">\
-    <div>Technology<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 120 degree Cone<br>60 seconds recharge</div>\
-  </div><br>\
-  CHEST SLOT - HAND SLOT - SHOULDER SLOT - ULTIMATE<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Particle Damage every 0.5 sec to all targets.</li>\
     <li>Counts as Chest Slot, Hand Slot and Shoulder Slot Powers.</li>\
   </ul>'
 };
@@ -8006,11 +7999,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'It Burns
 const powerGauntlet = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>20-60 Energy cost<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
-  </div><br>\
-  RANGED DAMAGE - INTERRUPT - BLAST<br><br>\
-  CHARGE<br>\
   <ul>\
     <li>Deals 127-497 Particle Damage and has a 26-100% chance to Interrupt the target.</li>\
     <li>Higher ranked targets may not be affected by the Interrupt.</li>\
@@ -8069,14 +8058,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const dualWristRocketBarrage = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
-  </div><br>\
-  HAND SLOT - RANGED DAMAGE - REPEL<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Crushing Damage every 0.5 sec.</li>\
-    <li>Repels the target 2.5-11ft (based on Period). This effect can only occur up to 45ft.</li>\
   </ul>',
 
   freneticBlast:
@@ -8099,14 +8082,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const concussorBeam = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
-  </div><br>\
-  HAND SLOT - RANGED DAMAGE - REPEL<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Particle Damage every 0.5 sec.</li>\
-    <li>Repels the target 2.5-11ft (based on Period). This effect can only occur up to 45ft.</li>\
   </ul>',
 
   freneticBlast:
@@ -8133,13 +8110,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const eyeBeam = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
-  </div><br>\
-  SHOULDER SLOT - RANGED AOE DAMAGE<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Particle Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   twentyTwentyFission:
@@ -8172,13 +8144,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const miniGun = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
-  </div><br>\
-  SHOULDER SLOT - RANGED AOE DAMAGE<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Crushing Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   u238Rounds:
@@ -8353,13 +8320,8 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 const microMunitions = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 1 sec<br>1 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 15 foot Sphere</div>\
-  </div><br>\
-  CHEST SLOT - RANGED AOE DAMAGE<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Crushing Damage every 1 sec to all targets.</li>\
   </ul>',
 
   alphaStrike:
@@ -8413,13 +8375,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ul
 const chestLaser = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
-  </div><br>\
-  CHEST SLOT - RANGED AOE DAMAGE<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Particle Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   meltaCannon:
@@ -8443,13 +8400,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const plasmaBeam = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
-  </div><br>\
-  HAND SLOT - RANGED AOE DAMAGE<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Particle Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   meltaCannon:
@@ -8473,13 +8425,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const chestRocketAssault = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
-  </div><br>\
-  CHEST SLOT - RANGED AOE DAMAGE<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Deals Crushing Damage every 0.5 sec to all targets.</li>\
   </ul>',
 
   concussiveBlast:
@@ -8608,14 +8555,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 const shoulderLauncher = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 1 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 10 foot Sphere</div>\
-  </div><br>\
-  SHOULDER SLOT - RANGED AOE DAMAGE - KNOCK BACK<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>After 4 sec deals Crushing Damage and Particle Damage to the target, and Crushing Damage and Particle Damage to foes near the target.</li>\
-    <li>In addition, each target has a 50% chance to be Knocked Back 17ft.</li>\
   </ul>',
 
   bunkerBuster:
@@ -8638,14 +8579,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const handCannon = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 1 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 2 foot Cylinder</div>\
-  </div><br>\
-  HAND SLOT - RANGED AOE DAMAGE - KNOCK BACK<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>After 4 sec deals Particle Damage to the target, and Particle Damage to foes near the target.</li>\
-    <li>In addition, each target has a 50% chance to be Knocked Back 17ft.</li>\
   </ul>',
 
   bunkerBuster:
@@ -8668,14 +8603,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const reconstructionCircuits = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Every 1 sec<br>0.5 sec activate time (8 max)</div>\
     <div style="text-align:right;">Targets self</div>\
-  </div><br>\
-  CHEST SLOT - SELF HEAL<br><br>\
-  TOGGLE<br>\
   <ul>\
-    <li>Heals you for +Health Points every 1 sec.</li>\
-  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Reconstruction Circuits', '<img src="img/power-icons/power-armor/PowerArmor_ReconstructionCircuits.png" />&nbsp;Reconstruction Circuits', 2, 8, pow++, 3, reconstructionCircuits.power);
