@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-29 13:10:00 (woof-wolf)>
+ * Time-stamp: <2026-05-29 14:00:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.11a';
+var version = '1.3.11b';
 var releaseDate = '2026-05-29';
 var buildVersion = 3;
 
@@ -1349,56 +1349,65 @@ function selectFramework(framework) {
     if (prevSelectFrameworkBorder != null) {
         prevSelectFrameworkBorder.setAttribute('class', 'selectionNormal');
     }
+
     var selectFrameworkBorder = document.getElementById('selectFrameworkBorder' + framework);
     if (selectFrameworkBorder != null) {
         selectFrameworkBorder.setAttribute('class', 'selectionHighlighted');
     }
+
     var selectPowerIds = ['selectPower', 'selectPowerLeft', 'selectPowerRight'];
     for (var i = 0; i < selectPowerIds.length; i++) {
-        var selectPower = document.getElementById(selectPowerIds[i]);
-        var children = selectPower.getElementsByTagName('*');
-        while (children.length > 0) {
-            selectPower.removeChild(children[0]);
-        }
+        document.getElementById(selectPowerIds[i]).innerHTML = '';
     }
+
     var selectPower = document.getElementById('selectPower');
     var selectPowerLeft = document.getElementById('selectPowerLeft');
     var selectPowerRight = document.getElementById('selectPowerRight');
+
     var spanLeft = document.createElement('span');
     spanLeft.setAttribute('style', 'float:left');
-    // var spanRight = document.createElement('span');
-    // spanRight.setAttribute('style', 'float:right');
-    var a = document.createElement('a');
-    a.setAttribute('id', 'selectPower0');
-    a.setAttribute('onclick', 'selectConfirmation(\'setPower(0)\', \'Clear\', \'\')');
-    a.innerHTML = 'Clear';
-    spanLeft.appendChild(a);
-    var span = document.createElement('span');
-    span.innerHTML = ' &nbsp; ';
-    spanLeft.appendChild(span);
-    var a = document.createElement('a');
-    a.setAttribute('id', 'selectPowerInsert');
-    a.setAttribute('onclick', 'selectPowerInsert(' + selectedNum + ')');
-    a.innerHTML = 'Push down';
-    spanLeft.appendChild(a);
-    var span = document.createElement('span');
-    span.innerHTML = ' &nbsp; ';
-    spanLeft.appendChild(span);
-    var a = document.createElement('a');
-    a.setAttribute('id', 'selectPowerDelete');
-    a.setAttribute('onclick', 'selectPowerDelete(' + selectedNum + ')');
-    a.innerHTML = 'Delete';
-    spanLeft.appendChild(a);
+
+    var aClear = document.createElement('a');
+    aClear.setAttribute('id', 'selectPower0');
+    aClear.setAttribute('onclick', 'selectConfirmation(\'setPower(0)\', \'Clear\', \'\')');
+    aClear.innerHTML = 'Clear';
+    spanLeft.appendChild(aClear);
+
+    var spanSpace1 = document.createElement('span');
+    spanSpace1.innerHTML = ' &nbsp; ';
+    spanLeft.appendChild(spanSpace1);
+
+    var aInsert = document.createElement('a');
+    aInsert.setAttribute('id', 'selectPowerInsert');
+    aInsert.setAttribute('onclick', 'selectPowerInsert(' + selectedNum + ')');
+    aInsert.innerHTML = 'Push down';
+    spanLeft.appendChild(aInsert);
+
+    var spanSpace2 = document.createElement('span');
+    spanSpace2.innerHTML = ' &nbsp; ';
+    spanLeft.appendChild(spanSpace2);
+
+    var aDelete = document.createElement('a');
+    aDelete.setAttribute('id', 'selectPowerDelete');
+    aDelete.setAttribute('onclick', 'selectPowerDelete(' + selectedNum + ')');
+    aDelete.innerHTML = 'Delete';
+    spanLeft.appendChild(aDelete);
+
     selectPower.appendChild(spanLeft);
     selectPower.appendChild(document.createElement('br'));
+
     var frameworkPowers = dataPowerIdFromFramework[framework];
+    var fragmentLeft = document.createDocumentFragment();
+    var fragmentRight = document.createDocumentFragment();
+
     for (var i = 0; i < frameworkPowers.length; i++) {
-        if (i < frameworkPowers.length / 2) selectPower = selectPowerLeft;
-        else selectPower = selectPowerRight;
+        var targetFragment = (i < frameworkPowers.length / 2) ? fragmentLeft : fragmentRight;
         var powerId = frameworkPowers[i];
         var power = dataPower[powerId];
+        
         var a = document.createElement('a');
         a.setAttribute('id', 'selectPower' + powerId);
+        
         switch(selectPowerAllowed(selectedNum, powerId)) {
         case 0:
             a.setAttribute('class', 'disabledButton');
@@ -1412,11 +1421,17 @@ function selectFramework(framework) {
             a.setAttribute('class', 'takenButton');
             break;
         }
+        
         a.innerHTML = dataPower[powerId].desc;
         setOnmouseoverPopupL1(a, dataPower[powerId].tip);
-        selectPower.appendChild(a);
-        selectPower.appendChild(document.createElement('br'));
+        
+        targetFragment.appendChild(a);
+        targetFragment.appendChild(document.createElement('br'));
     }
+
+    selectPowerLeft.appendChild(fragmentLeft);
+    selectPowerRight.appendChild(fragmentRight);
+
     prevSelectedFramework = framework;
     updatePositionSection('selectionPower');
 }
@@ -3961,7 +3976,7 @@ function start() {
 
     // setup powers
     // powers are setup when a framework is selected with the `selectFramework' function
-    for (let i = 2; i < dataFramework.length; ++i) {
+    for (let i = 1; i < dataFramework.length; ++i) {
         selectFramework(i);
     }
     selectFramework(0);
