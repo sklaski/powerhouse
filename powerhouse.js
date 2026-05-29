@@ -9,7 +9,7 @@
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.11b';
+var version = '1.3.11c';
 var releaseDate = '2026-05-29';
 var buildVersion = 3;
 
@@ -1355,14 +1355,8 @@ function selectFramework(framework) {
         selectFrameworkBorder.setAttribute('class', 'selectionHighlighted');
     }
 
-    var selectPowerIds = ['selectPower', 'selectPowerLeft', 'selectPowerRight'];
-    for (var i = 0; i < selectPowerIds.length; i++) {
-        document.getElementById(selectPowerIds[i]).innerHTML = '';
-    }
-
     var selectPower = document.getElementById('selectPower');
-    var selectPowerLeft = document.getElementById('selectPowerLeft');
-    var selectPowerRight = document.getElementById('selectPowerRight');
+    selectPower.innerHTML = '';
 
     var spanLeft = document.createElement('span');
     spanLeft.setAttribute('style', 'float:left');
@@ -1396,41 +1390,72 @@ function selectFramework(framework) {
     selectPower.appendChild(spanLeft);
     selectPower.appendChild(document.createElement('br'));
 
-    var frameworkPowers = dataPowerIdFromFramework[framework];
-    var fragmentLeft = document.createDocumentFragment();
-    var fragmentRight = document.createDocumentFragment();
+    var selectPowerLeft = document.getElementById('selectPowerLeft');
+    var selectPowerRight = document.getElementById('selectPowerRight');
 
-    for (var i = 0; i < frameworkPowers.length; i++) {
-        var targetFragment = (i < frameworkPowers.length / 2) ? fragmentLeft : fragmentRight;
-        var powerId = frameworkPowers[i];
-        var power = dataPower[powerId];
-        
-        var a = document.createElement('a');
-        a.setAttribute('id', 'selectPower' + powerId);
-        
-        switch(selectPowerAllowed(selectedNum, powerId)) {
-        case 0:
-            a.setAttribute('class', 'disabledButton');
-            break;
-        case 1:
-            a.setAttribute('onclick', 'selectConfirmation(\'setPower(' + powerId + ')\', \'' + escapeQuotes(dataPower[powerId].desc) + '\', \'' + dataPower[powerId].tip + '\')');
-            a.setAttribute('class', 'button');
-            break;
-        case 2:
-            a.setAttribute('onclick', 'selectConfirmation(\'setPower(' + powerId + ')\', \'' + escapeQuotes(dataPower[powerId].desc) + '\', \'' + dataPower[powerId].tip + '\')');
-            a.setAttribute('class', 'takenButton');
-            break;
-        }
-        
-        a.innerHTML = dataPower[powerId].desc;
-        setOnmouseoverPopupL1(a, dataPower[powerId].tip);
-        
-        targetFragment.appendChild(a);
-        targetFragment.appendChild(document.createElement('br'));
+    for (var i = 0; i < selectPowerLeft.children.length; i++) {
+        selectPowerLeft.children[i].style.display = 'none';
+    }
+    for (var i = 0; i < selectPowerRight.children.length; i++) {
+        selectPowerRight.children[i].style.display = 'none';
     }
 
-    selectPowerLeft.appendChild(fragmentLeft);
-    selectPowerRight.appendChild(fragmentRight);
+    var panelLeft = document.getElementById('frameworkLeft_' + framework);
+    var panelRight = document.getElementById('frameworkRight_' + framework);
+    var frameworkPowers = dataPowerIdFromFramework[framework];
+
+    if (!panelLeft) {
+        panelLeft = document.createElement('span');
+        panelLeft.setAttribute('id', 'frameworkLeft_' + framework);
+        
+        panelRight = document.createElement('span');
+        panelRight.setAttribute('id', 'frameworkRight_' + framework);
+
+        if (frameworkPowers) {
+            for (var i = 0; i < frameworkPowers.length; i++) {
+                var powerId = frameworkPowers[i];
+                var a = document.createElement('a');
+                a.setAttribute('id', 'selectPowerBtn_' + framework + '_' + powerId);
+                a.innerHTML = dataPower[powerId].desc;
+                setOnmouseoverPopupL1(a, dataPower[powerId].tip);
+                
+                if (i < frameworkPowers.length / 2) {
+                    panelLeft.appendChild(a);
+                    panelLeft.appendChild(document.createElement('br'));
+                } else {
+                    panelRight.appendChild(a);
+                    panelRight.appendChild(document.createElement('br'));
+                }
+            }
+        }
+        selectPowerLeft.appendChild(panelLeft);
+        selectPowerRight.appendChild(panelRight);
+    }
+
+    if (frameworkPowers) {
+        for (var i = 0; i < frameworkPowers.length; i++) {
+            var powerId = frameworkPowers[i];
+            var a = document.getElementById('selectPowerBtn_' + framework + '_' + powerId);
+            
+            switch(selectPowerAllowed(selectedNum, powerId)) {
+            case 0:
+                a.setAttribute('class', 'disabledButton');
+                a.removeAttribute('onclick');
+                break;
+            case 1:
+                a.setAttribute('onclick', 'selectConfirmation(\'setPower(' + powerId + ')\', \'' + escapeQuotes(dataPower[powerId].desc) + '\', \'' + dataPower[powerId].tip + '\')');
+                a.setAttribute('class', 'button');
+                break;
+            case 2:
+                a.setAttribute('onclick', 'selectConfirmation(\'setPower(' + powerId + ')\', \'' + escapeQuotes(dataPower[powerId].desc) + '\', \'' + dataPower[powerId].tip + '\')');
+                a.setAttribute('class', 'takenButton');
+                break;
+            }
+        }
+    }
+
+    panelLeft.style.display = '';
+    panelRight.style.display = '';
 
     prevSelectedFramework = framework;
     updatePositionSection('selectionPower');
