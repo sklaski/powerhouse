@@ -9,7 +9,7 @@
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.11';
+var version = '1.3.11a';
 var releaseDate = '2026-05-29';
 var buildVersion = 3;
 
@@ -3961,10 +3961,10 @@ function start() {
 
     // setup powers
     // powers are setup when a framework is selected with the `selectFramework' function
-    // for (let i = 2; i < dataFramework.length; ++i) {
-    //     selectFramework(i);
-    // }
-    // selectFramework(0);
+    for (let i = 2; i < dataFramework.length; ++i) {
+        selectFramework(i);
+    }
+    selectFramework(0);
 
     // I don't really know if these lines are necessary, but they are here just in case.
     hideSection('selectionPower');
