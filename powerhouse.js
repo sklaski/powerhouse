@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-28 20:50:00 (woof-wolf)>
+ * Time-stamp: <2026-05-29 13:10:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.11';
-var releaseDate = '2026-05-28';
+var version = '1.3.11a';
+var releaseDate = '2026-05-29';
 var buildVersion = 3;
 
 var siteName = 'PowerHouse';
@@ -3950,11 +3950,6 @@ function start() {
     // setup frameworks
     setupFrameworks();
 
-    // setup powers
-    // powers are setup when a framework is selected with the `selectFramework' function
-    hideSection('selectionPower');
-    hideSection('selectionPowerAdvantage');
-
     // setup archetypes
     setupArchtypes();
 
@@ -3963,6 +3958,17 @@ function start() {
 
     // change updates
     changeUpdate();
+
+    // setup powers
+    // powers are setup when a framework is selected with the `selectFramework' function
+    for (let i = 2; i < dataFramework.length; ++i) {
+        selectFramework(i);
+    }
+    selectFramework(0);
+
+    // I don't really know if these lines are necessary, but they are here just in case.
+    hideSection('selectionPower');
+    hideSection('selectionPowerAdvantage');
 
     // submit build to google analytics
     submitBuild();
