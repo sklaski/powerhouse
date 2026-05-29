@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-27 13:10:00 (woof-wolf)>
+ * Time-stamp: <2026-05-27 20:50:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -980,9 +980,12 @@ var dataReplacePower = [];
 // Power Global Aliases
 //------------------------------------------------------------------------------
 
+// When taking tooltip data for non-passives, I used Hybrid, removed all my stars, made sure I had no gear, made sure my travel power was off, and made sure I had no talents/specs/superstats.
+// When taking tooltip data for passives, I took CON/DEX/STR so that the passive numbers scale a little bit.
+
 // Generic Rank placeholder advantages for when the rank info isn't verified/customized
-dataPowerAlias['R2'] = new PowerAlias('R2', 'Rank 2', 'Rank 2', '<div>Increases damage done or strength of power.</div>');
-dataPowerAlias['R3'] = new PowerAlias('R3', 'Rank 3', 'Rank 3', '<div>Increases damage done or strength of power.</div>');
+dataPowerAlias['R2'] = new PowerAlias('R2', 'Rank 2', 'Rank 2', '<div>RANK 2<br><ul><li>Increases damage done or strength of power.</ul></div>');
+dataPowerAlias['R3'] = new PowerAlias('R3', 'Rank 3', 'Rank 3', '<div>RANK 3<br><ul><li>Increases damage done or strength of power.</ul></div>');
 
 /* PowerAdvantage = function(id, name, desc, points, dependency, tip)
 // id = id number of this advantage, ex: 1st advantage, 2nd advantage, 3rd advantage...
@@ -1647,16 +1650,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Matter -
 const electricForm = {
   power: 
   '<div class="popup-header">\
-    <div>Electricity</div>\
-  </div><br>\
-  SLOTTED OFFENSIVE PASSIVE<br><br>\
-  PASSIVE<br>\
+    <div>Electricity<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
   <ul>\
-    <li>You deal additional Energy Damage.</li>\
-    <li>You gain Energy Damage Resistance and an additional Electrical Damage Resistance.</li>\
-    <li>When you take Electrical Damage you gain 10% of that damage in Energy.</li>\
+    <li>You deal an additional 29% Energy Damage.</li>\
+    <li>You gain 8.9% Energy Damage Resistance and an additional 37% Electrical Damage Resistance.</li>\
+    <li>When you take Electrical Damage, you gain 10% of that damage in Energy.</li>\
     <li>Your base Energy Equilibrium is increased by 83% and your Energy Recovery is increased by 100%.</li>\
-    <li>When you strike a target that is affected by your Negative Ions, heals you for +Health Points. This can occur up to 3 times in 5 seconds.</li>\
+    <li>When you strike a target that\\\'s affected by your Negative Ions, you are healed for +84 Health Points. This can occur up to 3 times in 5 seconds.</li>\
   </ul>'
 };
 
@@ -2681,19 +2682,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Blazing 
 const fieryForm = {
   power: 
   '<div class="popup-header">\
-    <div>Fire<br>Every 2 sec</div>\
+    <div>Fire<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
     <div style="text-align:right;">Affects foe that is not destructible (10 max)<br>50 foot Sphere</div>\
-  </div><br>\
-  SLOTTED OFFENSIVE PASSIVE<br><br>\
-  PASSIVE<br>\
+  </div>\
   <ul>\
-    <li>You deal additional Elemental Damage.</li>\
-    <li>You gain a stack of Fiery Light for each target within 50 ft affected by your Clinging Flames, increasing your Fire Damage strength up to 10 stacks.</li>\
-    <li>You gain Elemental Damage Resistance and Fire Damage Resistance.</li>\
-    <li>You gain a percentage of your maximum energy when you take Fire Damage.</li>\
-    <li>You deal Fire Damage every 2 sec to foes within 25 ft while in combat.</li>\
-    <li>You have a 20% chance to apply Clinging Flames to foes that attack you while active.</li>\
-    <li>Clinging Flames deals Fire Damage every 2 sec for 12 sec and may leap to other foes near the target.</li>\
+    <li>You deal an additional 29% Elemental Damage.</li>\
+    <li>You gain an additional +3.5% Fire Damage strength for every target within 50 ft affected by your Clinging Flames. This buff is called Fiery Light and can stack up to 10 times.</li>\
+    <li>You gain 8.9% Elemental Damage Resistance and an additional 37% Fire Damage Resistance.</li>\
+    <li>You gain 0.58% of your energy when you take Fire Damage.</li>\
+    <li>While you are in combat, you deal 42 Fire Damage every 2 sec to foes within 25 ft.</li>\
+    <li>Also, while active, you have a 20% chance to apply Clinging Flames to foes that attack you, which deals 125 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
   </ul>'
 };
 
@@ -2705,19 +2703,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const hearth = {
   power: 
   '<div class="popup-header">\
-    <div>Fire<br>Every 3 sec</div>\
+    <div>Fire<br>Reapplies every 3 sec<br><br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE</div>\
     <div style="text-align:right;">Affects teammate (10 max)<br>100 foot Team</div>\
-  </div><br>\
-  SLOTTED SUPPORT PASSIVE<br><br>\
-  PASSIVE<br>\
+  </div>\
   <ul>\
-    <li>You deal additional Elemental Damage.</li>\
-    <li>You gain Elemental Damage Resistance and Fire Damage Resistance.</li>\
-    <li>You gain a percentage of your maximum energy when you take Fire Damage.</li>\
-    <li>The healing you perform is increased.</li>\
-    <li>Heals you and nearby teammates for +Health Points every 3 sec.</li>\
-    <li>You have a 10% chance to apply Clinging Flames to foes that attack you while active.</li>\
-    <li>Clinging Flames deals Fire Damage every 3 sec for 12 sec and may leap to other foes near the target.</li>\
+    <li>You deal an additional 29% Elemental Damage.</li>\
+    <li>You gain 8.9% Elemental Damage Resistance and an additional 37% Fire Damage Resistance.</li>\
+    <li>You gain 0.58% of your energy when you take Fire Damage.</li>\
+    <li>The healing you perform is increased by 15%.</li>\
+    <li>Heals you and nearby teammates for +29 Health Points every 3 sec.</li>\
+    <li>Also, while active, you have a 10% chance to apply Clinging Flames to foes that attack you, which deals 125 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
   </ul>'
 };
 
@@ -2896,7 +2891,7 @@ const rimefireBurst = {
   CLICK<br>\
   <ul>\
     <li>Deal 404 Fire Damage and 404 Cold Damage to target foe.</li>\
-    <li>If the foe is not affected by Clinging Flames, this power applies Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>If the foe is not affected by Clinging Flames, this power applies Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
     <li>If the target is not affected by Chill, this power applies Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. May leap to other targets.</li>\
     <li>If the target is affected by both Clinging Flames and Chill, consumes both effects and deals 404 Fire Damage and 404 Cold Damage to up to 4 targets within 30ft. Recharges instantly.</li>\
   </ul>'
@@ -3706,16 +3701,11 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 const personalForceField = {
   power: 
   '<div class="popup-header">\
-    <div>Force<br>Every 3 sec</div>\
-    <div style="text-align:right;"></div>\
-  </div><br>\
-  SLOTTED DEFENSIVE PASSIVE<br><br>\
-  PASSIVE<br>\
+    <div>Force<br>Reapplies every 3 sec<br><br>SLOTTED DEFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
   <ul>\
-    <li>Creates a shield on yourself.</li>\
-    <li>This shield absorbs most of the incoming damage you suffer, and regenerates every 3 sec.</li>\
-    <li>This regeneration rate is reduced as your Personal Force Field takes damage.</li>\
-    <li>While out of combat, the shield regenerates at an additional rate every 1 sec.</li>\
+    <li>A shield with a strength of 1,875 points.</li>\
+    <li>This shield absorbs most of the incoming damage you suffer and regenerates at a rate of 335 points every 3 sec. This regeneration rate is reduced as your Personal Force Field takes damage. When not in combat, the shield regenerates at an additional rate of 49 points every 1 sec.</li>\
   </ul>'
 };
 
@@ -3727,15 +3717,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const kineticManipulation = {
   power: 
   '<div class="popup-header">\
-    <div>Force</div>\
-  </div><br>\
-  SLOTTED OFFENSIVE PASSIVE<br><br>\
-  PASSIVE<br>\
+    <div>Force<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
   <ul>\
-    <li>Increases your Ranged Physical Damage.</li>\
-    <li>Increases your resistance to Physical Damage and Ranged Physical Damage.</li>\
-    <li>Increases your Resistance to Knock effects. This effect is doubled if you are Shielded.</li>\
-    <li>Whenever you are hit by Crushing typed damage, you gain Energy. This can occur once every 1 sec.</li>\
+    <li>Increases your Ranged Physical Damage by 29%.</li>\
+    <li>Increases your resistance to Physical Damage by 6.7% and Ranged Physical Damage by 28%.</li>\
+    <li>Increases your resistance to Knock effects by 15%. This effect is doubled if you are Shielded.</li>\
+    <li>Whenever you are hit by Crushing typed damage, you gain +0.58% Energy. This can occur once every 1 sec.</li>\
   </ul>'
 };
 
@@ -3747,15 +3735,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const inertialDampeningField = {
   power: 
   '<div class="popup-header">\
-    <div>Force<br>Every 3 sec</div>\
-    <div style="text-align:right;">Affects any friend except destructables (20 max)<br>100 foot Team</div>\
-  </div><br>\
-  SLOTTED SUPPORT PASSIVE<br><br>\
-  PASSIVE<br>\
+    <div>Force<br>Reapplies every 3 sec<br><br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE</div>\
+    <div style="text-align:right;">Affects any friend except destructibles (20 max)<br>100 foot Team</div>\
+  </div>\
   <ul>\
-    <li>Creates a shield that absorbs damage for you and affected Teammates.</li>\
-    <li>Additionally, increases Knock and Hold resistance.</li>\
-    <li>Whenever you directly Shield yourself or an ally, increases the damage absorption of this power and the effectiveness of your shields for 12 sec. Can occur once every 2 sec and stacks up to 5 times.</li>\
+    <li>Creates a shield that absorbs up to 39 damage for you and affected teammates.</li>\
+    <li>Additionally, it increases Knock and Hold resistance by 22%.</li>\
+    <li>Whenever you directly Shield yourself or an ally, the damage absorption of this power and the effectiveness of your shields increase by 4.2% for 12 sec. This can occur once every 2 sec and stacks up to 5 times.</li>\
   </ul>'
 };
 
@@ -4354,14 +4340,10 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const stormbringer = {
   power: 
   '<div class="popup-header">\
-    <div>Wind</div>\
-  </div><br>\
-  SLOTTED OFFENSIVE PASSIVE<br><br>\
-  PASSIVE<br>\
+    <div>Wind<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
   <ul>\
-    <li>You deal additional Crushing, Cold, and Electrical Damage.</li>\
-    <li>You gain Crushing, Cold, and Electrical Damage Resistance.</li>\
-    <li>You also gain a small amount of Energy when you suffer Crushing, Cold, or Electrical Damage.</li>\
+    <li>You deal an additional 29% Crushing, Cold, and Electrical Damage. You gain 22% Crushing, Cold, and Electrical Damage Resistance. You also gain a small amount of Energy when you suffer Crushing, Cold, or Electrical Damage.</li>\
   </ul>'
 };
 
@@ -4450,7 +4432,7 @@ const torrent = {
   <ul>\
     <li>Deals 170-603 Cold Damage to nearby foes.</li>\
     <li>Has a 13-50% chance based on charge time to Knock Down targets.</li>\
-    <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
   </ul>',
 
   oasis:
@@ -4815,7 +4797,7 @@ const iceShards = {
     <div>Ice<br><br>ENERGY BUILDER - RANGED DAMAGE - CHILL<br><br>CLICK</div>\
   </div>\
   <ul>\
-    <li>Chill reduces the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Chill reduces the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
   </ul>\
   <hr>\
   <div class="popup-header">\
@@ -4942,7 +4924,7 @@ const frostBreath = {
   MAINTAIN<br>\
   <ul>\
     <li>Deals 57-171 Cold Damage (based on pulse) every 0.5 sec to all targets.</li>\
-    <li>Has a 25% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Has a 25% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
   </ul>',
 
   frostBite:
@@ -5080,7 +5062,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Supercoo
 
 const iceForm = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Ice<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 29% Elemental Damage. You gain 8.9% Elemental Damage Resistance and an additional 37% Ice Damage Resistance. You also gain a small amount of energy when you suffer Ice Damage.</li>\
+    <li>While active, you have a 20% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Landing a Critical Hit grants you the Cold Snap buff for 10 sec.</li>\
+    <li>Chill will no longer reduce your movement speed when applied to you.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ice Form', '<img src="img/power-icons/ice/Ice_IceForm.png" />&nbsp;Ice Form', 1, 5, pow++, 1, iceForm.power); 
@@ -5149,7 +5139,7 @@ const iceShield = {
     <li>Your movement speed is reduced by 100% and your resistance to Hold and Knock effects is increased by 100%.</li>\
     <li>Gives you Energy when struck by an attack while blocking. This amount scales with your RECOVERY and the amount of damage you take.</li>\
     <li>Has a 25% chance to apply Chill to attackers in melee range.</li>\
-    <li>Chill reduces the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Chill reduces the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
   </ul>',
 
   frigidAir:
@@ -5210,7 +5200,7 @@ const winterGale = {
   MAINTAIN<br>\
   <ul>\
     <li>Deals 90 Cold Damage every 0.5 sec to foes.</li>\
-    <li>Has a 10% chance every hit to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Has a 10% chance every hit to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
     <li>If fully maintained, and your target is affected by Chill, applies Hard Frost, causing -18% resistance to Cold Damage for 15 sec.</li>\
   </ul>',
 
@@ -5308,7 +5298,7 @@ const snowStorm = {
   MAINTAIN<br>\
   <ul>\
     <li>Deals 151 Cold Damage every 1 sec to foes in the target area.</li>\
-    <li>Has a 10% chance every 1 sec to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Has a 10% chance every 1 sec to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
     <li>After 1 sec, reduces the Perception of affected targets by 500% while this power is maintained.</li>\
   </ul>',
 
@@ -5413,7 +5403,7 @@ const icicleSpear = {
   CHARGE<br>\
   <ul>\
     <li>Deals 254-904 Cold Damage to your target.</li>\
-    <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Has a 13-50% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
   </ul>',
 
   bitterCold:
@@ -5452,7 +5442,7 @@ const avalanche = {
   MAINTAIN<br>\
   <ul>\
     <li>Deals 141 Cold Damage every 0.5 sec and has a 10% chance to Knock Down affected targets.</li>\
-    <li>Has a 15% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>Has a 15% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally trapping targets in an Ice Cage. Stacks up to 3 times.</li>\
   </ul>',
 
   serratedShards:
@@ -6226,7 +6216,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const quarry = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Archery<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 23% Physical Damage and an additional 12% Non-Physical Damage with all attacks.</li>\
+    <li>Your chance to Dodge attacks is increased by 8.3%.</li>\
+    <li>When using attacks that aren\\\'t Energy Builders, you gain a stack of Audacity. Each stack grants +4.2% Avoidance, +1 Intelligence, and +1 Ego. Audacity can stack up to 3 times.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Quarry', '<img src="img/power-icons/archery/Archery_Quarry.png" />&nbsp;Quarry', 2, 6, pow++, 1, quarry.power); 
@@ -7171,7 +7168,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: U-
 
 const composure = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Munitions<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Increases your Technology damage by 26%.</li>\
+    <li>Grants +8% Dodge Chance Rating and +5.3 Avoidance Rating.</li>\
+    <li>Increases your Knock Resistance by 22%.</li>\
+    <li>In addition, whenever you dodge an attack, you gain +0.29% Energy. This can occur once every 6 sec.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Composure', '<img src="img/power-icons/munitions/Munitions_Composure.png" />&nbsp;Composure', 2, 7, pow++, 1, composure.power);
@@ -8340,7 +8345,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const targetingComputer = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Power Armor<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 23% Damage with all Ranged Technology attacks, and those attacks cause your Targeting Computer to start tracking your target.</li>\
+    <li>After 3 seconds, it will Lock On to the target, granting you an additional 5% Critical Hit and an additional 10% Critical Severity on the target. The tracking also makes you more aware of incoming attacks from those targets, granting you +6% resistance to all damage from them.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Targeting Computer', '<img src="img/power-icons/power-armor/PowerArmor_TargetingComputer.png" />&nbsp;Targeting Computer', 2, 8, pow++, 1, targetingComputer.power);
@@ -8350,7 +8361,12 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const invulnerability = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Power Armor<br>Reapplies every 5 sec<br><br>SLOTTED DEFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Reduces incoming damage by a flat 64 damage and also grants +33% resistance to all damage.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Invulnerability', '<img src="img/power-icons/power-armor/PowerArmor_Invulnerability.png" />&nbsp;Invulnerability', 2, 8, pow++, 1, invulnerability.power);
@@ -9587,7 +9603,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Extra Ra
 
 const medicalNanites = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>Reapplies every 3 sec<br><br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE</div>\
+    <div style="text-align:right;">Affects any friend except destructibles (20 max)<br>100 foot Team</div>\
+  </div>\
+  <ul>\
+    <li>Your Technology healing is increased by 12%.</li>\
+    <li>You and your teammates gain 17% resistance to all damage.</li>\
+    <li>You gain 204 Health every 3 sec, while your teammates gain 159 Health.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Medical Nanites', '<img src="img/power-icons/gadgeteering/Gadgeteering_MedicalNanites.png" />&nbsp;Medical Nanites', 2, 9, pow++, 1, medicalNanites.power);
@@ -9597,7 +9621,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const radiationSuit = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Increases your Energy damage by 41% and all other damage by 15%.</li>\
+    <li>Absorbs up to 31 damage when struck by an attack. If the damage is a Damage Over Time effect, up to 63 damage is absorbed.</li>\
+    <li>You gain 37% resistance to Energy damage.</li>\
+    <li>You gain 0.58% of your energy when you take Energy damage.</li>\
+    <li>While active, you have an 8% chance to apply Plasma Burn whenever you directly deal Energy damage. This effect can occur once every 1 sec. You also have a 16% chance when taking damage.</li>\
+    <li>Plasma Burn causes 32 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Radiation Suit', '<img src="img/power-icons/gadgeteering/Gadgeteering_RadiationSuit.png" />&nbsp;Radiation Suit', 2, 9, pow++, 1, radiationSuit.power);
@@ -10868,7 +10902,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const quantumStabilizer = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Laser Sword<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 29% Energy damage.</li>\
+    <li>You gain 5.9% all damage resistance and an additional 25% Particle damage resistance.</li>\
+    <li>You gain 0.58% Energy when you take Energy damage. This can occur once every 1 sec.</li>\
+    <li>Increases your Knock Resistance by 18%.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Quantum Stabilizer', '<img src="img/power-icons/laser-sword/LaserSword_QuantumStabilizer.png" />&nbsp;Quantum Stabilizer', 2, 10, pow++, 1, quantumStabilizer.power);
@@ -11757,21 +11799,58 @@ dataPowerAlias['Caltrops Tashibishi'] = new PowerAlias('Caltrops Tashibishi', 'C
 
 const lightningReflexes = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Martial Arts<br>Reapplies every 6 sec<br><br>SLOTTED DEFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Increases your Dodge by 25%.</li>\
+    <li>Increases your Avoidance by 50% and your Avoidance Rating by 73.</li>\
+    <li>Increases resistance against all damage over time attacks by 111%.</li>\
+    <li>Whenever you are hit, your chance to Dodge increases by 0.5%. Dodging will reset this escalating bonus.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Lightning Reflexes'] = new PowerAlias('Lightning Reflexes', 'Lightning Reflexes', '<img src="img/power-icons/martial-arts/MartialArts_LightningReflexes.png" />&nbsp;Lightning Reflexes', lightningReflexes.power);
 
 const wayOfTheWarrior = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Martial Arts<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Increases your Melee and Bleed damage by 41%.</li>\
+    <li>Increases all other damage by 15%.</li>\
+    <li>Grants +12% Dodge Chance and +16 Avoidance Rating.</li>\
+    <li>Whenever an enemy dodges one of your attacks, you gain +0.58% Energy.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Way of the Warrior'] = new PowerAlias('Way of the Warrior', 'Way of the Warrior', '<img src="img/power-icons/martial-arts/MartialArts_WayOfTheWarrior.png" />&nbsp;Way of the Warrior', wayOfTheWarrior.power);
 
 const nightWarrior = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Martial Arts<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Boosts all of your damage by 22%.</li>\
+    <li>Boosts the Charge Speed on your powers by 1.8%.</li>\
+    <li>Increases your chance to Dodge attacks by 8% and increases your Avoidance Rating by 8%.</li>\
+    <li>Enables the use of the Sneak power, which causes you to become stealthed from foes.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SNEAK<br><br>Martial Arts<br>0 + 0 Energy every 0.5 sec<br>0.5 sec activate time (No max)</div>\
+    <div style="text-align:right;"><br><br>Targets self</div>\
+  </div><br>\
+  STEALTH<br><br>\
+  TOGGLE<br>\
+  <ul>\
+    <li>Sneak grants you +17 Aggression Stealth and +226 Perception Stealth.</li>\
+    <li>While you are Sneaking, your single target melee damage is increased by 29% and your single target ranged damage is increased by 15%.</li>\
+    <li>Reduces your movement speed by 33% while active.</li>\
+    <li>Sneak is deactivated for 4 sec upon healing a target, taking damage, dealing damage, or interacting with an object. This duration is extended each time you perform one of these actions.</li>\
+  </ul>',
 
   silentRunning:
   '<div>\
@@ -15224,7 +15303,15 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 
 const egoForm = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Mentalist<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 29% Paranormal Damage and 15% Physical Damage.</li>\
+    <li>You gain 6.7% resistance to all damage and an additional 37% Ego Damage Resistance.</li>\
+    <li>You also gain +38 Energy when you suffer Ego Damage.</li>\
+    <li>Grants +12% Power Cost Discount to all MENTALIST powers.</li>\
+  </ul>',
 
   idBlades:
   '<div>\
@@ -15867,7 +15954,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPower
 
 const idMastery = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telekinesis<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Increases your Paranormal Melee damage by 41% and all other Paranormal damage by 21%.</li>\
+    <li>Gives you +8.9% resistance to all damage and an additional +28% resistance to Ego Damage.</li>\
+    <li>Grants +8.5% Power Cost Discount to all MENTALIST powers.</li>\
+  </ul>',
 
   idBlades:
   '<div>\
@@ -16849,7 +16943,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const congressOfSelves = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Telepathy<br>Reapplies every 2 sec<br><br>Slotted Hybrid Passive<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Your Ego Damage over Time powers deal an additional 29% and ignore 10% of the target\\\'s resistance. You gain 37% Ego Damage Resistance. You also gain a small amount of energy when you suffer Ego Damage.</li>\
+    <li>Grants +12% Power Cost Discount to all Mentalist powers. In addition, you gain +29 Aggression Stealth and 25% reduced threat generation. Aggression Stealth reduces the range at which you will aggro foes.</li>\
+  </ul>',
 
   conditioning:
   '<div>\
@@ -17359,14 +17459,28 @@ dataPowerAlias['Indestructible'] = new PowerAlias('Indestructible', 'Indestructi
 
 const defiance = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Brick<br>Reapplies every 4 sec<br><br>SLOTTED DEFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Passively provides you with 1 stack of Defiant.</li>\
+    <li>Whenever you take damage, you gain a stack of Defiant for 20 sec. This can occur once every 2 sec. Gaining a stack refreshes the duration of all existing stacks.</li>\
+    <li>Defiant stacks up to 6 times. Each stack provides you with +9.8% resistance to all damage.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Defiance'] = new PowerAlias('Defiance', 'Defiance', '<img src="img/power-icons/brick/Brick_Defiance.png" />&nbsp;Defiance', defiance.power);
 
 const unstoppable = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Brick<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Increases your Melee and Bleed damage by 41% and all other damage by 15%.</li>\
+    <li>Increases your Knock and Hold Resistance by 18%. Up to 31 damage is absorbed when struck by an attack.</li>\
+    <li>Whenever you are Knocked by an attack, you gain +0.58% Energy.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Unstoppable'] = new PowerAlias('Unstoppable', 'Unstoppable', '<img src="img/power-icons/brick/Brick_Unstoppable.png" />&nbsp;Unstoppable', unstoppable.power);
@@ -18710,7 +18824,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const earthForm = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Earth<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>30 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 29% Physical Damage. You gain 8.9% Physical Damage Resistance and an additional 37% Crushing Damage Resistance. You also gain a small amount of energy when you suffer Crushing Damage.</li>\
+    <li>Foes within 10ft of you have their movement speed reduced by 30%. Foes within 20ft of you have their movement speed reduced by 20%. Foes within 30ft of you have their movement speed reduced by 10%.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Earth Form', '<img src="img/power-icons/earth/Earth_EarthForm.png" />&nbsp;Earth Form', 5, 18, pow++, 1, earthForm.power);
@@ -20461,14 +20582,31 @@ dataPowerAlias['Resurgence'] = new PowerAlias('Resurgence', 'Resurgence', '<img 
 
 const regeneration = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Supernatural<br>Reapplies every 3 sec<br><br>SLOTTED DEFENSIVE PASSIVE - SELF HEAL OVER TIME<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You gain 335 Health every 3 sec. This amount changes based on damage taken.</li>\
+    <li>Additionally, you gain +20% resistance to all damage. This value is reduced as you take damage.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Regeneration'] = new PowerAlias('Regeneration', 'Regeneration', '<img src="img/power-icons/supernatural/Supernatural_Regeneration.png" />&nbsp;Regeneration', regeneration.power);
 
 const pestilence = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Supernatural<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE - DAMAGE OVER TIME<br><br>PASSIVE</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 15% Toxic and Slashing Damage.</li>\
+    <li>You gain 8.9% Elemental Damage Resistance and an additional 37% Toxic Damage Resistance.</li>\
+    <li>You affect foes within 10ft and foes that you attack with Pestilence, which deals up to 300 Toxic Damage every 2 sec. The amount of damage starts lower, but reaches that amount as the target gets low on health.</li>\
+    <li>Reduces your foes\\\' resistance to your Toxic damage by 2% for each stack of your Deadly Poison on them.</li>\
+    <li>Reduces your foes\\\' resistance to your Slashing damage by 2% for each stack of your Bleed on them.</li>\
+    <li>In addition, Healing effects on the target are reduced by 100%.</li>\
+  </ul>'
 };
 
 dataPowerAlias['Pestilence'] = new PowerAlias('Pestilence', 'Pestilence', '<img src="img/power-icons/supernatural/Supernatural_Pestilence.png" />&nbsp;Pestilence', pestilence.power);
@@ -20990,7 +21128,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const seraphim = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Celestial<br>Reapplies every 3 sec<br><br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE</div>\
+    <div style="text-align:right;">Affects anything alive (10 max)<br>100 foot Team</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 29% Paranormal Damage, and the healing you perform is increased by 15%.</li>\
+    <li>You gain 8.9% Paranormal Damage Resistance and an additional 37% Dimensional Damage Resistance.</li>\
+    <li>You also gain a small amount of energy when you suffer Dimensional Damage.</li>\
+    <li>Heals you and nearby friends for +57 Health Points every 3 sec.</li>\
+  </ul>',
 
   balance:
   '<div>\
@@ -21642,7 +21789,16 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Night Vi
 
 const shadowForm = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Darkness<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 29% Paranormal Damage.</li>\
+    <li>You gain 8.9% Paranormal Damage Resistance and an additional 37% Dimensional Damage Resistance.</li>\
+    <li>You gain 0.58% of your energy when you take Dimensional Damage.</li>\
+    <li>Whenever you attack, you gain 1.7% of your Health. The heal can only occur once every 3 sec.</li>\
+    <li>You gain +8.3 Aggression Stealth and +83 Perception Stealth, making it harder for foes to see you, and your threat is reduced by 8.3%.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Form', '<img src="img/power-icons/darkness/Darkness_ShadowForm.png" />&nbsp;Shadow Form', 6, 21, pow++, 1, shadowForm.power);
@@ -21651,8 +21807,17 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
 const harbinger = {
-  power: 
-  '<div>...</div>'
+  power:
+  '<div class="popup-header">\
+    <div>Darkness<br>Reapplies every 4 sec<br><br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>Increases the effectiveness of your healing by 2.9% and your damage by 5.9%.</li>\
+    <li>Absorbs up to 25 damage when struck by an attack.</li>\
+    <li>When you use a Life Drain ability, your Life Drain healing is increased by 1.2%, the damage on your Life Drain powers is boosted by 2%, and your damage resistance increases by 0.6%. This effect stacks up to 10 times and lasts 12 sec. This effect can be applied once every 0.5 sec.</li>\
+    <li>Applying this effect refreshes all existing stacks.</li>\
+    <li>Whenever you are struck by Dimensional damage, you gain +0.58% Energy.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Harbinger', '<img src="img/power-icons/darkness/Darkness_Harbinger.png" />&nbsp;Harbinger', 6, 21, pow++, 1, harbinger.power);
@@ -22780,8 +22945,65 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Mystic T
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Inner Peace', 'Inner Peace', 2, null, sigilsOfEbonWeakness.innerPeace));
 
 const auraOfArcaneClarity = {
+// This tooltip is cursed for now
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>Reapplies every 3 sec</div>\
+    <div style="text-align:right;">Affects any friend except destructibles (20 max)<br>100 foot Team</div>\
+  </div>\
+  <br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE<br>\
+  <ul>\
+    <li>This power scales differently depending on what role you are in.</li>\
+    <li>The buff for yourself scales with your Super Stats.</li>\
+    <li>The buff for your allies scales with your PRESENCE.</li>\
+  </ul>\
+  <div>HYBRID ROLE</div>\
+  <div style="display:flex; padding-left:15px;">\
+    <div style="width:50%;">\
+      <div>You receive:</div>\
+      <div style="padding-left:8px;">\
+        15% Cost Discount<br>\
+        15% Recharge Speed<br>\
+        3.3% Charge Speed<br>\
+        44% Perception<br>\
+        7% Stealth Sight\
+      </div>\
+    </div>\
+    <div style="width:50%;">\
+      <div>Teammates gain:</div>\
+      <div style="padding-left:8px;">\
+        7.3% Cost Discount<br>\
+        7.3% Recharge Speed<br>\
+        0.08% Charge Speed<br>\
+        24% Perception<br>\
+        2.5% Stealth Sight\
+      </div>\
+    </div>\
+  </div>\
+  <br>\
+  <div>SUPPORT ROLE</div>\
+  <div style="display:flex; padding-left:15px;">\
+    <div style="width:50%;">\
+      <div>You receive:</div>\
+      <div style="padding-left:8px;">\
+        13% Cost Discount<br>\
+        13% Recharge Speed<br>\
+        2.8% Charge Speed<br>\
+        39% Perception<br>\
+        6.2% Stealth Sight\
+      </div>\
+    </div>\
+    <div style="width:50%;">\
+      <div>Teammates gain:</div>\
+      <div style="padding-left:8px;">\
+        19% Cost Discount<br>\
+        19% Recharge Speed<br>\
+        0.08% Charge Speed<br>\
+        63% Perception<br>\
+        6.6% Stealth Sight\
+      </div>\
+    </div>\
+  </div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Aura of Arcane Clarity', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_AuraOfArcaneClarity.png" />&nbsp;Aura of Arcane Clarity', 6, 22, pow++, 1, auraOfArcaneClarity.power);
@@ -22790,8 +23012,15 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 
 const enchanter = {
-  power: 
-  '<div>...</div>'
+  power:
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>Reapplies every 2 sec<br><br>SLOTTED OFFENSIVE PASSIVE<br><br>PASSIVE</div>\
+  </div>\
+  <ul>\
+    <li>You deal an additional 29% Magic, Dimensional, and Toxic Damage.</li>\
+    <li>You gain 22% resistance to Magic, Dimensional, and Toxic Damage.</li>\
+    <li>You also gain a small amount of Energy when you receive Magic, Dimensional, or Toxic Damage.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Enchanter', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_Enchanter.png" />&nbsp;Enchanter', 6, 22, pow++, 1, enchanter.power);
@@ -22801,7 +23030,28 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const auraOfEbonDestruction = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>Reapplies every 3 sec</div>\
+    <div style="text-align:right;">Affects any friend except destructibles (20 max)<br>100 foot Team</div>\
+  </div>\
+  <br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE<br>\
+  <ul>\
+    <li>This power scales differently depending on what role you are in.</li>\
+    <li>The buff for yourself scales with your Super Stats.</li>\
+    <li>The buff for your allies scales with your PRESENCE.</li>\
+  </ul>\
+  HYBRID ROLE\
+  <ul>\
+    <li>Increases your damage by 24% and Teammate damage by 3.4%.</li>\
+    <li>If you Critically Hit with an attack, deals Magic Damage to the affected target.</li>\
+    <li>If an ally Critically Hits with an attack, deals Magic Damage (base damage) to the affected target. Damage scales based on the damage bonuses of the affected ally.</li>\
+  </ul>\
+  SUPPORT ROLE\
+  <ul>\
+    <li>Increases your damage by 20% and Teammate damage by 13%.</li>\
+    <li>If you Critically Hit with an attack, deals Magic Damage to the affected target.</li>\
+    <li>If an ally Critically Hits with an attack, deals Magic Damage (base damage) to the affected target. Damage scales based on the damage bonuses of the affected ally.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Aura of Ebon Destruction', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_AuraOfEbonDestruction.png" />&nbsp;Aura of Ebon Destruction', 6, 22, pow++, 1, auraOfEbonDestruction.power);
@@ -22811,7 +23061,24 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const auraOfPrimalMajesty = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>Reapplies every 3 sec</div>\
+    <div style="text-align:right;">Affects any friend except destructibles (20 max)<br>100 foot Team</div>\
+  </div>\
+  <br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE<br>\
+  <ul>\
+    <li>This power scales differently depending on what role you are in.</li>\
+    <li>The buff for yourself scales with your Super Stats.</li>\
+    <li>The buff for your allies scales with your PRESENCE.</li>\
+  </ul>\
+  HYBRID ROLE\
+  <ul>\
+    <li>You gain +29 all stats, and while affected, Teammates gain +11 all stats.</li>\
+  </ul>\
+  SUPPORT ROLE\
+  <ul>\
+    <li>You gain +28 all stats, and while affected, Teammates gain +29 all stats.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Aura of Primal Majesty', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_AuraOfPrimalMajesty.png" />&nbsp;Aura of Primal Majesty', 6, 22, pow++, 1, auraOfPrimalMajesty.power);
@@ -22821,7 +23088,24 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const auraOfRadiantProtection = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>Reapplies every 3 sec</div>\
+    <div style="text-align:right;">Affects any friend except destructibles (20 max)<br>100 foot Team</div>\
+  </div>\
+  <br>SLOTTED SUPPORT PASSIVE<br><br>PASSIVE<br>\
+  <ul>\
+    <li>This power scales differently depending on what role you are in.</li>\
+    <li>The buff for yourself scales with your Super Stats.</li>\
+    <li>The buff for your allies scales with your PRESENCE.</li>\
+  </ul>\
+  HYBRID ROLE\
+  <ul>\
+    <li>You gain 28% resistance to all damage, while affected Teammates gain 8.8%.</li>\
+  </ul>\
+  SUPPORT ROLE\
+  <ul>\
+    <li>You gain 18% resistance to all damage, while affected Teammates gain 16%.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Aura of Radiant Protection', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_AuraOfRadiantProtection.png" />&nbsp;Aura of Radiant Protection', 6, 22, pow++, 1, auraOfRadiantProtection.power);
