@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-29 21:10:00 (woof-wolf)>
+ * Time-stamp: <2026-05-30 13:15:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -7552,7 +7552,10 @@ const gatlingGun = {
   <ul>\
     <li>Increases this power\\\'s base damage for a short amount of time every time you fully maintain it.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  qularrToxicBarrage: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Gatling Gun', '<img src="img/power-icons/munitions/Munitions_GatlingGun.png" />&nbsp;Gatling Gun', 2, 7, pow++, 2, gatlingGun.power);
@@ -7564,7 +7567,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Sheer Fo
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Single Minded', 'Single Minded', 2, null, gatlingGun.singleMinded));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'Qularr Toxic Barrage', 'Qularr Toxic Barrage', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Qularr Toxic Barrage', 'PVD: Qularr Toxic Barrage', 0, null, gatlingGun.qularrToxicBarrage));
 
 const concussionGrenade = {
   power: 

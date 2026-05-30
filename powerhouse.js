@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-29 20:25:00 (woof-wolf)>
+ * Time-stamp: <2026-05-30 13:15:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.12a';
-var releaseDate = '2026-05-29';
+var version = '1.3.12b';
+var releaseDate = '2026-05-30';
 var buildVersion = 3;
 
 var siteName = 'PowerHouse';
@@ -1570,8 +1570,9 @@ function selectPowerAllowed(num, id) {
             if (p.tier == -1) {
                 // eb counts for framework, but not powerSet or otherCount
                 if (p.framework == power.framework) frameworkCount++;
-            // } else if (p.tier != 4) {
-            //     // tier 4 does not count for powerSet or framework
+            } else if (p.tier == 4) {
+                // tier 4 does not count for powerSet or framework
+                otherCount++;
             } else {
                 if (p.powerSet == power.powerSet) powerSetCount++;
                 if (p.framework == power.framework) frameworkCount++;
