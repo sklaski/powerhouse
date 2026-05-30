@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-29 20:25:00 (woof-wolf)>
+ * Time-stamp: <2026-05-29 21:10:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1846,7 +1846,10 @@ const thunderstrike = {
     <li>Heals for an additional amount if your health is low.</li>\
     <li>Has a short internal cooldown after use.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateThunderstrike: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Thunderstrike', '<img src="img/power-icons/electricity/Electricity_Thunderstrike.png" />&nbsp;Thunderstrike', 1, 1, pow++, 2, thunderstrike.power);
@@ -1859,7 +1862,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Never St
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Recharge', 'Recharge', 2, null, thunderstrike.recharge));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Thunderstrike', 'UPVD: Ultimate Thunderstrike', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Thunderstrike', 'UPVD: Ultimate Thunderstrike', 0, null, thunderstrike.ultimateThunderstrike));
 
 const electrocute = {
   power: 
@@ -2073,7 +2076,10 @@ const lightningArc = {
   <ul>\
     <li>Reduces the movement speed of your target for the duration the power is maintained.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  lightningBolter: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Arc', '<img src="img/power-icons/electricity/Electricity_LightningArc.png" />&nbsp;Lightning Arc', 1, 1, pow++, 3, lightningArc.power);
@@ -2083,7 +2089,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Blindside', 'Blindside', 2, null, lightningArc.blindside));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Lightning Bolter', 'PVD: Lightning Bolter', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Lightning Bolter', 'PVD: Lightning Bolter', 0, null, lightningArc.lightningBolter));
 
 const gigabolt = {
   power: 
@@ -2551,7 +2557,13 @@ const fireball = {
     <li>When fully charged, refreshes your <strong>Engulfing Flames</strong> debuff.</li>\
     <li>Increases the range of the area effect of this power based on the number of <strong>Engulfing Flames</strong> on your primary target.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  flamingPumpkin: 
+  '<div>...</div>',
+
+  ultimateFireball: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Fireball', '<img src="img/power-icons/fire/Fire_Fireball.png" />&nbsp;Fireball', 1, 2, pow++, 1, fireball.power); 
@@ -2564,8 +2576,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Illumina
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Explosive', 'Explosive', 2, null, fireball.explosive));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Flaming Pumpkin', 'PVD: Flaming Pumpkin', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Fireball', 'UPVD: Ultimate Fireball', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Flaming Pumpkin', 'PVD: Flaming Pumpkin', 0, null, fireball.flamingPumpkin));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Fireball', 'UPVD: Ultimate Fireball', 0, null, fireball.ultimateFireball));
 
 const heatWave = {
   power: 
@@ -3207,7 +3219,10 @@ const flashfire = {
     <li>Flashfire will now refresh your <strong>Engulfing Flames</strong> debuff on activation and when the <strong>Pyre Patch</strong> lasts half of its duration.</li>\
     <li>This advantage also causes all other <strong>Pyre Patch</strong> effects to refresh <strong>Engulfing Flames</strong> when they last for their full duration.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  cauldronFire: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Flashfire', '<img src="img/power-icons/fire/Fire_Flashfire.png" />&nbsp;Flashfire', 1, 2, pow++, 3, flashfire.power); 
@@ -3219,7 +3234,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Fan the 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Cauldron Fire', 'PVD: Cauldron Fire', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Cauldron Fire', 'PVD: Cauldron Fire', 0, null, flashfire.cauldronFire));
 
 const fireSnake = {
   power: 
@@ -4090,7 +4105,13 @@ const forceCascade = {
     <li>If any affected targets are affected by a Shield effect, deals Crushing damage to nearby targets.</li>\
     <li>This is a <strong>Field Inversion</strong> effect.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  denialOfService: 
+  '<div>...</div>',
+
+  ultimateForceCascade: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Force Cascade', '<img src="img/power-icons/force/Force_ForceCascade.png" />&nbsp;Force Cascade', 1, 3, pow++, 3, forceCascade.power); 
@@ -4101,8 +4122,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Focus Po
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Field Inversion', 'Field Inversion', 2, null, forceCascade.fieldInversion));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Denial of Service', 'PVD: Denial of Service', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Force Cascade', 'UPVD: Ultimate Force Cascade', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Denial of Service', 'PVD: Denial of Service', 0, null, forceCascade.denialOfService));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Force Cascade', 'UPVD: Ultimate Force Cascade', 0, null, forceCascade.ultimateForceCascade));
 
 const forceDetonation = {
   power: 
@@ -5460,7 +5481,10 @@ const avalanche = {
   <ul>\
     <li>Consumes any <strong>Chill</strong> stacks you have on your targets and heals you for each one consumed.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  cryoclysm: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Avalanche', '<img src="img/power-icons/ice/Ice_Avalanche.png" />&nbsp;Avalanche', 1, 5, pow++, 3, avalanche.power); 
@@ -5471,7 +5495,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Serrated
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold Embrace', 'Cold Embrace', 2, null, avalanche.coldEmbrace));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Cryoclysm', 'PVD: Cryoclysm', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Cryoclysm', 'PVD: Cryoclysm', 0, null, avalanche.cryoclysm));
 
 const arcticBeast = {
   power: 
@@ -6050,7 +6074,10 @@ const desperateShot = {
   <ul>\
     <li>Applies <strong>Frail Armor</strong> to your target, reducing their resistance to <strong>Piercing</strong>-typed attacks for a short time.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  stormpiercer: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Desperate Shot', '<img src="img/power-icons/archery/Archery_DesperateShot.png" />&nbsp;Desperate Shot', 2, 6, pow++, 1, desperateShot.power); 
@@ -6062,7 +6089,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Frail Ar
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Stormpiercer', 'PVD: Stormpiercer', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Stormpiercer', 'PVD: Stormpiercer', 0, null, desperateShot.stormpiercer));
 
 const evasiveManeuvers = {
   power: 
@@ -6990,7 +7017,13 @@ const shotgunBlast = {
     <li>Applies <strong>Armor Piercing</strong> to your primary target, which reduces <strong>Crushing</strong> and <strong>Piercing</strong> damage resistance for a short time.</li>\
     <li>Has a small chance to apply the debuff to secondary targets.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  laserShotgun: 
+  '<div>...</div>',
+
+  virulentShot: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shotgun Blast', '<img src="img/power-icons/munitions/Munitions_ShotgunBlast.png" />&nbsp;Shotgun Blast', 2, 7, pow++, 1, shotgunBlast.power);
@@ -7003,8 +7036,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Armor Pi
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Laser Shotgun', 'PVD: Laser Shotgun', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Virulent Shot', 'PVD: Virulent Shot', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Laser Shotgun', 'PVD: Laser Shotgun', 0, null, shotgunBlast.laserShotgun));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Virulent Shot', 'PVD: Virulent Shot', 0, null, shotgunBlast.virulentShot));
 
 const flamethrower = {
   power: 
@@ -7174,7 +7207,10 @@ const submachinegunBurst = {
   <ul>\
     <li>Damage is increased against <strong>Feared</strong> targets.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  umdGhosthunterPhaseRifle: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Submachinegun Burst', '<img src="img/power-icons/munitions/Munitions_SubmachinegunBurst.png" />&nbsp;Submachinegun Burst', 2, 7, pow++, 1, submachinegunBurst.power);
@@ -7188,7 +7224,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Boogeyma
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: U-MD Ghosthunter Phase Rifle', 'PVD: U-MD Ghosthunter Phase Rifle', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: U-MD Ghosthunter Phase Rifle', 'PVD: U-MD Ghosthunter Phase Rifle', 0, null, submachinegunBurst.umdGhosthunterPhaseRifle));
 
 const composure = {
   power: 
@@ -7359,7 +7395,10 @@ const bulletBallet = {
   <ul>\
     <li>If you are affected by <strong>Furious</strong>, the chance to <strong>Root</strong> and <strong>Stun</strong> foes is guaranteed.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  rayTracer: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Bullet Ballet', '<img src="img/power-icons/munitions/Munitions_BulletBallet.png" />&nbsp;Bullet Ballet', 2, 7, pow++, 2, bulletBallet.power);
@@ -7371,7 +7410,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Remember
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ray Tracer', 'PVD: Ray Tracer', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ray Tracer', 'PVD: Ray Tracer', 0, null, bulletBallet.rayTracer));
 
 const miniMines = {
   power: 
@@ -7835,7 +7874,10 @@ const sniperRifle = {
     <li>Allows your Sniper Rifle shots to hit up to 3 targets in a line.</li>\
     <li>Now considered an area effect power.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  pulpFictionRifle: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sniper Rifle', '<img src="img/power-icons/munitions/Munitions_SniperRifle.png" />&nbsp;Sniper Rifle', 2, 7, pow++, 3, sniperRifle.power);
@@ -7844,7 +7886,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Tungsten Rounds', 'Tungsten Rounds', 2, null, sniperRifle.tungstenRounds));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Pulp Fiction Rifle', 'PVD: Pulp Fiction Rifle', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Pulp Fiction Rifle', 'PVD: Pulp Fiction Rifle', 0, null, sniperRifle.pulpFictionRifle));
 
 const twoGunMojo = {
   power: 
@@ -7882,7 +7924,10 @@ const twoGunMojo = {
     <li>Two Gun Mojo can now hit up to 3 targets in a 2 ft cylinder.</li>\
     <li>Now considered an area effect power.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  pulpFictionRayGun: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Two-Gun Mojo', '<img src="img/power-icons/munitions/Munitions_TwoGunMojo.png" />&nbsp;Two-Gun Mojo', 2, 7, pow++, 3, twoGunMojo.power);
@@ -7894,7 +7939,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Single M
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Mow \'Em Down', 'Mow \'Em Down', 2, null, twoGunMojo.mowEmDown));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Pulp Fiction Ray Gun', 'PVD: Pulp Fiction Ray Gun', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Pulp Fiction Ray Gun', 'PVD: Pulp Fiction Ray Gun', 0, null, twoGunMojo.pulpFictionRayGun));
 
 const assaultRifle = {
   power: 
@@ -7924,7 +7969,16 @@ const assaultRifle = {
   <ul>\
     <li>Increases base damage for every stack of <strong>Furious</strong> on you.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  frostIceRifle: 
+  '<div>...</div>',
+
+  qularrToxicRifle: 
+  '<div>...</div>',
+
+  pulpFictionRifle: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Assault Rifle', '<img src="img/power-icons/munitions/Munitions_AssaultRifle.png" />&nbsp;Assault Rifle', 2, 7, pow++, 3, assaultRifle.power);
@@ -7935,9 +7989,9 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mow \'Em
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Uncompromising', 'Uncompromising', 2, null, assaultRifle.uncompromising));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Frost Ice Rifle', 'PVD: Frost Ice Rifle', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Qularr Toxic Rifle', 'PVD: Qularr Toxic Rifle', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Pulp Fiction Rifle', 'PVD: Pulp Fiction Rifle', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Frost Ice Rifle', 'PVD: Frost Ice Rifle', 0, null, assaultRifle.frostIceRifle));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Qularr Toxic Rifle', 'PVD: Qularr Toxic Rifle', 0, null, assaultRifle.qularrToxicRifle));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Pulp Fiction Rifle', 'PVD: Pulp Fiction Rifle', 0, null, assaultRifle.pulpFictionRifle));
 
 const leadTempest = {
   power: 
@@ -8531,7 +8585,10 @@ const chestBeam = {
   <ul>\
     <li>Increases the damage dealt by Chest Beam the closer you are to your target.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateChestBeam: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Chest Beam', '<img src="img/power-icons/power-armor/PowerArmor_ChestBeam.png" />&nbsp;Chest Beam', 2, 8, pow++, 2, chestBeam.power);
@@ -8541,7 +8598,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Point Blank Blast', 'Point Blank Blast', 2, null, chestBeam.pointBlankBlast));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ultimate Chest Beam', 'UPVD: Ultimate Chest Beam', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ultimate Chest Beam', 'UPVD: Ultimate Chest Beam', 0, null, chestBeam.ultimateChestBeam));
 
 const chestLaser = {
   power: 
@@ -9134,7 +9191,10 @@ const ricochetThrow = {
   <ul>\
     <li>When this power is fully charged, applies <strong>Shredded</strong> to your primary target, reducing their resistance to <strong>Slashing</strong> damage for a short time.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  bladeBomb: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ricochet Throw', '<img src="img/power-icons/gadgeteering/Gadgeteering_RicochetThrow.png" />&nbsp;Ricochet Throw', 2, 9, pow++, 0, ricochetThrow.power);
@@ -9146,7 +9206,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Slicer',
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Blade Bomb', 'PVD: Blade Bomb', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Blade Bomb', 'PVD: Blade Bomb', 0, null, ricochetThrow.bladeBomb));
 
 const particleBlaster = {
   power: 
@@ -9850,7 +9910,10 @@ const sonicBoomGenerator = {
     <li>Targets hit have a chance to be <strong>Stunned</strong> for a short time.</li>\
     <li>Targets that are affected by your <strong>Disorient</strong> effect have a guaranteed chance to be <strong>Stunned</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateSonicBoomGenerator: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sonic Boom Generator', '<img src="img/power-icons/gadgeteering/Gadgeteering_SonicBoomGenerator.png" />&nbsp;Sonic Boom Generator', 2, 9, pow++, 2, sonicBoomGenerator.power);
@@ -9861,7 +9924,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Sonic Su
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Disruption Module', 'Disruption Module', 2, null, sonicBoomGenerator.disruptionModule));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'UPVD: Sonic Boom Generator', 'UPVD: Sonic Boom Generator', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'UPVD: Ultimate Sonic Boom Generator', 'UPVD: Ultimate Sonic Boom Generator', 0, null, sonicBoomGenerator.ultimateSonicBoomGenerator));
 
 const throwingBlades = {
   power: 
@@ -9892,7 +9955,10 @@ const throwingBlades = {
     <li>When fully charged, applies <strong>Bane</strong> to your primary target, causing a variety of effects.</li>\
     <li>When fully charged, has a chance to apply <strong>Bane</strong> to secondary targets.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  bladeBarrage: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Throwing Blades', '<img src="img/power-icons/gadgeteering/Gadgeteering_ThrowingBlades.png" />&nbsp;Throwing Blades', 2, 9, pow++, 2, throwingBlades.power);
@@ -9903,7 +9969,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Aggressi
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'What Do I Have in My Utility Belt?', 'What Do I Have in My Utility Belt?', 2, null, throwingBlades.whatDoIHaveInMyUtilityBelt));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Blade Barrage', 'PVD: Blade Barrage', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Blade Barrage', 'PVD: Blade Barrage', 0, null, throwingBlades.bladeBarrage));
 
 const tractorBeam = {
   power: 
@@ -10398,7 +10464,10 @@ const orbitalCannon = {
   <ul>\
     <li>Refreshes the duration of your <strong>Disintegrate</strong> and all of your <strong>Plasma Burn</strong> stacks.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateOrbitalCannon: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Orbital Cannon', '<img src="img/power-icons/gadgeteering/Gadgeteering_OrbitalCannon.png" />&nbsp;Orbital Cannon', 2, 9, pow++, 3, orbitalCannon.power);
@@ -10408,7 +10477,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Anvil of Dawn', 'Anvil of Dawn', 2, null, orbitalCannon.anvilOfDawn));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Nuclear Fallout', 'Nuclear Fallout', 2, null, orbitalCannon.nuclearFallout));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ultimate Orbital Cannon', 'UPVD: Ultimate Orbital Cannon', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'UPVD: Ultimate Orbital Cannon', 'UPVD: Ultimate Orbital Cannon', 0, null, orbitalCannon.ultimateOrbitalCannon));
 
 const strafingRun = {
   power: 
@@ -11175,7 +11244,10 @@ const particleSmash = {
   <ul>\
     <li>Spreads your <strong>Plasma Burn</strong> effect on your primary target to nearby foes, with a chance to spread additional stacks.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateParticleSmash: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Particle Smash', '<img src="img/power-icons/laser-sword/LaserSword_ParticleSmash.png" />&nbsp;Particle Smash', 2, 10, pow++, 2, particleSmash.power);
@@ -11187,7 +11259,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Null Val
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Data Leak', 'Data Leak', 2, null, particleSmash.dataLeak));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Particle Smash', 'UPVD: Ultimate Particle Smash', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Particle Smash', 'UPVD: Ultimate Particle Smash', 0, null, particleSmash.ultimateParticleSmash));
 
 const particleWave = {
   power: 
@@ -12293,7 +12365,10 @@ const bladeTempest = {
   <ul>\
     <li>Each hit with Blade Tempest adds a stacking buff that increases your chance to critically hit. All stacks of the buff are removed upon a successful critical hit.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  burningBlades: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Blade Tempest', '<img src="img/power-icons/dual-blades/DualBlades_BladeTempest.png" />&nbsp;Blade Tempest', 3, 11, pow++, 0, bladeTempest.power);
@@ -12304,7 +12379,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Crashing
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Burning Blades', 'PVD: Burning Blades', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Burning Blades', 'PVD: Burning Blades', 0, null, bladeTempest.burningBlades));
 
 //------------------------------------------------------------------------------
 // Dual Blades: Tier 1
@@ -12614,7 +12689,10 @@ const eyeOfTheStorm = {
     <li>If fully maintained, has a guaranteed chance to apply <strong>Shredded</strong>.</li>\
     <li><strong>Shredded</strong> is a type of <strong>Wound</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  hauntedBlades: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Eye of the Storm', '<img src="img/power-icons/dual-blades/DualBlades_EyeOfTheStorm.png" />&nbsp;Eye of the Storm', 3, 11, pow++, 2, eyeOfTheStorm.power);
@@ -12625,7 +12703,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Blade Be
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cut to Shreds', 'Cut to Shreds', 2, null, eyeOfTheStorm.cutToShreds));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Haunted Blades', 'PVD: Haunted Blades', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Haunted Blades', 'PVD: Haunted Blades', 0, null, eyeOfTheStorm.hauntedBlades));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Sweep'].name, dataPowerAlias['Shuriken Sweep'].desc, 3, 11, pow++, 2, dataPowerAlias['Shuriken Sweep'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -12697,7 +12775,13 @@ const swordCyclone = {
   <ul>\
     <li>Your rapid movements while maintaining this power make you difficult to land a blow on, granting you a bonus to Dodge and Avoidance.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  heatVortex: 
+  '<div>...</div>',
+
+  ultimateSwordCyclone: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sword Cyclone', '<img src="img/power-icons/dual-blades/DualBlades_SwordCyclone.png" />&nbsp;Sword Cyclone', 3, 11, pow++, 3, swordCyclone.power);
@@ -12709,8 +12793,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Blender'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Chaotic Movements', 'Chaotic Movements', 2, null, swordCyclone.chaoticMovements));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Heat Vortex', 'PVD: Heat Vortex', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Sword Cyclone', 'UPVD: Ultimate Sword Cyclone', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Heat Vortex', 'PVD: Heat Vortex', 0, null, swordCyclone.heatVortex));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Sword Cyclone', 'UPVD: Ultimate Sword Cyclone', 0, null, swordCyclone.ultimateSwordCyclone));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 11, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -12904,7 +12988,10 @@ const vipersFangs = {
   <ul>\
     <li>This power now has a chance to apply <strong>Bleed</strong> when attacking.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  shockingStrikes: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Viper\'s Fangs', '<img src="img/power-icons/fighting-claws/FightingClaws_VipersFangs.png" />&nbsp;Viper\'s Fangs', 3, 12, pow++, 0, vipersFangs.power);
@@ -12918,7 +13005,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Deadly F
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Shocking Strikes', 'PVD: Shocking Strikes', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Shocking Strikes', 'PVD: Shocking Strikes', 0, null, vipersFangs.shockingStrikes));
 
 //------------------------------------------------------------------------------
 // Fighting Claws: Tier 1
@@ -13274,7 +13361,10 @@ const dragonsClaws = {
     <li>Reduces the energy cost of all of your melee powers by a small amount.</li>\
     <li><strong>Dragon Rush</strong> is a <strong>Chi Energy</strong> effect.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  thunderingClaws: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Claws', '<img src="img/power-icons/fighting-claws/FightingClaws_DragonsClaws.png" />&nbsp;Dragon\'s Claws', 3, 12, pow++, 2, dragonsClaws.power);
@@ -13285,7 +13375,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Furious 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Dragon Rush', 'Dragon Rush', 3, null, dragonsClaws.dragonRush));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Thundering Claws', 'PVD: Thundering Claws', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Thundering Claws', 'PVD: Thundering Claws', 0, null, dragonsClaws.thunderingClaws));
 
 const scarletArc = {
   power: 
@@ -13504,7 +13594,10 @@ const tigersBite = {
   <ul>\
     <li>This power now has a chance to <strong>Stun</strong> your target based on charge time.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  boltingFervor: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Tiger\'s Bite', '<img src="img/power-icons/fighting-claws/FightingClaws_TigersBite.png" />&nbsp;Tiger\'s Bite', 3, 12, pow++, 3, tigersBite.power);
@@ -13514,7 +13607,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mouth of Madness', 'Mouth of Madness', 2, null, tigersBite.mouthOfMadness));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Bolting Fervor', 'PVD: Bolting Fervor', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Bolting Fervor', 'PVD: Bolting Fervor', 0, null, tigersBite.boltingFervor));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 12, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -14343,7 +14436,10 @@ const reapersEmbrace = {
     <li><strong>Bleed</strong>, <strong>Shredded</strong>, <strong>Open Wound</strong>, <strong>Swallowtail Cut</strong>, and <strong>Deep Wound</strong> are classed as <strong>Wounds</strong>.</li>\
     <li>This Rupture applies initial damage, then a portion of its damage over a short period of time.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  electricVengeance: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Reaper\'s Embrace', '<img src="img/power-icons/single-blade/SingleBlade_ReapersEmbrace.png" />&nbsp;Reaper\'s Embrace', 3, 13, pow++, 3, reapersEmbrace.power);
@@ -14353,7 +14449,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'No Mercy', 'No Mercy', 2, null, reapersEmbrace.noMercy));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Electric Vengeance', 'PVD: Electric Vengeance', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Electric Vengeance', 'PVD: Electric Vengeance', 0, null, reapersEmbrace.electricVengeance));
 
 const relentlessPursuit = {
   power: 
@@ -14382,7 +14478,10 @@ const relentlessPursuit = {
   <ul>\
     <li>Causes wounds to open up on your target over time, inflicting <strong>Bleed</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  powerCycle: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Relentless Pursuit', '<img src="img/power-icons/single-blade/SingleBlade_RelentlessPursuit.png" />&nbsp;Relentless Pursuit', 3, 13, pow++, 3, relentlessPursuit.power);
@@ -14393,7 +14492,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Single M
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Open Wound', 'Open Wound', 2, null, relentlessPursuit.openWound));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Power Cycle', 'PVD: Power Cycle', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Power Cycle', 'PVD: Power Cycle', 0, null, relentlessPursuit.powerCycle));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 13, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -15312,7 +15411,10 @@ const openPalmStrike = {
     <li>You unleash chi energy while using this power, causing half of the damage this power deals to instead be dealt as <strong>Dimensional Damage</strong>.</li>\
     <li>The <strong>Dimensional</strong> damage portion of the attack deals slightly more damage than the <strong>Crushing</strong> portion and is a <strong>Chi Power</strong> effect.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateOpenPalmStrike: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Open Palm Strike', '<img src="img/power-icons/unarmed/Unarmed_OpenPalmStrike.png" />&nbsp;Open Palm Strike', 3, 14, pow++, 3, openPalmStrike.power);
@@ -15326,7 +15428,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Ghostly 
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Open Palm Strike', 'UPVD: Ultimate Open Palm Strike', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Open Palm Strike', 'UPVD: Ultimate Open Palm Strike', 0, null, openPalmStrike.ultimateOpenPalmStrike));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Shuriken Storm'].name, dataPowerAlias['Shuriken Storm'].desc, 3, 14, pow++, 3, dataPowerAlias['Shuriken Storm'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -15755,7 +15857,10 @@ const egoWeaponry = {
     <li>Your Ego Weaponry attacks no longer deal additional damage when you perform a critical strike with them.</li>\
     <li>You now heal yourself for the amount of additional damage you would have done when performing a critical strike.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  toxicBlades: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Weaponry', '<img src="img/power-icons/telekinesis/Telekinesis_EgoWeaponry.png" />&nbsp;Ego Weaponry', 4, 15, pow++, 0, egoWeaponry.power);
@@ -15768,7 +15873,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Siphonin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Toxic Blades', 'PVD: Toxic Blades', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Toxic Blades', 'PVD: Toxic Blades', 0, null, egoWeaponry.toxicBlades));
 
 const telekineticStrike = {
   power:
@@ -16240,7 +16345,10 @@ const egoBladeBreach = {
   <ul>\
     <li>Refreshes your <strong>Stress</strong> debuff for a portion of its duration.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  venomShock: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Breach', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeBreach.png" />&nbsp;Ego Blade Breach', 4, 15, pow++, 2, egoBladeBreach.power);
@@ -16251,7 +16359,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Domineer
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Stressful', 'Stressful', 2, null, egoBladeBreach.stressful));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Venom Shock', 'PVD: Venom Shock', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Venom Shock', 'PVD: Venom Shock', 0, null, egoBladeBreach.venomShock));
 
 const telekineticEruption = {
   power: 
@@ -16547,7 +16655,10 @@ const egoBladeAnnihilation = {
     <li>Your focus doubles the bonus damage this power deals for each stack of <strong>Ego Leech</strong> it consumes.</li>\
     <li>Increases the damage the <strong>Ego Annihilation</strong> effect deals by 50%.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  blightTouch: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Annihilation', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeAnnihilation.png" />&nbsp;Ego Blade Annihilation', 4, 15, pow++, 3, egoBladeAnnihilation.power);
@@ -16557,7 +16668,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Mental Acuity', 'Mental Acuity', 2, null, egoBladeAnnihilation.mentalAcuity));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Blight Touch', 'PVD: Blight Touch', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Blight Touch', 'PVD: Blight Touch', 0, null, egoBladeAnnihilation.blightTouch));
 
 const telekineticMaelstrom = {
   power: 
@@ -16615,7 +16726,10 @@ const telekineticLance = {
     <li>When fully charged, this power consumes all stacks of Ego Leech, dealing an additional 124 Ego Damage to your target and 41 Ego Damage to other targets within 10ft for each stack it consumes.</li>\
     <li>In addition, it grants you Ego Infusion for 2 seconds for each stack consumed.</li>\
     <li>Ego Infusion grants you a stack of Ego Leech every 2 seconds.</li>\
-  </ul>'
+  </ul>',
+
+  blightTouch: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Lance', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticLance.png" />&nbsp;Telekinetic Lance', 4, 15, pow++, 3, telekineticLance.power);
@@ -16624,7 +16738,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Blight Touch', 'PVD: Blight Touch', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'PVD: Blight Touch', 'PVD: Blight Touch', 0, null, telekineticLance.blightTouch));
 
 const telekineticAssault = {
   power: 
@@ -17940,7 +18054,13 @@ const cleave = {
   <ul>\
     <li>Has a chance to apply <strong>Clinging Flames</strong> to targets on every hit, dealing fire damage over time.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  brilliantCleave: 
+  '<div>...</div>',
+
+  callousCleaver: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Cleave', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Cleave.png" />&nbsp;Cleave', 5, 17, pow++, 0, cleave.power);
@@ -17953,8 +18073,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Fiery Sp
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Brilliant Cleave', 'PVD: Brilliant Cleave', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Callous Cleaver', 'PVD: Callous Cleaver', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Brilliant Cleave', 'PVD: Brilliant Cleave', 0, null, cleave.brilliantCleave));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'PVD: Callous Cleaver', 'PVD: Callous Cleaver', 0, null, cleave.callousCleaver));
 
 //------------------------------------------------------------------------------
 // Heavy Weapon: Tier 1
@@ -18039,7 +18159,10 @@ const eruption = {
     <li><strong>Roots</strong> targets hit, preventing them from being able to move for a short time.</li>\
     <li>Applies <strong>Negative Ions</strong> to targets.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  glacialRend: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Eruption', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Eruption.png" />&nbsp;Eruption', 5, 17, pow++, 1, eruption.power);
@@ -18052,7 +18175,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Thunderb
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Glacial Rend', 'PVD: Glacial Rend', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Glacial Rend', 'PVD: Glacial Rend', 0, null, eruption.glacialRend));
 
 const decimate = {
   power: 
@@ -18267,7 +18390,10 @@ const skullcrusher = {
   <ul>\
     <li>Fully charging this power applies <strong>Demolish</strong> to your primary target, which reduces their Crushing resistance for a short time.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  iceBreaker: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Skullcrusher', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skullcrusher.png" />&nbsp;Skullcrusher', 5, 17, pow++, 2, skullcrusher.power);
@@ -18279,7 +18405,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Unhinged
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Falling Hammer', 'Falling Hammer', 2, null, skullcrusher.fallingHammer));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ice Breaker', 'PVD: Ice Breaker', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Ice Breaker', 'PVD: Ice Breaker', 0, null, skullcrusher.iceBreaker));
 
 const earthSplitter = {
   power: 
@@ -18448,7 +18574,10 @@ const annihilate = {
   <ul>\
     <li>If your target is <strong>Disoriented</strong>, <strong>Knocks Up</strong> the target instead of back.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  hellrend: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Annihilate', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Annihilate.png" />&nbsp;Annihilate', 5, 17, pow++, 3, annihilate.power);
@@ -18459,7 +18588,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Scorchin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'To the Heavens', 'To the Heavens', 1, null, annihilate.toTheHeavens));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Hellrend', 'PVD: Hellrend', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Hellrend', 'PVD: Hellrend', 0, null, annihilate.hellrend));
 
 const brimstone = {
   power: 
@@ -18515,7 +18644,13 @@ const brimstone = {
     <li>You cannot have more than one <strong>Rune</strong> out at a time.</li>\
     <li>Summoning this Rune counts as applying an <strong>Enchantment</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  bitterStorm: 
+  '<div>...</div>',
+
+  ultimateBrimstone: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Brimstone', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Brimstone.png" />&nbsp;Brimstone', 5, 17, pow++, 3, brimstone.power);
@@ -18528,8 +18663,8 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Lightnin
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Burning Sun', 'Burning Sun', 2, null, brimstone.burningSun));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Bitter Storm', 'PVD: Bitter Storm', 0, null, null));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Brimstone', 'UPVD: Ultimate Brimstone', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Bitter Storm', 'PVD: Bitter Storm', 0, null, brimstone.bitterStorm));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, 'UPVD: Ultimate Brimstone', 'UPVD: Ultimate Brimstone', 0, null, brimstone.ultimateBrimstone));
 
 const skewer = {
   power: 
@@ -18593,7 +18728,10 @@ const skewer = {
   <ul>\
     <li>This power now deals <strong>Slashing</strong> damage instead of <strong>Crushing</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  frozenLance: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Skewer', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skewer.png" />&nbsp;Skewer', 5, 17, pow++, 3, skewer.power);
@@ -18608,7 +18746,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'Impaler'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'Sharpened Blade', 'Sharpened Blade', 1, null, skewer.sharpenedBlade));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(10, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(11, 'PVD: Frozen Lance', 'PVD: Frozen Lance', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(11, 'PVD: Frozen Lance', 'PVD: Frozen Lance', 0, null, skewer.frozenLance));
 
 //------------------------------------------------------------------------------
 // Heavy Weapon: Ultimates
@@ -19108,7 +19246,10 @@ const caveIn = {
     <li><strong>Staggers</strong> targets nearby your primary target, reducing their resistance to all damage and decreasing their movement speed for a short time.</li>\
     <li>Secondary targets affected by multiple stacks of <strong>Stagger</strong> are <strong>Rooted</strong> in place.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateCaveIn: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Cave In', '<img src="img/power-icons/earth/Earth_CaveIn.png" />&nbsp;Cave In', 5, 18, pow++, 2, caveIn.power);
@@ -19121,7 +19262,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Cave In', 'UPVD: Ultimate Cave In', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Cave In', 'UPVD: Ultimate Cave In', 0, null, caveIn.ultimateCaveIn));
 
 const seismicSmash = {
   power: 
@@ -19235,7 +19376,10 @@ const faultLine = {
   <ul>\
     <li>If fully charged, targets will become rooted instead of knocked up. When the root expires, targets will be knocked up.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  icefall: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Fault Line', '<img src="img/power-icons/earth/Earth_FaultLine.png" />&nbsp;Fault Line', 5, 18, pow++, 3, faultLine.power);
@@ -19245,7 +19389,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Compound Fracture', 'Compound Fracture', 2, null, faultLine.compoundFracture));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Icefall', 'PVD: Icefall', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Icefall', 'PVD: Icefall', 0, null, faultLine.icefall));
 
 //------------------------------------------------------------------------------
 // Earth: Ultimates
@@ -20360,7 +20504,10 @@ const haymaker = {
   <ul>\
     <li>This power deals additional base damage when you are affected by <strong>Reckless</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  havocHammer: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Haymaker', '<img src="img/power-icons/might/Might_Haymaker.png" />&nbsp;Haymaker', 5, 19, pow++, 3, haymaker.power);
@@ -20370,7 +20517,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Reckless Strike', 'Reckless Strike', 2, null, haymaker.recklessStrike));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Havoc Hammer', 'PVD: Havoc Hammer', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Havoc Hammer', 'PVD: Havoc Hammer', 0, null, haymaker.havocHammer));
 
 const havocStomp = {
   power: 
@@ -20412,7 +20559,10 @@ const havocStomp = {
     <li><strong>Reckless</strong> gives you resistance to <strong>Knock</strong> effects and shields you when attacking.</li>\
     <li>Refreshes the duration of <strong>Reckless</strong> if you have multiple stacks.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimateHavocStomp: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Havoc Stomp', '<img src="img/power-icons/might/Might_HavocStomp.png" />&nbsp;Havoc Stomp', 5, 19, pow++, 3, havocStomp.power);
@@ -20424,7 +20574,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Major Im
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Reckless Endangerment', 'Reckless Endangerment', 2, null, havocStomp.recklessEndangerment));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Havoc Stomp', 'UPVD: Ultimate Havoc Stomp', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'UPVD: Ultimate Havoc Stomp', 'UPVD: Ultimate Havoc Stomp', 0, null, havocStomp.ultimateHavocStomp));
 
 const shockwave = {
   power: 
@@ -21754,7 +21904,10 @@ const shadowEmbrace = {
     <li>This power now heals you for a small amount for every target hit.</li>\
     <li>This heal is considered a Life Drain effect.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  shadowShred: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Embrace', '<img src="img/power-icons/darkness/Darkness_ShadowEmbrace.png" />&nbsp;Shadow Embrace', 6, 21, pow++, 1, shadowEmbrace.power);
@@ -21767,7 +21920,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Draining
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['NttG'].name, dataPowerAlias['NttG'].desc, 2, null, dataPowerAlias['NttG'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Shadow Shred', 'PVD: Shadow Shred', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Shadow Shred', 'PVD: Shadow Shred', 0, null, shadowEmbrace.shadowShred));
 
 const voidShift = {
   power: 
@@ -22997,7 +23150,10 @@ const pillarOfPoz = {
     <li>Gives Pillar of Poz a chance to apply and refresh all stacks of <strong>Mystified</strong> on you.</li>\
     <li><strong>Mystified</strong> is a type of <strong>Enchantment</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  ultimatePillarOfPoz: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Pillar of Poz', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_PillarOfPoz.png" />&nbsp;Pillar of Poz', 6, 22, pow++, 1, pillarOfPoz.power);
@@ -23010,7 +23166,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Dilemma'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'Mystical', 'Mystical', 2, null, pillarOfPoz.mystical));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Pillar of Poz', 'UPVD: Ultimate Pillar of Poz', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'UPVD: Ultimate Pillar of Poz', 'UPVD: Ultimate Pillar of Poz', 0, null, pillarOfPoz.ultimatePillarOfPoz));
 
 const sigilsOfRadiantSanctuary = {
   power: 
@@ -24304,7 +24460,10 @@ const shred = {
     <li>Finishing this power\\\'s combo on a <strong>Bleeding</strong> target will spread their affliction to nearby foes.</li>\
     <li>Refreshes the duration of all of your <strong>Bleed</strong> effects on all targets hit.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  scorchingClaw: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shred', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Shred.png" />&nbsp;Shred', 6, 23, pow++, 0, shred.power);
@@ -24316,7 +24475,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Scent of
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Scorching Claw', 'PVD: Scorching Claw', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Scorching Claw', 'PVD: Scorching Claw', 0, null, shred.scorchingClaw));
 
 const barbedChain = {
   power:
@@ -24518,7 +24677,10 @@ const thrash = {
   <ul>\
     <li>Causes wounds to open up on your target over time, inflicting <strong>Bleed</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  fireFangs: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Thrash', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Thrash.png" />&nbsp;Thrash', 6, 23, pow++, 1, thrash.power);
@@ -24530,7 +24692,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Vicious'
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Open Wound', 'Open Wound', 2, null, thrash.openWound));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fire Fangs', 'PVD: Fire Fangs', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fire Fangs', 'PVD: Fire Fangs', 0, null, thrash.fireFangs));
 
 const frenzy = {
   power:
@@ -24594,7 +24756,10 @@ const frenzy = {
   <ul>\
     <li>Removes one of your <strong>Bleed</strong> stacks from affected targets and heals you for each stack removed.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  flamingFrenzy: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Frenzy', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Frenzy.png" />&nbsp;Frenzy', 6, 23, pow++, 1, frenzy.power);
@@ -24607,7 +24772,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Blood in
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Flaming Frenzy', 'PVD: Flaming Frenzy', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(9, 'PVD: Flaming Frenzy', 'PVD: Flaming Frenzy', 0, null, frenzy.flamingFrenzy));
 
 dataPower[dataPower.length] = new Power(dataPower.length, dataPowerAlias['Venomous Breath'].name, dataPowerAlias['Venomous Breath'].desc, 6, 23, pow++, 1, dataPowerAlias['Venomous Breath'].tip);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
@@ -25194,7 +25359,10 @@ const howl = {
     <li>Energy builders will not trigger this effect.</li>\
     <li>Does not affect <strong>Active</strong> or <strong>Ultimate</strong> powers.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  fierySpirit: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Howl', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Howl.png" />&nbsp;Howl', 6, 23, pow++, 2, howl.power);
@@ -25206,7 +25374,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Intimida
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, 'Wild Strikes', 'Wild Strikes', 2, null, howl.wildStrikes));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fiery Spirit', 'PVD: Fiery Spirit', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(8, 'PVD: Fiery Spirit', 'PVD: Fiery Spirit', 0, null, howl.fierySpirit));
 
 //------------------------------------------------------------------------------
 // Bestial Supernatural: Tier 3
@@ -25238,7 +25406,10 @@ const massacre = {
   <ul>\
     <li>Causes wounds to open up on your target over time, inflicting <strong>Bleed</strong>.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  searingCarnage: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Massacre', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Massacre.png" />&nbsp;Massacre', 6, 23, pow++, 3, massacre.power);
@@ -25249,7 +25420,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Bloody M
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Open Wound', 'Open Wound', 2, null, massacre.openWound));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Searing Carnage', 'PVD: Searing Carnage', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Searing Carnage', 'PVD: Searing Carnage', 0, null, massacre.searingCarnage));
 
 const eviscerate = {
   power: 
@@ -25531,7 +25702,10 @@ const infernalBlast = {
     <li>Fully charging this power will spread any of your <strong>Poison</strong> effects to nearby targets, as well as dealing additional Toxic damage.</li>\
     <li>Refreshes the duration of all of your <strong>Poison</strong> effects on targets that these effects were spread to.</li>\
   </ul>\
-  </div>'
+  </div>',
+
+  tendrilsOfAnguish: 
+  '<div>...</div>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Infernal Blast', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_InfernalBlast.png" />&nbsp;Infernal Blast', 6, 24, pow++, 0, infernalBlast.power);
@@ -25542,7 +25716,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Virulent
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, dataPowerAlias['AM'].name, dataPowerAlias['AM'].desc, 1, null, dataPowerAlias['AM'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPowerAlias['BRK'].name, dataPowerAlias['BRK'].desc, 3, null, dataPowerAlias['BRK'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPowerAlias['CHAL'].name, dataPowerAlias['CHAL'].desc, 1, null, dataPowerAlias['CHAL'].tip));
-dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Tendrils of Anguish', 'PVD: Tendrils of Anguish', 0, null, null));
+dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Tendrils of Anguish', 'PVD: Tendrils of Anguish', 0, null, infernalBlast.tendrilsOfAnguish));
 
 //------------------------------------------------------------------------------
 // Infernal Supernatural: Tier 1
