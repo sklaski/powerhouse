@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-28 20:50:00 (woof-wolf)>
+ * Time-stamp: <2026-05-29 20:25:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1669,7 +1669,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const powerSource = {
   power: 
   '<div class="popup-header">\
-    <div>Electricity<br>1 sec activate time</div>\
+    <div>Electricity<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - ENDURANCE<br><br>\
@@ -1725,14 +1725,14 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Electric
 const ionicReverberation = {
   power: 
   '<div class="popup-header">\
-    <div>Electricity<br>Instant activate time</div>\
+    <div>Electricity</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Generates Energy each time one of your Electrical attacks completes a Circuit and consumes Negative Ions.</li>\
-    <li>Generates a smaller amount of Energy whenever one of your powers utilizes Negative Ions without consuming it.</li>\
+    <li>Generates +12 Energy each time one of your Electrical attacks completes a Circuit and consumes Negative Ions.</li>\
+    <li>Generates +6 Energy whenever one of your powers utilizes Negative Ions without consuming it.</li>\
     <li>The amount of Energy gained scales with your RECOVERY and ENDURANCE statistics.</li>\
   </ul>'
 };
@@ -2724,7 +2724,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const fieryWill = {
   power: 
   '<div class="popup-header">\
-    <div>Fire<br>1 sec activate time</div>\
+    <div>Fire<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - RECOVERY<br><br>\
@@ -2748,7 +2748,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const smoldering = {
   power: 
   '<div class="popup-header">\
-    <div>Fire<br>1 sec activate time</div>\
+    <div>Fire<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - RECOVERY<br><br>\
@@ -2805,13 +2805,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Fiery Sp
 const thermalReverberation = {
   power: 
   '<div class="popup-header">\
-    <div>Fire<br>Instant activate time</div>\
+    <div>Fire</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Being near targets affected by your Clinging Flames grants Energy every 3 sec for 6 sec.</li>\
+    <li>Being near targets affected by your Clinging Flames grants +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -3753,7 +3753,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const forceControl = {
   power: 
   '<div class="popup-header">\
-    <div>Force<br>1 sec activate time</div>\
+    <div>Force<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - ENDURANCE<br><br>\
@@ -3777,7 +3777,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const vitalShielding = {
   power: 
   '<div class="popup-header">\
-    <div>Force<br>1 sec activate time</div>\
+    <div>Force<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - ENDURANCE<br><br>\
@@ -3830,13 +3830,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Force Sh
 const impactForce = {
   power: 
   '<div class="popup-header">\
-    <div>Force<br>Instant activate time</div>\
+    <div>Force</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you attempt to Knock a foe, you gain Energy every 3 sec for 9 sec.</li>\
+    <li>Whenever you attempt to Knock a foe, you gain +5.9 Energy every 3 sec for 9 sec.</li>\
     <li>This buff can stack up to 3 times. Refreshes the duration of existing stacks by 9 sec if you have 3 stacks of this buff.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>Your RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -3850,13 +3850,13 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 const powerBarrier = {
   power: 
   '<div class="popup-header">\
-    <div>Force<br>Instant activate time</div>\
+    <div>Force</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you directly Shield yourself or any ally, or apply a Field Inversion effect, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you directly Shield yourself or any ally, or apply a Field Inversion effect, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>Your RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -4355,7 +4355,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const weatherShaping = {
   power: 
   '<div class="popup-header">\
-    <div>Wind<br>1 sec activate time</div>\
+    <div>Wind<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - ENDURANCE<br><br>\
@@ -4400,13 +4400,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const windReverberation = {
   power: 
   '<div class="popup-header">\
-    <div>Wind<br>Instant activate time</div>\
+    <div>Wind</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you attempt to Repel a target, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you attempt to Repel a target, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -4686,20 +4686,21 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 const airElemental = {
   power: 
   '<div class="popup-header">\
-    <div>Wind<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div>Wind<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   CONTROLLABLE PET<br><br>\
   CHARGE<br>\
   <ul>\
-    <li>Summons an Air Elemental to fight for you. It will attack your target at range with Storm Lash, dealing Crushing Damage (Base) and Cold Damage (Base) to your foes.</li>\
+    <li>Summons an Air Elemental to fight for you.</li>\
+    <li>It will attack your target at range with Storm Lash, dealing 48 Crushing Damage (Base) and 48 Cold Damage (Base) to your foes.</li>\
     <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
-  </ul><br>\
+  </ul>\
   CUSTOM ABILITY<br>\
   <ul>\
-    <li>This pet can be instructed to activate the following ability with a button on its control bar:</li>\
-    <li>Wind Burst - Your pet unleashes a powerful burst of wind from within itself, dealing Cold and Crushing damage, and knocking away nearby foes.</li>\
-  </ul><br>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>Wind Burst - Your pet unleashes a powerful burst of wind from within itself, dealing Cold and Crushing damage, and knocking away nearby foes.</li>\
+  </ul>\
   RANK UP BENEFITS<br>\
   <ul>\
     <li>R1: Your Air Elemental lashes your foes with powerful wind, alternately doing Crushing and Cold damage.</li>\
@@ -5081,7 +5082,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const chilledForm = {
   power: 
   '<div class="popup-header">\
-    <div>Ice<br>1 sec activate time</div>\
+    <div>Ice<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - EGO or DEXTERITY<br><br>\
@@ -5105,7 +5106,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const frigidDetermination = {
   power: 
   '<div class="popup-header">\
-    <div>Ice<br>1 sec activate time</div>\
+    <div>Ice<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -5169,13 +5170,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Cold to 
 const icyEmbrace = {
   power: 
   '<div class="popup-header">\
-    <div>Ice<br>Instant activate time</div>\
+    <div>Ice</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply or refresh Chill, or when you Shatter an Ice Structure, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply or refresh Chill, or when you Shatter an Ice Structure, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -5474,7 +5475,30 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(7, 'PVD: Cry
 
 const arcticBeast = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Ice<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons an Arctic Beast to fight for you.</li>\
+    <li>It will attack your target in melee range, using its Frigid Bite to deal 39 Slashing Damage (Base) and 39 Cold Damage (Base) to your foes.</li>\
+    <li>The Beast can also Lunge at your target, Knocking Down the target, removing travel powers, and dealing 97 Crushing Damage (Base).</li>\
+    <li>In addition, it can Spit Ice at targets from range, dealing 58 Cold Damage (Base).</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>Freezing Form - Your pet deals additional cold damage and gains resistance to cold for a short period. During this period, enemies that attack your pet will be chilled.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your beast attacks with a Frigid Bite, dealing slashing and cold damage and frequently Chilling the target. It can also lunge at your target or Spit Ice at targets it cannot reach.</li>\
+    <li>R2: The beast can now unleash his Frost Breath on nearby targets.</li>\
+    <li>R3: Fully in touch with his cold side, the beast can summon Arctic Winds up to 100 ft away, dealing damage and Snaring targets in the area.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Arctic Beast', '<img src="img/power-icons/ice/Ice_ArcticBeast.png" />&nbsp;Arctic Beast', 1, 5, pow++, 3, arcticBeast.power); 
@@ -5622,7 +5646,7 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 const concentration = {
   power: 
   '<div class="popup-header">\
-    <div>Technology<br>1 sec activate time</div>\
+    <div>Technology<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - EGO or INTELLIGENCE<br><br>\
@@ -6234,7 +6258,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const precision = {
   power: 
   '<div class="popup-header">\
-    <div>Archery<br>1 sec activate time</div>\
+    <div>Archery<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - INTELLIGENCE<br><br>\
@@ -6264,13 +6288,13 @@ dataRequireGroupPower[dataPower.length-1] = 'technology';
 const huntersInstinct = {
   power: 
   '<div class="popup-header">\
-    <div>Archery<br>Instant activate time</div>\
+    <div>Archery</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - INTELLIGENCE - RECOVERY<br><br>\
   ENHANCEMENT<br><br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you perform a Critical Hit with a damaging Archery power, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you perform a Critical Hit with a damaging Archery power, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your INTELLIGENCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -7187,7 +7211,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const sharpShooter = {
   power: 
   '<div class="popup-header">\
-    <div>Munitions<br>1 sec activate time</div>\
+    <div>Munitions<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -7217,13 +7241,13 @@ dataRequireGroupPower[dataPower.length-1] = 'technology';
 const killerInstinct = {
   power: 
   '<div class="popup-header">\
-    <div>Munitions<br>Instant activate time</div>\
+    <div>Munitions</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br><br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you perform a Critical Hit with a Munitions power, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you perform a Critical Hit with a Munitions power, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your RECOVERY statistic.</li>\
     <li>The ENDURANCE statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -8377,7 +8401,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const aspectOfTheMachine = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>1 sec activate time</div>\
+    <div>Power Armor<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - EGO or STRENGTH<br><br>\
@@ -8443,13 +8467,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Phalanx 
 const overdrive = {
   power: 
   '<div class="popup-header">\
-    <div>Power Armor<br>Instant activate time</div>\
+    <div>Power Armor</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you maintain one of your Maintain or Toggle abilities for at least half of its maximum maintain time, you gain Energy every 3 sec for 9 sec.</li>\
+    <li>Whenever you maintain one of your Maintain or Toggle abilities for at least half of its maximum maintain time, you gain +5.9 Energy every 3 sec for 9 sec.</li>\
     <li>This buff can stack up to 3 times.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -9642,7 +9666,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const technologicalProwess = {
   power: 
   '<div class="popup-header">\
-    <div>Gadgeteering<br>1 sec activate time</div>\
+    <div>Gadgeteering<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - INTELLIGENCE<br><br>\
@@ -9666,7 +9690,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const technologicalAdvancements = {
   power: 
   '<div class="popup-header">\
-    <div>Gadgeteering<br>1 sec activate time</div>\
+    <div>Gadgeteering<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - INTELLIGENCE<br><br>\
@@ -9726,13 +9750,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Redirect
 const molecularSelfAssembly = {
   power: 
   '<div class="popup-header">\
-    <div>Gadgeteering<br>Instant activate time</div>\
+    <div>Gadgeteering</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - INTELLIGENCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever one of your abilities finishes recharging, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever one of your abilities finishes recharging, you gain +10 Energy every 3 sec for 6 sec.</li>\
     <li>Travel Powers and Vanity Devices do not trigger this effect.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your INTELLIGENCE statistic.</li>\
@@ -9747,13 +9771,13 @@ dataEnergyUnlockPower[dataPower.length-1] = true;
 const soundAmplification = {
   power: 
   '<div class="popup-header">\
-    <div>Gadgeteering<br>Instant activate time</div>\
+    <div>Gadgeteering</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply or refresh Disorient, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply or refresh Disorient, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your RECOVERY statistic.</li>\
     <li>The ENDURANCE statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -10068,7 +10092,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, dataPower
 
 const munitionsBots = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons 2 Munitions Bots to fight for you.</li>\
+    <li>They will use a Chaingun to attack your foes, dealing 17 Piercing Damage (Base) every 0.5 sec.</li>\
+    <li>When morphed into Turret Mode, they can no longer move, but use their Turret Cannon to deal 30 Piercing Damage (Base) every 0.5 sec to foes in a line.</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>Turret Morph - Instantly transforms your Bots between normal mode and turret mode.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: The basic armament package. Your Bots have a minigun in addition to turret mode.</li>\
+    <li>R2: Your Bots are granted explosive ordnance and the ability to release a swarm of mini mines when defeated.</li>\
+    <li>R3: The range of the Turret mode is increased to 100 ft.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Munitions Bots', '<img src="img/power-icons/gadgeteering/Gadgeteering_MunitionsBots.png" />&nbsp;Munitions Bots', 2, 9, pow++, 2, munitionsBots.power);
@@ -10078,7 +10124,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const supportDrones = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons 2 Support Drones. The Support Drones have 2 modes, Support Mode and Weapons Platform Mode.</li>\
+    <li>In their default Support Mode, they will use a Healing Beam on friendly targets, healing them for +22 Health Points (Base) every 0.5 sec.</li>\
+    <li>In Weapons Platform Mode, they utilize a Gravatic Bolt to attack your foes, dealing 22 Crushing Damage (Base).</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>Transform - This power instantly toggles your Support Drones between Healing and Energy Weapon modes.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: In Healing Mode, your Support Drones have a strong, single-target maintained Healing Beam. In Weapons Platform Mode, they use a quick-firing but relatively weak Gravatic Bolt.</li>\
+    <li>R2: The Healing Beam is upgraded to affect all targets in a line, and a Kinetic Beam is added to the Weapons Platform Mode to drive away enemies if they get too close.</li>\
+    <li>R3: At this rank, the Healing Beam affects all allies in a sphere around the main healing target, and the Weapons Platform Mode gains a potent Plasma Blast.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Support Drones', '<img src="img/power-icons/gadgeteering/Gadgeteering_SupportDrones.png" />&nbsp;Support Drones', 2, 9, pow++, 2, supportDrones.power);
@@ -10088,7 +10156,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const attackToys = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons an Attack Toy to fight at your side.</li>\
+    <li>The Attack Toy will engage your enemies in melee combat, pummeling the enemy for 61 Crushing Damage (Base).</li>\
+    <li>In addition, every 15 sec, the Attack Toy will create a Replicated Attack Toy to play with for 60 sec. Up to 2 of these can be out at a time.</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>Frag Grenade - Your primary Attack Toy can throw a Fragmentation Grenade, causing damage and knock back to an area.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your pet has the ability to self-replicate, and will do so occasionally while in combat. The duplicates are weaker and only last a short time.</li>\
+    <li>R2: Additional Simultaneous Duplicates, and can replicate more often. The primary toy gains a small rocket launcher (because explosions are fun!)</li>\
+    <li>R3: Additional Simultaneous Duplicates, and can replicate more often. Each replica toy gets a single-use miniature rocket launcher (because even more explosions are even more funner!)</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Attack Toys!', '<img src="img/power-icons/gadgeteering/Gadgeteering_AttackToys.png" />&nbsp;Attack Toys!', 2, 9, pow++, 2, attackToys.power);
@@ -10921,7 +11011,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const particleAccelerator = {
   power: 
   '<div class="popup-header">\
-    <div>Laser Sword<br>1 sec activate time</div>\
+    <div>Laser Sword<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - INTELLIGENCE<br><br>\
@@ -10983,13 +11073,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Data Con
 const unifiedTheory = {
   power: 
   '<div class="popup-header">\
-    <div>Laser Sword<br>Instant activate time</div>\
+    <div>Laser Sword</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply, rupture, or refresh a Radiation effect, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply, rupture, or refresh a Radiation effect, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>Radiation includes the following effects: Plasma Burn, Disintegrate, Overheat and Burn Through.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
@@ -11921,13 +12011,13 @@ dataPowerAlias['Fluidity'] = new PowerAlias('Fluidity', 'Fluidity', '<img src="i
 const steadfast = {
   power: 
   '<div class="popup-header">\
-    <div>Martial Arts<br>Instant activate time</div>\
+    <div>Martial Arts</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - DEXTERITY - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you perform a Critical Hit with a non-Energy Builder Martial Arts power, you gain Energy.</li>\
+    <li>Whenever you perform a Critical Hit with a non-Energy Builder Martial Arts power, you gain +16 Energy.</li>\
     <li>This effect can only occur once every three seconds.</li>\
     <li>The amount of Energy gained primarily scales with your DEXTERITY statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -11939,13 +12029,13 @@ dataPowerAlias['Steadfast'] = new PowerAlias('Steadfast', 'Steadfast', '<img src
 const relentless = {
   power: 
   '<div class="popup-header">\
-    <div>Martial Arts<br>Instant activate time</div>\
+    <div>Martial Arts</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you perform a Critical Hit with a non-Energy Builder power against a Wounded target, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you perform a Critical Hit with a non-Energy Builder power against a Wounded target, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>Wounds include the following effects: Bleed, Shredded, Open Wound, Swallowtail Cut, Deep Wound. The Wound must be inflicted by you.</li>\
     <li>The amount of Energy gained primarily scales with your Recovery statistic.</li>\
@@ -12391,7 +12481,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 const formOfTheTempest = {
   power: 
   '<div class="popup-header">\
-    <div>Dual Blades<br>1 sec activate time</div>\
+    <div>Dual Blades<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -13072,7 +13162,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 const formOfTheTiger = {
   power: 
   '<div class="popup-header">\
-    <div>Fighting Claws<br>1 sec activate time</div>\
+    <div>Fighting Claws<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -13958,7 +14048,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 const formOfTheSwordsman = {
   power: 
   '<div class="popup-header">\
-    <div>Single Blade<br>1 sec activate time</div>\
+    <div>Single Blade<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -14837,7 +14927,7 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 const formOfTheMaster = {
   power: 
   '<div class="popup-header">\
-    <div>Unarmed<br>1 sec activate time</div>\
+    <div>Unarmed<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -14876,13 +14966,13 @@ dataRequireGroupPower[dataPower.length-1] = 'martial arts';
 const chiManipulation = {
   power: 
   '<div class="popup-header">\
-    <div>Unarmed<br>Instant activate time</div>\
+    <div>Unarmed</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply a Chi Energy effect, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply a Chi Energy effect, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your RECOVERY statistic.</li>\
     <li>The ENDURANCE statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -15328,7 +15418,7 @@ dataPowerAlias['Ego Form'] = new PowerAlias('Ego Form', 'Ego Form', '<img src="i
 const manipulator = {
   power: 
   '<div class="popup-header">\
-    <div>Mentalist<br>1 sec activate time</div>\
+    <div>Mentalist<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - PRESENCE or INTELLIGENCE<br><br>\
@@ -15350,7 +15440,24 @@ dataPowerAlias['Manipulator'] = new PowerAlias('Manipulator', 'Manipulator', '<i
 
 const mindLink = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Mentalist<br>30 + 23 Energy every 0.5 sec<br>0.5 sec activate time (8 max)</div>\
+    <div style="text-align:right;">Affects foe that is not destructible (7 max)<br>50 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  AOE DAMAGE - TRIGGERED DAMAGE<br><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>Creates a link between you and nearby foes. </li>\
+    <li>When you or any of these foes take damage, you deal Ego Damage to foes in the area of effect, based on the initial damage dealt. This effect can only occur once every 0.5 sec.</li>\
+    <li>Damage from this effect causes very little threat.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>Increasing the rank of this power increases the maximum damage dealt:<br>\
+    At Rank 1, this power deals a maximum of Ego x 4 damage.<br>\
+    At Rank 2, this power deals a maximum of Ego x 5 damage.<br>\
+    At Rank 3, this power deals a maximum of Ego x 6 damage.<br>\
+  </ul>',
 
   aggressionInhibitor:
   '<div>\
@@ -15989,7 +16096,7 @@ dataRequireGroupPower[dataPower.length-1] = 'mentalist';
 const mentalDiscipline = {
   power: 
   '<div class="popup-header">\
-    <div>Telekinesis<br>0.67 sec activate time</div>\
+    <div>Telekinesis<br>0 Energy cost<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -16024,7 +16131,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Id Blade
 const mentalPrecision = {
   power: 
   '<div class="popup-header">\
-    <div>Telekinesis<br>1 sec activate time</div>\
+    <div>Telekinesis<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - DEXTERITY<br><br>\
@@ -16084,13 +16191,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Telekine
 const telekineticReverberation = {
   power: 
   '<div class="popup-header">\
-    <div>Telekinesis<br>Instant activate time</div>\
+    <div>Telekinesis</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you gain a stack of Ego Leech, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you gain a stack of Ego Leech, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your RECOVERY statistic.</li>\
     <li>The ENDURANCE statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -16982,13 +17089,13 @@ dataRequireGroupPower[dataPower.length-1] = 'mentalist';
 const telepathicReverberation = {
   power: 
   '<div class="popup-header">\
-    <div>Telepathy<br>Instant activate time</div>\
+    <div>Telepathy</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - PRESENCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you hold a target with your Mentalist powers or attack a Held, Confused, or Disoriented target with your Telepathy powers, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you hold a target with your Mentalist powers or attack a Held, Confused, or Disoriented target with your Telepathy powers, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your PRESENCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -17488,7 +17595,7 @@ dataPowerAlias['Unstoppable'] = new PowerAlias('Unstoppable', 'Unstoppable', '<i
 const enrage = {
   power: 
   '<div class="popup-header">\
-    <div>Brick<br>1 sec activate time</div>\
+    <div>Brick<br>20 Energy costbr>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - STRENGTH<br><br>\
@@ -17519,13 +17626,13 @@ dataPowerAlias['Enrage'] = new PowerAlias('Enrage', 'Enrage', '<img src="img/pow
 const pulverizer = {
   power: 
   '<div class="popup-header">\
-    <div>Brick<br>Instant activate time</div>\
+    <div>Brick</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you attempt to Knock a foe, you gain Energy every 3 sec for 9 sec.</li>\
+    <li>Whenever you attempt to Knock a foe, you gain +5.9 Energy every 3 sec for 9 sec.</li>\
     <li>This buff can stack up to 3 times. Refreshes the duration of existing stacks by 9 sec if you have 3 stacks of this buff.</li>\
     <li>The amount of Energy gained primarily scales with your RECOVERY statistic.</li>\
     <li>The ENDURANCE statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -17994,7 +18101,7 @@ dataRequireGroupPower[dataPower.length-1] = 'brick';
 const wrathfulBlade = {
   power: 
   '<div class="popup-header">\
-    <div>Heavy Weapon<br>1 sec activate time</div>\
+    <div>Heavy Weapon<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - STRENGTH<br><br>\
@@ -18884,13 +18991,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const destructive = {
   power: 
   '<div class="popup-header">\
-    <div>Earth<br>Instant activate time</div>\
+    <div>Earth</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply or refresh Stagger, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply or refresh Stagger, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -20467,7 +20574,7 @@ dataPowerAlias['PowerNameHere'] = new PowerAlias('PowerNameHere', 'PowerNameHere
 const compassion = {
   power: 
   '<div class="popup-header">\
-    <div>Mystic<br>1 sec activate time</div>\
+    <div>Mystic<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - PRESENCE or RECOVERY<br><br>\
@@ -20614,13 +20721,13 @@ dataPowerAlias['Pestilence'] = new PowerAlias('Pestilence', 'Pestilence', '<img 
 const supernaturalPower = {
   power: 
   '<div class="popup-header">\
-    <div>Supernatural<br>Instant activate time</div>\
+    <div>Supernatural</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Any time you use a Supernatural power that reduces your energy pool to less than 15%, you gain Energy.</li>\
+    <li>Any time you use a Supernatural power that reduces your energy pool to less than 15%, you gain +35 Energy.</li>\
     <li>The amount of Energy gained scales with your RECOVERY statistic.</li>\
   </ul>'
 };
@@ -21828,7 +21935,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const shadowManifestation = {
   power: 
   '<div class="popup-header">\
-    <div>Darkness<br>1 sec activate time</div>\
+    <div>Darkness<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - PRESENCE<br><br>\
@@ -21853,7 +21960,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const fearConsumption = {
   power: 
   '<div class="popup-header">\
-    <div>Darkness<br>1 sec activate time</div>\
+    <div>Darkness<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - RECOVERY<br><br>\
@@ -21914,13 +22021,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Voraciou
 const spiritReverberation = {
   power: 
   '<div class="popup-header">\
-    <div>Darkness<br>Instant activate time</div>\
+    <div>Darkness</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - RECOVERY - ENDURANCE<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you deal Dimensional damage to a Feared target, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you deal Dimensional damage to a Feared target, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your RECOVERY statistic.</li>\
     <li>The ENDURANCE statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -22134,7 +22241,30 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(4, 'Dark Pre
 
 const voidHorror = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Darkness<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons a Void Horror to fight for you.</li>\
+    <li>It will attack your target in melee range, usually dealing 101 Dimensional Damage (Base) to your foes.</li>\
+    <li>Void Ravage: 118 Dimensional Damage (Base); or it will Feed on Fear, dealing 51 Dimensional Damage (Base) and 17 Dimensional Damage (Base) every 2 sec for 6 sec to the target.</li>\
+    <li>The Horror can also Lunge at your target, removing travel powers and dealing 97 Dimensional Damage (Base).</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>Void Eruption - Your pet erupts with Void energy, dealing Dimensional damage to nearby enemies and repelling them away.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your Void Horror has an attack, Feed on Fear, which deals additional damage to targets affected by Fear.</li>\
+    <li>R2: Your pet\\\'s Void Ravage attack now also deals additional damage to targets affected by Fear.</li>\
+    <li>R3: The DoT dealt by Feed on Fear now also heals your Void Horror.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Void Horror', '<img src="img/power-icons/darkness/Darkness_VoidHorror.png" />&nbsp;Void Horror', 6, 21, pow++, 2, voidHorror.power);
@@ -22790,7 +22920,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 
 const tyrannonsFamiliar = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons a Golem Familiar to fight for you. It will attack your target in melee range, pummeling them for 72 Crushing Damage (Base).</li>\
+    <li>The Golem can also Lunge at your target, dealing 77 Crushing Damage (Base). In addition, it can Throw Rocks at targets from range, dealing 400 Crushing Damage (Base) and Knocking Down the target.</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>As your familiar battles your enemies, it will periodically generate a Power Charge. The number of charges your familiar can store is dependent on its rank.\
+    <br>Power Siphon - This power allows you to tap into the Charged energy your Golem has accumulated, and siphon it into yourself. This grants you usable energy, and increases all damage you inflict for a short time. The more charges your Golem has accumulated, the more power and greater the damage bonus.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your Golem generates additional threat and can generate up to 2 power charges.</li>\
+    <li>R2: Your Golem can generate up to 3 power charges, and your Golem gains the power Golem Flesh, granting 10% resistance to all damage.</li>\
+    <li>R3: Your Golem can generate up to 4 power charges, and your Golem\\\'s damage resistance increases to 20%.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Tyrannon\'s Familiar', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_TyrannonsFamiliar.png" />&nbsp;Tyrannon\'s Familiar', 6, 22, pow++, 1, tyrannonsFamiliar.power);
@@ -23116,7 +23268,7 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 const spellcaster = {
   power: 
   '<div class="popup-header">\
-    <div>Arcane Sorcery<br>1 sec activate time</div>\
+    <div>Arcane Sorcery<br>0 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - INTELLIGENCE<br><br>\
@@ -23181,13 +23333,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Imbue Wi
 const conjuring = {
   power: 
   '<div class="popup-header">\
-    <div>Arcane Sorcery<br>Instant activate time</div>\
+    <div>Arcane Sorcery</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - INTELLIGENCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply a Curse, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply a Curse, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>Curses include the following effects: Corrupted, Debilitating Poison, Devoid, Hexed, Illuminated, Jinxed, Noxious Poison.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your INTELLIGENCE statistic.</li>\
@@ -23468,7 +23620,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPower
 
 const ritualOfEbonSummoning = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>0 Energy cost<br>1.5 sec charge time (1.5 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET - RITUAL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Creates a Ritual Circle and summons a Daemon to fight for you. Leaving the Circle for too long will cause it to fail, and the Daemon will disappear.</li>\
+    <li>The Daemon will attack foes at range, using Fire Strike to deal 51 Fire Damage (Base).</li>\
+    <li>It will also periodically attack with Fireball, dealing 253 Fire Damage (Base) to its target and 127 Fire Damage (Base) to other nearby foes.</li>\
+  </ul>\
+  RITUAL PET PROPERTIES<br>\
+  <ul>\
+    <li>Fully CHARGE to create a Ritual circle at your feet, and call forth a dark, daemonic Beast.</li>\
+    <li>Only one Ritual can be active at a time. Leaving the circle for more than a few seconds will cause the circle to disappear, canceling the Ritual.</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your summoned daemon wields bleak fire, which it can project both as long range, rapid bolts and devastating explosive blasts.</li>\
+    <li>R2: At this rank, your summon will use a burning blade when in melee range that strikes nearby foes with fiery damage. In addition, your pet can immolate itself for a short time, increasing all fire damage it inflicts.</li>\
+    <li>R3: At this rank, this creature wields a mighty cleaving axe, and can ignite the ground around itself, burning any who dare come near.</li>\
+  </ul>',
 
   unboundRitual:
   '<div>\
@@ -23490,7 +23664,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unbound 
 
 const ritualOfRadiantSummoning = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>0 Energy cost<br>1.5 sec charge time (1.5 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET - RITUAL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Creates a Ritual Circle and summons a Radiant Entity to fight for you. Leaving the Circle for too long will cause it to fail, and the Entity will disappear.</li>\
+    <li>The Entity will use Beneficence to heal you and your allies, granting +175 Health Points (Base).</li>\
+    <li>When you and your allies are at high enough health, it will Rebuke your foes, dealing 107 Dimensional Damage (Base).</li>\
+    <li>If pressed into melee combat, your Entity will use its Radiant Blade, dealing 42 Slashing Damage (Base) and 42 Dimensional Damage (Base).</li>\
+  </ul>\
+  RITUAL PET PROPERTIES<br>\
+  <ul>\
+    <li>Fully CHARGE to create a Ritual circle at your feet, and call forth a Celestial Ally.</li>\
+    <li>Only one Ritual can be active at a time. Leaving the circle for more than a few seconds will cause the circle to disappear, canceling the Ritual.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your Celestial ally is armed with Radiant light that can both harm your enemies and heal you and your allies. If closely pressed, your ally can invoke a Radiant blade to protect itself in melee combat.</li>\
+    <li>R2: At this rank, your Celestial entity has the power to Condemn your enemies, smiting all foes in a moderate area of effect.</li>\
+    <li>R3: At this Rank, you are able to call forth an ally that burns with such pure Radiant grace that simply being in its presence heals wounds.</li>\
+  </ul>',
 
   unboundRitual:
   '<div>\
@@ -23512,7 +23708,29 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unbound 
 
 const ritualOfPrimalSummoning = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>0 Energy cost<br>1.5 sec charge time (1.5 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET - RITUAL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Creates a Ritual Circle and summons a Primal Incarnation to fight for you. Leaving the Circle for too long will cause it to fail, and the Incarnation will disappear.</li>\
+    <li>The Incarnation will use its Primal Bite in melee, dealing 81 Piercing Damage (Base). The Incarnation can Lunge at its target, removing travel powers and dealing 97 Crushing Damage (Base).</li>\
+    <li>It will also periodically unleash Primal Lightning, dealing 58-164 Electrical Damage (Base) to its target and 29-82 Electrical Damage (Base) to other nearby foes.</li>\
+  </ul>\
+  RITUAL PET PROPERTIES<br>\
+  <ul>\
+    <li>Fully CHARGE to create a Ritual circle at your feet, and call forth a Primal Incarnation.</li>\
+    <li>Only one Ritual can be active at a time. Leaving the circle for more than a few seconds will cause the circle to disappear, canceling the Ritual.</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your Primal Incarnation can call down blasts of lightning and attack with a powerful bite. In addition, its howl grants increased damage to itself and all allies within 20 feet.</li>\
+    <li>R2: As an embodiment of Primal forces, your Primal Incarnation is the ultimate expression of strength from adversity. Your pet is constantly adapting and will rapidly develop defenses against any kind of attack.</li>\
+    <li>R3: The Primal law is survival. When your Incarnation\\\'s health is low, it will go into a rage, growing larger and dealing greater damage.</li>\
+  </ul>',
 
   unboundRitual:
   '<div>\
@@ -23534,7 +23752,32 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Unbound 
 
 const ritualOfArcaneSummoning = {
   power: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Arcane Sorcery<br>0 Energy cost<br>1.5 sec charge time (1.5 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET - RITUAL<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Creates a Ritual Circle and summons an Arcane Construct to fight for you. Leaving the Circle for too long will cause it to fail, and the Construct will disappear.</li>\
+    <li>The Construct will use its Arcane Smash in melee, dealing 88 Crushing Damage (Base). It will also periodically attack with Arcane Burst, dealing 67 Crushing Damage (Base) to nearby foes.</li>\
+  </ul>\
+  RITUAL PET PROPERTIES<br>\
+  <ul>\
+    <li>Fully CHARGE to create a Ritual circle at your feet, and call forth an Arcane Construct.</li>\
+    <li>Only one Ritual can be active at a time. Leaving the circle for more than a few seconds will cause the circle to disappear, canceling the Ritual.</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  SPECIAL ABILITIES<br>\
+  <ul>\
+    <li>Challenging Strikes - This entity generates a high amount of threat with attacks, and slightly debuffs the damage of any enemy struck.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: In addition to its mighty fists, your Arcane Construct can release a powerful burst of arcane energy against nearby enemies.</li>\
+    <li>R2: Your Arcane Construct can release powerful bolts of arcane energy from its "eyes". These beams can be used even while it is pummeling enemies with its mighty fists.</li>\
+    <li>R3: At this Rank, your Construct gains Invulnerability-like protection from all attacks. This protection comes at a cost, however, as your Construct is slightly slower than at previous Ranks.</li>\
+  </ul>',
 
   unboundRitual:
   '<div>\
@@ -24487,7 +24730,7 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 const aspectOfTheBestial = {
   power: 
   '<div class="popup-header">\
-    <div>Bestial Supernatural<br>1 sec activate time</div>\
+    <div>Bestial Supernatural<br>0 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - STRENGTH<br><br>\
@@ -24558,13 +24801,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Quills',
 const wildThing = {
   power: 
   '<div class="popup-header">\
-    <div>Bestial Supernatural<br>Instant activate time</div>\
+    <div>Bestial Supernatural</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply, rupture, or refresh a Bleed, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply, rupture, or refresh a Bleed, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
@@ -24727,7 +24970,30 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 
 const commandAnimals = {
   power: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>35 Energy cost<br>2 sec charge time (2 min)<br>0.87 sec activate time</div>\
+    <div style="text-align:right;">Targets self</div>\
+  </div><br>\
+  CONTROLLABLE PET<br><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Summons 2 Animals to fight for you.</li>\
+    <li>They will attack your target in melee range, using their Feral Bite to deal 40 Slashing Damage (Base) to your foes.</li>\
+    <li>The Bite has a 30% chance to Poison the target, Snaring them and dealing 6.9 Toxic Damage (Base) every 1 sec for 16 sec.</li>\
+    <li>The Animal can also Lunge at your target, Knocking Down the target, removing travel powers, and dealing 97 Crushing Damage (Base).</li>\
+    <li>Maintaining control of your pets reduces your Energy Recovery and Energy Gain, and increases the Energy Cost of your powers.</li>\
+  </ul>\
+  CUSTOM ABILITY<br>\
+  <ul>\
+    <li>This pet can be instructed to activate the following ability with a button on its control bar:\
+    <br>Fury - This sends your pets into a rage. They attack faster and deal more damage for a short period.</li>\
+  </ul>\
+  RANK UP BENEFITS<br>\
+  <ul>\
+    <li>R1: Your pet\\\'s keen senses can pierce most forms of stealth. In addition, their bite generates additional threat and has a chance of inflicting a toxic damage over time effect.</li>\
+    <li>R2: Your pet\\\'s bite power gains the additional ability to inflict a Bleed attack.</li>\
+    <li>R3: At this Rank, your pet\\\'s bite is strong enough that it has a chance to inflict the Shredded debuff on its target, increasing all damage that target takes by a small amount, and all slashing damage by a larger amount.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Command Animals', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_CommandAnimals.png" />&nbsp;Command Animals', 6, 23, pow++, 2, commandAnimals.power);
@@ -25547,7 +25813,7 @@ dataRequireGroupPower[dataPower.length-1] = 'supernatural';
 const aspectOfTheInfernal = {
   power: 
   '<div class="popup-header">\
-    <div>Infernal Supernatural<br>1 sec activate time</div>\
+    <div>Infernal Supernatural<br>0 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - EGO or INTELLIGENCE<br><br>\
@@ -25607,13 +25873,13 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(3, 'Voodoo C
 const mephitic = {
   power: 
   '<div class="popup-header">\
-    <div>Infernal Supernatural<br>Instant activate time</div>\
+    <div>Infernal Supernatural</div>\
   </div><br>\
   INNATE PASSIVE - SECONDARY ENERGY UNLOCK - ENDURANCE - RECOVERY<br><br>\
   ENHANCEMENT<br>\
   <ul>\
     <li>This power does not need to be slotted in order to function and has no ranks.</li>\
-    <li>Whenever you apply or refresh a Poison effect, you gain Energy every 3 sec for 6 sec.</li>\
+    <li>Whenever you apply or refresh a Poison effect, you gain +16 Energy every 3 sec for 6 sec.</li>\
     <li>This effect can only occur once every three seconds and cannot stack, but triggering the effect will refresh the duration.</li>\
     <li>The amount of Energy gained primarily scales with your ENDURANCE statistic.</li>\
     <li>The RECOVERY statistic also scales the amount of Energy you gain to a lesser degree.</li>\
