@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 11:10:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 11:30:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.14a';
-var releaseDate = '2026-05-30';
+var version = '1.3.14b';
+var releaseDate = '2026-05-31';
 var buildVersion = 3;
 
 var siteName = 'PowerHouse';
@@ -3968,31 +3968,32 @@ function setupPrefs() {
     
     // Detect mobile device
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    var mobileDefaultsApplied = getCookie('mobileDefaultsApplied');
     
-    // popup tips
     var popupTips = getCookie('prefPopupTips');
-    if (popupTips == undefined || isNaN(popupTips)) {
-        if (isMobile) {
-            popupTips = 0; 
-        } else {
-            popupTips = prefPopupTips; 
-        }
-    } else {
-        popupTips = parseInt(popupTips);
-    }
-    setPrefPopupTips(popupTips);
-    
-    // confirm selections
     var confirmSelections = getCookie('prefConfirmSelections');
-    if (confirmSelections == undefined) {
-        if (isMobile) {
-            confirmSelections = true;
-        } else {
-            confirmSelections = prefConfirmSelections;
-        }
+    
+    // Apply defaults only on the first mobile visit
+    if (isMobile && mobileDefaultsApplied == undefined) {
+        popupTips = 0;
+        confirmSelections = true;
+        setCookie('mobileDefaultsApplied', 'true', cookieExpireDays);
     } else {
-        confirmSelections = coerceToBoolean(confirmSelections, prefConfirmSelections);
+        // Load existing preferences or standard defaults
+        if (popupTips == undefined || isNaN(popupTips)) {
+            popupTips = prefPopupTips;
+        } else {
+            popupTips = parseInt(popupTips);
+        }
+        
+        if (confirmSelections == undefined) {
+            confirmSelections = prefConfirmSelections;
+        } else {
+            confirmSelections = coerceToBoolean(confirmSelections, prefConfirmSelections);
+        }
     }
+    
+    setPrefPopupTips(popupTips);
     setPrefConfirmSelections(confirmSelections);
     
     // analytics
