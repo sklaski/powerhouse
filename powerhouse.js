@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 10:40:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 11:10:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.14';
+var version = '1.3.14a';
 var releaseDate = '2026-05-30';
 var buildVersion = 3;
 
@@ -3960,20 +3960,41 @@ function setupPrefs() {
     var fontFamily = getCookie('prefFontFamily');
     if (fontFamily == undefined) fontFamily = prefFontFamily;
     setPrefFontFamily(fontFamily);
+    
     // font size
     var fontSize = getCookie('prefFontSize');
     if (fontSize == undefined || isNaN(fontSize)) fontSize = prefFontSize;
     setPrefFontSize(parseInt(fontSize));
+    
+    // Detect mobile device
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
     // popup tips
     var popupTips = getCookie('prefPopupTips');
-    if (popupTips == undefined || isNaN(popupTips)) popupTips = prefPopupTips;
-    else popupTips = parseInt(popupTips);
+    if (popupTips == undefined || isNaN(popupTips)) {
+        if (isMobile) {
+            popupTips = 0; 
+        } else {
+            popupTips = prefPopupTips; 
+        }
+    } else {
+        popupTips = parseInt(popupTips);
+    }
     setPrefPopupTips(popupTips);
+    
     // confirm selections
     var confirmSelections = getCookie('prefConfirmSelections');
-    if (confirmSelections == undefined) confirmSelections = prefConfirmSelections;
-    else confirmSelections = coerceToBoolean(confirmSelections, prefConfirmSelections);
+    if (confirmSelections == undefined) {
+        if (isMobile) {
+            confirmSelections = true;
+        } else {
+            confirmSelections = prefConfirmSelections;
+        }
+    } else {
+        confirmSelections = coerceToBoolean(confirmSelections, prefConfirmSelections);
+    }
     setPrefConfirmSelections(confirmSelections);
+    
     // analytics
     var analytics = getCookie('prefAnalytics');
     if (analytics == undefined) analytics = prefAnalytics;
