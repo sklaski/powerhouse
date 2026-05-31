@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 11:55:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 12:05:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.14d';
+var version = '1.3.14e';
 var releaseDate = '2026-05-31';
 var buildVersion = 3;
 
@@ -665,42 +665,39 @@ function selectConfirmation(func, name, text) {
         }
         var spanLeft = document.createElement('span');
         spanLeft.setAttribute('style', 'float:left');
-        var spanRight = document.createElement('span');
-        spanRight.setAttribute('style', 'float:right');
         var spanClear = document.createElement('span');
         spanClear.setAttribute('style', 'clear:both');
         
-        var a = document.createElement('a');
-        a.setAttribute('id', 'selectConfirmationSet');
-        a.setAttribute('class', 'confirm-selection-highlight'); 
-        a.setAttribute('onclick', func + ';hideSection(\'selectionConfirmation\')');
-        a.innerHTML = 'Confirm Selection';
-        spanLeft.appendChild(a);
+        var aConfirm = document.createElement('a');
+        aConfirm.setAttribute('id', 'selectConfirmationSet');
+        aConfirm.setAttribute('class', 'confirm-selection-highlight'); 
+        aConfirm.setAttribute('onclick', func + ';hideSection(\'selectionConfirmation\')');
+        aConfirm.innerHTML = 'Confirm Selection';
+        spanLeft.appendChild(aConfirm);
         
-        var span = document.createElement('span');
-        span.innerHTML = ' &nbsp; ';
-        spanRight.appendChild(span);
+        var spanSpace = document.createElement('span');
+        spanSpace.innerHTML = ' &nbsp; ';
+        spanLeft.appendChild(spanSpace);
         
-        var a = document.createElement('a');
-        a.setAttribute('id', 'selectConfirmationCancel');
-        a.setAttribute('class', 'confirm-selection-highlight'); 
-        a.setAttribute('onclick', 'hideSection(\'selectionConfirmation\')');
-        a.innerHTML = 'X';
-        spanRight.appendChild(a);
+        var aCancel = document.createElement('a');
+        aCancel.setAttribute('id', 'selectConfirmationCancel');
+        aCancel.setAttribute('class', 'confirm-selection-highlight');
+        aCancel.setAttribute('onclick', 'hideSection(\'selectionConfirmation\')');
+        aCancel.innerHTML = 'Cancel Selection';
+        spanLeft.appendChild(aCancel);
         
         selectConfirmation.appendChild(spanLeft);
-        selectConfirmation.appendChild(spanRight);
         selectConfirmation.appendChild(document.createElement('br'));
         selectConfirmation.appendChild(spanClear);
         
-        var span = document.createElement('span');
-        span.innerHTML = name;
-        selectConfirmation.appendChild(span);
+        var spanName = document.createElement('span');
+        spanName.innerHTML = name;
+        selectConfirmation.appendChild(spanName);
         selectConfirmation.appendChild(document.createElement('br'));
         
-        var span = document.createElement('span');
-        span.innerHTML = text;
-        selectConfirmation.appendChild(span);
+        var spanText = document.createElement('span');
+        spanText.innerHTML = text;
+        selectConfirmation.appendChild(spanText);
         showPositionSection('selectionConfirmation', true);
     } else {
         eval(func);
