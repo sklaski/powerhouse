@@ -27,8 +27,6 @@
       <div id="header" style="display:none">
         <span class="title"><b>PowerHouse</b></span>
         <span class="menu">
-          <a id="buildLink" class="button" href=".">Link to build</a>
-          &nbsp;&nbsp;
           <a id="showViewEdit" class="button" onclick="showView('Edit')">Edit</a>
           &nbsp;&nbsp;
           <a id="showViewPreview" class="button" onclick="showView('Preview')">Preview</a>
@@ -41,7 +39,7 @@
           &nbsp;&nbsp;
           <a id="showViewAbout" class="button" onclick="showView('About')">About</a>
           &nbsp;&nbsp;
-          <a id="buildReset" class="button" href="index.html">Reset build</a>
+          <a id="buildLink" class="button highlight-button" href="." onclick="copyBuildLink(event)">Copy build link</a>
         </span>
       </div>
 
@@ -571,7 +569,7 @@
         </p>
         <p>
           Please note that no progress is automatically saved for you, so if you<br />
-          navigate away from this page you might loose your work.  If, after<br />
+          navigate away from this page you might lose your work.  If, after<br />
           returning to the page, you find your selections have cleared, click<br />
           "<b>Restore previous build</b>" found at the bottom right.  This will restore<br />
           the last known state.
@@ -681,11 +679,12 @@
       <div id="footer" class="footer" style="display:none">
         <div id="link">
           <div class="left">
+            <a id="buildReset" class="button highlight-button" href="index.html">Clear entire build</a>
             <!-- <div class="link"><a id="buildLinkBookmark" class="right" onclick="void(0)">Add Bookmark</a></div> -->
           </div>
-          <div class="right">
+          <!-- <div class="right">
             <span class="link"><a id="restorePrevBuild" class="button" style="display:none" onclick="restorePrevBuild()">Restore previous build</a></span>
-          </div>
+          </div> -->
           <div style="clear:both"></div>
         </div>
 

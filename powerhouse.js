@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-30 23:00:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 10:40:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.13';
+var version = '1.3.14';
 var releaseDate = '2026-05-30';
 var buildVersion = 3;
 
@@ -55,7 +55,9 @@ function getCookie(name) {
     for (var i = 0; i < cookies.length; i++) {
         var x = cookies[i].substr(0, cookies[i].indexOf('='));
         var y = cookies[i].substr(cookies[i].indexOf('=') + 1);
-        x = x.replace(/^\s + |\s + $/g, '');
+
+        x = x.trim();
+
         if (x == name) return unescape(y);
     }
     return undefined;
@@ -3402,20 +3404,43 @@ function buildLink(submit) {
     //field.innerHTML = name;
     ////fieldBookmark.setAttribute('onclick', 'addBookmark(\'' + name + '\',\'' + url + '\')');
     fieldRef.innerHTML = url;
+
+    if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', url);
+    }
+
     if (prevBuildLink != undefined) setCookie('buildLink', prevBuildLink, cookieExpireDays);
     prevBuildLink = url;
-    var restore = document.getElementById('restorePrevBuild');
-    if (getCookie('buildLink') == undefined) restore.style.display = 'none';
-    else restore.style.display = '';
+    // var restore = document.getElementById('restorePrevBuild');
+    // if (getCookie('buildLink') == undefined) restore.style.display = 'none';
+    // else restore.style.display = '';
 }
 window['buildLink'] = buildLink;
 
-// restore previous build (if saved to cookie)
-function restorePrevBuild() {
-    var url = getCookie('buildLink');
-    if (url != undefined) window.open(url, '_self');
+// Copy build link to clipboard
+function copyBuildLink(event) {
+    event.preventDefault(); 
+    var url = window.location.href;
+    
+    navigator.clipboard.writeText(url).then(function() {
+        var button = document.getElementById('buildLink');
+        button.innerHTML = 'Copied to clipboard!';
+        
+        setTimeout(function() {
+            button.innerHTML = 'Copy build link';
+        }, 1250);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
 }
-window['restorePrevBuild'] = restorePrevBuild;
+window['copyBuildLink'] = copyBuildLink;
+
+// restore previous build (if saved to cookie)
+// function restorePrevBuild() {
+//     var url = getCookie('buildLink');
+//     if (url != undefined) window.open(url, '_self');
+// }
+// window['restorePrevBuild'] = restorePrevBuild;
 
 // submit build to google analytics
 function submitBuild() {

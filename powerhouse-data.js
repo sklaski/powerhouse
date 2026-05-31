@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-30 23:00:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 10:40:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -8025,7 +8025,18 @@ const sniperRifle = {
   </div>',
 
   pulpFictionRifle: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Munitions<br>54 Energy cost<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>120 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Sniper Rifle power.</li>\
+    <li>This power is activated when you are greater than 90 ft from your target.</li>\
+    <li>Deals 916 Particle Damage. Expires all of your Plasma Burn stacks and deals 198 Particle Damage for each one to up to 5 targets within 10 ft of your main target.</li>\
+    <li>Taking damage while charging this power will interrupt it.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Sniper Rifle power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sniper Rifle', '<img src="img/power-icons/munitions/Munitions_SniperRifle.png" />&nbsp;Sniper Rifle', 2, 7, pow++, 3, sniperRifle.power);
