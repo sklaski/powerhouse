@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 12:05:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 15:30:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.14e';
+var version = '1.3.15';
 var releaseDate = '2026-05-31';
 var buildVersion = 3;
 
@@ -1578,6 +1578,8 @@ function selectPowerAllowed(num, id) {
     var energyBuilderId = 0;
     var energyUnlockId = 0;
     var tier4Id = 0;
+    var concentrationUnlockedByUltimate = false;
+    var compassionUnlockedByUltimate = false;
     for (var i = 1; i < phPower.length; i++) {
         var p = phPower[i];
         // some framework powers act like they belong to a specific power set for the purposes of calculating counts
@@ -1587,7 +1589,33 @@ function selectPowerAllowed(num, id) {
                 // eb counts for framework, but not powerSet or otherCount
                 if (p.framework == power.framework) frameworkCount++;
             } else if (p.tier == 4) {
-                // tier 4 does not count for powerSet or framework
+                // IN-GAME BUG: Ultimates are inconsistent for tier counts.
+                // If Martial Arts, Mentalist, or Brick Ultimate, acts as normal
+                if (p.powerSet == 3 && power.powerSet == 3 ||
+                    p.powerSet == 4 && power.powerSet == 4 ||
+                    p.powerSet == 5 && power.powerSet == 5) {
+                        powerSetCount++;
+                        frameworkCount++;
+                    }
+                
+                // If Energy Projector Ultimate, counts for Wind
+                if (p.powerSet == 1 && power.framework == 4) {
+                    frameworkCount++;
+                }
+
+                // If Technology Ultimate, unlock Concentration
+                if (p.powerSet == 2) {
+                    concentrationUnlockedByUltimate = true;
+                }
+
+                // If Mystic Ultimate, unlock Compassion
+                if (p.powerSet == 6) {
+                    compassionUnlockedByUltimate = true;
+                }
+
+                otherCount++;
+            } else if (p.name == 'Compassion' || p.name == 'Concentration') {
+                // IN-GAME BUG: Compassion and Concentration don't count for Power Set nor Framework.
                 otherCount++;
             } else {
                 if (p.powerSet == power.powerSet) powerSetCount++;
@@ -1610,6 +1638,8 @@ function selectPowerAllowed(num, id) {
         if (p.tier == 4) tier4Id = p.id;
         if (dataEnergyUnlockPower[p.id] != undefined) energyUnlockId = p.id;
     }
+
+
     switch (power.tier) {
     case -1:
         if (energyBuilderId == 0) result = 1;
@@ -1644,6 +1674,14 @@ function selectPowerAllowed(num, id) {
     for (var i = 1; i < phPower.length; i++) {
         if (phPower[i].name == power.name && (num != i || result == 1)) result = 2;
     }
+
+    if (power.name == 'Compassion' && compassionUnlockedByUltimate) {
+        result = 1;
+    }
+    if (power.name == 'Concentration' && concentrationUnlockedByUltimate) {
+        result = 1;
+    }
+
     return result;
 }
 window['selectPowerAllowed'] = selectPowerAllowed;
