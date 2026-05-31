@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 11:30:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 11:50:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.14b';
+var version = '1.3.14c';
 var releaseDate = '2026-05-31';
 var buildVersion = 3;
 
@@ -669,27 +669,35 @@ function selectConfirmation(func, name, text) {
         spanRight.setAttribute('style', 'float:right');
         var spanClear = document.createElement('span');
         spanClear.setAttribute('style', 'clear:both');
+        
         var a = document.createElement('a');
         a.setAttribute('id', 'selectConfirmationSet');
+        a.setAttribute('class', 'confirm-selection-highlight'); 
         a.setAttribute('onclick', func + ';hideSection(\'selectionConfirmation\')');
         a.innerHTML = 'Confirm Selection';
         spanLeft.appendChild(a);
+        
         var span = document.createElement('span');
         span.innerHTML = ' &nbsp; ';
         spanRight.appendChild(span);
+        
         var a = document.createElement('a');
         a.setAttribute('id', 'selectConfirmationCancel');
+        a.setAttribute('class', 'button'); 
         a.setAttribute('onclick', 'hideSection(\'selectionConfirmation\')');
         a.innerHTML = 'X';
         spanRight.appendChild(a);
+        
         selectConfirmation.appendChild(spanLeft);
         selectConfirmation.appendChild(spanRight);
         selectConfirmation.appendChild(document.createElement('br'));
         selectConfirmation.appendChild(spanClear);
+        
         var span = document.createElement('span');
         span.innerHTML = name;
         selectConfirmation.appendChild(span);
         selectConfirmation.appendChild(document.createElement('br'));
+        
         var span = document.createElement('span');
         span.innerHTML = text;
         selectConfirmation.appendChild(span);

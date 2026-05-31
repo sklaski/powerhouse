@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 10:40:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 11:50:00 (woof-wolf)>
  */
 
 html {
@@ -113,6 +113,24 @@ a:hover, a:active {
   100% {
     background-color: rgba(0, 188, 212, 0);
     box-shadow: 0 0 0 0 rgba(0, 188, 212, 0);
+  }
+}
+
+.confirm-selection-highlight {
+  background-color: #00bcd4;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 4px 8px;
+  animation: continuous-echo 2.5s ease-out infinite;
+}
+
+@keyframes continuous-echo {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(0, 188, 212, 0);
   }
 }
 
