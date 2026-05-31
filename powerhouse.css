@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-29 20:25:00 (woof-wolf)>
+ * Time-stamp: <2026-05-30 23:00:00 (woof-wolf)>
  */
 
 html {
@@ -130,6 +130,13 @@ img {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     z-index: 10;
     pointer-events: none;
+
+    /* Forces the native browser scrollbar to use a dark theme */
+    color-scheme: dark;
+    
+    /* Sets specific dark colors for Firefox */
+    scrollbar-width: auto;
+    scrollbar-color: #555555 #1a1e24;
 }
 
 .popup-header {

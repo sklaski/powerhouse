@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-30 13:15:00 (woof-wolf)>
+ * Time-stamp: <2026-05-30 23:00:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.12b';
+var version = '1.3.13';
 var releaseDate = '2026-05-30';
 var buildVersion = 3;
 
@@ -283,6 +283,15 @@ function setupEvents(evnt) {
     catchEvent(document.getElementById('editName'), 'change', changeName);
     // close popups when main document is clicked, but not when the popup divs are clicked
     catchEvent(document, 'mouseup', selectClearMaybe);
+
+    // Scroll tooltip via mouse wheel
+    document.addEventListener('wheel', function(e) {
+        var tip = document.getElementById('popup');
+        if (tip && tip.style.display === 'block') {
+            e.preventDefault();
+            tip.scrollTop += e.deltaY;
+        }
+    }, { passive: false });
 }
 window['setupEvents'] = setupEvents;
 catchEvent(window, 'load', setupEvents);

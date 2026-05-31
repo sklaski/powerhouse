@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-30 13:15:00 (woof-wolf)>
+ * Time-stamp: <2026-05-30 23:00:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1162,7 +1162,7 @@ const gravityDriver = {
     <li>Deals 748 Crushing Damage to foes within 20 ft of your primary target.</li>\
     <li>Deals 374 Crushing Damage to foes who are farther than 20 ft and within 40 ft.</li>\
     <li>Knocks Down affected targets.</li>\
-    <li>Applies Overpower to affected targets, reducing their resistance to all damage by 20% for 15 sec.</li>\
+    <li>Applies Overpower to affected targets, which reduces their resistance to all damage by 20% for 15 sec.</li>\
   </ul>',
 
   intenseGravity:
@@ -1187,7 +1187,7 @@ const fractalAegis = {
   <ul>\
     <li>Deals 126 Cold Damage to nearby targets.</li>\
     <li>Knocks Up foes 17ft.</li>\
-    <li>Applies Chill to affected targets, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
+    <li>Applies Chill to affected targets, which reduces their movement speed by 42% for 16 sec and occasionally traps them in an Ice Cage.</li>\
     <li>For each target hit, increases your resistance to Damage and Knock effects for 20 sec.</li>\
     <li>For each Henchman or Villain hit, you gain 14%.</li>\
     <li>For each Master Villain, Super Villain or Enforcer hit, you gain 21%.</li>\
@@ -1238,7 +1238,7 @@ const meteorBlaze = {
     <li>Creates a Pyre Patch on your primary target.</li>\
     <li>The Pyre Patch lasts for 16 sec, dealing 48 Fire Damage every 1 sec to foes within 20 ft.</li>\
     <li>Foes standing in the Pyre Patch have a 10% chance to be affected by Clinging Flames, dealing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
-    <li>Has a 25% chance to apply Engulfing Flames to foes affected by Clinging Flames, reducing their Fire resistance by 8% for 15 sec. This effect can stack up to 3 times.</li>\
+    <li>Has a 25% chance to apply Engulfing Flames to foes affected by Clinging Flames. Engulfing Flames reduces Fire resistance by 8% for 15 sec. This effect can stack up to 3 times.</li>\
   </ul>'
 };
 
@@ -1256,7 +1256,7 @@ const whirlpool = {
     <li>Creates a Whirlpool at the target for 16 sec.</li>\
     <li>Whirlpool deals 123 Cold Damage every 1 sec for 16 sec to targets within 25ft. Hits up to 10 targets.</li>\
     <li>Pulls targets towards the whirlpool -8.3ft.</li>\
-    <li>Chills targets, reducing their movement speed by 42% for 16 sec. Can stack up to 3 times.</li>\
+    <li>Applies Chill to targets, reducing their movement speed by 42% for 16 sec. Can stack up to 3 times.</li>\
     <li>Targets that get within 10ft of the whirlpool\\\'s center are Rooted for 13 sec.</li>\
   </ul>'
 };
@@ -1323,7 +1323,7 @@ const prismaticDetonation = {
     <li>Deals 402 damage to targets. The damage type of this power changes based on the last direct damage power you used. If no power was used within the last 10 sec, instead chooses a random damage type.</li>\
     <li>If your last ability used was a direct heal, this power instead heals allies within 25ft of your primary target for 964 Health.</li>\
     <li>If a target is a Henchman, Villain or Enforcer, Confuses them for 10 sec, causing them to attack targets randomly. If the target is immune, instead deals an additional 20% damage.</li>\
-    <li>Applies Overpower to affected foes, reducing their resistance to all damage by 20% for 15 sec.</li>\
+    <li>Applies Overpower to foes, reducing their resistance to all damage by 20% for 15 sec.</li>\
   </ul>'
 };
 
@@ -2078,8 +2078,19 @@ const lightningArc = {
   </ul>\
   </div>',
 
-  lightningBolter: 
-  '<div>...</div>'
+  lightningBolter:
+  '<div class="popup-header">\
+    <div>Electricity<br>29 + 20 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Lightning Arc power.</li>\
+    <li>Deals 156 Electrical Damage every 0.5 sec to the target.</li>\
+    <li>When fully maintained, deals an additional 467 Electrical Damage if your target is affected by your Negative Ions.</li>\
+    <li>Has a 13% chance every hit to Stun your target for 1 sec.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Lightning Arc power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Lightning Arc', '<img src="img/power-icons/electricity/Electricity_LightningArc.png" />&nbsp;Lightning Arc', 1, 1, pow++, 3, lightningArc.power);
@@ -2559,8 +2570,20 @@ const fireball = {
   </ul>\
   </div>',
 
-  flamingPumpkin: 
-  '<div>...</div>',
+  flamingPumpkin:
+  '<div class="popup-header">\
+    <div>Fire<br>50-85 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 0-20 foot Sphere</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Fireball power.</li>\
+    <li>Deals 141-402 Toxic Damage to foes. Deals an additional 71-201 Toxic Damage if a target is affected by your Fear effect.</li>\
+    <li>Has a 50% chance to Fear affected targets, reducing their damage by 10% for 12 sec.</li>\
+    <li>When fully charged, creates a Pyre Patch on the main target for 10 sec, dealing 48 Fire Damage every 1 sec to foes within 15 ft. This effect will only occur if you own the Fireball power.</li>\
+    <li>Foes standing in the Pyre Patch have a 10% chance to be affected by Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Fireball power.</li>\
+  </ul>',
 
   ultimateFireball: 
   '<div>...</div>'
@@ -3247,7 +3270,7 @@ const fireSnake = {
   <ul>\
     <li>Sends a Fire Snake after your foes for 16 sec.</li>\
     <li>The Fire Snake deals 35 Fire Damage every 1 sec to foes within 10ft.</li>\
-    <li>Applies Engulfing Flames, which reduces Fire resistance by 8% for 15 sec. This effect can stack up to 3 times.</li>\
+    <li>Applies Engulfing Flames, reducing Fire resistance by 8% for 15 sec. This effect can stack up to 3 times.</li>\
     <li>Has a 10% chance to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
   </ul>',
 
@@ -4107,8 +4130,24 @@ const forceCascade = {
   </ul>\
   </div>',
 
-  denialOfService: 
-  '<div>...</div>',
+  denialOfService:
+  '<div class="popup-header">\
+    <div>Force<br>232 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Force Cascade power.</li>\
+    <li>Deals 1,205 Particle Damage to all targets. If you are affected by the Download buff, this power\\\'s base damage is increased by 20% and the Download buff is consumed.</li>\
+    <li>Has a 33% chance to Interrupt affected targets. If your target cannot be interrupted, applies Download to you instead. Download reduces the cost of your Laser Sword, Power Armor, Munitions, Gadget and Archery powers by 20%, and increases the effectiveness of your energy gain powers by 2.5% for 12 sec. This effect will only occur if you own the Force Cascade power.</li>\
+    <li>Applies Depleted to your primary target:</li>\
+    <li>Ends all active energy gain effects.</li>\
+    <li>Reduces all energy gain effectiveness by 52% for 8 sec. This amount scales with your RECOVERY.</li>\
+    <li>Removes -5 power. This amount scales with your ENDURANCE.</li>\
+    <li>When this power is successfully activated, it consumes all of your energy and ends all of your active energy gain effects. For the next 8 sec, it reduces all energy gain effectiveness on you by 200%. If you are affected by a Self Energy Gain power, it consumes that effect instead and places the power on cooldown.</li>\
+    <li>If used without a Self Energy Gain effect active, this power goes on an 8 sec cooldown.</li>\
+    <li>Goes on a 120 sec cooldown if you do not own the Force Cascade power.</li>\
+  </ul>',
 
   ultimateForceCascade: 
   '<div>...</div>'
@@ -5484,7 +5523,26 @@ const avalanche = {
   </div>',
 
   cryoclysm: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Ice<br>41 + 19 Energy every 0.3 sec<br>0.5 sec activate time (3 max)</div>\
+    <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Avalanche power.</li>\
+    <li>Deals 127 Cold Damage every 0.3 sec to foes.</li>\
+    <li>The damage type of this power transforms depending on your Energy Builder.</li>\
+    <li>Ice Shards = Deals 127 Cold Damage every 0.3 sec.</li>\
+    <li>Electric Bolt = Deals 127 Electrical Damage every 0.3 sec.</li>\
+    <li>Throw Fire = Deals 127 Fire Damage every 0.3 sec.</li>\
+    <li>Force Bolts = Deals 127 Crushing Damage every 0.3 sec.</li>\
+    <li>Wind Lash = Deals 127 Crushing Damage every 0.3 sec.</li>\
+    <li>When maintained, the power has a 50% chance of applying Chilled | Clinging Flames | Negative Ions | Power Shield | Stagger per tick based on your Energy Builder.</li>\
+    <li>Additionally, when fully maintained, Knocks Up (Wind) affected targets by 25 ft or Knocks Down (Force) enemies based on your Energy Builder.</li>\
+    <li>When fully maintained, creates a 25 ft zone for 15 seconds. Up to 10 enemies within the zone receive the Cryoclysm debuff, increasing all damage they take by 10/12/15% depending on the rank of the Avalanche power.</li>\
+    <li>This effect will only occur if you own the Avalanche power.</li>\
+    <li>Goes on a 90 sec cooldown if you do own the Avalanche power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Avalanche', '<img src="img/power-icons/ice/Ice_Avalanche.png" />&nbsp;Avalanche', 1, 5, pow++, 3, avalanche.power); 
@@ -7019,11 +7077,34 @@ const shotgunBlast = {
   </ul>\
   </div>',
 
-  laserShotgun: 
-  '<div>...</div>',
+  laserShotgun:
+  '<div class="popup-header">\
+    <div>Munitions<br>32-77 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30-90 degree Cone</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Shotgun power.</li>\
+    <li>Deals 127-452 Particle Damage to all targets.</li>\
+    <li>Tapping this power applies Plasma Sheer for 2 sec, increasing this power\\\'s damage by 10% per stack. Stacks up to 5 times.</li>\
+    <li>Has a 13-50% chance to apply Plasma Burn to affected targets.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Shotgun power.</li>\
+  </ul>',
 
-  virulentShot: 
-  '<div>...</div>'
+  virulentShot:
+  '<div class="popup-header">\
+    <div>Munitions<br>30-50 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30 degree Cone</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Shotgun power.</li>\
+    <li>Deals 141-301 Toxic Damage to all targets.</li>\
+    <li>Has a 13-30% chance to apply Deadly Poison to your target, causing 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>On a full charge, and if the target is affected by 3 or more of your Deadly Poison, has a 60% chance to apply Noxious Poison to affected targets, causing 36 Toxic Damage every 1 sec for 16 sec to foes within 10 ft.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Shotgun power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shotgun Blast', '<img src="img/power-icons/munitions/Munitions_ShotgunBlast.png" />&nbsp;Shotgun Blast', 2, 7, pow++, 1, shotgunBlast.power);
@@ -7209,8 +7290,19 @@ const submachinegunBurst = {
   </ul>\
   </div>',
 
-  umdGhosthunterPhaseRifle: 
-  '<div>...</div>'
+  umdGhosthunterPhaseRifle:
+  '<div class="popup-header">\
+    <div>Munitions<br>54 + 31 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Submachinegun Burst power.</li>\
+    <li>Deals 141 Ego Damage every 0.5 sec to foes within 5 ft of the main target. Deals 70 Ego Damage to foes beyond 5 ft.</li>\
+    <li>Deals an additional 49 Ego Damage to foes if they are Undead.</li>\
+    <li>Foes within 15 ft are pulled 6.7 ft towards the main target. This effect only applies if you own the Submachinegun Burst power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Submachinegun Burst power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Submachinegun Burst', '<img src="img/power-icons/munitions/Munitions_SubmachinegunBurst.png" />&nbsp;Submachinegun Burst', 2, 7, pow++, 1, submachinegunBurst.power);
@@ -7397,8 +7489,50 @@ const bulletBallet = {
   </ul>\
   </div>',
 
-  rayTracer: 
-  '<div>...</div>'
+  rayTracer:
+  '<div class="popup-header">\
+    <div>Munitions<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>On each activation, deals an additional 17-28 Particle Damage per stack of your Plasma Burn on a target.</li>\
+    <li>Additional damage per stack of Plasma Burn deals less damage when hitting multiple targets.</li>\
+    <li>This device has different values if you own the Bullet Ballet power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Bullet Ballet power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>37 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div>\
+  <ul>\
+    <li>Deals 70 Particle Damage 2 times and has a 15% chance to apply Plasma Burn.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>33 Energy cost<br>0.7 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (3 max)<br>10 feet; 2 foot Cylinder</div>\
+  </div>\
+  <ul>\
+    <li>Deals 89 Particle Damage 3 times and has a 15% chance to apply Plasma Burn.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>29 Energy cost<br>0.8 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 86 Particle Damage 3 times and has a 50% chance to apply Plasma Burn.</li>\
+    <li>Adds 11 sec onto the duration of Plasma Burn, this cannot exceed the max duration of the effect.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FOURTH ACTIVATION<br>29 Energy cost<br>0.9 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (3 max)<br>10 feet; 2 foot Cylinder</div>\
+  </div>\
+  <ul>\
+    <li>Deals 481 Particle Damage and has a 50% chance to Knock Down affected targets.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Bullet Ballet', '<img src="img/power-icons/munitions/Munitions_BulletBallet.png" />&nbsp;Bullet Ballet', 2, 7, pow++, 2, bulletBallet.power);
@@ -7555,7 +7689,18 @@ const gatlingGun = {
   </div>',
 
   qularrToxicBarrage: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Munitions<br>31 + 24 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 3 foot Cylinder</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Gatling Gun power.</li>\
+    <li>Deals 63 Toxic Damage 2 times every 0.5 sec.</li>\
+    <li>Has a 10% chance every 0.5 sec to apply Deadly Poison to affected targets, causing 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>When fully maintained, spreads any of your Poison effects on your primary target to up to 3 foes within 10 ft. Refreshes the duration of your Poison effects on targets that these effects were spread to.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Gatling Gun power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Gatling Gun', '<img src="img/power-icons/munitions/Munitions_GatlingGun.png" />&nbsp;Gatling Gun', 2, 7, pow++, 2, gatlingGun.power);
@@ -7930,7 +8075,18 @@ const twoGunMojo = {
   </div>',
 
   pulpFictionRayGun: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Munitions<br>29 + 20 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Two Gun Mojo power.</li>\
+    <li>Deals 143 Particle Damage every 0.5 sec.</li>\
+    <li>Increases this power\\\'s damage by 5% if you are affected by Molecular Self Assembly or Unified Theory.</li>\
+    <li>When maintaining, has a 10% chance every hit to apply Plasma Burn to your target, causing 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Two Gun Mojo power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Two-Gun Mojo', '<img src="img/power-icons/munitions/Munitions_TwoGunMojo.png" />&nbsp;Two-Gun Mojo', 2, 7, pow++, 3, twoGunMojo.power);
@@ -7974,14 +8130,50 @@ const assaultRifle = {
   </ul>\
   </div>',
 
-  frostIceRifle: 
-  '<div>...</div>',
+  frostIceRifle:
+  '<div class="popup-header">\
+    <div>Munitions<br>33 + 15 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Assault Rifle power.</li>\
+    <li>On tap, deals 215 Cold Damage.</li>\
+    <li>While maintained, deals 131 Cold Damage every 0.5 sec.</li>\
+    <li>Increases this power\\\'s damage by 3.5% for every stack of your Chill effect on the target.</li>\
+    <li>When maintaining, has a 8.3% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec and occasionally traps targets in an Ice Cage. Stacks up to 3 times. This chance is doubled if you are affected by Cold Snap.</li>\
+    <li>When fully maintained, has a 50% chance to Shatter your Ice Structures, dealing 83-360 Cold Damage, based on the rank and type of the structure, to up to 5 foes within 15 ft.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Assault Rifle power.</li>\
+  </ul>',
 
-  qularrToxicRifle: 
-  '<div>...</div>',
+  qularrToxicRifle:
+  '<div class="popup-header">\
+    <div>Munitions<br>30 + 19 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Assault Rifle power.</li>\
+    <li>On tap, deals 215 Toxic Damage.</li>\
+    <li>While maintained, deals 131 Toxic Damage every 0.5 sec.</li>\
+    <li>Increases this power\\\'s damage by 2% for every stack of your Deadly Poison on the target.</li>\
+    <li>When maintaining, has a 15% chance every hit to apply Deadly Poison to your target.</li>\
+    <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec and stacks up to 5 times.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Assault Rifle power.</li>\
+  </ul>',
 
   pulpFictionRifle: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Munitions<br>37 + 17 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>90 feet</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Assault Rifle power.</li>\
+    <li>On tap, deals 215 Particle Damage. While maintained, deals 136 Particle Damage. Increases this power\\\'s damage by 10% if you are affected by Molecular Self Assembly or Unified Theory.</li>\
+    <li>Has a 10% chance every hit to apply Plasma Burn to your target, causing 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Assault Rifle power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Assault Rifle', '<img src="img/power-icons/munitions/Munitions_AssaultRifle.png" />&nbsp;Assault Rifle', 2, 7, pow++, 3, assaultRifle.power);
@@ -8147,7 +8339,7 @@ const powerBolts = {
     <div>Power Armor<br><br>ENERGY BUILDER - RANGED DAMAGE - PLASMA BURN<br><br>CLICK</div>\
   </div>\
   <ul>\
-    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
   </ul>\
   <hr>\
   <div class="popup-header">\
@@ -8989,7 +9181,7 @@ const particleRifle = {
     <div>Gadgeteering<br><br>ENERGY BUILDER - RANGED DAMAGE - PLASMA BURN<br><br>CLICK</div>\
   </div>\
   <ul>\
-    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
   </ul>\
   <hr>\
   <div class="popup-header">\
@@ -9061,7 +9253,7 @@ const energyBlaster = {
     <div>Gadgeteering<br><br>ENERGY BUILDER - RANGED DAMAGE - PLASMA BURN<br><br>MAINTAIN</div>\
   </div>\
   <ul>\
-    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
   </ul>\
   <hr>\
   <div class="popup-header">\
@@ -9196,8 +9388,22 @@ const ricochetThrow = {
   </ul>\
   </div>',
 
-  bladeBomb: 
-  '<div>...</div>'
+  bladeBomb:
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>73 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Ricochet Throw power.</li>\
+  </ul>\
+  AFTER 3 SECONDS HAVE PASSED:<br>\
+  <ul>\
+    <li>Deals 384 Piercing Damage to up to 5 targets within 15 ft.</li>\
+    <li>Stuns your primary target for 1.7 sec and has a 50% chance to apply Frail Armor to affected targets, reducing their resistance to Piercing damage by 18% for 15 sec.</li>\
+    <li>This effect cannot be stacked on the same target.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Ricochet Throw power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ricochet Throw', '<img src="img/power-icons/gadgeteering/Gadgeteering_RicochetThrow.png" />&nbsp;Ricochet Throw', 2, 9, pow++, 0, ricochetThrow.power);
@@ -9960,8 +10166,18 @@ const throwingBlades = {
   </ul>\
   </div>',
 
-  bladeBarrage: 
-  '<div>...</div>'
+  bladeBarrage:
+  '<div class="popup-header">\
+    <div>Gadgeteering<br>52-86 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Throwing Blades power.</li>\
+    <li>Deals 32-68 Piercing Damage to all targets. Deals 59-125 Piercing Damage if only 1 target is affected. Hits 5 times.</li>\
+    <li>Has a 24-53% chance to Snare affected targets, reducing their movement speed by 100% for 6.7 sec.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Throwing Blades power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Throwing Blades', '<img src="img/power-icons/gadgeteering/Gadgeteering_ThrowingBlades.png" />&nbsp;Throwing Blades', 2, 9, pow++, 2, throwingBlades.power);
@@ -10681,7 +10897,7 @@ const laserEdge = {
     <div>Laser Sword<br><br>ENERGY BUILDER - MELEE DAMAGE - PLASMA BURN<br><br>CLICK</div>\
   </div>\
   <ul>\
-    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
   </ul>\
   <hr>\
   <div class="popup-header">\
@@ -10736,7 +10952,7 @@ const lightspeedStrike = {
   </div>\
   <ul>\
     <li>If you are affected by Unity, your chance to apply Plasma Burn on each hit is doubled.</li>\
-    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
   </ul>\
   <hr>\
   <div class="popup-header">\
@@ -11276,7 +11492,7 @@ const particleWave = {
     <li>Deals 183 Particle Damage.</li>\
     <li>Knocks targets towards you.</li>\
     <li>Applies a stack of Plasma Burn to targets not already affected by it.</li>\
-    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
   </ul>',
 
   illuminate:
@@ -12370,8 +12586,43 @@ const bladeTempest = {
   </ul>\
   </div>',
 
-  burningBlades: 
-  '<div>...</div>'
+  burningBlades:
+  '<div class="popup-header">\
+    <div>Dual Blades<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Clinging Flames deals 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Engulfing Flames reduces Fire resistance by 8% for 15 sec. This effect can stack up to 3 times.</li>\
+    <li>This device has different values if you own the Blade Tempest power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Blade Tempest power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>23 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 200 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 101 Fire Damage.</li>\
+    <li>Has a 10% chance to apply Clinging Flames and a 10% chance to apply Engulfing Flames.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>20 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 200 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 116 Fire Damage.</li>\
+    <li>Has a 10% chance to apply Clinging Flames and a 10% chance to apply Engulfing Flames.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>18 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 200 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 229 Fire Damage.</li>\
+    <li>Has a 50% chance to apply Clinging Flames and a 50% chance to apply Engulfing Flames.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Blade Tempest', '<img src="img/power-icons/dual-blades/DualBlades_BladeTempest.png" />&nbsp;Blade Tempest', 3, 11, pow++, 0, bladeTempest.power);
@@ -12695,7 +12946,17 @@ const eyeOfTheStorm = {
   </div>',
 
   hauntedBlades: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Dual Blades<br>21 + 12 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Eye Of The Storm power.</li>\
+    <li>Deals 127 Dimensional Damage every 0.5 sec and has a 15% chance every hit to Fear affected targets, reducing their damage by 10% for 12 sec.</li>\
+    <li>Heals you for +42 Health Points for every target hit that is affected by Fear. This counts as a Life Drain effect.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Eye Of The Storm power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Eye of the Storm', '<img src="img/power-icons/dual-blades/DualBlades_EyeOfTheStorm.png" />&nbsp;Eye of the Storm', 3, 11, pow++, 2, eyeOfTheStorm.power);
@@ -12780,8 +13041,17 @@ const swordCyclone = {
   </ul>\
   </div>',
 
-  heatVortex: 
-  '<div>...</div>',
+  heatVortex:
+  '<div class="popup-header">\
+    <div>Dual Blades<br>36 + 19 Energy every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Sword Cyclone power.</li>\
+    <li>Deals 147 Fire Damage every 0.5 sec and has a 15% chance every hit to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Sword Cyclone power.</li>\
+  </ul>',
 
   ultimateSwordCyclone: 
   '<div>...</div>'
@@ -12993,8 +13263,46 @@ const vipersFangs = {
   </ul>\
   </div>',
 
-  shockingStrikes: 
-  '<div>...</div>'
+  shockingStrikes:
+  '<div class="popup-header">\
+    <div>Fighting Claws<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>If this power or an Arc from this power hits a target affected by Negative Ions, the Arc can chain to 1 additional target.</li>\
+    <li>This device has different values if you own the Viper\\\'s Fangs power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Viper\\\'s Fangs power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>30 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 79 Electrical Damage.</li>\
+    <li>Has a 15% chance to apply Negative Ions to affected targets for 20 sec.</li>\
+    <li>Has a 15% chance to Arc to a target within 15 feet, dealing 79 Electrical Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>27 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 91 Electrical Damage.</li>\
+    <li>Has a 15% chance to apply Negative Ions to affected targets for 20 sec.</li>\
+    <li>Has a 15% chance to Arc to a target within 15 feet, dealing 91 Electrical Damage.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>24 Energy cost<br>0.7 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 220 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 186 Electrical Damage.</li>\
+    <li>Has a 50% chance to apply Negative Ions to affected targets for 20 sec.</li>\
+    <li>Has a 50% chance to Arc to a target within 15 feet, dealing 186 Electrical Damage.</li>\
+    <li>Has a 50% chance to apply Superconductor to your primary target, reducing their resistance to Electrical damage by 18% for 15 sec.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Viper\'s Fangs', '<img src="img/power-icons/fighting-claws/FightingClaws_VipersFangs.png" />&nbsp;Viper\'s Fangs', 3, 12, pow++, 0, vipersFangs.power);
@@ -13366,8 +13674,19 @@ const dragonsClaws = {
   </ul>\
   </div>',
 
-  thunderingClaws: 
-  '<div>...</div>'
+  thunderingClaws:
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>55-82 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Dragon\\\'s Claws power.</li>\
+    <li>Deals 305-650 Electrical Damage to target, and deals an additional 5% damage for every one of your High Voltage stacks.</li>\
+    <li>When fully charged against a target affected by Negative Ions, refreshes the duration and has a 24% chance to apply Negative Ions to up to 5 other targets within 25 ft.</li>\
+    <li>Applies High Voltage to you for 12 sec for every one of your Negative Ions on up to 5 targets within 25 ft. Stacks up to 5 times.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Dragon\\\'s Claws power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Dragon\'s Claws', '<img src="img/power-icons/fighting-claws/FightingClaws_DragonsClaws.png" />&nbsp;Dragon\'s Claws', 3, 12, pow++, 2, dragonsClaws.power);
@@ -13599,8 +13918,18 @@ const tigersBite = {
   </ul>\
   </div>',
 
-  boltingFervor: 
-  '<div>...</div>'
+  boltingFervor:
+  '<div class="popup-header">\
+    <div>Fighting Claws<br>62-93 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Tiger\\\'s Bite power.</li>\
+    <li>Deals 291-620 Electrical Damage and has a 55-100% chance to Stun your target for 1.7 sec.</li>\
+    <li>When fully charged against a target affected by your Negative Ions, deals an additional 311 Electrical Damage and Arcs to up to 5 targets within 15 ft that are affected by your Negative Ions, dealing 311 Electrical Damage to them. Completes a Circuit.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Tiger\\\'s Bite power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Tiger\'s Bite', '<img src="img/power-icons/fighting-claws/FightingClaws_TigersBite.png" />&nbsp;Tiger\'s Bite', 3, 12, pow++, 3, tigersBite.power);
@@ -14441,8 +14770,19 @@ const reapersEmbrace = {
   </ul>\
   </div>',
 
-  electricVengeance: 
-  '<div>...</div>'
+  electricVengeance:
+  '<div class="popup-header">\
+    <div>Single Blade<br>29-84 Energy cost<br>0.67 sec charge time<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet<br>0.5 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Reaper\\\'s Embrace power.</li>\
+    <li>Deals 287-513 Electrical Damage to your target.</li>\
+    <li>When fully charged, deals 233 Electrical Damage to up to 5 targets within 15 ft. Deals an additional 233 Electrical Damage to all targets if your target is affected by Negative Ions. Completes a Circuit.</li>\
+    <li>If your primary target is not affected by Negative Ions, applies Electrical Body to you for 10 sec, which causes your direct damage attacks to have a 20% chance to apply Negative Ions for 20 sec. This chance is increased to 30% if you own the Ionic Reverberation power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Reaper\\\'s Embrace power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Reaper\'s Embrace', '<img src="img/power-icons/single-blade/SingleBlade_ReapersEmbrace.png" />&nbsp;Reaper\'s Embrace', 3, 13, pow++, 3, reapersEmbrace.power);
@@ -14483,8 +14823,19 @@ const relentlessPursuit = {
   </ul>\
   </div>',
 
-  powerCycle: 
-  '<div>...</div>'
+  powerCycle:
+  '<div class="popup-header">\
+    <div>Single Blade<br>41 + 26 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>25 foot lunge</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Relentless Pursuit power.</li>\
+    <li>Lunges at the target and deals 218 Particle Damage every 0.5 sec. This power will continue to deal damage if the target stays within a 10 ft range.</li>\
+    <li>While maintaining this power, Snares the target, reducing their movement speed by 100% for 4.7 sec. This effect will only occur if you own the Relentless Pursuit power.</li>\
+    <li>Increases this power\\\'s base damage by 10% if you are affected by Download.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Relentless Pursuit power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Relentless Pursuit', '<img src="img/power-icons/single-blade/SingleBlade_RelentlessPursuit.png" />&nbsp;Relentless Pursuit', 3, 13, pow++, 3, relentlessPursuit.power);
@@ -15863,7 +16214,42 @@ const egoWeaponry = {
   </div>',
 
   toxicBlades: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Telekinesis<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Deadly Poison deals 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>This device has different values if you own the Ego Weaponry power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Ego Weaponry power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>22 Energy cost<br>0.35 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 94 Toxic Damage.</li>\
+    <li>Has a 25% chance to apply Deadly Poison to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>20 Energy cost<br>0.4 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 180 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 123 Toxic Damage.</li>\
+    <li>Has a 45% chance to apply Deadly Poison to your target.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>18 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 150 Toxic Damage twice.</li>\
+    <li>Has a 70% chance to apply Deadly Poison to your target.</li>\
+    <li>Increases the duration of your Deadly Poison by 8 sec.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Weaponry', '<img src="img/power-icons/telekinesis/Telekinesis_EgoWeaponry.png" />&nbsp;Ego Weaponry', 4, 15, pow++, 0, egoWeaponry.power);
@@ -16350,8 +16736,19 @@ const egoBladeBreach = {
   </ul>\
   </div>',
 
-  venomShock: 
-  '<div>...</div>'
+  venomShock:
+  '<div class="popup-header">\
+    <div>Telekinesis<br>48-68 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Ego Blade Breach power.</li>\
+    <li>Deals 237-511 Toxic Damage to your target.</li>\
+    <li>On full charge, applies Debilitating Poison, reducing resistance to Toxic damage by 18% for 15 sec.</li>\
+    <li>When partially charged, increases the duration of your Debilitating Poison by 7.5 sec.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Ego Blade Breach power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Breach', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeBreach.png" />&nbsp;Ego Blade Breach', 4, 15, pow++, 2, egoBladeBreach.power);
@@ -16660,8 +17057,18 @@ const egoBladeAnnihilation = {
   </ul>\
   </div>',
 
-  blightTouch: 
-  '<div>...</div>'
+  blightTouch:
+  '<div class="popup-header">\
+    <div>Telekinesis<br>56-83 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Ego Blade Annihilation power.</li>\
+    <li>Deals 343-819 Toxic Damage and expires all Deadly Poison on the target, dealing an additional 230 Toxic Damage for each effect.</li>\
+    <li>If this power is fully charged and your target is affected by Debilitating Poison, after 2 sec, it applies Viral to the target. For the next 10 sec, every 2 sec, there\\\'s a 25% chance for your target to be affected by Deadly Poison. When this effect expires, it has an additional 50% chance to apply Deadly Poison.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Ego Blade Annihilation power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Ego Blade Annihilation', '<img src="img/power-icons/telekinesis/Telekinesis_EgoBladeAnnihilation.png" />&nbsp;Ego Blade Annihilation', 4, 15, pow++, 3, egoBladeAnnihilation.power);
@@ -16731,8 +17138,18 @@ const telekineticLance = {
     <li>Ego Infusion grants you a stack of Ego Leech every 2 seconds.</li>\
   </ul>',
 
-  blightTouch: 
-  '<div>...</div>'
+  blightTouch:
+  '<div class="popup-header">\
+    <div>Telekinesis<br>56-83 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Telekinetic Lance power.</li>\
+    <li>Deals 245-585 Toxic Damage and expires all Deadly Poison on the target, dealing an additional 165 Toxic Damage for each effect.</li>\
+    <li>If this power is fully charged and your target is affected by Debilitating Poison, after 2 sec, it applies Viral to the target. For the next 10 sec, every 2 sec, there\\\'s a 25% chance for your target to be affected by Deadly Poison. When this effect expires, it has an additional 50% chance to apply Deadly Poison.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Telekinetic Lance power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Telekinetic Lance', '<img src="img/power-icons/telekinesis/Telekinesis_TelekineticLance.png" />&nbsp;Telekinetic Lance', 4, 15, pow++, 3, telekineticLance.power);
@@ -18059,11 +18476,79 @@ const cleave = {
   </ul>\
   </div>',
 
-  brilliantCleave: 
-  '<div>...</div>',
+  brilliantCleave:
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>The heal from each hit is considered to be a Life Drain.</li>\
+    <li>This device has different values if you own the Cleave power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Cleave power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>32 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 60 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 179 Dimensional Damage to targets and heals you for 137 Health.</li>\
+    <li>Heals up to 5 allies within 15ft for 68 Health. Heals 137 Health if your primary target is Illuminated.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>28 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 90 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 206 Dimensional Damage to targets and heals you for 137 Health.</li>\
+    <li>Heals up to 5 allies within 15ft for 68 Health. Heals 137 Health if your primary target is Illuminated.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>25 Energy cost<br>1.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 360 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 541 Dimensional Damage to targets and heals you for 308 Health.</li>\
+    <li>Heals up to 5 allies within 15ft for 154 Health. Heals 308 Health if your primary target is Illuminated.</li>\
+    <li>If you are affected by Illumination, increases the chance for this power to critically hit by 14% for 5 sec.</li>\
+  </ul>',
 
-  callousCleaver: 
-  '<div>...</div>'
+  callousCleaver:
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Chill reduces your target\\\'s movement speed by 42% for 16 sec and occasionally traps them in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>This device has different values if you own the Cleave power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Cleave power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>28 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 360 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 210 Cold Damage and has a 15% chance to apply Chill.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>25 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 360 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 242 Cold Damage and has a 15% chance to apply Chill.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>22 Energy cost<br>1 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 50 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 342 Cold Damage and has a 50% chance to apply Chill.</li>\
+    <li>Increases the duration of your Chill effects by 11 sec. This cannot exceed the original duration.</li>\
+    <li>Has a 50% chance to apply Hard Frost to your primary target, reducing their resistance to Cold damage by 18% for 15 sec.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Cleave', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Cleave.png" />&nbsp;Cleave', 5, 17, pow++, 0, cleave.power);
@@ -18395,8 +18880,19 @@ const skullcrusher = {
   </ul>\
   </div>',
 
-  iceBreaker: 
-  '<div>...</div>'
+  iceBreaker:
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>84-97 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 10 foot Sphere</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Skullcrusher power.</li>\
+    <li>Deals 158-338 Cold Damage and Knocks Down affected targets.</li>\
+    <li>Deals an additional 151 Cold Damage for each of your Chill stacks on a target, and an additional 30% total damage if you are affected by Cold Snap. Consumes any of your Chill stacks on affected targets.</li>\
+    <li>When fully charged, detonates any of your Ice Structures, dealing 83-361 Cold Damage, based on the rank and type of the structure, to up to 5 foes within 15 ft.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Skullcrusher power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Skullcrusher', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skullcrusher.png" />&nbsp;Skullcrusher', 5, 17, pow++, 2, skullcrusher.power);
@@ -18579,8 +19075,19 @@ const annihilate = {
   </ul>\
   </div>',
 
-  hellrend: 
-  '<div>...</div>'
+  hellrend:
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>84-102 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 320 degree Cone</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Annihilate power.</li>\
+    <li>Deals 212-455 Fire Damage and 212-455 Crushing Damage. Deals an additional 30% damage if your target is immune to Knock effects.</li>\
+    <li>Knocks Back affected targets 126-151 ft.</li>\
+    <li>Has a 25% chance to apply Clinging Flames to affected targets, dealing 92 Fire Damage every 2 sec for 12 sec. This chance is increased to 50% chance if the power is fully Charged.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Annihilate power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Annihilate', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Annihilate.png" />&nbsp;Annihilate', 5, 17, pow++, 3, annihilate.power);
@@ -18650,7 +19157,21 @@ const brimstone = {
   </div>',
 
   bitterStorm: 
-  '<div>...</div>',
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>24 + 19 Energy every 0.5 sec<br>0.5 sec activate time (3 max)</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>3 seconds recharge</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Brimstone power.</li>\
+    <li>Deals 134 Cold Damage every 0.5 sec. If you have maintained this power for at least 1 sec, deals an additional 134 Cold Damage once you stop maintaining.</li>\
+    <li>Has a 25% chance to apply Chill, reducing the target\\\'s movement speed by 42% for 16 sec. Stacks up to 3 times. This chance is increased if you are affected by Cold Snap.</li>\
+    <li>Targets affected by Chill will be trapped in an Ice Cage for up to 10 sec, Rooting them in place while the structure is active. Additionally, targets affected by your Ice Cage also take 48 Cold Damage every 1 sec.</li>\
+    <li>When an Ice Cage expires, deals 120 Cold Damage to up to 5 targets within 10 ft.</li>\
+    <li>When fully maintained, has a 50% chance to apply Cold Snap on you for 10 sec.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Brimstone power.</li>\
+    <li>Places Brimstone on cooldown.</li>\
+  </ul>',
 
   ultimateBrimstone: 
   '<div>...</div>'
@@ -18733,8 +19254,19 @@ const skewer = {
   </ul>\
   </div>',
 
-  frozenLance: 
-  '<div>...</div>'
+  frozenLance:
+  '<div class="popup-header">\
+    <div>Heavy Weapon<br>50-73 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>15 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Skewer power.</li>\
+    <li>Deals 307-654 Cold Damage to your target. For each Chill effect on your target, this power\\\'s base damage is increased by 10%.</li>\
+    <li>If you are affected by Cold Snap, deals an additional 92-196 Cold Damage to up to 5 targets within 5 ft of your primary target.</li>\
+    <li>It has a 24-53% chance to apply Chill to affected targets, reducing their movement speed by 42% for 16 sec and occasionally trapping them in an Ice Cage.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Skewer power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Skewer', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Skewer.png" />&nbsp;Skewer', 5, 17, pow++, 3, skewer.power);
@@ -19381,8 +19913,19 @@ const faultLine = {
   </ul>\
   </div>',
 
-  icefall: 
-  '<div>...</div>'
+  icefall:
+  '<div class="popup-header">\
+    <div>Earth<br>63-86 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Fault Line power.</li>\
+    <li>Deals 155-331 Cold Damage to targets.</li>\
+    <li>Has a 24-53% chance to apply Chill to your primary target, and a 12-27% chance against other affected targets, reducing their movement speed by 42% for 16 sec, and occasionally trapping them in an Ice Cage. Stacks up to 3 times.</li>\
+    <li>When fully charged, has a 23% chance to apply Hard Frost to your primary target, reducing their resistance to Cold damage by 18% for 15 sec. This chance is doubled if you are affected by Cold Snap.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Fault Line power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Fault Line', '<img src="img/power-icons/earth/Earth_FaultLine.png" />&nbsp;Fault Line', 5, 18, pow++, 3, faultLine.power);
@@ -20509,8 +21052,25 @@ const haymaker = {
   </ul>\
   </div>',
 
-  havocHammer: 
-  '<div>...</div>'
+  havocHammer:
+  '<div class="popup-header">\
+    <div>Might<br>47-146 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Haymaker power.</li>\
+    <li>Deals 297-1,055 Sonic Damage to target. Increases this power\\\'s base damage by 30% against targets affected by your Deafening.</li>\
+    <li>10% chance to Stun target for 1.7 sec. Chance is guaranteed if the target is affected by Disorient.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Haymaker power.</li>\
+  </ul>\
+  WHEN THIS POWER IS FULLY CHARGED:\
+  <ul>\
+    <li>Deals 151 Sonic Damage to up to 5 targets within 15 ft.</li>\
+    <li>Paralyzes your primary target for 12 sec and Stuns additional targets for 1.7 sec.</li>\
+    <li>Applies Bastion, causing 21% of your direct damage pre-damage mitigation to be applied to you as a Shield for 10 sec. Stacks up to 10 times.</li>\
+    <li>This power cannot be charged again for 12 sec.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Haymaker', '<img src="img/power-icons/might/Might_Haymaker.png" />&nbsp;Haymaker', 5, 19, pow++, 3, haymaker.power);
@@ -20643,7 +21203,7 @@ const nuclearShockwave = {
     <li>Slam the ground, causing 201 Crushing and 201 Particle damage to all foes in a line in front of you.</li>\
     <li>Knocks back targets 35ft within 15ft of you. Knocks Down targets within 50ft. Repels targets further than 50ft.</li>\
     <li>Has a 50% chance to apply Plasma Burn to your targets.</li>\
-    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec.</li>\
+    <li>Plasma Burn deals 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
   </ul>',
 
   nuclearFallout:
@@ -21909,8 +22469,19 @@ const shadowEmbrace = {
   </ul>\
   </div>',
 
-  shadowShred: 
-  '<div>...</div>'
+  shadowShred:
+  '<div class="popup-header">\
+    <div>Darkness<br>52 + 25 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
+    <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 45 degree Cone</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Shadow Embrace power.</li>\
+    <li>Deals 141 Magic Damage every 0.5 sec to foes.</li>\
+    <li>All targets have a 10% chance every hit to be affected by Regret, causing -8% all damage strength for 20 sec to affected targets. Stacks up to 3 times.</li>\
+    <li>All targets have a 5% chance every hit to be affected by Dependency, healing an ally near the foe for +39 Health Points every 0.5 sec for 20 sec. Stacks up to 3 times. This effect only applies if you own the Shadow Embrace power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Shadow Embrace power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shadow Embrace', '<img src="img/power-icons/darkness/Darkness_ShadowEmbrace.png" />&nbsp;Shadow Embrace', 6, 21, pow++, 1, shadowEmbrace.power);
@@ -24465,8 +25036,44 @@ const shred = {
   </ul>\
   </div>',
 
-  scorchingClaw: 
-  '<div>...</div>'
+  scorchingClaw:
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>Clinging Flames deals 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Engulfing Flames reduces Fire resistance by 8% for 15 sec. This effect can stack up to 3 times.</li>\
+    <li>This device has different values if you own the Shred power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Shred power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>23 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 127 Fire Damage.</li>\
+    <li>Has a 15% chance to apply Clinging Flames and a 15% chance to apply Engulfing Flames.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>20 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 30 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 146 Fire Damage.</li>\
+    <li>Has a 15% chance to apply Clinging Flames and a 15% chance to apply Engulfing Flames.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>18 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>10 feet; 240 degree Cone</div>\
+  </div>\
+  <ul>\
+    <li>Deals 229 Fire Damage.</li>\
+    <li>Has a 50% chance to apply Clinging Flames and a 50% chance to apply Engulfing Flames.</li>\
+    <li>Refreshes the duration of your Engulfing Flames.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Shred', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Shred.png" />&nbsp;Shred', 6, 23, pow++, 0, shred.power);
@@ -24683,7 +25290,18 @@ const thrash = {
   </div>',
 
   fireFangs: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>25 + 19 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Thrash power.</li>\
+    <li>Deals 141 Fire Damage every 0.5 sec and heals you for +42 Health Points for each stack of Fiery Escalation on you. This is considered to be a Life Drain effect.</li>\
+    <li>When fully maintained, applies a stack of Fiery Escalation on you for 12 sec and refreshes any existing stacks. Stacks up to 4 times.</li>\
+    <li>Has a 10% chance every hit to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Thrash power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Thrash', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Thrash.png" />&nbsp;Thrash', 6, 23, pow++, 1, thrash.power);
@@ -24762,7 +25380,39 @@ const frenzy = {
   </div>',
 
   flamingFrenzy: 
-  '<div>...</div>'
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br><br>CLICK</div>\
+  </div>\
+  <ul>\
+    <li>For each hit, if a target is affected by Clinging Flames, expires that effect and heals you for +145 Health Points. If you are affected by Thermal Reverberation, no effect will be expired.</li>\
+    <li>This device has different values if you own the Frenzy power.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Frenzy power.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>FIRST ACTIVATION<br>26 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 127 Fire Damage and has a 15% chance to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>SECOND ACTIVATION<br>23 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 146 Fire Damage and has a 15% chance to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>THIRD ACTIVATION<br>21 Energy cost<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
+  </div>\
+  <ul>\
+    <li>Deals 171 Fire Damage and has a 50% chance to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec.</li>\
+    <li>Knocks Down affected targets.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Frenzy', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Frenzy.png" />&nbsp;Frenzy', 6, 23, pow++, 1, frenzy.power);
@@ -25411,8 +26061,18 @@ const massacre = {
   </ul>\
   </div>',
 
-  searingCarnage: 
-  '<div>...</div>'
+  searingCarnage:
+  '<div class="popup-header">\
+    <div>Bestial Supernatural<br>49-73 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>10 feet</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Massacre power.</li>\
+    <li>Deals 317-675 Fire Damage. This power\\\'s base damage is increased by 10% for every stack of your Engulfing Flames on the target.</li>\
+    <li>Has a 7.5% chance to apply Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. When fully charged, there is a 50% chance for this effect to occur.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Massacre power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Massacre', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Massacre.png" />&nbsp;Massacre', 6, 23, pow++, 3, massacre.power);
@@ -25707,8 +26367,23 @@ const infernalBlast = {
   </ul>\
   </div>',
 
-  tendrilsOfAnguish: 
-  '<div>...</div>'
+  tendrilsOfAnguish:
+  '<div class="popup-header">\
+    <div>Infernal Supernatural<br>1.5 sec charge time<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 15 foot Sphere</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Infernal Blast power.</li>\
+    <li>Deals 116-455 Toxic Damage and applies Deadly Poison to all targets.</li>\
+    <li>Deals Particle Damage instead if you own one of the following Energy Builders: Wrist Bolter / Power Bolts / Particle Rifle / Energy Blaster / Laser Edge.</li>\
+    <li>Applies Debilitating Poison to all targets if you own the Infernal Blast power.</li>\
+    <li>This power costs 22% of your Max Health to use. WARNING: This effect can knock you out.</li>\
+    <li>When fully charged, applies Noxious Poison to your primary target. Noxious Poison deals 36 Toxic Damage every 1 sec over 16 sec to nearby foes.</li>\
+    <li>When fully charged, creates a Healing Mist at the main target location for 10 sec, healing all allies within 25 ft for +44 Health Points every 1 sec. This effect will only occur if you own the Infernal Blast power.</li>\
+    <li>Healing Mist will Disorient targets in its area if you own the Infernal Blast power at Rank 3. Disoriented targets have their damage reduced by 10% and their movement speed reduced by 50%.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Infernal Blast power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Infernal Blast', '<img src="img/power-icons/infernal-supernatural/InfernalSupernatural_InfernalBlast.png" />&nbsp;Infernal Blast', 6, 24, pow++, 0, infernalBlast.power);
