@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 11:50:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 11:55:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.14c';
+var version = '1.3.14d';
 var releaseDate = '2026-05-31';
 var buildVersion = 3;
 
@@ -683,7 +683,7 @@ function selectConfirmation(func, name, text) {
         
         var a = document.createElement('a');
         a.setAttribute('id', 'selectConfirmationCancel');
-        a.setAttribute('class', 'button'); 
+        a.setAttribute('class', 'confirm-selection-highlight'); 
         a.setAttribute('onclick', 'hideSection(\'selectionConfirmation\')');
         a.innerHTML = 'X';
         spanRight.appendChild(a);
