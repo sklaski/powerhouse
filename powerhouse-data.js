@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 15:30:00 (woof-wolf)>
+ * Time-stamp: <2026-05-31 19:40:00 (woof-wolf)>
  *============================================================================*/
 
 //==============================================================================
@@ -1848,8 +1848,21 @@ const thunderstrike = {
   </ul>\
   </div>',
 
-  ultimateThunderstrike: 
-  '<div>...</div>'
+  ultimateThunderstrike:
+  '<div>ULTIMATE THUNDERSTRIKE</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Electricity<br>178 Energy cost<br>1.33 sec charge time (1.33 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Thunderstrike power.</li>\
+    <li>Deals 804 Electrical Damage to your primary target and 402 Electrical Damage to secondary targets.</li>\
+    <li>Applies Negative Ions and Knocks Down affected targets.</li>\
+    <li>Creates an Ionic Field on the main target for 12 sec, causing affected targets within 25ft to be -6.9% more vulnerable to Electrical damage. This effect is considered to be an Ultimate Rune.</li>\
+    <li>Places your Thunderstrike power on cooldown when used. Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Thunderstrike', '<img src="img/power-icons/electricity/Electricity_Thunderstrike.png" />&nbsp;Thunderstrike', 1, 1, pow++, 2, thunderstrike.power);
@@ -2079,7 +2092,9 @@ const lightningArc = {
   </div>',
 
   lightningBolter:
-  '<div class="popup-header">\
+  '<div>LIGHTNING BOLTER</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Electricity<br>29 + 20 Energy every 0.5 sec<br>0.5 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -2571,7 +2586,9 @@ const fireball = {
   </div>',
 
   flamingPumpkin:
-  '<div class="popup-header">\
+  '<div>FLAMING PUMPKIN</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Fire<br>50-85 Energy cost<br>1.33 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 0-20 foot Sphere</div>\
   </div><br>\
@@ -2585,8 +2602,20 @@ const fireball = {
     <li>Goes on a 90 sec cooldown if you do not own the Fireball power.</li>\
   </ul>',
 
-  ultimateFireball: 
-  '<div>...</div>'
+  ultimateFireball:
+  '<div>ULTIMATE FIREBALL</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Fire<br>222 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 1,302 Fire Damage to your primary target and 868 Fire Damage to nearby foes.</li>\
+    <li>Applies Clinging Flames to affected targets, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Applies Unstable Accelerant to affected targets, lowering their resistance to your Burning effects by 50% for 12 sec.</li>\
+    <li>Creates a Scorched Earth on the main target for 12 sec, causing affected targets within 25ft to take -6.9% increased Fire damage. This effect is considered to be an Ultimate Rune.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Fireball', '<img src="img/power-icons/fire/Fire_Fireball.png" />&nbsp;Fireball', 1, 2, pow++, 1, fireball.power); 
@@ -3244,8 +3273,23 @@ const flashfire = {
   </ul>\
   </div>',
 
-  cauldronFire: 
-  '<div>...</div>'
+  cauldronFire:
+  '<div>CAULDRON FIRE</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Fire<br>46 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>50 feet<br>15 seconds recharge</div>\
+  </div><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This device has different values if you own the Flashfire power.</li>\
+    <li>Creates a Cauldron Fire on the target for 16 sec, dealing 42 Magic Damage every 1 sec to foes within 15ft.</li>\
+    <li>Foes standing in the Cauldron Fire have a 10% chance every 1 sec to be afflicted by Deadly Poison, causing 20 Toxic Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>Snares affected targets, reducing their movement speed by 100%.</li>\
+    <li>Hitting a foe standing in the Cauldron Fire with your Magic damage attacks has a 30% chance to apply Bane, which can cause one of the following effects: Bleeding, Chilled, Clinging Flames, Deadly Poison, Debilitating Poison, Demolish, Dependency, Disintegrate, Disorient, Fear, Frail Armor, Hexed, Plasma Burn, Stagger, Stress. Can occur once every 1 sec. You must own the Flashfire power for this effect to take place.</li>\
+    <li>Cauldron Fire cannot be stacked with Pyre Patch. Places your Flashfire power on cooldown when used.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Flashfire power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Flashfire', '<img src="img/power-icons/fire/Fire_Flashfire.png" />&nbsp;Flashfire', 1, 2, pow++, 3, flashfire.power); 
@@ -4131,7 +4175,9 @@ const forceCascade = {
   </div>',
 
   denialOfService:
-  '<div class="popup-header">\
+  '<div>DENIAL OF SERVICE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Force<br>232 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
   </div><br>\
@@ -4149,8 +4195,22 @@ const forceCascade = {
     <li>Goes on a 120 sec cooldown if you do not own the Force Cascade power.</li>\
   </ul>',
 
-  ultimateForceCascade: 
-  '<div>...</div>'
+  ultimateForceCascade:
+  '<div>ULTIMATE FORCE CASCADE</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Force<br>209 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 10 foot Cylinder<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Force Cascade power.</li>\
+    <li>Deals 1,145 Crushing Damage and Knocks Back affected targets 41ft. The base damage is increased by 20% if an affected target is immune to Knock effects.</li>\
+    <li>If you are affected by a direct Shield effect, consumes the shield and deals an additional 401 Crushing Damage to up to 10 targets within 25ft of your primary target.</li>\
+    <li>If a target is affected by a Shield effect, deals an additional 343 Crushing Damage to up to 10 targets within 25ft of the shielded target.</li>\
+    <li>Making use of the above effects is considered to be a Field Inversion effect.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Force Cascade', '<img src="img/power-icons/force/Force_ForceCascade.png" />&nbsp;Force Cascade', 1, 3, pow++, 3, forceCascade.power); 
@@ -5523,7 +5583,9 @@ const avalanche = {
   </div>',
 
   cryoclysm: 
-  '<div class="popup-header">\
+  '<div>CRYOCLYSM</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Ice<br>41 + 19 Energy every 0.3 sec<br>0.5 sec activate time (3 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -6134,8 +6196,23 @@ const desperateShot = {
   </ul>\
   </div>',
 
-  stormpiercer: 
-  '<div>...</div>'
+  stormpiercer:
+  '<div>STORMPIERCER</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Archery<br>62 Energy cost<br>1.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet</div>\
+  </div><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This device has different values if you own the Desperate Shot power.</li>\
+    <li>Deals 503 Electrical Damage to your target.</li>\
+    <li>The Critical Severity on this power is increased by 100%.</li>\
+    <li>When fired at an enemy afflicted with the Negative Ions debuff, it consumes the Negative Ions debuff to complete a Circuit, apply the Superconductor debuff and deal 906 Electrical Damage.</li>\
+    <li>When Stormpiercer hits an enemy affected by the Negative Ions debuff, it Arcs to a target within 25 feet, dealing 58 Electrical Damage to that target.</li>\
+    <li>Additionally, Stormpiercer will Stun the target for 2.4 sec if the Player has the Download buff.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Desperate Shot power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Desperate Shot', '<img src="img/power-icons/archery/Archery_DesperateShot.png" />&nbsp;Desperate Shot', 2, 6, pow++, 1, desperateShot.power); 
@@ -7078,7 +7155,9 @@ const shotgunBlast = {
   </div>',
 
   laserShotgun:
-  '<div class="popup-header">\
+  '<div>LASER SHOTGUN</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>32-77 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30-90 degree Cone</div>\
   </div><br>\
@@ -7093,7 +7172,9 @@ const shotgunBlast = {
   </ul>',
 
   virulentShot:
-  '<div class="popup-header">\
+  '<div>VIRULENT SHOT</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>30-50 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 30 degree Cone</div>\
   </div><br>\
@@ -7291,7 +7372,9 @@ const submachinegunBurst = {
   </div>',
 
   umdGhosthunterPhaseRifle:
-  '<div class="popup-header">\
+  '<div>U-MD GHOSTHUNTER PHASE RIFLE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>54 + 31 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 15 foot Sphere</div>\
   </div><br>\
@@ -7490,7 +7573,9 @@ const bulletBallet = {
   </div>',
 
   rayTracer:
-  '<div class="popup-header">\
+  '<div>RAY TRACER</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -7689,7 +7774,9 @@ const gatlingGun = {
   </div>',
 
   qularrToxicBarrage: 
-  '<div class="popup-header">\
+  '<div>QULARR TOXIC BARRAGE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>31 + 24 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 3 foot Cylinder</div>\
   </div><br>\
@@ -8025,7 +8112,9 @@ const sniperRifle = {
   </div>',
 
   pulpFictionRifle: 
-  '<div class="popup-header">\
+  '<div>PULP FICTION RIFLE: SNIPER RIFLE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>54 Energy cost<br>3 sec charge time (3 min)<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>120 feet</div>\
   </div><br>\
@@ -8086,7 +8175,9 @@ const twoGunMojo = {
   </div>',
 
   pulpFictionRayGun: 
-  '<div class="popup-header">\
+  '<div>PULP FICTION RAY GUN</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>29 + 20 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -8142,7 +8233,9 @@ const assaultRifle = {
   </div>',
 
   frostIceRifle:
-  '<div class="popup-header">\
+  '<div>FROST ICE RIFLE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>33 + 15 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -8158,7 +8251,9 @@ const assaultRifle = {
   </ul>',
 
   qularrToxicRifle:
-  '<div class="popup-header">\
+  '<div>QULARR TOXIC RIFLE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>30 + 19 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -8174,7 +8269,9 @@ const assaultRifle = {
   </ul>',
 
   pulpFictionRifle: 
-  '<div class="popup-header">\
+  '<div>PULP FICTION RIFLE: ASSAULT RIFLE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Munitions<br>37 + 17 Energy every 0.5 sec<br>0.67 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>90 feet</div>\
   </div><br>\
@@ -8793,8 +8890,22 @@ const chestBeam = {
   </ul>\
   </div>',
 
-  ultimateChestBeam: 
-  '<div>...</div>'
+  ultimateChestBeam:
+  '<div>ULTIMATE CHEST BEAM</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Power Armor<br>183 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 10 foot Cylinder<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Chest Beam power.</li>\
+    <li>Deals 1,055 Particle Damage and Knocks Back affected targets 41 ft. Base damage is increased by 20% if an affected target is immune to Knock effects.</li>\
+    <li>Damage is further increased up to 20% based on how close a target is to you.</li>\
+    <li>Affected targets have Burn Through applied to them, reducing their resistance to Crushing and Particle damage by 15% for 15 sec.</li>\
+    <li>If you only hit 1 target, applies Overpower in place of Burn Through, reducing the target\\\'s resistance to all damage by 20% for 15 sec.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Chest Beam', '<img src="img/power-icons/power-armor/PowerArmor_ChestBeam.png" />&nbsp;Chest Beam', 2, 8, pow++, 2, chestBeam.power);
@@ -9400,7 +9511,9 @@ const ricochetThrow = {
   </div>',
 
   bladeBomb:
-  '<div class="popup-header">\
+  '<div>BLADE BOMB</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Gadgeteering<br>73 Energy cost<br>0.83 sec charge time (0.83 min)<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>50 feet</div>\
   </div><br>\
@@ -10132,8 +10245,20 @@ const sonicBoomGenerator = {
   </ul>\
   </div>',
 
-  ultimateSonicBoomGenerator: 
-  '<div>...</div>'
+  ultimateSonicBoomGenerator:
+  '<div>ULTIMATE SONIC BOOM GENERATOR</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Gadgeteering<br>208 Energy cost<br>1.67 sec charge time (1.67 min)<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>100 feet; 25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 783 Sonic Damage and Stuns targets for 1.7 sec.</li>\
+    <li>Applies Deafening to affected targets, causing -18% resistance to Sonic Damage for 15 sec.</li>\
+    <li>Creates a Sonic Distortion on the main target for 12 sec, causing affected targets within 25ft to be -6.9% more vulnerable to Sonic damage powers and Gadgeteering damaging powers. This effect is considered to be an Ultimate Rune.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sonic Boom Generator', '<img src="img/power-icons/gadgeteering/Gadgeteering_SonicBoomGenerator.png" />&nbsp;Sonic Boom Generator', 2, 9, pow++, 2, sonicBoomGenerator.power);
@@ -10178,7 +10303,9 @@ const throwingBlades = {
   </div>',
 
   bladeBarrage:
-  '<div class="popup-header">\
+  '<div>BLADE BARRAGE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Gadgeteering<br>52-86 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
   </div><br>\
@@ -10696,8 +10823,24 @@ const orbitalCannon = {
   </ul>\
   </div>',
 
-  ultimateOrbitalCannon: 
-  '<div>...</div>'
+  ultimateOrbitalCannon:
+  '<div>ULTIMATE ORBITAL CANNON</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Gadgeteering<br>200 Energy cost<br>2.33 sec charge time (2.33 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>100 feet<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Orbital Cannon power.</li>\
+    <li>After 4.5 sec, the Orbital Cannon deals 1,145 Particle Damage and Knocks Down foes within 20ft.</li>\
+    <li>After 4.5 sec, creates an Ultimate Anvil of Dawn at your primary target for 10 sec, causing 60 Particle Damage every 1 sec for 10 sec to foes within 15ft.</li>\
+    <li>Applies Plasma Burn to affected targets every hit, causing 24 Particle Damage every 1 sec for 16 sec. Stacks up to 5 times.</li>\
+    <li>After 4.5 sec, creates a Radiation Field at your primary target for 12 sec. Every 1 sec, foes within 20ft have a 20% chance for every stack of Plasma Burn on them to be Stunned for 0.83 sec.</li>\
+    <li>Additionally, foes caught in the field have a 20% chance for every stack of Plasma Burn on them to be affected by Trauma, causing their healing to be 36% less effective for 6 sec.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+    <li>Places your Orbital Cannon power on cooldown when used.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Orbital Cannon', '<img src="img/power-icons/gadgeteering/Gadgeteering_OrbitalCannon.png" />&nbsp;Orbital Cannon', 2, 9, pow++, 3, orbitalCannon.power);
@@ -11476,8 +11619,21 @@ const particleSmash = {
   </ul>\
   </div>',
 
-  ultimateParticleSmash: 
-  '<div>...</div>'
+  ultimateParticleSmash:
+  '<div>ULTIMATE PARTICLE SMASH</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Laser Sword<br>144 Energy cost<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe<br>25 feet<br>60 seconds recharge</div>\
+  </div><br>\
+  CLICK<br>\
+  <ul>\
+    <li>Deals 302 Particle damage.</li>\
+    <li>If your target is affected by your Plasma Burn, consumes all stacks and applies Disintegrate and Particle Bomb to targets within 25ft.</li>\
+    <li>Disintegrate reduces resistance to Particle damage by 18% for 15 sec.</li>\
+    <li>Particle Bomb deals 106-34 Particle damage (based on number of targets hit) to up to 10 targets within 15ft of the affected target for each Plasma Burn stack consumed.</li>\
+    <li>Places your Particle Smash power on cooldown when used. Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Particle Smash', '<img src="img/power-icons/laser-sword/LaserSword_ParticleSmash.png" />&nbsp;Particle Smash', 2, 10, pow++, 2, particleSmash.power);
@@ -12598,7 +12754,9 @@ const bladeTempest = {
   </div>',
 
   burningBlades:
-  '<div class="popup-header">\
+  '<div>BURNING BLADES</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Dual Blades<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -12957,7 +13115,9 @@ const eyeOfTheStorm = {
   </div>',
 
   hauntedBlades: 
-  '<div class="popup-header">\
+  '<div>HAUNTED BLADES</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Dual Blades<br>21 + 12 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -13053,7 +13213,9 @@ const swordCyclone = {
   </div>',
 
   heatVortex:
-  '<div class="popup-header">\
+  '<div>HEAT VORTEX</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Dual Blades<br>36 + 19 Energy every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>10 foot Sphere</div>\
   </div><br>\
@@ -13065,7 +13227,20 @@ const swordCyclone = {
   </ul>',
 
   ultimateSwordCyclone: 
-  '<div>...</div>'
+  '<div>ULTIMATE SWORD CYCLONE</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Dual Blades<br>49 + 33 Energy every 0.5 sec<br>0.5 sec activate time (6 max)</div>\
+    <div style="text-align:right;">Affects foe (10 max)<br>20 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  MAINTAIN<br>\
+  <ul>\
+    <li>This device has different values if you own the Sword Cyclone power.</li>\
+    <li>Deals 244-348 Slashing Damage (based on number of targets) every 0.5 sec.</li>\
+    <li>Targets within 30 ft are Knocked towards you.</li>\
+    <li>While maintaining this power, increases your chance to Dodge by 20% and increases your Avoidance by 50%.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Sword Cyclone', '<img src="img/power-icons/dual-blades/DualBlades_SwordCyclone.png" />&nbsp;Sword Cyclone', 3, 11, pow++, 3, swordCyclone.power);
@@ -13275,7 +13450,9 @@ const vipersFangs = {
   </div>',
 
   shockingStrikes:
-  '<div class="popup-header">\
+  '<div>SHOCKING STRIKES</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Fighting Claws<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -13686,7 +13863,9 @@ const dragonsClaws = {
   </div>',
 
   thunderingClaws:
-  '<div class="popup-header">\
+  '<div>THUNDERING CLAWS</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Fighting Claws<br>55-82 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -13930,7 +14109,9 @@ const tigersBite = {
   </div>',
 
   boltingFervor:
-  '<div class="popup-header">\
+  '<div>BOLTING FERVOR</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Fighting Claws<br>62-93 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -14782,7 +14963,9 @@ const reapersEmbrace = {
   </div>',
 
   electricVengeance:
-  '<div class="popup-header">\
+  '<div>ELECTRIC VENGEANCE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Single Blade<br>29-84 Energy cost<br>0.67 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet<br>0.5 seconds recharge</div>\
   </div><br>\
@@ -14835,7 +15018,9 @@ const relentlessPursuit = {
   </div>',
 
   powerCycle:
-  '<div class="popup-header">\
+  '<div>POWER CYCLE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Single Blade<br>41 + 26 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>25 foot lunge</div>\
   </div><br>\
@@ -15778,8 +15963,21 @@ const openPalmStrike = {
   </ul>\
   </div>',
 
-  ultimateOpenPalmStrike: 
-  '<div>...</div>'
+  ultimateOpenPalmStrike:
+  '<div>ULTIMATE OPEN PALM STRIKE</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Unarmed<br>107 Energy cost<br>1.5 sec charge time (1.5 min)<br>0.5 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 10 foot Cylinder<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 579 Crushing Damage and 579 Dimensional Damage. Deals an additional 20% damage if your target is immune to Knock effects.</li>\
+    <li>Knocks Back affected targets 8.7-26ft.</li>\
+    <li>Applies Chi Flame to affected targets, dealing 41 Dimensional Damage every 2 sec for 12 sec, reducing resistance against your Chi Power focused attacks by 50%.</li>\
+    <li>Applies Overpower to affected targets, reducing resistance to all damage types by 20% for 15 sec.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Open Palm Strike', '<img src="img/power-icons/unarmed/Unarmed_OpenPalmStrike.png" />&nbsp;Open Palm Strike', 3, 14, pow++, 3, openPalmStrike.power);
@@ -16225,7 +16423,9 @@ const egoWeaponry = {
   </div>',
 
   toxicBlades: 
-  '<div class="popup-header">\
+  '<div>TOXIC BLADES</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Telekinesis<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -16748,7 +16948,9 @@ const egoBladeBreach = {
   </div>',
 
   venomShock:
-  '<div class="popup-header">\
+  '<div>VENOM SHOCK</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Telekinesis<br>48-68 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -17069,7 +17271,9 @@ const egoBladeAnnihilation = {
   </div>',
 
   blightTouch:
-  '<div class="popup-header">\
+  '<div>BLIGHT TOUCH: EGO BLADE ANNIHILATION</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Telekinesis<br>56-83 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -17150,7 +17354,9 @@ const telekineticLance = {
   </ul>',
 
   blightTouch:
-  '<div class="popup-header">\
+  '<div>BLIGHT TOUCH: TELEKINETIC LANCE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Telekinesis<br>56-83 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>100 feet</div>\
   </div><br>\
@@ -18488,7 +18694,9 @@ const cleave = {
   </div>',
 
   brilliantCleave:
-  '<div class="popup-header">\
+  '<div>BRILLIANT CLEAVE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Heavy Weapon<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -18526,7 +18734,9 @@ const cleave = {
   </ul>',
 
   callousCleaver:
-  '<div class="popup-header">\
+  '<div>CALLOUS CLEAVER</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Heavy Weapon<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -18660,8 +18870,22 @@ const eruption = {
   </ul>\
   </div>',
 
-  glacialRend: 
-  '<div>...</div>'
+  glacialRend:
+  '<div>GLACIAL REND</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Heavy Weapon<br>104 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 320 degree Cone<br>15 seconds recharge</div>\
+  </div><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This device has different values if you own the Eruption power.</li>\
+    <li>Deals 280 Cold Damage and Stuns affected targets for 1.7 sec.</li>\
+    <li>Creates an Ice Column at your primary target. After 10 sec, the Ice Column explodes, dealing 420 Cold Damage to up to 5 targets within 10ft.</li>\
+    <li>Has a 10% chance every 1 sec to apply Chill to targets within 20ft, reducing their movement speed by 50% for 16 sec and occasionally trapping them in an Ice Cage. Stacks up to 3 times. Additionally, if a target is affected by your Hard Frost, has a 10% chance to refresh the duration.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Eruption power.</li>\
+    <li>Places Eruption and Ice Burst on cooldown.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Eruption', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Eruption.png" />&nbsp;Eruption', 5, 17, pow++, 1, eruption.power);
@@ -18892,7 +19116,9 @@ const skullcrusher = {
   </div>',
 
   iceBreaker:
-  '<div class="popup-header">\
+  '<div>ICE BREAKER</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Heavy Weapon<br>84-97 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 10 foot Sphere</div>\
   </div><br>\
@@ -19087,7 +19313,9 @@ const annihilate = {
   </div>',
 
   hellrend:
-  '<div class="popup-header">\
+  '<div>HELLREND</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Heavy Weapon<br>84-102 Energy cost<br>1.17 sec charge time<br>0.83 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>15 feet; 320 degree Cone</div>\
   </div><br>\
@@ -19168,7 +19396,9 @@ const brimstone = {
   </div>',
 
   bitterStorm: 
-  '<div class="popup-header">\
+  '<div>BITTER STORM</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Heavy Weapon<br>24 + 19 Energy every 0.5 sec<br>0.5 sec activate time (3 max)</div>\
     <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>3 seconds recharge</div>\
   </div><br>\
@@ -19184,8 +19414,22 @@ const brimstone = {
     <li>Places Brimstone on cooldown.</li>\
   </ul>',
 
-  ultimateBrimstone: 
-  '<div>...</div>'
+  ultimateBrimstone:
+  '<div>ULTIMATE BRIMSTONE</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Heavy Weapon<br>145 Energy cost<br>1.17 sec charge time (1.17 min)<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (10 max)<br>25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 424 Crushing and Fire damage, and affected targets are Knocked Up 17-34ft. Base damage is increased by 30% if a target is immune to Knock effects.</li>\
+    <li>Applies Aegis for 15 sec, granting +35% resistance to all damage to you and 24% resistance to up to 10 allies. This amount is doubled on targets affected by Reckless.</li>\
+    <li>Applies Negative Ions to affected targets and creates a Pyre Patch for 16 sec, dealing 41 Fire Damage every 1 sec to foes within 25ft. Foes standing in the Pyre Patch have a 10% chance to be affected by Clinging Flames, dealing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Foes standing in the Pyre Patch have a 50% chance to be Disoriented for 12 sec, reducing their damage by 10% and their movement speed by 50%.</li>\
+    <li>Foes standing in the Pyre Patch have a 15% chance to be Stunned for 1.7 sec. This chance is guaranteed if the target is affected by Clinging Flames.</li>\
+    <li>Places your Brimstone power on cooldown when used. Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Brimstone', '<img src="img/power-icons/heavy-weapon/HeavyWeapon_Brimstone.png" />&nbsp;Brimstone', 5, 17, pow++, 3, brimstone.power);
@@ -19266,7 +19510,9 @@ const skewer = {
   </div>',
 
   frozenLance:
-  '<div class="popup-header">\
+  '<div>FROZEN LANCE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Heavy Weapon<br>50-73 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>15 feet</div>\
   </div><br>\
@@ -19795,7 +20041,19 @@ const caveIn = {
   </div>',
 
   ultimateCaveIn: 
-  '<div>...</div>'
+  '<div>ULTIMATE CAVE IN</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Earth<br>196 Energy cost<br>1.83 sec charge time (1.83 min)<br>0.67 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Deals 1,013 Crushing Damage to your primary target and 675 Crushing Damage to nearby foes. If an affected target is immune to Hold effects, deals an additional 30% base damage.</li>\
+    <li>Applies 3 stacks of Stagger to affected targets, reducing all damage resistance by 2% and movement speed by 25% for 15 sec.</li>\
+    <li>Paralyzes affected targets for 12 sec. If the target is immune to Holds, instead Knocks them down.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Cave In', '<img src="img/power-icons/earth/Earth_CaveIn.png" />&nbsp;Cave In', 5, 18, pow++, 2, caveIn.power);
@@ -19925,7 +20183,9 @@ const faultLine = {
   </div>',
 
   icefall:
-  '<div class="popup-header">\
+  '<div>ICEFALL</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Earth<br>63-86 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>50 feet; 3 foot Cylinder</div>\
   </div><br>\
@@ -21064,7 +21324,9 @@ const haymaker = {
   </div>',
 
   havocHammer:
-  '<div class="popup-header">\
+  '<div>HAVOC HAMMER</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Might<br>47-146 Energy cost<br>1.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -21135,8 +21397,30 @@ const havocStomp = {
   </ul>\
   </div>',
 
-  ultimateHavocStomp: 
-  '<div>...</div>'
+  ultimateHavocStomp:
+  '<div>ULTIMATE HAVOC STOMP</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Might<br>175 Energy cost<br>1 sec charge time (1 min)<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (10 max)<br>25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the havoc Stomp power.</li>\
+    <li>Deals 964 Crushing Damage and Knocks Up affected targets 8.4-25ft. Base damage is increased by 30% if an affected target is immune to Knock effects.</li>\
+    <li>Creates a Stomping Grounds at your location for 12 sec, causing affected targets within 25ft to be -6.9% more vulnerable to damage from abilities in the Brick Framework. This effect is considered to be an Ultimate Rune.</li>\
+    <li>Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>\
+  <hr>\
+  <div class="popup-header">\
+    <div>Might<br>182 Energy cost<br>1 sec charge time (1 min)<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (10 max)<br>200 foot lunge; 25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>Activated when this power is used from 25ft or more above ground.</li>\
+    <li>Lunge directly down from wherever you are. Damage of this power is increased to 1,302 Crushing Damage and affected targets are instead Knocked Up 11-34ft.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Havoc Stomp', '<img src="img/power-icons/might/Might_HavocStomp.png" />&nbsp;Havoc Stomp', 5, 19, pow++, 3, havocStomp.power);
@@ -22481,7 +22765,9 @@ const shadowEmbrace = {
   </div>',
 
   shadowShred:
-  '<div class="popup-header">\
+  '<div>SHADOW SHRED</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Darkness<br>52 + 25 Energy every 0.5 sec<br>0.67 sec activate time (5 max)</div>\
     <div style="text-align:right;">Targets foe that is not destructible (5 max)<br>50 feet; 45 degree Cone</div>\
   </div><br>\
@@ -23737,8 +24023,26 @@ const pillarOfPoz = {
   </ul>\
   </div>',
 
-  ultimatePillarOfPoz: 
-  '<div>...</div>'
+  ultimatePillarOfPoz:
+  '<div>ULTIMATE PILLAR OF POZ</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Arcane Sorcery<br>162 Energy cost<br>1.67 sec charge time (1.67 min)<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Targets foe (10 max)<br>50 feet; 25 foot Sphere<br>60 seconds recharge</div>\
+  </div><br>\
+  CHARGE<br>\
+  <ul>\
+    <li>This device has different values if you own the Pillar of Poz power.</li>\
+    <li>Deals 669 Magic Damage and Knocks Down affected targets.</li>\
+    <li>Creates an Enchanted Rune on the main target for 12 sec, causing affected targets within 25ft to be -6.9% more vulnerable to Magic damage. This effect is considered to be an Ultimate Rune.</li>\
+    <li>If you own multiple Circle powers, creates one at your location based on your current role. The circle summoned will inherit any advantages and ranks you have purchased, as well as having an extended 10sec duration when initially summoned.</li>\
+    <li>Circle of Arcane Power if you are in Hybrid Role.</li>\
+    <li>Circle of Ebon Wrath if you are in Ranged or Melee Role.</li>\
+    <li>Circle of Primal Dominion if you are in Tank Role.</li>\
+    <li>Circle of Radiant Glory if you are in Support Role.</li>\
+    <li>If you only own one Circle power, creates it at your location regardless of your role.</li>\
+    <li>Places your Pillar of Poz power on cooldown when used. Activates a shared cooldown of 60 sec on all Ultimate powers.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Pillar of Poz', '<img src="img/power-icons/arcane-sorcery/ArcaneSorcery_PillarOfPoz.png" />&nbsp;Pillar of Poz', 6, 22, pow++, 1, pillarOfPoz.power);
@@ -25048,7 +25352,9 @@ const shred = {
   </div>',
 
   scorchingClaw:
-  '<div class="popup-header">\
+  '<div>SCORCHING CLAW</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Bestial Supernatural<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -25301,7 +25607,9 @@ const thrash = {
   </div>',
 
   fireFangs: 
-  '<div class="popup-header">\
+  '<div>FIRE FANGS</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Bestial Supernatural<br>25 + 19 Energy every 0.5 sec<br>0.5 sec activate time (4 max)</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -25391,7 +25699,9 @@ const frenzy = {
   </div>',
 
   flamingFrenzy: 
-  '<div class="popup-header">\
+  '<div>FLAMING FRENZY</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Bestial Supernatural<br><br>CLICK</div>\
   </div>\
   <ul>\
@@ -26025,8 +26335,22 @@ const howl = {
   </ul>\
   </div>',
 
-  fierySpirit: 
-  '<div>...</div>'
+  fierySpirit:
+  '<div>FIERY SPIRIT</div>\
+  <br>\
+  <div class="popup-header">\
+    <div>Bestial Supernatural<br>69 Energy cost<br>0.83 sec activate time</div>\
+    <div style="text-align:right;">Affects foe (5 max)<br>15 foot Sphere<br>10 seconds recharge</div>\
+  </div><br>\
+  CLICK<br>\
+  <ul>\
+    <li>This device has different values if you own the Howl power.</li>\
+    <li>Deals 233 Fire Damage and applies Unstable Accelerant to affected targets, lowering their resistance to your Burning effects by 50% for 12 sec.</li>\
+    <li>Creates a Pyre Patch at your location for 10 sec, dealing 41 Fire Damage every 1 sec to foes within 15ft.</li>\
+    <li>Foes standing in the Pyre Patch have a 10% chance to be affected by Clinging Flames, causing 92 Fire Damage every 2 sec for 12 sec. Clinging Flames may leap to other foes near the target.</li>\
+    <li>Places your Howl power on cooldown when used.</li>\
+    <li>Goes on a 90 sec cooldown if you do not own the Howl power.</li>\
+  </ul>'
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Howl', '<img src="img/power-icons/bestial-supernatural/BestialSupernatural_Howl.png" />&nbsp;Howl', 6, 23, pow++, 2, howl.power);
@@ -26073,7 +26397,9 @@ const massacre = {
   </div>',
 
   searingCarnage:
-  '<div class="popup-header">\
+  '<div>SEARING CARNAGE</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Bestial Supernatural<br>49-73 Energy cost<br>0.83 sec charge time<br>0.67 sec activate time</div>\
     <div style="text-align:right;">Targets foe<br>10 feet</div>\
   </div><br>\
@@ -26379,7 +26705,9 @@ const infernalBlast = {
   </div>',
 
   tendrilsOfAnguish:
-  '<div class="popup-header">\
+  '<div>TENDRILS OF ANGUISH</div>\
+  <br>\
+  <div class="popup-header">\
     <div>Infernal Supernatural<br>1.5 sec charge time<br>0.5 sec activate time</div>\
     <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 15 foot Sphere</div>\
   </div><br>\
