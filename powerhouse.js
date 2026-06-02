@@ -2458,17 +2458,28 @@ function selectSpecializationUpdate(num) {
     var specializationPointList = specializationTree.getSpecializationList(mask);
     var totalPoints = specializationTree.getPoints(mask);
     var tier1Points = specializationTree.getTierPoints(mask, 1);
+    
     if (num != 4) {
         var selectSpecialization = document.getElementById('selectSpecialization' + num);
-        //selectSpecialization.innerHTML = '<img src="img/blank.png" />&nbsp;' + specializationTree.desc + ' Tree (' + totalPoints + '/10)';
-        selectSpecialization.innerHTML = specializationTree.desc + ' Tree (' + totalPoints + '/10)';
+        // Fix: Null check to prevent the script from crashing
+        if (selectSpecialization) {
+            selectSpecialization.innerHTML = specializationTree.desc + ' Tree (' + totalPoints + '/10)';
+        }
+        
+        // Bonus: Update the actual popup title to reflect the new total points
+        var popupTitle = document.querySelector('.spec-popup-title');
+        if (popupTitle && specializationTree.id != 0) {
+            popupTitle.innerHTML = specializationTree.desc + ' Tree <span class="spec">(' + totalPoints + '/10)</span>';
+        }
     }
+    
     for (let i = 0; i < specializationList.length - 1; i++) {
         var selectSpecializationDescription = document.getElementById('selectSpecializationDescription' + i);
         var selectSpecializationDecrement = document.getElementById('selectSpecializationDecrement' + i);
         var selectSpecializationPoints = document.getElementById('selectSpecializationPoints' + i);
         var selectSpecializationIncrement = document.getElementById('selectSpecializationIncrement' + i);
         var specialization = specializationList[i];
+        
         selectSpecializationPoints.innerHTML = '(' + specializationPointList[i] + '/' + specialization.maxPoints + ')';
         if (totalPoints < 10 || specializationPointList[i] > 0) {
             selectSpecializationDescription.setAttribute('class', 'buttonText');
@@ -2549,7 +2560,7 @@ function selectSpecializationDecrement(num, id) {
 }
 window['selectSpecializationDecrement'] = selectSpecializationDecrement;
 function setSpecialization(num, mask) {
-    if (dataSpecializationTree[num].getPoints(mask) <= 10) {
+    if (phSpecializationTree[num].getPoints(mask) <= 10) {
         phSpecialization[num] = mask;
         setupSpecializations();
     }
