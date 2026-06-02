@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-02 02:30:00 (woof-wolf)>
+ * Time-stamp: <2026-06-02 04:15:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.18';
+var version = '1.3.18b';
 var releaseDate = '2026-06-02';
 var buildVersion = 3;
 
@@ -704,7 +704,7 @@ function selectConfirmation(func, name, text) {
         aConfirm.setAttribute('id', 'selectConfirmationSet');
         aConfirm.setAttribute('class', 'confirm-selection-highlight'); 
         aConfirm.setAttribute('onclick', func + ';hideSection(\'selectionConfirmation\')');
-        aConfirm.innerHTML = 'Confirm Selection';
+        aConfirm.innerHTML = 'Confirm&nbsp;Selection';
         spanLeft.appendChild(aConfirm);
         
         var spanSpace = document.createElement('span');
@@ -715,7 +715,7 @@ function selectConfirmation(func, name, text) {
         aCancel.setAttribute('id', 'selectConfirmationCancel');
         aCancel.setAttribute('class', 'confirm-selection-highlight');
         aCancel.setAttribute('onclick', 'hideSection(\'selectionConfirmation\')');
-        aCancel.innerHTML = 'Cancel Selection';
+        aCancel.innerHTML = 'Cancel&nbsp;Selection';
         spanLeft.appendChild(aCancel);
         
         selectConfirmation.appendChild(spanLeft);

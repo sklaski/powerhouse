@@ -132,16 +132,7 @@ a:hover, a:active {
   font-weight: bold;
   border-radius: 4px;
   padding: 4px 8px;
-  animation: continuous-echo 2.5s ease-out infinite;
-}
-
-@keyframes continuous-echo {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.8);
-  }
-  100% {
-    box-shadow: 0 0 0 12px rgba(0, 188, 212, 0);
-  }
+  line-height: 2;
 }
 
 img {
