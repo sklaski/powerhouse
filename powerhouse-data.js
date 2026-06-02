@@ -5,8 +5,31 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 19:40:00 (woof-wolf)>
+ * Time-stamp: <2026-06-02 02:30:00 (woof-wolf)>
  *============================================================================*/
+
+//==============================================================================
+// Helper Functions
+//==============================================================================
+
+/**
+ * Converts a multi-line HTML string into a clean single-line string.
+ * Removes all carriage returns and newline characters.
+ * Strips whitespace directly between HTML tags.
+ * Escapes single quotes for safe injection into inline JavaScript.
+ * @param {string} tooltipString The text to process.
+ * @returns {string} The cleaned single-line string.
+ */
+const LINE_BREAKS = /[\r\n]+/g;
+const SPACES_BETWEEN_HTML_TAGS = />\s+</g;
+const SINGLE_QUOTES = /'/g;
+
+function cleanTooltipString(tooltipString) {
+    return (tooltipString + '')
+        .replace(LINE_BREAKS, '')
+        .replace(SPACES_BETWEEN_HTML_TAGS, '><')
+        .replace(SINGLE_QUOTES, '&rsquo;');
+}
 
 //==============================================================================
 // Super Stats
@@ -990,7 +1013,7 @@ dataPowerAlias['R3'] = new PowerAlias('R3', 'Rank 3', 'Rank 3', '<div>RANK 3<br>
 /* PowerAdvantage = function(id, name, desc, points, dependency, tip)
 // id = id number of this advantage, ex: 1st advantage, 2nd advantage, 3rd advantage...
 // name = TODO: name of the advantage? idk go look it up
-// desc = TODO: description of the advantage? idk go look how its used
+// desc = its primary difference is when the user uses selection confirmation preference, displays in that tooltip
 // points = number of advantage points required to take this advantage
 // dependency = id number of advantage that is required to take beforehand (null if no requirement)
 // tip = tooltip description of the power: gives info of the power on mouseover
@@ -2118,19 +2141,24 @@ dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(5, dataPower
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(6, 'PVD: Lightning Bolter', 'PVD: Lightning Bolter', 0, null, lightningArc.lightningBolter));
 
 const gigabolt = {
-  power: 
-  '<div class="popup-header">\
-    <div>Electricity<br>54-177 Energy cost<br>2.33 sec charge time<br>0.67 sec activate time</div>\
-    <div style="text-align:right;">Targets foe (5 max)<br>100 feet; 5 foot Cylinder</div>\
-  </div><br>\
-  RANGED AOE DAMAGE - ARC - CIRCUIT<br><br>\
-  CHARGE<br>\
-  <ul>\
-    <li>Deals 212-904 Electrical Damage and has a 34-100% chance to apply Negative Ions to affected targets for 20 sec.</li>\
-    <li>Has a 50% chance to Arc to a target within 25 feet, causing 48 Electrical Damage. Hitting a target affected by Negative Ions will increase the chance to Arc to 75%.</li>\
-    <li>Charging this power will cause you to be affected by an Electric Surge, preventing you from charging this power again for 8 sec.</li>\
-    <li>When fully charged, hitting a target affected by Negative Ions will consume Negative Ions and will cause it to Arc to additional nearby targets.</li>\
-  </ul>',
+  framework: 'Electricity',
+  energyCost: '54-177 Energy cost',
+  chargeTime: '2.33 sec charge time',
+  activationTime: '0.67 sec activate time',
+  targetType: 'Targets foe (5 max)',
+  range: '100 feet; 5 foot Cylinder',
+
+  tags: 'RANGED AOE DAMAGE - ARC - CIRCUIT',
+  powerType: 'CHARGE',
+
+  powerInfo: cleanTooltipString(`
+  <ul>
+    <li>Deals 212-904 Electrical Damage and has a 34-100% chance to apply Negative Ions to affected targets for 20 sec.</li>
+    <li>Has a 50% chance to Arc to a target within 25 feet, causing 48 Electrical Damage. Hitting a target affected by Negative Ions will increase the chance to Arc to 75%.</li>
+    <li>Charging this power will cause you to be affected by an Electric Surge, preventing you from charging this power again for 8 sec.</li>
+    <li>When fully charged, hitting a target affected by Negative Ions will consume Negative Ions and will cause it to Arc to additional nearby targets.</li>
+  </ul>
+  `),
 
   deathArc:
   '<div>\
@@ -2141,7 +2169,19 @@ const gigabolt = {
   </div>'
 };
 
-dataPower[dataPower.length] = new Power(dataPower.length, 'Gigabolt', '<img src="img/power-icons/electricity/Electricity_Gigabolt.png" />&nbsp;Gigabolt', 1, 1, pow++, 3, gigabolt.power);
+const gigaboltTooltip = {
+  power: cleanTooltipString(`
+  <div class="popup-header">
+    <div>${gigabolt.framework}<br>${gigabolt.energyCost}<br>${gigabolt.chargeTime}<br>${gigabolt.activationTime}</div>
+    <div style="text-align:right;">${gigabolt.targetType}<br>${gigabolt.range}</div>
+  </div><br>
+  ${gigabolt.tags}<br><br>
+  ${gigabolt.powerType}<br>
+  ${gigabolt.powerInfo}
+  `)
+}
+
+dataPower[dataPower.length] = new Power(dataPower.length, 'Gigabolt', '<img src="img/power-icons/electricity/Electricity_Gigabolt.png" />&nbsp;Gigabolt', 1, 1, pow++, 3, gigaboltTooltip.power);
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(0, null, null, null, null, null));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(1, dataPowerAlias['R2'].name, dataPowerAlias['R2'].desc, 2, null, dataPowerAlias['R2'].tip));
 dataPower[dataPower.length-1].advantageList.push(new PowerAdvantage(2, dataPowerAlias['R3'].name, dataPowerAlias['R3'].desc, 2, 1, dataPowerAlias['R3'].tip));
@@ -2653,14 +2693,15 @@ const heatWave = {
   </ul>\
   </div>',
 
-  feedTheFlames:
-  '<div>\
-  FEED THE FLAMES<br>\
-  <ul>\
-    <li>While this power is maintained on your target, it will drain the target\\\'s energy and return health to you.</li>\
-    <li>The energy drain portion of this advantage has no effect on targets without an energy bar.</li>\
-  </ul>\
-  </div>'
+  feedTheFlames: cleanTooltipString (`
+  <div>
+  FEED THE FLAMES<br>
+  <ul>
+    <li>While this power is maintained on your target, it will drain the target\'s energy and return health to you.</li>
+    <li>The energy drain portion of this advantage has no effect on targets without an energy bar.</li>
+  </ul>
+  </div>
+  `)
 };
 
 dataPower[dataPower.length] = new Power(dataPower.length, 'Heat Wave', '<img src="img/power-icons/fire/Fire_HeatWave.png" />&nbsp;Heat Wave', 1, 2, pow++, 1, heatWave.power); 

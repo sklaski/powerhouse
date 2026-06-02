@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 19:40:00 (woof-wolf)>
+ * Time-stamp: <2026-06-02 02:30:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.17';
-var releaseDate = '2026-05-31';
+var version = '1.3.18';
+var releaseDate = '2026-06-02';
 var buildVersion = 3;
 
 var siteName = 'PowerHouse';
@@ -22,8 +22,8 @@ var clickableClasses = [];
 clickableClasses[0] = 'selection';
 clickableClasses[1] = 'link';
 
-var analyticsPrefCategory = 'Preference';
-var analyticsSetCategory = 'Set';
+// var analyticsPrefCategory = 'Preference';
+// var analyticsSetCategory = 'Set';
 var analyticsBuildCategory = 'Build';
 
 // cookie variables with default values
@@ -37,9 +37,18 @@ var prefPopupTips = 2;
 var prefConfirmSelections = false;
 var prefAnalytics = false;
 
-// escape quotes
+/* global getDataSuperStat, getDataInnateTalent, getDataTalent, getDataCAMS, getDataTravelPower, getDataPowerSet, getDataFramework, getDataPower, getDataEnergyUnlockPower, getDataArchetypeGroup, getDataArchetype, getDataSpecializationTree, getDataVersionUpdate, dataReplacePower, dataRequireGroupPower, dataRequireGroup */
+
+/**
+ * Escapes quotes, backslashes, and null characters within a value.
+ * Converts the input to a string, prepends a backslash to double quotes,
+ * single quotes, and backslashes, and transforms null characters into the literal '\0'.
+ *
+ * @param {string|number|boolean} str The input value to process.
+ * @returns {string} The safely escaped string.
+ */
 function escapeQuotes(str) {
-    return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+    return (str + '').replace(/[\\"']/g, '\\$&').replaceAll('\u0000', '\\0');
 }
 
 // set and get cookies
@@ -50,9 +59,10 @@ function setCookie(name, value, expireDays) {
     document.cookie = name + '=' + cookieValue;
 }
 window['setCookie'] = setCookie;
+
 function getCookie(name) {
     var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
+    for (let i = 0; i < cookies.length; i++) {
         var x = cookies[i].substr(0, cookies[i].indexOf('='));
         var y = cookies[i].substr(cookies[i].indexOf('=') + 1);
 
@@ -64,23 +74,33 @@ function getCookie(name) {
 }
 window['getCookie'] = getCookie;
 
-// encode number to url code
-// valid number range is 0-61 (invalid numbers default to 0)
+/**
+ * Converts an integer into a specific base-62 alphanumeric character for URL encoding.
+ * Operates exclusively on numerical values from 0 to 61 inclusive.
+ * Throws a string error for numerical values falling outside the permitted boundary.
+ *
+ * @param {number} num The integer to encode.
+ * @returns {string} A single alphanumeric character corresponding to the provided index.
+ * @throws {string} An error message indicating the input exceeds the permitted bounds.
+ */
 function numToUrlCode(num) {
-    var charCode = 0;
-    if (num >= 0 && num <= 9) charCode = num + 48;
-    else if (num >= 10 && num <= 35) charCode = num + 55;
-    else if (num >= 36 && num <= 61) charCode = num + 61;
-    else throw 'numToUrlCode: num is out of valid range: ' + num;
-    return String.fromCharCode(charCode);
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    
+    if (num >= 0 && num <= 61) {
+        return chars[num];
+    }
+    
+    throw new Error('numToUrlCode: num is out of valid range: ' + num);
 }
 window['numToUrlCode'] = numToUrlCode;
+
 // encode number to two digit url code
 // valid number range is 0-3721 (invalid numbers default to 0)
 function numToUrlCode2(num) {
     return numToUrlCode(Math.floor(num / 61)) + numToUrlCode(num % 61);
 }
 window['numToUrlCode2'] = numToUrlCode2;
+
 // encode number to four digit url code
 // valid number range is 0-13845841 (invalid numbers default to 0)
 function numToUrlCode4(num) {
@@ -94,18 +114,29 @@ function numToUrlCode4(num) {
 }
 window['numToUrlCode4'] = numToUrlCode4;
 
-// decode url code to number
-// invalid codes default to 0
+/**
+ * Decodes a single base-62 character to a number using string indexing.
+ * Throws an error for invalid codes.
+ *
+ * @param {string} code The character to decode.
+ * @returns {number} The integer value of the character.
+ */
 function urlCodeToNum(code) {
-    var num = 0;
-    var charCode = code.charCodeAt(0);
-    if (charCode >= 48 && charCode <= 57) num = charCode - 48;
-    else if (charCode >= 65 && charCode <= 90) num = charCode - 55;
-    else if (charCode >= 97 && charCode <= 122) num = charCode - 61;
-    else throw 'urlCodeToNum: code is out of valid range: ' + code + ' (' + charCode + ')';
+    if (typeof code !== 'string' || code.length === 0) {
+        throw new Error('urlCodeToNum: input must be a non-empty string');
+    }
+
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const num = chars.indexOf(code[0]);
+
+    if (num === -1) {
+        throw new Error('urlCodeToNum: code is out of valid range: ' + code);
+    }
+
     return num;
 }
 window['urlCodeToNum'] = urlCodeToNum;
+
 // decode two character url code to number
 // invalid codes default to 0
 function urlCodeToNum2(code) {
@@ -120,7 +151,7 @@ function urlCodeToNum4(code) {
 window['urlCodeToNum4'] = urlCodeToNum4;
 
 // submit google analytics
-function submitAnalytics(Category, action, label, value) {
+function submitAnalytics(/*Category, action, label, value*/) {
     // if (prefAnalytics) {
     //     if (debug) {
     //         console.log(['_trackEvent', Category, action, label, value]);
@@ -130,11 +161,12 @@ function submitAnalytics(Category, action, label, value) {
     // }
 }
 window['submitAnalytics'] = submitAnalytics;
+
 // queue google analytics for background submission
-var analyticsTimeout = 2000;
-var analyticsQueue = [];
-var analyticsQueueServiceRunning = false;
-function queueAnalytics(Category, action, label, value) {
+// var analyticsTimeout = 2000;
+// var analyticsQueue = [];
+// var analyticsQueueServiceRunning = false;
+function queueAnalytics(/*Category, action, label, value*/) {
     // if (prefAnalytics) {
     //     analyticsQueue.push([Category, action, label, value]);
     //     // start google analytics queue submission service
@@ -172,13 +204,13 @@ var dataVersionUpdate = getDataVersionUpdate();
 
 // power code lookup
 var dataPowerIdFromCode = [];
-for (var i = 0; i < dataPower.length; i++) {
+for (let i = 0; i < dataPower.length; i++) {
     dataPowerIdFromCode[dataPower[i].code()] = parseInt(i);
 }
 
 // power set lookup
 var dataPowerIdFromPowerSet = [];
-for (var i = 0; i < dataPower.length; i++) {
+for (let i = 0; i < dataPower.length; i++) {
     var powerSet = dataPower[i].powerSet;
     if (powerSet != null) {
         if (dataPowerIdFromPowerSet[powerSet] == undefined) {
@@ -190,7 +222,7 @@ for (var i = 0; i < dataPower.length; i++) {
 
 // power framework lookup
 var dataPowerIdFromFramework = [];
-for (var i = 0; i < dataPower.length; i++) {
+for (let i = 0; i < dataPower.length; i++) {
     var framework = dataPower[i].framework;
     if (framework != null) {
         if (dataPowerIdFromFramework[framework] == undefined) {
@@ -205,58 +237,58 @@ var phVersion = buildVersion;
 var phName = '';
 var phArchetype = dataArchetype[1];
 var phSuperStat = [];
-for (var i = 1; i <= 3; i++) {
+for (let i = 1; i <= 3; i++) {
     phSuperStat[i] = dataSuperStat[0];
 }
 var phInnateTalent = Array();
-for (var i = 1; i <= 1; i++) {
+for (let i = 1; i <= 1; i++) {
     phInnateTalent[i] = dataInnateTalent[0];
 }
 var phTalent = [];
-for (var i = 1; i <= 6; i++) {
+for (let i = 1; i <= 6; i++) {
     phTalent[i] = dataTalent[0];
 }
 var phCAMS = Array();
-for (var i = 1; i <= 1; i++) {
+for (let i = 1; i <= 1; i++) {
     phCAMS[i] = dataCAMS[0];
 }
 var phTravelPower = [];
-for (var i = 1; i <= 2; i++) {
+for (let i = 1; i <= 2; i++) {
     phTravelPower[i] = dataTravelPower[0];
 }
 var phTravelPowerAdvantage = [];
-for (var i = 1; i <= 2; i++) {
+for (let i = 1; i <= 2; i++) {
     phTravelPowerAdvantage[i] = 0;
 }
 var phPower = [];
-for (var i = 1; i <= 14; i++) {
+for (let i = 1; i <= 14; i++) {
     phPower[i] = dataPower[0];
 }
 var phPowerAdvantage = [];
-for (var i = 1; i <= 14; i++) {
+for (let i = 1; i <= 14; i++) {
     phPowerAdvantage[i] = 0;
 }
 var phSpecializationTree = [];
-for (var i = 1; i <= 4; i++) {
+for (let i = 1; i <= 4; i++) {
     phSpecializationTree[i] = dataSpecializationTree[0];
 }
 var phSpecialization = [];
-for (var i = 1; i <= 4; i++) {
+for (let i = 1; i <= 4; i++) {
     phSpecialization[i] = 0;
 }
 var phBuildLink = '';
-var phBuildLinkRef = '';
+// var phBuildLinkRef = '';
 var statFrameworkCount = [];
-for (var i = 1; i <= dataFramework.length; i++) {
+for (let i = 1; i <= dataFramework.length; i++) {
     statFrameworkCount[i] = 0;
 }
 var statPowerSetCount = [];
-for (var i = 0; i < dataPowerSet.length; i++) {
+for (let i = 0; i < dataPowerSet.length; i++) {
     statPowerSetCount[i] = 0;
 }
-var statEnergyBuilder = 0;
-var statEnergyUnlock = 0;
-var statTier4 = 0;
+// var statEnergyBuilder = 0;
+// var statEnergyUnlock = 0;
+// var statTier4 = 0;
 var statAdvantagePoints = 0;
 var maxAdvantagePointsTotal = 36;
 var maxAdvantagePointsPerPower = 5; 
@@ -643,7 +675,7 @@ function selectClearMaybe(evnt) {
     function checkParent(node) {
         while (node.parentNode) {
             var test = false;
-            for (var i = 0; i < clickableClasses.length; i++) {
+            for (let i = 0; i < clickableClasses.length; i++) {
                 if (node.className == clickableClasses[i]) test = true;
             }
             if (test) return true;
@@ -712,7 +744,7 @@ function setupSuperStats() {
     while (children.length > 0) {
         selectSuperStat.removeChild(children[0]);
     }
-    for (var i = 0; i < dataSuperStat.length; i++) {
+    for (let i = 0; i < dataSuperStat.length; i++) {
         if (i == 0) {
             var spanLeft = document.createElement('span');
             spanLeft.setAttribute('style', 'float:left');
@@ -776,7 +808,7 @@ function setSuperStat(id) {
     var swapField;
     if (id != oldId) {
         if (id > 0) {
-            for (var i = 1; i < phSuperStat.length; i++) {
+            for (let i = 1; i < phSuperStat.length; i++) {
                 if (i != num && phSuperStat[i].id == id) {
                     swapNum = i;
                     swapField = document.getElementById('fieldSuperStat' + i);
@@ -825,7 +857,7 @@ function getSuperStatDesc(id, num) {
 }
 window['getSuperStatDesc'] = getSuperStatDesc;
 function highlightSuperStats(str) {
-    for (var i = 1; i < phSuperStat.length; i++) {
+    for (let i = 1; i < phSuperStat.length; i++) {
         var regex = new RegExp('(' + phSuperStat[i].abbrev + ': \\d+)');
         if (regex != null) {
             str = str.replace(regex, '<span class="specHighlight">$1</span>');
@@ -838,8 +870,8 @@ window['highlightSuperStats'] = highlightSuperStats;
 // innate talent functions
 function setupInnateTalents() {
     var selectInnateTalentIds = ['selectInnateTalent', 'selectInnateTalentLeft', 'selectInnateTalentRight'];
-    for (var i = 0; i < selectInnateTalentIds.length; i++) {
-        var selectInnateTalent = document.getElementById(selectInnateTalentIds[i]);
+    for (let i = 0; i < selectInnateTalentIds.length; i++) {
+        let selectInnateTalent = document.getElementById(selectInnateTalentIds[i]);
         var children = selectInnateTalent.getElementsByTagName('*');
         while (children.length > 0) {
             selectInnateTalent.removeChild(children[0]);
@@ -848,7 +880,7 @@ function setupInnateTalents() {
     var selectInnateTalent = document.getElementById('selectInnateTalent');
     var selectInnateTalentLeft = document.getElementById('selectInnateTalentLeft');
     var selectInnateTalentRight = document.getElementById('selectInnateTalentRight');
-    for (var i = 0; i < dataInnateTalent.length; i++) {
+    for (let i = 0; i < dataInnateTalent.length; i++) {
         if (i == 0) {
             var spanLeft = document.createElement('span');
             spanLeft.setAttribute('style', 'float:left');
@@ -943,7 +975,7 @@ window['getInnateTalentDesc'] = getInnateTalentDesc;
 // talent functions
 function setupTalents() {
     var selectTalentIds = ['selectTalent', 'selectTalentLeft', 'selectTalentRight'];
-    for (var i = 0; i < selectTalentIds.length; i++) {
+    for (let i = 0; i < selectTalentIds.length; i++) {
         var selectTalent = document.getElementById(selectTalentIds[i]);
         var children = selectTalent.getElementsByTagName('*');
         while (children.length > 0) {
@@ -953,7 +985,7 @@ function setupTalents() {
     var selectTalent = document.getElementById('selectTalent');
     var selectTalentLeft = document.getElementById('selectTalentLeft');
     var selectTalentRight = document.getElementById('selectTalentRight');
-    for (var i = 0; i < dataTalent.length; i++) {
+    for (let i = 0; i < dataTalent.length; i++) {
         if (i == 0) {
             var spanLeft = document.createElement('span');
             spanLeft.setAttribute('style', 'float:left');
@@ -1021,7 +1053,7 @@ function setTalent(id) {
     var swapField;
     if (id != oldId) {
         if (id > 0) {
-            for (var i = 1; i < phTalent.length; i++) {
+            for (let i = 1; i < phTalent.length; i++) {
                 if (i != num && phTalent[i].id == id) {
                     swapNum = i;
                     swapField = document.getElementById('fieldTalent' + i);
@@ -1067,7 +1099,7 @@ window['getTalentDesc'] = getTalentDesc;
 // CAMS functions
 function setupCAMS() {
     var selectCAMSIds = ['selectCAMS', 'selectCAMSLeft', 'selectCAMSRight'];
-    for (var i = 0; i < selectCAMSIds.length; i++) {
+    for (let i = 0; i < selectCAMSIds.length; i++) {
         var selectCAMS = document.getElementById(selectCAMSIds[i]);
         var children = selectCAMS.getElementsByTagName('*');
         while (children.length > 0) {
@@ -1077,7 +1109,7 @@ function setupCAMS() {
     var selectCAMS = document.getElementById('selectCAMS');
     var selectCAMSLeft = document.getElementById('selectCAMSLeft');
     var selectCAMSRight = document.getElementById('selectCAMSRight');
-    for (var i = 0; i < dataCAMS.length; i++) {
+    for (let i = 0; i < dataCAMS.length; i++) {
         if (i == 0) {
             var spanLeft = document.createElement('span');
             spanLeft.setAttribute('style', 'float:left');
@@ -1171,7 +1203,7 @@ window['getCAMSDesc'] = getCAMSDesc;
 // travel power functions
 function setupTravelPowers() {
     var selectTravelPowerIds = ['selectTravelPower', 'selectTravelPowerLeft', 'selectTravelPowerRight'];
-    for (var i = 0; i < selectTravelPowerIds.length; i++) {
+    for (let i = 0; i < selectTravelPowerIds.length; i++) {
         var selectTravelPower = document.getElementById(selectTravelPowerIds[i]);
         var children = selectTravelPower.getElementsByTagName('*');
         while (children.length > 0) {
@@ -1181,7 +1213,7 @@ function setupTravelPowers() {
     var selectTravelPower = document.getElementById('selectTravelPower');
     var selectTravelPowerLeft = document.getElementById('selectTravelPowerLeft');
     var selectTravelPowerRight = document.getElementById('selectTravelPowerRight');
-    for (var i = 0; i < dataTravelPower.length; i++) {
+    for (let i = 0; i < dataTravelPower.length; i++) {
         if (i == 0) {
             var spanLeft = document.createElement('span');
             spanLeft.setAttribute('style', 'float:left');
@@ -1251,7 +1283,7 @@ function setTravelPower(id) {
     var swapAdvantageField;
     if (id != oldId) {
         if (id > 0) {
-            for (var i = 1; i < phTravelPower.length; i++) {
+            for (let i = 1; i < phTravelPower.length; i++) {
                 if (i != num && phTravelPower[i].id == id) {
                     swapNum = i;
                     swapField = document.getElementById('fieldTravelPower' + i);
@@ -1319,41 +1351,57 @@ function setupFrameworks() {
     while (children.length > 0) {
         selectFramework.removeChild(children[0]);
     }
+    
     var spanLeft = document.createElement('span');
-    spanLeft.setAttribute('style', 'float:left');
+    spanLeft.setAttribute('style', 'float:left; width: calc(100% - 30px);'); 
+    
     var spanRight = document.createElement('span');
     spanRight.setAttribute('style', 'float:right');
+    
     var spanClear = document.createElement('span');
     spanClear.setAttribute('style', 'clear:both');
-    var table = document.createElement('table');
-    var tr = document.createElement('tr');
-    table.appendChild(tr);
-    var newRow = Math.floor(dataFramework.length / 2);
-    for (var i = 1; i < dataFramework.length; i++) {
-        var td = document.createElement('td');
-        td.setAttribute('id', 'selectFrameworkBorder' + i);
-        td.setAttribute('class', 'selectionNormal');
-        tr.appendChild(td);
+    
+    var flexContainer = document.createElement('div');
+    flexContainer.setAttribute('class', 'framework-flex-container');
+    
+    var row1 = document.createElement('div');
+    row1.setAttribute('class', 'framework-row');
+    
+    var row2 = document.createElement('div');
+    row2.setAttribute('class', 'framework-row');
+    
+    var splitPoint = Math.floor(dataFramework.length / 2);
+    
+    for (let i = 1; i < dataFramework.length; i++) {
+        var wrapper = document.createElement('div');
+        wrapper.setAttribute('id', 'selectFrameworkBorder' + i);
+        wrapper.setAttribute('class', 'selectionNormal');
+        
         var a = document.createElement('a');
         a.setAttribute('id', 'selectFramework' + i);
         a.setAttribute('onclick', 'selectFramework(' + i + ')');
         a.innerHTML = dataFramework[i].desc;
         setOnmouseoverPopupL1(a, dataFramework[i].tip);
-        td.appendChild(a);
-        if (i == newRow) {
-            tr = document.createElement('tr');
-            table.appendChild(tr);
+        
+        wrapper.appendChild(a);
+        
+        if (i <= splitPoint) {
+            row1.appendChild(wrapper);
+        } else {
+            row2.appendChild(wrapper);
         }
     }
-    spanLeft.appendChild(table);
-    var span = document.createElement('span');
-    span.innerHTML = ' &nbsp; ';
-    spanRight.appendChild(span);
-    var a = document.createElement('a');
-    a.setAttribute('id', 'selectPowerCancel');
-    a.setAttribute('onclick', 'selectClear()');
-    a.innerHTML = 'X';
-    spanRight.appendChild(a);
+    
+    flexContainer.appendChild(row1);
+    flexContainer.appendChild(row2);
+    spanLeft.appendChild(flexContainer);
+    
+    var aCancel = document.createElement('a');
+    aCancel.setAttribute('id', 'selectPowerCancel');
+    aCancel.setAttribute('onclick', 'selectClear()');
+    aCancel.innerHTML = 'X';
+    spanRight.appendChild(aCancel);
+    
     selectFramework.appendChild(spanLeft);
     selectFramework.appendChild(spanRight);
     selectFramework.appendChild(document.createElement('br'));
@@ -1409,10 +1457,10 @@ function selectFramework(framework) {
     var selectPowerLeft = document.getElementById('selectPowerLeft');
     var selectPowerRight = document.getElementById('selectPowerRight');
 
-    for (var i = 0; i < selectPowerLeft.children.length; i++) {
+    for (let i = 0; i < selectPowerLeft.children.length; i++) {
         selectPowerLeft.children[i].style.display = 'none';
     }
-    for (var i = 0; i < selectPowerRight.children.length; i++) {
+    for (let i = 0; i < selectPowerRight.children.length; i++) {
         selectPowerRight.children[i].style.display = 'none';
     }
 
@@ -1428,7 +1476,7 @@ function selectFramework(framework) {
         panelRight.setAttribute('id', 'frameworkRight_' + framework);
 
         if (frameworkPowers) {
-            for (var i = 0; i < frameworkPowers.length; i++) {
+            for (let i = 0; i < frameworkPowers.length; i++) {
                 var powerId = frameworkPowers[i];
                 var a = document.createElement('a');
                 a.setAttribute('id', 'selectPowerBtn_' + framework + '_' + powerId);
@@ -1449,7 +1497,7 @@ function selectFramework(framework) {
     }
 
     if (frameworkPowers) {
-        for (var i = 0; i < frameworkPowers.length; i++) {
+        for (let i = 0; i < frameworkPowers.length; i++) {
             var powerId = frameworkPowers[i];
             var a = document.getElementById('selectPowerBtn_' + framework + '_' + powerId);
             
@@ -1510,7 +1558,7 @@ function setPower(id) {
     var swapAdvantageField;
     if (id != oldId) {
         if (id > 0) {
-            for (var i = 1; i < phPower.length; i++) {
+            for (let i = 1; i < phPower.length; i++) {
                 if (i != num && phPower[i].name == dataPower[id].name) {
                     swapNum = i;
                     swapField = document.getElementById('fieldPower' + i);
@@ -1580,7 +1628,7 @@ function selectPowerAllowed(num, id) {
     var tier4Id = 0;
     var concentrationUnlockedByUltimate = false;
     var compassionUnlockedByUltimate = false;
-    for (var i = 1; i < phPower.length; i++) {
+    for (let i = 1; i < phPower.length; i++) {
         var p = phPower[i];
         // some framework powers act like they belong to a specific power set for the purposes of calculating counts
         if (dataReplacePower[p.id] != undefined) p = dataPower[dataReplacePower[p.id]];
@@ -1671,7 +1719,7 @@ function selectPowerAllowed(num, id) {
         if (dataEnergyUnlockPower[phPower[num].id] != undefined) result = 2;
         else result = 0;
     }
-    for (var i = 1; i < phPower.length; i++) {
+    for (let i = 1; i < phPower.length; i++) {
         if (phPower[i].name == power.name && (num != i || result == 1)) result = 2;
     }
 
@@ -1695,7 +1743,7 @@ function validatePower(num, id) {
 }
 window['validatePower'] = validatePower;
 function validatePowers() {
-    for (var i = 1; i < phPower.length; i++) {
+    for (let i = 1; i < phPower.length; i++) {
         validatePower(i, phPower[i].id);
     }
 }
@@ -1757,7 +1805,7 @@ function selectArchetypePower(num) {
         span.appendChild(a);
         selectPower.appendChild(document.createElement('br'));
         var archetypePowerList = phArchetype.powerList[num];
-        for (var i = 1; i < archetypePowerList.length; i++) {
+        for (let i = 1; i < archetypePowerList.length; i++) {
             var powerId = archetypePowerList[i];
             var power = dataPower[powerId];
             var a = document.createElement('a');
@@ -1810,7 +1858,7 @@ function checkAdvantageDependancyMask(type, num, mask) {
     var result = true;
     var power = (type == 1) ? phPower[num] : phTravelPower[num];
     var advantageList = (type == 1) ? phPower[num].advantageList : phTravelPower[num].advantageList;
-    for (var i = 1; i < advantageList.length; i++) {
+    for (let i = 1; i < advantageList.length; i++) {
         var advantage = advantageList[i];
         if (advantage.dependency != null &&
             power.hasAdvantage(mask, advantage.id) &&
@@ -1841,7 +1889,7 @@ function selectAdvantage(type, num) {
         selectedFieldId = fieldId;
         selectedFieldClass = field.getAttribute('class');
         field.setAttribute('class', 'selectedButtonNote');
-        for (var i = 0; i < formIds.length; i++) {
+        for (let i = 0; i < formIds.length; i++) {
             var form = document.getElementById(formIds[i]);
             var children = form.getElementsByTagName('*');
             while (children.length > 0) {
@@ -1883,7 +1931,7 @@ function selectAdvantage(type, num) {
         var table = document.createElement('table');
         var advantageList = power.advantageList;
         var advantagePoints = power.getPoints(mask);
-        for (var i = 1; i < advantageList.length; i++) {
+        for (let i = 1; i < advantageList.length; i++) {
             var advantage = advantageList[i];
             var tr = document.createElement('tr');
             table.appendChild(tr);
@@ -1951,7 +1999,7 @@ function selectAdvantageUpdate(type, num) {
     var mask = (type == 1) ? phPowerAdvantage[num] : phTravelPowerAdvantage[num];
     var advantageList = power.advantageList;
     var advantagePoints = power.getPoints(mask);
-    for (var i = 1; i < advantageList.length; i++) {
+    for (let i = 1; i < advantageList.length; i++) {
         var advantage = advantageList[i];
         var checkboxAdvantage = document.getElementById('checkboxAdvantage' + i);
         var selectAdvantage = document.getElementById('selectAdvantage' + i);
@@ -1980,7 +2028,7 @@ function selectAdvantageClear(type, num) {
     var field = document.getElementById(((type == 1) ? 'fieldPowerAdvantage' : 'fieldTravelPowerAdvantage') + num);
     var power = (type == 1) ? phPower[num] : phTravelPower[num];
     var advantageList = power.advantageList;
-    for (var i = 1; i < advantageList.length; i++) {
+    for (let i = 1; i < advantageList.length; i++) {
         var advantage = advantageList[i];
         var checkboxAdvantage = document.getElementById('checkboxAdvantage' + i);
         var selectAdvantage = document.getElementById('selectAdvantage' + i);
@@ -2013,7 +2061,7 @@ function selectAdvantageToggle(type, num, id) {
     if (power.hasAdvantage(mask, id)) {
         mask = power.delAdvantage(mask, id);
         var advantageList = power.advantageList;
-        for (var i = 1; i < advantageList.length; i++) {
+        for (let i = 1; i < advantageList.length; i++) {
             var advantage = advantageList[i];
             if (advantage.dependency != null && advantage.dependency == id) {
                 mask = power.delAdvantage(mask, advantage.id);
@@ -2044,11 +2092,11 @@ function setAdvantage(type, num, mask) {
     var phMask = (type == 1) ? phPowerAdvantage[num] : phTravelPowerAdvantage[num];
     var advantageList = power.getAdvantageList(phMask);
     var advantagePoints = power.getPoints(mask);
-    for (var i = 0; i < advantageList.length; i++) {
+    for (let i = 0; i < advantageList.length; i++) {
         statAdvantagePoints -= advantageList[i].points;
     }
     var advantageList = power.getAdvantageList(mask);
-    for (var i = 0; i < advantageList.length; i++) {
+    for (let i = 0; i < advantageList.length; i++) {
         statAdvantagePoints += advantageList[i].points;
     }
     if (statAdvantagePoints <= maxAdvantagePointsTotal &&
@@ -2070,7 +2118,7 @@ function advantageText(type, num, mask) {
         if (mask == 0) {
             result = '(advantages)';
         } else {
-            for (var i = 1; i < advantageList.length; i++) {
+            for (let i = 1; i < advantageList.length; i++) {
                 if (power.hasAdvantage(mask, i)) {
                     if (result.length == 0) {
                         result = '(' + advantageList[i].desc;
@@ -2094,7 +2142,7 @@ function advantageTip(type, num, mask) {
     var advantageList = power.advantageList;
     var result = '';
     if (advantageList.length > 0 && mask != 0) {
-        for (var i = 1; i < advantageList.length; i++) {
+        for (let i = 1; i < advantageList.length; i++) {
             if (power.hasAdvantage(mask, i)) {
                 var tip = advantageList[i].tip;
                 if (tip != null && tip.length > 0) {
@@ -2120,14 +2168,14 @@ function setupSpecializations() {
         prevSelectedSpecializationSuperStat = phSuperStat[1].id;
         phSpecializationTree[4] = dataSpecializationTree[0];
     }
-    for (var i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 4; i++) {
         var tableSpecialization = document.getElementById('tableSpecialization' + i);
         var children = tableSpecialization.getElementsByTagName('*');
         while (children.length > 0) {
             tableSpecialization.removeChild(children[0]);
         }
     }
-    for (var i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 4; i++) {
         var specializationTree = phSpecializationTree[i];
         var mask = phSpecialization[i];
         var specializationList = specializationTree.specializationList;
@@ -2135,24 +2183,22 @@ function setupSpecializations() {
         var totalPoints = specializationTree.getPoints(mask);
         var header = document.getElementById('headerSpecialization' + i);
         var table = document.getElementById('tableSpecialization' + i);
+        
         switch (i) {
         case 1:
             if (specializationTree.id == 0) {
                 header.setAttribute('class', 'disabledButton');
                 header.setAttribute('onclick', 'return false');
-                //header.innerHTML = '<span><img src="img/blank.png" />&nbsp;Stat Tree <span class="spec">(0/10)</span></span>';
                 header.innerHTML = '<span>Stat Tree <span class="spec">(0/10)</span></span>';
             } else {
                 header.setAttribute('class', 'button');
                 header.setAttribute('onclick', 'selectSpecialization(' + i + ')');
-                //header.innerHTML = '<span><img src="img/blank.png" />&nbsp;' + specializationTree.desc + ' Tree <span class="spec">(' + totalPoints + '/10)</span></span>';
                 header.innerHTML = '<span>' + specializationTree.desc + ' Tree <span class="spec">(' + totalPoints + '/10)</span></span>';
             }
             break;
         case 2:
         case 3:
             if (specializationTree.id == 0) {
-                //header.innerHTML = '<span><img src="img/blank.png" />&nbsp;Role Tree <span class="spec">(' + totalPoints + '/10)</span></span>';
                 header.innerHTML = '<span>Role Tree <span class="spec">(' + totalPoints + '/10)</span></span>';
             } else {
                 header.innerHTML = '<span>' + specializationTree.desc + ' Tree <span class="spec">(' + totalPoints + '/10)</span></span>';
@@ -2160,56 +2206,38 @@ function setupSpecializations() {
             break;
         case 4:
             if (specializationTree.id == 0) {
-                //header.innerHTML = '<span><img src="img/blank.png" />&nbsp;Mastery <span class="spec">(0/1)</span></span>';
                 header.innerHTML = '<span>Mastery <span class="spec">(0/1)</span></span>';
             } else {
-                // var specialization = specializationList[8];
-                // header.innerHTML = '<span>' + specialization.desc + ' <span class="spec">(1/1)</span></span>';
                 header.innerHTML = '<span>' + specializationTree.desc + ' Mastery <span class="spec">(1/1)</span></span>';
             }
             break;
         }
+        
         if (i != 4) {
             table.setAttribute('onclick', 'selectSpecialization(' + i + ')');
             for (var j = 0; j < specializationList.length - 1; j++) {
                 if (specializationPointList[j] > 0) {
                     var specialization = specializationList[j];
                     var tr = document.createElement('tr');
+                    tr.setAttribute('class', 'spec-row');
                     table.appendChild(tr);
-                    var td = document.createElement('td');
-                    tr.appendChild(td);
-                    var span = document.createElement('span');
-                    span.innerHTML = specialization.desc;
-                    setOnmouseoverPopupL2(span, specialization.tip);
-                    td.appendChild(span);
-                    var td = document.createElement('td');
-                    tr.appendChild(td);
-                    td.setAttribute('class', 'specializationPoints');
-                    var span = document.createElement('span');
-                    span.setAttribute('class', 'spec');
-                    span.innerHTML = '(' + specializationPointList[j] + '/' + specialization.maxPoints + ')';
-                    td.appendChild(span);
+                    
+                    var tdName = document.createElement('td');
+                    tr.appendChild(tdName);
+                    var spanName = document.createElement('span');
+                    spanName.innerHTML = specialization.desc;
+                    setOnmouseoverPopupL2(spanName, specialization.tip);
+                    tdName.appendChild(spanName);
+                    
+                    var tdPoints = document.createElement('td');
+                    tr.appendChild(tdPoints);
+                    tdPoints.setAttribute('class', 'specializationPoints');
+                    var spanPts = document.createElement('span');
+                    spanPts.setAttribute('class', 'spec');
+                    spanPts.innerHTML = '(' + specializationPointList[j] + '/' + specialization.maxPoints + ')';
+                    tdPoints.appendChild(spanPts);
                 }
             }
-        // } else {
-        //     if (specializationTree.id != 0) {
-        //         var tr = document.createElement('tr');
-        //         table.appendChild(tr);
-        //         var td = document.createElement('td');
-        //         tr.appendChild(td);
-        //         var span = document.createElement('span');
-        //         // var specialization = specializationList[8];
-        //         // span.innerHTML = '<span>' + specialization.desc + '</span>';
-        //         span.innerHTML = '<span>' + specializationTree.desc + ' Mastery</span>';
-        //         td.appendChild(span);
-        //         var td = document.createElement('td');
-        //         tr.appendChild(td);
-        //         td.setAttribute('class', 'specializationPoints');
-        //         var span = document.createElement('span');
-        //         span.setAttribute('class', 'spec');
-        //         span.innerHTML = '(1/1)';
-        //         td.appendChild(span);
-        //     }
         }
     }
 }
@@ -2235,47 +2263,46 @@ function selectSpecializationRefresh(num) {
     var totalPoints = specializationTree.getPoints(mask);
     var tier1Points = specializationTree.getTierPoints(mask, 1);
     var selectSpecializationIds = ['selectSpecializationRole', 'selectSpecialization'];
-    for (var i = 0; i < selectSpecializationIds.length; i++) {
+    for (let i = 0; i < selectSpecializationIds.length; i++) {
         var selectSpecialization = document.getElementById(selectSpecializationIds[i]);
         var children = selectSpecialization.getElementsByTagName('*');
         while (children.length > 0) {
             selectSpecialization.removeChild(children[0]);
         }
     }
+    var selectSpecialization = document.getElementById('selectSpecialization');
+    
     var spanLeft = document.createElement('span');
-    spanLeft.setAttribute('style', 'float:left');
+    spanLeft.setAttribute('style', 'float:left; width: calc(100% - 30px);');
     var spanRight = document.createElement('span');
     spanRight.setAttribute('style', 'float:right');
     var spanClear = document.createElement('span');
-    spanClear.setAttribute('style', 'clear:both');
-    var span = document.createElement('span');
-    span.innerHTML = ' &nbsp; ';
-    spanRight.appendChild(span);
-    var a = document.createElement('a');
-    a.setAttribute('id', 'selectSpecializationClose');
-    a.setAttribute('onclick', 'selectClear()');
-    a.innerHTML = 'X';
-    spanRight.appendChild(a);
+    spanClear.setAttribute('style', 'clear:both; display:block;');
+    
+    var aClose = document.createElement('a');
+    aClose.setAttribute('id', 'selectSpecializationClose');
+    aClose.setAttribute('onclick', 'selectClear()');
+    aClose.innerHTML = 'X';
+    spanRight.appendChild(aClose);
+    
     switch (num) {
     case 1:
-        var span = document.createElement('span');
-        span.setAttribute('id', 'selectSpecialization1');
+        var titleDiv = document.createElement('div');
+        titleDiv.setAttribute('class', 'spec-popup-title');
         if (specializationTree.id == 0) {
-            //span.innerHTML = '<img src="img/blank.png" />&nbsp;Stat Tree (0/10)';
-            span.innerHTML = 'Stat Tree (0/10)';
+            titleDiv.innerHTML = 'Stat Tree <span class="spec">(0/10)</span>';
         } else {
-            //span.innerHTML = '<img src="img/blank.png" />&nbsp;' + specializationTree.desc + ' (' + totalPoints + '/10)';
-            span.innerHTML = specializationTree.desc + ' Tree (' + totalPoints + '/10)';
+            titleDiv.innerHTML = specializationTree.desc + ' Tree <span class="spec">(' + totalPoints + '/10)</span>';
         }
-        spanLeft.appendChild(span);
+        spanLeft.appendChild(titleDiv);
         break;
     case 2:
     case 3:
         if (phArchetype.id == 1) {
+            var buttonsContainer = document.createElement('div');
+            buttonsContainer.setAttribute('class', 'spec-role-buttons');
+            
             for (var i = 9; i < dataSpecializationTree.length; i++) {
-                if (i == 15) {
-                    spanLeft.appendChild(document.createElement('br'));
-                }
                 var a = document.createElement('a');
                 if (specializationTree.id == i) {
                     a.setAttribute('onclick', 'setSpecializationTree(' + num + ', ' + i + ')');
@@ -2290,57 +2317,55 @@ function selectSpecializationRefresh(num) {
                 }
                 a.innerHTML = dataSpecializationTree[i].desc;
                 setOnmouseoverPopupL1(a, dataSpecializationTree[i].tip);
-                spanLeft.appendChild(a);
-                var span = document.createElement('span');
-                span.innerHTML = ' &nbsp; ';
-                spanLeft.appendChild(span);
+                buttonsContainer.appendChild(a);
             }
+            spanLeft.appendChild(buttonsContainer);
         }
         if (specializationTree.id != 0) {
-            var span = document.createElement('span');
-            span.setAttribute('id', 'selectSpecialization' + num);
-            span.innerHTML = specializationTree.desc + ' Tree (' + totalPoints + '/10)';
-            selectSpecialization.appendChild(span);
-            selectSpecialization.appendChild(document.createElement('br'));
+            var titleDiv = document.createElement('div');
+            titleDiv.setAttribute('class', 'spec-popup-title');
+            titleDiv.innerHTML = specializationTree.desc + ' Tree <span class="spec">(' + totalPoints + '/10)</span>';
+            spanLeft.appendChild(titleDiv);
         }
         break;
     case 4:
-        var span = document.createElement('span');
-        span.setAttribute('id', 'selectSpecialization4');
+        var titleDiv = document.createElement('div');
+        titleDiv.setAttribute('class', 'spec-popup-title');
         if (specializationTree.id == 0) {
-            //span.innerHTML = '<span><img src="img/blank.png" />&nbsp;Mastery (0/1)</span>';
-            span.innerHTML = '<span>Mastery (0/1)</span>';
+            titleDiv.innerHTML = '<span>Mastery <span class="spec">(0/1)</span></span>';
         } else {
-            // var specialization = specializationList[8];
-            // span.innerHTML = '<span>' + specialization.desc + ' (1/1)</span>';
-            span.innerHTML = '<span>' + specializationTree.desc + ' Mastery (1/1)</span>';
+            titleDiv.innerHTML = '<span>' + specializationTree.desc + ' Mastery <span class="spec">(1/1)</span></span>';
         }
-        spanLeft.appendChild(span);
+        spanLeft.appendChild(titleDiv);
         break;
     }
+    
     selectSpecializationRole.appendChild(spanLeft);
     selectSpecializationRole.appendChild(spanRight);
-    selectSpecializationRole.appendChild(document.createElement('br'));
     selectSpecializationRole.appendChild(spanClear);
-    var a = document.createElement('a');
-    a.setAttribute('id', 'selectSpecializationClear');
-    a.setAttribute('onclick', 'selectSpecializationClear(' + num + ')');
-    a.innerHTML = 'Clear';
-    selectSpecialization.appendChild(a);
-    var span = document.createElement('span');
-    span.innerHTML = ' &nbsp; ';
-    selectSpecialization.appendChild(span);
+    
+    var aClear = document.createElement('a');
+    aClear.setAttribute('id', 'selectSpecializationClear');
+    aClear.setAttribute('onclick', 'selectSpecializationClear(' + num + ')');
+    aClear.innerHTML = 'Clear';
+    selectSpecialization.appendChild(aClear);
+    
+    var spanSpace = document.createElement('span');
+    spanSpace.innerHTML = ' &nbsp; ';
+    selectSpecialization.appendChild(spanSpace);
+    
     if (num != 4) {
-        var a = document.createElement('a');
-        a.setAttribute('id', 'selectSpecializationCancel');
-        a.setAttribute('onclick', 'selectSpecializationCancel(' + num + ', ' + mask + ')');
-        a.innerHTML = 'Cancel';
-        selectSpecialization.appendChild(a);
+        var aCancel = document.createElement('a');
+        aCancel.setAttribute('id', 'selectSpecializationCancel');
+        aCancel.setAttribute('onclick', 'selectSpecializationCancel(' + num + ', ' + mask + ')');
+        aCancel.innerHTML = 'Cancel';
+        selectSpecialization.appendChild(aCancel);
     }
     selectSpecialization.appendChild(document.createElement('br'));
+    
     if (num != 4) {
         var table = document.createElement('table');
-        for (var i = 0; i < specializationList.length - 1; i++) {
+        for (let i = 0; i < specializationList.length - 1; i++) {
             var specialization = specializationList[i];
             var tr = document.createElement('tr');
             table.appendChild(tr);
@@ -2348,7 +2373,6 @@ function selectSpecializationRefresh(num) {
             tr.appendChild(td);
             var span = document.createElement('span');
             span.setAttribute('id', 'selectSpecializationDescription' + i);
-            //span.setAttribute('class', 'specialization');
             span.innerHTML = specialization.desc;
             setOnmouseoverPopupL1(span, specialization.tip);
             if (totalPoints < 10 || specializationPointList[i] > 0) {
@@ -2359,89 +2383,68 @@ function selectSpecializationRefresh(num) {
             td.appendChild(span);
             var td = document.createElement('td');
             tr.appendChild(td);
-            var a = document.createElement('a');
-            a.setAttribute('id', 'selectSpecializationDecrement' + i);
+            var aDec = document.createElement('a');
+            aDec.setAttribute('id', 'selectSpecializationDecrement' + i);
             if (specializationPointList[i] > 0) {
-                a.setAttribute('onclick', 'selectSpecializationDecrement(' + num + ',' + i + ')');
-                a.setAttribute('class', 'selectButton');
+                aDec.setAttribute('onclick', 'selectSpecializationDecrement(' + num + ',' + i + ')');
+                aDec.setAttribute('class', 'selectButton');
             } else {
-                a.setAttribute('onclick', 'return false');
-                a.setAttribute('class', 'disabledButton');
+                aDec.setAttribute('onclick', 'return false');
+                aDec.setAttribute('class', 'disabledButton');
             }
-            a.innerHTML = '&nbsp;<<<&nbsp;';
-            td.appendChild(a);
+            aDec.innerHTML = '&nbsp;<<<&nbsp;';
+            td.appendChild(aDec);
             var td = document.createElement('td');
             tr.appendChild(td);
-            var span = document.createElement('span');
-            span.setAttribute('id', 'selectSpecializationPoints' + i);
-            span.innerHTML = '(' + specializationPointList[i] + '/' + specialization.maxPoints + ')';
+            var spanPts = document.createElement('span');
+            spanPts.setAttribute('id', 'selectSpecializationPoints' + i);
+            spanPts.innerHTML = '(' + specializationPointList[i] + '/' + specialization.maxPoints + ')';
             if (totalPoints < 10 || specializationPointList[i] > 0) {
-                span.setAttribute('class', 'note');
+                spanPts.setAttribute('class', 'note');
             } else {
-                span.setAttribute('class', 'disabledNote');
+                spanPts.setAttribute('class', 'disabledNote');
             }
-            td.appendChild(span);
+            td.appendChild(spanPts);
             var td = document.createElement('td');
             tr.appendChild(td);
-            var a = document.createElement('a');
-            a.setAttribute('id', 'selectSpecializationIncrement' + i);
+            var aInc = document.createElement('a');
+            aInc.setAttribute('id', 'selectSpecializationIncrement' + i);
             if (totalPoints < 10 &&
                 specializationPointList[i] < specialization.maxPoints &&
                (i < 4 || tier1Points >= 5)) {
                 if (specializationPointList[i] == 0) {
-                    a.setAttribute('onclick', 'selectConfirmation(\'selectSpecializationIncrement(' + num + ', ' + i + ')\', \'' + escapeQuotes(specialization.desc) + '\', \'' + specialization.tip + '\')');
+                    aInc.setAttribute('onclick', 'selectConfirmation(\'selectSpecializationIncrement(' + num + ', ' + i + ')\', \'' + escapeQuotes(specialization.desc) + '\', \'' + specialization.tip + '\')');
                 } else {
-                    a.setAttribute('onclick', 'selectSpecializationIncrement(' + num + ',' + i + ')');
+                    aInc.setAttribute('onclick', 'selectSpecializationIncrement(' + num + ',' + i + ')');
                 }
-                a.setAttribute('class', 'selectButton');
+                aInc.setAttribute('class', 'selectButton');
             } else {
-                a.setAttribute('onclick', 'return false');
-                a.setAttribute('class', 'disabledButton');
+                aInc.setAttribute('onclick', 'return false');
+                aInc.setAttribute('class', 'disabledButton');
             }
-            a.innerHTML = '&nbsp;>>>&nbsp;';
-            td.appendChild(a);
+            aInc.innerHTML = '&nbsp;>>>&nbsp;';
+            td.appendChild(aInc);
         }
     } else {
         var table = document.createElement('table');
-        var tr = document.createElement('tr');
-        table.appendChild(tr);
-        var td = document.createElement('td');
-        tr.appendChild(td);
-        var a = document.createElement('a');
-        if (phSpecializationTree[1].id == 0) {
-            a.setAttribute('onclick', 'return false');
-            a.setAttribute('class', 'disabledButton');
-            a.innerHTML = '<span><img src="img/blank.png" />&nbsp;Stat Mastery</span>';
-            //a.innerHTML = '<span>Stat Mastery</span>';
-        } else {
-            var specialization = phSpecializationTree[1].specializationList[8];
-            a.setAttribute('onclick', 'setSpecializationMastery(1)');
-            a.setAttribute('class', 'selectButton');
-            a.innerHTML = '<span>' + specialization.desc + '</span>';
-            setOnmouseoverPopupL1(a, specialization.tip);
-            //a.innerHTML = '<span>' + phSpecializationTree[1].desc + ' Mastery</span>';
-        }
-        td.appendChild(a);
-        for (var i = 2; i <= 3; i++) {
+        for (let i = 1; i <= 3; i++) {
             var tr = document.createElement('tr');
             table.appendChild(tr);
             var td = document.createElement('td');
             tr.appendChild(td);
-            var a = document.createElement('a');
+            var aMast = document.createElement('a');
             if (phSpecializationTree[i].id == 0) {
-                a.setAttribute('onclick', 'return false');
-                a.setAttribute('class', 'disabledButton');
-                a.innerHTML = '<span><img src="img/blank.png" />&nbsp;Role Mastery</span>';
-                //a.innerHTML = '<span>Role Mastery</span>';
+                aMast.setAttribute('onclick', 'return false');
+                aMast.setAttribute('class', 'disabledButton');
+                aMast.innerHTML = '<span>Role Mastery</span>';
             } else {
                 var specialization = phSpecializationTree[i].specializationList[8];
-                a.setAttribute('onclick', 'setSpecializationMastery(' + i + ')');
-                a.setAttribute('class', 'selectButton');
-                a.innerHTML = '<span>' + specialization.desc + '</span>';
-                setOnmouseoverPopupL1(a, specialization.tip);
-                //a.innerHTML = '<span>' + phSpecializationTree[i].desc + ' Mastery</span>';
+                aMast.setAttribute('onclick', 'setSpecializationMastery(' + i + ')');
+                aMast.setAttribute('class', 'selectButton');
+                aMast.innerHTML = '<span>' + specialization.desc + '</span>';
+                setOnmouseoverPopupL1(aMast, specialization.tip);
             }
-            td.appendChild(a);
+            td.appendChild(aMast);
         }
     }
     selectSpecialization.appendChild(table);
@@ -2460,7 +2463,7 @@ function selectSpecializationUpdate(num) {
         //selectSpecialization.innerHTML = '<img src="img/blank.png" />&nbsp;' + specializationTree.desc + ' Tree (' + totalPoints + '/10)';
         selectSpecialization.innerHTML = specializationTree.desc + ' Tree (' + totalPoints + '/10)';
     }
-    for (var i = 0; i < specializationList.length - 1; i++) {
+    for (let i = 0; i < specializationList.length - 1; i++) {
         var selectSpecializationDescription = document.getElementById('selectSpecializationDescription' + i);
         var selectSpecializationDecrement = document.getElementById('selectSpecializationDecrement' + i);
         var selectSpecializationPoints = document.getElementById('selectSpecializationPoints' + i);
@@ -2584,7 +2587,7 @@ function setSpecializationMastery(id) {
 }
 window['setSpecializationMastery'] = setSpecializationMastery;
 function getSpecializationMasteryId(id) {
-    for (var i = 1; i < phSpecializationTree.length - 1; i++) {
+    for (let i = 1; i < phSpecializationTree.length - 1; i++) {
         if (phSpecializationTree[i].id == id) return i;
     }
     return 0;
@@ -2594,7 +2597,7 @@ window['getSpecializationMasteryId'] = getSpecializationMasteryId;
 // archetype functions
 function setupArchtypes() {
     var selectArchetypeIds = ['selectArchetype', 'selectArchetypeLeft', 'selectArchetypeRight'];
-    for (var i = 0; i < selectArchetypeIds.length; i++) {
+    for (let i = 0; i < selectArchetypeIds.length; i++) {
         var selectArchetype = document.getElementById(selectArchetypeIds[i]);
         var children = selectArchetype.getElementsByTagName('*');
         while (children.length > 0) {
@@ -2604,7 +2607,7 @@ function setupArchtypes() {
     var selectArchetype = document.getElementById('selectArchetype');
     var selectArchetypeLeft = document.getElementById('selectArchetypeLeft');
     var selectArchetypeRight = document.getElementById('selectArchetypeRight');
-    for (var i = 0; i < dataArchetype.length; i++) {
+    for (let i = 0; i < dataArchetype.length; i++) {
         if (i == 0) {
             var span = document.createElement('span');
             span.setAttribute('style', 'float:right');
@@ -2644,17 +2647,17 @@ window['selectArchetype'] = selectArchetype;
 function setArchetype(id) {
     var archetype = dataArchetype[id];
     if (id == 1) {
-        for (var i = 1; i < phSuperStat.length; i++) {
+        for (let i = 1; i < phSuperStat.length; i++) {
             var field = document.getElementById('fieldSuperStat' + i);
             field.setAttribute('onclick', 'selectSuperStat(' + i + ')');
             field.setAttribute('class', 'button');
         }
-        for (var i = 1; i < phInnateTalent.length; i++) {
+        for (let i = 1; i < phInnateTalent.length; i++) {
             var field = document.getElementById('fieldInnateTalent' + i);
             field.setAttribute('onclick', 'selectInnateTalent(' + i + ')');
             field.setAttribute('class', 'button');
         }
-        for (var i = 1; i < phPower.length; i++) {
+        for (let i = 1; i < phPower.length; i++) {
             var field = document.getElementById('fieldPower' + i);
             field.setAttribute('onclick', 'selectPower(' + i + ')');
             field.setAttribute('class', 'button');
@@ -2673,7 +2676,7 @@ function setArchetype(id) {
         document.getElementById('rowPower13').style.display = '';
         document.getElementById('rowPower14').style.display = '';
     } else {
-        for (var i = 1; i < phSuperStat.length; i++) {
+        for (let i = 1; i < phSuperStat.length; i++) {
             var id = archetype.superStatList[i];
             var field = document.getElementById('fieldSuperStat' + i);
             var selectField = document.getElementById('selectSuperStat' + id);
@@ -2686,7 +2689,7 @@ function setArchetype(id) {
             field.setAttribute('class', 'lockedButton');
             selectField.setAttribute('class', 'takenButton');
         }
-        for (var i = 1; i < phInnateTalent.length; i++) {
+        for (let i = 1; i < phInnateTalent.length; i++) {
             var id = archetype.innateTalent;
             var field = document.getElementById('fieldInnateTalent' + i);
             var selectField = document.getElementById('selectInnateTalent' + id);
@@ -2699,7 +2702,7 @@ function setArchetype(id) {
             field.setAttribute('class', 'lockedButton');
             selectField.setAttribute('class', 'takenButton');
         }
-        for (var i = 1; i < phPower.length; i++) {
+        for (let i = 1; i < phPower.length; i++) {
             var field = document.getElementById('fieldPower' + i);
             var advantageField = document.getElementById('fieldPowerAdvantage' + i);
             var id = archetype.powerList[i];
@@ -2739,7 +2742,7 @@ function setArchetype(id) {
                 setOnmouseoverPopupL2(advantageField, advantageTip(1, i, 0));
             }
         }
-        for (var i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 3; i++) {
             setSpecializationTree(i, archetype.specializationTreeList[i]);
         }
         document.getElementById('fieldTalentNote1').innerHTML = '7&nbsp;';
@@ -2787,7 +2790,7 @@ function parseUrlParams(url) {
     // Get the parts of the link, v = version, n = name, d = data
     if (parts[1] != undefined) {
         var params = parts[1].split('&');
-        for (var i = 0; i < params.length; i++) {
+        for (let i = 0; i < params.length; i++) {
             var pair = params[i].split('=');
             switch (pair[0]) {
             case 'v':
@@ -2818,7 +2821,7 @@ function parseUrlParams(url) {
     while (version <= buildVersion) {
         var finalVersion = (version == buildVersion);
         var pos = 0;
-        var i = 0;
+        let i = 0;
         var inc = 1;
         var archetype = (phArchetype && phArchetype.id) || 1;
         var specializationMasteryId = 0;
@@ -3189,7 +3192,7 @@ function parseBalakUrlParams(url) {
     // Get the parts of the link, v = version, n = name, d = data
     if (parts[1] != undefined) {
         var params = parts[1].split('&');
-        for (var i = 0; i < params.length; i++) {
+        for (let i = 0; i < params.length; i++) {
             var pair = params[i].split('=');
             switch (pair[0]) {
             case 'v':
@@ -3219,7 +3222,7 @@ function parseBalakUrlParams(url) {
 
     // It doesn't need to iterate because we are only on version 2
     var pos = 0;
-    var i = 0;
+    let i = 0;
     var inc = 1;
     var archetype = (phArchetype && phArchetype.id) || 1;
     var specializationMasteryId = 0;
@@ -3378,23 +3381,23 @@ function buildLink(submit) {
     var params = [];
     params.push(phArchetype.code());
     if (submit && phArchetype.id > 0) queueAnalytics(analyticsBuildCategory, 'Archtype', phArchetype.name);
-    for (var i = 1; i < phSuperStat.length; i++) {
+    for (let i = 1; i < phSuperStat.length; i++) {
         params.push(phSuperStat[i].code());
         if (submit && phSuperStat[i].id > 0) queueAnalytics(analyticsBuildCategory, 'SuperStat', phSuperStat[i].name);
     }
-    for (var i = 1; i < phInnateTalent.length; i++) {
+    for (let i = 1; i < phInnateTalent.length; i++) {
         params.push(phInnateTalent[i].code());
         if (submit && phInnateTalent[i].id > 0) queueAnalytics(analyticsBuildCategory, 'InnateTalent', phInnateTalent[i].name);
     }
-    for (var i = 1; i < phTalent.length; i++) {
+    for (let i = 1; i < phTalent.length; i++) {
         params.push(phTalent[i].code());
         if (submit && phTalent[i].id > 0) queueAnalytics(analyticsBuildCategory, 'Talent', phTalent[i].name);
     }
-    for (var i = 1; i < phCAMS.length; i++) {
+    for (let i = 1; i < phCAMS.length; i++) {
         params.push(phCAMS[i].code());
         if (submit && phCAMS[i].id > 0) queueAnalytics(analyticsBuildCategory, 'CAMS', phCAMS[i].name);
     }
-    for (var i = 1; i < phTravelPower.length; i++) {
+    for (let i = 1; i < phTravelPower.length; i++) {
         params.push(phTravelPower[i].code());
         params.push(numToUrlCode(phTravelPowerAdvantage[i] >> 1));
         if (submit && phTravelPower[i].id > 0) {
@@ -3405,7 +3408,7 @@ function buildLink(submit) {
             }
         }
     }
-    for (var i = 1; i < phPower.length; i++) {
+    for (let i = 1; i < phPower.length; i++) {
         params.push(phPower[i].code());
         params.push(numToUrlCode2(phPowerAdvantage[i] >> 1));
         if (submit && phPower[i].id > 0) {
@@ -3416,7 +3419,7 @@ function buildLink(submit) {
             }
         }
     }
-    for (var i = 1; i < phSpecializationTree.length - 1; i++) {
+    for (let i = 1; i < phSpecializationTree.length - 1; i++) {
         if (i == 1) {
             var specializationMasteryId = getSpecializationMasteryId(phSpecializationTree[4].id);
             params.push(numToUrlCode4(specializationMasteryId | (phSpecialization[1] << 4)));
@@ -3435,7 +3438,7 @@ function buildLink(submit) {
         }
     }
     var data = params.join('');
-    if (submit) submitAnalytics(analyticsBuildCategory, 'Data', data);
+    // if (submit) submitAnalytics(analyticsBuildCategory, 'Data', data);
     link += data;
     phBuildLink = buildUrl + link;
     //var name = phName;
@@ -3637,7 +3640,7 @@ function forumPreview() {
     result.push(forumEntry(1, 'Level 35:', forumName(phTravelPower[2].name), forumAdvantageText(2, 2, phTravelPowerAdvantage[2])));
     result.push(forumNewline(1));
     result.push(forumEntry(1, 'Specializations:'));
-    for (var i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 3; i++) {
         var specializationTree = phSpecializationTree[i];
         var mask = phSpecialization[i];
         var specializationList = specializationTree.specializationList;
@@ -3756,7 +3759,7 @@ function forumExport() {
     result.push(forumEntry(forumTypeNum, 'Level 35:', forumName(phTravelPower[2].name), forumAdvantageText(2, 2, phTravelPowerAdvantage[2])));
     result.push(forumNewline(forumTypeNum));
     result.push(forumEntry(forumTypeNum, 'Specializations:'));
-    for (var i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 3; i++) {
         var specializationTree = phSpecializationTree[i];
         var mask = phSpecialization[i];
         var specializationList = specializationTree.specializationList;
@@ -3781,7 +3784,7 @@ function setPrefFontFamily(fontFamily) {
     document.getElementById('body').style.fontFamily = fontFamily + ', sans-serif';
     document.getElementById('prefFontFamilyName').innerHTML = fontFamily;
     hideSection('selectionPref');
-    submitAnalytics(analyticsPrefCategory, 'PrefFontFamily', fontFamily);
+    // submitAnalytics(analyticsPrefCategory, 'PrefFontFamily', fontFamily);
 }
 window['setPrefFontFamily'] = setPrefFontFamily;
 function selectPrefFontFamily() {
@@ -3794,7 +3797,7 @@ function selectPrefFontFamily() {
     if (numColumns > 4) numColumns = 4;
     var currColumn = 0;
     var selectPrefFontFamilyColumn;
-    for (var i = 0; i < prefFontFamilyList.length; i++) {
+    for (let i = 0; i < prefFontFamilyList.length; i++) {
         if (i >= currColumn * 25) {
             currColumn++;
             var div = document.createElement('div');
@@ -3818,7 +3821,7 @@ function setPrefFontSize(fontSize) {
     setCookie('prefFontSize', fontSize, cookieExpireDays);
     document.getElementById('body').style.fontSize = fontSize + '%';
     document.getElementById('prefFontSize').innerHTML = fontSize + '%';
-    submitAnalytics(analyticsPrefCategory, 'PrefFontSize', fontSize);
+    // submitAnalytics(analyticsPrefCategory, 'PrefFontSize', fontSize);
 }
 window['setPrefFontSize'] = setPrefFontSize;
 function selectPrefFontSize(change) {
@@ -3845,7 +3848,7 @@ function setPrefPopupTips(popupTips) {
     prefPopupTips = popupTips;
     setCookie('prefPopupTips', popupTips, cookieExpireDays);
     document.getElementById('prefPopupTipsValue').innerHTML = prefPopupTipsList[popupTips];
-    submitAnalytics(analyticsPrefCategory, 'PrefPopupTips', prefPopupTipsList[popupTips]);
+    // submitAnalytics(analyticsPrefCategory, 'PrefPopupTips', prefPopupTipsList[popupTips]);
 }
 window['setPrefPopupTips'] = setPrefPopupTips;
 function selectPrefPopupTips() {
@@ -3856,7 +3859,7 @@ function setPrefConfirmSelections(confirmSelections) {
     prefConfirmSelections = confirmSelections;
     setCookie('prefConfirmSelections', confirmSelections, cookieExpireDays);
     document.getElementById('prefConfirmSelectionsValue').innerHTML = (confirmSelections ? 'On' : 'Off');
-    submitAnalytics(analyticsPrefCategory, 'PrefConfirmSelections', (confirmSelections ? 'On' : 'Off'));
+    // submitAnalytics(analyticsPrefCategory, 'PrefConfirmSelections', (confirmSelections ? 'On' : 'Off'));
 }
 window['setPrefConfirmSelections'] = setPrefConfirmSelections;
 function selectPrefConfirmSelections() {
@@ -3864,12 +3867,12 @@ function selectPrefConfirmSelections() {
 }
 window['selectPrefConfirmSelections'] = selectPrefConfirmSelections;
 function setPrefAnalytics(analytics) {
-    if (prefAnalytics && !analytics) submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', 'Off');
+    // if (prefAnalytics && !analytics) submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', 'Off');
     prefAnalytics = analytics;
     setCookie('prefAnalytics', analytics, cookieExpireDays);
     document.getElementById('prefAnalyticsValue').innerHTML = (analytics ? 'On' : 'Off');
-    submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', (analytics ? 'On' : 'Off'));
-    if (prefAnalytics && analytics) submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', 'On');
+    // submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', (analytics ? 'On' : 'Off'));
+    // if (prefAnalytics && analytics) submitAnalytics(analyticsPrefCategory, 'PrefAnalytics', 'On');
 }
 window['setPrefAnalytics'] = setPrefAnalytics;
 function selectPrefAnalytics() {
@@ -3928,62 +3931,62 @@ function dataDump() {
     win.document.write('<h3><a onclick="document.getElementById(\'version-update\').scrollIntoView();">Version Update Data</a></h3>');
     win.document.write('<hr>');
     win.document.write('<h2 id="super-stat">Super Stat Data</h3>');
-    for (var i = 1; i < dataSuperStat.length; i++) {
+    for (let i = 1; i < dataSuperStat.length; i++) {
         win.document.write('dataSuperStat[' + i + '] = ' + dataSuperStat[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="innate-talent">Innate Talent Data</h3>');
-    for (var i = 1; i < dataInnateTalent.length; i++) {
+    for (let i = 1; i < dataInnateTalent.length; i++) {
         win.document.write('dataInnateTalent[' + i + '] = ' + dataInnateTalent[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="talent">Talent Data</h3>');
-    for (var i = 1; i < dataTalent.length; i++) {
+    for (let i = 1; i < dataTalent.length; i++) {
         win.document.write('dataTalent[' + i + '] = ' + dataTalent[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="cams">CAMS Data</h3>');
-    for (var i = 1; i < dataCAMS.length; i++) {
+    for (let i = 1; i < dataCAMS.length; i++) {
         win.document.write('dataCAMS[' + i + '] = ' + dataCAMS[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="travel-power">Travel Power Data</h3>');
-    for (var i = 1; i < dataTravelPower.length; i++) {
+    for (let i = 1; i < dataTravelPower.length; i++) {
         win.document.write('dataTravelPower[' + i + '] = ' + dataTravelPower[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="power-set">Power Set Data</h3>');
-    for (var i = 1; i < dataPowerSet.length; i++) {
+    for (let i = 1; i < dataPowerSet.length; i++) {
         win.document.write('dataPowerSet[' + i + '] = ' + dataPowerSet[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="framework">Framework Data</h3>');
-    for (var i = 1; i < dataFramework.length; i++) {
+    for (let i = 1; i < dataFramework.length; i++) {
         win.document.write('dataFramework[' + i + '] = ' + dataFramework[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="power">Power Data</h3>');
-    for (var i = 1; i < dataPower.length; i++) {
+    for (let i = 1; i < dataPower.length; i++) {
         win.document.write('dataPower[' + i + '] = ' + dataPower[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="archetype-group">Archetype Group Data</h3>');
-    for (var i = 1; i < dataArchetypeGroup.length; i++) {
+    for (let i = 1; i < dataArchetypeGroup.length; i++) {
         win.document.write('dataArchetypeGroup[' + i + '] = ' + dataArchetypeGroup[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="archetype">Archetype Data</h3>');
-    for (var i = 1; i < dataArchetype.length; i++) {
+    for (let i = 1; i < dataArchetype.length; i++) {
         win.document.write('dataArchetype[' + i + '] = ' + dataArchetype[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="specialization-tree">Specialization Tree Data</h3>');
-    for (var i = 1; i < dataSpecializationTree.length; i++) {
+    for (let i = 1; i < dataSpecializationTree.length; i++) {
         win.document.write('dataSpecializationTree[' + i + '] = ' + dataSpecializationTree[i].toString() + '<br />');
     }
     win.document.write('<hr>');
     win.document.write('<h2 id="version-update">Version Update Data</h3>');
-    for (var i = 1; i < dataVersionUpdate.length; i++) {
+    for (let i = 1; i < dataVersionUpdate.length; i++) {
         win.document.write('dataVersionUpdate[' + i + '] = ' + dataVersionUpdate[i].toString() + '<br />');
     }
     win.focus();

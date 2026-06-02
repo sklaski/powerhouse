@@ -5,13 +5,19 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-05-31 19:40:00 (woof-wolf)>
+ * Time-stamp: <2026-06-02 02:30:00 (woof-wolf)>
  */
 
 html {
     margin: 0;
     overflow-y: scroll;    /* force scroll bar to appear to prevent jumping */
+    overflow-x: hidden;    /* hides horizontal scroll overflow */
     padding: 0;
+    box-sizing: border-box; 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
@@ -22,12 +28,13 @@ body {
     font-family: Verdana, Arial, sans-serif;
     /* font-size: 1.1em; */
     font-size: 100%;
-    /* margin: 0 1em 0 1em; */
+    margin: 0.6em 0 0.6em 0;
     margin-left: auto;
     margin-right: auto;
     max-width: 1280px;
     min-height: 100%;
     padding: 0 2em;
+    overflow-x: hidden;
 }
 
 hr {
@@ -43,7 +50,10 @@ li + li {
 }
 
 div#header {
-    margin: 0.4em 0.4em 2em 0.4em;
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    margin: 0.6em 0.6em 0.6em 0.6em;
 }
 
 div#viewHelp {
@@ -55,17 +65,17 @@ div#viewAbout {
 }
 
 .main {
-    margin: 1em 0 0 0;
+    margin: 0 0 0 0;
 }
 
 .title {
     color: #ff9e30;
     font-size: xx-large;
-    margin: 0.5em 0 0 0;
+    margin: 0;
 }
 
 .menu {
-    margin: 0.5em 0 0 5.0em;
+    margin: 0;
 }
 
 a, a:link, a:visited {
@@ -223,7 +233,7 @@ img {
 }
 
 .section {
-    margin: 1em 0 0 0;
+    margin: 0.4em 0 0.4em 0;
     padding: 0.4em;
 }
 
@@ -239,6 +249,10 @@ img {
     -webkit-box-shadow: 3px 3px 4px #000;
     box-shadow: 3px 3px 4px #000;
     z-index: 1;
+}
+
+#selectionSpecialization.selection {
+    max-width: 400px;
 }
 
 #selectionConfirmation {
@@ -277,6 +291,18 @@ img {
 
 .selectionHighlighted {
     border: 2px solid #88AAFF;          /* light sky blue */
+}
+
+.framework-flex-container {
+    display: block; 
+}
+
+.framework-row {
+    display: flex;
+    flex-direction: row; 
+    justify-content: left;
+    gap: 4px;
+    margin-bottom: 4px; 
 }
 
 #selectFramework img {
@@ -349,7 +375,6 @@ td {
     width: 24px;
 }
 
-
 /* Prevents annoying highlighting from fast clicking */
 .button, .selectButton, .selectedButton, .takenButton, .disabledButton, .lockedButton {
     -webkit-user-select: none;
@@ -368,6 +393,12 @@ a.selectedButton:visited, a.selectedButton:hover, a.selectedButton:active {
     color: #88FF88;                     /* light green */
     font-weight: bold;
     text-decoration: none;
+}
+
+a#selectPowerCancel, a#selectSpecializationClose, a#selectSuperStatCancel,
+a#selectInnateTalentCancel, a#selectTalentCancel, a#selectCAMSCancel, a#selectTravelPowerCancel,
+a#selectArchetypeCancel {
+    margin: 0.1em;
 }
 
 .takenButton {
@@ -464,11 +495,50 @@ a.disabledButtonText:visited, a.disabledButtonText:hover, a.disabledButtonText:a
     font-weight: normal;
 }
 
+table[id^="tableSpecialization"],
+table[id^="tableSpecialization"] tbody {
+    margin-top: 4px;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+}
+
+tr + tr {
+    margin-top: 2px
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6em;
+    width: 100%;
+}
+
+.specializationPoints {
+    text-align: right;
+    padding-left: 0;
+}
+
 .spec {
     color: #CCCCCC;                     /* light gray */
     font-size: x-small;
     font-weight: normal;
 }
+
+.spec-role-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px 9px;
+    margin-bottom: 4px;
+}
+
+.spec-popup-title {
+    font-size: 1em;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 100%;
+}
+
 .disabledSpec {
     color: #5C5C5C;                     /* dark gray */
     font-size: x-small;
@@ -512,6 +582,10 @@ a.disabledButtonText:visited, a.disabledButtonText:hover, a.disabledButtonText:a
 .linkRef {
     color: #CCCCCC;                     /* light gray */
     font-size: xx-small;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
 }
 
 textarea {
@@ -619,10 +693,71 @@ textarea {
  * Mobile Devices
  */
 
-@media handheld, only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
+    body {
+        padding: 0 1em;
+    }
+
     .left, .right, .leftSelection, .rightSelection {
         float: none;
+        width: 100%;
+        min-width: 100%;
         padding: 0;
+    }
+
+    body div#header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4em;
+        margin: 0.6em;
+    }
+
+    .menu {
+        margin: 0.8em 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em;
+    }
+
+    textarea {
+        width: 100%;
+        margin: 0;
+    }
+
+    .framework-flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .framework-row {
+        display: contents; 
+    }
+
+    #selectArchetype a,
+    #selectArchetypeLeft a,
+    #selectArchetypeRight a {
+        display: block;
+        margin-bottom: -15px;
+    }
+
+    #selectionConfirmation,
+    .popup,
+    .selection {
+        width: 100%;
+        max-width: 75vw;
+        min-width: auto;
+        box-sizing: border-box;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .popup-header {
+        flex-wrap: wrap;
     }
 }
 
