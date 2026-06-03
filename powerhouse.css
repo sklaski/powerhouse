@@ -684,7 +684,7 @@ textarea {
  * Mobile Devices
  */
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 600px) {
     body {
         padding: 0 1em;
     }
