@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-04 12:35:00 (woof-wolf)>
+ * Time-stamp: <2026-06-04 13:00:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.19a';
+var version = '1.3.19b';
 var releaseDate = '2026-06-02';
 var buildVersion = 3;
 
@@ -340,28 +340,24 @@ function setupEvents(evnt) {
     var isLongPress = false;
     var currentTouchTarget = null;
     var primaryTouchId = null;
+    var secondaryTouchId = null;
+    var secondaryLastY = 0;
     
     var initialTouchX = 0;
     var initialTouchY = 0;
     var movementThreshold = 15; 
 
     document.addEventListener('touchstart', function(e) {
-        if (isLongPress) {
-            var isPopupTouch = false;
-            var newTarget = e.changedTouches[0].target;
-            while (newTarget && newTarget !== document) {
-                if (newTarget.id === 'popup') {
-                    isPopupTouch = true;
-                    break;
+        if (isLongPress && primaryTouchId !== null) {
+            for (var i = 0; i < e.changedTouches.length; i++) {
+                var newTouch = e.changedTouches[i];
+                if (newTouch.identifier !== primaryTouchId && secondaryTouchId === null) {
+                    secondaryTouchId = newTouch.identifier;
+                    secondaryLastY = newTouch.pageY;
                 }
-                newTarget = newTarget.parentNode;
             }
-            if (isPopupTouch) {
-                return;
-            }
-            popout();
-            isLongPress = false;
-            primaryTouchId = null;
+            if (e.cancelable) e.preventDefault();
+            return;
         }
 
         document.body.classList.add('disable-select');
@@ -371,7 +367,7 @@ function setupEvents(evnt) {
         var targetNode = e.target;
         currentTouchTarget = null;
         isLongPress = false;
-        const REQUIRED_PRESS_DURATION = 150;
+        secondaryTouchId = null;
         
         var touch = e.changedTouches[0];
         primaryTouchId = touch.identifier;
@@ -392,12 +388,12 @@ function setupEvents(evnt) {
                     var funcCode = new Function(onMouseOverCode);
                     funcCode();
                     window.isTouchTapping = true; 
-                }, REQUIRED_PRESS_DURATION);
+                }, 500);
                 break;
             }
             targetNode = targetNode.parentNode;
         }
-    }, { passive: true });
+    }, { passive: false });
 
     document.addEventListener('touchend', function(e) {
         if (e.touches.length === 0) {
@@ -407,17 +403,25 @@ function setupEvents(evnt) {
         
         if (isLongPress) {
             var primaryLifted = false;
+            var secondaryLifted = false;
             for (var i = 0; i < e.changedTouches.length; i++) {
                 if (e.changedTouches[i].identifier === primaryTouchId) {
                     primaryLifted = true;
-                    break;
+                }
+                if (e.changedTouches[i].identifier === secondaryTouchId) {
+                    secondaryLifted = true;
                 }
             }
             
+            if (secondaryLifted) {
+                secondaryTouchId = null;
+            }
+
             if (primaryLifted) {
                 popout(); 
                 isLongPress = false;
                 primaryTouchId = null;
+                secondaryTouchId = null;
                 if (e.cancelable) {
                     e.preventDefault();
                 }
@@ -437,16 +441,23 @@ function setupEvents(evnt) {
         
         if (isLongPress) {
             var primaryLifted = false;
+            var secondaryLifted = false;
             for (var i = 0; i < e.changedTouches.length; i++) {
                 if (e.changedTouches[i].identifier === primaryTouchId) {
                     primaryLifted = true;
-                    break;
                 }
+                if (e.changedTouches[i].identifier === secondaryTouchId) {
+                    secondaryLifted = true;
+                }
+            }
+            if (secondaryLifted) {
+                secondaryTouchId = null;
             }
             if (primaryLifted) {
                 popout();
                 isLongPress = false;
                 primaryTouchId = null;
+                secondaryTouchId = null;
             }
         }
         setTimeout(function() { 
@@ -455,26 +466,43 @@ function setupEvents(evnt) {
     }, { passive: true });
 
     document.addEventListener('touchmove', function(e) {
-        var primaryTouch = null;
-        for (var i = 0; i < e.changedTouches.length; i++) {
-            if (e.changedTouches[i].identifier === primaryTouchId) {
-                primaryTouch = e.changedTouches[i];
-                break;
+        if (isLongPress) {
+            var secondaryTouch = null;
+            for (var i = 0; i < e.changedTouches.length; i++) {
+                if (e.changedTouches[i].identifier === secondaryTouchId) {
+                    secondaryTouch = e.changedTouches[i];
+                    break;
+                }
             }
-        }
-        
-        if (primaryTouch) {
-            var dx = primaryTouch.pageX - initialTouchX;
-            var dy = primaryTouch.pageY - initialTouchY;
-            var distance = Math.sqrt(dx * dx + dy * dy);
             
-            if (distance > movementThreshold) {
-                if (!isLongPress) {
+            if (secondaryTouch) {
+                var popupEl = document.getElementById('popup');
+                if (popupEl && popupEl.style.display !== 'none') {
+                    var deltaY = secondaryLastY - secondaryTouch.pageY;
+                    popupEl.scrollTop += deltaY;
+                    secondaryLastY = secondaryTouch.pageY;
+                }
+            }
+            
+            if (e.cancelable) e.preventDefault();
+        } else {
+            var primaryTouchMove = null;
+            for (var j = 0; j < e.changedTouches.length; j++) {
+                if (e.changedTouches[j].identifier === primaryTouchId) {
+                    primaryTouchMove = e.changedTouches[j];
+                    break;
+                }
+            }
+            if (primaryTouchMove) {
+                var dx = primaryTouchMove.pageX - initialTouchX;
+                var dy = primaryTouchMove.pageY - initialTouchY;
+                var distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance > movementThreshold) {
                     clearTimeout(touchTimer);
                 }
             }
         }
-    }, { passive: true });
+    }, { passive: false });
 
     document.addEventListener('contextmenu', function(e) {
         if (isLongPress) {
