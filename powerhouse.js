@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-02 04:15:00 (woof-wolf)>
+ * Time-stamp: <2026-06-04 12:35:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.18b';
+var version = '1.3.19a';
 var releaseDate = '2026-06-02';
 var buildVersion = 3;
 
@@ -339,22 +339,51 @@ function setupEvents(evnt) {
     var touchTimer;
     var isLongPress = false;
     var currentTouchTarget = null;
-    const PRESS_DURATION = 150;
+    var primaryTouchId = null;
+    
+    var initialTouchX = 0;
+    var initialTouchY = 0;
+    var movementThreshold = 15; 
 
     document.addEventListener('touchstart', function(e) {
+        if (isLongPress) {
+            var isPopupTouch = false;
+            var newTarget = e.changedTouches[0].target;
+            while (newTarget && newTarget !== document) {
+                if (newTarget.id === 'popup') {
+                    isPopupTouch = true;
+                    break;
+                }
+                newTarget = newTarget.parentNode;
+            }
+            if (isPopupTouch) {
+                return;
+            }
+            popout();
+            isLongPress = false;
+            primaryTouchId = null;
+        }
+
         document.body.classList.add('disable-select');
         window.isTouchTapping = true;
         popout(); 
-        var target = e.target;
+        
+        var targetNode = e.target;
         currentTouchTarget = null;
         isLongPress = false;
+        const REQUIRED_PRESS_DURATION = 150;
+        
+        var touch = e.changedTouches[0];
+        primaryTouchId = touch.identifier;
+        initialTouchX = touch.pageX;
+        initialTouchY = touch.pageY;
 
-        while (target && target !== document) {
-            if (target.hasAttribute && target.hasAttribute('onmouseover')) {
-                currentTouchTarget = target;
+        while (targetNode && targetNode !== document) {
+            if (targetNode.hasAttribute && targetNode.hasAttribute('onmouseover')) {
+                currentTouchTarget = targetNode;
                 
-                mouseX = e.touches[0].pageX;
-                mouseY = e.touches[0].pageY;
+                mouseX = touch.pageX;
+                mouseY = touch.pageY;
 
                 touchTimer = setTimeout(function() {
                     isLongPress = true;
@@ -363,23 +392,37 @@ function setupEvents(evnt) {
                     var funcCode = new Function(onMouseOverCode);
                     funcCode();
                     window.isTouchTapping = true; 
-                }, PRESS_DURATION);
+                }, REQUIRED_PRESS_DURATION);
                 break;
             }
-            target = target.parentNode;
+            targetNode = targetNode.parentNode;
         }
     }, { passive: true });
 
     document.addEventListener('touchend', function(e) {
-        document.body.classList.remove('disable-select');
+        if (e.touches.length === 0) {
+            document.body.classList.remove('disable-select');
+        }
         clearTimeout(touchTimer);
+        
         if (isLongPress) {
-            popout(); 
-            isLongPress = false;
-            if (e.cancelable) {
-                e.preventDefault();
+            var primaryLifted = false;
+            for (var i = 0; i < e.changedTouches.length; i++) {
+                if (e.changedTouches[i].identifier === primaryTouchId) {
+                    primaryLifted = true;
+                    break;
+                }
             }
-            e.stopPropagation();
+            
+            if (primaryLifted) {
+                popout(); 
+                isLongPress = false;
+                primaryTouchId = null;
+                if (e.cancelable) {
+                    e.preventDefault();
+                }
+                e.stopPropagation();
+            }
         }
         setTimeout(function() {
             window.isTouchTapping = false;
@@ -387,11 +430,24 @@ function setupEvents(evnt) {
     }, { passive: false });
 
     document.addEventListener('touchcancel', function(e) {
-        document.body.classList.remove('disable-select');
+        if (e.touches.length === 0) {
+            document.body.classList.remove('disable-select');
+        }
         clearTimeout(touchTimer);
+        
         if (isLongPress) {
-            popout();
-            isLongPress = false;
+            var primaryLifted = false;
+            for (var i = 0; i < e.changedTouches.length; i++) {
+                if (e.changedTouches[i].identifier === primaryTouchId) {
+                    primaryLifted = true;
+                    break;
+                }
+            }
+            if (primaryLifted) {
+                popout();
+                isLongPress = false;
+                primaryTouchId = null;
+            }
         }
         setTimeout(function() { 
             window.isTouchTapping = false; 
@@ -399,10 +455,24 @@ function setupEvents(evnt) {
     }, { passive: true });
 
     document.addEventListener('touchmove', function(e) {
-        clearTimeout(touchTimer);
-        if (isLongPress) {
-            popout(); 
-            isLongPress = false;
+        var primaryTouch = null;
+        for (var i = 0; i < e.changedTouches.length; i++) {
+            if (e.changedTouches[i].identifier === primaryTouchId) {
+                primaryTouch = e.changedTouches[i];
+                break;
+            }
+        }
+        
+        if (primaryTouch) {
+            var dx = primaryTouch.pageX - initialTouchX;
+            var dy = primaryTouch.pageY - initialTouchY;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance > movementThreshold) {
+                if (!isLongPress) {
+                    clearTimeout(touchTimer);
+                }
+            }
         }
     }, { passive: true });
 
