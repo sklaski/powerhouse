@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-04 13:00:00 (woof-wolf)>
+ * Time-stamp: <2026-06-04 16:20:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.19c';
-var releaseDate = '2026-06-02';
+var version = '1.3.19d';
+var releaseDate = '2026-06-04';
 var buildVersion = 3;
 
 var siteName = 'PowerHouse';
@@ -322,10 +322,6 @@ function setupEvents(evnt) {
         }
     }, { passive: false });
 
-    var style = document.createElement('style');
-    style.innerHTML = '.disable-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-touch-callout: none; }';
-    document.head.appendChild(style);
-
     if (!window.originalPopupWrapperApplied) {
         var origPopup = window.popup;
         window.isTouchTapping = false;
@@ -389,7 +385,7 @@ function setupEvents(evnt) {
                     var funcCode = new Function(onMouseOverCode);
                     funcCode();
                     window.isTouchTapping = true; 
-                }, 150);
+                }, REQUIRED_PRESS_DURATION);
                 break;
             }
             targetNode = targetNode.parentNode;
@@ -443,11 +439,11 @@ function setupEvents(evnt) {
         if (isLongPress) {
             var primaryLifted = false;
             var secondaryLifted = false;
-            for (var i = 0; i < e.changedTouches.length; i++) {
-                if (e.changedTouches[i].identifier === primaryTouchId) {
+            for (var j = 0; j < e.changedTouches.length; j++) {
+                if (e.changedTouches[j].identifier === primaryTouchId) {
                     primaryLifted = true;
                 }
-                if (e.changedTouches[i].identifier === secondaryTouchId) {
+                if (e.changedTouches[j].identifier === secondaryTouchId) {
                     secondaryLifted = true;
                 }
             }
@@ -469,9 +465,9 @@ function setupEvents(evnt) {
     document.addEventListener('touchmove', function(e) {
         if (isLongPress) {
             var secondaryTouch = null;
-            for (var i = 0; i < e.changedTouches.length; i++) {
-                if (e.changedTouches[i].identifier === secondaryTouchId) {
-                    secondaryTouch = e.changedTouches[i];
+            for (var k = 0; k < e.changedTouches.length; k++) {
+                if (e.changedTouches[k].identifier === secondaryTouchId) {
+                    secondaryTouch = e.changedTouches[k];
                     break;
                 }
             }
@@ -488,9 +484,9 @@ function setupEvents(evnt) {
             if (e.cancelable) e.preventDefault();
         } else {
             var primaryTouchMove = null;
-            for (var j = 0; j < e.changedTouches.length; j++) {
-                if (e.changedTouches[j].identifier === primaryTouchId) {
-                    primaryTouchMove = e.changedTouches[j];
+            for (var m = 0; m < e.changedTouches.length; m++) {
+                if (e.changedTouches[m].identifier === primaryTouchId) {
+                    primaryTouchMove = e.changedTouches[m];
                     break;
                 }
             }
