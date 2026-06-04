@@ -9,7 +9,7 @@
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.19b';
+var version = '1.3.19c';
 var releaseDate = '2026-06-02';
 var buildVersion = 3;
 
@@ -342,6 +342,7 @@ function setupEvents(evnt) {
     var primaryTouchId = null;
     var secondaryTouchId = null;
     var secondaryLastY = 0;
+    const REQUIRED_PRESS_DURATION = 150;
     
     var initialTouchX = 0;
     var initialTouchY = 0;
@@ -388,7 +389,7 @@ function setupEvents(evnt) {
                     var funcCode = new Function(onMouseOverCode);
                     funcCode();
                     window.isTouchTapping = true; 
-                }, 500);
+                }, 150);
                 break;
             }
             targetNode = targetNode.parentNode;
