@@ -309,21 +309,108 @@ function catchEvent(eventObj, event, eventHandler) {
 }
 window['catchEvent'] = catchEvent;
 function setupEvents(evnt) {
-    // disable enter key in forms
     catchEvent(document, 'keypress', noEnter);
-    // mouseX and mouseY
     catchEvent(document, 'mousemove', setMouseXY);
-    // change name
     catchEvent(document.getElementById('editName'), 'change', changeName);
-    // close popups when main document is clicked, but not when the popup divs are clicked
     catchEvent(document, 'mouseup', selectClearMaybe);
 
-    // Scroll tooltip via mouse wheel
     document.addEventListener('wheel', function(e) {
         var tip = document.getElementById('popup');
         if (tip && tip.style.display === 'block') {
             e.preventDefault();
             tip.scrollTop += e.deltaY;
+        }
+    }, { passive: false });
+
+    var style = document.createElement('style');
+    style.innerHTML = '.disable-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-touch-callout: none; }';
+    document.head.appendChild(style);
+
+    if (!window.originalPopupWrapperApplied) {
+        var origPopup = window.popup;
+        window.isTouchTapping = false;
+        window.popup = function(text) {
+            if (window.isTouchTapping) return;
+            origPopup(text);
+        };
+        window.originalPopupWrapperApplied = true;
+    }
+
+    var touchTimer;
+    var isLongPress = false;
+    var currentTouchTarget = null;
+    const PRESS_DURATION = 150;
+
+    document.addEventListener('touchstart', function(e) {
+        document.body.classList.add('disable-select');
+        window.isTouchTapping = true;
+        popout(); 
+        var target = e.target;
+        currentTouchTarget = null;
+        isLongPress = false;
+
+        while (target && target !== document) {
+            if (target.hasAttribute && target.hasAttribute('onmouseover')) {
+                currentTouchTarget = target;
+                
+                mouseX = e.touches[0].pageX;
+                mouseY = e.touches[0].pageY;
+
+                touchTimer = setTimeout(function() {
+                    isLongPress = true;
+                    window.isTouchTapping = false; 
+                    var onMouseOverCode = currentTouchTarget.getAttribute('onmouseover');
+                    var funcCode = new Function(onMouseOverCode);
+                    funcCode();
+                    window.isTouchTapping = true; 
+                }, PRESS_DURATION);
+                break;
+            }
+            target = target.parentNode;
+        }
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+        document.body.classList.remove('disable-select');
+        clearTimeout(touchTimer);
+        if (isLongPress) {
+            popout(); 
+            isLongPress = false;
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+            e.stopPropagation();
+        }
+        setTimeout(function() {
+            window.isTouchTapping = false;
+        }, 500);
+    }, { passive: false });
+
+    document.addEventListener('touchcancel', function(e) {
+        document.body.classList.remove('disable-select');
+        clearTimeout(touchTimer);
+        if (isLongPress) {
+            popout();
+            isLongPress = false;
+        }
+        setTimeout(function() { 
+            window.isTouchTapping = false; 
+        }, 500);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function(e) {
+        clearTimeout(touchTimer);
+        if (isLongPress) {
+            popout(); 
+            isLongPress = false;
+        }
+    }, { passive: true });
+
+    document.addEventListener('contextmenu', function(e) {
+        if (isLongPress) {
+            if (e.cancelable) {
+                e.preventDefault();
+            }
         }
     }, { passive: false });
 }
@@ -1835,6 +1922,7 @@ function setArchetypePower(id) {
         phPower[num] = dataPower[id];
         phPowerAdvantage[num] = 0;
         field.innerHTML = dataPower[id].desc;
+        setOnmouseoverPopupL2(field, dataPower[id].tip);
         advantageField.innerHTML = advantageTextSpan(1, num, 0);
         setOnmouseoverPopupL2(advantageField, advantageTip(1, num, 0));
         advantageField.style.display = '';
@@ -4025,16 +4113,16 @@ function setupPrefs() {
     
     // Detect mobile device
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    var mobileDefaultsApplied = getCookie('mobileDefaultsApplied');
+    var mobileDefaultsAppliedV2 = getCookie('mobileDefaultsAppliedV2');
     
     var popupTips = getCookie('prefPopupTips');
     var confirmSelections = getCookie('prefConfirmSelections');
     
     // Apply defaults only on the first mobile visit
-    if (isMobile && mobileDefaultsApplied == undefined) {
-        popupTips = 0;
-        confirmSelections = true;
-        setCookie('mobileDefaultsApplied', 'true', cookieExpireDays);
+    if (isMobile && mobileDefaultsAppliedV2 == undefined) {
+        popupTips = 2;
+        confirmSelections = false;
+        setCookie('mobileDefaultsAppliedV2', 'true', cookieExpireDays);
     } else {
         // Load existing preferences or standard defaults
         if (popupTips == undefined || isNaN(popupTips)) {
@@ -4053,11 +4141,11 @@ function setupPrefs() {
     setPrefPopupTips(popupTips);
     setPrefConfirmSelections(confirmSelections);
     
-    // analytics
-    var analytics = getCookie('prefAnalytics');
-    if (analytics == undefined) analytics = prefAnalytics;
-    else analytics = coerceToBoolean(analytics, prefAnalytics);
-    setPrefAnalytics(analytics);
+    // // analytics
+    // var analytics = getCookie('prefAnalytics');
+    // if (analytics == undefined) analytics = prefAnalytics;
+    // else analytics = coerceToBoolean(analytics, prefAnalytics);
+    // setPrefAnalytics(analytics);
 }
 window['setupPrefs'] = setupPrefs;
 
