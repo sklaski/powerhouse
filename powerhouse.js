@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-04 16:20:00 (woof-wolf)>
+ * Time-stamp: <2026-06-04 16:30:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.19d';
+var version = '1.3.19e';
 var releaseDate = '2026-06-04';
 var buildVersion = 3;
 
@@ -601,6 +601,8 @@ function updatePopupPosition() {
  * @param {Event} evnt The mouse movement event object.
  */
 function setMouseXY(evnt) {
+    if (window.isTouchTapping) return;
+
     var x, y;
     
     // Attempt to get mouse coordinates using standard modern browser properties
