@@ -329,13 +329,6 @@ function setupEvents(evnt) {
             if (window.isTouchTapping) return;
             origPopup(text);
         };
-
-        var origPopout = window.popout;
-        window.popout = function() {
-            if (window.isTouchTapping) return;
-            origPopout();
-        };
-
         window.originalPopupWrapperApplied = true;
     }
     var touchTimer;
@@ -364,9 +357,8 @@ function setupEvents(evnt) {
         }
 
         document.body.classList.add('disable-select');
-        window.isTouchTapping = false;
-        popout(); 
         window.isTouchTapping = true;
+        popout();
         
         var targetNode = e.target;
         currentTouchTarget = null;
@@ -422,10 +414,7 @@ function setupEvents(evnt) {
             }
 
             if (primaryLifted) {
-                window.isTouchTapping = false;
                 popout(); 
-                window.isTouchTapping = true;
-                
                 isLongPress = false;
                 primaryTouchId = null;
                 secondaryTouchId = null;
@@ -461,10 +450,7 @@ function setupEvents(evnt) {
                 secondaryTouchId = null;
             }
             if (primaryLifted) {
-                window.isTouchTapping = false;
                 popout(); 
-                window.isTouchTapping = true;
-                
                 isLongPress = false;
                 primaryTouchId = null;
                 secondaryTouchId = null;
@@ -614,7 +600,6 @@ function updatePopupPosition() {
  * @param {Event} evnt The mouse movement event object.
  */
 function setMouseXY(evnt) {
-    if (window.isTouchTapping) return;
 
     var x, y;
     
@@ -657,6 +642,12 @@ function setMouseXY(evnt) {
     }
     
     // Call the positioning function to move the tooltip to the new coordinates
+    if (tip && tip.style.display === "block" && isValidTarget === false) {
+        if (!window.isTouchTapping) {
+            popout();
+        }
+    }
+    
     updatePopupPosition();
 }
 window['setMouseXY'] = setMouseXY;
@@ -726,7 +717,7 @@ window['popout'] = popout;
 function setOnmouseoverPopupL1(field, text) {
     if (text != null) {
         field.setAttribute('onmouseover', 'popupL1(\'' + text + '\')');
-        field.setAttribute('onmouseout', 'popout()');
+        field.setAttribute('onmouseout', 'if(!window.isTouchTapping) popout();');
     } else {
         clearOnmouseoverPopup(field);
     }
@@ -735,7 +726,7 @@ window['setOnmouseoverPopupL1'] = setOnmouseoverPopupL1;
 function setOnmouseoverPopupL2(field, text) {
     if (text != null) {
         field.setAttribute('onmouseover', 'popupL2(\'' + text + '\')');
-        field.setAttribute('onmouseout', 'popout()');
+        field.setAttribute('onmouseout', 'if(!window.isTouchTapping) popout();');
     } else {
         clearOnmouseoverPopup(field);
     }
