@@ -539,6 +539,7 @@ function updatePopupPosition() {
     // Define the visual offset from the mouse cursor
     var xoffset = 20;
     var yoffset = 10;
+    var touchFingerPadding = 25;
     
     // Define the safe distance from the edge of the browser window
     var margin = 15;
@@ -558,36 +559,46 @@ function updatePopupPosition() {
     // Enable vertical scrolling inside the tooltip for content exceeding the maximum height
     tip.style.overflowY = "auto";
 
-    // Calculate the initial intended X and Y coordinates based on mouse position
-    var x = mouseX + xoffset;
-    var y = mouseY + yoffset;
-
-    // Get the actual rendered width and height of the tooltip
+    // Get the actual rendered width and height of the tooltip early
     var tipWidth = tip.offsetWidth;
     var tipHeight = tip.offsetHeight;
+    
+    var x = mouseX + xoffset;
+    var y;
+    
+    var isTouch = window.isTouchTapping || document.body.classList.contains('disable-select');
 
-    // Check if the tooltip goes past the right edge of the screen
-    if (x + tipWidth + margin > scrollLeft + viewportWidth) {
-        // Move the tooltip to the left side of the cursor
-        x = mouseX - xoffset - tipWidth;
+    if (isTouch) {
+        // Touch input: Preferred placement is above
+        y = mouseY - tipHeight - touchFingerPadding;
+    } else {
+        // Mouse input: Preferred placement is below
+        y = mouseY + yoffset;
+    }
+    
+    // If the touch placement goes off the TOP of the screen, try flipping it BELOW the finger
+    if (isTouch && y < scrollTop + margin) {
+        y = mouseY + touchFingerPadding;
     }
 
-    // Check if the tooltip goes past the bottom edge of the screen
+    // X-Axis Clamp: Check if it goes past the right edge
+    if (x + tipWidth + margin > scrollLeft + viewportWidth) {
+        x = mouseX - xoffset - tipWidth;
+    }
+    
+    // X-Axis Clamp: Check if it goes past the left edge
+    if (x < scrollLeft + margin) {
+        x = scrollLeft + margin;
+    }
+
+    // Y-Axis Clamp: Push up if it breaches the bottom of the screen
     if (y + tipHeight + margin > scrollTop + viewportHeight) {
-        // Align the bottom of the tooltip with the bottom margin of the screen
         y = (scrollTop + viewportHeight) - tipHeight - margin;
     }
 
-    // Check if the tooltip goes past the top edge of the screen
+    // Y-Axis Clamp: Push down if it breaches the top of the screen
     if (y < scrollTop + margin) {
-        // Align the top of the tooltip with the top margin of the screen
         y = scrollTop + margin;
-    }
-
-    // Check if the tooltip goes past the left edge of the screen
-    if (x < scrollLeft + margin) {
-        // Align the left side of the tooltip with the left margin of the screen
-        x = scrollLeft + margin;
     }
 
     // Apply the final calculated coordinates to the tooltip element
