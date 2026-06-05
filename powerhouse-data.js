@@ -18387,7 +18387,7 @@ dataPowerAlias['Unstoppable'] = new PowerAlias('Unstoppable', 'Unstoppable', '<i
 const enrage = {
   power: 
   '<div class="popup-header">\
-    <div>Brick<br>20 Energy costbr>1 sec activate time</div>\
+    <div>Brick<br>20 Energy cost<br>1 sec activate time</div>\
     <div style="text-align:right;">Targets self</div>\
   </div><br>\
   BUFF - FORM - STRENGTH<br><br>\
