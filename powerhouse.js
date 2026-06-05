@@ -329,9 +329,15 @@ function setupEvents(evnt) {
             if (window.isTouchTapping) return;
             origPopup(text);
         };
+
+        var origPopout = window.popout;
+        window.popout = function() {
+            if (window.isTouchTapping) return;
+            origPopout();
+        };
+
         window.originalPopupWrapperApplied = true;
     }
-
     var touchTimer;
     var isLongPress = false;
     var currentTouchTarget = null;
@@ -358,8 +364,9 @@ function setupEvents(evnt) {
         }
 
         document.body.classList.add('disable-select');
-        window.isTouchTapping = true;
+        window.isTouchTapping = false;
         popout(); 
+        window.isTouchTapping = true;
         
         var targetNode = e.target;
         currentTouchTarget = null;
@@ -415,7 +422,10 @@ function setupEvents(evnt) {
             }
 
             if (primaryLifted) {
+                window.isTouchTapping = false;
                 popout(); 
+                window.isTouchTapping = true;
+                
                 isLongPress = false;
                 primaryTouchId = null;
                 secondaryTouchId = null;
@@ -451,7 +461,10 @@ function setupEvents(evnt) {
                 secondaryTouchId = null;
             }
             if (primaryLifted) {
-                popout();
+                window.isTouchTapping = false;
+                popout(); 
+                window.isTouchTapping = true;
+                
                 isLongPress = false;
                 primaryTouchId = null;
                 secondaryTouchId = null;
