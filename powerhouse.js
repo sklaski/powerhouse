@@ -9,7 +9,7 @@
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.19h';
+var version = '1.3.19i';
 var releaseDate = '2026-06-04';
 var buildVersion = 3;
 
@@ -620,6 +620,11 @@ function setMouseXY(evnt) {
     mouseX = x;
     mouseY = y;
 
+    if (window.isTouchTapping || document.body.classList.contains('disable-select')) {
+        updatePopupPosition();
+        return;
+    }
+
     var target = evnt.target || evnt.srcElement;
     var tip = document.getElementById("popup");
 
@@ -637,12 +642,6 @@ function setMouseXY(evnt) {
         }
         
         curr = curr.parentNode;
-    }
-
-    if (tip && tip.style.display === "block" && isValidTarget === false) {
-        if (!window.isTouchTapping) {
-            popout();
-        }
     }
     
     // Call the positioning function to move the tooltip to the new coordinates
