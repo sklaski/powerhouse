@@ -5,7 +5,7 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-04 17:20:00 (woof-wolf)>
+ * Time-stamp: <2026-06-04 19:15:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
@@ -640,7 +640,9 @@ function setMouseXY(evnt) {
     }
 
     if (tip && tip.style.display === "block" && isValidTarget === false) {
-        popout();
+        if (!window.isTouchTapping) {
+            popout();
+        }
     }
     
     // Call the positioning function to move the tooltip to the new coordinates
