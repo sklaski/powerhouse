@@ -5,11 +5,11 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-04 16:30:00 (woof-wolf)>
+ * Time-stamp: <2026-06-04 17:20:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.19e';
+var version = '1.3.19h';
 var releaseDate = '2026-06-04';
 var buildVersion = 3;
 
@@ -332,6 +332,7 @@ function setupEvents(evnt) {
         window.originalPopupWrapperApplied = true;
     }
     var touchTimer;
+    var touchResetTimer = null;
     var isLongPress = false;
     var currentTouchTarget = null;
     var primaryTouchId = null;
@@ -356,6 +357,7 @@ function setupEvents(evnt) {
             return;
         }
 
+        clearTimeout(touchResetTimer);
         document.body.classList.add('disable-select');
         window.isTouchTapping = true;
         popout();
@@ -424,7 +426,7 @@ function setupEvents(evnt) {
                 e.stopPropagation();
             }
         }
-        setTimeout(function() {
+        touchResetTimer = setTimeout(function() {
             window.isTouchTapping = false;
         }, 500);
     }, { passive: false });
@@ -456,7 +458,7 @@ function setupEvents(evnt) {
                 secondaryTouchId = null;
             }
         }
-        setTimeout(function() { 
+        touchResetTimer = setTimeout(function() { 
             window.isTouchTapping = false; 
         }, 500);
     }, { passive: true });

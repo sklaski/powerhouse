@@ -23647,7 +23647,7 @@ const madnessAura = {
   TOGGLE<br>\
   <ul>\
     <li>Has a 20% chance every 1 sec to apply Fear to targets within 25 ft of you.</li>\
-    <li>Fear reduces your target\'s damage by 10% for 12 sec.</li>\
+    <li>Fear reduces your target\\\'s damage by 10% for 12 sec.</li>\
     <li>Has an 85% chance every 1 sec to throw an object to a target within 25 ft of you.</li>\
     <li>This object deals 161-1,125 Dimensional Damage based on the Mass of the object and hits targets within 5 ft of the primary target. Knocks down affected targets.</li>\
     <li>Has a 15% chance every 1 sec to cause an object within 25 ft to explode. This object deals 90-633 Dimensional Damage based on the Mass of the object to enemies within 25 ft of it.</li>\
