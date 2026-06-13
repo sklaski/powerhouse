@@ -5,12 +5,12 @@
  *
  * Author: Kyle W T Sherman
  *
- * Time-stamp: <2026-06-04 19:15:00 (woof-wolf)>
+ * Time-stamp: <2026-06-13 03:10:00 (woof-wolf)>
  *============================================================================*/
 
 var debug = false;
-var version = '1.3.19i';
-var releaseDate = '2026-06-04';
+var version = '1.3.20';
+var releaseDate = '2026-06-13';
 var buildVersion = 3;
 
 var siteName = 'PowerHouse';
